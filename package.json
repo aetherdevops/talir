@@ -1,0 +1,11 @@
+{
+  "name": "talir-repo",
+  "private": true,
+  "description": "Deploy wrapper — the Next.js app lives in ./talir",
+  "scripts": {
+    "build": "npm run build --prefix talir",
+    "dev": "npm run dev --prefix talir",
+    "start": "npm run start --prefix talir",
+    "vercel-build": "npm run build --prefix talir"
+  }
+}

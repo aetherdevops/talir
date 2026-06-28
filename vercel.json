@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install --prefix talir",
+  "buildCommand": "npm run build --prefix talir",
+  "devCommand": "npm run dev --prefix talir",
+  "framework": "nextjs",
+  "outputDirectory": "talir/.next"
+}
