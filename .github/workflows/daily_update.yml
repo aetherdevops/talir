@@ -14,10 +14,6 @@ permissions:
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
-    
-    defaults:
-      run:
-        working-directory: ./talir
 
     steps:
     - name: Checkout Code
@@ -28,7 +24,7 @@ jobs:
       with:
         node-version: '20'
         cache: 'npm'
-        cache-dependency-path: talir/package-lock.json
+        cache-dependency-path: package-lock.json
 
     - name: Install Deps
       run: npm install
@@ -37,18 +33,13 @@ jobs:
       run: npm run script:update
 
     - name: Commit Changes
-      # We need to run git commands from the root or handle paths carefully
-      # Validating changes in talir folder
       run: |
         git config --global user.name "Scraper Bot"
         git config --global user.email "bot@example.com"
-        
-        # Check status relative to root or inside talir?
-        # git status works from anywhere in the tree usually.
-        
-        if [[ -n $(git status --porcelain talir/lib/data) ]]; then
+
+        if [[ -n $(git status --porcelain lib/data) ]]; then
           echo "New data found, committing..."
-          git add talir/lib/data
+          git add lib/data
           git commit -m "chore: daily data refresh [skip ci]"
           git push
         else
