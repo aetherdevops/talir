@@ -1,0 +1,3476 @@
+[
+  {
+    "code": "11OK",
+    "name": "Pechatnica 11 Oktomvri Prilep",
+    "price": 677,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ADIN",
+    "name": "Ading AD  Skopje",
+    "price": 2399,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "AITO",
+    "name": "Aitoniks AD Skopje",
+    "price": 300000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ALK",
+    "name": "Alkaloid AD Skopje",
+    "price": 25500,
+    "change_pct": -0.47,
+    "volume": 80,
+    "turnover": 2039950,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ALKB",
+    "name": "Alkaloid Berovo",
+    "price": 18510,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "AMBR",
+    "name": "AM Broker AD Skopje",
+    "price": 36900,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "AMEH",
+    "name": "Agromehanika AD Skopje - dolgorochno suspendirano od kotacija",
+    "price": 300,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "APTK",
+    "name": "Angropromet Tikveshanka AD Kavadarci",
+    "price": 750,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ATPP",
+    "name": "ATP Proleter Kriva Palanka",
+    "price": 1230,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "AUMK",
+    "name": "Automakedonija AD Skopje",
+    "price": 3120,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "BANA",
+    "name": "Rudnici Banjani AD Skopje",
+    "price": 603,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "BGOR",
+    "name": "Kristal 1923 AD Veles",
+    "price": 160,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "BIKF",
+    "name": "Tekstil Elma AD Prilep",
+    "price": 1086,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "BIM",
+    "name": "BIM AD Sveti Nikole",
+    "price": 18001,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "BLTU",
+    "name": "Blagoj Tufanov AD Radovish - dolgorochno suspendirano od kotacija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "CBNG",
+    "name": "Crveni bregovi Negotino",
+    "price": 3200,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "CEVI",
+    "name": "FZC 11-ti OKTOMVRI AD Kumanovo",
+    "price": 200,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "CKB",
+    "name": "Centralna kooperativna banka AD Skopje",
+    "price": 340,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "CKBKO2",
+    "name": "Centralna kooperativna banka AD Skopje",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "DEBA",
+    "name": "Debarski Banji –Capa AD  Debar",
+    "price": 1550,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "DIMI",
+    "name": "Dimko Mitrev AD Veles",
+    "price": 185,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "EDST",
+    "name": "Edinstvo Struga",
+    "price": 61,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ELMA",
+    "name": "Elmar Shtip",
+    "price": 50,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ENER",
+    "name": "Energomont Skopje",
+    "price": 1200,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "EUHA",
+    "name": "Eurohaus AD Skopje",
+    "price": 15,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "EVRO",
+    "name": "Evropa AD Skopje",
+    "price": 3000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "FAKM",
+    "name": "FAKOM AD Skopje",
+    "price": 6984,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "FERS",
+    "name": "Fershped AD Skopje",
+    "price": 53000,
+    "change_pct": 0,
+    "volume": 1,
+    "turnover": 53000,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "FKBR",
+    "name": "FK Bregalnica AD Shtip",
+    "price": 6150,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "FKPO",
+    "name": "FK Pobeda AD Prilep",
+    "price": 49,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "FKTK",
+    "name": "Gradski Fudbalski klub Tikvesh 1930 AD Kavadarci",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "FUBT",
+    "name": "Fustelarko Borec AD Bitola",
+    "price": 2700,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "GALE",
+    "name": "Galeb Ohrid",
+    "price": 300,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "GDKM",
+    "name": "ZIK Gradishte Kumanovo",
+    "price": 1240,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "GIMS",
+    "name": "Gradezhen institut Makedonija AD  Skopje",
+    "price": 9240,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "GRDN",
+    "name": "Gradinar AD Ohrid",
+    "price": 310,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "GRNT",
+    "name": "Granit AD Skopje",
+    "price": 1630,
+    "change_pct": 0.08,
+    "volume": 1309,
+    "turnover": 2135471,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "GRZD",
+    "name": "Grozd AD Strumica",
+    "price": 2250,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "GTC",
+    "name": "GTC AD Skopje",
+    "price": 1790,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "GTRG",
+    "name": "Getro Gostivar",
+    "price": 3000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "GUMA",
+    "name": "Avtoguma Skopje",
+    "price": 1200,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "IJUG",
+    "name": "Institut za zavaruv. Jug Skopje",
+    "price": 9225,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "INB",
+    "name": "Shparkase banka Makedonija AD Skopje",
+    "price": 5750,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "INBR",
+    "name": "INVESTBROKER AD Skopje",
+    "price": 4000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "INDI",
+    "name": "Ineks Drim AD Struga",
+    "price": 257,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "INHO",
+    "name": "Interneshnel Hotels AD Skopje",
+    "price": 4005,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "INOV",
+    "name": "Inovo Broker AD Skopje",
+    "price": 796,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "INPR",
+    "name": "Interpromet AD Tetovo",
+    "price": 4365,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "INTP",
+    "name": "Kapital Banka AD Skopje",
+    "price": 2140,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "JAKO",
+    "name": "Javor Konsalting Bitola",
+    "price": 95,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "JULI",
+    "name": "Palplast AD Kumanovo",
+    "price": 372,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "JUSK",
+    "name": "Jugotutun Skopje",
+    "price": 5050,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KARO",
+    "name": "Karaorman Skopje",
+    "price": 1891,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KJUBI",
+    "name": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
+    "price": 1426,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KKFI",
+    "name": "MKK Euronikel 2005 AD Kavadarci",
+    "price": 635,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KLST",
+    "name": "Klanica so ladilnik AD Strumica",
+    "price": 120,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KMB",
+    "name": "Komercijalna banka AD Skopje",
+    "price": 27401,
+    "change_pct": -1.28,
+    "volume": 128,
+    "turnover": 3530811,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KMPR",
+    "name": "Komunaproekt Tetovo",
+    "price": 372,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KOMU",
+    "name": "DS Smith AD Skopje",
+    "price": 480,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KONF",
+    "name": "Konzervna fabrika Strumica",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KONZ",
+    "name": "Fruktal Mak AD Skopje",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KORZ",
+    "name": "JAVOR Stokovna kukja KORZO AD Bitola",
+    "price": 120,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KPSS",
+    "name": "Fabrika Karposh AD Skopje",
+    "price": 350,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "KVAS",
+    "name": "Kvasara AD Bitola",
+    "price": 12000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "LOTO",
+    "name": "Lotarija na Makedonija AD Skopje",
+    "price": 150,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "LOZP",
+    "name": "Pelisterka AD Skopje",
+    "price": 2620,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M010428",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M010428D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M010931D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M011133D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M011231D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M011237",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M020126",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M020127",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M021132D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M030337",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M030338",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M031131D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M031230D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M031235D",
+    "name": "Republika Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M040336",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M040532D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M040630D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M040837",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M040837D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M040838",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M050836",
+    "name": "Republika Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M050939",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M051032D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M051234D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M060240",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M060328D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M060340",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M060432D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M060629",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M060639",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M060732D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M060830D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M060850D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M070329",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M070339",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M070426D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M070530D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M070633",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M070932D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M070938",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M070938D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M071134",
+    "name": "Republika Severna Makedonija",
+    "price": 105.3,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M071232D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M080229",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M080239",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M080333D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M080632D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M080731D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M080834D",
+    "name": "Republika Severna Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M080839",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M081030D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M090238",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M090332D",
+    "name": "Republika Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M090631D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M090730D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M090833D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M090937",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M090937D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M091027",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M091040",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M100128",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M100140",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M100428",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M100440",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M100526",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M100539",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M100740",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M100832D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M101039",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M110128",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M110133D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M110139",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M110226",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M110226D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M110231D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M110538",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M110739",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M120132D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M120138",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M120230D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M120330D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M120439",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M120439D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M120537",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M121227D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M121229",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M130137",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M130235",
+    "name": "Republika Severna Makedonija",
+    "price": 98.8,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M130738",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M131037",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M131140",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M140126D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M140131D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M140136",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M140431D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M140437D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M140526",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M141031D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M141036",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M141126",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M141139",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M141226",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M141238",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M150233D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M150436",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M150436D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M150638",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M150638D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M151030",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M151030D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M160232D",
+    "name": "Republika Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M160430D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M160534",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M160637",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M160637D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M160936",
+    "name": "Republika Severna Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M161138",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M170228",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M170230",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M170331D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M170636",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M170636D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M170832D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M170930D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M171137",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M171225D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M180449D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M180635",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M180749D",
+    "name": "Republika Makedonija",
+    "price": 102,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M180826",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M180826D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M180831D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M180837D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M180927",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M180940",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M181048D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M181136D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M190627",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M190628",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M190640",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M190640D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M190640D, M190748D",
+    "name": "",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": ""
+  },
+  {
+    "code": "M190748D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M190927",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M190934",
+    "name": "Republika Severna Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M190939",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M191032D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M191130D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M200732D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M200738",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M200830D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M200933",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M200933D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M210633D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M210827",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M210840",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M210932D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M210938",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M220131D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M220528",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M220540",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M220632D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M220931D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M221133D",
+    "name": "Republika Makedonija",
+    "price": 106.8,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M221231D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M230332D",
+    "name": "Republika Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M230631D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M230730D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M231132D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M240326",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M240428",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M240930D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M241225D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M250133",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M250133D",
+    "name": "Republika Makedonija",
+    "price": 112.2,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M250630D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M251027",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M260132D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M260230D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M260330D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M260448D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M260538D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M270830D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M280131D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M280234",
+    "name": "Republika Severna Makedonija",
+    "price": 107.1,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M280731D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M281127",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M281238D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M290632D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M290638D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M290931D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M291030D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M291035",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M291237",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M291237D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M300150D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M300332D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M300338",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M300338D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M300450D",
+    "name": "Republika Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M300637",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M300730D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M301132D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M310149D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M310149D, M310331D",
+    "name": "",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": ""
+  },
+  {
+    "code": "M310331D",
+    "name": "Republika Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "M311049D",
+    "name": "Republika Severna Makedonija",
+    "price": 103.5,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MAGP",
+    "name": "1932 AD Skopje",
+    "price": 6150,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MAKP",
+    "name": "Makpromet AD Shtip",
+    "price": 600,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MAKS",
+    "name": "Makoteks AD Skopje",
+    "price": 20,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MB",
+    "name": "Makedonska berza AD Skopje",
+    "price": 89458,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MERM",
+    "name": "Mermeren kombinat AD Prilep",
+    "price": 3300,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MKSD",
+    "name": "Makoshped AD Skopje",
+    "price": 237,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MLKR",
+    "name": "Mlekara Bitola",
+    "price": 18000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MODA",
+    "name": "Moda AD Sveti Nikole",
+    "price": 99,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MOKL",
+    "name": "Mokel EE II AD Bitola",
+    "price": 2040,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MPOL",
+    "name": "Hoteli Metropol Ohrid",
+    "price": 287,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MPT",
+    "name": "Makpetrol AD Skopje",
+    "price": 115001,
+    "change_pct": -0.04,
+    "volume": 37,
+    "turnover": 4255039,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MTUR",
+    "name": "Makedonijaturist AD Skopje",
+    "price": 9800,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MZHE",
+    "name": "Vabtek MZT AD Skopje",
+    "price": 3133,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MZOV",
+    "name": "MZT Oprema za vozila Skopje",
+    "price": 660,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "MZPU",
+    "name": "MZT Pumpi AD Skopje",
+    "price": 607,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "NEME",
+    "name": "Nemetali Ograzhden AD Strumica",
+    "price": 1900,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "NOSK",
+    "name": "Nova Stokovna kukja AD Strumica",
+    "price": 61500,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "OBMT",
+    "name": "Mak trend broker Skopje",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "OHTU",
+    "name": "Ohridturist Ohrid",
+    "price": 804,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "OILK",
+    "name": "OILKO KDA Skopje",
+    "price": 6000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "OKTA",
+    "name": "OKTA AD Skopje",
+    "price": 4900,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "OMOS",
+    "name": "Vega osiguruvanje AD Skopje",
+    "price": 30,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "OPFO",
+    "name": "Opfolio AD Skopje",
+    "price": 6524,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "OPTK",
+    "name": "Ochna optika Getaldus Skopje",
+    "price": 2687,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ORAN",
+    "name": "Oranzherii Hamzali Strumica",
+    "price": 308,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "OSPO",
+    "name": "Osiguritelna polisa AD Skopje",
+    "price": 1000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "OTEK",
+    "name": "Oteks Ohrid",
+    "price": 45,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "PALT",
+    "name": "Damjanov AD Delchevo",
+    "price": 158,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "PKB",
+    "name": "Pekabesko AD Kadino Ilinden",
+    "price": 18000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "POPK",
+    "name": "Popova Kula AD Demir Kapija",
+    "price": 16,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "PPIV",
+    "name": "Prilepska pivarnica AD Prilep",
+    "price": 36001,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "PROD",
+    "name": "OP Prosvetno Delo Skopje",
+    "price": 1600,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "PROT",
+    "name": "Protektor AD Prilep",
+    "price": 615,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RADE",
+    "name": "Rade Konchar- Aparatna tehnika AD Skopje",
+    "price": 2435,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "REPL",
+    "name": "Replek AD Skopje",
+    "price": 16200,
+    "change_pct": 1,
+    "volume": 30,
+    "turnover": 486000,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RIMI",
+    "name": "RIMI AD Shtip",
+    "price": 315,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RINS",
+    "name": "Reing AD Skopje",
+    "price": 3201,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RMDEN15",
+    "name": "Republika Severna Makedonija",
+    "price": 95,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RMDEN16",
+    "name": "Republika Severna Makedonija",
+    "price": 90,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RMDEN17",
+    "name": "Republika Severna Makedonija",
+    "price": 91,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RMDEN18",
+    "name": "Republika Severna Makedonija",
+    "price": 91,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RMDEN19",
+    "name": "Republika Severna Makedonija",
+    "price": 93.7,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RMDEN20",
+    "name": "Republika Severna Makedonija",
+    "price": 91,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RMDEN21",
+    "name": "Republika Severna Makedonija",
+    "price": 92,
+    "change_pct": 0,
+    "volume": 6248,
+    "turnover": 353577,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RMDEN22",
+    "name": "Republika Severna Makedonija",
+    "price": 94,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RMDEN23",
+    "name": "Republika Severna Makedonija",
+    "price": 93,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RZEK",
+    "name": "RZh Ekonomika AD Skopje",
+    "price": 51,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RZIT",
+    "name": "RZh Inter-Transshped AD Skopje",
+    "price": 20,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RZLE",
+    "name": "ArcelorMittal (HRM) AD Skopje - dolgorochno suspendirano od kotacija",
+    "price": 4,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RZLV",
+    "name": "Liberti AD Skopje",
+    "price": 10,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RZTK",
+    "name": "RZh Tehnichka Kontrola AD Skopje",
+    "price": 650,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RZUG",
+    "name": "Ugotur AD Skopje",
+    "price": 20,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "RZUS",
+    "name": "RZh Uslugi AD Skopje",
+    "price": 45,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "S2909331",
+    "name": "Republika Severna Makedonija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "S2909332",
+    "name": "Republika Severna Makedonija",
+    "price": 97.1,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "S2909333",
+    "name": "Republika Severna Makedonija",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SBT",
+    "name": "Stopanska banka AD Bitola",
+    "price": 3134,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SDOM",
+    "name": "Sovremen dom AD Prilep",
+    "price": 30,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SIGA",
+    "name": "Unika AD Skopje",
+    "price": 239729,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SIL",
+    "name": "Sileks AD Kratovo",
+    "price": 70,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SKP",
+    "name": "Pivara Skopje AD Skopje",
+    "price": 73000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SLAV",
+    "name": "Slavej  AD Skopje",
+    "price": 3100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SOLN",
+    "name": "2001 Gevgelija",
+    "price": 309,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SPAZ",
+    "name": "Skopski Pazar AD Skopje",
+    "price": 7500,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SPAZP",
+    "name": "Skopski Pazar AD Skopje",
+    "price": 4000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SPOL",
+    "name": "Strumichko pole s. Vasilevo",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "SSPR",
+    "name": "Sigurnosno staklo AD Prilep",
+    "price": 360,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "STB",
+    "name": "Stopanska banka AD Skopje",
+    "price": 2619,
+    "change_pct": -0.27,
+    "volume": 205,
+    "turnover": 538825,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "STBP",
+    "name": "Stopanska banka AD Skopje",
+    "price": 800,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "STEL",
+    "name": "ER AD Shtip",
+    "price": 315,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "STIL",
+    "name": "Makstil AD Skopje",
+    "price": 131,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "STOK",
+    "name": "Stokopromet AD Skopje",
+    "price": 1200,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TAJM",
+    "name": "Tajmishte AD Kichevo - dolgorochno suspendirano od kotacija",
+    "price": 970,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TASK",
+    "name": "Taska AD Kavadarci",
+    "price": 1420,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TEAL",
+    "name": "TEAL AD  Tetovo",
+    "price": 900,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TEHN",
+    "name": "Tehnokomerc AD Skopje",
+    "price": 1000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TEL",
+    "name": "Makedonski Telekom AD – Skopje",
+    "price": 460,
+    "change_pct": 0,
+    "volume": 119,
+    "turnover": 54740,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TETE",
+    "name": "Teteks AD Tetovo",
+    "price": 2300,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TIGA",
+    "name": "Tigar Kriva Palanka",
+    "price": 282,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TIKV",
+    "name": "GD-TIKVESh AD Kavadarci",
+    "price": 1000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TKPR",
+    "name": "Tutunski kombinat AD Prilep",
+    "price": 290,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TKVS",
+    "name": "VV Tikvesh AD Kavadarci",
+    "price": 8015,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TNB",
+    "name": "NLB Banka AD Skopje",
+    "price": 57400,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TRDB",
+    "name": "Trudbenik AD Ohrid - dolgorochno suspendirano od kotacija",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TROZ",
+    "name": "Triglav osiguruvanje zhivot AD Skopje",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TRPS",
+    "name": "Patnichki soobrakjaj Transkop AD Bitola",
+    "price": 1800,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TRUB",
+    "name": "Fakultetsko zemjodelsko stopanstvo s.Trubarevo",
+    "price": 100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TSMP",
+    "name": "Trgotekstil Maloprodazhba AD Skopje",
+    "price": 98,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TTK",
+    "name": "TTK Banka AD Skopje",
+    "price": 1619,
+    "change_pct": 0,
+    "volume": 200,
+    "turnover": 323800,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TTKO2",
+    "name": "TTK Banka AD Skopje",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TTKO3",
+    "name": "TTK Banka AD Skopje",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "TURT",
+    "name": "Turtel Shtip",
+    "price": 307,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "UNI",
+    "name": "UNI Banka AD Skopje",
+    "price": 7340,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "UNIPO2",
+    "name": "UNI Banka AD Skopje",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "UNIPO3",
+    "name": "UNI Banka AD Skopje",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "UNIPO4",
+    "name": "UNI Banka AD Skopje",
+    "price": 0,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "USJE",
+    "name": "TITAN USJE AD Skopje",
+    "price": 46001,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "VARG",
+    "name": "AD Vardar Gradsko",
+    "price": 131,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "VENC",
+    "name": "Venec AD Dolni Disan",
+    "price": 3150,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "VITA",
+    "name": "Vitaminka AD Prilep",
+    "price": 12500,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "VROS",
+    "name": "Triglav Osiguruvanje AD Skopje",
+    "price": 7838,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "VSC",
+    "name": "Veterinarno stocharski centar AD Kumanovo",
+    "price": 309,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "VTKS",
+    "name": "Veteks AD Veles",
+    "price": 1002,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZAS",
+    "name": "ZhAS AD Skopje",
+    "price": 27,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZELE",
+    "name": "Chelichen liv i granulat Zheleznik Demir Hisar",
+    "price": 787,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZILU",
+    "name": "Zhito Luks AD Skopje",
+    "price": 125,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZILUP",
+    "name": "Zhito Luks AD Skopje",
+    "price": 560,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZKAR",
+    "name": "Zhito Karaorman AD Kichevo",
+    "price": 615,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZLRB",
+    "name": "Zlatara Rubin Skopje",
+    "price": 3100,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZPKO",
+    "name": "ZK Pelagonija AD Bitola",
+    "price": 3500,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZPOG",
+    "name": "Zhito Polog AD Tetovo",
+    "price": 3000,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZSIL",
+    "name": "ZS Ilinden Skopje",
+    "price": 80,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  },
+  {
+    "code": "ZUS",
+    "name": "ZUS Skopje",
+    "price": 113,
+    "change_pct": 0,
+    "volume": 0,
+    "turnover": 0,
+    "date": "2025-12-12"
+  }
+]

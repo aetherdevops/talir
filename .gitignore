@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Logs and Debug
+*.log
+debug*
+dump*
+audit*
+
+# VS Code
+.vscode/
+
+# Node (in case it spills over, though talir has its own)
+node_modules/
