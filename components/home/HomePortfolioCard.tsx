@@ -6,14 +6,17 @@ import { usePortfolioStore } from "@/lib/stores/portfolio"
 import { CreatePortfolioModal } from "@/components/portfolio/CreatePortfolioModal"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import { useRequireAuth } from '@/lib/auth/use-require-auth'
 
 export function HomePortfolioCard() {
     const { portfolios } = usePortfolioStore()
     const router = useRouter()
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false)
     const { createPortfolio } = usePortfolioStore()
+    const { requireAuth } = useRequireAuth()
 
     const handleAction = () => {
+        if (!requireAuth()) return
         if (portfolios.length === 0) {
             setIsCreateModalOpen(true)
         } else {
@@ -38,6 +41,7 @@ export function HomePortfolioCard() {
                 isOpen={isCreateModalOpen}
                 onClose={() => setIsCreateModalOpen(false)}
                 onCreate={(name) => {
+                    if (!requireAuth()) return
                     createPortfolio(name)
                     router.push('/portfolio')
                 }}

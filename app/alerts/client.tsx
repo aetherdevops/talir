@@ -1,6 +1,7 @@
-"use client"
+'use client'
 
 import { useAlertsStore, Alert } from '@/lib/stores/alerts'
+import { isAlertExpired } from '@/lib/alerts/evaluate'
 import { Bell, Trash2, ArrowUpRight, ArrowDownRight, Clock, Pencil } from 'lucide-react'
 import { formatPrice } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
@@ -23,7 +24,9 @@ export function AlertsClient() {
         <div className="max-w-5xl mx-auto p-6 space-y-8">
             <header>
                 <h1 className="text-3xl font-bold text-text-primary mb-2">My Alerts</h1>
-                <p className="text-text-secondary">Manage and track your price notifications.</p>
+                <p className="text-text-secondary">
+                    In-app price notifications. You will see triggered alerts here — email delivery comes later.
+                </p>
             </header>
 
             {alerts.length === 0 ? (
@@ -33,7 +36,7 @@ export function AlertsClient() {
                     </div>
                     <h3 className="text-lg font-bold text-text-primary mb-2">No active alerts</h3>
                     <p className="text-text-secondary max-w-sm text-center mb-6">
-                        You haven't set any price alerts yet. Go to a stock page to create one.
+                        Create a price alert from any stock page. Sign in to save alerts across devices.
                     </p>
                     <Link href="/markets">
                         <Button>Browse Markets</Button>
@@ -41,79 +44,90 @@ export function AlertsClient() {
                 </div>
             ) : (
                 <div className="grid gap-4">
-                    {alerts.map((alert) => (
-                        <div
-                            key={alert.id}
-                            className="bg-surface border border-border rounded-xl p-5 flex items-center justify-between group hover:border-brand-500/30 transition-all"
-                        >
-                            <div className="flex items-center gap-5">
-                                {/* Toggle Switch */}
-                                <button
-                                    onClick={() => toggleAlert(alert.id)}
-                                    className={`w-12 h-6 rounded-full transition-all relative ${alert.isActive ? 'bg-brand-500' : 'bg-surface-tertiary'
-                                        }`}
-                                >
-                                    <div className={`absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform shadow-sm ${alert.isActive ? 'translate-x-6' : 'translate-x-0'
-                                        }`} />
-                                </button>
+                    {alerts.map((alert) => {
+                        const expired = isAlertExpired(alert)
+                        const triggered = Boolean(alert.triggeredAt)
 
-                                {/* Symbol Info */}
-                                <div>
-                                    <Link href={`/stock/${alert.symbol}`} className="font-bold text-lg text-text-primary hover:text-brand-500 transition-colors">
-                                        {alert.symbol}
-                                    </Link>
-                                    <div className="flex items-center gap-2 text-xs text-text-tertiary mt-1">
-                                        <Clock className="h-3 w-3" />
-                                        {alert.expiration.isOpenEnded
-                                            ? 'Open-ended'
-                                            : `Expires ${alert.expiration.date} ${alert.expiration.time}`
-                                        }
+                        return (
+                            <div
+                                key={alert.id}
+                                className="bg-surface border border-border rounded-xl p-5 flex items-center justify-between group hover:border-brand-500/30 transition-all"
+                            >
+                                <div className="flex items-center gap-5 flex-wrap">
+                                    <button
+                                        onClick={() => toggleAlert(alert.id)}
+                                        disabled={triggered || expired}
+                                        className={`w-12 h-6 rounded-full transition-all relative disabled:opacity-50 ${alert.isActive ? 'bg-brand-500' : 'bg-surface-tertiary'}`}
+                                    >
+                                        <div className={`absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform shadow-sm ${alert.isActive ? 'translate-x-6' : 'translate-x-0'}`} />
+                                    </button>
+
+                                    <div>
+                                        <div className="flex items-center gap-2">
+                                            <Link href={`/stock/${alert.symbol}`} className="font-bold text-lg text-text-primary hover:text-brand-500 transition-colors">
+                                                {alert.symbol}
+                                            </Link>
+                                            {triggered && (
+                                                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600">
+                                                    Triggered
+                                                </span>
+                                            )}
+                                            {expired && !triggered && (
+                                                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-surface-tertiary text-text-tertiary">
+                                                    Expired
+                                                </span>
+                                            )}
+                                        </div>
+                                        <div className="flex items-center gap-2 text-xs text-text-tertiary mt-1">
+                                            <Clock className="h-3 w-3" />
+                                            {alert.expiration.isOpenEnded
+                                                ? 'Open-ended'
+                                                : `Expires ${alert.expiration.date} ${alert.expiration.time}`}
+                                        </div>
+                                    </div>
+
+                                    <div className="h-8 w-px bg-border mx-2 hidden sm:block" />
+
+                                    <div className="flex flex-wrap gap-2">
+                                        {alert.conditions.map((cond, idx) => (
+                                            <div
+                                                key={idx}
+                                                className={`px-3 py-1.5 rounded-full text-sm font-medium flex items-center gap-1.5 border ${cond.type === 'above'
+                                                    ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20'
+                                                    : 'bg-red-500/10 text-red-500 border-red-500/20'
+                                                    }`}
+                                            >
+                                                {cond.type === 'above'
+                                                    ? <ArrowUpRight className="h-3.5 w-3.5" />
+                                                    : <ArrowDownRight className="h-3.5 w-3.5" />
+                                                }
+                                                {formatPrice(cond.value)}
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
 
-                                {/* Divider */}
-                                <div className="h-8 w-px bg-border mx-2" />
-
-                                {/* Conditions */}
-                                <div className="flex flex-wrap gap-2">
-                                    {alert.conditions.map((cond, idx) => (
-                                        <div
-                                            key={idx}
-                                            className={`px-3 py-1.5 rounded-full text-sm font-medium flex items-center gap-1.5 border ${cond.type === 'above'
-                                                ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20'
-                                                : 'bg-red-500/10 text-red-500 border-red-500/20'
-                                                }`}
-                                        >
-                                            {cond.type === 'above'
-                                                ? <ArrowUpRight className="h-3.5 w-3.5" />
-                                                : <ArrowDownRight className="h-3.5 w-3.5" />
-                                            }
-                                            {formatPrice(cond.value)}
-                                        </div>
-                                    ))}
+                                <div className="flex items-center gap-2">
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        className="text-text-tertiary hover:text-text-primary hover:bg-surface-secondary"
+                                        onClick={() => setEditingAlert(alert)}
+                                    >
+                                        <Pencil className="h-4 w-4" />
+                                    </Button>
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        className="text-text-tertiary hover:text-red-500 hover:bg-red-500/10"
+                                        onClick={() => removeAlert(alert.id)}
+                                    >
+                                        <Trash2 className="h-4 w-4" />
+                                    </Button>
                                 </div>
                             </div>
-
-                            <div className="flex items-center gap-2">
-                                <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    className="text-text-tertiary hover:text-text-primary hover:bg-surface-secondary"
-                                    onClick={() => setEditingAlert(alert)}
-                                >
-                                    <Pencil className="h-4 w-4" />
-                                </Button>
-                                <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    className="text-text-tertiary hover:text-red-500 hover:bg-red-500/10"
-                                    onClick={() => removeAlert(alert.id)}
-                                >
-                                    <Trash2 className="h-4 w-4" />
-                                </Button>
-                            </div>
-                        </div>
-                    ))}
+                        )
+                    })}
                 </div>
             )}
 

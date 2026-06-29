@@ -8,6 +8,7 @@ import { Bell, ChevronDown, Calendar as CalendarIcon, Clock, Plus, Trash2, X } f
 import { formatPrice } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 import { useAlertsStore, Alert } from '@/lib/stores/alerts'
+import { useRequireAuth } from '@/lib/auth/use-require-auth'
 
 interface AddAlertModalProps {
     isOpen: boolean
@@ -19,6 +20,7 @@ interface AddAlertModalProps {
 
 export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialData }: AddAlertModalProps) {
     const { addAlert, updateAlert } = useAlertsStore()
+    const { requireAuth } = useRequireAuth()
     const isEditing = !!initialData
 
     // State
@@ -35,7 +37,6 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
     const [expirationDate, setExpirationDate] = useState(initialData?.expiration.date ?? defaultDate.toISOString().split('T')[0])
     const [expirationTime, setExpirationTime] = useState(initialData?.expiration.time ?? '12:00')
 
-    const [email, setEmail] = useState(initialData?.email ?? '')
     const [isSubmitting, setIsSubmitting] = useState(false)
 
     // Handlers
@@ -59,35 +60,31 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+        if (!requireAuth()) return
+
         setIsSubmitting(true)
 
-        // Save to store
-        // Simulate delay for effect
-        setTimeout(() => {
-            const alertData = {
-                symbol,
-                conditions: conditions.map(c => ({
-                    type: c.type,
-                    value: parseFloat(c.value) || 0
-                })),
-                expiration: {
-                    isOpenEnded,
-                    date: isOpenEnded ? undefined : expirationDate,
-                    time: isOpenEnded ? undefined : expirationTime
-                },
-                email
-            }
+        const alertData = {
+            symbol,
+            conditions: conditions.map(c => ({
+                type: c.type,
+                value: parseFloat(c.value) || 0
+            })),
+            expiration: {
+                isOpenEnded,
+                date: isOpenEnded ? undefined : expirationDate,
+                time: isOpenEnded ? undefined : expirationTime
+            },
+        }
 
-            if (isEditing && initialData) {
-                updateAlert(initialData.id, alertData)
-            } else {
-                addAlert(alertData)
-            }
+        if (isEditing && initialData) {
+            updateAlert(initialData.id, { ...alertData, triggeredAt: null, isActive: true })
+        } else {
+            addAlert(alertData)
+        }
 
-            setIsSubmitting(false)
-            onClose()
-            // Reset form could go here, but modal unmounts usually
-        }, 500)
+        setIsSubmitting(false)
+        onClose()
     }
 
     return (
@@ -204,18 +201,9 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
                     )}
                 </div>
 
-                {/* Email Section */}
-                <div className="pt-4 border-t border-border space-y-2">
-                    <label className="text-xs font-semibold text-text-secondary uppercase tracking-wider">Notify me via Email</label>
-                    <input
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-surface border border-border rounded-lg px-4 py-2.5 text-sm text-text-primary focus:ring-1 focus:ring-brand-500 outline-none placeholder:text-text-tertiary"
-                        placeholder="email@example.com"
-                    />
-                </div>
+                <p className="text-xs text-text-tertiary border-t border-border pt-4">
+                    You will be notified in the app when this alert triggers. Email delivery is coming later.
+                </p>
 
                 {/* Actions */}
                 <div className="flex gap-3 pt-2">

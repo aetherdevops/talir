@@ -11,6 +11,7 @@ import { AddHoldingModal } from '@/components/portfolio/AddHoldingModal'
 import { AddAlertModal } from './AddAlertModal'
 import { cn } from '@/lib/utils'
 import { StockSummary } from '@/lib/types'
+import { useRequireAuth } from '@/lib/auth/use-require-auth'
 
 interface StockPageActionsProps {
     stockCode: string
@@ -22,6 +23,7 @@ interface StockPageActionsProps {
 export function StockPageActions({ stockCode, stockData, variant = 'default', className }: StockPageActionsProps) {
     const { watchlists, addToList, removeFromList, isInList, createList } = useWatchlistStore()
     const { portfolios, createPortfolio } = usePortfolioStore()
+    const { requireAuth } = useRequireAuth()
 
     const [isWatchlistDropdownOpen, setIsWatchlistDropdownOpen] = useState(false)
     const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false)
@@ -35,6 +37,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
     const [selectedPortfolioId, setSelectedPortfolioId] = useState<string | undefined>(undefined)
 
     const handleWatchlistToggle = (listId: string) => {
+        if (!requireAuth()) return
         if (isInList(listId, stockCode)) {
             removeFromList(listId, stockCode)
         } else {
@@ -187,6 +190,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                                         onClick={(e) => {
                                             e.preventDefault()
                                             e.stopPropagation()
+                                            if (!requireAuth()) return
                                             handleOpenAddHolding(p.id)
                                         }}
                                     >
@@ -225,6 +229,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                 onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
+                    if (!requireAuth()) return
                     setIsAddAlertModalOpen(true)
                 }}
                 title="Set Alert"
@@ -251,13 +256,19 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
             <CreateListModal
                 isOpen={isCreateListModalOpen}
                 onClose={() => setIsCreateListModalOpen(false)}
-                onCreate={(name) => createList(name)}
+                onCreate={(name) => {
+                    if (!requireAuth()) return
+                    createList(name)
+                }}
             />
 
             <CreatePortfolioModal
                 isOpen={isCreatePortfolioModalOpen}
                 onClose={() => setIsCreatePortfolioModalOpen(false)}
-                onCreate={(name) => createPortfolio(name)}
+                onCreate={(name) => {
+                    if (!requireAuth()) return
+                    createPortfolio(name)
+                }}
             />
 
             <AddHoldingModal

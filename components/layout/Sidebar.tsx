@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { useThemeStore } from '@/lib/store'
 import { usePortfolioStore } from '@/lib/stores/portfolio'
+import { useRequireAuth } from '@/lib/auth/use-require-auth'
 import { CreatePortfolioModal } from "@/components/portfolio/CreatePortfolioModal"
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -80,6 +81,7 @@ export function Sidebar({ className }: { className?: string }) {
     const router = useRouter()
     const { isSidebarOpen, toggleSidebar } = useThemeStore()
     const { createPortfolio, portfolios, activePortfolioId, setActivePortfolio } = usePortfolioStore()
+    const { requireAuth } = useRequireAuth()
     const [mounted, setMounted] = useState(false)
     const [isCreatePortfolioModalOpen, setIsCreatePortfolioModalOpen] = useState(false)
 
@@ -107,7 +109,7 @@ export function Sidebar({ className }: { className?: string }) {
 
                     <SectionHeader
                         label="Portfolios"
-                        onAdd={() => setIsCreatePortfolioModalOpen(true)}
+                        onAdd={() => { if (requireAuth()) setIsCreatePortfolioModalOpen(true) }}
                         isCollapsed={!isOpen}
                     />
 
@@ -167,8 +169,8 @@ export function Sidebar({ className }: { className?: string }) {
                 isOpen={isCreatePortfolioModalOpen}
                 onClose={() => setIsCreatePortfolioModalOpen(false)}
                 onCreate={(name) => {
+                    if (!requireAuth()) return
                     createPortfolio(name)
-                    // Optionally navigate to portfolio page if not there, or force refresh if needed
                     if (!pathname.startsWith('/portfolio')) {
                         router.push('/portfolio')
                     }

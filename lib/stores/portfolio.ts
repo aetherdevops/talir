@@ -34,6 +34,7 @@ interface PortfolioState {
     updateHolding: (portfolioId: string, holdingId: string, updates: Partial<Holding>) => void
     removeHolding: (portfolioId: string, holdingId: string) => void
     getHolding: (portfolioId: string, holdingId: string) => Holding | undefined
+    replaceAll: (portfolios: Portfolio[], activePortfolioId: string | null) => void
 }
 
 export const usePortfolioStore = create<PortfolioState>()(
@@ -130,7 +131,12 @@ export const usePortfolioStore = create<PortfolioState>()(
             getHolding: (portfolioId, holdingId) => {
                 const portfolio = get().portfolios.find(p => p.id === portfolioId)
                 return portfolio?.holdings.find(h => h.id === holdingId)
-            }
+            },
+
+            replaceAll: (portfolios, activePortfolioId) => set({
+                portfolios,
+                activePortfolioId,
+            }),
         }),
         {
             name: 'talir-portfolio-storage',

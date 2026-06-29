@@ -25,6 +25,7 @@ interface WatchlistState {
     addToList: (listId: string, code: string) => void
     removeFromList: (listId: string, code: string) => void
     isInList: (listId: string, code: string) => boolean
+    replaceAll: (watchlists: Watchlist[], activeListId: string | null) => void
 }
 
 export const useWatchlistStore = create<WatchlistState>()(
@@ -108,7 +109,12 @@ export const useWatchlistStore = create<WatchlistState>()(
             isInList: (listId, code) => {
                 const list = get().watchlists.find(l => l.id === listId)
                 return list ? list.items.some(i => i.code === code) : false
-            }
+            },
+
+            replaceAll: (watchlists, activeListId) => set({
+                watchlists,
+                activeListId,
+            }),
         }),
         {
             name: 'talir-watchlist-storage',

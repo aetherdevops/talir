@@ -6,6 +6,7 @@ import { Sidebar } from '@/components/layout/Sidebar'
 import { BottomNav } from '@/components/layout/BottomNav'
 import { cn } from '@/lib/utils'
 import { getAllInstruments } from '@/lib/data'
+import { AppProviders } from '@/components/providers/AppProviders'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
@@ -61,6 +62,7 @@ export default async function RootLayout({
         inter.variable,
         jetbrainsMono.variable
       )}>
+        <AppProviders>
         {/* Header: Fixed Height, non-sticky (flex item) */}
         <Header instruments={instruments} />
 
@@ -81,6 +83,7 @@ export default async function RootLayout({
 
         {/* Mobile Nav: Fixed bottom (handled internally or naturally covers) */}
         <BottomNav />
+        </AppProviders>
       </body>
     </html>
   )

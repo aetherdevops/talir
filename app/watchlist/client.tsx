@@ -1,7 +1,7 @@
 
 "use client"
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useWatchlistStore } from "@/lib/stores/watchlist"
 import { getAllStocks } from "@/lib/data"
 import { WatchlistEmptyState } from "@/components/watchlist/WatchlistEmptyState"
@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils"
 import Link from 'next/link'
 import { RenameListModal } from "@/components/watchlist/RenameListModal"
 import { NewsSection } from "@/components/common/NewsSection"
+import { useRequireAuth } from '@/lib/auth/use-require-auth'
 // Import data fetching - in a client component we might need to pass data as props or use SWR/React Query.
 // For this hybrid approach, we'll fetch in page wrapper and pass down, OR use a useEffect to load essential data.
 // Since getAllStocks is async and reads file, it's server-only usually. 
@@ -33,6 +34,7 @@ interface WatchlistPageProps {
 
 export function WatchlistClient({ stockData }: WatchlistPageProps) {
     const { watchlists, activeListId, setActiveList, deleteList, removeFromList } = useWatchlistStore()
+    const { requireAuth } = useRequireAuth()
 
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false)
     const [isRenameModalOpen, setIsRenameModalOpen] = useState(false)
@@ -46,7 +48,7 @@ export function WatchlistClient({ stockData }: WatchlistPageProps) {
 
     // Handle initial hydration (persist middleware might take a tick)
     const [hydrated, setHydrated] = useState(false)
-    useState(() => { setHydrated(true) }) // Simple hydration check, or use useStore hook trick
+    useEffect(() => { setHydrated(true) }, [])
 
     const activeList = watchlists.find(w => w.id === activeListId) || watchlists[0]
 
@@ -80,7 +82,7 @@ export function WatchlistClient({ stockData }: WatchlistPageProps) {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <h1 className="text-3xl font-normal tracking-tight text-text-primary">Your Lists</h1>
-                <Button onClick={() => setIsCreateModalOpen(true)} variant="secondary" size="sm">
+                <Button onClick={() => { if (requireAuth()) setIsCreateModalOpen(true) }} variant="secondary" size="sm">
                     <Plus className="w-4 h-4 mr-2" /> New list
                 </Button>
             </div>
@@ -173,7 +175,7 @@ export function WatchlistClient({ stockData }: WatchlistPageProps) {
                         </div>
                     </div>
                     {activeList.items.length > 0 && (
-                        <Button onClick={() => setIsAddModalOpen(true)}>
+                        <Button onClick={() => { if (requireAuth()) setIsAddModalOpen(true) }}>
                             <Plus className="w-4 h-4 mr-2" /> Add investments
                         </Button>
                     )}
@@ -199,7 +201,7 @@ export function WatchlistClient({ stockData }: WatchlistPageProps) {
                         ))}
                     </div>
                 ) : (
-                    <WatchlistEmptyState onAdd={() => setIsAddModalOpen(true)} />
+                    <WatchlistEmptyState onAdd={() => { if (requireAuth()) setIsAddModalOpen(true) }} />
                 )}
             </div>
 
@@ -211,7 +213,10 @@ export function WatchlistClient({ stockData }: WatchlistPageProps) {
             <CreateListModal
                 isOpen={isCreateModalOpen}
                 onClose={() => setIsCreateModalOpen(false)}
-                onCreate={(name) => useWatchlistStore.getState().createList(name)}
+                onCreate={(name) => {
+                    if (!requireAuth()) return
+                    useWatchlistStore.getState().createList(name)
+                }}
             />
 
             <RenameListModal

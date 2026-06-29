@@ -18,6 +18,7 @@ import { RenamePortfolioModal } from "@/components/portfolio/RenamePortfolioModa
 import { PortfolioTreemap } from "@/components/portfolio/PortfolioTreemap"
 import { SortMenu, SortField, SortDirection } from "@/components/portfolio/SortMenu"
 import { NewsSection } from "@/components/common/NewsSection"
+import { useRequireAuth } from '@/lib/auth/use-require-auth'
 
 interface PortfolioPageProps {
     stockData: StockSummary[]
@@ -25,6 +26,7 @@ interface PortfolioPageProps {
 
 export function PortfolioClient({ stockData }: PortfolioPageProps) {
     const { portfolios, activePortfolioId, setActivePortfolio, removeHolding, createPortfolio, deletePortfolio, renamePortfolio, copyPortfolio } = usePortfolioStore()
+    const { requireAuth } = useRequireAuth()
 
     const [isAddModalOpen, setIsAddModalOpen] = useState(false)
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false)
@@ -60,6 +62,7 @@ export function PortfolioClient({ stockData }: PortfolioPageProps) {
     }
 
     const handleAddInvestment = (code?: string) => {
+        if (!requireAuth()) return
         setInitialStockCode(code)
         setIsAddModalOpen(true)
     }
@@ -200,7 +203,7 @@ export function PortfolioClient({ stockData }: PortfolioPageProps) {
                             {p.name}
                         </button>
                     ))}
-                    <Button variant="ghost" size="sm" onClick={() => setIsCreateModalOpen(true)} className="text-brand-500 hover:text-brand-600 font-medium whitespace-nowrap">
+                    <Button variant="ghost" size="sm" onClick={() => { if (requireAuth()) setIsCreateModalOpen(true) }} className="text-brand-500 hover:text-brand-600 font-medium whitespace-nowrap">
                         + New portfolio
                     </Button>
                 </div>
@@ -456,7 +459,10 @@ export function PortfolioClient({ stockData }: PortfolioPageProps) {
             <CreatePortfolioModal
                 isOpen={isCreateModalOpen}
                 onClose={() => setIsCreateModalOpen(false)}
-                onCreate={(name) => createPortfolio(name)}
+                onCreate={(name) => {
+                    if (!requireAuth()) return
+                    createPortfolio(name)
+                }}
             />
             {activePortfolio && (
                 <>
