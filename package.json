@@ -15,7 +15,9 @@
     "script:indices": "tsx scripts/scrape_indices.ts",
     "script:backfill": "tsx scripts/backfill.ts",
     "script:update": "tsx scripts/update.ts",
-    "script:sync": "tsx scripts/sync_stock_data.ts"
+    "script:sync": "tsx scripts/sync_stock_data.ts",
+    "generate:sparklines": "node scripts/generate-sparklines.mjs",
+    "prebuild": "node scripts/generate-sparklines.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",

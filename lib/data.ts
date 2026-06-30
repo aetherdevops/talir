@@ -6,6 +6,7 @@ import { transliterate } from './transliterate'
 // Static Data Imports (Bundled) - Using @/lib/data guaranteed to be in the build
 import marketSummaryData from '@/lib/data/market_summary.json'
 import issuersData from '@/lib/data/issuers.json'
+import sparklinesData from '@/lib/data/sparklines.json'
 
 // Unified fetcher for both stocks and indices
 export async function getAllInstruments(): Promise<StockSummary[]> {
@@ -198,33 +199,11 @@ export function getMarketDataAsOf(stocks: StockSummary[]): string {
     return dates.length > 0 ? dates[dates.length - 1] : new Date().toISOString().split('T')[0]
 }
 
-/** Batch-load sparklines with limited concurrency (for API route). */
-export async function buildSparklineMap(
-    codes: string[],
-    concurrency = 15
-): Promise<Record<string, { date: string; value: number }[]>> {
-    const result: Record<string, { date: string; value: number }[]> = {}
-    const queue = [...codes]
+export type SparklineMap = Record<string, { date: string; value: number }[]>
 
-    async function worker() {
-        while (queue.length > 0) {
-            const code = queue.shift()
-            if (!code) break
-            try {
-                const data = await getStock(code)
-                result[code] = data?.history?.length
-                    ? getRecentDailyCloses(data.history, 30)
-                    : []
-            } catch {
-                result[code] = []
-            }
-        }
-    }
-
-    await Promise.all(
-        Array.from({ length: Math.min(concurrency, codes.length) }, () => worker())
-    )
-    return result
+/** Precomputed 30-day sparklines — see scripts/generate-sparklines.mjs */
+export function getMarketSparklines(): SparklineMap {
+    return sparklinesData as SparklineMap
 }
 
 // Chart Data Helper

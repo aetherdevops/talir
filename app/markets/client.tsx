@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useMemo, useEffect, useCallback } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { StockSummary } from '@/lib/types'
-import type { MarketSentiment } from '@/lib/data'
+import type { MarketSentiment, SparklineMap } from '@/lib/data'
 import { Search, ArrowUp, ArrowDown } from 'lucide-react'
 import { MarketInstrumentRow } from '@/components/markets/MarketInstrumentRow'
 import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
@@ -15,12 +15,13 @@ interface MarketsClientProps {
     initialStocks: StockSummary[]
     sentiment: MarketSentiment
     asOfDate: string
+    sparklines: SparklineMap
 }
 
 type SortKey = 'turnover' | 'change' | 'price' | 'name'
 type SortOrder = 'asc' | 'desc'
 
-export function MarketsClient({ initialStocks, sentiment, asOfDate }: MarketsClientProps) {
+export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }: MarketsClientProps) {
     const searchParams = useSearchParams()
     const router = useRouter()
 
@@ -33,20 +34,6 @@ export function MarketsClient({ initialStocks, sentiment, asOfDate }: MarketsCli
     const [sortOrder, setSortOrder] = useState<SortOrder>(
         (searchParams.get('order') as SortOrder) || 'desc'
     )
-    const [sparklines, setSparklines] = useState<Record<string, { date: string; value: number }[]>>({})
-
-    useEffect(() => {
-        let cancelled = false
-        fetch('/api/markets/sparklines')
-            .then((r) => r.json())
-            .then((data) => {
-                if (!cancelled) setSparklines(data)
-            })
-            .catch(() => {})
-        return () => {
-            cancelled = true
-        }
-    }, [])
 
     const syncUrl = useCallback(
         (key: SortKey, order: SortOrder) => {
