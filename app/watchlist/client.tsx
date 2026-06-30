@@ -26,13 +26,14 @@ import { useRequireAuth } from '@/lib/auth/use-require-auth'
 // Actually, easier to make this the page but we can't fully use `getAllStocks` directly if it uses `fs`.
 // We need `getAllStocks` to be called in the default export (Server Component) and pass data to client.
 
-import { StockSummary } from '@/lib/types'
+import { StockSummary, NewsItem } from '@/lib/types'
 
 interface WatchlistPageProps {
     stockData: StockSummary[]
+    news: NewsItem[]
 }
 
-export function WatchlistClient({ stockData }: WatchlistPageProps) {
+export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
     const { watchlists, activeListId, setActiveList, deleteList, removeFromList } = useWatchlistStore()
     const { requireAuth } = useRequireAuth()
 
@@ -207,7 +208,7 @@ export function WatchlistClient({ stockData }: WatchlistPageProps) {
 
             {/* Watchlist News */}
             <div className="mt-8">
-                <NewsSection limit={20} title="Watchlist News" />
+                <NewsSection items={news} title="Watchlist News" />
             </div>
 
             <CreateListModal

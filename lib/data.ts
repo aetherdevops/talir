@@ -1,14 +1,6 @@
-export interface NewsItem {
-    id: string
-    title: string
-    source: string
-    publishedAt: string
-    imageUrl?: string
-    url?: string
-}
-
-import { StockData, StockSummary, DailyPrice, MarketIndex } from './types'
-export type { StockData, StockSummary, DailyPrice, MarketIndex }
+import { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem } from './types'
+export type { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem }
+import { buildNewsFromIssuers } from './news'
 import { transliterate } from './transliterate'
 
 // Static Data Imports (Bundled) - Using @/lib/data guaranteed to be in the build
@@ -129,6 +121,22 @@ export async function getTopLosers(limit: number = 5): Promise<StockSummary[]> {
 export async function getMostActive(limit: number = 5): Promise<StockSummary[]> {
     const all = await getAllStocks()
     return all.sort((a, b) => b.turnover - a.turnover).slice(0, limit)
+}
+
+export async function enrichStocksWithChartSeries(stocks: StockSummary[]): Promise<StockSummary[]> {
+    return Promise.all(
+        stocks.map(async (stock) => {
+            const data = await getStock(stock.code)
+            if (!data?.history?.length) {
+                return { ...stock, chartSeries: [] }
+            }
+            const chartSeries = getChartData(data.history, 12).map((d) => ({
+                date: d.time,
+                value: d.value,
+            }))
+            return { ...stock, chartSeries }
+        })
+    )
 }
 
 // Chart Data Helper
@@ -276,34 +284,10 @@ export async function getMarketIndices(): Promise<MarketIndex[]> {
     }
 }
 
-export async function getLatestNews(limit: number = 6): Promise<NewsItem[]> {
+export async function getLatestNews(limit: number = 6, stockCode?: string): Promise<NewsItem[]> {
     try {
         const issuers = await getIssuers()
-        const allReports: NewsItem[] = []
-
-        issuers.forEach(issuer => {
-            if (issuer.reportLinks) {
-                issuer.reportLinks.forEach((report: any, index: number) => {
-                    const date = parseDateFromTitle(report.title, report.date)
-                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                    const titleClean = report.title.replace(/^\d{1,2}\/\d{1,2}\/\d{4}\s-\s/, '').split(' - ')[1] || report.title
-
-                    allReports.push({
-                        id: `${issuer.code}-${index}`,
-                        title: `${issuer.code}: ${report.title}`,
-                        source: 'MSE',
-                        publishedAt: date.toISOString(),
-                        imageUrl: undefined, // No images for reports
-                        url: report.url
-                    })
-                })
-            }
-        })
-
-        return allReports
-            .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-            .slice(0, limit)
-
+        return buildNewsFromIssuers(issuers, limit, parseDateFromTitle, stockCode)
     } catch (e) {
         console.error("Error loading news", e)
         return []

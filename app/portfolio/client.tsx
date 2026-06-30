@@ -3,7 +3,7 @@
 
 import { useState, useMemo, useEffect } from 'react'
 import { usePortfolioStore } from "@/lib/stores/portfolio"
-import { StockSummary } from "@/lib/types"
+import { StockSummary, NewsItem } from "@/lib/types"
 import { PortfolioEmptyState } from "@/components/portfolio/PortfolioEmptyState"
 import { AddHoldingModal } from "@/components/portfolio/AddHoldingModal"
 import { CreatePortfolioModal } from "@/components/portfolio/CreatePortfolioModal"
@@ -22,9 +22,10 @@ import { useRequireAuth } from '@/lib/auth/use-require-auth'
 
 interface PortfolioPageProps {
     stockData: StockSummary[]
+    news: NewsItem[]
 }
 
-export function PortfolioClient({ stockData }: PortfolioPageProps) {
+export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
     const { portfolios, activePortfolioId, setActivePortfolio, removeHolding, createPortfolio, deletePortfolio, renamePortfolio, copyPortfolio } = usePortfolioStore()
     const { requireAuth } = useRequireAuth()
 
@@ -319,7 +320,7 @@ export function PortfolioClient({ stockData }: PortfolioPageProps) {
                         {/* News Tab */}
                         {activeTab === 'news' && (
                             <div className="pt-6">
-                                <NewsSection limit={20} title="Portfolio News" />
+                                <NewsSection items={news} title="Portfolio News" />
                             </div>
                         )}
 

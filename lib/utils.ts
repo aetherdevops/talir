@@ -37,3 +37,12 @@ export function formatPriceChange(change: number) {
     if (change === 0) return "0.00%"
     return (change > 0 ? "+" : "") + change.toFixed(2) + "%"
 }
+
+/** Period change % from first to last point in a chart series (e.g. 12M). */
+export function getPeriodChangePercent(series: { value: number }[]): number {
+    if (!series.length) return 0
+    const first = series[0].value
+    const last = series[series.length - 1].value
+    if (first === 0) return 0
+    return ((last - first) / first) * 100
+}

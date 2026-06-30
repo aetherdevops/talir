@@ -1,8 +1,11 @@
 
-import { getAllInstruments } from "@/lib/data"
+import { getAllInstruments, getLatestNews } from "@/lib/data"
 import { PortfolioClient } from "./client"
 
 export default async function PortfolioPage() {
-    const stockData = await getAllInstruments()
-    return <PortfolioClient stockData={stockData} />
+    const [stockData, news] = await Promise.all([
+        getAllInstruments(),
+        getLatestNews(20),
+    ])
+    return <PortfolioClient stockData={stockData} news={news} />
 }

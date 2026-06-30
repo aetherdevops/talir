@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "setup": "node scripts/setup-local.mjs",
+    "db:apply": "node scripts/apply-supabase-migrations.mjs",
     "preview": "node scripts/setup-local.mjs --check && next dev",
     "predev": "node scripts/setup-local.mjs --check",
     "dev": "next dev",

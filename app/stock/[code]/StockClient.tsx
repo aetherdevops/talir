@@ -14,7 +14,7 @@ import { usePreferencesStore, type ChartRange } from '@/lib/stores/preferences'
 import { PortfolioHoldingIndicator } from '@/components/portfolio/PortfolioHoldingIndicator'
 import { NewsSection } from '@/components/common/NewsSection'
 import { ResponsiveText } from '@/components/ui/ResponsiveText'
-import { StockSummary, DailyPrice } from '@/lib/types'
+import { StockSummary, DailyPrice, NewsItem } from '@/lib/types'
 
 // Replicate the ChartData interface locally or import it
 interface ChartData {
@@ -28,6 +28,7 @@ interface StockClientProps {
     history: DailyPrice[]
     currentPrice: number
     chartData: ChartData[]
+    news: NewsItem[]
 }
 
 type Timeframe = '1D' | '5D' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '5Y' | 'MAX'
@@ -36,7 +37,7 @@ function chartRangeToTimeframe(range: ChartRange): Timeframe {
     return range as Timeframe
 }
 
-export function StockClient({ stock, history, currentPrice, chartData }: StockClientProps) {
+export function StockClient({ stock, history, currentPrice, chartData, news }: StockClientProps) {
     const defaultChartRange = usePreferencesStore((s) => s.defaultChartRange)
     const [timeframe, setTimeframe] = useState<Timeframe>(() => chartRangeToTimeframe(defaultChartRange))
     const [activeTab, setActiveTab] = useState<'news' | 'docs'>('news')
@@ -249,7 +250,7 @@ export function StockClient({ stock, history, currentPrice, chartData }: StockCl
                         </div>
 
                         {activeTab === 'news' ? (
-                            <NewsSection stockCode={stock.company_code} />
+                            <NewsSection items={news} title="" />
                         ) : (
                             <Card className="border-none shadow-none bg-transparent lg:bg-surface lg:shadow-card lg:border lg:border-border">
                                 <CardContent className="p-0 lg:p-6">

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getStock, getChartData } from '@/lib/data'
+import { getStock, getChartData, getLatestNews } from '@/lib/data'
 import { StockClient } from './StockClient'
 
 export default async function StockPage({ params }: { params: Promise<{ code: string }> }) {
@@ -17,6 +17,8 @@ export default async function StockPage({ params }: { params: Promise<{ code: st
         notFound()
     }
 
+    const news = await getLatestNews(10, code)
+
     const { history } = stock
     // JSON history is Oldest -> Newest (ASC), so latest is the last item
     const latest = history[history.length - 1] || {}
@@ -31,6 +33,7 @@ export default async function StockPage({ params }: { params: Promise<{ code: st
             history={history}
             chartData={chartData}
             currentPrice={currentPrice}
+            news={news}
         />
     )
 }

@@ -44,6 +44,7 @@ export interface StockSummary {
     turnover: number
     date: string
     type?: 'Stock' | 'Index'
+    chartSeries?: { date: string; value: number }[]
 }
 
 export interface MarketIndex {
@@ -55,11 +56,17 @@ export interface MarketIndex {
     chartSeries?: { date: string; value: number }[]
 }
 
+export type NewsCategory = 'earnings' | 'financials' | 'dividend' | 'corporate' | 'other'
+
 export interface NewsItem {
     id: string
     title: string
+    rawTitle?: string
     source: string
     publishedAt: string // ISO date
+    stockCode: string
+    stockName?: string
+    category: NewsCategory
     imageUrl?: string
-    url?: string
+    url: string
 }
