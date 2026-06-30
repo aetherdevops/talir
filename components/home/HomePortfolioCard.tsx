@@ -31,7 +31,7 @@ export function HomePortfolioCard() {
         <>
             <Button
                 variant="secondary"
-                className="bg-white/10 text-white border-white/20 hover:bg-white/20 relative z-10 backdrop-blur-md w-full sm:w-auto"
+                className="w-full sm:w-auto"
                 onClick={handleAction}
             >
                 Create Portfolio

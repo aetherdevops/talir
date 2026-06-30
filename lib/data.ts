@@ -238,40 +238,36 @@ export async function getMarketIndices(): Promise<MarketIndex[]> {
             import('@/lib/data/indices/OMB.json')
         ])
 
-        const mbi10Data = mbi10Module.default as any[]
-        const ombData = ombModule.default as any[]
+        const mbi10Data = mbi10Module.default as Array<{ date: string; value: number }>
+        const ombData = ombModule.default as Array<{ date: string; value: number }>
+
+        const oneYearAgo = new Date()
+        oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1)
+
+        const buildIndex = (name: string, data: Array<{ date: string; value: number }>): MarketIndex | null => {
+            if (!data || data.length === 0) return null
+            const latest = data[data.length - 1]
+            const prev = data.length > 1 ? data[data.length - 2] : latest
+            const change = latest.value - prev.value
+            const changePercent = prev.value !== 0 ? (change / prev.value) * 100 : 0
+            const chartSeries = data
+                .filter((d) => new Date(d.date) >= oneYearAgo)
+                .map((d) => ({ date: d.date, value: d.value }))
+
+            return {
+                name,
+                value: latest.value,
+                change,
+                changePercent,
+                chartSeries: chartSeries.length > 0 ? chartSeries : data.slice(-252).map((d) => ({ date: d.date, value: d.value })),
+            }
+        }
 
         const indices: MarketIndex[] = []
-
-        if (mbi10Data && mbi10Data.length > 0) {
-            const latest = mbi10Data[mbi10Data.length - 1]
-            const prev = mbi10Data.length > 1 ? mbi10Data[mbi10Data.length - 2] : latest
-            const change = latest.value - prev.value
-            const changePercent = (change / prev.value) * 100
-
-            indices.push({
-                name: 'MBI10',
-                value: latest.value,
-                change: change,
-                changePercent: changePercent,
-                chartData: mbi10Data.slice(-30).map((d: any) => d.value)
-            })
-        }
-
-        if (ombData && ombData.length > 0) {
-            const latest = ombData[ombData.length - 1]
-            const prev = ombData.length > 1 ? ombData[ombData.length - 2] : latest
-            const change = latest.value - prev.value
-            const changePercent = (change / prev.value) * 100
-
-            indices.push({
-                name: 'OMB',
-                value: latest.value,
-                change: change,
-                changePercent: changePercent,
-                chartData: ombData.slice(-30).map((d: any) => d.value)
-            })
-        }
+        const mbi10 = buildIndex('MBI10', mbi10Data)
+        const omb = buildIndex('OMB', ombData)
+        if (mbi10) indices.push(mbi10)
+        if (omb) indices.push(omb)
 
         return indices
     } catch (e) {

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, memo } from 'react'
 import { createChart, ColorType, IChartApi, ISeriesApi, Time } from 'lightweight-charts'
-import { cn } from '@/lib/utils'
+import { cn, formatPrice, formatInteger } from '@/lib/utils'
 import { useThemeStore } from '@/lib/store'
 
 interface ChartData {
@@ -117,8 +117,14 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, excludePeriod
             width: chartContainerRef.current.clientWidth,
             height: 400,
             autoSize: true,
-            handleScale: false,
-            handleScroll: false,
+            handleScale: {
+                axisPressedMouseMove: true,
+                pinch: true,
+            },
+            handleScroll: {
+                horzTouchDrag: true,
+                vertTouchDrag: false,
+            },
             crosshair: {
                 vertLine: {
                     width: 1,
@@ -199,8 +205,8 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, excludePeriod
                             year: 'numeric'
                         })
 
-                        const priceStr = `MKD ${dataPoint.value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-                        const volumeStr = fullData?.volume ? `Vol: ${fullData.volume.toLocaleString()}` : ''
+                        const priceStr = formatPrice(dataPoint.value)
+                        const volumeStr = fullData?.volume ? `Vol: ${formatInteger(fullData.volume)}` : ''
 
                         toolTipRef.current.innerHTML = `
                             <div class="text-sm font-bold text-text-primary whitespace-nowrap">${priceStr}</div>
@@ -266,7 +272,7 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, excludePeriod
                             key={tf}
                             onClick={() => handleTimeframeChange(tf)}
                             className={cn(
-                                "px-3 py-1 text-xs font-bold rounded-full transition-all",
+                                "px-3 py-1.5 text-xs font-bold rounded-lg transition-colors min-h-[44px] min-w-[44px]",
                                 effectiveTimeframe === tf
                                     ? "bg-brand-active text-brand-text shadow-sm"
                                     : "text-text-tertiary hover:bg-surface-secondary hover:text-text-secondary"

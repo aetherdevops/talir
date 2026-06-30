@@ -4,6 +4,7 @@ import { Modal } from "@/components/ui/Modal"
 import { Search, Plus } from "lucide-react"
 import { useWatchlistStore } from "@/lib/stores/watchlist"
 import { StockSummary } from "@/lib/types"
+import { formatPrice } from "@/lib/utils"
 
 interface AddToWatchlistModalProps {
     isOpen: boolean
@@ -66,7 +67,7 @@ export function AddToWatchlistModal({ isOpen, onClose, listId, allStocks }: AddT
                                         {stock.code}
                                         <span className="text-xs font-normal text-text-tertiary border border-border px-1.5 rounded">{stock.name}</span>
                                     </div>
-                                    <div className="text-sm font-mono mt-0.5">{stock.price.toLocaleString()} MKD</div>
+                                    <div className="text-sm font-mono mt-0.5">{formatPrice(stock.price)}</div>
                                 </div>
                                 <div className="text-brand-500 opacity-0 group-hover:opacity-100 transition-opacity">
                                     <Plus className="w-5 h-5" />

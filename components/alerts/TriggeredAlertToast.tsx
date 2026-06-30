@@ -3,11 +3,14 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Bell, X } from 'lucide-react'
+import { usePreferencesStore } from '@/lib/stores/preferences'
 
 export function TriggeredAlertToast() {
     const [message, setMessage] = useState<string | null>(null)
+    const showAlertToasts = usePreferencesStore((s) => s.showAlertToasts)
 
     useEffect(() => {
+        if (!showAlertToasts) return
         const handler = (event: Event) => {
             const detail = (event as CustomEvent<{ symbol: string }>).detail
             setMessage(`Price alert triggered for ${detail.symbol}`)
@@ -15,9 +18,9 @@ export function TriggeredAlertToast() {
 
         window.addEventListener('talir-alert-triggered', handler)
         return () => window.removeEventListener('talir-alert-triggered', handler)
-    }, [])
+    }, [showAlertToasts])
 
-    if (!message) return null
+    if (!showAlertToasts || !message) return null
 
     return (
         <div className="fixed bottom-20 md:bottom-6 right-4 z-50 max-w-sm animate-in slide-in-from-bottom-4 fade-in duration-300">

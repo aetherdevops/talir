@@ -22,6 +22,8 @@ import {
 import { useAlertsStore } from '@/lib/stores/alerts'
 import { usePortfolioStore } from '@/lib/stores/portfolio'
 import { useWatchlistStore } from '@/lib/stores/watchlist'
+import { usePreferencesStore, type UserPreferences } from '@/lib/stores/preferences'
+import { fetchPreferences, mergePreferences, savePreferences } from '@/lib/sync/preferences'
 import { ImportLocalDataModal } from '@/components/auth/ImportLocalDataModal'
 
 interface AuthContextValue {
@@ -36,6 +38,18 @@ function hydrateStores(snapshot: ReturnType<typeof readLocalDataSnapshot>) {
     useAlertsStore.getState().replaceAll(snapshot.alerts)
     usePortfolioStore.getState().replaceAll(snapshot.portfolios, snapshot.activePortfolioId)
     useWatchlistStore.getState().replaceAll(snapshot.watchlists, snapshot.activeListId)
+}
+
+function getPreferencesSnapshot(): UserPreferences {
+    const s = usePreferencesStore.getState()
+    return {
+        alertsEnabled: s.alertsEnabled,
+        showAlertToasts: s.showAlertToasts,
+        defaultChartRange: s.defaultChartRange,
+        listDensity: s.listDensity,
+        defaultPortfolioCurrency: s.defaultPortfolioCurrency,
+        locale: s.locale,
+    }
 }
 
 function getCurrentSnapshot() {
@@ -67,7 +81,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (saveTimer.current) clearTimeout(saveTimer.current)
         saveTimer.current = setTimeout(async () => {
             try {
-                await saveUserData(supabase, user.id, getCurrentSnapshot())
+                await Promise.all([
+                    saveUserData(supabase, user.id, getCurrentSnapshot()),
+                    savePreferences(supabase, user.id, getPreferencesSnapshot()),
+                ])
             } catch (error) {
                 console.error('Failed to sync user data', error)
             }
@@ -76,7 +93,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const loadRemoteData = useCallback(async (nextUser: User) => {
         syncReady.current = false
-        const remote = await fetchUserData(supabase, nextUser.id)
+        const [remote, remotePrefs] = await Promise.all([
+            fetchUserData(supabase, nextUser.id),
+            fetchPreferences(supabase, nextUser.id).catch(() => ({})),
+        ])
+        usePreferencesStore.getState().replaceAll(mergePreferences(remotePrefs))
         const remoteEmpty =
             remote.alerts.length === 0 &&
             remote.portfolios.length === 0 &&
@@ -131,11 +152,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const unsubAlerts = useAlertsStore.subscribe(scheduleSave)
         const unsubPortfolio = usePortfolioStore.subscribe(scheduleSave)
         const unsubWatchlist = useWatchlistStore.subscribe(scheduleSave)
+        const unsubPrefs = usePreferencesStore.subscribe(scheduleSave)
 
         return () => {
             unsubAlerts()
             unsubPortfolio()
             unsubWatchlist()
+            unsubPrefs()
             if (saveTimer.current) clearTimeout(saveTimer.current)
         }
     }, [scheduleSave])

@@ -1,8 +1,7 @@
 "use client"
 
 import { usePortfolioStore } from "@/lib/stores/portfolio"
-import { formatPrice } from "@/lib/utils"
-import { cn } from "@/lib/utils"
+import { formatPrice, formatInteger, cn } from "@/lib/utils"
 import { PieChart, TrendingUp, TrendingDown } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/Card"
 import { ResponsiveText } from "@/components/ui/ResponsiveText"
@@ -57,7 +56,7 @@ export function PortfolioHoldingIndicator({ stockCode, currentPrice }: Portfolio
                     <div>
                         <h3 className="font-bold text-text-primary text-sm uppercase tracking-wider">In your portfolio</h3>
                         <p className="text-xs text-text-secondary mt-0.5">
-                            You own <span className="font-bold text-text-primary">{stats.quantity.toLocaleString()}</span> shares
+                            You own <span className="font-bold text-text-primary">{formatInteger(stats.quantity)}</span> shares
                         </p>
                     </div>
                 </div>

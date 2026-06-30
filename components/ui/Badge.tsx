@@ -55,7 +55,7 @@ export function PriceChangeBadge({ change, variant = 'pill', className, ...props
             <span
                 className={cn(
                     'font-medium inline-flex items-center gap-1',
-                    isPositive ? 'text-emerald-600 dark:text-emerald-400 font-bold' : isNegative ? 'text-red-600 dark:text-red-400 font-bold' : 'text-text-secondary',
+                    isPositive ? 'text-up font-bold' : isNegative ? 'text-down font-bold' : 'text-text-secondary',
                     className
                 )}
                 {...props}
@@ -89,9 +89,7 @@ export function PriceChangeBadge({ change, variant = 'pill', className, ...props
         <span
             className={cn(
                 'px-2 py-1 rounded-lg text-xs font-bold font-mono inline-flex items-center gap-1 min-w-[72px] justify-center shadow-sm border border-transparent',
-                isPositive
-                    ? 'text-emerald-700 bg-emerald-100 dark:text-emerald-400 dark:bg-emerald-500/10'
-                    : 'text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-500/10',
+                isPositive ? 'text-up bg-up/10' : 'text-down bg-down/10',
                 className
             )}
             {...props}

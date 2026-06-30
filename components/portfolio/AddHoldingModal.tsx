@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button"
 import { Search } from "lucide-react"
 import { usePortfolioStore } from "@/lib/stores/portfolio"
 import { StockSummary } from "@/lib/types"
+import { formatPrice } from "@/lib/utils"
 
 interface AddHoldingModalProps {
     isOpen: boolean
@@ -115,7 +116,7 @@ export function AddHoldingModal({ isOpen, onClose, allStocks, portfolioId, initi
                                         <div className="font-bold text-sm text-text-primary">{stock.code}</div>
                                         <div className="text-xs text-text-secondary">{stock.name}</div>
                                     </div>
-                                    <div className="text-sm font-mono">{stock.price.toLocaleString()} MKD</div>
+                                    <div className="text-sm font-mono">{formatPrice(stock.price)}</div>
                                 </div>
                             ))}
                             {query && filteredStocks.length === 0 && (

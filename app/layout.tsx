@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Sidebar } from '@/components/layout/Sidebar'
@@ -7,9 +7,14 @@ import { BottomNav } from '@/components/layout/BottomNav'
 import { cn } from '@/lib/utils'
 import { getAllInstruments } from '@/lib/data'
 import { AppProviders } from '@/components/providers/AppProviders'
+import { InstrumentsProvider } from '@/components/providers/InstrumentsProvider'
+import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
+const inter = Inter({
+    subsets: ['latin', 'cyrillic'],
+    variable: '--font-sans',
+    display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Talir - Macedonian Stock Exchange',
@@ -18,7 +23,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport = {
-  themeColor: '#ffffff',
+  themeColor: '#fafafa',
 }
 
 export default async function RootLayout({
@@ -51,38 +56,30 @@ export default async function RootLayout({
           }}
         />
       </head>
-      {/* 
-         APP SHELL ARCHITECTURE:
-         - h-screen/w-screen: Locks the viewport size.
-         - overflow-hidden: Prevents the "Body Scroll".
-         - flex-col: Stacks Header on top of Content.
-      */}
       <body className={cn(
-        "h-screen w-screen overflow-hidden bg-[var(--bg-secondary)] font-sans antialiased text-text-primary selection:bg-brand-500/30 flex flex-col",
-        inter.variable,
-        jetbrainsMono.variable
+        "h-screen w-screen overflow-hidden bg-[var(--bg)] font-sans antialiased text-text-primary selection:bg-accent/30 flex flex-col",
+        inter.variable
       )}>
         <AppProviders>
-        {/* Header: Fixed Height, non-sticky (flex item) */}
+        <InstrumentsProvider instruments={instruments}>
         <Header instruments={instruments} />
 
-        {/* Main Workspace: Flex-1 to fill remaining space */}
-        <div className="flex flex-1 overflow-hidden">
+        <div className="hidden md:block px-4 md:px-6 pt-2">
+          <SponsorSlot placement="leaderboard" />
+        </div>
 
-          {/* Sidebar: Fixed width (handled internally), Height = 100% of parent */}
+        <div className="flex flex-1 overflow-hidden">
           <Sidebar />
 
-          {/* Scrollable Content Area: This is the ONLY thing that scrolls */}
           <main className="flex-1 overflow-y-auto overflow-x-hidden relative scroll-smooth">
             <div className="max-w-[1600px] mx-auto p-4 md:p-8 pb-24 md:pb-8">
               {children}
             </div>
           </main>
-
         </div>
 
-        {/* Mobile Nav: Fixed bottom (handled internally or naturally covers) */}
         <BottomNav />
+        </InstrumentsProvider>
         </AppProviders>
       </body>
     </html>

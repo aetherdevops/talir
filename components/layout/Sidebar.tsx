@@ -161,7 +161,7 @@ export function Sidebar({ className }: { className?: string }) {
                 </div>
 
                 <ul className="space-y-1">
-                    {/* <SidebarItem icon={Settings} label="Settings" href="/settings" isActive={pathname === '/settings'} isCollapsed={!isOpen} /> */}
+                    <SidebarItem icon={Settings} label="Settings" href="/settings" isActive={pathname === '/settings'} isCollapsed={!isOpen} />
                 </ul>
             </div>
 

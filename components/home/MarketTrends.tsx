@@ -29,8 +29,8 @@ export function MarketTrends({ gainers, losers, mostActive }: MarketTrendsProps)
     }
 
     return (
-        <Card className="rounded-3xl shadow-card border border-border overflow-hidden">
-            <CardHeader className="border-b border-border px-6 py-4 space-y-4">
+        <Card className="rounded-xl border border-border overflow-hidden shadow-none">
+            <CardHeader className="border-b border-border px-4 sm:px-6 py-4 space-y-4">
                 <div className="flex items-center justify-between">
                     <h2 className="text-xl font-normal text-text-primary">Market Trends</h2>
                 </div>
@@ -72,7 +72,7 @@ export function MarketTrends({ gainers, losers, mostActive }: MarketTrendsProps)
             </CardHeader>
             <div className="bg-surface">
                 {getStocks().map((stock) => (
-                    <StockRow key={stock.code} stock={stock} className="py-3 px-6" />
+                    <StockRow key={stock.code} stock={stock} variant="compact" className="border-b border-border last:border-0" />
                 ))}
                 {getStocks().length === 0 && (
                     <div className="p-6 text-center text-sm text-text-tertiary">

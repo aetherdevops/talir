@@ -44,7 +44,13 @@ const config: Config = {
                     primary: 'var(--text-primary)',
                     secondary: 'var(--text-secondary)',
                     tertiary: 'var(--text-tertiary)',
-                }
+                },
+                up: 'var(--up)',
+                down: 'var(--down)',
+                accent: {
+                    DEFAULT: 'var(--accent)',
+                    muted: 'var(--accent-muted)',
+                },
             },
             fontFamily: {
                 sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

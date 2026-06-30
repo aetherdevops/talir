@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import { StockSummary } from '@/lib/types'
 import { Search, ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react'
 import { StockRow } from '@/components/stock/StockRow'
+import { ScrollTable } from '@/components/ui/ScrollTable'
 import { cn } from '@/lib/utils'
 
 interface MarketsClientProps {
@@ -129,7 +130,8 @@ export function MarketsClient({ initialStocks }: MarketsClientProps) {
             </div>
 
             {/* List */}
-            <div className="grid grid-cols-1 bg-surface rounded-3xl border border-border overflow-hidden shadow-sm">
+            <ScrollTable>
+            <div className="grid grid-cols-1 bg-surface rounded-xl border border-border overflow-hidden min-w-[640px]">
                 {displayStocks.length > 0 ? (
                     <div className="divide-y divide-border">
                         {displayStocks.map(stock => (
@@ -137,16 +139,17 @@ export function MarketsClient({ initialStocks }: MarketsClientProps) {
                                 key={stock.code}
                                 stock={stock}
                                 showVolume={true}
-                                className="hover:bg-surface-secondary/50 py-4"
+                                className="hover:bg-surface-secondary py-3"
                             />
                         ))}
                     </div>
                 ) : (
                     <div className="p-12 text-center text-text-tertiary">
-                        No stocks found matching "{query}"
+                        No stocks found matching &quot;{query}&quot;
                     </div>
                 )}
             </div>
+            </ScrollTable>
         </div>
     )
 }

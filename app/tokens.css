@@ -1,0 +1,63 @@
+/* Talir design tokens — light/dark via class on html */
+
+:root {
+  --bg: #fafafa;
+  --bg-secondary: #ffffff;
+  --surface: #ffffff;
+  --surface-secondary: #f4f4f5;
+  --surface-tertiary: #e4e4e7;
+  --surface-elevated: #ffffff;
+
+  --text: #09090b;
+  --text-muted: #71717a;
+  --text-subtle: #a1a1aa;
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-active: rgba(0, 0, 0, 0.16);
+
+  --accent: #0891b2;
+  --accent-muted: #ecfeff;
+
+  --up: #059669;
+  --down: #dc2626;
+
+  --background: var(--bg-secondary);
+  --foreground: var(--text);
+  --text-primary: var(--text);
+  --text-secondary: var(--text-muted);
+  --text-tertiary: var(--text-subtle);
+  --brand-active: var(--accent-muted);
+  --brand-text: var(--accent);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --bg: #0e0e10;
+  --bg-secondary: #0e0e10;
+  --surface: #18181b;
+  --surface-secondary: #27272a;
+  --surface-tertiary: #3f3f46;
+  --surface-elevated: #27272a;
+
+  --text: #fafafa;
+  --text-muted: #d4d4d8;
+  --text-subtle: #a1a1aa;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(255, 255, 255, 0.16);
+
+  --accent: #67e8f9;
+  --accent-muted: rgba(6, 182, 212, 0.15);
+
+  --up: #34d399;
+  --down: #f87171;
+
+  --background: var(--bg-secondary);
+  --foreground: var(--text);
+  --text-primary: var(--text);
+  --text-secondary: var(--text-muted);
+  --text-tertiary: var(--text-subtle);
+  --brand-active: var(--accent-muted);
+  --brand-text: var(--accent);
+}

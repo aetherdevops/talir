@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "setup": "node scripts/setup-local.mjs",
+    "preview": "node scripts/setup-local.mjs --check && next dev",
+    "predev": "node scripts/setup-local.mjs --check",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

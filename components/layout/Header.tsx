@@ -2,7 +2,6 @@
 
 import { Search } from 'lucide-react'
 import { Logo } from '@/components/common/Logo'
-import { ThemeToggle } from '@/components/common/ThemeToggle'
 import { AuthMenu } from '@/components/layout/AuthMenu'
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils'
@@ -35,7 +34,6 @@ export function Header({ className, instruments = [] }: { className?: string, in
                 <Button variant="ghost" size="icon" className="md:hidden">
                     <Search className="h-5 w-5" />
                 </Button>
-                <ThemeToggle />
                 <AuthMenu />
             </div>
         </header>

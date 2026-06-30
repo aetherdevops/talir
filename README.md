@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Talir
 
-## Getting Started
+Macedonian Stock Exchange tracker built with Next.js. Market data is bundled as static JSON; auth, alerts, portfolios, and watchlists sync through Supabase.
 
-First, run the development server:
+## Local preview (before pushing)
+
+Use this workflow whenever you want to see changes on your machine first.
+
+### 1. One-time setup
+
+```bash
+npm run setup
+```
+
+This installs dependencies (if needed) and creates `.env.local` from `.env.example`.
+
+### 2. Configure Supabase
+
+Edit `.env.local` with values from **Supabase → Project Settings → API**:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+In **Supabase → Authentication → URL configuration**, add:
+
+- Site URL: `http://localhost:3000`
+- Redirect URL: `http://localhost:3000/auth/callback`
+
+Run the user-data migration once in the **SQL Editor**:
+
+- `supabase/migrations/001_user_data.sql`
+
+### 3. Start the app
+
+```bash
+npm run preview
+```
+
+`preview` checks your local env, then starts the dev server at [http://localhost:3000](http://localhost:3000).
+
+After the first setup, you can also use:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`dev` runs the same env check automatically (`predev`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. What to try locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Browse stocks, indices, and charts (works without logging in)
+- Register / log in at `/register` and `/login`
+- Create alerts, portfolios, and watchlists (requires login)
+- Confirm data persists after refresh when signed in
 
-## Learn More
+### 5. Before pushing to GitHub
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Fix any build errors, then commit and push. Vercel will deploy from `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+| Command | Purpose |
+| --- | --- |
+| `npm run setup` | Install deps and create `.env.local` |
+| `npm run preview` | Env check + local dev server |
+| `npm run dev` | Local dev server (env check via `predev`) |
+| `npm run build` | Production build (run before push) |
+| `npm run lint` | ESLint |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Production runs on Vercel. Set the same Supabase env vars there and use your production domain in Supabase auth redirect URLs.

@@ -1,6 +1,7 @@
 
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
+import { usePreferencesStore } from '@/lib/stores/preferences'
 
 export interface Holding {
     id: string
@@ -44,12 +45,13 @@ export const usePortfolioStore = create<PortfolioState>()(
             activePortfolioId: null,
 
             createPortfolio: (name) => set((state) => {
+                const currency = usePreferencesStore.getState().defaultPortfolioCurrency
                 const newPortfolio: Portfolio = {
                     id: crypto.randomUUID(),
                     name,
                     holdings: [],
                     createdAt: new Date().toISOString(),
-                    currency: 'MKD'
+                    currency,
                 }
                 return {
                     portfolios: [...state.portfolios, newPortfolio],

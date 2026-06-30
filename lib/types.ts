@@ -51,7 +51,8 @@ export interface MarketIndex {
     value: number
     change: number
     changePercent: number
-    chartData?: number[] // For sparkline
+    chartData?: number[]
+    chartSeries?: { date: string; value: number }[]
 }
 
 export interface NewsItem {
