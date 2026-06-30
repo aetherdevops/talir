@@ -18,12 +18,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Talir - Macedonian Stock Exchange',
-  description: 'Track real-time data from the Macedonian Stock Exchange',
+  description: 'End-of-day data from the Macedonian Stock Exchange',
   manifest: '/manifest.json',
 }
 
 export const viewport = {
   themeColor: '#fafafa',
+  viewportFit: 'cover' as const,
 }
 
 export default async function RootLayout({
@@ -72,7 +73,7 @@ export default async function RootLayout({
           <Sidebar />
 
           <main className="flex-1 overflow-y-auto overflow-x-hidden relative scroll-smooth">
-            <div className="max-w-[1600px] mx-auto p-4 md:p-8 pb-24 md:pb-8">
+            <div className="max-w-[1600px] mx-auto p-4 md:p-8 pb-28 md:pb-8">
               {children}
             </div>
           </main>

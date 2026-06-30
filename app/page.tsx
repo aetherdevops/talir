@@ -1,11 +1,12 @@
 
-import { getTopGainers, getTopLosers, getMostActive, getMarketIndices, getLatestNews, enrichStocksWithChartSeries } from "@/lib/data"
+import { getTopGainers, getTopLosers, getMostActive, getMarketIndices, getLatestNews, enrichStocksWithChartSeries, getAllStocks, getMarketDataAsOf } from "@/lib/data"
 import { HomePreviewTabs } from "@/components/home/HomePreviewTabs"
 import { MarketStatus } from "@/components/home/MarketStatus"
 import { MarketTrends } from "@/components/home/MarketTrends"
 import { NewsFeed } from "@/components/news/NewsFeed"
 import { HomePortfolioCard } from "@/components/home/HomePortfolioCard"
 import { SponsorSlot } from "@/components/sponsors/SponsorSlot"
+import { DataFreshnessLabel } from "@/components/markets/DataFreshnessLabel"
 
 export const revalidate = 60 // Revalidate every minute
 
@@ -22,13 +23,16 @@ const portfolioSlot = (
 )
 
 export default async function HomePage() {
-    const [gainersRaw, losersRaw, mostActiveRaw, indices, news] = await Promise.all([
+    const [gainersRaw, losersRaw, mostActiveRaw, indices, news, allStocks] = await Promise.all([
         getTopGainers(5),
         getTopLosers(5),
         getMostActive(5),
         getMarketIndices(),
-        getLatestNews(4)
+        getLatestNews(4),
+        getAllStocks(),
     ])
+
+    const asOfDate = getMarketDataAsOf(allStocks)
 
     const [gainers, losers, mostActive] = await Promise.all([
         enrichStocksWithChartSeries(gainersRaw),
@@ -52,10 +56,8 @@ export default async function HomePage() {
                 <SponsorSlot placement="mobile-in-flow" className="md:hidden" />
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 animate-slide-up">
-                    <MarketStatus />
-                    <div className="text-xs text-text-tertiary">
-                        Market updated daily
-                    </div>
+                    <MarketStatus asOfDate={asOfDate} />
+                    <DataFreshnessLabel asOfDate={asOfDate} />
                 </div>
 
                 <div className="flex flex-col gap-10">

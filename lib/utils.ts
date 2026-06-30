@@ -38,6 +38,13 @@ export function formatPriceChange(change: number) {
     return (change > 0 ? "+" : "") + change.toFixed(2) + "%"
 }
 
+/** Human-readable end-of-day label, e.g. "12 Dec 2025". */
+export function formatAsOfDate(dateStr: string): string {
+    const d = new Date(`${dateStr}T12:00:00`)
+    if (Number.isNaN(d.getTime())) return dateStr
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+}
+
 /** Period change % from first to last point in a chart series (e.g. 12M). */
 export function getPeriodChangePercent(series: { value: number }[]): number {
     if (!series.length) return 0

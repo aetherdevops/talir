@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useId, useMemo } from 'react'
 import { cn } from '@/lib/utils'
 
 interface IndexSparklineProps {
@@ -11,6 +11,7 @@ interface IndexSparklineProps {
 }
 
 export function IndexSparkline({ series, positive = true, className, height = 120 }: IndexSparklineProps) {
+    const uid = useId().replace(/:/g, '')
     const path = useMemo(() => {
         if (!series.length) return ''
         const values = series.map((p) => p.value)
@@ -35,10 +36,17 @@ export function IndexSparkline({ series, positive = true, className, height = 12
     }, [path, height])
 
     if (!series.length) {
-        return <div className={cn('bg-surface-secondary rounded-lg animate-pulse', className)} style={{ height }} />
+        return (
+            <div
+                className={cn('bg-surface-secondary/60 rounded', className)}
+                style={{ height, width: height < 40 ? 72 : undefined }}
+                aria-hidden
+            />
+        )
     }
 
     const stroke = positive ? 'var(--up)' : 'var(--down)'
+    const gradId = `grad-${uid}`
 
     return (
         <svg
@@ -49,13 +57,19 @@ export function IndexSparkline({ series, positive = true, className, height = 12
             aria-hidden
         >
             <defs>
-                <linearGradient id={`grad-${positive ? 'up' : 'down'}`} x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor={stroke} stopOpacity="0.2" />
+                <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor={stroke} stopOpacity={height < 40 ? 0.15 : 0.2} />
                     <stop offset="100%" stopColor={stroke} stopOpacity="0" />
                 </linearGradient>
             </defs>
-            <path d={areaPath} fill={`url(#grad-${positive ? 'up' : 'down'})`} />
-            <path d={path} fill="none" stroke={stroke} strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            <path d={areaPath} fill={`url(#${gradId})`} />
+            <path
+                d={path}
+                fill="none"
+                stroke={stroke}
+                strokeWidth={height < 40 ? 1.5 : 2}
+                vectorEffect="non-scaling-stroke"
+            />
         </svg>
     )
 }

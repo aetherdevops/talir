@@ -1,59 +1,89 @@
 "use client"
 
-import { useState, useMemo } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useState, useMemo, useEffect, useCallback } from 'react'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { StockSummary } from '@/lib/types'
-import { Search, ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react'
-import { StockRow } from '@/components/stock/StockRow'
-import { ScrollTable } from '@/components/ui/ScrollTable'
+import type { MarketSentiment } from '@/lib/data'
+import { Search, ArrowUp, ArrowDown } from 'lucide-react'
+import { MarketInstrumentRow } from '@/components/markets/MarketInstrumentRow'
+import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
+import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
+import { MarketStatus } from '@/components/home/MarketStatus'
 import { cn } from '@/lib/utils'
 
 interface MarketsClientProps {
     initialStocks: StockSummary[]
+    sentiment: MarketSentiment
+    asOfDate: string
 }
 
-type SortKey = 'volume' | 'change' | 'price' | 'name'
+type SortKey = 'turnover' | 'change' | 'price' | 'name'
 type SortOrder = 'asc' | 'desc'
 
-export function MarketsClient({ initialStocks }: MarketsClientProps) {
+export function MarketsClient({ initialStocks, sentiment, asOfDate }: MarketsClientProps) {
     const searchParams = useSearchParams()
+    const router = useRouter()
 
-    // Initial state from URL or defaults
     const [query, setQuery] = useState('')
-    const [sortKey, setSortKey] = useState<SortKey>((searchParams.get('sort') as SortKey) || 'volume')
-    const [sortOrder, setSortOrder] = useState<SortOrder>((searchParams.get('order') as SortOrder) || 'desc')
+    const [sortKey, setSortKey] = useState<SortKey>(() => {
+        const s = searchParams.get('sort')
+        if (s === 'volume') return 'turnover'
+        return (s as SortKey) || 'turnover'
+    })
+    const [sortOrder, setSortOrder] = useState<SortOrder>(
+        (searchParams.get('order') as SortOrder) || 'desc'
+    )
+    const [sparklines, setSparklines] = useState<Record<string, { date: string; value: number }[]>>({})
 
-    // Derived state for sorting and filtering
+    useEffect(() => {
+        let cancelled = false
+        fetch('/api/markets/sparklines')
+            .then((r) => r.json())
+            .then((data) => {
+                if (!cancelled) setSparklines(data)
+            })
+            .catch(() => {})
+        return () => {
+            cancelled = true
+        }
+    }, [])
+
+    const syncUrl = useCallback(
+        (key: SortKey, order: SortOrder) => {
+            const params = new URLSearchParams()
+            params.set('sort', key === 'turnover' ? 'volume' : key)
+            params.set('order', order)
+            router.replace(`/markets?${params.toString()}`, { scroll: false })
+        },
+        [router]
+    )
+
     const displayStocks = useMemo(() => {
         let result = [...initialStocks]
 
-        // 1. Filter
         if (query) {
             const lowerQ = query.toLowerCase()
-            result = result.filter(s =>
-                s.code.toLowerCase().includes(lowerQ) ||
-                s.name.toLowerCase().includes(lowerQ)
+            result = result.filter(
+                (s) =>
+                    s.code.toLowerCase().includes(lowerQ) ||
+                    s.name.toLowerCase().includes(lowerQ)
             )
         }
 
-        // 2. Sort
         result.sort((a, b) => {
-            let valA: any = a[sortKey as keyof StockSummary]
-            let valB: any = b[sortKey as keyof StockSummary]
+            let valA: string | number
+            let valB: string | number
 
-            // Handle special cases if any (e.g. name is string, others number)
-            // 'change' maps to 'changePercent' in StockSummary for functionality, but key is 'change' in UI
             if (sortKey === 'change') {
                 valA = a.changePercent
                 valB = b.changePercent
             } else if (sortKey === 'name') {
-                valA = a.name.toLowerCase() // Case insensitive sort
+                valA = a.name.toLowerCase()
                 valB = b.name.toLowerCase()
-                // Also code as fallback?
-            } else if (sortKey === 'volume') {
-                valA = a.volume
-                valB = b.volume
-            } else if (sortKey === 'price') {
+            } else if (sortKey === 'turnover') {
+                valA = a.turnover
+                valB = b.turnover
+            } else {
                 valA = a.price
                 valB = b.price
             }
@@ -67,89 +97,98 @@ export function MarketsClient({ initialStocks }: MarketsClientProps) {
     }, [initialStocks, query, sortKey, sortOrder])
 
     const handleSort = (key: SortKey) => {
-        if (sortKey === key) {
-            setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
-        } else {
-            setSortKey(key)
-            setSortOrder('desc') // Default to desc for most metrics
-        }
+        const nextOrder = sortKey === key ? (sortOrder === 'asc' ? 'desc' : 'asc') : 'desc'
+        setSortKey(key)
+        setSortOrder(nextOrder)
+        syncUrl(key, nextOrder)
     }
+
+    const pills: { label: string; key: SortKey }[] = [
+        { label: 'Most Active', key: 'turnover' },
+        { label: 'Top Movers', key: 'change' },
+        { label: 'Price', key: 'price' },
+        { label: 'Name', key: 'name' },
+    ]
 
     return (
         <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-                <h1 className="text-3xl font-normal text-text-primary tracking-tight">Market Overview</h1>
-                <p className="text-text-secondary">Track all companies listed on the Macedonian Stock Exchange (MSE).</p>
-            </div>
+            <header className="flex flex-col gap-3">
+                <div>
+                    <h1 className="text-3xl font-semibold text-text-primary tracking-tight">
+                        Market Overview
+                    </h1>
+                    <p className="text-text-secondary text-sm mt-1">
+                        All companies listed on the Macedonian Stock Exchange — end-of-day data.
+                    </p>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <MarketStatus asOfDate={asOfDate} />
+                    <DataFreshnessLabel asOfDate={asOfDate} className="sm:text-right" />
+                </div>
+            </header>
 
-            {/* Controls Toolbar */}
-            <div className="sticky top-0 z-10 -mx-4 px-4 py-4 md:py-4 md:-mx-0 md:px-0 bg-background/95 backdrop-blur-md flex flex-col md:flex-row gap-4 justify-between items-center transition-all border-b border-transparent md:border-b-0">
-                {/* Search */}
-                <div className="relative w-full md:w-96 group">
+            <MarketSentimentStrip sentiment={sentiment} asOfDate={asOfDate} />
+
+            <div className="sticky top-0 z-10 -mx-4 px-4 py-3 md:-mx-0 md:px-0 bg-background/95 backdrop-blur-md border-b border-border/50 space-y-3">
+                <div className="relative w-full md:max-w-md group">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-text-tertiary group-focus-within:text-brand-500 transition-colors" />
                     <input
                         type="text"
                         placeholder="Search markets..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2.5 bg-surface border border-border rounded-xl text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all shadow-sm"
+                        className="w-full pl-10 pr-4 py-2.5 bg-surface border border-border rounded-xl text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
                     />
                 </div>
 
-                {/* Sort Pills */}
-                <div className="flex gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar">
-                    {[
-                        { label: 'Most Active', key: 'volume' },
-                        { label: 'Top Movers', key: 'change' },
-                        { label: 'Price', key: 'price' },
-                        { label: 'Name', key: 'name' },
-                    ].map((pill) => (
+                <div className="flex flex-wrap gap-2">
+                    {pills.map((pill) => (
                         <button
                             key={pill.key}
-                            onClick={() => handleSort(pill.key as SortKey)}
+                            type="button"
+                            onClick={() => handleSort(pill.key)}
                             className={cn(
-                                "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all border",
+                                'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all border min-h-[32px]',
                                 sortKey === pill.key
-                                    ? "bg-brand-500/10 text-brand-600 border-brand-500/20 dark:text-brand-400"
-                                    : "bg-surface text-text-secondary border-border hover:border-brand-500/30 hover:text-text-primary"
+                                    ? 'bg-brand-500/10 text-brand-600 border-brand-500/25 dark:text-brand-400'
+                                    : 'bg-surface text-text-secondary border-border hover:border-brand-500/30 hover:text-text-primary'
                             )}
                         >
                             {pill.label}
-                            {sortKey === pill.key && (
-                                sortOrder === 'desc' ? <ArrowDown className="w-3 h-3" /> : <ArrowUp className="w-3 h-3" />
-                            )}
+                            {sortKey === pill.key &&
+                                (sortOrder === 'desc' ? (
+                                    <ArrowDown className="w-3 h-3" aria-hidden />
+                                ) : (
+                                    <ArrowUp className="w-3 h-3" aria-hidden />
+                                ))}
                         </button>
                     ))}
                 </div>
             </div>
 
-            {/* Results Info */}
             <div className="flex items-center justify-between text-xs text-text-tertiary px-1">
-                <span>{displayStocks.length} instruments found</span>
-                <span>Sorted by {sortKey} {sortOrder}</span>
+                <span className="tabular-nums">{displayStocks.length} instruments</span>
             </div>
 
-            {/* List */}
-            <ScrollTable>
-            <div className="grid grid-cols-1 bg-surface rounded-xl border border-border overflow-hidden min-w-[640px]">
+            <div className="rounded-xl border border-border/60 bg-surface overflow-hidden divide-y divide-border/60">
                 {displayStocks.length > 0 ? (
-                    <div className="divide-y divide-border">
-                        {displayStocks.map(stock => (
-                            <StockRow
-                                key={stock.code}
-                                stock={stock}
-                                showVolume={true}
-                                className="hover:bg-surface-secondary py-3"
-                            />
-                        ))}
-                    </div>
+                    displayStocks.map((stock) => (
+                        <MarketInstrumentRow
+                            key={stock.code}
+                            stock={stock}
+                            sparkline={
+                                stock.chartSeries?.length
+                                    ? stock.chartSeries
+                                    : sparklines[stock.code]
+                            }
+                        />
+                    ))
                 ) : (
                     <div className="p-12 text-center text-text-tertiary">
                         No stocks found matching &quot;{query}&quot;
                     </div>
                 )}
             </div>
-            </ScrollTable>
         </div>
     )
 }

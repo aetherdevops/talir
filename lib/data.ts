@@ -22,8 +22,11 @@ export async function getAllInstruments(): Promise<StockSummary[]> {
         changePercent: idx.changePercent,
         volume: 0,
         turnover: 0,
-        date: new Date().toISOString(), // Or relevant date if available
-        type: 'Index' as const
+        date: idx.chartSeries?.length
+            ? idx.chartSeries[idx.chartSeries.length - 1].date
+            : new Date().toISOString().split('T')[0],
+        type: 'Index' as const,
+        chartSeries: idx.chartSeries?.slice(-30),
     }))
 
     return [...indexItems, ...stocks]
@@ -126,6 +129,7 @@ export async function getMostActive(limit: number = 5): Promise<StockSummary[]> 
 export async function enrichStocksWithChartSeries(stocks: StockSummary[]): Promise<StockSummary[]> {
     return Promise.all(
         stocks.map(async (stock) => {
+            if (stock.chartSeries?.length) return stock
             const data = await getStock(stock.code)
             if (!data?.history?.length) {
                 return { ...stock, chartSeries: [] }
@@ -137,6 +141,90 @@ export async function enrichStocksWithChartSeries(stocks: StockSummary[]): Promi
             return { ...stock, chartSeries }
         })
     )
+}
+
+/** Last N trading-day closes for inline sparklines. */
+export function getRecentDailyCloses(history: DailyPrice[], tradingDays = 30) {
+    if (!history?.length) return []
+
+    const uniqueMap = new Map<string, number>()
+    history.forEach((item) => {
+        const d = new Date(item.date)
+        const key = d.toISOString().split('T')[0]
+        uniqueMap.set(key, item.last_transaction_price)
+    })
+
+    return Array.from(uniqueMap.entries())
+        .sort(([a], [b]) => a.localeCompare(b))
+        .slice(-tradingDays)
+        .map(([date, value]) => ({ date, value }))
+}
+
+export interface MarketSentiment {
+    advancers: number
+    decliners: number
+    unchanged: number
+    primaryIndex?: { name: string; value: number; changePercent: number }
+}
+
+export function getMarketSentiment(stocks: StockSummary[]): MarketSentiment {
+    const equities = stocks.filter((s) => s.type !== 'Index')
+    let advancers = 0
+    let decliners = 0
+    let unchanged = 0
+
+    for (const s of equities) {
+        if (s.changePercent > 0) advancers++
+        else if (s.changePercent < 0) decliners++
+        else unchanged++
+    }
+
+    const mbi10 = stocks.find((s) => s.code === 'MBI10')
+    return {
+        advancers,
+        decliners,
+        unchanged,
+        primaryIndex: mbi10
+            ? { name: mbi10.code, value: mbi10.price, changePercent: mbi10.changePercent }
+            : undefined,
+    }
+}
+
+export function getMarketDataAsOf(stocks: StockSummary[]): string {
+    const dates = stocks
+        .map((s) => s.date)
+        .filter(Boolean)
+        .sort()
+    return dates.length > 0 ? dates[dates.length - 1] : new Date().toISOString().split('T')[0]
+}
+
+/** Batch-load sparklines with limited concurrency (for API route). */
+export async function buildSparklineMap(
+    codes: string[],
+    concurrency = 15
+): Promise<Record<string, { date: string; value: number }[]>> {
+    const result: Record<string, { date: string; value: number }[]> = {}
+    const queue = [...codes]
+
+    async function worker() {
+        while (queue.length > 0) {
+            const code = queue.shift()
+            if (!code) break
+            try {
+                const data = await getStock(code)
+                result[code] = data?.history?.length
+                    ? getRecentDailyCloses(data.history, 30)
+                    : []
+            } catch {
+                result[code] = []
+            }
+        }
+    }
+
+    await Promise.all(
+        Array.from({ length: Math.min(concurrency, codes.length) }, () => worker())
+    )
+    return result
 }
 
 // Chart Data Helper
