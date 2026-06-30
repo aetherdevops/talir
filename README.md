@@ -73,4 +73,11 @@ Fix any build errors, then commit and push. Vercel will deploy from `main`.
 
 ## Deploy
 
-Production runs on Vercel. Set the same Supabase env vars there and use your production domain in Supabase auth redirect URLs.
+Production runs on Vercel. In **Vercel → Project → Settings → Environment Variables**, set:
+
+- `NEXT_PUBLIC_SUPABASE_URL` — from Supabase → Project Settings → API
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` — anon public key from the same page
+
+Apply to **Production** (and Preview if you test PR deploys). Redeploy after adding variables.
+
+In Supabase **Authentication → URL configuration**, use your production domain (e.g. `https://www.talir.mk`) as Site URL and add `https://www.talir.mk/auth/callback` to Redirect URLs.

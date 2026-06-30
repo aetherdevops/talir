@@ -4,13 +4,12 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuth } from '@/components/auth/AuthProvider'
-import { createClient } from '@/lib/supabase/client'
+import { createClientIfConfigured } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
 
 export default function AccountPage() {
     const { user, signOut } = useAuth()
     const router = useRouter()
-    const supabase = createClient()
 
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
@@ -43,6 +42,12 @@ export default function AccountPage() {
             return
         }
         setBusy(true)
+        const supabase = createClientIfConfigured()
+        if (!supabase) {
+            setBusy(false)
+            setPasswordMsg('Authentication is not configured.')
+            return
+        }
         const { error } = await supabase.auth.updateUser({ password })
         setBusy(false)
         if (error) {
@@ -63,6 +68,12 @@ export default function AccountPage() {
 
         setBusy(true)
         setDeleteMsg(null)
+        const supabase = createClientIfConfigured()
+        if (!supabase) {
+            setBusy(false)
+            setDeleteMsg('Authentication is not configured.')
+            return
+        }
         const { error } = await supabase.rpc('delete_user_account')
         setBusy(false)
         if (error) {

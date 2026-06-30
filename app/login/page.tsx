@@ -3,7 +3,7 @@
 import { Suspense, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { createClient } from '@/lib/supabase/client'
+import { createClientIfConfigured } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Label } from '@/components/ui/Label'
@@ -26,7 +26,13 @@ function LoginForm() {
         setLoading(true)
         setError('')
 
-        const supabase = createClient()
+        const supabase = createClientIfConfigured()
+        if (!supabase) {
+            setLoading(false)
+            setError('Authentication is not configured.')
+            return
+        }
+
         const { error: signInError } = await supabase.auth.signInWithPassword({
             email,
             password,

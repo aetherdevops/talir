@@ -10,7 +10,7 @@ import {
     useState,
 } from 'react'
 import type { User } from '@supabase/supabase-js'
-import { createClient } from '@/lib/supabase/client'
+import { createClientIfConfigured } from '@/lib/supabase/client'
 import {
     clearLocalDataStorage,
     fetchUserData,
@@ -67,7 +67,7 @@ function getCurrentSnapshot() {
 }
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-    const supabase = useMemo(() => createClient(), [])
+    const supabase = useMemo(() => createClientIfConfigured(), [])
     const [user, setUser] = useState<User | null>(null)
     const [loading, setLoading] = useState(true)
     const [showImportModal, setShowImportModal] = useState(false)
@@ -76,7 +76,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
     const scheduleSave = useCallback(() => {
-        if (!syncReady.current || !user) return
+        if (!supabase || !syncReady.current || !user) return
 
         if (saveTimer.current) clearTimeout(saveTimer.current)
         saveTimer.current = setTimeout(async () => {
@@ -92,6 +92,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }, [supabase, user])
 
     const loadRemoteData = useCallback(async (nextUser: User) => {
+        if (!supabase) return
         syncReady.current = false
         const [remote, remotePrefs] = await Promise.all([
             fetchUserData(supabase, nextUser.id),
@@ -115,6 +116,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }, [supabase])
 
     useEffect(() => {
+        if (!supabase) {
+            setLoading(false)
+            return
+        }
+
         let mounted = true
 
         supabase.auth.getUser().then(({ data }) => {
@@ -164,13 +170,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }, [scheduleSave])
 
     const signOut = useCallback(async () => {
-        await supabase.auth.signOut()
+        if (supabase) await supabase.auth.signOut()
         setUser(null)
         syncReady.current = false
     }, [supabase])
 
     const handleImportLocal = useCallback(async () => {
-        if (!user) return
+        if (!user || !supabase) return
         const local = readLocalDataSnapshot()
         hydrateStores(local)
         await saveUserData(supabase, user.id, local)

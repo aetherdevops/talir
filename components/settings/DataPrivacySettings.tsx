@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useAuth } from '@/components/auth/AuthProvider'
-import { createClient } from '@/lib/supabase/client'
+import { createClientIfConfigured } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
 import {
     clearLocalDataStorage,
@@ -16,7 +16,6 @@ import { useWatchlistStore } from '@/lib/stores/watchlist'
 export function DataPrivacySettings() {
     const { user } = useAuth()
     const [status, setStatus] = useState<string | null>(null)
-    const supabase = createClient()
 
     const handleExport = async () => {
         setStatus(null)
@@ -24,6 +23,11 @@ export function DataPrivacySettings() {
         let remote = null
 
         if (user) {
+            const supabase = createClientIfConfigured()
+            if (!supabase) {
+                setStatus('Cloud sync is not configured.')
+                return
+            }
             try {
                 remote = await fetchUserData(supabase, user.id)
             } catch {
