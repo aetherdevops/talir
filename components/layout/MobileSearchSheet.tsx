@@ -20,7 +20,7 @@ export function MobileSearchSheet({ open, onClose }: MobileSearchSheetProps) {
             <div className="absolute inset-0 bg-black/40" onClick={onClose} />
             <div className="absolute inset-x-0 top-0 bg-surface border-b border-border p-4 pb-safe max-h-[85vh] overflow-y-auto">
                 <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-lg font-semibold text-text-primary">Search</h2>
+                    <h2 className="text-lg font-semibold text-text-primary font-heading">Search</h2>
                     <button
                         type="button"
                         onClick={onClose}

@@ -1,13 +1,12 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import { formatAsOfDate } from '@/lib/utils'
 
 interface MarketStatusProps {
     asOfDate?: string
 }
 
-export function MarketStatus({ asOfDate }: MarketStatusProps) {
+export function MarketStatus(_props: MarketStatusProps) {
     const [status, setStatus] = useState<{ isOpen: boolean; message: string }>({
         isOpen: false,
         message: '…',
@@ -51,14 +50,12 @@ export function MarketStatus({ asOfDate }: MarketStatusProps) {
         return () => clearInterval(timer)
     }, [])
 
-    const asOfLabel = asOfDate ? formatAsOfDate(asOfDate) : null
-
     return (
         <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
             <div className="flex items-center gap-2 bg-surface-secondary/50 px-3 py-1.5 rounded-full border border-border w-fit">
                 <span
                     className={`relative inline-flex rounded-full h-2 w-2 ${
-                        status.isOpen ? 'bg-success' : 'bg-text-tertiary'
+                        status.isOpen ? 'bg-up' : 'bg-text-tertiary'
                     }`}
                     aria-hidden
                 />
@@ -69,11 +66,6 @@ export function MarketStatus({ asOfDate }: MarketStatusProps) {
                     {status.message}
                 </span>
             </div>
-            {asOfLabel && (
-                <span className="text-[11px] text-text-tertiary">
-                    Prices from last close · {asOfLabel}
-                </span>
-            )}
         </div>
     )
 }

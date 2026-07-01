@@ -81,7 +81,7 @@ export function BottomNav() {
                             onClick={() => setCreateOpen(true)}
                             className={cn(
                                 'flex h-14 w-14 items-center justify-center rounded-full',
-                                'bg-brand-500 text-white shadow-lg shadow-brand-500/30',
+                                'bg-accent text-talir-navy shadow-lg shadow-accent/25',
                                 'border-4 border-surface transition-transform active:scale-95'
                             )}
                             aria-label="Create watchlist or portfolio"

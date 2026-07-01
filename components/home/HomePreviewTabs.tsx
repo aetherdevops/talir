@@ -37,7 +37,7 @@ function TabPills<T extends string>({
                     className={cn(
                         'flex-1 py-2 px-3 text-xs font-bold rounded-lg transition-all min-h-[44px]',
                         value === opt.id
-                            ? 'bg-surface shadow-sm text-brand-text'
+                            ? 'bg-surface shadow-sm text-accent border border-accent/20'
                             : 'text-text-tertiary hover:text-text-secondary'
                     )}
                 >

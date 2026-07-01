@@ -31,9 +31,28 @@
     border: 1px solid var(--border);
   }
 
-  .dark .glass {
-    background-color: rgba(24, 24, 27, 0.7);
+  .dark .glass,
+  :root[data-theme='dark'] .glass {
+    background-color: rgba(15, 31, 56, 0.85);
     border: 1px solid var(--border);
+  }
+
+  .font-data {
+    font-family: var(--talir-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-heading {
+    font-family: var(--talir-serif);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
   .scroll-fade-right {

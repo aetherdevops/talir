@@ -26,7 +26,7 @@ export function ChangeLabel({
             return (
                 <span
                     className={cn(
-                        'bg-surface-tertiary/50 text-text-tertiary px-2 py-1 rounded-lg text-xs font-bold inline-flex items-center gap-1 min-w-[72px] justify-center tabular-nums',
+                        'bg-surface-tertiary/50 text-text-tertiary px-2 py-1 rounded-lg text-xs font-bold inline-flex items-center gap-1 min-w-[72px] justify-center font-data',
                         className
                     )}
                 >
@@ -39,7 +39,7 @@ export function ChangeLabel({
         return (
             <span
                 className={cn(
-                    'px-2 py-1 rounded-lg text-xs font-bold inline-flex items-center gap-1 min-w-[72px] justify-center tabular-nums border border-transparent',
+                    'px-2 py-1 rounded-lg text-xs font-bold inline-flex items-center gap-1 min-w-[72px] justify-center font-data border border-transparent',
                     isPositive ? 'text-up bg-up/10' : 'text-down bg-down/10',
                     className
                 )}
@@ -53,7 +53,7 @@ export function ChangeLabel({
     return (
         <span
             className={cn(
-                'inline-flex items-center gap-0.5 text-sm font-semibold tabular-nums',
+                'inline-flex items-center gap-0.5 text-sm font-semibold font-data',
                 isPositive ? 'text-up' : isNegative ? 'text-down' : 'text-text-secondary',
                 className
             )}

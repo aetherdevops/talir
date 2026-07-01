@@ -19,6 +19,7 @@ export const useThemeStore = create<ThemeStore>()(
                 if (typeof window !== 'undefined') {
                     document.documentElement.classList.remove('light', 'dark')
                     document.documentElement.classList.add(newTheme)
+                    document.documentElement.setAttribute('data-theme', newTheme)
                 }
                 return { theme: newTheme }
             }),
@@ -27,6 +28,7 @@ export const useThemeStore = create<ThemeStore>()(
                 if (typeof window !== 'undefined') {
                     document.documentElement.classList.remove('light', 'dark')
                     document.documentElement.classList.add(theme)
+                    document.documentElement.setAttribute('data-theme', theme)
                 }
                 return { theme }
             }),
@@ -37,6 +39,7 @@ export const useThemeStore = create<ThemeStore>()(
                 if (state && typeof window !== 'undefined') {
                     document.documentElement.classList.remove('light', 'dark')
                     document.documentElement.classList.add(state.theme)
+                    document.documentElement.setAttribute('data-theme', state.theme)
                 }
             }
         }

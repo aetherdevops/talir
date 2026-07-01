@@ -31,7 +31,7 @@ export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstr
             )}
         >
             <div className="flex items-center gap-3 flex-1 min-w-0">
-                <div className="flex items-center justify-center rounded-md font-bold text-[11px] text-text-secondary bg-surface-secondary w-11 h-8 shrink-0">
+                <div className="flex items-center justify-center rounded-md font-bold text-[11px] text-text-secondary bg-surface-secondary w-11 h-8 shrink-0 font-data">
                     {stock.code}
                 </div>
                 <div className="flex flex-col min-w-0 flex-1 gap-0.5">
@@ -39,7 +39,7 @@ export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstr
                         {stock.name}
                     </span>
                     {stock.type !== 'Index' && (
-                        <span className="text-[10px] text-text-tertiary tabular-nums leading-none">
+                        <span className="text-[10px] text-text-tertiary font-data leading-none">
                             Vol {formatInteger(stock.volume)}
                         </span>
                     )}
@@ -59,7 +59,7 @@ export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstr
             </div>
 
             <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-                <span className="text-xs sm:text-sm font-semibold text-text-primary tabular-nums text-right min-w-[72px] sm:min-w-[88px]">
+                <span className="text-xs sm:text-sm font-semibold text-text-primary font-data text-right min-w-[72px] sm:min-w-[88px]">
                     {formatPrice(stock.price)}
                 </span>
                 <div style={{ width: CHANGE_WIDTH }} className="flex justify-end">

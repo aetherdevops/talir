@@ -1,57 +1,81 @@
-/* Talir design tokens — light/dark via class on html */
+/* Talir — "The Sovereign" design tokens */
 
 :root {
-  --bg: #fafafa;
-  --bg-secondary: #ffffff;
-  --surface: #ffffff;
-  --surface-secondary: #f4f4f5;
-  --surface-tertiary: #e4e4e7;
+  /* Brand palette (raw) */
+  --talir-navy: #0f1f38;
+  --talir-navy-2: #16294a;
+  --talir-navy-deep: #0a1424;
+  --talir-navy-alt: #0b2545;
+  --talir-gold: #c6a24a;
+  --talir-gold-bright: #dcc079;
+  --talir-gold-soft: #e7d9a8;
+  --talir-ivory: #f5f2ea;
+  --talir-ivory-card: #fbfaf5;
+  --talir-muted: #5a6577;
+
+  /* Type families (set by next/font in layout) */
+  --talir-serif: var(--font-serif), Georgia, 'Times New Roman', serif;
+  --talir-mono: var(--font-mono), ui-monospace, 'Courier New', monospace;
+  --talir-sans: var(--font-sans), system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Semantic — light */
+  --bg: var(--talir-ivory);
+  --bg-secondary: var(--talir-ivory-card);
+  --surface: var(--talir-ivory-card);
+  --surface-secondary: #ffffff;
+  --surface-tertiary: #eeebe3;
   --surface-elevated: #ffffff;
+  --surface-2: #ffffff;
 
-  --text: #09090b;
-  --text-muted: #71717a;
-  --text-subtle: #a1a1aa;
+  --text: var(--talir-navy);
+  --text-muted: var(--talir-muted);
+  --text-subtle: #7a8494;
 
-  --border: rgba(0, 0, 0, 0.08);
-  --border-active: rgba(0, 0, 0, 0.16);
+  --accent: var(--talir-gold);
+  --accent-muted: rgba(198, 162, 74, 0.12);
 
-  --accent: #0891b2;
-  --accent-muted: #ecfeff;
+  --border: rgba(15, 31, 56, 0.12);
+  --border-active: rgba(15, 31, 56, 0.22);
 
-  --up: #059669;
-  --down: #dc2626;
+  --up: #1a7a47;
+  --down: #c2362f;
+  --neutral: var(--talir-muted);
 
+  /* Tailwind bridge aliases */
   --background: var(--bg-secondary);
   --foreground: var(--text);
   --text-primary: var(--text);
   --text-secondary: var(--text-muted);
   --text-tertiary: var(--text-subtle);
   --brand-active: var(--accent-muted);
-  --brand-text: var(--accent);
+  --brand-text: var(--talir-navy);
 }
 
-.dark {
+.dark,
+:root[data-theme='dark'] {
   color-scheme: dark;
 
-  --bg: #0e0e10;
-  --bg-secondary: #0e0e10;
-  --surface: #18181b;
-  --surface-secondary: #27272a;
-  --surface-tertiary: #3f3f46;
-  --surface-elevated: #27272a;
+  --bg: var(--talir-navy-deep);
+  --bg-secondary: var(--talir-navy-deep);
+  --surface: var(--talir-navy);
+  --surface-secondary: var(--talir-navy-2);
+  --surface-tertiary: var(--talir-navy-alt);
+  --surface-elevated: var(--talir-navy-2);
+  --surface-2: var(--talir-navy-2);
 
-  --text: #fafafa;
-  --text-muted: #d4d4d8;
-  --text-subtle: #a1a1aa;
+  --text: var(--talir-ivory);
+  --text-muted: #9fb0c9;
+  --text-subtle: #7a8fa8;
 
-  --border: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(255, 255, 255, 0.16);
+  --accent: var(--talir-gold-bright);
+  --accent-muted: rgba(220, 192, 121, 0.14);
 
-  --accent: #67e8f9;
-  --accent-muted: rgba(6, 182, 212, 0.15);
+  --border: rgba(231, 217, 168, 0.14);
+  --border-active: rgba(231, 217, 168, 0.28);
 
-  --up: #34d399;
-  --down: #f87171;
+  --up: #54c98c;
+  --down: #f0726a;
+  --neutral: #9fb0c9;
 
   --background: var(--bg-secondary);
   --foreground: var(--text);
@@ -59,5 +83,5 @@
   --text-secondary: var(--text-muted);
   --text-tertiary: var(--text-subtle);
   --brand-active: var(--accent-muted);
-  --brand-text: var(--accent);
+  --brand-text: var(--talir-gold-bright);
 }

@@ -25,17 +25,17 @@ export function MarketSentimentStrip({ sentiment, asOfDate, className }: MarketS
         >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
-                    <span className="inline-flex items-center gap-1 text-up font-semibold tabular-nums">
+                    <span className="inline-flex items-center gap-1 text-up font-semibold font-data">
                         <ArrowUp className="h-3 w-3" aria-hidden />
                         {advancers} up
                     </span>
-                    <span className="inline-flex items-center gap-1 text-down font-semibold tabular-nums">
+                    <span className="inline-flex items-center gap-1 text-down font-semibold font-data">
                         <ArrowDown className="h-3 w-3" aria-hidden />
                         {decliners} down
                     </span>
-                    <span className="text-text-tertiary tabular-nums">{unchanged} flat</span>
+                    <span className="text-text-tertiary font-data">{unchanged} flat</span>
                     {primaryIndex && (
-                        <span className="text-text-secondary border-l border-border pl-4 tabular-nums">
+                        <span className="text-text-secondary border-l border-border pl-4 font-data">
                             {primaryIndex.name}{' '}
                             <span className="font-medium text-text-primary">
                                 {formatPrice(primaryIndex.value)}

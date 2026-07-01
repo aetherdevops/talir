@@ -15,7 +15,6 @@ import { HomeTopMovers } from '@/components/home/HomeTopMovers'
 import { MarketStatus } from '@/components/home/MarketStatus'
 import { NewsFeed } from '@/components/news/NewsFeed'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
-import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
 
 export const revalidate = 86400
@@ -56,8 +55,7 @@ export default async function HomePage() {
                 <SponsorSlot placement="mobile-in-flow" className="md:hidden" />
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                    <MarketStatus asOfDate={asOfDate} />
-                    <DataFreshnessLabel asOfDate={asOfDate} className="sm:text-right" />
+                    <MarketStatus />
                 </div>
 
                 <NewsFeed items={news} layout="home" />

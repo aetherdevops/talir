@@ -1,6 +1,6 @@
 
 import { ArrowUpRight, ArrowDownRight, PieChart, Building2, Wallet } from 'lucide-react'
-import { cn, formatPrice } from '@/lib/utils'
+import { cn, formatPrice, formatPriceChange } from '@/lib/utils'
 
 interface PortfolioHighlightsProps {
     dailyGain: number
@@ -20,7 +20,7 @@ export function PortfolioHighlights({
     return (
         <div className={cn("bg-surface rounded-3xl p-6 border border-border h-full", className)}>
             <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-bold text-text-primary">Portfolio highlights</h3>
+                <h3 className="text-lg font-bold text-text-primary font-heading">Portfolio highlights</h3>
             </div>
 
             <div className="flex flex-col gap-4 mb-8">
@@ -33,9 +33,9 @@ export function PortfolioHighlights({
                         <div className="text-lg font-bold font-mono tracking-tight">
                             {dailyGain > 0 ? '+' : ''}{formatPrice(dailyGain)}
                         </div>
-                        <div className="text-sm font-medium font-mono flex items-center gap-1">
+                        <div className="text-sm font-medium font-data flex items-center gap-1">
                             {dailyGain >= 0 ? <ArrowUpRight className="w-4 h-4" /> : <ArrowDownRight className="w-4 h-4" />}
-                            {Math.abs(dailyGainPercent).toFixed(2)}%
+                            {formatPriceChange(dailyGainPercent)}
                         </div>
                     </div>
                 </div>
@@ -48,9 +48,9 @@ export function PortfolioHighlights({
                         <div className="text-lg font-bold font-mono tracking-tight">
                             {totalGain > 0 ? '+' : ''}{formatPrice(totalGain)}
                         </div>
-                        <div className="text-sm font-medium font-mono flex items-center gap-1">
+                        <div className="text-sm font-medium font-data flex items-center gap-1">
                             {totalGain >= 0 ? <ArrowUpRight className="w-4 h-4" /> : <ArrowDownRight className="w-4 h-4" />}
-                            {Math.abs(totalGainPercent).toFixed(2)}%
+                            {formatPriceChange(totalGainPercent)}
                         </div>
                     </div>
                 </div>

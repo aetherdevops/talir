@@ -55,7 +55,7 @@ export function CreateMenu({ open, onClose, variant }: CreateMenuProps) {
                 'text-left transition-colors'
             )}
         >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-500/10 text-brand-600">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-muted text-accent">
                 <Icon className="h-5 w-5" aria-hidden />
             </span>
             <span className="flex flex-col gap-0.5 min-w-0">

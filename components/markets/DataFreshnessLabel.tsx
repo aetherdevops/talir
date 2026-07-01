@@ -12,7 +12,7 @@ export function DataFreshnessLabel({ asOfDate, className, variant = 'default' }:
 
     if (variant === 'compact') {
         return (
-            <span className={cn('text-[11px] text-text-tertiary tabular-nums', className)}>
+            <span className={cn('text-[11px] text-text-tertiary font-data', className)}>
                 End-of-day · {formatted}
             </span>
         )
@@ -20,7 +20,7 @@ export function DataFreshnessLabel({ asOfDate, className, variant = 'default' }:
 
     return (
         <p className={cn('text-xs text-text-tertiary', className)}>
-            Data as of <span className="font-medium text-text-secondary tabular-nums">{formatted}</span>
+            Data as of <span className="font-medium text-text-secondary font-data">{formatted}</span>
             {' · '}
             <span className="text-text-tertiary">end-of-day close, not live</span>
         </p>

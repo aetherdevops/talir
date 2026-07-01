@@ -1,12 +1,18 @@
 {
-    "name": "Talir - Macedonian Stock Exchange",
+    "name": "Talir — Macedonian Stock Exchange",
     "short_name": "Talir",
-    "description": "Track MSE stocks, build watchlists, and stay informed",
+    "description": "End-of-day MSE stocks, indices, watchlists, and news",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#0F172A",
-    "theme_color": "#2563EB",
+    "background_color": "#F5F2EA",
+    "theme_color": "#0F1F38",
     "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
         {
             "src": "/icons/icon-192.png",
             "sizes": "192x192",

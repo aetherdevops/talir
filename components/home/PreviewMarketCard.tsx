@@ -33,7 +33,7 @@ export function PreviewMarketCard({
                 className
             )}
         >
-            <span className="font-semibold text-text-secondary text-[10px] sm:text-xs tracking-wider uppercase truncate">
+            <span className="font-data font-semibold text-text-secondary text-[10px] sm:text-xs tracking-wider uppercase truncate">
                 {label}
             </span>
             <div className="flex-1 flex items-center min-h-[48px] my-1">
@@ -45,7 +45,7 @@ export function PreviewMarketCard({
                 />
             </div>
             <div className="space-y-0.5">
-                <span className="text-base sm:text-lg font-semibold text-text-primary tabular-nums block">
+                <span className="text-base sm:text-lg font-semibold text-text-primary font-data block">
                     {formatPriceCompact(latestPrice)}
                 </span>
                 <ChangeLabel change={changePercent} className="text-xs" />

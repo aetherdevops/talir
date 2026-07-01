@@ -18,7 +18,9 @@
     "script:sync": "tsx scripts/sync_stock_data.ts",
     "generate:sparklines": "node scripts/generate-sparklines.mjs",
     "generate:derived": "node scripts/generate-derived-market.mjs",
-    "prebuild": "node scripts/generate-sparklines.mjs && node scripts/generate-derived-market.mjs"
+    "generate:search-index": "node scripts/generate-search-index.mjs",
+    "lighthouse:budget": "node scripts/lighthouse-budget.mjs",
+    "prebuild": "node scripts/generate-sparklines.mjs && node scripts/generate-derived-market.mjs && node scripts/generate-search-index.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",

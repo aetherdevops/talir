@@ -33,7 +33,7 @@ function SidebarItem({ icon: Icon, label, href, isActive, isCollapsed, iconClass
                 className={cn(
                     "flex items-center rounded-xl transition-all duration-200 group relative my-1 overflow-hidden",
                     isActive
-                        ? "bg-brand-active text-brand-text font-bold"
+                        ? "bg-accent-muted text-accent font-bold border border-accent/20"
                         : "text-text-secondary hover:bg-surface-secondary hover:text-text-primary",
                     isCollapsed ? "justify-center px-0 w-10 mx-auto" : "w-full px-2"
                 )}
@@ -121,7 +121,7 @@ export function Sidebar({ className }: { className?: string }) {
                             isActive={pathname === '/portfolio' && activePortfolioId === p.id}
                             isCollapsed={!isOpen}
                             onClick={() => setActivePortfolio(p.id)}
-                            iconClass={p.id === activePortfolioId ? "text-brand-500" : undefined}
+                            iconClass={p.id === activePortfolioId ? "text-accent" : undefined}
                         />
                     ))}
 

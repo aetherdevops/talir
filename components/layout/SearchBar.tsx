@@ -7,6 +7,7 @@ import { cn, formatPrice } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { PriceChangeBadge } from '@/components/ui/Badge'
 import { StockSummary } from '@/lib/types'
+import { useSearchIndex } from '@/components/providers/InstrumentsProvider'
 
 export function SearchBar({ className, items = [] }: { className?: string, items?: StockSummary[] }) {
     const router = useRouter()
@@ -17,6 +18,13 @@ export function SearchBar({ className, items = [] }: { className?: string, items
     const [activeTab, setActiveTab] = useState('All')
     const [isOpen, setIsOpen] = useState(false)
     const [focusedIndex, setFocusedIndex] = useState(-1)
+    const searchIndex = useSearchIndex()
+
+    const instrumentByCode = useMemo(() => {
+        const map = new Map<string, StockSummary>()
+        for (const item of items) map.set(item.code, item)
+        return map
+    }, [items])
 
     const tabs = ['All', 'Index', 'Stock']
 
@@ -36,20 +44,31 @@ export function SearchBar({ className, items = [] }: { className?: string, items
     const filteredData = useMemo(() => {
         if (!items || items.length === 0) return []
 
-        return items.filter(item => {
-            const itemType = item.type || 'Stock'
-            const matchesTab = activeTab === 'All'
-                ? true
-                : activeTab === itemType
+        const q = query.trim().toLowerCase()
+        const useIndex = q.length > 0 && searchIndex.length > 0
 
-            const matchesQuery = query === ''
-                ? true
-                : item.name.toLowerCase().includes(query.toLowerCase()) ||
-                item.code.toLowerCase().includes(query.toLowerCase())
+        const candidates = useIndex
+            ? searchIndex
+                  .filter((entry) => {
+                      const matchesTab =
+                          activeTab === 'All' ? true : activeTab === entry.type
+                      return matchesTab && entry.q.includes(q)
+                  })
+                  .slice(0, 80)
+                  .map((entry) => instrumentByCode.get(entry.code))
+                  .filter((item): item is StockSummary => Boolean(item))
+            : items.filter((item) => {
+                  const itemType = item.type || 'Stock'
+                  const matchesTab = activeTab === 'All' ? true : activeTab === itemType
+                  const matchesQuery =
+                      q === '' ||
+                      item.name.toLowerCase().includes(q) ||
+                      item.code.toLowerCase().includes(q)
+                  return matchesTab && matchesQuery
+              })
 
-            return matchesTab && matchesQuery
-        }).slice(0, 50) // Limit results for performance
-    }, [query, activeTab, items])
+        return candidates.slice(0, 50)
+    }, [query, activeTab, items, searchIndex, instrumentByCode])
 
     const handleSelect = (item: StockSummary) => {
         if (item.type === 'Index') {

@@ -9,6 +9,7 @@ import issuersData from '@/lib/data/issuers.json'
 import sparklinesData from '@/lib/data/sparklines.json'
 import derivedMarketData from '@/lib/data/derived_market.json'
 import scrapeMetaData from '@/lib/data/scrape_meta.json'
+import searchIndexData from '@/lib/data/search_index.json'
 
 // Unified fetcher for both stocks and indices
 export async function getAllInstruments(): Promise<StockSummary[]> {
@@ -224,7 +225,7 @@ export function getMarketSentiment(stocks: StockSummary[]): MarketSentiment {
 }
 
 export function getMarketDataAsOf(stocks: StockSummary[]): string {
-    const meta = scrapeMetaData as { asOfDate?: string; status?: string }
+    const meta = scrapeMetaData as ScrapeMeta
     if (meta.asOfDate) return meta.asOfDate
 
     const dates = stocks
@@ -232,6 +233,30 @@ export function getMarketDataAsOf(stocks: StockSummary[]): string {
         .filter(Boolean)
         .sort()
     return dates.length > 0 ? dates[dates.length - 1] : new Date().toISOString().split('T')[0]
+}
+
+export type ScrapeMeta = {
+    asOfDate?: string
+    status?: 'ok' | 'partial' | 'failed'
+    generatedAt?: string
+    instrumentCount?: number
+    errors?: string[]
+}
+
+export function getScrapeMeta(): ScrapeMeta {
+    return scrapeMetaData as ScrapeMeta
+}
+
+export type SearchIndexItem = {
+    code: string
+    name: string
+    type: 'Stock' | 'Index'
+    q: string
+}
+
+export function getSearchIndex(): SearchIndexItem[] {
+    const index = searchIndexData as { items?: SearchIndexItem[] }
+    return index.items ?? []
 }
 
 export function attachSparklines(stocks: StockSummary[]): StockSummary[] {

@@ -20,13 +20,13 @@ function MoverRow({ stock }: { stock: StockSummary }) {
             href={`/stock/${stock.code}`}
             className="flex items-center gap-2 min-h-[44px] py-2 px-1 hover:bg-surface-secondary/60 rounded-lg transition-colors"
         >
-            <span className="text-xs font-bold text-text-secondary w-11 shrink-0 tabular-nums">
+            <span className="text-xs font-bold text-text-secondary w-11 shrink-0 font-data">
                 {stock.code}
             </span>
             <div className="w-[56px] h-6 shrink-0">
                 <IndexSparkline series={series} positive={positive} height={24} className="w-full" />
             </div>
-            <span className="text-xs font-semibold text-text-primary tabular-nums ml-auto">
+            <span className="text-xs font-semibold text-text-primary font-data ml-auto">
                 {formatPriceCompact(stock.price)}
             </span>
             <div className="w-[68px] flex justify-end shrink-0">
@@ -39,7 +39,7 @@ function MoverRow({ stock }: { stock: StockSummary }) {
 function MoverColumn({ title, stocks, emptyLabel }: { title: string; stocks: StockSummary[]; emptyLabel: string }) {
     return (
         <div className="rounded-xl border border-border/60 bg-surface/50 p-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-text-tertiary mb-2 px-1">
+            <h3 className="font-heading text-xs font-bold uppercase tracking-wider text-text-tertiary mb-2 px-1">
                 {title}
             </h3>
             {stocks.length > 0 ? (

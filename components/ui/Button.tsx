@@ -10,11 +10,11 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant = 'primary', size = 'md', asChild = false, ...props }, ref) => {
         // Pill shape, font sans, active scale animation
-        const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 disabled:pointer-events-none disabled:opacity-50 shadow-sm'
+        const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:pointer-events-none disabled:opacity-50 shadow-sm'
 
         const variants = {
-            primary: 'bg-brand-600 text-white hover:bg-brand-700 hover:shadow-md hover:shadow-brand-500/20',
-            secondary: 'glass bg-surface text-brand-600 border border-brand-100 dark:border-brand-900/30 dark:bg-brand-900/10 hover:bg-brand-50 dark:hover:bg-brand-900/30',
+            primary: 'bg-talir-navy text-talir-ivory hover:opacity-90 hover:shadow-md dark:bg-accent dark:text-talir-navy-deep',
+            secondary: 'glass bg-surface text-text-primary border border-border hover:bg-surface-secondary hover:border-accent/30',
             ghost: 'bg-transparent text-text-secondary hover:bg-surface-secondary dark:hover:bg-white/5 hover:text-text-primary shadow-none',
             danger: 'bg-loss/10 text-loss hover:bg-loss/20 border border-loss/20',
             outline: 'bg-transparent border border-border text-text-primary hover:bg-surface-secondary',

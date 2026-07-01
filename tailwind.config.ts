@@ -5,14 +5,10 @@ const config: Config = {
         './app/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
     ],
-    darkMode: 'class',
+    darkMode: ['class', '[data-theme="dark"]'],
     theme: {
         extend: {
             colors: {
-                // True Design System mappings
-                // These don't hardcode colors; they read variables from globals.css
-                // This makes "Theme Flashing" impossible if variables are set in <head>
-
                 background: 'var(--background)',
                 foreground: 'var(--foreground)',
 
@@ -20,7 +16,7 @@ const config: Config = {
                     DEFAULT: 'var(--surface)',
                     secondary: 'var(--surface-secondary)',
                     tertiary: 'var(--surface-tertiary)',
-                    elevated: 'var(--surface-elevated)', // For dropdowns/modals
+                    elevated: 'var(--surface-elevated)',
                 },
 
                 border: {
@@ -28,25 +24,36 @@ const config: Config = {
                     active: 'var(--border-active)',
                 },
 
-                // Brand Scale - Kept for accents, but dark mode active states rely on variables
                 brand: {
-                    50: '#ecfeff',
-                    100: '#cffafe',
-                    500: '#06b6d4',
-                    600: '#0891b2',
-                    700: '#0e7490',
-                    active: 'var(--brand-active)', // specific for Sidebar active bg
-                    text: 'var(--brand-text)',     // specific for Sidebar active text
+                    active: 'var(--brand-active)',
+                    text: 'var(--brand-text)',
+                    500: 'var(--accent)',
+                    600: 'var(--talir-gold)',
                 },
 
-                // Semantic Text
+                talir: {
+                    navy: 'var(--talir-navy)',
+                    'navy-deep': 'var(--talir-navy-deep)',
+                    'navy-2': 'var(--talir-navy-2)',
+                    gold: 'var(--talir-gold)',
+                    'gold-soft': 'var(--talir-gold-soft)',
+                    ivory: 'var(--talir-ivory)',
+                },
+
                 text: {
                     primary: 'var(--text-primary)',
                     secondary: 'var(--text-secondary)',
                     tertiary: 'var(--text-tertiary)',
                 },
+
                 up: 'var(--up)',
                 down: 'var(--down)',
+                neutral: 'var(--neutral)',
+
+                success: 'var(--up)',
+                danger: 'var(--down)',
+                loss: 'var(--down)',
+
                 accent: {
                     DEFAULT: 'var(--accent)',
                     muted: 'var(--accent-muted)',
@@ -54,15 +61,17 @@ const config: Config = {
             },
             fontFamily: {
                 sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-                mono: ['var(--font-mono)', 'monospace'],
+                serif: ['var(--font-serif)', 'Georgia', 'serif'],
+                mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+                display: ['var(--font-serif)', 'Georgia', 'serif'],
             },
             transitionTimingFunction: {
-                'sidebar': 'cubic-bezier(0.4, 0, 0.2, 1)',
+                sidebar: 'cubic-bezier(0.4, 0, 0.2, 1)',
             },
             boxShadow: {
-                'sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-                'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-            }
+                sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+                md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+            },
         },
     },
     plugins: [],

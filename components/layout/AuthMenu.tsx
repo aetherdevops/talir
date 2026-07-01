@@ -36,7 +36,7 @@ export function AuthMenu() {
             <button
                 type="button"
                 onClick={() => setOpen((value) => !value)}
-                className="h-9 w-9 rounded-full bg-gradient-to-br from-brand-500 to-brand-600 text-white flex items-center justify-center font-bold text-sm shadow-md hover:ring-2 hover:ring-offset-2 hover:ring-brand-500 transition-all dark:ring-offset-zinc-900"
+                className="h-9 w-9 rounded-full bg-gradient-to-br from-accent to-talir-gold text-talir-navy flex items-center justify-center font-bold text-sm shadow-md hover:ring-2 hover:ring-offset-2 hover:ring-accent transition-all dark:ring-offset-talir-navy-deep"
                 aria-label="Account menu"
             >
                 {initial}
