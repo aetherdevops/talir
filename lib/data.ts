@@ -7,6 +7,8 @@ import { transliterate } from './transliterate'
 import marketSummaryData from '@/lib/data/market_summary.json'
 import issuersData from '@/lib/data/issuers.json'
 import sparklinesData from '@/lib/data/sparklines.json'
+import derivedMarketData from '@/lib/data/derived_market.json'
+import scrapeMetaData from '@/lib/data/scrape_meta.json'
 
 // Unified fetcher for both stocks and indices
 export async function getAllInstruments(): Promise<StockSummary[]> {
@@ -33,11 +35,41 @@ export async function getAllInstruments(): Promise<StockSummary[]> {
     return [...indexItems, ...stocks]
 }
 
-// Fetch all stocks summary
+// Fetch all stocks summary (prefers precomputed derived_market.json)
 export async function getAllStocks(): Promise<StockSummary[]> {
     try {
-        const data = marketSummaryData as any[]
+        const derived = derivedMarketData as {
+            instruments?: Array<{
+                code: string
+                name: string
+                price: number
+                change: number
+                changePercent: number
+                volume: number
+                turnover: number
+                date: string
+            }>
+        }
 
+        if (derived.instruments?.length) {
+            const sparklines = getMarketSparklines()
+            return derived.instruments
+                .map((item) => ({
+                    code: item.code,
+                    name: item.name || '',
+                    price: item.price,
+                    change: item.change,
+                    changePercent: item.changePercent,
+                    volume: item.volume || 0,
+                    turnover: item.turnover || 0,
+                    date: item.date,
+                    type: 'Stock' as const,
+                    chartSeries: sparklines[item.code],
+                }))
+                .filter((s) => s.price > 0 || s.volume > 0)
+        }
+
+        const data = marketSummaryData as any[]
         if (!data) return []
 
         return data.map((item: any) => ({
@@ -49,8 +81,8 @@ export async function getAllStocks(): Promise<StockSummary[]> {
             volume: item.volume || 0,
             turnover: item.turnover || 0,
             date: item.date,
-            type: 'Stock' as const
-        })).filter(s => s.price > 0 || s.volume > 0)
+            type: 'Stock' as const,
+        })).filter((s) => s.price > 0 || s.volume > 0)
     } catch (e) {
         console.error("Error getting all stocks", e)
         return []
@@ -192,11 +224,22 @@ export function getMarketSentiment(stocks: StockSummary[]): MarketSentiment {
 }
 
 export function getMarketDataAsOf(stocks: StockSummary[]): string {
+    const meta = scrapeMetaData as { asOfDate?: string; status?: string }
+    if (meta.asOfDate) return meta.asOfDate
+
     const dates = stocks
         .map((s) => s.date)
         .filter(Boolean)
         .sort()
     return dates.length > 0 ? dates[dates.length - 1] : new Date().toISOString().split('T')[0]
+}
+
+export function attachSparklines(stocks: StockSummary[]): StockSummary[] {
+    const sparklines = getMarketSparklines()
+    return stocks.map((s) => ({
+        ...s,
+        chartSeries: s.chartSeries?.length ? s.chartSeries : sparklines[s.code] ?? [],
+    }))
 }
 
 export type SparklineMap = Record<string, { date: string; value: number }[]>

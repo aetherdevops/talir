@@ -3,19 +3,17 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Home, TrendingUp, List, Search, UserPlus } from 'lucide-react'
+import { Home, TrendingUp, List, Search, UserPlus, Newspaper } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { MobileSearchSheet } from '@/components/layout/MobileSearchSheet'
-import { CreateActionSheet } from '@/components/layout/CreateActionSheet'
+import { CreateMenu } from '@/components/layout/CreateMenu'
 
 const leftItems = [
     { icon: Home, label: 'Home', href: '/' },
     { icon: TrendingUp, label: 'Markets', href: '/markets' },
 ] as const
 
-const rightItems = [
-    { icon: List, label: 'Watchlist', href: '/watchlist' },
-] as const
+const rightItems = [{ icon: List, label: 'Watchlist', href: '/watchlist' }] as const
 
 function NavTab({
     icon: Icon,
@@ -62,9 +60,7 @@ export function BottomNav() {
                             <NavTab key={item.label} {...item} isActive={isActive(item.href)} />
                         ))}
                     </div>
-
                     <div className="w-16 shrink-0" aria-hidden />
-
                     <div className="flex flex-1 justify-around">
                         {rightItems.map((item) => (
                             <NavTab key={item.label} {...item} isActive={isActive(item.href)} />
@@ -79,7 +75,6 @@ export function BottomNav() {
                             Search
                         </button>
                     </div>
-
                     <div className="absolute left-1/2 -translate-x-1/2 -top-5">
                         <button
                             type="button"
@@ -87,8 +82,7 @@ export function BottomNav() {
                             className={cn(
                                 'flex h-14 w-14 items-center justify-center rounded-full',
                                 'bg-brand-500 text-white shadow-lg shadow-brand-500/30',
-                                'border-4 border-surface',
-                                'transition-transform active:scale-95'
+                                'border-4 border-surface transition-transform active:scale-95'
                             )}
                             aria-label="Create watchlist or portfolio"
                         >
@@ -99,7 +93,7 @@ export function BottomNav() {
             </nav>
 
             <MobileSearchSheet open={searchOpen} onClose={() => setSearchOpen(false)} />
-            <CreateActionSheet open={createOpen} onClose={() => setCreateOpen(false)} />
+            <CreateMenu open={createOpen} onClose={() => setCreateOpen(false)} variant="sheet" />
         </>
     )
 }

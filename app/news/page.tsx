@@ -7,15 +7,14 @@ export const metadata: Metadata = {
     description: 'Latest MSE market news and company filings',
 }
 
-export const revalidate = 60
+export const revalidate = 86400
 
 export default async function NewsPage() {
     const news = await getLatestNews(20)
 
     return (
-        <div className="min-h-screen bg-background pb-20">
-            <main className="max-w-4xl mx-auto px-4 py-8 animate-in fade-in duration-500">
-                <div className="flex flex-col gap-8">
+        <main className="max-w-7xl mx-auto px-4 py-8 animate-in fade-in duration-500">
+            <div className="flex flex-col gap-8">
                     <header className="flex flex-col gap-2">
                         <h1 className="text-3xl font-semibold text-text-primary tracking-tight">MSE Market News</h1>
                         <p className="text-text-secondary">
@@ -24,8 +23,7 @@ export default async function NewsPage() {
                     </header>
 
                     <NewsFeed items={news} layout="page" showHeader={false} />
-                </div>
-            </main>
-        </div>
+            </div>
+        </main>
     )
 }

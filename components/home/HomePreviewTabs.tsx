@@ -14,7 +14,6 @@ interface HomePreviewTabsProps {
     gainers: StockSummary[]
     losers: StockSummary[]
     mostActive: StockSummary[]
-    portfolioSlot: React.ReactNode
 }
 
 function TabPills<T extends string>({
@@ -51,8 +50,8 @@ function TabPills<T extends string>({
 
 function PreviewCarousel({ children }: { children: React.ReactNode }) {
     return (
-        <div className="w-full overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-            <div className="flex gap-3 min-w-max">{children}</div>
+        <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex gap-3">{children}</div>
         </div>
     )
 }
@@ -62,7 +61,6 @@ export function HomePreviewTabs({
     gainers,
     losers,
     mostActive,
-    portfolioSlot,
 }: HomePreviewTabsProps) {
     const [mainTab, setMainTab] = useState<MainTab>('indices')
     const [stockTab, setStockTab] = useState<StockTab>('active')
@@ -75,7 +73,7 @@ export function HomePreviewTabs({
     const activeStocks = stockLists[stockTab]
 
     return (
-        <div className="space-y-4">
+        <div className="space-y-3">
             <TabPills
                 options={[
                     { id: 'indices', label: 'Indices' },
@@ -92,11 +90,11 @@ export function HomePreviewTabs({
                             key={idx.name}
                             href={`/market/${idx.name}`}
                             label={idx.name}
-                            chartSeries={idx.chartSeries ?? []}
+                            chartSeries={(idx.chartSeries ?? []).slice(-30)}
                             latestPrice={idx.value}
+                            changePercent={idx.changePercent}
                         />
                     ))}
-                    {portfolioSlot}
                 </PreviewCarousel>
             )}
 
@@ -116,9 +114,8 @@ export function HomePreviewTabs({
                             <StockPreviewCard key={stock.code} stock={stock} />
                         ))}
                         {activeStocks.length === 0 && (
-                            <p className="text-sm text-text-tertiary py-8 px-4">No data available</p>
+                            <p className="text-sm text-text-tertiary py-8 px-2">No data available</p>
                         )}
-                        {portfolioSlot}
                     </PreviewCarousel>
                 </div>
             )}

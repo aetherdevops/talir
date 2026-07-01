@@ -12,6 +12,7 @@ export function StockPreviewCard({ stock }: StockPreviewCardProps) {
             label={stock.code}
             chartSeries={stock.chartSeries ?? []}
             latestPrice={stock.price}
+            changePercent={stock.changePercent}
         />
     )
 }

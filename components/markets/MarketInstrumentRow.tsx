@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { formatPrice, formatInteger } from '@/lib/utils'
 import { StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
-import { PeriodChangeLabel } from '@/components/home/PeriodChangeLabel'
+import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { IndexSparkline } from '@/components/home/IndexSparkline'
 import { StockPageActions } from '@/components/stock/StockPageActions'
 
@@ -63,12 +63,12 @@ export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstr
                     {formatPrice(stock.price)}
                 </span>
                 <div style={{ width: CHANGE_WIDTH }} className="flex justify-end">
-                    <PeriodChangeLabel change={stock.changePercent} className="text-xs" />
+                    <ChangeLabel change={stock.changePercent} className="text-xs" />
                 </div>
             </div>
 
             <div
-                className="shrink-0 border-l border-border/60 pl-2 ml-1 hidden sm:block"
+                className="shrink-0 border-l border-border/60 pl-2 ml-1"
                 onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()

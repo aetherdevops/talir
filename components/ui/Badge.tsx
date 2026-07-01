@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { cn, formatPriceChange } from '@/lib/utils'
-import { ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react'
+import { ChangeLabel } from '@/components/ui/ChangeLabel'
+import { cn } from '@/lib/utils'
 
 // Using hash to generate pastel background colors for tickers
 const getBadgeColor = (symbol: string) => {
@@ -44,59 +44,13 @@ interface PriceChangeBadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 export function PriceChangeBadge({ change, variant = 'pill', className, ...props }: PriceChangeBadgeProps) {
-    const isPositive = change > 0
-    const isNegative = change < 0
-    const isZero = change === 0
-
-    const Icon = isPositive ? ArrowUpRight : isNegative ? ArrowDownRight : Minus
-
-    if (variant === 'text') {
-        return (
-            <span
-                className={cn(
-                    'font-medium inline-flex items-center gap-1',
-                    isPositive ? 'text-up font-bold' : isNegative ? 'text-down font-bold' : 'text-text-secondary',
-                    className
-                )}
-                {...props}
-            >
-                {/* Text Variant: Icon is smaller */}
-                <Icon className="h-3.5 w-3.5" strokeWidth={2.5} />
-                {formatPriceChange(Math.abs(change))}
-            </span>
-        )
-    }
-
-    // PILL VARIANT (Default for Tables)
-    // 0% CASE: Remove colored badge, use neutral grey pill or minimal look.
-    if (isZero) {
-        return (
-            <span
-                className={cn(
-                    'bg-surface-tertiary/50 text-text-tertiary px-2 py-1 rounded-lg text-xs font-bold inline-flex items-center gap-1 min-w-[72px] justify-center',
-                    // min-w-[72px] ensures uniformity with other percentages like 1.50%
-                    className
-                )}
-                {...props}
-            >
-                <Minus className="h-3 w-3" />
-                0.00%
-            </span>
-        )
-    }
-
     return (
-        <span
-            className={cn(
-                'px-2 py-1 rounded-lg text-xs font-bold font-mono inline-flex items-center gap-1 min-w-[72px] justify-center shadow-sm border border-transparent',
-                isPositive ? 'text-up bg-up/10' : 'text-down bg-down/10',
-                className
-            )}
+        <ChangeLabel
+            change={change}
+            variant={variant === 'pill' ? 'pill' : 'inline'}
+            iconStyle="diagonal"
+            className={cn(className)}
             {...props}
-        >
-            {/* Arrow BEFORE the number */}
-            <Icon className="h-3.5 w-3.5 -ml-1" strokeWidth={3} />
-            {Math.abs(change).toFixed(2)}%
-        </span>
+        />
     )
 }

@@ -144,7 +144,7 @@ export function StockClient({ stock, history, currentPrice, chartData, news }: S
 
 
     return (
-        <div className="flex flex-col gap-6 p-4 md:p-8 animate-fade-in w-full max-w-[1600px] mx-auto">
+        <div className="flex flex-col gap-6 animate-fade-in w-full max-w-[1600px] mx-auto">
             <StickyStockHeader
                 code={stock.company_code}
                 name={stock.company_name}

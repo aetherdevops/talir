@@ -1,7 +1,7 @@
 'use client'
 
-import { formatPrice, formatPriceChange } from '@/lib/utils'
-import { PriceChangeBadge } from '@/components/ui/Badge'
+import { formatPrice } from '@/lib/utils'
+import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { cn } from '@/lib/utils'
 
 interface StickyStockHeaderProps {
@@ -12,7 +12,7 @@ interface StickyStockHeaderProps {
     className?: string
 }
 
-export function StickyStockHeader({ code, price, changePercent, className }: StickyStockHeaderProps) {
+export function StickyStockHeader({ code, name, price, changePercent, className }: StickyStockHeaderProps) {
     return (
         <div
             className={cn(
@@ -20,13 +20,15 @@ export function StickyStockHeader({ code, price, changePercent, className }: Sti
                 'border-b border-border bg-surface/95 backdrop-blur-md px-4 py-2 min-h-[52px]',
                 className
             )}
+            style={{ paddingTop: 'max(0.5rem, env(safe-area-inset-top))' }}
         >
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
                 <p className="text-xs font-bold text-text-secondary uppercase tracking-wide">{code}</p>
+                <p className="text-[11px] text-text-tertiary truncate">{name}</p>
             </div>
             <div className="flex items-center gap-2 flex-shrink-0">
                 <span className="text-sm font-semibold text-text-primary tabular-nums">{formatPrice(price)}</span>
-                <PriceChangeBadge change={changePercent} variant="pill" className="text-xs" />
+                <ChangeLabel change={changePercent} variant="pill" className="text-xs" />
             </div>
         </div>
     )

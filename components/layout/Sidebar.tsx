@@ -7,10 +7,9 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { useThemeStore } from '@/lib/store'
 import { usePortfolioStore } from '@/lib/stores/portfolio'
-import { useRequireAuth } from '@/lib/auth/use-require-auth'
-import { CreatePortfolioModal } from "@/components/portfolio/CreatePortfolioModal"
+import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
+import { CreateMenu } from '@/components/layout/CreateMenu'
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
 
 interface SidebarItemProps {
     icon: React.ElementType
@@ -78,12 +77,10 @@ function SectionHeader({ label, onAdd, isCollapsed }: { label: string, onAdd?: (
 
 export function Sidebar({ className }: { className?: string }) {
     const pathname = usePathname()
-    const router = useRouter()
     const { isSidebarOpen, toggleSidebar } = useThemeStore()
-    const { createPortfolio, portfolios, activePortfolioId, setActivePortfolio } = usePortfolioStore()
-    const { requireAuth } = useRequireAuth()
+    const { portfolios, activePortfolioId, setActivePortfolio } = usePortfolioStore()
     const [mounted, setMounted] = useState(false)
-    const [isCreatePortfolioModalOpen, setIsCreatePortfolioModalOpen] = useState(false)
+    const [isCreateMenuOpen, setIsCreateMenuOpen] = useState(false)
 
     useEffect(() => {
         setMounted(true)
@@ -104,14 +101,16 @@ export function Sidebar({ className }: { className?: string }) {
             <nav className="flex-1 w-full overflow-y-auto scrollbar-hide pt-4">
                 <ul className="space-y-1 px-3">
                     <SidebarItem icon={Home} label="Home" href="/" isActive={pathname === '/'} isCollapsed={!isOpen} />
-                    <SidebarItem icon={BarChart2} label="Market Overview" href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} />
-                    <SidebarItem icon={Newspaper} label="All News" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} />
+                    <SidebarItem icon={BarChart2} label="Markets" href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} />
+                    <SidebarItem icon={Newspaper} label="News" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} />
 
                     <SectionHeader
-                        label="Portfolios"
-                        onAdd={() => { if (requireAuth()) setIsCreatePortfolioModalOpen(true) }}
+                        label="Create"
+                        onAdd={() => setIsCreateMenuOpen(true)}
                         isCollapsed={!isOpen}
                     />
+
+                    <SectionHeader label="Portfolios" isCollapsed={!isOpen} />
 
                     {portfolios.map(p => (
                         <SidebarItem
@@ -148,6 +147,10 @@ export function Sidebar({ className }: { className?: string }) {
                 </ul>
             </nav>
 
+            <div className="px-3 pb-3 hidden lg:block">
+                <SponsorSlot placement="sidebar" />
+            </div>
+
             <div className="mt-auto border-t border-border bg-surface w-full p-3">
                 <div className={cn("flex mb-2", !isOpen ? "justify-center" : "justify-end")}>
                     <Button
@@ -165,16 +168,10 @@ export function Sidebar({ className }: { className?: string }) {
                 </ul>
             </div>
 
-            <CreatePortfolioModal
-                isOpen={isCreatePortfolioModalOpen}
-                onClose={() => setIsCreatePortfolioModalOpen(false)}
-                onCreate={(name) => {
-                    if (!requireAuth()) return
-                    createPortfolio(name)
-                    if (!pathname.startsWith('/portfolio')) {
-                        router.push('/portfolio')
-                    }
-                }}
+            <CreateMenu
+                open={isCreateMenuOpen}
+                onClose={() => setIsCreateMenuOpen(false)}
+                variant="modal"
             />
         </aside>
     )

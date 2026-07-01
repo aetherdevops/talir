@@ -9,6 +9,7 @@ import { MarketInstrumentRow } from '@/components/markets/MarketInstrumentRow'
 import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { MarketStatus } from '@/components/home/MarketStatus'
+import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { cn } from '@/lib/utils'
 
 interface MarketsClientProps {
@@ -158,17 +159,30 @@ export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }
             </div>
 
             <div className="rounded-xl border border-border/60 bg-surface overflow-hidden divide-y divide-border/60">
+                <div className="hidden md:grid md:grid-cols-[1fr_72px_100px_72px_40px] gap-2 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-text-tertiary border-b border-border/60">
+                    <span>Instrument</span>
+                    <span className="text-center">Trend</span>
+                    <span className="text-right">Close</span>
+                    <span className="text-right">Change</span>
+                    <span />
+                </div>
                 {displayStocks.length > 0 ? (
-                    displayStocks.map((stock) => (
-                        <MarketInstrumentRow
-                            key={stock.code}
-                            stock={stock}
-                            sparkline={
-                                stock.chartSeries?.length
-                                    ? stock.chartSeries
-                                    : sparklines[stock.code]
-                            }
-                        />
+                    displayStocks.map((stock, i) => (
+                        <div key={stock.code}>
+                            <MarketInstrumentRow
+                                stock={stock}
+                                sparkline={
+                                    stock.chartSeries?.length
+                                        ? stock.chartSeries
+                                        : sparklines[stock.code]
+                                }
+                            />
+                            {(i + 1) % 8 === 0 && i < displayStocks.length - 1 && (
+                                <div className="px-4 py-3 border-t border-border/40">
+                                    <SponsorSlot placement="in-feed" />
+                                </div>
+                            )}
+                        </div>
                     ))
                 ) : (
                     <div className="p-12 text-center text-text-tertiary">

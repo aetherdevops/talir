@@ -75,7 +75,14 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, excludePeriod
         ? data[data.length - 1].value >= data[0].value
         : true
 
-    const chartColor = isPositive ? '#10b981' : '#ef4444' // emerald-500 : red-500
+    const chartColor =
+        typeof document !== 'undefined'
+            ? getComputedStyle(document.documentElement)
+                  .getPropertyValue(isPositive ? '--up' : '--down')
+                  .trim() || (isPositive ? '#059669' : '#dc2626')
+            : isPositive
+              ? '#059669'
+              : '#dc2626'
 
     // Tooltip State
     const toolTipRef = useRef<HTMLDivElement>(null)

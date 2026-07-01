@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Explore all stocks on the Macedonian Stock Exchange',
 }
 
-export const revalidate = 60
+export const revalidate = 86400
 
 export default async function MarketsPage() {
     const stocks = await getAllInstruments()
@@ -19,17 +19,15 @@ export default async function MarketsPage() {
     const sparklines = getMarketSparklines()
 
     return (
-        <div className="min-h-screen bg-background pb-20">
-            <main className="max-w-4xl mx-auto px-4 py-8 animate-in fade-in duration-500">
-                <Suspense fallback={<MarketsLoadingSkeleton />}>
-                    <MarketsClient
-                        initialStocks={stocks}
-                        sentiment={sentiment}
-                        asOfDate={asOfDate}
-                        sparklines={sparklines}
-                    />
-                </Suspense>
-            </main>
-        </div>
+        <main className="max-w-7xl mx-auto animate-in fade-in duration-500">
+            <Suspense fallback={<MarketsLoadingSkeleton />}>
+                <MarketsClient
+                    initialStocks={stocks}
+                    sentiment={sentiment}
+                    asOfDate={asOfDate}
+                    sparklines={sparklines}
+                />
+            </Suspense>
+        </main>
     )
 }

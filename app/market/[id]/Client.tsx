@@ -5,7 +5,8 @@ import { useState, useMemo } from 'react'
 import { IndexDetails, NewsItem } from '@/lib/data'
 import { PriceChart } from '@/components/charts/PriceChart'
 import { cn, formatPrice } from '@/lib/utils'
-import { ArrowUpRight, ArrowDownRight, Share2, Plus } from 'lucide-react'
+import { ChangeLabel } from '@/components/ui/ChangeLabel'
+import { Share2, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { StockPageActions } from '@/components/stock/StockPageActions'
 import { NewsPreview } from '@/components/home/NewsPreview'
@@ -24,7 +25,7 @@ type Timeframe = '1D' | '5D' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '5Y' | 'MAX'
 
 export function IndexClient({ index, news }: IndexClientProps) {
     const [timeframe, setTimeframe] = useState<Timeframe>('1Y')
-    const isPositive = index.change >= 0
+    const isPositive = index.changePercent >= 0
 
     // Filter chart data based on timeframe
     const chartData = useMemo(() => {
@@ -63,15 +64,7 @@ export function IndexClient({ index, news }: IndexClientProps) {
                         <span className="text-4xl font-bold text-text-primary tracking-tight">
                             {formatPrice(index.currentValue)}
                         </span>
-                        <div className={cn(
-                            "flex items-center px-2 py-1 rounded text-sm font-medium",
-                            isPositive
-                                ? "bg-emerald-500/10 text-emerald-500"
-                                : "bg-red-500/10 text-red-500"
-                        )}>
-                            {isPositive ? <ArrowUpRight className="w-4 h-4 mr-1" /> : <ArrowDownRight className="w-4 h-4 mr-1" />}
-                            {index.change > 0 ? '+' : ''}{index.change.toFixed(2)} ({index.changePercent.toFixed(2)}%)
-                        </div>
+                        <ChangeLabel change={index.changePercent} variant="pill" className="text-sm" />
                     </div>
                     <div className="text-sm text-text-tertiary mt-2">
                         {new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })} · MSE · Disclaimer
