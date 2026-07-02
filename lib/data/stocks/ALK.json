@@ -64263,6 +64263,17 @@
       "quantity": 53,
       "turnover_best_mkd": 1282672,
       "total_turnover_mkd": 1282672
+    },
+    {
+      "date": "2026-07-01",
+      "last_transaction_price": 23500,
+      "max_price": 24500,
+      "min_price": 23500,
+      "average_price": 23742.98,
+      "percent_change": -1.89,
+      "quantity": 253,
+      "turnover_best_mkd": 6006975,
+      "total_turnover_mkd": 6006975
     }
   ]
 }

@@ -53868,6 +53868,17 @@
       "quantity": 25,
       "turnover_best_mkd": 32500,
       "total_turnover_mkd": 32500
+    },
+    {
+      "date": "2026-07-01",
+      "last_transaction_price": 1300,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 1300,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
     }
   ]
 }
