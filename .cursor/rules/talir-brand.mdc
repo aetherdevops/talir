@@ -1,0 +1,193 @@
+---
+description: Talir.mk brand system — "The Sovereign" (1A). Tokens, typography, and logo. Applies to ALL UI work in this repo.
+alwaysApply: true
+---
+
+# Talir brand system — non-negotiable in every task
+
+talir.mk is an end-of-day data site for the Macedonian Stock Exchange. Brand: **"The Sovereign" (variant 1A)** — a navy reeded coin with a **gold acorn** at its centre. The acorn coin is the ONLY mark. Never substitute a "T" monogram, a tree, a generic chart icon, or any emoji/icon-font glyph.
+
+## 1. Design tokens (single source of truth — never recolor outside this set)
+
+```css
+:root {
+  /* Brand palette (raw) */
+  --talir-navy:        #0F1F38;
+  --talir-navy-2:      #16294A;
+  --talir-navy-deep:   #0A1424;
+  --talir-navy-alt:    #0B2545;
+  --talir-gold:        #C6A24A;
+  --talir-gold-bright: #DCC079;
+  --talir-gold-soft:   #E7D9A8;
+  --talir-ivory:       #F5F2EA;
+  --talir-ivory-card:  #FBFAF5;
+  --talir-muted:       #5A6577;
+
+  /* Type families */
+  --talir-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --talir-mono:  'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
+  --talir-sans:  'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Semantic layer — LIGHT (default) */
+  --bg:          var(--talir-ivory);
+  --surface:     var(--talir-ivory-card);
+  --surface-2:   #FFFFFF;
+  --text:        var(--talir-navy);
+  --text-muted:  var(--talir-muted);
+  --accent:      var(--talir-gold);
+  --border:      rgba(15, 31, 56, 0.12);
+  --up:          #1A7A47;
+  --down:        #C2362F;
+  --neutral:     var(--talir-muted);
+}
+
+/* Semantic layer — DARK (navy, on-brand — NOT near-black) */
+:root[data-theme="dark"] {
+  --bg:          var(--talir-navy-deep);
+  --surface:     var(--talir-navy);
+  --surface-2:   var(--talir-navy-2);
+  --text:        var(--talir-ivory);
+  --text-muted:  #9FB0C9;
+  --accent:      var(--talir-gold-bright);
+  --border:      rgba(231, 217, 168, 0.14);
+  --up:          #54C98C;
+  --down:        #F0726A;
+  --neutral:     #9FB0C9;
+}
+```
+
+Rules:
+- Components consume ONLY the semantic layer (`var(--bg)`, `var(--up)`, …). Never hard-code a hex in a component; never hard-code green/red.
+- Up/down pairs differ per theme for WCAG AA — do not "unify" them.
+- 8px spacing system. Radii 8–12px. Hairline borders (`--border`) over heavy boxes/shadows. Shadows only on genuinely floating elements (sheets, menus, modals).
+
+## 2. Typography roles (fixed)
+
+- **Source Serif 4, 700, letter-spacing -0.015em** → wordmark + page/section headings + company names as titles.
+- **IBM Plex Mono** → ALL numeric/market data and data labels: prices, % change, volume, index levels, "ден.", ticker symbols, "as of" freshness line, table column labels. Always `font-variant-numeric: tabular-nums`.
+- **Inter / system sans** → body and UI text: descriptions, buttons, menus, helper copy.
+
+Type scale: 12 / 14 / 16 / 20 / 28 / 40. Numbers and tickers are the visual heroes of their rows. Self-host all three fonts, subset **Latin + Cyrillic**, `font-display: swap`.
+
+## 3. The logo — complete, final code (no placeholders anywhere)
+
+### 3a. React mark component — `components/TalirMark.tsx`
+
+This is the exact 1A Sovereign geometry. Do not redraw, simplify, stretch, or "improve" the paths.
+
+```tsx
+type TalirMarkProps = {
+  size?: number;
+  disc?: string;   // coin background
+  ink?: string;    // reeded edge + acorn
+  className?: string;
+  title?: string;
+};
+
+export function TalirMark({
+  size = 40,
+  disc = "var(--talir-navy)",
+  ink = "var(--talir-gold)",
+  className,
+  title = "Talir",
+}: TalirMarkProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      role="img"
+      aria-label={title}
+      className={className}
+    >
+      {/* coin disc */}
+      <circle cx="50" cy="50" r="47" fill={disc} />
+      {/* reeded (dashed) edge — the signature; always drawn in ink */}
+      <circle cx="50" cy="50" r="46" fill="none" stroke={ink} strokeWidth="1.7" strokeDasharray="1.1 2.5" strokeLinecap="round" />
+      <circle cx="50" cy="50" r="42.5" fill="none" stroke={ink} strokeWidth="0.9" strokeOpacity="0.85" />
+      <circle cx="50" cy="50" r="37" fill="none" stroke={ink} strokeWidth="0.7" strokeOpacity="0.5" />
+      {/* acorn cap */}
+      <path d="M37 45 C37 37 44 32 50 32 C56 32 63 37 63 45 Z" fill={ink} />
+      {/* stem */}
+      <line x1="50" y1="32" x2="50" y2="27.5" stroke={ink} strokeWidth="2" strokeLinecap="round" />
+      {/* acorn body */}
+      <path d="M37 47 C37 60 42 70 50 70 C58 70 63 60 63 47 C58 49 42 49 37 47 Z" fill={ink} />
+    </svg>
+  );
+}
+```
+
+Recolor recipe (pass as props — nothing else is permitted):
+
+| Context                  | disc                      | ink                          |
+|--------------------------|---------------------------|------------------------------|
+| Full colour (on ivory)   | `var(--talir-navy)`       | `var(--talir-gold)`          |
+| On navy panel / dark hdr | `transparent`             | `var(--talir-gold-soft)`     |
+| Mono dark                | `transparent`             | `var(--talir-navy)`          |
+| Mono gold                | `transparent`             | `var(--talir-gold)`          |
+
+Never place the navy disc on a navy background — use the reversed (transparent-disc, gold-soft ink) variant. Never add drop shadows to the mark. Clear space ≥ wordmark cap height.
+
+### 3b. Horizontal lockup — `components/TalirLogo.tsx`
+
+```tsx
+import { TalirMark } from "./TalirMark";
+
+export function TalirLogo({ locale = "en" }: { locale?: "en" | "mk" }) {
+  const word = locale === "mk" ? "Талир" : "Talir";
+  const tag  = locale === "mk" ? "Скопје · Берза" : "Makedonska Berza · Markets";
+  return (
+    <a className="talir-logo" href="/" aria-label="Talir — Makedonska Berza">
+      <TalirMark size={44} className="talir-logo__mark" />
+      <span className="talir-logo__text">
+        <span className="talir-logo__word">{word}<span className="talir-logo__dot">.</span></span>
+        <span className="talir-logo__tag">{tag}</span>
+      </span>
+    </a>
+  );
+}
+```
+
+```css
+.talir-logo { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
+.talir-logo__word {
+  font-family: var(--talir-serif); font-weight: 700; font-size: 28px;
+  letter-spacing: -0.015em; line-height: 0.9; color: var(--text);
+}
+.talir-logo__dot { color: var(--accent); }  /* the gold full stop = a coin */
+.talir-logo__tag {
+  display: block; margin-top: 4px; font-family: var(--talir-mono);
+  font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--text-muted);
+}
+```
+
+The tagline is EXACTLY `Makedonska Berza · Markets` (Latin) / `Скопје · Берза` (Cyrillic). Any other tagline (e.g. "Skopje · Exchange") is a bug — replace it.
+
+### 3c. Standalone assets — CSS variables DO NOT work here; hex must be hard-coded
+
+`public/favicon.svg` (verbatim — solid navy disc, gold-bright ink):
+
+```xml
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Talir">
+  <circle cx="50" cy="50" r="47" fill="#0F1F38"/>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#DCC079" stroke-width="1.7" stroke-dasharray="1.1 2.5" stroke-linecap="round"/>
+  <circle cx="50" cy="50" r="42.5" fill="none" stroke="#DCC079" stroke-width="0.9" stroke-opacity="0.85"/>
+  <circle cx="50" cy="50" r="37" fill="none" stroke="#DCC079" stroke-width="0.7" stroke-opacity="0.5"/>
+  <path d="M37 45 C37 37 44 32 50 32 C56 32 63 37 63 45 Z" fill="#DCC079"/>
+  <line x1="50" y1="32" x2="50" y2="27.5" stroke="#DCC079" stroke-width="2" stroke-linecap="round"/>
+  <path d="M37 47 C37 60 42 70 50 70 C58 70 63 60 63 47 C58 49 42 49 37 47 Z" fill="#DCC079"/>
+</svg>
+```
+
+- `apple-touch-icon.png` 180×180: mark at ~60% scale, gold-bright ink, on navy rounded square (radius ≈ 22%), bg `#0F1F38`.
+- Maskable icon bg: `linear-gradient(150deg, #16294A, #0A1424)`.
+- OG image 1200×630 on `#0A1424`: centred reversed lockup, ink `#E7D9A8`.
+- The coin must stay legible at ~20px (it does at this stroke weight — don't thin the strokes).
+
+## 4. Data-display invariants (apply to every number rendered)
+
+- **Colour + arrow + sign always agree**: positive → `var(--up)` + ▲ + `+`; negative → `var(--down)` + ▼ + `−`; zero → `var(--neutral)`, no arrow, `0.00%`.
+- **Zero is defined rounding-aware**: if `|pct| < 0.005`, treat as exactly 0. Never render `-0.00%` or `+0.00%`, never colour it, and never include it in gainers/losers rankings.
+- All data is **end-of-day**. Never imply live figures. The freshness label `Data as of [date] · end-of-day close, not live` (mono) must always be discoverable near market data.
+- Only metrics computable from raw MSE/SECNet scrapes + our stored history may be displayed. If it can't be computed, don't show it.
+- Reserve fixed dimensions for every async value (sparklines, charts, ad slots) — CLS ≈ 0.
