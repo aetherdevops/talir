@@ -19,6 +19,7 @@
     "generate:sparklines": "node scripts/generate-sparklines.mjs",
     "generate:derived": "node scripts/generate-derived-market.mjs",
     "generate:search-index": "node scripts/generate-search-index.mjs",
+    "generate:icons": "node scripts/generate-icons.mjs",
     "lighthouse:budget": "node scripts/lighthouse-budget.mjs",
     "prebuild": "node scripts/generate-sparklines.mjs && node scripts/generate-derived-market.mjs && node scripts/generate-search-index.mjs"
   },
@@ -47,6 +48,9 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.8",
     "postcss": "^8.5.6",
+    "sharp": "^0.34.5",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/source-serif-4": "^5.2.9",
     "tailwindcss": "^3.4.19",
     "tsx": "^4.19.2",
     "typescript": "^5"

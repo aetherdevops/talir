@@ -36,6 +36,25 @@ export const metadata: Metadata = {
     manifest: '/manifest.json',
     icons: {
         icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+        apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    },
+    openGraph: {
+        title: 'Talir — Macedonian Stock Exchange',
+        description: 'End-of-day data from the Macedonian Stock Exchange',
+        images: [
+            {
+                url: '/og.png',
+                width: 1200,
+                height: 630,
+                alt: 'Talir — Makedonska Berza · Markets',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Talir — Macedonian Stock Exchange',
+        description: 'End-of-day data from the Macedonian Stock Exchange',
+        images: ['/og.png'],
     },
 }
 

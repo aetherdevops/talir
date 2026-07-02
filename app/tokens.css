@@ -85,3 +85,18 @@
   --brand-active: var(--accent-muted);
   --brand-text: var(--talir-gold-bright);
 }
+
+/* ---- Talir mark contexts ----
+   Light theme: full-colour coin (navy disc, gold acorn).
+   Dark theme: reversed — transparent disc, soft-gold ink,
+   so the coin never sits navy-on-navy. */
+.talir-logo-mark {
+  --disc: var(--talir-navy);
+  --ink: var(--talir-gold);
+}
+
+.dark .talir-logo-mark,
+:root[data-theme='dark'] .talir-logo-mark {
+  --disc: transparent;
+  --ink: var(--talir-gold-soft);
+}

@@ -2,50 +2,39 @@ import { cn } from '@/lib/utils'
 
 interface TalirMarkProps {
     size?: number
+    disc?: string   // coin background
+    ink?: string    // reeded edge + acorn
     className?: string
 }
 
-/** Inline SVG coin mark — uses --disc (gold) and --ink (navy) from theme tokens */
-export function TalirMark({ size = 40, className }: TalirMarkProps) {
-    const reeds = Array.from({ length: 36 }, (_, i) => {
-        const angle = (i / 36) * 360
-        const rad = (angle * Math.PI) / 180
-        const x1 = 20 + Math.cos(rad) * 15.5
-        const y1 = 20 + Math.sin(rad) * 15.5
-        const x2 = 20 + Math.cos(rad) * 19.2
-        const y2 = 20 + Math.sin(rad) * 19.2
-        return (
-            <line
-                key={i}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
-                stroke="var(--ink, var(--talir-navy))"
-                strokeWidth="0.45"
-                strokeLinecap="round"
-                opacity="0.35"
-            />
-        )
-    })
-
+/** "The Sovereign" — navy reeded coin, gold acorn. Geometry per .cursor/rules/talir-brand.mdc §3a. Do not redraw. */
+export function TalirMark({
+    size = 40,
+    disc = 'var(--disc, var(--talir-navy))',
+    ink = 'var(--ink, var(--talir-gold))',
+    className,
+}: TalirMarkProps) {
     return (
         <svg
             width={size}
             height={size}
-            viewBox="0 0 40 40"
-            fill="none"
+            viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
             className={cn('shrink-0', className)}
             aria-hidden
         >
-            <circle cx="20" cy="20" r="19.5" fill="var(--disc, var(--talir-gold))" />
-            {reeds}
-            <circle cx="20" cy="20" r="14.5" fill="var(--ink, var(--talir-navy))" />
-            <path
-                d="M14.5 27.5V12.5h6.2c3.4 0 5.6 1.8 5.6 4.6 0 2.1-1.2 3.5-3.1 4.1l4.2 6.3h-3.4l-3.6-5.5h-2.5v5.5H14.5zm2.8-8h3.1c1.6 0 2.6-0.7 2.6-2 0-1.3-1-2-2.6-2h-3.1v4z"
-                fill="var(--disc, var(--talir-gold))"
-            />
+            {/* coin disc */}
+            <circle cx="50" cy="50" r="47" fill={disc} />
+            {/* reeded (dashed) edge — the signature */}
+            <circle cx="50" cy="50" r="46" fill="none" stroke={ink} strokeWidth="1.7" strokeDasharray="1.1 2.5" strokeLinecap="round" />
+            <circle cx="50" cy="50" r="42.5" fill="none" stroke={ink} strokeWidth="0.9" strokeOpacity="0.85" />
+            <circle cx="50" cy="50" r="37" fill="none" stroke={ink} strokeWidth="0.7" strokeOpacity="0.5" />
+            {/* acorn cap */}
+            <path d="M37 45 C37 37 44 32 50 32 C56 32 63 37 63 45 Z" fill={ink} />
+            {/* stem */}
+            <line x1="50" y1="32" x2="50" y2="27.5" stroke={ink} strokeWidth="2" strokeLinecap="round" />
+            {/* acorn body */}
+            <path d="M37 47 C37 60 42 70 50 70 C58 70 63 60 63 47 C58 49 42 49 37 47 Z" fill={ink} />
         </svg>
     )
 }
