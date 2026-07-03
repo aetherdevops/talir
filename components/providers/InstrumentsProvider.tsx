@@ -22,7 +22,7 @@ let searchIndexPromise: Promise<SearchIndexItem[]> | null = null
 
 function fetchSearchIndex(): Promise<SearchIndexItem[]> {
     if (!searchIndexPromise) {
-        searchIndexPromise = fetch('/api/search-index')
+        searchIndexPromise = fetch('/search-index.json')
             .then((res) => {
                 if (!res.ok) throw new Error('Failed to load search index')
                 return res.json()
