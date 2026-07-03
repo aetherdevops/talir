@@ -3,14 +3,19 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import { Search, Newspaper } from 'lucide-react'
 import { Logo } from '@/components/common/Logo'
 import { AuthMenu } from '@/components/layout/AuthMenu'
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils'
 import { SearchBar } from '@/components/layout/SearchBar'
-import { MobileSearchSheet } from '@/components/layout/MobileSearchSheet'
 import { StockSummary } from '@/lib/types'
+
+const MobileSearchSheet = dynamic(
+    () => import('@/components/layout/MobileSearchSheet').then((mod) => mod.MobileSearchSheet),
+    { ssr: false }
+)
 
 export function Header({ className, instruments = [] }: { className?: string; instruments?: StockSummary[] }) {
     const pathname = usePathname()

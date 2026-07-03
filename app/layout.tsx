@@ -5,7 +5,7 @@ import { Header } from '@/components/layout/Header'
 import { Sidebar } from '@/components/layout/Sidebar'
 import { BottomNav } from '@/components/layout/BottomNav'
 import { cn } from '@/lib/utils'
-import { getAllInstruments, getSearchIndex } from '@/lib/data'
+import { getAllInstruments } from '@/lib/data'
 import { AppProviders } from '@/components/providers/AppProviders'
 import { InstrumentsProvider } from '@/components/providers/InstrumentsProvider'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
@@ -69,7 +69,6 @@ export default async function RootLayout({
     children: React.ReactNode
 }) {
     const instruments = await getAllInstruments()
-    const searchIndex = getSearchIndex()
 
     return (
         <html lang="en" suppressHydrationWarning>
@@ -103,7 +102,7 @@ export default async function RootLayout({
                 )}
             >
                 <AppProviders>
-                    <InstrumentsProvider instruments={instruments} searchIndex={searchIndex}>
+                    <InstrumentsProvider instruments={instruments}>
                         <Header instruments={instruments} />
 
                         <div className="hidden md:block px-4 md:px-6 pt-2">

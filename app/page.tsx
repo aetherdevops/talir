@@ -37,8 +37,8 @@ export default async function HomePage() {
     const mostActive = attachSparklines(mostActiveRaw)
 
     return (
-        <div className="space-y-6 pb-10">
-            <div className="max-w-7xl mx-auto space-y-6 px-4 sm:px-6 lg:px-8">
+        <div className="space-y-2 pb-10">
+            <div className="max-w-7xl mx-auto space-y-2 px-4 sm:px-6 lg:px-8">
                 <section>
                     <HomePreviewTabs
                         indices={indices}
@@ -48,15 +48,14 @@ export default async function HomePage() {
                     />
                 </section>
 
-                <MarketSentimentStrip sentiment={sentiment} asOfDate={asOfDate} />
-
-                <HomeTopMovers gainers={gainers} losers={losers} />
+                <section className="space-y-2">
+                    <MarketSentimentStrip sentiment={sentiment} asOfDate={asOfDate} />
+                    <HomeTopMovers gainers={gainers} losers={losers} />
+                </section>
 
                 <SponsorSlot placement="mobile-in-flow" className="md:hidden" />
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                    <MarketStatus />
-                </div>
+                <MarketStatus />
 
                 <NewsFeed items={news} layout="home" />
             </div>

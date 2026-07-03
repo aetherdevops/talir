@@ -18,7 +18,7 @@ export function SearchBar({ className, items = [] }: { className?: string, items
     const [activeTab, setActiveTab] = useState('All')
     const [isOpen, setIsOpen] = useState(false)
     const [focusedIndex, setFocusedIndex] = useState(-1)
-    const searchIndex = useSearchIndex()
+    const { items: searchIndex, loading: indexLoading, ensureLoaded } = useSearchIndex()
 
     const instrumentByCode = useMemo(() => {
         const map = new Map<string, StockSummary>()
@@ -27,6 +27,11 @@ export function SearchBar({ className, items = [] }: { className?: string, items
     }, [items])
 
     const tabs = ['All', 'Index', 'Stock']
+
+    const openSearch = () => {
+        setIsOpen(true)
+        ensureLoaded()
+    }
 
     // Close on click outside
     useEffect(() => {
@@ -86,7 +91,7 @@ export function SearchBar({ className, items = [] }: { className?: string, items
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (!isOpen) {
             if (e.key === 'ArrowDown' || e.key === 'Enter') {
-                setIsOpen(true)
+                openSearch()
             }
             return
         }
@@ -130,11 +135,11 @@ export function SearchBar({ className, items = [] }: { className?: string, items
                     value={query}
                     onChange={(e) => {
                         setQuery(e.target.value)
-                        setIsOpen(true)
+                        openSearch()
                         setFocusedIndex(-1)
                     }}
-                    onFocus={() => setIsOpen(true)}
-                    onClick={() => setIsOpen(true)}
+                    onFocus={openSearch}
+                    onClick={openSearch}
                     onKeyDown={handleKeyDown}
                     className={cn(
                         "h-11 w-full border-none bg-transparent pl-12 pr-12 text-sm font-medium text-text-primary outline-none transition-all placeholder:text-text-tertiary",
@@ -161,7 +166,7 @@ export function SearchBar({ className, items = [] }: { className?: string, items
             {isOpen && (
                 <div className="absolute top-full left-0 right-0 bg-surface border-x border-b border-border rounded-b-2xl shadow-xl overflow-hidden z-20">
                     {/* Tabs */}
-                    <div className="flex items-center gap-1 px-4 py-2 border-b border-border overflow-x-auto scrollbar-hide">
+                    <div className="flex flex-wrap items-center gap-1 px-4 py-2 border-b border-border">
                         {tabs.map(tab => (
                             <button
                                 key={tab}
@@ -190,7 +195,11 @@ export function SearchBar({ className, items = [] }: { className?: string, items
 
                     {/* List */}
                     <div className="max-h-[400px] overflow-y-auto">
-                        {filteredData.length > 0 ? (
+                        {indexLoading && query.trim().length > 0 ? (
+                            <div className="px-4 py-8 text-center text-sm text-text-tertiary">
+                                Loading search index…
+                            </div>
+                        ) : filteredData.length > 0 ? (
                             filteredData.map((item, index) => (
                                 <div
                                     key={item.code}

@@ -1,24 +1,37 @@
-
 "use client"
 
 import { useState, useMemo, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import { usePortfolioStore } from "@/lib/stores/portfolio"
 import { StockSummary, NewsItem } from "@/lib/types"
 import { PortfolioEmptyState } from "@/components/portfolio/PortfolioEmptyState"
 import { AddHoldingModal } from "@/components/portfolio/AddHoldingModal"
 import { CreatePortfolioModal } from "@/components/portfolio/CreatePortfolioModal"
-import { PortfolioChart } from "@/components/portfolio/PortfolioChart"
 import { PortfolioHighlights } from "@/components/portfolio/PortfolioHighlights"
 import { ResponsiveText } from "@/components/ui/ResponsiveText"
 import { Button } from "@/components/ui/Button"
-import { Plus, MoreHorizontal, ChevronRight, ChevronDown, ChevronUp, Trash2, Edit2, TrendingUp, TrendingDown, LayoutDashboard, Copy, Settings, BarChart2 } from "lucide-react"
-import { cn, formatPrice } from "@/lib/utils"
+import { Plus, MoreHorizontal, ChevronRight, ChevronDown, ChevronUp, Trash2, Edit2, LayoutDashboard, Copy, Settings, BarChart2 } from "lucide-react"
+import { cn, formatPrice, formatDecimal } from "@/lib/utils"
+import { ChangeLabel } from "@/components/ui/ChangeLabel"
 import Link from 'next/link'
 import { RenamePortfolioModal } from "@/components/portfolio/RenamePortfolioModal"
-import { PortfolioTreemap } from "@/components/portfolio/PortfolioTreemap"
 import { SortMenu, SortField, SortDirection } from "@/components/portfolio/SortMenu"
 import { NewsSection } from "@/components/common/NewsSection"
 import { useRequireAuth } from '@/lib/auth/use-require-auth'
+import { ScrollTable, SCROLL_TABLE_STICKY_CELL } from '@/components/ui/ScrollTable'
+
+const PortfolioTreemap = dynamic(
+    () => import('@/components/portfolio/PortfolioTreemap').then((mod) => mod.PortfolioTreemap),
+    { ssr: false }
+)
+
+const PortfolioChart = dynamic(
+    () => import('@/components/portfolio/PortfolioChart').then((mod) => mod.PortfolioChart),
+    {
+        ssr: false,
+        loading: () => <div className="h-[400px] w-full animate-pulse bg-surface-secondary/30 rounded-xl" />,
+    }
+)
 
 interface PortfolioPageProps {
     stockData: StockSummary[]
@@ -186,10 +199,10 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
     if (!hydrated) return null
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-8 space-y-8">
+        <div className="max-w-7xl mx-auto min-w-0 space-y-8">
             {/* Header & Tabs */}
             <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                <div className="flex flex-wrap items-center gap-2">
                     {portfolios.map(p => (
                         <button
                             key={p.id}
@@ -217,15 +230,9 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                 {formatPrice(totals.marketValue)}
                             </ResponsiveText>
 
-                            <div className={cn(
-                                "flex items-center gap-2 px-3 py-1 rounded-lg font-medium",
-                                totals.dailyGain >= 0 ? "bg-success/10 text-success" : "bg-danger/10 text-danger"
-                            )}>
-                                {totals.dailyGain >= 0 ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
-                                {totals.dailyGainPercent?.toFixed(2)}%
-                            </div>
+                            <ChangeLabel change={totals.dailyGainPercent ?? 0} variant="pill" className="text-sm" />
 
-                            <div className={cn("font-medium", totals.dailyGain >= 0 ? "text-success" : "text-danger")}>
+                            <div className={cn("font-medium font-data", totals.dailyGain >= 0 ? "text-up" : totals.dailyGain <= 0 ? "text-down" : "text-neutral")}>
                                 {totals.dailyGain > 0 ? '+' : ''}{formatPrice(totals.dailyGain)} Today
                             </div>
                         </div>
@@ -341,10 +348,13 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                 </div>
 
                                 <div className="bg-surface rounded-3xl border border-border overflow-hidden">
-                                    <table className="w-full text-left border-collapse">
+                                <ScrollTable>
+                                    <table className="w-full min-w-[640px] text-left border-collapse">
                                         <thead>
                                             <tr className="border-b border-border bg-surface-secondary/30">
-                                                <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider">Symbol</th>
+                                                <th className={cn('p-4 text-xs font-bold text-text-secondary uppercase tracking-wider', SCROLL_TABLE_STICKY_CELL)}>
+                                                    Symbol
+                                                </th>
                                                 <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">Price</th>
                                                 <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">Quantity</th>
                                                 <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">Day Gain</th>
@@ -359,18 +369,22 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                                         key={group.code}
                                                         className="group hover:bg-surface-secondary/50 transition-colors border-b border-border/50 last:border-0"
                                                     >
-                                                        <td className="p-4">
-                                                            <Link href={`/stock/${group.code}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity w-fit">
-                                                                <div className="font-bold text-sm bg-brand-500 text-white px-2 py-1 rounded text-xs">{group.code}</div>
-                                                                <div className="font-medium text-text-primary">{group.name}</div>
+                                                        <td className={cn('p-4', SCROLL_TABLE_STICKY_CELL)}>
+                                                            <Link href={`/stock/${group.code}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity w-fit min-w-0">
+                                                                <div className="font-bold text-sm bg-accent-muted text-accent px-2 py-1 rounded text-xs font-data shrink-0">
+                                                                    {group.code}
+                                                                </div>
+                                                                <div className="font-medium text-text-primary truncate">{group.name}</div>
                                                             </Link>
                                                         </td>
                                                         <td className="p-4 text-right font-mono text-sm">{formatPrice(group.price)}</td>
                                                         <td className="p-4 text-right font-mono text-sm">{group.quantity}</td>
                                                         <td className="p-4 text-right">
-                                                            <div className={cn("text-sm font-medium", group.dailyGain >= 0 ? "text-success" : "text-danger")}>
-                                                                {group.dailyGain > 0 ? '+' : ''}{formatPrice(group.dailyGain)}
-                                                                <span className="text-xs ml-1 opacity-80">({group.changePercent.toFixed(2)}%)</span>
+                                                            <div className="flex flex-col items-end gap-0.5">
+                                                                <span className={cn("text-sm font-medium font-data", group.dailyGain >= 0 ? "text-up" : "text-down")}>
+                                                                    {group.dailyGain > 0 ? '+' : ''}{formatPrice(group.dailyGain)}
+                                                                </span>
+                                                                <ChangeLabel change={group.changePercent} className="text-xs" />
                                                             </div>
                                                         </td>
                                                         <td className="p-4 text-right font-mono font-bold text-text-primary">
@@ -401,9 +415,11 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                                                             <div className="col-span-3 font-medium">{new Date(holding.buyDate).toLocaleDateString()}</div>
                                                                             <div className="text-right font-mono col-span-2">{formatPrice(holding.buyPrice)}</div>
                                                                             <div className="text-right font-mono col-span-1">{holding.quantity}</div>
-                                                                            <div className={cn("text-right font-mono flex flex-col items-end col-span-3", holding.totalGain >= 0 ? "text-success" : "text-danger")}>
-                                                                                <span>{holding.totalGain > 0 ? '+' : ''}{formatPrice(holding.totalGain)}</span>
-                                                                                <span className="text-xs opacity-80">({holding.returnPercent.toFixed(2)}%)</span>
+                                                                            <div className="text-right font-mono flex flex-col items-end col-span-3 gap-0.5">
+                                                                                <span className={cn(holding.totalGain >= 0 ? 'text-up' : 'text-down')}>
+                                                                                    {holding.totalGain > 0 ? '+' : ''}{formatPrice(holding.totalGain)}
+                                                                                </span>
+                                                                                <ChangeLabel change={holding.returnPercent} className="text-xs" />
                                                                             </div>
                                                                             <div className="text-right font-mono flex items-center justify-end gap-2 col-span-3">
                                                                                 {formatPrice(holding.marketValue)}
@@ -438,6 +454,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                             ))}
                                         </tbody>
                                     </table>
+                                </ScrollTable>
                                 </div>
                             </div>
                         )}

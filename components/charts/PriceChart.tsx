@@ -1,9 +1,8 @@
 "use client"
 
-import { useEffect, useRef, useState, memo } from 'react'
+import { useEffect, useRef, useState, memo, useCallback } from 'react'
 import { createChart, ColorType, IChartApi, ISeriesApi, Time } from 'lightweight-charts'
 import { cn, formatPrice, formatInteger } from '@/lib/utils'
-import { useThemeStore } from '@/lib/store'
 
 interface ChartData {
     time: string
@@ -22,267 +21,237 @@ interface PriceChartProps {
     excludePeriods?: string[]
 }
 
+type TooltipState = {
+    price: string
+    date: string
+    volume?: string
+    left: number
+    top: number
+} | null
+
+function readCssVar(name: string, fallback: string): string {
+    if (typeof document === 'undefined') return fallback
+    const value = getComputedStyle(document.documentElement).getPropertyValue(name).trim()
+    return value || fallback
+}
+
 function PriceChartComponent({ data, timeframe, onTimeframeChange, excludePeriods = [] }: PriceChartProps) {
     const chartContainerRef = useRef<HTMLDivElement>(null)
     const chartRef = useRef<IChartApi | null>(null)
-    const seriesRef = useRef<ISeriesApi<"Area"> | null>(null)
-    const { theme } = useThemeStore() // Assuming we have access to theme state
-    // Or simpler: check document class for 'dark'
+    const seriesRef = useRef<ISeriesApi<'Area'> | null>(null)
 
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [localTimeframe, setLocalTimeframe] = useState<'1D' | '5D' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '5Y' | 'MAX'>('1Y')
+    const [tooltip, setTooltip] = useState<TooltipState>(null)
 
-    // Detect dark mode initially and on change
     useEffect(() => {
-        const checkDark = () => document.documentElement.classList.contains('dark')
+        const checkDark = () =>
+            document.documentElement.classList.contains('dark') ||
+            document.documentElement.getAttribute('data-theme') === 'dark'
         setIsDarkMode(checkDark())
 
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'class') {
-                    setIsDarkMode(checkDark())
-                }
-            })
-        })
-
+        const observer = new MutationObserver(() => setIsDarkMode(checkDark()))
         observer.observe(document.documentElement, { attributes: true })
         return () => observer.disconnect()
     }, [])
 
-    // Effective values (Controlled or Uncontrolled fallback)
     const effectiveTimeframe = timeframe || localTimeframe
-    const handleTimeframeChange = (tf: any) => {
-        if (onTimeframeChange) {
-            onTimeframeChange(tf)
-        } else {
-            setLocalTimeframe(tf)
-        }
+    const handleTimeframeChange = (tf: (typeof effectiveTimeframe)) => {
+        if (onTimeframeChange) onTimeframeChange(tf)
+        else setLocalTimeframe(tf)
     }
 
-    // Filter Logic - Only apply if Uncontrolled OR if Parent assumes PriceChart does the filtering.
-    // However, StockClient passes PRE-FILTERED data.
-    // We should differentiate. If StockClient does the filtering, 'data' is already correct.
-    // If 'data' is 60+ points, we display it.
-    // The previous implementation FILTERED inside PriceChart.
-    // If we want to support both, we need to know if we should filter.
-    // But simplicity: StockClient passes filtered data. PriceChart just renders.
-    // BUT wait, PriceChart used to do filtering based on 'timeframe'.
-    // If we pass 'filteredData' from StockClient, PriceChart shouldn't filter again.
-    // Let's assume 'data' is WHAT TO RENDER.
+    const isPositive = data.length > 1 ? data[data.length - 1].value >= data[0].value : true
+    const chartColor = readCssVar(isPositive ? '--up' : '--down', isPositive ? '#1a7a47' : '#c2362f')
+    const gridColor = readCssVar('--border', isDarkMode ? 'rgba(231, 217, 168, 0.14)' : 'rgba(15, 31, 56, 0.12)')
+    const textColor = readCssVar('--text-tertiary', isDarkMode ? '#9fb0c9' : '#5a6577')
+    const crosshairColor = readCssVar('--text-secondary', isDarkMode ? 'rgba(159, 176, 201, 0.6)' : 'rgba(90, 101, 119, 0.6)')
+    const markerBorder = readCssVar('--surface', isDarkMode ? '#16294a' : '#fbfaf5')
 
-    // Determine trend color based on data start/end
-    const isPositive = data.length > 2
-        ? data[data.length - 1].value >= data[0].value
-        : true
-
-    const chartColor =
-        typeof document !== 'undefined'
-            ? getComputedStyle(document.documentElement)
-                  .getPropertyValue(isPositive ? '--up' : '--down')
-                  .trim() || (isPositive ? '#059669' : '#dc2626')
-            : isPositive
-              ? '#059669'
-              : '#dc2626'
-
-    // Tooltip State
-    const toolTipRef = useRef<HTMLDivElement>(null)
+    const hideTooltip = useCallback(() => setTooltip(null), [])
 
     useEffect(() => {
         if (!chartContainerRef.current) return
-
-        // Wait for container to have dimensions
         if (chartContainerRef.current.clientWidth === 0) return
 
+        const container = chartContainerRef.current
+
         const handleResize = () => {
-            if (chartContainerRef.current && chartRef.current) {
-                chartRef.current.applyOptions({ width: chartContainerRef.current.clientWidth })
+            if (chartRef.current) {
+                chartRef.current.applyOptions({ width: container.clientWidth })
             }
         }
 
-        const chart = createChart(chartContainerRef.current, {
+        const chart = createChart(container, {
             layout: {
                 background: { type: ColorType.Solid, color: 'transparent' },
-                textColor: isDarkMode ? '#9ca3af' : '#6b7280',
-                fontFamily: 'Inter, sans-serif',
+                textColor,
+                fontFamily: 'var(--font-sans), Inter, sans-serif',
             },
             grid: {
                 vertLines: { visible: false },
-                horzLines: { color: isDarkMode ? '#374151' : '#e5e7eb', visible: true, style: 1 }, // Solid but subtle
+                horzLines: { color: gridColor, visible: true, style: 1 },
             },
             rightPriceScale: {
                 borderVisible: false,
-                scaleMargins: {
-                    top: 0.1,
-                    bottom: 0.1,
-                },
+                scaleMargins: { top: 0.1, bottom: 0.1 },
             },
             timeScale: {
                 borderVisible: false,
                 fixLeftEdge: true,
                 fixRightEdge: true,
             },
-            width: chartContainerRef.current.clientWidth,
+            width: container.clientWidth,
             height: 400,
             autoSize: true,
-            handleScale: {
-                axisPressedMouseMove: true,
-                pinch: true,
-            },
-            handleScroll: {
-                horzTouchDrag: true,
-                vertTouchDrag: false,
-            },
+            handleScale: { axisPressedMouseMove: true, pinch: true },
+            handleScroll: { horzTouchDrag: true, vertTouchDrag: false },
             crosshair: {
+                mode: 1,
                 vertLine: {
                     width: 1,
-                    color: isDarkMode ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)',
+                    color: crosshairColor,
                     style: 3,
                     labelVisible: false,
                 },
                 horzLine: {
                     visible: false,
-                    labelVisible: true, // Show price label on crosshair
+                    labelVisible: true,
                 },
             },
         })
 
-        // Add Area Series
         const newSeries = chart.addAreaSeries({
             lineColor: chartColor,
-            topColor: chartColor + '20', // Very light fill
-            bottomColor: chartColor + '00',
+            topColor: `${chartColor}33`,
+            bottomColor: `${chartColor}00`,
             lineWidth: 2,
             crosshairMarkerVisible: true,
             crosshairMarkerRadius: 4,
-            crosshairMarkerBorderColor: isDarkMode ? '#000000' : '#ffffff',
+            crosshairMarkerBorderColor: markerBorder,
             crosshairMarkerBackgroundColor: chartColor,
         })
 
-        newSeries.setData(data.map(d => ({
-            time: d.time as Time,
-            value: d.value
-        })))
+        newSeries.setData(
+            data.map((d) => ({
+                time: d.time as Time,
+                value: d.value,
+            }))
+        )
 
-        // LAST POINT MARKER (Google Finance Style)
         if (data.length > 0) {
-            const lastItem = data[data.length - 1];
+            const lastItem = data[data.length - 1]
             newSeries.setMarkers([
                 {
                     time: lastItem.time as Time,
                     position: 'inBar',
                     color: chartColor,
                     shape: 'circle',
-                    size: 1, // Determines size relative to bar width?, no, it's abstract
-                    text: undefined,
-                }
-            ]);
-            // Note: lightweight-charts markers are fixed shapes. 
-            // 'circle' is standard. 'size' logic varies. 
-            // If we want a specific "dot on the line", a small circle marker at the end works.
+                    size: 1,
+                },
+            ])
         }
 
-        // Ensure we zoom out to fit all data
         chart.timeScale().fitContent()
 
-        // Tooltip Logic
-        chart.subscribeCrosshairMove(param => {
+        chart.subscribeCrosshairMove((param) => {
             if (
                 param.point === undefined ||
                 !param.time ||
                 param.point.x < 0 ||
-                param.point.x > chartContainerRef.current!.clientWidth ||
+                param.point.x > container.clientWidth ||
                 param.point.y < 0 ||
-                param.point.y > chartContainerRef.current!.clientHeight
+                param.point.y > container.clientHeight
             ) {
-                if (toolTipRef.current) {
-                    toolTipRef.current.style.display = 'none';
-                }
-            } else {
-                if (toolTipRef.current) {
-                    toolTipRef.current.style.display = 'block';
-
-                    const dataPoint = param.seriesData.get(newSeries) as { value: number, time: Time } | undefined;
-                    if (dataPoint) {
-                        // Find full data object to get volume if available
-                        const fullData = data.find(d => d.time === dataPoint.time as unknown as string)
-
-                        const dateStr = new Date(dataPoint.time as unknown as string).toLocaleDateString('en-US', {
-                            month: 'short',
-                            day: 'numeric',
-                            year: 'numeric'
-                        })
-
-                        const priceStr = formatPrice(dataPoint.value)
-                        const volumeStr = fullData?.volume ? `Vol: ${formatInteger(fullData.volume)}` : ''
-
-                        toolTipRef.current.innerHTML = `
-                            <div class="text-sm font-bold text-text-primary whitespace-nowrap">${priceStr}</div>
-                            <div class="text-xs text-text-tertiary whitespace-nowrap">${dateStr}</div>
-                            ${volumeStr ? `<div class="text-xs text-text-tertiary whitespace-nowrap mt-0.5">${volumeStr}</div>` : ''}
-                        `;
-
-                        // Position logic
-                        const toolTipWidth = 120; // Avg width
-                        const toolTipHeight = 80; // Avg height
-                        const toolTipMargin = 15;
-
-                        let left = param.point.x + toolTipMargin;
-                        if (left + toolTipWidth > chartContainerRef.current!.clientWidth) {
-                            left = param.point.x - toolTipWidth - toolTipMargin;
-                        }
-
-                        let top = param.point.y - toolTipMargin;
-                        if (top + toolTipHeight > chartContainerRef.current!.clientHeight) {
-                            top = param.point.y - toolTipHeight - toolTipMargin;
-                        }
-
-                        toolTipRef.current.style.left = left + 'px';
-                        toolTipRef.current.style.top = top + 'px';
-                    }
-                }
+                hideTooltip()
+                return
             }
-        });
+
+            const dataPoint = param.seriesData.get(newSeries) as { value: number; time: Time } | undefined
+            if (!dataPoint) {
+                hideTooltip()
+                return
+            }
+
+            const fullData = data.find((d) => d.time === (dataPoint.time as unknown as string))
+            const dateStr = new Date(dataPoint.time as unknown as string).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+            })
+
+            const toolTipWidth = 120
+            const toolTipHeight = 80
+            const toolTipMargin = 15
+
+            let left = param.point.x + toolTipMargin
+            if (left + toolTipWidth > container.clientWidth) {
+                left = param.point.x - toolTipWidth - toolTipMargin
+            }
+
+            let top = param.point.y - toolTipMargin
+            if (top + toolTipHeight > container.clientHeight) {
+                top = param.point.y - toolTipHeight - toolTipMargin
+            }
+
+            setTooltip({
+                price: formatPrice(dataPoint.value),
+                date: dateStr,
+                volume: fullData?.volume ? `Vol: ${formatInteger(fullData.volume)}` : undefined,
+                left,
+                top,
+            })
+        })
 
         chartRef.current = chart
         seriesRef.current = newSeries
 
         const resizeObserver = new ResizeObserver(() => handleResize())
-        resizeObserver.observe(chartContainerRef.current)
+        resizeObserver.observe(container)
 
         return () => {
             resizeObserver.disconnect()
             chart.remove()
             chartRef.current = null
+            hideTooltip()
         }
-    }, [data, isDarkMode, chartColor])
+    }, [data, isDarkMode, chartColor, gridColor, textColor, crosshairColor, markerBorder, hideTooltip])
 
     return (
-        <div className="flex flex-col gap-4 w-full">
-            <div className="relative w-full">
-                <div className="h-[400px] w-full" ref={chartContainerRef} />
-                <div
-                    ref={toolTipRef}
-                    className="absolute hidden p-3 bg-surface border border-border rounded-lg shadow-xl pointer-events-none z-50 animate-in fade-in zoom-in-95 duration-100"
-                    style={{
-                        top: 0,
-                        left: 0,
-                        minWidth: '100px',
-                    }}
-                />
+        <div className="flex flex-col gap-4 w-full min-w-0">
+            <div className="relative w-full min-w-0" style={{ height: 400 }}>
+                <div className="h-[400px] w-full touch-pan-x" ref={chartContainerRef} />
+                {tooltip && (
+                    <div
+                        className="absolute p-3 bg-surface border border-border rounded-lg shadow-xl pointer-events-none z-50"
+                        style={{ left: tooltip.left, top: tooltip.top, minWidth: 100 }}
+                    >
+                        <div className="text-sm font-bold text-text-primary font-data whitespace-nowrap">
+                            {tooltip.price}
+                        </div>
+                        <div className="text-xs text-text-tertiary font-data whitespace-nowrap">{tooltip.date}</div>
+                        {tooltip.volume ? (
+                            <div className="text-xs text-text-tertiary font-data whitespace-nowrap mt-0.5">
+                                {tooltip.volume}
+                            </div>
+                        ) : null}
+                    </div>
+                )}
             </div>
 
             <div className="flex justify-start gap-1 flex-wrap pl-2 md:pl-0">
                 {(['1D', '5D', '1M', '3M', '6M', 'YTD', '1Y', '5Y', 'MAX'] as const)
-                    .filter(tf => !excludePeriods.includes(tf))
+                    .filter((tf) => !excludePeriods.includes(tf))
                     .map((tf) => (
                         <button
                             key={tf}
+                            type="button"
                             onClick={() => handleTimeframeChange(tf)}
                             className={cn(
-                                "px-3 py-1.5 text-xs font-bold rounded-lg transition-colors min-h-[44px] min-w-[44px]",
+                                'px-3 py-1.5 text-xs font-bold rounded-lg transition-colors min-h-[44px] min-w-[44px]',
                                 effectiveTimeframe === tf
-                                    ? "bg-brand-active text-brand-text shadow-sm"
-                                    : "text-text-tertiary hover:bg-surface-secondary hover:text-text-secondary"
+                                    ? 'bg-accent-muted text-accent border border-accent/20'
+                                    : 'text-text-tertiary hover:bg-surface-secondary hover:text-text-secondary'
                             )}
                         >
                             {tf}

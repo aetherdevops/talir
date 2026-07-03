@@ -2,7 +2,8 @@
 
 import { usePortfolioStore } from "@/lib/stores/portfolio"
 import { formatPrice, formatInteger, cn } from "@/lib/utils"
-import { PieChart, TrendingUp, TrendingDown } from "lucide-react"
+import { ChangeLabel } from "@/components/ui/ChangeLabel"
+import { PieChart } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/Card"
 import { ResponsiveText } from "@/components/ui/ResponsiveText"
 
@@ -14,7 +15,6 @@ interface PortfolioHoldingIndicatorProps {
 export function PortfolioHoldingIndicator({ stockCode, currentPrice }: PortfolioHoldingIndicatorProps) {
     const { portfolios } = usePortfolioStore()
 
-    // Calculate totals across all portfolios
     const stats = portfolios.reduce((acc, portfolio) => {
         const holdings = portfolio.holdings.filter(h => h.code === stockCode)
         if (holdings.length === 0) return acc
@@ -37,7 +37,6 @@ export function PortfolioHoldingIndicator({ stockCode, currentPrice }: Portfolio
 
     const totalPortfolioValue = portfolios.reduce((acc, p) => {
         return acc + p.holdings.reduce((pAcc, h) => {
-            // Use real current price for this stock, fallback to buyPrice for others (estimation)
             const price = h.code === stockCode ? currentPrice : h.buyPrice
             return pAcc + (h.quantity * price)
         }, 0)
@@ -76,15 +75,11 @@ export function PortfolioHoldingIndicator({ stockCode, currentPrice }: Portfolio
                 <div className="h-px bg-border my-3" />
 
                 <div className="flex items-center justify-between gap-2">
-                    <div className={cn(
-                        "flex items-center gap-1.5 font-mono font-medium text-sm",
-                        totalGain >= 0 ? "text-success" : "text-danger"
-                    )}>
-                        {totalGain >= 0 ? <TrendingUp className="w-3.5 h-3.5 flex-shrink-0" /> : <TrendingDown className="w-3.5 h-3.5 flex-shrink-0" />}
-                        <span className="whitespace-nowrap flex items-center gap-1">
+                    <div className="flex items-center gap-2 font-mono font-medium text-sm">
+                        <span className={cn(totalGain >= 0 ? 'text-up' : 'text-down')}>
                             {formatPrice(totalGain)}
-                            <span className="text-xs opacity-80 decoration-none">({Math.abs(totalGainPercent).toFixed(2)}%)</span>
                         </span>
+                        <ChangeLabel change={totalGainPercent} className="text-xs" />
                     </div>
                     <div className="text-[10px] font-bold text-text-tertiary uppercase tracking-wider text-right flex-shrink-0">
                         Total Return

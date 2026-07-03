@@ -10,6 +10,7 @@ export function StockPreviewCard({ stock }: StockPreviewCardProps) {
         <PreviewMarketCard
             href={`/stock/${stock.code}`}
             label={stock.code}
+            subtitle={stock.name}
             chartSeries={stock.chartSeries ?? []}
             latestPrice={stock.price}
             changePercent={stock.changePercent}

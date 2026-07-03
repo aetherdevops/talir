@@ -2,11 +2,24 @@ import { ExternalLink } from 'lucide-react'
 import type { NewsItem } from '@/lib/types'
 import { NEWS_CATEGORY_LABELS } from '@/lib/news'
 import { formatTimeAgo } from '@/lib/time'
+import { formatNewsDate } from '@/lib/utils'
 import { NewsThumbnail } from '@/components/news/NewsThumbnail'
 
 interface NewsCardProps {
     item: NewsItem
     variant?: 'featured' | 'compact' | 'list'
+}
+
+function NewsDateMeta({ publishedAt }: { publishedAt: string }) {
+    return (
+        <span className="inline-flex items-center gap-1.5">
+            <time dateTime={publishedAt} className="font-data font-semibold text-text-secondary">
+                {formatNewsDate(publishedAt)}
+            </time>
+            <span className="text-text-tertiary">·</span>
+            <span className="text-text-tertiary">{formatTimeAgo(publishedAt)}</span>
+        </span>
+    )
 }
 
 export function NewsCard({ item, variant = 'compact' }: NewsCardProps) {
@@ -34,7 +47,7 @@ export function NewsCard({ item, variant = 'compact' }: NewsCardProps) {
                             <span>·</span>
                             <span className="uppercase tracking-wider">{item.source}</span>
                             <span>·</span>
-                            <span>{formatTimeAgo(item.publishedAt)}</span>
+                            <NewsDateMeta publishedAt={item.publishedAt} />
                             <span className="rounded-full bg-accent-muted px-2 py-0.5 text-[10px] font-semibold text-accent">
                                 {categoryLabel}
                             </span>
@@ -71,7 +84,7 @@ export function NewsCard({ item, variant = 'compact' }: NewsCardProps) {
                     <div className="flex flex-wrap items-center gap-2 text-[11px] text-text-tertiary">
                         <span className="font-bold text-accent">{item.stockCode}</span>
                         <span>·</span>
-                        <span>{formatTimeAgo(item.publishedAt)}</span>
+                        <NewsDateMeta publishedAt={item.publishedAt} />
                         <span className="rounded-full bg-surface-secondary px-2 py-0.5 font-semibold">
                             {categoryLabel}
                         </span>
@@ -102,7 +115,7 @@ export function NewsCard({ item, variant = 'compact' }: NewsCardProps) {
                 <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-text-tertiary">
                     <span className="font-bold text-accent">{item.stockCode}</span>
                     <span>·</span>
-                    <span>{formatTimeAgo(item.publishedAt)}</span>
+                    <NewsDateMeta publishedAt={item.publishedAt} />
                 </div>
                 <h3 className="font-semibold text-sm text-text-primary leading-snug group-hover:text-accent transition-colors line-clamp-2">
                     {item.title}

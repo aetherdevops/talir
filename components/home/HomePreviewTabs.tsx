@@ -1,13 +1,17 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { MarketIndex, StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { PreviewMarketCard } from '@/components/home/PreviewMarketCard'
 import { StockPreviewCard } from '@/components/home/StockPreviewCard'
+import { ChevronRight } from 'lucide-react'
 
 type MainTab = 'indices' | 'stocks'
 type StockTab = 'active' | 'gainers' | 'losers'
+
+const MAX_PREVIEW_ITEMS = 6
 
 interface HomePreviewTabsProps {
     indices: MarketIndex[]
@@ -48,11 +52,19 @@ function TabPills<T extends string>({
     )
 }
 
-function PreviewCarousel({ children }: { children: React.ReactNode }) {
+function PreviewGrid({ children }: { children: React.ReactNode }) {
+    return <div className="grid grid-cols-2 gap-2 w-full min-w-0">{children}</div>
+}
+
+function ViewAllLink({ href, label }: { href: string; label: string }) {
     return (
-        <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-            <div className="flex gap-3">{children}</div>
-        </div>
+        <Link
+            href={href}
+            className="flex items-center justify-center gap-1 min-h-[44px] text-xs font-semibold text-accent hover:text-accent/80 transition-colors"
+        >
+            {label}
+            <ChevronRight className="h-3.5 w-3.5" aria-hidden />
+        </Link>
     )
 }
 
@@ -71,9 +83,13 @@ export function HomePreviewTabs({
         active: mostActive,
     }
     const activeStocks = stockLists[stockTab]
+    const previewIndices = indices.slice(0, MAX_PREVIEW_ITEMS)
+    const previewStocks = activeStocks.slice(0, MAX_PREVIEW_ITEMS)
+    const hasMoreIndices = indices.length > MAX_PREVIEW_ITEMS
+    const hasMoreStocks = activeStocks.length > MAX_PREVIEW_ITEMS
 
     return (
-        <div className="space-y-3">
+        <div className="space-y-2">
             <TabPills
                 options={[
                     { id: 'indices', label: 'Indices' },
@@ -84,22 +100,28 @@ export function HomePreviewTabs({
             />
 
             {mainTab === 'indices' && (
-                <PreviewCarousel>
-                    {indices.map((idx) => (
-                        <PreviewMarketCard
-                            key={idx.name}
-                            href={`/market/${idx.name}`}
-                            label={idx.name}
-                            chartSeries={(idx.chartSeries ?? []).slice(-30)}
-                            latestPrice={idx.value}
-                            changePercent={idx.changePercent}
-                        />
-                    ))}
-                </PreviewCarousel>
+                <div className="space-y-2">
+                    <PreviewGrid>
+                        {previewIndices.map((idx) => (
+                            <PreviewMarketCard
+                                key={idx.name}
+                                href={`/market/${idx.name}`}
+                                label={idx.name}
+                                chartSeries={(idx.chartSeries ?? []).slice(-30)}
+                                latestPrice={idx.value}
+                                changePercent={idx.changePercent}
+                            />
+                        ))}
+                    </PreviewGrid>
+                    {previewIndices.length === 0 && (
+                        <p className="text-sm text-text-tertiary py-4 text-center">No index data available</p>
+                    )}
+                    {hasMoreIndices && <ViewAllLink href="/markets" label="View all indices" />}
+                </div>
             )}
 
             {mainTab === 'stocks' && (
-                <div className="space-y-3">
+                <div className="space-y-2">
                     <TabPills
                         options={[
                             { id: 'active', label: 'Active' },
@@ -109,14 +131,16 @@ export function HomePreviewTabs({
                         value={stockTab}
                         onChange={setStockTab}
                     />
-                    <PreviewCarousel>
-                        {activeStocks.map((stock) => (
-                            <StockPreviewCard key={stock.code} stock={stock} />
-                        ))}
-                        {activeStocks.length === 0 && (
-                            <p className="text-sm text-text-tertiary py-8 px-2">No data available</p>
-                        )}
-                    </PreviewCarousel>
+                    {previewStocks.length > 0 ? (
+                        <PreviewGrid>
+                            {previewStocks.map((stock) => (
+                                <StockPreviewCard key={stock.code} stock={stock} />
+                            ))}
+                        </PreviewGrid>
+                    ) : (
+                        <p className="text-sm text-text-tertiary py-4 text-center">No data available</p>
+                    )}
+                    {hasMoreStocks && <ViewAllLink href="/markets" label="View all stocks" />}
                 </div>
             )}
         </div>

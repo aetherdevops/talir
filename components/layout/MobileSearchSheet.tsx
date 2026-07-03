@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { SearchBar } from '@/components/layout/SearchBar'
-import { useInstruments } from '@/components/providers/InstrumentsProvider'
+import { useInstruments, useSearchIndex } from '@/components/providers/InstrumentsProvider'
 import { X } from 'lucide-react'
 
 interface MobileSearchSheetProps {
@@ -12,6 +12,11 @@ interface MobileSearchSheetProps {
 
 export function MobileSearchSheet({ open, onClose }: MobileSearchSheetProps) {
     const instruments = useInstruments()
+    const { ensureLoaded } = useSearchIndex()
+
+    useEffect(() => {
+        if (open) ensureLoaded()
+    }, [open, ensureLoaded])
 
     if (!open) return null
 

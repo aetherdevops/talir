@@ -81,7 +81,7 @@ export function SponsorSlot({ placement, sponsor, className }: SponsorSlotProps)
                 style={{ aspectRatio: style.aspect, minHeight: style.minHeight }}
             >
                 <span className="absolute top-2 left-2 z-10 font-data text-[10px] uppercase tracking-wider text-text-tertiary bg-surface/90 px-2 py-0.5 rounded border border-border/60">
-                    Спонзор
+                    Спонзор / Sponsored
                 </span>
                 <Link href={sponsor.href} target="_blank" rel="noopener sponsored">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -90,6 +90,8 @@ export function SponsorSlot({ placement, sponsor, className }: SponsorSlotProps)
                         alt={sponsor.label ?? 'Sponsor'}
                         className="h-full w-full object-cover"
                         loading="lazy"
+                        width={placement === 'leaderboard' ? 728 : placement === 'sidebar' ? 300 : 320}
+                        height={style.minHeight}
                     />
                 </Link>
             </div>

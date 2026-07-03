@@ -1,5 +1,5 @@
-import { ArrowDown, ArrowDownRight, ArrowUp, ArrowUpRight, Minus } from 'lucide-react'
-import { cn, formatPriceChange } from '@/lib/utils'
+import { ArrowDown, ArrowDownRight, ArrowUp, ArrowUpRight } from 'lucide-react'
+import { cn, classifyChangePercent, formatPriceChange } from '@/lib/utils'
 
 interface ChangeLabelProps {
     change: number
@@ -14,23 +14,23 @@ export function ChangeLabel({
     variant = 'inline',
     iconStyle = 'arrow',
 }: ChangeLabelProps) {
-    const isPositive = change > 0
-    const isNegative = change < 0
+    const direction = classifyChangePercent(change)
+    const isPositive = direction === 'up'
+    const isNegative = direction === 'down'
 
-    const InlineIcon = isPositive ? ArrowUp : isNegative ? ArrowDown : Minus
-    const PillIcon = isPositive ? ArrowUpRight : isNegative ? ArrowDownRight : Minus
+    const InlineIcon = isPositive ? ArrowUp : ArrowDown
+    const PillIcon = isPositive ? ArrowUpRight : ArrowDownRight
     const Icon = iconStyle === 'diagonal' ? PillIcon : InlineIcon
 
     if (variant === 'pill') {
-        if (!isPositive && !isNegative) {
+        if (direction === 'neutral') {
             return (
                 <span
                     className={cn(
-                        'bg-surface-tertiary/50 text-text-tertiary px-2 py-1 rounded-lg text-xs font-bold inline-flex items-center gap-1 min-w-[72px] justify-center font-data',
+                        'bg-surface-tertiary/50 text-neutral px-2 py-1 rounded-lg text-xs font-bold inline-flex items-center justify-center min-w-[72px] font-data',
                         className
                     )}
                 >
-                    <Minus className="h-3 w-3" aria-hidden />
                     0.00%
                 </span>
             )
@@ -50,11 +50,24 @@ export function ChangeLabel({
         )
     }
 
+    if (direction === 'neutral') {
+        return (
+            <span
+                className={cn(
+                    'inline-flex items-center text-sm font-semibold font-data text-neutral',
+                    className
+                )}
+            >
+                {formatPriceChange(change)}
+            </span>
+        )
+    }
+
     return (
         <span
             className={cn(
                 'inline-flex items-center gap-0.5 text-sm font-semibold font-data',
-                isPositive ? 'text-up' : isNegative ? 'text-down' : 'text-text-secondary',
+                isPositive ? 'text-up' : 'text-down',
                 className
             )}
         >

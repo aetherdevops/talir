@@ -1,6 +1,13 @@
 import { notFound } from 'next/navigation'
-import { getStock, getChartData, getLatestNews } from '@/lib/data'
+import { getStock, getChartData, getLatestNews, getAllStocks } from '@/lib/data'
 import { StockClient } from './StockClient'
+
+export const revalidate = 86400
+
+export async function generateStaticParams() {
+    const stocks = await getAllStocks()
+    return stocks.map((stock) => ({ code: stock.code }))
+}
 
 export default async function StockPage({ params }: { params: Promise<{ code: string }> }) {
     const resolvedParams = await params
@@ -26,6 +33,7 @@ export default async function StockPage({ params }: { params: Promise<{ code: st
 
     // Current Price for client
     const currentPrice = latest.last_transaction_price || 0
+    const asOfDate = latest.date || new Date().toISOString().split('T')[0]
 
     return (
         <StockClient
@@ -34,6 +42,7 @@ export default async function StockPage({ params }: { params: Promise<{ code: st
             chartData={chartData}
             currentPrice={currentPrice}
             news={news}
+            asOfDate={asOfDate}
         />
     )
 }

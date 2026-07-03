@@ -16,7 +16,7 @@ export function NewsFeed({
     items,
     layout = 'home',
     title = 'MSE Market News',
-    subtitle = 'Latest filings and disclosures from listed companies',
+    subtitle = 'Filings and disclosures from companies listed on the MSE',
     showHeader = true,
 }: NewsFeedProps) {
     if (!items.length) return null

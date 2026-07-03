@@ -2,6 +2,7 @@ import { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem } from './ty
 export type { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem }
 import { buildNewsFromIssuers } from './news'
 import { transliterate } from './transliterate'
+import { CHANGE_ZERO_THRESHOLD, classifyChangePercent } from './utils'
 
 // Static Data Imports (Bundled) - Using @/lib/data guaranteed to be in the build
 import marketSummaryData from '@/lib/data/market_summary.json'
@@ -145,14 +146,28 @@ export async function getStock(code: string): Promise<StockData | null> {
     }
 }
 
+export function rankTopGainers(stocks: StockSummary[], limit: number): StockSummary[] {
+    return stocks
+        .filter((s) => s.changePercent >= CHANGE_ZERO_THRESHOLD)
+        .sort((a, b) => b.changePercent - a.changePercent)
+        .slice(0, limit)
+}
+
+export function rankTopLosers(stocks: StockSummary[], limit: number): StockSummary[] {
+    return stocks
+        .filter((s) => s.changePercent <= -CHANGE_ZERO_THRESHOLD)
+        .sort((a, b) => a.changePercent - b.changePercent)
+        .slice(0, limit)
+}
+
 export async function getTopGainers(limit: number = 5): Promise<StockSummary[]> {
     const all = await getAllStocks()
-    return all.sort((a, b) => b.changePercent - a.changePercent).slice(0, limit)
+    return rankTopGainers(all, limit)
 }
 
 export async function getTopLosers(limit: number = 5): Promise<StockSummary[]> {
     const all = await getAllStocks()
-    return all.sort((a, b) => a.changePercent - b.changePercent).slice(0, limit)
+    return rankTopLosers(all, limit)
 }
 
 export async function getMostActive(limit: number = 5): Promise<StockSummary[]> {
@@ -208,8 +223,9 @@ export function getMarketSentiment(stocks: StockSummary[]): MarketSentiment {
     let unchanged = 0
 
     for (const s of equities) {
-        if (s.changePercent > 0) advancers++
-        else if (s.changePercent < 0) decliners++
+        const direction = classifyChangePercent(s.changePercent)
+        if (direction === 'up') advancers++
+        else if (direction === 'down') decliners++
         else unchanged++
     }
 

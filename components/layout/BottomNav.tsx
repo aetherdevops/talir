@@ -3,10 +3,15 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Home, TrendingUp, List, Search, UserPlus, Newspaper } from 'lucide-react'
+import dynamic from 'next/dynamic'
+import { Home, TrendingUp, List, Search, UserPlus } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { MobileSearchSheet } from '@/components/layout/MobileSearchSheet'
 import { CreateMenu } from '@/components/layout/CreateMenu'
+
+const MobileSearchSheet = dynamic(
+    () => import('@/components/layout/MobileSearchSheet').then((mod) => mod.MobileSearchSheet),
+    { ssr: false }
+)
 
 const leftItems = [
     { icon: Home, label: 'Home', href: '/' },
@@ -81,8 +86,8 @@ export function BottomNav() {
                             onClick={() => setCreateOpen(true)}
                             className={cn(
                                 'flex h-14 w-14 items-center justify-center rounded-full',
-                                'bg-accent text-talir-navy shadow-lg shadow-accent/25',
-                                'border-4 border-surface transition-transform active:scale-95'
+                                'bg-talir-navy text-accent shadow-lg shadow-talir-navy/40',
+                                'border-4 border-surface ring-2 ring-accent/30 transition-transform active:scale-95'
                             )}
                             aria-label="Create watchlist or portfolio"
                         >

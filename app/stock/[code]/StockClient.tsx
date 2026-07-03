@@ -7,7 +7,8 @@ import { Button } from '@/components/ui/Button'
 import { Card, CardHeader, CardContent } from '@/components/ui/Card'
 import { PriceChangeBadge } from '@/components/ui/Badge'
 import { ClientPriceChart } from '@/components/charts/ClientPriceChart'
-import { formatPrice, formatInteger, cn } from '@/lib/utils'
+import { formatPrice, formatInteger, formatDecimal, cn } from '@/lib/utils'
+import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { StockPageActions } from '@/components/stock/StockPageActions'
 import { StickyStockHeader } from '@/components/stock/StickyStockHeader'
 import { usePreferencesStore, type ChartRange } from '@/lib/stores/preferences'
@@ -24,11 +25,12 @@ interface ChartData {
 }
 
 interface StockClientProps {
-    stock: any // Using specific type if available, e.g. Stock from lib/types
+    stock: any
     history: DailyPrice[]
     currentPrice: number
     chartData: ChartData[]
     news: NewsItem[]
+    asOfDate: string
 }
 
 type Timeframe = '1D' | '5D' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '5Y' | 'MAX'
@@ -37,7 +39,7 @@ function chartRangeToTimeframe(range: ChartRange): Timeframe {
     return range as Timeframe
 }
 
-export function StockClient({ stock, history, currentPrice, chartData, news }: StockClientProps) {
+export function StockClient({ stock, history, currentPrice, chartData, news, asOfDate }: StockClientProps) {
     const defaultChartRange = usePreferencesStore((s) => s.defaultChartRange)
     const [timeframe, setTimeframe] = useState<Timeframe>(() => chartRangeToTimeframe(defaultChartRange))
     const [activeTab, setActiveTab] = useState<'news' | 'docs'>('news')
@@ -144,13 +146,7 @@ export function StockClient({ stock, history, currentPrice, chartData, news }: S
 
 
     return (
-        <div className="flex flex-col gap-6 animate-fade-in w-full max-w-[1600px] mx-auto">
-            <StickyStockHeader
-                code={stock.company_code}
-                name={stock.company_name}
-                price={currentPrice}
-                changePercent={displayStats.change}
-            />
+        <div className="flex flex-col gap-6 animate-fade-in w-full max-w-[1600px] mx-auto min-w-0">
             {/* Breadcrumb / Back */}
             <Link href="/" className="flex items-center gap-2 text-sm text-text-tertiary hover:text-text-primary transition-colors w-fit">
                 <ArrowLeft className="h-4 w-4" />
@@ -172,13 +168,14 @@ export function StockClient({ stock, history, currentPrice, chartData, news }: S
                         <span className="text-4xl font-mono font-bold text-text-primary tracking-tighter">
                             {formatPrice(currentPrice)}
                         </span>
-                        <div className="mb-1.5 flex items-center gap-2">
+                        <div className="mb-1.5 flex items-center gap-2 flex-wrap">
                             <PriceChangeBadge change={displayStats.change} className="scale-110 origin-left" />
-                            <span className="text-sm text-text-tertiary font-mono">
-                                ({displayStats.absChange > 0 ? '+' : ''}{displayStats.absChange.toFixed(2)}) {displayStats.label}
+                            <span className="text-sm text-text-tertiary font-data">
+                                ({displayStats.absChange > 0 ? '+' : ''}{formatDecimal(displayStats.absChange)} ден.) {displayStats.label}
                             </span>
                         </div>
                     </div>
+                    <DataFreshnessLabel asOfDate={asOfDate} />
                     <span className="text-xs text-text-tertiary">
                         Last trade: {latest.date} • {stock.sector ? stock.sector : 'Market: MSE'}
                     </span>
@@ -199,6 +196,13 @@ export function StockClient({ stock, history, currentPrice, chartData, news }: S
                     }}
                 />
             </div>
+
+            <StickyStockHeader
+                code={stock.company_code}
+                name={stock.company_name}
+                price={currentPrice}
+                changePercent={displayStats.change}
+            />
 
             {/* Main Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

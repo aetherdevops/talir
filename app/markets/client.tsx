@@ -5,10 +5,14 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import { StockSummary } from '@/lib/types'
 import type { MarketSentiment, SparklineMap } from '@/lib/data'
 import { Search, ArrowUp, ArrowDown } from 'lucide-react'
-import { MarketInstrumentRow } from '@/components/markets/MarketInstrumentRow'
+import {
+    MarketInstrumentRow,
+    MARKET_ROW_ACTION_WIDTH,
+    MARKET_ROW_CHANGE_WIDTH,
+    MARKET_ROW_PRICE_WIDTH,
+    MARKET_ROW_SPARKLINE_WIDTH,
+} from '@/components/markets/MarketInstrumentRow'
 import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
-import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
-import { MarketStatus } from '@/components/home/MarketStatus'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { cn } from '@/lib/utils'
 
@@ -98,34 +102,35 @@ export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }
         { label: 'Name', key: 'name' },
     ]
 
+    const columnHeaderStyle = {
+        ['--sparkline' as string]: `${MARKET_ROW_SPARKLINE_WIDTH}px`,
+        ['--change' as string]: `${MARKET_ROW_CHANGE_WIDTH}px`,
+        ['--price' as string]: `${MARKET_ROW_PRICE_WIDTH}px`,
+        ['--action' as string]: `${MARKET_ROW_ACTION_WIDTH}px`,
+    }
+
     return (
-        <div className="flex flex-col gap-6">
-            <header className="flex flex-col gap-3">
-                <div>
-                    <h1 className="text-3xl font-semibold text-text-primary tracking-tight">
-                        Market Overview
-                    </h1>
-                    <p className="text-text-secondary text-sm mt-1">
-                        All companies listed on the Macedonian Stock Exchange — end-of-day data.
-                    </p>
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                    <MarketStatus asOfDate={asOfDate} />
-                    <DataFreshnessLabel asOfDate={asOfDate} className="sm:text-right" />
-                </div>
+        <div className="flex flex-col gap-3 min-w-0">
+            <header className="space-y-1">
+                <h1 className="text-2xl sm:text-3xl font-semibold font-heading text-text-primary tracking-tight">
+                    Market Overview
+                </h1>
+                <p className="text-text-secondary text-sm">
+                    All companies listed on the Macedonian Stock Exchange — end-of-day data.
+                </p>
             </header>
 
             <MarketSentimentStrip sentiment={sentiment} asOfDate={asOfDate} />
 
-            <div className="sticky top-0 z-10 -mx-4 px-4 py-3 md:-mx-0 md:px-0 bg-background/95 backdrop-blur-md border-b border-border/50 space-y-3">
+            <div className="sticky top-0 z-10 py-2 bg-background/95 backdrop-blur-md border-b border-border space-y-2 min-w-0">
                 <div className="relative w-full md:max-w-md group">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-text-tertiary group-focus-within:text-brand-500 transition-colors" />
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-text-tertiary group-focus-within:text-accent transition-colors" />
                     <input
                         type="text"
                         placeholder="Search markets..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2.5 bg-surface border border-border rounded-xl text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
+                        className="w-full pl-10 pr-4 py-2.5 bg-surface border border-border rounded-xl text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all min-h-[44px]"
                     />
                 </div>
 
@@ -136,10 +141,10 @@ export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }
                             type="button"
                             onClick={() => handleSort(pill.key)}
                             className={cn(
-                                'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all border min-h-[32px]',
+                                'flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold transition-all border min-h-[44px]',
                                 sortKey === pill.key
-                                    ? 'bg-brand-500/10 text-brand-600 border-brand-500/25 dark:text-brand-400'
-                                    : 'bg-surface text-text-secondary border-border hover:border-brand-500/30 hover:text-text-primary'
+                                    ? 'bg-surface shadow-sm text-accent border-accent/20'
+                                    : 'bg-surface-secondary/40 text-text-tertiary border-border hover:text-text-secondary hover:border-border-active'
                             )}
                         >
                             {pill.label}
@@ -154,38 +159,44 @@ export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }
                 </div>
             </div>
 
-            <div className="flex items-center justify-between text-xs text-text-tertiary px-1">
-                <span className="tabular-nums">{displayStocks.length} instruments</span>
+            <div className="text-xs text-text-tertiary font-data tabular-nums">
+                {displayStocks.length} instruments
             </div>
 
-            <div className="rounded-xl border border-border/60 bg-surface overflow-hidden divide-y divide-border/60">
-                <div className="hidden md:grid md:grid-cols-[1fr_72px_100px_72px_40px] gap-2 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-text-tertiary border-b border-border/60">
+            <div className="min-w-0 border-t border-border">
+                <div
+                    className="hidden sm:grid items-center gap-2 px-0 py-2 text-[10px] font-bold uppercase tracking-wider text-text-tertiary border-b border-border min-w-0 grid-cols-[minmax(0,1fr)_var(--sparkline)_var(--change)_var(--price)_var(--action)]"
+                    style={columnHeaderStyle}
+                >
                     <span>Instrument</span>
                     <span className="text-center">Trend</span>
-                    <span className="text-right">Close</span>
                     <span className="text-right">Change</span>
+                    <span className="text-right">Close</span>
                     <span />
                 </div>
+
                 {displayStocks.length > 0 ? (
-                    displayStocks.map((stock, i) => (
-                        <div key={stock.code}>
-                            <MarketInstrumentRow
-                                stock={stock}
-                                sparkline={
-                                    stock.chartSeries?.length
-                                        ? stock.chartSeries
-                                        : sparklines[stock.code]
-                                }
-                            />
-                            {(i + 1) % 8 === 0 && i < displayStocks.length - 1 && (
-                                <div className="px-4 py-3 border-t border-border/40">
-                                    <SponsorSlot placement="in-feed" />
-                                </div>
-                            )}
-                        </div>
-                    ))
+                    <div className="divide-y divide-border">
+                        {displayStocks.map((stock, i) => (
+                            <div key={stock.code}>
+                                <MarketInstrumentRow
+                                    stock={stock}
+                                    sparkline={
+                                        stock.chartSeries?.length
+                                            ? stock.chartSeries
+                                            : sparklines[stock.code]
+                                    }
+                                />
+                                {(i + 1) % 8 === 0 && i < displayStocks.length - 1 && (
+                                    <div className="py-2 border-t border-border">
+                                        <SponsorSlot placement="in-feed" />
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 ) : (
-                    <div className="p-12 text-center text-text-tertiary">
+                    <div className="py-12 text-center text-text-tertiary">
                         No stocks found matching &quot;{query}&quot;
                     </div>
                 )}

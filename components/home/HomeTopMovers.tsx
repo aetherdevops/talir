@@ -13,7 +13,6 @@ interface HomeTopMoversProps {
 
 function MoverRow({ stock }: { stock: StockSummary }) {
     const series = stock.chartSeries ?? []
-    const positive = stock.changePercent >= 0
 
     return (
         <Link
@@ -24,7 +23,7 @@ function MoverRow({ stock }: { stock: StockSummary }) {
                 {stock.code}
             </span>
             <div className="w-[56px] h-6 shrink-0">
-                <IndexSparkline series={series} positive={positive} height={24} className="w-full" />
+                <IndexSparkline series={series} changePercent={stock.changePercent} height={24} className="w-full" />
             </div>
             <span className="text-xs font-semibold text-text-primary font-data ml-auto">
                 {formatPriceCompact(stock.price)}
@@ -57,7 +56,7 @@ function MoverColumn({ title, stocks, emptyLabel }: { title: string; stocks: Sto
 
 export function HomeTopMovers({ gainers, losers, className }: HomeTopMoversProps) {
     return (
-        <section className={cn('grid grid-cols-1 md:grid-cols-2 gap-3', className)}>
+        <section className={cn('grid grid-cols-1 md:grid-cols-2 gap-2', className)}>
             <MoverColumn title="Top Gainers" stocks={gainers} emptyLabel="No gainers today" />
             <MoverColumn title="Top Losers" stocks={losers} emptyLabel="No losers today" />
         </section>

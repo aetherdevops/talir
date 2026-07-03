@@ -4,9 +4,12 @@ import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { formatPriceCompact } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 
+const SPARKLINE_HEIGHT = 40
+
 interface PreviewMarketCardProps {
     href: string
     label: string
+    subtitle?: string
     chartSeries: { date: string; value: number }[]
     latestPrice: number
     changePercent: number
@@ -16,39 +19,51 @@ interface PreviewMarketCardProps {
 export function PreviewMarketCard({
     href,
     label,
+    subtitle,
     chartSeries,
     latestPrice,
     changePercent,
     className,
 }: PreviewMarketCardProps) {
-    const positive = changePercent >= 0
+    const series = chartSeries.slice(-30)
 
     return (
         <Link
             href={href}
             className={cn(
-                'block shrink-0 aspect-square w-[calc(50vw-28px)] max-w-[168px] sm:w-[180px] sm:max-w-[180px] md:w-[196px] md:max-w-[196px]',
-                'rounded-xl border border-border/60 bg-surface hover:border-border-active transition-colors',
-                'p-3 flex flex-col justify-between',
+                'block w-full min-w-0 rounded-xl border border-border/60 bg-surface hover:border-border-active transition-colors',
+                'p-2.5 flex flex-col gap-1.5 min-h-[44px]',
                 className
             )}
         >
-            <span className="font-data font-semibold text-text-secondary text-[10px] sm:text-xs tracking-wider uppercase truncate">
-                {label}
-            </span>
-            <div className="flex-1 flex items-center min-h-[48px] my-1">
+            <div className="min-w-0">
+                <span className="font-data font-semibold text-text-primary text-xs block truncate">
+                    {label}
+                </span>
+                {subtitle ? (
+                    <span className="text-[10px] text-text-tertiary block truncate leading-tight">
+                        {subtitle}
+                    </span>
+                ) : null}
+            </div>
+
+            <div
+                className="w-full shrink-0"
+                style={{ height: SPARKLINE_HEIGHT }}
+            >
                 <IndexSparkline
-                    series={chartSeries}
-                    positive={positive}
-                    height={48}
-                    className="w-full"
+                    series={series}
+                    changePercent={changePercent}
+                    height={SPARKLINE_HEIGHT}
+                    className="w-full h-full"
                 />
             </div>
-            <div className="space-y-0.5">
-                <span className="text-base sm:text-lg font-semibold text-text-primary font-data block">
+
+            <div className="flex items-baseline justify-between gap-1 min-w-0">
+                <span className="text-sm font-semibold text-text-primary font-data truncate">
                     {formatPriceCompact(latestPrice)}
                 </span>
-                <ChangeLabel change={changePercent} className="text-xs" />
+                <ChangeLabel change={changePercent} className="text-[11px] shrink-0" />
             </div>
         </Link>
     )

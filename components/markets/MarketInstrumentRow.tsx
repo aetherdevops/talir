@@ -14,27 +14,35 @@ interface MarketInstrumentRowProps {
     className?: string
 }
 
-const SPARKLINE_WIDTH = 72
-const SPARKLINE_HEIGHT = 28
-const CHANGE_WIDTH = 72
+export const MARKET_ROW_SPARKLINE_WIDTH = 56
+export const MARKET_ROW_SPARKLINE_HEIGHT = 24
+export const MARKET_ROW_CHANGE_WIDTH = 68
+export const MARKET_ROW_PRICE_WIDTH = 76
+export const MARKET_ROW_ACTION_WIDTH = 28
 
 export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstrumentRowProps) {
     const series = sparkline ?? stock.chartSeries ?? []
-    const isPositive = stock.changePercent >= 0
 
     return (
         <Link
             href={stock.type === 'Index' ? `/market/${stock.code}` : `/stock/${stock.code}`}
             className={cn(
-                'flex items-center gap-3 min-h-[52px] px-4 py-2 hover:bg-surface-secondary/80 transition-colors group',
+                'grid items-center gap-2 min-h-[44px] py-2 hover:bg-surface-secondary/60 transition-colors group min-w-0',
+                'grid-cols-[minmax(0,1fr)_var(--sparkline)_var(--change)_var(--price)_var(--action)]',
                 className
             )}
+            style={{
+                ['--sparkline' as string]: `${MARKET_ROW_SPARKLINE_WIDTH}px`,
+                ['--change' as string]: `${MARKET_ROW_CHANGE_WIDTH}px`,
+                ['--price' as string]: `${MARKET_ROW_PRICE_WIDTH}px`,
+                ['--action' as string]: `${MARKET_ROW_ACTION_WIDTH}px`,
+            }}
         >
-            <div className="flex items-center gap-3 flex-1 min-w-0">
-                <div className="flex items-center justify-center rounded-md font-bold text-[11px] text-text-secondary bg-surface-secondary w-11 h-8 shrink-0 font-data">
+            <div className="flex items-center gap-2 min-w-0">
+                <div className="flex items-center justify-center rounded-md font-bold text-[10px] text-text-secondary bg-surface-secondary w-10 h-7 shrink-0 font-data">
                     {stock.code}
                 </div>
-                <div className="flex flex-col min-w-0 flex-1 gap-0.5">
+                <div className="flex flex-col min-w-0 gap-0.5">
                     <span className="text-sm font-medium text-text-primary truncate leading-tight">
                         {stock.name}
                     </span>
@@ -47,28 +55,34 @@ export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstr
             </div>
 
             <div
-                className="shrink-0 overflow-hidden"
-                style={{ width: SPARKLINE_WIDTH, height: SPARKLINE_HEIGHT }}
+                className="shrink-0 overflow-hidden justify-self-center"
+                style={{ width: MARKET_ROW_SPARKLINE_WIDTH, height: MARKET_ROW_SPARKLINE_HEIGHT }}
             >
                 <IndexSparkline
                     series={series}
-                    positive={isPositive}
-                    height={SPARKLINE_HEIGHT}
-                    className="w-[72px]"
+                    changePercent={stock.changePercent}
+                    height={MARKET_ROW_SPARKLINE_HEIGHT}
+                    className="w-full"
                 />
             </div>
 
-            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-                <span className="text-xs sm:text-sm font-semibold text-text-primary font-data text-right min-w-[72px] sm:min-w-[88px]">
-                    {formatPrice(stock.price)}
-                </span>
-                <div style={{ width: CHANGE_WIDTH }} className="flex justify-end">
-                    <ChangeLabel change={stock.changePercent} className="text-xs" />
-                </div>
+            <div
+                className="flex justify-end shrink-0"
+                style={{ width: MARKET_ROW_CHANGE_WIDTH }}
+            >
+                <ChangeLabel change={stock.changePercent} className="text-xs font-semibold" />
             </div>
 
+            <span
+                className="text-xs font-semibold text-text-primary font-data tabular-nums text-right shrink-0"
+                style={{ width: MARKET_ROW_PRICE_WIDTH }}
+            >
+                {formatPrice(stock.price)}
+            </span>
+
             <div
-                className="shrink-0 border-l border-border/60 pl-2 ml-1"
+                className="shrink-0 justify-self-end"
+                style={{ width: MARKET_ROW_ACTION_WIDTH }}
                 onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()

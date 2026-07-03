@@ -79,7 +79,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
     if (!hydrated) return null // Prevent mismatch
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-8 space-y-8">
+        <div className="max-w-7xl mx-auto min-w-0 space-y-8">
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <h1 className="text-3xl font-normal tracking-tight text-text-primary">Your Lists</h1>
@@ -89,7 +89,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
             </div>
 
             {/* Usage of Tabs */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-border">
+            <div className="flex flex-wrap items-center gap-2 pb-2 border-b border-border">
                 {watchlists.map(list => (
                     <button
                         key={list.id}

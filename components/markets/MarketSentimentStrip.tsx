@@ -1,7 +1,8 @@
 import type { MarketSentiment } from '@/lib/data'
-import { formatPrice, formatPriceChange } from '@/lib/utils'
+import { formatPrice } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 import { DataFreshnessLabel } from './DataFreshnessLabel'
+import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { ArrowDown, ArrowUp } from 'lucide-react'
 
 interface MarketSentimentStripProps {
@@ -14,12 +15,26 @@ export function MarketSentimentStrip({ sentiment, asOfDate, className }: MarketS
     const { advancers, decliners, unchanged, primaryIndex } = sentiment
     const total = advancers + decliners + unchanged
     const bullishPct = total > 0 ? (advancers / total) * 100 : 50
-    const lean = advancers > decliners ? 'up' : advancers < decliners ? 'down' : 'flat'
+
+    const lean = (() => {
+        if (total === 0) return 'flat' as const
+
+        if (unchanged / total >= 0.75) return 'flat' as const
+
+        if (advancers > 0 && decliners > 0) {
+            const breadthRatio = Math.min(advancers, decliners) / Math.max(advancers, decliners)
+            if (breadthRatio >= 0.8) return 'flat' as const
+        }
+
+        if (advancers > decliners) return 'up' as const
+        if (decliners > advancers) return 'down' as const
+        return 'flat' as const
+    })()
 
     return (
         <div
             className={cn(
-                'rounded-xl border border-border/60 bg-surface-secondary/40 px-4 py-3 space-y-2',
+                'rounded-xl border border-border/60 bg-surface-secondary/40 px-3 py-2 space-y-1.5',
                 className
             )}
         >
@@ -40,18 +55,7 @@ export function MarketSentimentStrip({ sentiment, asOfDate, className }: MarketS
                             <span className="font-medium text-text-primary">
                                 {formatPrice(primaryIndex.value)}
                             </span>{' '}
-                            <span
-                                className={cn(
-                                    'font-semibold',
-                                    primaryIndex.changePercent > 0
-                                        ? 'text-up'
-                                        : primaryIndex.changePercent < 0
-                                          ? 'text-down'
-                                          : 'text-text-secondary'
-                                )}
-                            >
-                                {formatPriceChange(primaryIndex.changePercent)}
-                            </span>
+                            <ChangeLabel change={primaryIndex.changePercent} className="text-xs" />
                         </span>
                     )}
                 </div>
@@ -77,7 +81,7 @@ export function MarketSentimentStrip({ sentiment, asOfDate, className }: MarketS
                         lean === 'up' ? 'text-up' : lean === 'down' ? 'text-down' : 'text-text-tertiary'
                     )}
                 >
-                    {lean === 'up' ? 'Bullish' : lean === 'down' ? 'Bearish' : 'Mixed'}
+                    {lean === 'up' ? 'BULLISH' : lean === 'down' ? 'BEARISH' : 'MIXED'}
                 </span>
             </div>
         </div>

@@ -33,9 +33,45 @@ export function formatPriceCompact(price: number) {
     return `${formatDecimalParts(price, 0)} ден.`
 }
 
+export const CHANGE_ZERO_THRESHOLD = 0.005
+
+export type ChangeDirection = 'up' | 'down' | 'neutral'
+
+/** Rounding-aware sign for day-over-day % (brand rule §4). */
+export function classifyChangePercent(pct: number): ChangeDirection {
+    if (Math.abs(pct) < CHANGE_ZERO_THRESHOLD) return 'neutral'
+    return pct > 0 ? 'up' : 'down'
+}
+
 export function formatPriceChange(change: number) {
-    if (change === 0) return "0.00%"
-    return (change > 0 ? "+" : "") + change.toFixed(2) + "%"
+    if (classifyChangePercent(change) === 'neutral') return '0.00%'
+    if (change > 0) return `+${change.toFixed(2)}%`
+    return `−${Math.abs(change).toFixed(2)}%`
+}
+
+/** Macedonian-style date for news filings, e.g. 12.11.2025 */
+export function formatNewsDate(dateStr: string): string {
+    const d = new Date(dateStr)
+    if (Number.isNaN(d.getTime())) return dateStr
+    const day = String(d.getDate()).padStart(2, '0')
+    const month = String(d.getMonth() + 1).padStart(2, '0')
+    const year = d.getFullYear()
+    return `${day}.${month}.${year}`
+}
+
+/** Token-aligned hex fills for chart libs (e.g. treemap) that cannot use CSS variables. */
+export function getChangeTreemapFill(pct: number): string {
+    const dir = classifyChangePercent(pct)
+    if (dir === 'neutral') return '#5a6577'
+    const abs = Math.abs(pct)
+    if (dir === 'up') {
+        if (abs > 3) return '#1a7a47'
+        if (abs > 1) return '#22885a'
+        return '#54c98c'
+    }
+    if (abs > 3) return '#c2362f'
+    if (abs > 1) return '#d44a42'
+    return '#f0726a'
 }
 
 /** Human-readable end-of-day label, e.g. "12 Dec 2025". */

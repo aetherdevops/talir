@@ -1,16 +1,23 @@
 'use client'
 
 import { useId, useMemo } from 'react'
-import { cn } from '@/lib/utils'
+import { cn, classifyChangePercent } from '@/lib/utils'
 
 interface IndexSparklineProps {
     series: { date: string; value: number }[]
-    positive?: boolean
+    changePercent: number
     className?: string
     height?: number
 }
 
-export function IndexSparkline({ series, positive = true, className, height = 120 }: IndexSparklineProps) {
+function strokeForChange(changePercent: number): string {
+    const direction = classifyChangePercent(changePercent)
+    if (direction === 'up') return 'var(--up)'
+    if (direction === 'down') return 'var(--down)'
+    return 'var(--neutral)'
+}
+
+export function IndexSparkline({ series, changePercent, className, height = 120 }: IndexSparklineProps) {
     const uid = useId().replace(/:/g, '')
     const path = useMemo(() => {
         if (!series.length) return ''
@@ -45,7 +52,7 @@ export function IndexSparkline({ series, positive = true, className, height = 12
         )
     }
 
-    const stroke = positive ? 'var(--up)' : 'var(--down)'
+    const stroke = strokeForChange(changePercent)
     const gradId = `grad-${uid}`
 
     return (
