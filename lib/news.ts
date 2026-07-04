@@ -93,4 +93,10 @@ export function buildNewsFeedFromIssuers(issuers: IssuerWithReports[]): NewsFeed
     return { items: datedItems, undatedByCode }
 }
 
-export { NEWS_CATEGORY_LABELS, FILINGS_SECTION_TITLE, FILINGS_SECTION_SUBTITLE } from './news-style'
+export {
+    NEWS_CATEGORY_LABELS,
+    UPDATES_SECTION_TITLE,
+    UPDATES_SECTION_SUBTITLE,
+    FILINGS_SECTION_TITLE,
+    FILINGS_SECTION_SUBTITLE,
+} from './news-style'

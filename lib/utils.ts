@@ -33,6 +33,15 @@ export function formatPriceCompact(price: number) {
     return `${formatDecimalParts(price, 0)} ден.`
 }
 
+/** Index levels are points, not currency — no ден. suffix. */
+export function formatIndexLevel(value: number) {
+    return formatDecimalParts(value, 2)
+}
+
+export function formatIndexLevelCompact(value: number) {
+    return formatDecimalParts(value, 0)
+}
+
 export const CHANGE_ZERO_THRESHOLD = 0.005
 
 export type ChangeDirection = 'up' | 'down' | 'neutral'

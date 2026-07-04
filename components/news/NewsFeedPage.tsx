@@ -38,7 +38,7 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
     if (!items.length) {
         return (
             <div className="rounded-xl border border-dashed border-border bg-surface-secondary/30 px-6 py-12 text-center">
-                <p className="text-sm text-text-secondary">No dated filings in the feed yet.</p>
+                <p className="text-sm text-text-secondary">No dated updates in the feed yet.</p>
                 {lastIssuerScan && (
                     <p className="mt-2 text-xs text-text-tertiary font-data">
                         Last issuer scan: {formatAsOfDate(lastIssuerScan)}
@@ -92,7 +92,7 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
             </div>
 
             {filtered.length === 0 ? (
-                <p className="text-sm text-text-tertiary py-8 text-center">No filings match these filters.</p>
+                <p className="text-sm text-text-tertiary py-8 text-center">No updates match these filters.</p>
             ) : scope === 'all' ? (
                 <div className="space-y-6">
                     {featured && <NewsCard item={featured} variant="featured" />}

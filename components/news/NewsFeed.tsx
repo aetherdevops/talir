@@ -3,11 +3,11 @@ import { ArrowRight } from 'lucide-react'
 import type { NewsItem } from '@/lib/types'
 import { NewsCard } from '@/components/news/NewsCard'
 import { Button } from '@/components/ui/Button'
-import { FILINGS_SECTION_SUBTITLE, FILINGS_SECTION_TITLE } from '@/lib/news-style'
+import { UPDATES_SECTION_SUBTITLE, UPDATES_SECTION_TITLE } from '@/lib/news-style'
 
 interface NewsFeedProps {
     items: NewsItem[]
-    layout?: 'home' | 'page'
+    layout?: 'home' | 'home-rail' | 'page'
     title?: string
     subtitle?: string
     showHeader?: boolean
@@ -16,8 +16,8 @@ interface NewsFeedProps {
 export function NewsFeed({
     items,
     layout = 'home',
-    title = FILINGS_SECTION_TITLE,
-    subtitle = FILINGS_SECTION_SUBTITLE,
+    title = UPDATES_SECTION_TITLE,
+    subtitle = UPDATES_SECTION_SUBTITLE,
     showHeader = true,
 }: NewsFeedProps) {
     if (!items.length) return null
@@ -33,6 +33,33 @@ export function NewsFeed({
                     ))}
                 </div>
             </div>
+        )
+    }
+
+    if (layout === 'home-rail') {
+        return (
+            <section className="space-y-3 min-w-0 sticky top-4">
+                {showHeader && (
+                    <div className="space-y-1 min-w-0">
+                        <div className="flex items-start justify-between gap-2">
+                            <h2 className="text-lg font-semibold font-heading text-text-primary tracking-tight">
+                                {title}
+                            </h2>
+                            <Button variant="ghost" size="sm" asChild className="flex-shrink-0 h-8 px-2">
+                                <Link href="/news" className="text-accent text-xs font-semibold flex items-center gap-0.5">
+                                    All <ArrowRight className="h-3.5 w-3.5" />
+                                </Link>
+                            </Button>
+                        </div>
+                        <p className="text-xs text-text-secondary leading-snug">{subtitle}</p>
+                    </div>
+                )}
+                <div className="space-y-2 min-w-0">
+                    {items.map((item) => (
+                        <NewsCard key={item.id} item={item} variant="rail" />
+                    ))}
+                </div>
+            </section>
         )
     }
 

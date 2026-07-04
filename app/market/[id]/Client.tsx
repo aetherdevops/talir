@@ -4,7 +4,7 @@
 import { useState, useMemo } from 'react'
 import { IndexDetails, NewsItem } from '@/lib/data'
 import { PriceChart } from '@/components/charts/PriceChart'
-import { cn, formatPrice } from '@/lib/utils'
+import { cn, formatIndexLevel } from '@/lib/utils'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { Share2, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
@@ -62,7 +62,7 @@ export function IndexClient({ index, news }: IndexClientProps) {
                     <h1 className="text-3xl font-bold text-text-primary mb-1">{index.code}</h1>
                     <div className="flex items-center gap-3">
                         <span className="text-4xl font-bold text-text-primary tracking-tight">
-                            {formatPrice(index.currentValue)}
+                            {formatIndexLevel(index.currentValue)}
                         </span>
                         <ChangeLabel change={index.changePercent} variant="pill" className="text-sm" />
                     </div>
@@ -107,19 +107,19 @@ export function IndexClient({ index, news }: IndexClientProps) {
                             <div className="flex justify-between items-center py-2 border-b border-border/50">
                                 <span className="text-sm text-text-secondary">Previous Close</span>
                                 <span className="font-medium text-text-primary">
-                                    {formatPrice(index.currentValue - index.change)}
+                                    {formatIndexLevel(index.currentValue - index.change)}
                                 </span>
                             </div>
                             <div className="flex justify-between items-center py-2 border-b border-border/50">
                                 <span className="text-sm text-text-secondary">Day Range</span>
                                 <span className="font-medium text-text-primary">
-                                    {index.dayRange ? `${formatPrice(index.dayRange.min)} - ${formatPrice(index.dayRange.max)}` : 'N/A'}
+                                    {index.dayRange ? `${formatIndexLevel(index.dayRange.min)} - ${formatIndexLevel(index.dayRange.max)}` : 'N/A'}
                                 </span>
                             </div>
                             <div className="flex justify-between items-center py-2 border-b border-border/50">
                                 <span className="text-sm text-text-secondary">Year Range</span>
                                 <span className="font-medium text-text-primary">
-                                    {index.yearRange ? `${formatPrice(index.yearRange.min)} - ${formatPrice(index.yearRange.max)}` : 'N/A'}
+                                    {index.yearRange ? `${formatIndexLevel(index.yearRange.min)} - ${formatIndexLevel(index.yearRange.max)}` : 'N/A'}
                                 </span>
                             </div>
                         </div>
@@ -143,7 +143,7 @@ export function IndexClient({ index, news }: IndexClientProps) {
 
             {/* Bottom: News */}
             <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                <h2 className="text-xl font-semibold mb-6 text-text-primary">Filings & disclosures</h2>
+                <h2 className="text-xl font-semibold mb-6 text-text-primary">Updates</h2>
                 <NewsPreview news={news} />
             </div>
         </div>

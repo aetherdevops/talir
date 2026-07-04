@@ -1,6 +1,6 @@
 import type { NewsItem } from '@/lib/types'
 import { NewsCard } from '@/components/news/NewsCard'
-import { FILINGS_SECTION_TITLE } from '@/lib/news-style'
+import { UPDATES_SECTION_TITLE } from '@/lib/news-style'
 
 interface StockFilingsSectionProps {
     dated: NewsItem[]
@@ -11,7 +11,7 @@ export function StockFilingsSection({ dated, undated }: StockFilingsSectionProps
     if (!dated.length && !undated.length) {
         return (
             <div className="text-center py-12 text-text-tertiary text-sm rounded-xl border border-dashed border-border">
-                No filings available for this company.
+                No updates available for this company.
             </div>
         )
     }
@@ -29,7 +29,7 @@ export function StockFilingsSection({ dated, undated }: StockFilingsSectionProps
             {undated.length > 0 && (
                 <section className="space-y-3 pt-4 border-t border-border">
                     <h3 className="text-sm font-semibold text-text-secondary font-heading">
-                        {FILINGS_SECTION_TITLE} — date unknown
+                        {UPDATES_SECTION_TITLE} — date unknown
                     </h3>
                     <div className="space-y-3 opacity-90">
                         {undated.map((item) => (

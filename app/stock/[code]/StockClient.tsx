@@ -16,7 +16,7 @@ import { PortfolioHoldingIndicator } from '@/components/portfolio/PortfolioHoldi
 import { StockFilingsSection } from '@/components/stock/StockFilingsSection'
 import { ResponsiveText } from '@/components/ui/ResponsiveText'
 import { StockSummary, DailyPrice, NewsItem } from '@/lib/types'
-import { FILINGS_SECTION_TITLE } from '@/lib/news-style'
+import { UPDATES_SECTION_TITLE } from '@/lib/news-style'
 
 // Replicate the ChartData interface locally or import it
 interface ChartData {
@@ -229,7 +229,7 @@ export function StockClient({ stock, history, currentPrice, chartData, filingsDa
                     {/* Filings */}
                     <div className="flex flex-col gap-4">
                         <h2 className="text-lg font-semibold text-text-primary font-heading border-b border-border pb-3">
-                            {FILINGS_SECTION_TITLE}
+                            {UPDATES_SECTION_TITLE}
                         </h2>
                         <StockFilingsSection dated={filingsDated} undated={filingsUndated} />
                     </div>

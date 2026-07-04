@@ -85,6 +85,11 @@ export const NEWS_CATEGORY_LABELS: Record<NewsCategory, string> = {
     other: 'Disclosure',
 }
 
-export const FILINGS_SECTION_TITLE = 'Filings & Disclosures'
-export const FILINGS_SECTION_SUBTITLE =
-    'Regulatory filings and disclosures from companies listed on the MSE. End-of-day archive — not live news.'
+export const UPDATES_SECTION_TITLE = 'Updates'
+export const UPDATES_SECTION_SUBTITLE =
+    'Regulatory filings and disclosures from MSE-listed companies · End-of-day archive — not live news.'
+
+/** @deprecated Use UPDATES_SECTION_TITLE */
+export const FILINGS_SECTION_TITLE = UPDATES_SECTION_TITLE
+/** @deprecated Use UPDATES_SECTION_SUBTITLE */
+export const FILINGS_SECTION_SUBTITLE = UPDATES_SECTION_SUBTITLE

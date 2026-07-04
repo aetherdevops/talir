@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { MarketIndex, StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { PreviewMarketCard } from '@/components/home/PreviewMarketCard'
+import { CompactQuoteCard } from '@/components/home/CompactQuoteCard'
+import { DesktopScrollRow } from '@/components/home/DesktopScrollRow'
 import { StockPreviewCard } from '@/components/home/StockPreviewCard'
 import { ChevronRight } from 'lucide-react'
 
@@ -89,7 +91,7 @@ export function HomePreviewTabs({
     const hasMoreStocks = activeStocks.length > MAX_PREVIEW_ITEMS
 
     return (
-        <div className="space-y-2">
+        <div className="space-y-2 min-w-0">
             <TabPills
                 options={[
                     { id: 'indices', label: 'Indices' },
@@ -100,19 +102,37 @@ export function HomePreviewTabs({
             />
 
             {mainTab === 'indices' && (
-                <div className="space-y-2">
-                    <PreviewGrid>
-                        {previewIndices.map((idx) => (
-                            <PreviewMarketCard
-                                key={idx.name}
-                                href={`/market/${idx.name}`}
-                                label={idx.name}
-                                chartSeries={(idx.chartSeries ?? []).slice(-30)}
-                                latestPrice={idx.value}
-                                changePercent={idx.changePercent}
-                            />
-                        ))}
-                    </PreviewGrid>
+                <div className="space-y-2 min-w-0">
+                    <div className="lg:hidden">
+                        <PreviewGrid>
+                            {previewIndices.map((idx) => (
+                                <PreviewMarketCard
+                                    key={idx.name}
+                                    href={`/market/${idx.name}`}
+                                    label={idx.name}
+                                    valueKind="index"
+                                    chartSeries={(idx.chartSeries ?? []).slice(-30)}
+                                    latestPrice={idx.value}
+                                    changePercent={idx.changePercent}
+                                />
+                            ))}
+                        </PreviewGrid>
+                    </div>
+                    <div className="hidden lg:block min-w-0">
+                        <DesktopScrollRow>
+                            {previewIndices.map((idx) => (
+                                <CompactQuoteCard
+                                    key={idx.name}
+                                    href={`/market/${idx.name}`}
+                                    label={idx.name}
+                                    valueKind="index"
+                                    chartSeries={(idx.chartSeries ?? []).slice(-30)}
+                                    latestPrice={idx.value}
+                                    changePercent={idx.changePercent}
+                                />
+                            ))}
+                        </DesktopScrollRow>
+                    </div>
                     {previewIndices.length === 0 && (
                         <p className="text-sm text-text-tertiary py-4 text-center">No index data available</p>
                     )}
@@ -121,7 +141,7 @@ export function HomePreviewTabs({
             )}
 
             {mainTab === 'stocks' && (
-                <div className="space-y-2">
+                <div className="space-y-2 min-w-0">
                     <TabPills
                         options={[
                             { id: 'active', label: 'Active' },
@@ -132,11 +152,31 @@ export function HomePreviewTabs({
                         onChange={setStockTab}
                     />
                     {previewStocks.length > 0 ? (
-                        <PreviewGrid>
-                            {previewStocks.map((stock) => (
-                                <StockPreviewCard key={stock.code} stock={stock} />
-                            ))}
-                        </PreviewGrid>
+                        <>
+                            <div className="lg:hidden">
+                                <PreviewGrid>
+                                    {previewStocks.map((stock) => (
+                                        <StockPreviewCard key={stock.code} stock={stock} />
+                                    ))}
+                                </PreviewGrid>
+                            </div>
+                            <div className="hidden lg:block min-w-0">
+                                <DesktopScrollRow>
+                                    {previewStocks.map((stock) => (
+                                        <CompactQuoteCard
+                                            key={stock.code}
+                                            href={`/stock/${stock.code}`}
+                                            label={stock.code}
+                                            subtitle={stock.name}
+                                            valueKind="stock"
+                                            chartSeries={stock.chartSeries ?? []}
+                                            latestPrice={stock.price}
+                                            changePercent={stock.changePercent}
+                                        />
+                                    ))}
+                                </DesktopScrollRow>
+                            </div>
+                        </>
                     ) : (
                         <p className="text-sm text-text-tertiary py-4 text-center">No data available</p>
                     )}

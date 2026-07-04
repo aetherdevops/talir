@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { useThemeStore } from '@/lib/store'
 import { usePortfolioStore } from '@/lib/stores/portfolio'
-import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { CreateMenu } from '@/components/layout/CreateMenu'
 import { useEffect, useState } from 'react'
 
@@ -102,7 +101,7 @@ export function Sidebar({ className }: { className?: string }) {
                 <ul className="space-y-1 px-3">
                     <SidebarItem icon={Home} label="Home" href="/" isActive={pathname === '/'} isCollapsed={!isOpen} />
                     <SidebarItem icon={BarChart2} label="Markets" href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} />
-                    <SidebarItem icon={Newspaper} label="Filings" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} />
+                    <SidebarItem icon={Newspaper} label="Updates" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} />
 
                     <SectionHeader
                         label="Create"
@@ -146,10 +145,6 @@ export function Sidebar({ className }: { className?: string }) {
                     />
                 </ul>
             </nav>
-
-            <div className="px-3 pb-3 hidden lg:block">
-                <SponsorSlot placement="sidebar" />
-            </div>
 
             <div className="mt-auto border-t border-border bg-surface w-full p-3">
                 <div className={cn("flex mb-2", !isOpen ? "justify-center" : "justify-end")}>

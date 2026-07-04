@@ -2,15 +2,16 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
-import { Search, Newspaper } from 'lucide-react'
+import { Search, Newspaper, Menu } from 'lucide-react'
 import { Logo } from '@/components/common/Logo'
 import { AuthMenu } from '@/components/layout/AuthMenu'
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils'
 import { SearchBar } from '@/components/layout/SearchBar'
 import { SessionIndicator } from '@/components/layout/SessionIndicator'
+import { useThemeStore } from '@/lib/store'
 import { StockSummary } from '@/lib/types'
 
 const MobileSearchSheet = dynamic(
@@ -21,6 +22,14 @@ const MobileSearchSheet = dynamic(
 export function Header({ className, instruments = [] }: { className?: string; instruments?: StockSummary[] }) {
     const pathname = usePathname()
     const [searchOpen, setSearchOpen] = useState(false)
+    const { isSidebarOpen, toggleSidebar } = useThemeStore()
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    const showSidebarExpand = mounted && !isSidebarOpen
 
     return (
         <>
@@ -34,6 +43,17 @@ export function Header({ className, instruments = [] }: { className?: string; in
                 )}
             >
                 <div className="flex items-center gap-2 sm:gap-3 min-w-0 [&_.text-text-primary]:text-talir-ivory [&_.text-text-tertiary]:text-talir-gold-soft/70">
+                    {showSidebarExpand ? (
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={toggleSidebar}
+                            className="hidden md:flex min-h-[44px] min-w-[44px] text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5"
+                            aria-label="Expand sidebar navigation"
+                        >
+                            <Menu className="h-5 w-5" />
+                        </Button>
+                    ) : null}
                     <Logo />
                     <SessionIndicator />
                     <Link
@@ -42,7 +62,7 @@ export function Header({ className, instruments = [] }: { className?: string; in
                             'md:hidden flex items-center justify-center min-h-[44px] min-w-[44px] rounded-lg text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5 transition-colors',
                             pathname === '/news' && 'text-accent'
                         )}
-                        aria-label="Filings and disclosures"
+                        aria-label="Updates"
                     >
                         <Newspaper className="h-5 w-5" />
                     </Link>

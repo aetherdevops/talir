@@ -1,5 +1,5 @@
 import type { MarketSentiment } from '@/lib/data'
-import { formatPrice } from '@/lib/utils'
+import { formatIndexLevel } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 import { DataFreshnessLabel } from './DataFreshnessLabel'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
@@ -9,9 +9,15 @@ interface MarketSentimentStripProps {
     sentiment: MarketSentiment
     asOfDate: string
     className?: string
+    hidePrimaryIndex?: boolean
 }
 
-export function MarketSentimentStrip({ sentiment, asOfDate, className }: MarketSentimentStripProps) {
+export function MarketSentimentStrip({
+    sentiment,
+    asOfDate,
+    className,
+    hidePrimaryIndex = false,
+}: MarketSentimentStripProps) {
     const { advancers, decliners, unchanged, primaryIndex } = sentiment
     const total = advancers + decliners + unchanged
     const bullishPct = total > 0 ? (advancers / total) * 100 : 50
@@ -49,11 +55,11 @@ export function MarketSentimentStrip({ sentiment, asOfDate, className }: MarketS
                         {decliners} down
                     </span>
                     <span className="text-text-tertiary font-data">{unchanged} flat</span>
-                    {primaryIndex && (
+                    {primaryIndex && !hidePrimaryIndex && (
                         <span className="text-text-secondary border-l border-border pl-4 font-data">
                             {primaryIndex.name}{' '}
                             <span className="font-medium text-text-primary">
-                                {formatPrice(primaryIndex.value)}
+                                {formatIndexLevel(primaryIndex.value)}
                             </span>{' '}
                             <ChangeLabel change={primaryIndex.changePercent} className="text-xs" />
                         </span>
