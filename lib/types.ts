@@ -63,10 +63,21 @@ export interface NewsItem {
     title: string
     rawTitle?: string
     source: string
-    publishedAt: string // ISO date
+    publishedAt: string | null
+    dateKnown: boolean
     stockCode: string
     stockName?: string
     category: NewsCategory
     imageUrl?: string
     url: string
+}
+
+export interface NewsFeedFile {
+    generatedAt: string
+    lastIssuerScan: string | null
+    count: number
+    datedCount: number
+    undatedCount: number
+    items: NewsItem[]
+    undatedByCode: Record<string, NewsItem[]>
 }

@@ -1,6 +1,5 @@
-import { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem } from './types'
-export type { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem }
-import { buildNewsFromIssuers } from './news'
+import { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem, NewsFeedFile } from './types'
+export type { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem, NewsFeedFile }
 import { transliterate } from './transliterate'
 import { CHANGE_ZERO_THRESHOLD, classifyChangePercent } from './utils'
 
@@ -11,6 +10,7 @@ import sparklinesData from '@/lib/data/sparklines.json'
 import derivedMarketData from '@/lib/data/derived_market.json'
 import scrapeMetaData from '@/lib/data/scrape_meta.json'
 import searchIndexData from '@/lib/data/search_index.json'
+import newsFeedData from '@/lib/data/news_feed.json'
 
 // Unified fetcher for both stocks and indices
 export async function getAllInstruments(): Promise<StockSummary[]> {
@@ -318,17 +318,34 @@ export function getChartData(history: DailyPrice[], months: number = 12) {
         .sort((a, b) => a.time.localeCompare(b.time))
 }
 
-// Helper to parse date from title if date field is empty or standard
-// Title format example: "10/30/2025 - Komercijalna Banka..."
-function parseDateFromTitle(title: string, dateStr?: string): Date {
-    if (dateStr) return new Date(dateStr)
+export function getNewsFeed(): NewsFeedFile {
+    return newsFeedData as NewsFeedFile
+}
 
-    // Try extracting MM/DD/YYYY from start of title
-    const match = title.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/)
-    if (match) {
-        return new Date(`${match[3]}-${match[1]}-${match[2]}`)
+export function getNewsFeedMeta(): { lastIssuerScan: string | null } {
+    const feed = getNewsFeed()
+    return { lastIssuerScan: feed.lastIssuerScan ?? null }
+}
+
+export function getCompanyFilings(stockCode: string): { dated: NewsItem[]; undated: NewsItem[] } {
+    const feed = getNewsFeed()
+    return {
+        dated: feed.items.filter((item) => item.stockCode === stockCode),
+        undated: feed.undatedByCode?.[stockCode] ?? [],
     }
-    return new Date() // Fallback
+}
+
+export async function getLatestNews(limit: number = 6, stockCode?: string): Promise<NewsItem[]> {
+    try {
+        let items = getNewsFeed().items
+        if (stockCode) {
+            items = items.filter((item) => item.stockCode === stockCode)
+        }
+        return items.slice(0, limit)
+    } catch (e) {
+        console.error('Error loading news feed', e)
+        return []
+    }
 }
 
 export interface IndexDetails {
@@ -431,16 +448,6 @@ export async function getMarketIndices(): Promise<MarketIndex[]> {
         return indices
     } catch (e) {
         console.error("Error loading indices", e)
-        return []
-    }
-}
-
-export async function getLatestNews(limit: number = 6, stockCode?: string): Promise<NewsItem[]> {
-    try {
-        const issuers = await getIssuers()
-        return buildNewsFromIssuers(issuers, limit, parseDateFromTitle, stockCode)
-    } catch (e) {
-        console.error("Error loading news", e)
         return []
     }
 }

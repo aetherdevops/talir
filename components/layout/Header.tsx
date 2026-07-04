@@ -42,7 +42,7 @@ export function Header({ className, instruments = [] }: { className?: string; in
                             'md:hidden flex items-center justify-center min-h-[44px] min-w-[44px] rounded-lg text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5 transition-colors',
                             pathname === '/news' && 'text-accent'
                         )}
-                        aria-label="News"
+                        aria-label="Filings and disclosures"
                     >
                         <Newspaper className="h-5 w-5" />
                     </Link>

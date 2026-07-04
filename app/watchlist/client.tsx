@@ -213,7 +213,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
 
             {/* Watchlist News */}
             <div className="mt-8">
-                <NewsSection items={news} title="Watchlist News" />
+                <NewsSection items={news} title="Watchlist filings" />
             </div>
 
             <CreateListModal

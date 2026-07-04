@@ -32,6 +32,15 @@ jobs:
     - name: Run Update Script
       run: npm run script:update
 
+    - name: Refresh issuer filings
+      run: npm run script:issuers
+
+    - name: Generate news feed
+      run: npm run generate:news-feed
+
+    - name: Regenerate derived assets
+      run: npm run generate:sparklines && npm run generate:derived && npm run generate:search-index
+
     - name: Commit Changes
       run: |
         git config --global user.name "Scraper Bot"

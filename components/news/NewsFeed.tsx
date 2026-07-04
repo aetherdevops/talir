@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import type { NewsItem } from '@/lib/types'
 import { NewsCard } from '@/components/news/NewsCard'
 import { Button } from '@/components/ui/Button'
+import { FILINGS_SECTION_SUBTITLE, FILINGS_SECTION_TITLE } from '@/lib/news-style'
 
 interface NewsFeedProps {
     items: NewsItem[]
@@ -15,8 +16,8 @@ interface NewsFeedProps {
 export function NewsFeed({
     items,
     layout = 'home',
-    title = 'MSE Market News',
-    subtitle = 'Filings and disclosures from companies listed on the MSE',
+    title = FILINGS_SECTION_TITLE,
+    subtitle = FILINGS_SECTION_SUBTITLE,
     showHeader = true,
 }: NewsFeedProps) {
     if (!items.length) return null

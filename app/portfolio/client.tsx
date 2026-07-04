@@ -323,7 +323,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                                 : "border-transparent text-text-secondary hover:text-text-primary"
                                         )}
                                     >
-                                        {tab === 'news' ? 'News and events' : tab}
+                                        {tab === 'news' ? 'Filings & events' : tab}
                                     </button>
                                 ))}
                             </div>
@@ -332,7 +332,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                         {/* News Tab */}
                         {activeTab === 'news' && (
                             <div className="pt-6">
-                                <NewsSection items={news} title="Portfolio News" />
+                                <NewsSection items={news} title="Portfolio filings" />
                             </div>
                         )}
 

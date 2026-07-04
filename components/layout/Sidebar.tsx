@@ -102,7 +102,7 @@ export function Sidebar({ className }: { className?: string }) {
                 <ul className="space-y-1 px-3">
                     <SidebarItem icon={Home} label="Home" href="/" isActive={pathname === '/'} isCollapsed={!isOpen} />
                     <SidebarItem icon={BarChart2} label="Markets" href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} />
-                    <SidebarItem icon={Newspaper} label="News" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} />
+                    <SidebarItem icon={Newspaper} label="Filings" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} />
 
                     <SectionHeader
                         label="Create"

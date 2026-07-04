@@ -1,4 +1,6 @@
 import type { NewsCategory, NewsItem } from './types'
+import { parseReportDate } from './news-dates'
+import { parseReportTitle } from './news-style'
 
 interface ReportLink {
     title: string
@@ -34,83 +36,61 @@ export function categorizeReport(rawTitle: string): NewsCategory {
     return 'other'
 }
 
-function stripReportPrefix(rawTitle: string): string {
-    return rawTitle
-        .replace(/^\d{1,2}\/\d{1,2}\/\d{4}\s*-\s*/i, '')
-        .replace(/^[^-]+-\s*/, '')
-        .trim()
+export type NewsFeedBuildResult = {
+    items: NewsItem[]
+    undatedByCode: Record<string, NewsItem[]>
 }
 
-export function parseReportTitle(rawTitle: string, stockCode: string, stockName?: string): string {
-    const body = stripReportPrefix(rawTitle)
-    const lower = body.toLowerCase()
-    const name = stockCode
+export function buildNewsFeedFromIssuers(issuers: IssuerWithReports[]): NewsFeedBuildResult {
+    const seenUrls = new Set<string>()
+    const datedItems: NewsItem[] = []
+    const undatedByCode: Record<string, NewsItem[]> = {}
 
-    if (lower.includes('dividend')) {
-        return `${name} announces dividend update`
-    }
-    if (lower.includes('profit') || lower.includes('loss') || lower.includes('p&l')) {
-        const period = body.match(/(\d{2}\.\d{2}\.\s*-\s*\d{2}\.\d{2}\.)/)?.[1]
-        return period
-            ? `${name} posts ${period} profit & loss figures`
-            : `${name} releases latest profit & loss report`
-    }
-    if (lower.includes('audited financial')) {
-        return `${name} publishes audited financial statements`
-    }
-    if (lower.includes('financial statement') || lower.includes('non-audited')) {
-        return `${name} files interim financial statements`
-    }
-    if (lower.includes('annual report')) {
-        return `${name} releases annual report`
-    }
+    for (const issuer of issuers) {
+        if (!issuer.reportLinks?.length) continue
 
-    const short = body.length > 72 ? `${body.slice(0, 69)}…` : body
-    return stockName ? `${name}: ${short}` : `${name}: ${short}`
-}
-
-export function buildNewsFromIssuers(
-    issuers: IssuerWithReports[],
-    limit: number,
-    parseDate: (title: string, dateStr?: string) => Date,
-    stockCodeFilter?: string
-): NewsItem[] {
-    const allReports: NewsItem[] = []
-
-    issuers.forEach((issuer) => {
-        if (stockCodeFilter && issuer.code !== stockCodeFilter) return
-        if (!issuer.reportLinks) return
-
-        issuer.reportLinks.forEach((report, index) => {
+        for (const report of issuer.reportLinks) {
             const url = normalizeNewsUrl(report.url)
-            if (!url) return
+            if (!url) continue
+
+            const dedupeKey = url.toLowerCase()
+            if (seenUrls.has(dedupeKey)) continue
+            seenUrls.add(dedupeKey)
 
             const rawTitle = report.title
+            const isoDate = parseReportDate(rawTitle, report.date)
             const category = categorizeReport(rawTitle)
-
-            allReports.push({
-                id: `${issuer.code}-${index}`,
+            const item: NewsItem = {
+                id: `${issuer.code}-${dedupeKey.replace(/[^a-z0-9]+/gi, '-').slice(0, 48)}`,
                 rawTitle,
-                title: parseReportTitle(rawTitle, issuer.code, issuer.name),
-                source: 'MSE',
+                title: parseReportTitle(rawTitle, issuer.code),
+                source: 'SECNet',
                 stockCode: issuer.code,
                 stockName: issuer.name,
                 category,
-                publishedAt: parseDate(rawTitle, report.date).toISOString(),
+                publishedAt: isoDate,
+                dateKnown: isoDate !== null,
                 url,
-            })
-        })
-    })
+            }
 
-    return allReports
-        .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-        .slice(0, limit)
+            if (isoDate) {
+                datedItems.push(item)
+            } else {
+                if (!undatedByCode[issuer.code]) undatedByCode[issuer.code] = []
+                undatedByCode[issuer.code].push(item)
+            }
+        }
+    }
+
+    datedItems.sort(
+        (a, b) => new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime()
+    )
+
+    for (const code of Object.keys(undatedByCode)) {
+        undatedByCode[code].sort((a, b) => a.title.localeCompare(b.title))
+    }
+
+    return { items: datedItems, undatedByCode }
 }
 
-export const NEWS_CATEGORY_LABELS: Record<NewsCategory, string> = {
-    earnings: 'Earnings',
-    financials: 'Financials',
-    dividend: 'Dividend',
-    corporate: 'Corporate',
-    other: 'Market',
-}
+export { NEWS_CATEGORY_LABELS, FILINGS_SECTION_TITLE, FILINGS_SECTION_SUBTITLE } from './news-style'

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Star, Bell, Share2, Globe, Phone, ExternalLink, FileText, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowLeft, Star, Bell, Share2, Globe, Phone, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Card, CardHeader, CardContent } from '@/components/ui/Card'
 import { PriceChangeBadge } from '@/components/ui/Badge'
@@ -13,9 +13,10 @@ import { StockPageActions } from '@/components/stock/StockPageActions'
 import { StickyStockHeader } from '@/components/stock/StickyStockHeader'
 import { usePreferencesStore, type ChartRange } from '@/lib/stores/preferences'
 import { PortfolioHoldingIndicator } from '@/components/portfolio/PortfolioHoldingIndicator'
-import { NewsSection } from '@/components/common/NewsSection'
+import { StockFilingsSection } from '@/components/stock/StockFilingsSection'
 import { ResponsiveText } from '@/components/ui/ResponsiveText'
 import { StockSummary, DailyPrice, NewsItem } from '@/lib/types'
+import { FILINGS_SECTION_TITLE } from '@/lib/news-style'
 
 // Replicate the ChartData interface locally or import it
 interface ChartData {
@@ -29,7 +30,8 @@ interface StockClientProps {
     history: DailyPrice[]
     currentPrice: number
     chartData: ChartData[]
-    news: NewsItem[]
+    filingsDated: NewsItem[]
+    filingsUndated: NewsItem[]
     asOfDate: string
 }
 
@@ -39,11 +41,9 @@ function chartRangeToTimeframe(range: ChartRange): Timeframe {
     return range as Timeframe
 }
 
-export function StockClient({ stock, history, currentPrice, chartData, news, asOfDate }: StockClientProps) {
+export function StockClient({ stock, history, currentPrice, chartData, filingsDated, filingsUndated, asOfDate }: StockClientProps) {
     const defaultChartRange = usePreferencesStore((s) => s.defaultChartRange)
     const [timeframe, setTimeframe] = useState<Timeframe>(() => chartRangeToTimeframe(defaultChartRange))
-    const [activeTab, setActiveTab] = useState<'news' | 'docs'>('news')
-    const [docPage, setDocPage] = useState(1)
 
     // Filter Logic with Index-based fallback for short periods to ensure data display
     const filteredData = useMemo(() => {
@@ -226,103 +226,12 @@ export function StockClient({ stock, history, currentPrice, chartData, news, asO
                         </CardContent>
                     </Card>
 
-                    {/* News & Documents Tabs */}
+                    {/* Filings */}
                     <div className="flex flex-col gap-4">
-                        <div className="flex items-center gap-4 border-b border-border">
-                            <button
-                                onClick={() => setActiveTab('news')}
-                                className={cn(
-                                    "pb-3 text-sm font-bold border-b-2 transition-colors",
-                                    activeTab === 'news'
-                                        ? "border-brand-active text-text-primary"
-                                        : "border-transparent text-text-tertiary hover:text-text-secondary"
-                                )}
-                            >
-                                In the news
-                            </button>
-                            <button
-                                onClick={() => setActiveTab('docs')}
-                                className={cn(
-                                    "pb-3 text-sm font-bold border-b-2 transition-colors",
-                                    activeTab === 'docs'
-                                        ? "border-brand-active text-text-primary"
-                                        : "border-transparent text-text-tertiary hover:text-text-secondary"
-                                )}
-                            >
-                                Documents
-                            </button>
-                        </div>
-
-                        {activeTab === 'news' ? (
-                            <NewsSection items={news} title="" />
-                        ) : (
-                            <Card className="border-none shadow-none bg-transparent lg:bg-surface lg:shadow-card lg:border lg:border-border">
-                                <CardContent className="p-0 lg:p-6">
-                                    {stock.issuer_data?.reportLinks && stock.issuer_data.reportLinks.length > 0 ? (
-                                        <div className="flex flex-col gap-2">
-                                            {stock.issuer_data.reportLinks
-                                                .slice((docPage - 1) * 10, docPage * 10)
-                                                .map((doc: any, i: number) => (
-                                                    <a
-                                                        key={i}
-                                                        href={doc.url}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-secondary/50 transition-colors group border border-border/40 hover:border-border"
-                                                    >
-                                                        <div className="mt-1 p-2 rounded bg-surface-secondary text-brand-500 group-hover:bg-brand-500/10 group-hover:scale-105 transition-all">
-                                                            <FileText className="h-4 w-4" />
-                                                        </div>
-                                                        <div className="flex flex-col gap-0.5">
-                                                            <h3 className="text-sm font-bold text-text-primary group-hover:text-brand-500 transition-colors line-clamp-2">
-                                                                {doc.title}
-                                                            </h3>
-                                                            <div className="flex items-center gap-2 text-xs text-text-tertiary">
-                                                                <span>{doc.date || 'Unknown Date'}</span>
-                                                                <span>•</span>
-                                                                <span className="flex items-center gap-1 group-hover:text-brand-500 transition-colors">
-                                                                    Open Document <ExternalLink className="h-3 w-3" />
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                ))}
-
-                                            {/* Pagination */}
-                                            {stock.issuer_data.reportLinks.length > 10 && (
-                                                <div className="flex items-center justify-between mt-4 border-t border-border pt-4">
-                                                    <Button
-                                                        variant="ghost"
-                                                        size="sm"
-                                                        onClick={() => setDocPage(p => Math.max(1, p - 1))}
-                                                        disabled={docPage === 1}
-                                                        className="text-text-secondary hover:text-text-primary"
-                                                    >
-                                                        <ChevronLeft className="h-4 w-4 mr-1" /> Previous
-                                                    </Button>
-                                                    <span className="text-xs text-text-tertiary">
-                                                        Page {docPage} of {Math.ceil(stock.issuer_data.reportLinks.length / 10)}
-                                                    </span>
-                                                    <Button
-                                                        variant="ghost"
-                                                        size="sm"
-                                                        onClick={() => setDocPage(p => Math.min(Math.ceil(stock.issuer_data.reportLinks.length / 10), p + 1))}
-                                                        disabled={docPage >= Math.ceil(stock.issuer_data.reportLinks.length / 10)}
-                                                        className="text-text-secondary hover:text-text-primary"
-                                                    >
-                                                        Next <ChevronRight className="h-4 w-4 ml-1" />
-                                                    </Button>
-                                                </div>
-                                            )}
-                                        </div>
-                                    ) : (
-                                        <div className="text-center py-12 text-text-tertiary text-sm">
-                                            No documents available for this company.
-                                        </div>
-                                    )}
-                                </CardContent>
-                            </Card>
-                        )}
+                        <h2 className="text-lg font-semibold text-text-primary font-heading border-b border-border pb-3">
+                            {FILINGS_SECTION_TITLE}
+                        </h2>
+                        <StockFilingsSection dated={filingsDated} undated={filingsUndated} />
                     </div>
                 </div>
 

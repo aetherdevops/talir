@@ -5,7 +5,7 @@ import * as cheerio from 'cheerio';
 
 const ISSUERS_URL = 'https://www.mse.mk/en/issuers/shares-listing/super-listing'; // Starting point, but we need all listings
 const BASE_URL = 'https://www.mse.mk';
-const DATA_DIR = path.join(process.cwd(), 'public', 'data');
+const DATA_DIR = path.join(process.cwd(), 'lib', 'data');
 const OUTPUT_FILE = path.join(DATA_DIR, 'issuers.json');
 
 interface IssuerDetails {
@@ -41,25 +41,61 @@ async function scrapeIssuerDetails(code: string, details: IssuerDetails) {
 
     const $ = cheerio.load(html);
 
-    // Scrape financial reports from SEI-Net News section if available
-    // Note: The structure might be dynamic. We look for the "Financial reports" tab content.
-    // Based on research, it seems we might need to look for links to seinet.com.mk
-
     const reportLinks: { title: string; url: string; date: string }[] = [];
+    const seenUrls = new Set<string>();
 
-    // Select all links that go to seinet or resemble a report
+    function parseReportDate(title: string, explicitDate?: string): string {
+        if (explicitDate?.trim()) {
+            const iso = normalizeIsoDate(explicitDate.trim());
+            if (iso) return iso;
+        }
+
+        const fromTitle = title.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+        if (fromTitle) {
+            return formatIso(Number(fromTitle[3]), Number(fromTitle[1]), Number(fromTitle[2]));
+        }
+
+        return '';
+    }
+
+    function normalizeIsoDate(value: string): string {
+        if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+
+        const us = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+        if (us) return formatIso(Number(us[3]), Number(us[1]), Number(us[2]));
+
+        const eu = value.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+        if (eu) return formatIso(Number(eu[3]), Number(eu[2]), Number(eu[1]));
+
+        return '';
+    }
+
+    function formatIso(year: number, month: number, day: number): string {
+        if (month < 1 || month > 12 || day < 1 || day > 31) return '';
+        return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    }
+
     $('div#seiNetIssuerFinancialNews a').each((_, el) => {
         const href = $(el).attr('href');
         const text = $(el).text().trim();
-        // Assuming date might be near the link or in the text
-        // For now, just capturing the link and text
-        if (href && (href.includes('seinet.com.mk') || href.includes('ViewNews'))) {
-            reportLinks.push({
-                title: text,
-                url: href.startsWith('http') ? href : `https://seinet.com.mk${href}`, // Adjust if needed
-                date: '' // Date extraction might be complex without specific selectors
-            });
-        }
+        if (!href || !(href.includes('seinet.com.mk') || href.includes('ViewNews'))) return;
+
+        const absoluteUrl = href.startsWith('http') ? href : `https://seinet.com.mk${href}`;
+        const dedupeKey = absoluteUrl.toLowerCase();
+        if (seenUrls.has(dedupeKey)) return;
+        seenUrls.add(dedupeKey);
+
+        const row = $(el).closest('tr, li, div');
+        const rowText = row.text().replace(/\s+/g, ' ').trim();
+        const siblingDate = rowText.match(/(\d{1,2}\/\d{1,2}\/\d{4})/)?.[1]
+            ?? rowText.match(/(\d{1,2}\.\d{1,2}\.\d{4})/)?.[1]
+            ?? '';
+
+        reportLinks.push({
+            title: text,
+            url: absoluteUrl,
+            date: parseReportDate(text, siblingDate),
+        });
     });
 
     details.reportLinks = reportLinks;

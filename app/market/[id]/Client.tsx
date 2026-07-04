@@ -143,7 +143,7 @@ export function IndexClient({ index, news }: IndexClientProps) {
 
             {/* Bottom: News */}
             <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                <h2 className="text-xl font-semibold mb-6 text-text-primary">In the news</h2>
+                <h2 className="text-xl font-semibold mb-6 text-text-primary">Filings & disclosures</h2>
                 <NewsPreview news={news} />
             </div>
         </div>
