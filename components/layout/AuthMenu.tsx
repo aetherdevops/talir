@@ -52,12 +52,12 @@ export function AuthMenu() {
 
     if (!user) {
         return (
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex items-center gap-1.5 shrink-0">
                 <Link href="/settings" aria-label="Settings">
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="min-h-[44px] min-w-[44px] text-talir-gold-soft hover:text-talir-ivory hover:bg-white/10"
+                        className="h-11 w-11 shrink-0 text-talir-gold-soft hover:text-talir-ivory hover:bg-white/10"
                     >
                         <Settings className="h-5 w-5" />
                     </Button>
@@ -67,13 +67,13 @@ export function AuthMenu() {
                         Register
                     </Button>
                 </Link>
-                <div className="relative">
+                <div className="relative shrink-0">
                     <Button
                         variant="ghost"
                         size="icon"
                         type="button"
                         onClick={() => setOpen((value) => !value)}
-                        className="min-h-[44px] min-w-[44px] text-talir-gold-soft hover:text-talir-ivory hover:bg-white/10"
+                        className="h-11 w-11 shrink-0 text-talir-gold-soft hover:text-talir-ivory hover:bg-white/10"
                         aria-label="Sign in"
                         aria-expanded={open}
                     >

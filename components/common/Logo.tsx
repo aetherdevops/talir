@@ -11,12 +11,12 @@ export function Logo({ className, compact = false }: LogoProps) {
     return (
         <Link
             href="/"
-            className={cn('flex items-center gap-2.5 min-h-[44px] group', className)}
+            className={cn('flex items-center gap-2.5 min-h-[44px] min-w-0 group', className)}
         >
-            <TalirMark size={compact ? 32 : 40} className="talir-logo-mark" />
+            <TalirMark size={compact ? 32 : 40} className="talir-logo-mark shrink-0" />
             {!compact && (
-                <div className="hidden sm:flex items-center leading-none">
-                    <span className="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-text-primary">
+                <div className="hidden min-[420px]:flex items-center leading-none min-w-0">
+                    <span className="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-text-primary whitespace-nowrap">
                         Talir<span className="text-accent">.</span>
                     </span>
                 </div>

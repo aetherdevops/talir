@@ -42,30 +42,20 @@ export function Header({ className, instruments = [] }: { className?: string; in
                     className
                 )}
             >
-                <div className="flex items-center gap-2 min-w-0 shrink-0 [&_.text-text-primary]:text-talir-ivory [&_.text-text-tertiary]:text-talir-gold-soft/70">
+                <div className="flex items-center gap-2 min-w-0 overflow-hidden [&_.text-text-primary]:text-talir-ivory [&_.text-text-tertiary]:text-talir-gold-soft/70">
                     {showSidebarExpand ? (
                         <Button
                             variant="ghost"
                             size="icon"
                             onClick={toggleSidebar}
-                            className="hidden md:flex min-h-[44px] min-w-[44px] shrink-0 text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5"
+                            className="hidden md:flex h-11 w-11 shrink-0 text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5"
                             aria-label="Expand sidebar navigation"
                         >
                             <Menu className="h-5 w-5" />
                         </Button>
                     ) : null}
-                    <Logo className="shrink-0" />
+                    <Logo className="min-w-0" />
                     <SessionIndicator />
-                    <Link
-                        href="/news"
-                        className={cn(
-                            'md:hidden flex shrink-0 items-center justify-center min-h-[44px] min-w-[44px] rounded-lg text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5 transition-colors',
-                            pathname === '/news' && 'text-accent'
-                        )}
-                        aria-label="Updates"
-                    >
-                        <Newspaper className="h-5 w-5" />
-                    </Link>
                 </div>
 
                 <div className="hidden md:flex min-w-0 items-center justify-center px-2">
@@ -74,16 +64,26 @@ export function Header({ className, instruments = [] }: { className?: string; in
                     </div>
                 </div>
 
-                <div className="flex items-center justify-end gap-2 shrink-0 [&_button]:text-talir-ivory [&_button:hover]:bg-white/10">
+                <div className="flex items-center justify-end gap-1.5 shrink-0 [&_button]:text-talir-ivory [&_button:hover]:bg-white/10">
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="md:hidden min-h-[44px] min-w-[44px] shrink-0 text-accent hover:text-talir-gold-bright hover:bg-white/10"
+                        className="md:hidden h-11 w-11 shrink-0 text-accent hover:text-talir-gold-bright hover:bg-white/10"
                         onClick={() => setSearchOpen(true)}
                         aria-label="Search"
                     >
                         <Search className="h-5 w-5" />
                     </Button>
+                    <Link
+                        href="/news"
+                        className={cn(
+                            'hidden min-[360px]:flex md:hidden shrink-0 h-11 w-11 items-center justify-center rounded-lg text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5 transition-colors',
+                            pathname === '/news' && 'text-accent'
+                        )}
+                        aria-label="Updates"
+                    >
+                        <Newspaper className="h-5 w-5" />
+                    </Link>
                     <AuthMenu />
                 </div>
             </header>
