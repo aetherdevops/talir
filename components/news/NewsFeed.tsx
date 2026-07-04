@@ -2,8 +2,10 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import type { NewsItem } from '@/lib/types'
 import { NewsCard } from '@/components/news/NewsCard'
+import { FilingIndicatorLegend } from '@/components/news/FilingIndicatorLegend'
 import { Button } from '@/components/ui/Button'
 import { UPDATES_SECTION_SUBTITLE, UPDATES_SECTION_TITLE } from '@/lib/news-style'
+import { cn } from '@/lib/utils'
 
 interface NewsFeedProps {
     items: NewsItem[]
@@ -11,6 +13,7 @@ interface NewsFeedProps {
     title?: string
     subtitle?: string
     showHeader?: boolean
+    showLegend?: boolean
 }
 
 export function NewsFeed({
@@ -19,82 +22,85 @@ export function NewsFeed({
     title = UPDATES_SECTION_TITLE,
     subtitle = UPDATES_SECTION_SUBTITLE,
     showHeader = true,
+    showLegend = true,
 }: NewsFeedProps) {
     if (!items.length) return null
 
     if (layout === 'page') {
-        const [featured, ...rest] = items
         return (
-            <div className="space-y-6">
-                {featured && <NewsCard item={featured} variant="featured" />}
-                <div className="space-y-3">
-                    {rest.map((item) => (
-                        <NewsCard key={item.id} item={item} variant="list" />
-                    ))}
-                </div>
-            </div>
-        )
-    }
-
-    if (layout === 'home-rail') {
-        return (
-            <section className="space-y-3 min-w-0 sticky top-4">
+            <section className="space-y-3 min-w-0" aria-labelledby={showHeader ? 'updates-section-heading' : undefined}>
                 {showHeader && (
-                    <div className="space-y-1 min-w-0">
-                        <div className="flex items-start justify-between gap-2">
-                            <h2 className="text-lg font-semibold font-heading text-text-primary tracking-tight">
-                                {title}
-                            </h2>
-                            <Button variant="ghost" size="sm" asChild className="flex-shrink-0 h-8 px-2">
-                                <Link href="/news" className="text-accent text-xs font-semibold flex items-center gap-0.5">
-                                    All <ArrowRight className="h-3.5 w-3.5" />
-                                </Link>
-                            </Button>
-                        </div>
-                        <p className="text-xs text-text-secondary leading-snug">{subtitle}</p>
-                    </div>
+                    <h2 id="updates-section-heading" className="font-heading text-lg font-semibold text-text-primary">
+                        {title}
+                    </h2>
                 )}
                 <div className="space-y-2 min-w-0">
                     {items.map((item) => (
-                        <NewsCard key={item.id} item={item} variant="rail" />
+                        <NewsCard key={item.id} item={item} />
                     ))}
                 </div>
+                {showLegend && <FilingIndicatorLegend compact className="pt-2 border-t border-border/60" />}
             </section>
         )
     }
 
-    const [featured, ...rest] = items
+    const isRail = layout === 'home-rail'
 
     return (
-        <section className={cnSection()}>
+        <section
+            className={cn('min-w-0', isRail ? 'space-y-3 sticky top-4' : 'space-y-5 pt-6 border-t border-border')}
+            aria-labelledby={showHeader ? 'updates-section-heading' : undefined}
+        >
             {showHeader && (
-                <div className="flex items-start justify-between gap-4 px-0 sm:px-0">
-                    <div>
-                        <h2 className="text-2xl font-semibold text-text-primary tracking-tight">{title}</h2>
-                        <p className="text-sm text-text-secondary mt-1">{subtitle}</p>
+                <div className={cn('min-w-0', isRail ? 'space-y-1' : undefined)}>
+                    <div className="flex items-start justify-between gap-2 min-w-0">
+                        <div className="min-w-0">
+                            <h2
+                                id="updates-section-heading"
+                                className={cn(
+                                    'font-heading font-semibold text-text-primary tracking-tight',
+                                    isRail ? 'text-lg' : 'text-2xl'
+                                )}
+                            >
+                                {title}
+                            </h2>
+                            {!isRail && (
+                                <p className="text-sm text-text-secondary mt-1">{subtitle}</p>
+                            )}
+                        </div>
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            asChild
+                            className={cn('flex-shrink-0', isRail ? 'h-8 px-2' : undefined)}
+                        >
+                            <Link
+                                href="/news"
+                                className={cn(
+                                    'text-accent font-semibold flex items-center gap-0.5',
+                                    isRail ? 'text-xs gap-0.5' : 'gap-1'
+                                )}
+                            >
+                                {isRail ? 'All' : 'View all'}
+                                <ArrowRight className={isRail ? 'h-3.5 w-3.5' : 'h-4 w-4'} />
+                            </Link>
+                        </Button>
                     </div>
-                    <Button variant="ghost" size="sm" asChild className="flex-shrink-0">
-                        <Link href="/news" className="text-accent font-semibold flex items-center gap-1">
-                            View all <ArrowRight className="h-4 w-4" />
-                        </Link>
-                    </Button>
+                    {isRail && (
+                        <p className="text-xs text-text-secondary leading-snug">{subtitle}</p>
+                    )}
                 </div>
             )}
 
-            <div className="space-y-4">
-                {featured && <NewsCard item={featured} variant="featured" />}
-                {rest.length > 0 && (
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        {rest.map((item) => (
-                            <NewsCard key={item.id} item={item} variant="compact" />
-                        ))}
-                    </div>
-                )}
+            <div className={cn('min-w-0', isRail ? 'space-y-2' : 'space-y-2')}>
+                {items.map((item) => (
+                    <NewsCard key={item.id} item={item} />
+                ))}
             </div>
+
+            {showLegend && (
+                <FilingIndicatorLegend compact={isRail} className="pt-1 border-t border-border/60" />
+            )}
         </section>
     )
-}
-
-function cnSection() {
-    return 'space-y-5 pt-6 border-t border-border'
 }

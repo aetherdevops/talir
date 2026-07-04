@@ -65,6 +65,40 @@ function categorizeReport(rawTitle) {
     return 'other'
 }
 
+const MATERIAL_FILING_KEYWORDS = [
+    'bankruptcy',
+    'delisting',
+    'delist',
+    'liquidation',
+    'liquidate',
+    'insolvency',
+    'insolvent',
+    'likvidacija',
+    'likvidac',
+    'stecaj',
+    'stečaj',
+    'suspension',
+    'suspend',
+    'suspenzija',
+    'delistiranje',
+    'ликвидација',
+    'ликвидаци',
+    'стечај',
+    'суспензија',
+    'делистирање',
+]
+
+function isMaterialFiling(rawTitle) {
+    const normalized = rawTitle.toLowerCase().normalize('NFC')
+    return MATERIAL_FILING_KEYWORDS.some((keyword) => normalized.includes(keyword))
+}
+
+function getFilingIndicatorTier(rawTitle, category) {
+    if (isMaterialFiling(rawTitle)) return 'material'
+    if (category === 'dividend') return 'dividend'
+    return 'routine'
+}
+
 function stripReportPrefix(rawTitle) {
     return rawTitle
         .replace(/^\d{1,2}\/\d{1,2}\/\d{4}\s*-\s*/i, '')
@@ -125,6 +159,7 @@ function buildFeed(issuers) {
 
             const rawTitle = report.title
             const isoDate = parseReportDate(rawTitle, report.date)
+            const category = categorizeReport(rawTitle)
             const item = {
                 id: `${issuer.code}-${dedupeKey.replace(/[^a-z0-9]+/gi, '-').slice(0, 48)}`,
                 rawTitle,
@@ -132,7 +167,8 @@ function buildFeed(issuers) {
                 source: 'SECNet',
                 stockCode: issuer.code,
                 stockName: issuer.name,
-                category: categorizeReport(rawTitle),
+                category,
+                filingTier: getFilingIndicatorTier(rawTitle, category),
                 publishedAt: isoDate,
                 dateKnown: isoDate !== null,
                 url,

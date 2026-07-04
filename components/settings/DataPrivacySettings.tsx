@@ -67,7 +67,11 @@ export function DataPrivacySettings() {
             </Button>
             {status && <p className="text-sm text-text-secondary">{status}</p>}
             <p className="text-xs text-text-tertiary">
-                Cloud data remains if you are signed in. See privacy policy when published.
+                Cloud data remains if you are signed in.{' '}
+                <a href="/privacy" className="text-accent hover:underline">
+                    Privacy policy (pending)
+                </a>
+                .
             </p>
         </div>
     )

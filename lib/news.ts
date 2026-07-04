@@ -1,4 +1,4 @@
-import type { NewsCategory, NewsItem } from './types'
+import type { FilingIndicatorTier, NewsCategory, NewsItem } from './types'
 import { parseReportDate } from './news-dates'
 import { parseReportTitle } from './news-style'
 
@@ -21,6 +21,58 @@ export function normalizeNewsUrl(url: string | undefined): string | null {
     if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) return trimmed
     if (trimmed.startsWith('//')) return `https:${trimmed}`
     return `https://${trimmed}`
+}
+
+/** Conservative material-event keywords (EN + Latin transliterations + MK Cyrillic). Unknown → routine. */
+const MATERIAL_FILING_KEYWORDS = [
+    'bankruptcy',
+    'delisting',
+    'delist',
+    'liquidation',
+    'liquidate',
+    'insolvency',
+    'insolvent',
+    'likvidacija',
+    'likvidac',
+    'stecaj',
+    'stečaj',
+    'suspension',
+    'suspend',
+    'suspenzija',
+    'delistiranje',
+    'ликвидација',
+    'ликвидаци',
+    'стечај',
+    'суспензија',
+    'делистирање',
+] as const
+
+export const FILING_TIER_LABELS: Record<FilingIndicatorTier, string> = {
+    material: 'Material event',
+    dividend: 'Dividend / payout',
+    routine: 'Routine filing',
+}
+
+export const FILING_TIER_DOT_TITLES: Record<FilingIndicatorTier, string> = {
+    material: 'Material event — delisting, suspension, bankruptcy, liquidation',
+    dividend: 'Dividend / payout disclosure',
+    routine: 'Routine filing — financials, earnings, corporate',
+}
+
+export function isMaterialFiling(rawTitle: string): boolean {
+    const normalized = rawTitle.toLowerCase().normalize('NFC')
+    return MATERIAL_FILING_KEYWORDS.some((keyword) => normalized.includes(keyword))
+}
+
+export function getFilingIndicatorTier(rawTitle: string, category: NewsCategory): FilingIndicatorTier {
+    if (isMaterialFiling(rawTitle)) return 'material'
+    if (category === 'dividend') return 'dividend'
+    return 'routine'
+}
+
+export function resolveFilingTier(item: Pick<NewsItem, 'rawTitle' | 'category' | 'filingTier'>): FilingIndicatorTier {
+    if (item.filingTier) return item.filingTier
+    return getFilingIndicatorTier(item.rawTitle ?? '', item.category)
 }
 
 export function categorizeReport(rawTitle: string): NewsCategory {
@@ -60,6 +112,7 @@ export function buildNewsFeedFromIssuers(issuers: IssuerWithReports[]): NewsFeed
             const rawTitle = report.title
             const isoDate = parseReportDate(rawTitle, report.date)
             const category = categorizeReport(rawTitle)
+            const filingTier = getFilingIndicatorTier(rawTitle, category)
             const item: NewsItem = {
                 id: `${issuer.code}-${dedupeKey.replace(/[^a-z0-9]+/gi, '-').slice(0, 48)}`,
                 rawTitle,
@@ -68,6 +121,7 @@ export function buildNewsFeedFromIssuers(issuers: IssuerWithReports[]): NewsFeed
                 stockCode: issuer.code,
                 stockName: issuer.name,
                 category,
+                filingTier,
                 publishedAt: isoDate,
                 dateKnown: isoDate !== null,
                 url,

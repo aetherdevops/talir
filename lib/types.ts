@@ -58,6 +58,9 @@ export interface MarketIndex {
 
 export type NewsCategory = 'earnings' | 'financials' | 'dividend' | 'corporate' | 'other'
 
+/** Objective filing severity for indicator dots — not market sentiment. */
+export type FilingIndicatorTier = 'material' | 'dividend' | 'routine'
+
 export interface NewsItem {
     id: string
     title: string
@@ -68,6 +71,8 @@ export interface NewsItem {
     stockCode: string
     stockName?: string
     category: NewsCategory
+    /** Precomputed at feed build; falls back to runtime tier helper when absent. */
+    filingTier?: FilingIndicatorTier
     imageUrl?: string
     url: string
 }

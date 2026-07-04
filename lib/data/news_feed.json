@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T19:32:05.040Z",
+  "generatedAt": "2026-07-04T20:27:13.441Z",
   "lastIssuerScan": "2026-07-04",
   "count": 570,
   "datedCount": 570,
@@ -13,6 +13,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-06-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77871"
@@ -25,6 +26,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-06-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77870"
@@ -37,6 +39,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-06-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77826"
@@ -49,6 +52,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-06-11",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77772"
@@ -61,6 +65,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-06-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77703"
@@ -73,6 +78,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-06-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77698"
@@ -85,6 +91,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-06-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77674"
@@ -97,6 +104,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77653"
@@ -109,6 +117,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77558"
@@ -121,6 +130,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77602"
@@ -133,6 +143,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77543"
@@ -145,6 +156,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77616"
@@ -157,6 +169,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77550"
@@ -169,6 +182,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77605"
@@ -181,6 +195,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77421"
@@ -193,6 +208,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77394"
@@ -205,6 +221,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77410"
@@ -217,6 +234,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77464"
@@ -229,6 +247,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77474"
@@ -241,6 +260,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77478"
@@ -253,6 +273,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77392"
@@ -265,6 +286,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77450"
@@ -277,6 +299,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77339"
@@ -289,6 +312,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77374"
@@ -301,6 +325,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77308"
@@ -313,6 +338,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-21",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77300"
@@ -325,6 +351,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-21",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77293"
@@ -337,6 +364,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-19",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77242"
@@ -349,6 +377,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-19",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77249"
@@ -361,6 +390,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77225"
@@ -373,6 +403,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77209"
@@ -385,6 +416,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-15",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77188"
@@ -397,6 +429,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-15",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77198"
@@ -409,6 +442,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-15",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77191"
@@ -421,6 +455,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77163"
@@ -433,6 +468,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77161"
@@ -445,6 +481,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77177"
@@ -457,6 +494,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77158"
@@ -469,6 +507,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77159"
@@ -481,6 +520,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-13",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77129"
@@ -493,6 +533,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-12",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77111"
@@ -505,6 +546,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-11",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77102"
@@ -517,6 +559,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-11",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77101"
@@ -529,6 +572,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-08",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77081"
@@ -541,6 +585,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-08",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77085"
@@ -553,6 +598,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-06",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77062"
@@ -565,6 +611,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-04",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77021"
@@ -577,6 +624,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-04",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77031"
@@ -589,6 +637,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-04",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77024"
@@ -601,6 +650,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-05-04",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77020"
@@ -613,6 +663,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-05-04",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77018"
@@ -625,6 +676,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76851"
@@ -637,6 +689,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76850"
@@ -649,6 +702,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76994"
@@ -661,6 +715,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76954"
@@ -673,6 +728,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76939"
@@ -685,6 +741,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76872"
@@ -697,6 +754,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76835"
@@ -709,6 +767,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76951"
@@ -721,6 +780,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76870"
@@ -733,6 +793,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76869"
@@ -745,6 +806,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76867"
@@ -757,6 +819,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76992"
@@ -769,6 +832,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76971"
@@ -781,6 +845,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76973"
@@ -793,6 +858,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76979"
@@ -805,6 +871,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76943"
@@ -817,6 +884,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76882"
@@ -829,6 +897,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76952"
@@ -841,6 +910,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76888"
@@ -853,6 +923,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76821"
@@ -865,6 +936,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76623"
@@ -877,6 +949,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77006"
@@ -889,6 +962,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76988"
@@ -901,6 +975,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77000"
@@ -913,6 +988,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76962"
@@ -925,6 +1001,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76948"
@@ -937,6 +1014,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76879"
@@ -949,6 +1027,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76864"
@@ -961,6 +1040,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76887"
@@ -973,6 +1053,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76949"
@@ -985,6 +1066,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76861"
@@ -997,6 +1079,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76830"
@@ -1009,6 +1092,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76944"
@@ -1021,6 +1105,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76798"
@@ -1033,6 +1118,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76785"
@@ -1045,6 +1131,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76757"
@@ -1057,6 +1144,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76810"
@@ -1069,6 +1157,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76726"
@@ -1081,6 +1170,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76761"
@@ -1093,6 +1183,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76805"
@@ -1105,6 +1196,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76775"
@@ -1117,6 +1209,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76788"
@@ -1129,6 +1222,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76817"
@@ -1141,6 +1235,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76816"
@@ -1153,6 +1248,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76766"
@@ -1165,6 +1261,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76765"
@@ -1177,6 +1274,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76782"
@@ -1189,6 +1287,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76720"
@@ -1201,6 +1300,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76755"
@@ -1213,6 +1313,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76794"
@@ -1225,6 +1326,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76712"
@@ -1237,6 +1339,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76676"
@@ -1249,6 +1352,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76687"
@@ -1261,6 +1365,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76672"
@@ -1273,6 +1378,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76689"
@@ -1285,6 +1391,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76671"
@@ -1297,6 +1404,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76579"
@@ -1309,6 +1417,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76508"
@@ -1321,6 +1430,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76584"
@@ -1333,6 +1443,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76554"
@@ -1345,6 +1456,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76611"
@@ -1357,6 +1469,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76506"
@@ -1369,6 +1482,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76573"
@@ -1381,6 +1495,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76458"
@@ -1393,6 +1508,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76343"
@@ -1405,6 +1521,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76354"
@@ -1417,6 +1534,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-21",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76313"
@@ -1429,6 +1547,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2026-04-21",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76320"
@@ -1441,6 +1560,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-21",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76311"
@@ -1453,6 +1573,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76149"
@@ -1465,6 +1586,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76165"
@@ -1477,6 +1599,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76112"
@@ -1489,6 +1612,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76132"
@@ -1501,6 +1625,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76137"
@@ -1513,6 +1638,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76105"
@@ -1525,6 +1651,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-04-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76087"
@@ -1537,6 +1664,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76081"
@@ -1549,6 +1677,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76061"
@@ -1561,6 +1690,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76075"
@@ -1573,6 +1703,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76063"
@@ -1585,6 +1716,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76031"
@@ -1597,6 +1729,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76025"
@@ -1609,6 +1742,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76008"
@@ -1621,6 +1755,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76006"
@@ -1633,6 +1768,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75996"
@@ -1645,6 +1781,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75983"
@@ -1657,6 +1794,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75960"
@@ -1669,6 +1807,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75956"
@@ -1681,6 +1820,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-19",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75924"
@@ -1693,6 +1833,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-19",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75932"
@@ -1705,6 +1846,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75914"
@@ -1717,6 +1859,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-16",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75904"
@@ -1729,6 +1872,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-13",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75895"
@@ -1741,6 +1885,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-06",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75847"
@@ -1753,6 +1898,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-04",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75827"
@@ -1765,6 +1911,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-03",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75819"
@@ -1777,6 +1924,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75764"
@@ -1789,6 +1937,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75782"
@@ -1801,6 +1950,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75810"
@@ -1813,6 +1963,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75715"
@@ -1825,6 +1976,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75816"
@@ -1837,6 +1989,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75795"
@@ -1849,6 +2002,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75750"
@@ -1861,6 +2015,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75765"
@@ -1873,6 +2028,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75754"
@@ -1885,6 +2041,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75785"
@@ -1897,6 +2054,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75663"
@@ -1909,6 +2067,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75728"
@@ -1921,6 +2080,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75748"
@@ -1933,6 +2093,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75747"
@@ -1945,6 +2106,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75649"
@@ -1957,6 +2119,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75718"
@@ -1969,6 +2132,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75812"
@@ -1981,6 +2145,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75775"
@@ -1993,6 +2158,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75799"
@@ -2005,6 +2171,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75732"
@@ -2017,6 +2184,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75726"
@@ -2029,6 +2197,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75797"
@@ -2041,6 +2210,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75730"
@@ -2053,6 +2223,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75605"
@@ -2065,6 +2236,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75603"
@@ -2077,6 +2249,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75602"
@@ -2089,6 +2262,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75584"
@@ -2101,6 +2275,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75595"
@@ -2113,6 +2288,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75615"
@@ -2125,6 +2301,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75613"
@@ -2137,6 +2314,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75628"
@@ -2149,6 +2327,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75593"
@@ -2161,6 +2340,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75611"
@@ -2173,6 +2353,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75533"
@@ -2185,6 +2366,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75529"
@@ -2197,6 +2379,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75572"
@@ -2209,6 +2392,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75540"
@@ -2221,6 +2405,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75589"
@@ -2233,6 +2418,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75499"
@@ -2245,6 +2431,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75488"
@@ -2257,6 +2444,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75466"
@@ -2269,6 +2457,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75495"
@@ -2281,6 +2470,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75493"
@@ -2293,6 +2483,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75497"
@@ -2305,6 +2496,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75439"
@@ -2317,6 +2509,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75438"
@@ -2329,6 +2522,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75456"
@@ -2341,6 +2535,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75452"
@@ -2353,6 +2548,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75429"
@@ -2365,6 +2561,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75412"
@@ -2377,6 +2574,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75416"
@@ -2389,6 +2587,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-02-20",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75404"
@@ -2401,6 +2600,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-01-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75287"
@@ -2413,6 +2613,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-01-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75255"
@@ -2425,6 +2626,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-01-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75254"
@@ -2437,6 +2639,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-01-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75292"
@@ -2449,6 +2652,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-01-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75230"
@@ -2461,6 +2665,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-01-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75229"
@@ -2473,6 +2678,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2026-01-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75236"
@@ -2485,6 +2691,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-11-17",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74872"
@@ -2497,6 +2704,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-11-17",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74875"
@@ -2509,6 +2717,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-11-17",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74877"
@@ -2521,6 +2730,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-11-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74859"
@@ -2533,6 +2743,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-11-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74857"
@@ -2545,6 +2756,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-11-13",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74844"
@@ -2557,6 +2769,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-11-06",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74782"
@@ -2569,6 +2782,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74620"
@@ -2581,6 +2795,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74619"
@@ -2593,6 +2808,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74737"
@@ -2605,6 +2821,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74700"
@@ -2617,6 +2834,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74724"
@@ -2629,6 +2847,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74695"
@@ -2641,6 +2860,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74607"
@@ -2653,6 +2873,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74703"
@@ -2665,6 +2886,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74612"
@@ -2677,6 +2899,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74611"
@@ -2689,6 +2912,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74605"
@@ -2701,6 +2925,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74749"
@@ -2713,6 +2938,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74710"
@@ -2725,6 +2951,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74635"
@@ -2737,6 +2964,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74741"
@@ -2749,6 +2977,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74698"
@@ -2761,6 +2990,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74691"
@@ -2773,6 +3003,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74705"
@@ -2785,6 +3016,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74639"
@@ -2797,6 +3029,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74638"
@@ -2809,6 +3042,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74633"
@@ -2821,6 +3055,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74655"
@@ -2833,6 +3068,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74714"
@@ -2845,6 +3081,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74747"
@@ -2857,6 +3094,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74746"
@@ -2869,6 +3107,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74609"
@@ -2881,6 +3120,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74631"
@@ -2893,6 +3133,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74753"
@@ -2905,6 +3146,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74689"
@@ -2917,6 +3159,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74576"
@@ -2929,6 +3172,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74563"
@@ -2941,6 +3185,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74561"
@@ -2953,6 +3198,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74593"
@@ -2965,6 +3211,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74569"
@@ -2977,6 +3224,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74566"
@@ -2989,6 +3237,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74570"
@@ -3001,6 +3250,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74591"
@@ -3013,6 +3263,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74557"
@@ -3025,6 +3276,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74582"
@@ -3037,6 +3289,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74567"
@@ -3049,6 +3302,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74529"
@@ -3061,6 +3315,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74520"
@@ -3073,6 +3328,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74524"
@@ -3085,6 +3341,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74492"
@@ -3097,6 +3354,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74528"
@@ -3109,6 +3367,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74490"
@@ -3121,6 +3380,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74517"
@@ -3133,6 +3393,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74481"
@@ -3145,6 +3406,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74467"
@@ -3157,6 +3419,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74454"
@@ -3169,6 +3432,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74473"
@@ -3181,6 +3445,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74447"
@@ -3193,6 +3458,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74471"
@@ -3205,6 +3471,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74446"
@@ -3217,6 +3484,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74469"
@@ -3229,6 +3497,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74451"
@@ -3241,6 +3510,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74410"
@@ -3253,6 +3523,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74414"
@@ -3265,6 +3536,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74403"
@@ -3277,6 +3549,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74398"
@@ -3289,6 +3562,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74396"
@@ -3301,6 +3575,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-17",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74373"
@@ -3313,6 +3588,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-10-16",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74363"
@@ -3325,6 +3601,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74229"
@@ -3337,6 +3614,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74228"
@@ -3349,6 +3627,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-15",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74180"
@@ -3361,6 +3640,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-15",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74178"
@@ -3373,6 +3653,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-15",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74176"
@@ -3385,6 +3666,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-15",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74186"
@@ -3397,6 +3679,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-15",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74168"
@@ -3409,6 +3692,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74149"
@@ -3421,6 +3705,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74143"
@@ -3433,6 +3718,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74141"
@@ -3445,6 +3731,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74147"
@@ -3457,6 +3744,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-13",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74126"
@@ -3469,6 +3757,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-11",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74109"
@@ -3481,6 +3770,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-11",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74108"
@@ -3493,6 +3783,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-07",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74094"
@@ -3505,6 +3796,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-06",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74079"
@@ -3517,6 +3809,7 @@
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-08-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74072"
@@ -3529,6 +3822,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74032"
@@ -3541,6 +3835,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73983"
@@ -3553,6 +3848,7 @@
       "stockCode": "ZPKO",
       "stockName": "ZK Pelagonija AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74055"
@@ -3565,6 +3861,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74053"
@@ -3577,6 +3874,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73881"
@@ -3589,6 +3887,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73884"
@@ -3601,6 +3900,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74045"
@@ -3613,6 +3913,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73878"
@@ -3625,6 +3926,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73877"
@@ -3637,6 +3939,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74009"
@@ -3649,6 +3952,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74001"
@@ -3661,6 +3965,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74048"
@@ -3673,6 +3978,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73981"
@@ -3685,6 +3991,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73985"
@@ -3697,6 +4004,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73961"
@@ -3709,6 +4017,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73957"
@@ -3721,6 +4030,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74027"
@@ -3733,6 +4043,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74026"
@@ -3745,6 +4056,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73900"
@@ -3757,6 +4069,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73890"
@@ -3769,6 +4082,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73967"
@@ -3781,6 +4095,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73891"
@@ -3793,6 +4108,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74015"
@@ -3805,6 +4121,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74018"
@@ -3817,6 +4134,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74017"
@@ -3829,6 +4147,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74060"
@@ -3841,6 +4160,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73963"
@@ -3853,6 +4173,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73989"
@@ -3865,6 +4186,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73998"
@@ -3877,6 +4199,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73973"
@@ -3889,6 +4212,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73969"
@@ -3901,6 +4225,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73860"
@@ -3913,6 +4238,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73859"
@@ -3925,6 +4251,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73792"
@@ -3937,6 +4264,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73791"
@@ -3949,6 +4277,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73798"
@@ -3961,6 +4290,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73800"
@@ -3973,6 +4303,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73831"
@@ -3985,6 +4316,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73795"
@@ -3997,6 +4329,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73806"
@@ -4009,6 +4342,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73804"
@@ -4021,6 +4355,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73852"
@@ -4033,6 +4368,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73864"
@@ -4045,6 +4381,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73840"
@@ -4057,6 +4394,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73780"
@@ -4069,6 +4407,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73782"
@@ -4081,6 +4420,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73778"
@@ -4093,6 +4433,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73775"
@@ -4105,6 +4446,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73741"
@@ -4117,6 +4459,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73728"
@@ -4129,6 +4472,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73726"
@@ -4141,6 +4485,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73694"
@@ -4153,6 +4498,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73713"
@@ -4165,6 +4511,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73680"
@@ -4177,6 +4524,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73706"
@@ -4189,6 +4537,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73701"
@@ -4201,6 +4550,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73658"
@@ -4213,6 +4563,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73662"
@@ -4225,6 +4576,7 @@
       "stockCode": "SIL",
       "stockName": "Sileks AD Kratovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73660"
@@ -4237,6 +4589,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73647"
@@ -4249,6 +4602,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-21",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73633"
@@ -4261,6 +4615,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73625"
@@ -4273,6 +4628,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-07-16",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73614"
@@ -4285,6 +4641,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-06-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73502"
@@ -4297,6 +4654,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-06-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73372"
@@ -4309,6 +4667,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-06-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73255"
@@ -4321,6 +4680,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-06-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73359"
@@ -4333,6 +4693,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73313"
@@ -4345,6 +4706,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73266"
@@ -4357,6 +4719,7 @@
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73196"
@@ -4369,6 +4732,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73319"
@@ -4381,6 +4745,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73318"
@@ -4393,6 +4758,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73204"
@@ -4405,6 +4771,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73307"
@@ -4417,6 +4784,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73297"
@@ -4429,6 +4797,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73276"
@@ -4441,6 +4810,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73262"
@@ -4453,6 +4823,7 @@
       "stockCode": "AUMK",
       "stockName": "Automakedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73176"
@@ -4465,6 +4836,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73180"
@@ -4477,6 +4849,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73190"
@@ -4489,6 +4862,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73152"
@@ -4501,6 +4875,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73114"
@@ -4513,6 +4888,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73135"
@@ -4525,6 +4901,7 @@
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73101"
@@ -4537,6 +4914,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73092"
@@ -4549,6 +4927,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73091"
@@ -4561,6 +4940,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73083"
@@ -4573,6 +4953,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73066"
@@ -4585,6 +4966,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73064"
@@ -4597,6 +4979,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73034"
@@ -4609,6 +4992,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73020"
@@ -4621,6 +5005,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73037"
@@ -4633,6 +5018,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73011"
@@ -4645,6 +5031,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73015"
@@ -4657,6 +5044,7 @@
       "stockCode": "MPT",
       "stockName": "Makpetrol AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-21",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72952"
@@ -4669,6 +5057,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-20",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72936"
@@ -4681,6 +5070,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-19",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72887"
@@ -4693,6 +5083,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-19",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72883"
@@ -4705,6 +5096,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-16",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72860"
@@ -4717,6 +5109,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-05-15",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72849"
@@ -4729,6 +5122,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72784"
@@ -4741,6 +5135,7 @@
       "stockCode": "FAKM",
       "stockName": "FAKOM AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-05-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72800"
@@ -4753,6 +5148,7 @@
       "stockCode": "LOTO",
       "stockName": "Lotarija na Makedonija AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-13",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72780"
@@ -4765,6 +5161,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-07",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72733"
@@ -4777,6 +5174,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-05-07",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72732"
@@ -4789,6 +5187,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72638"
@@ -4801,6 +5200,7 @@
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72439"
@@ -4813,6 +5213,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72650"
@@ -4825,6 +5226,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72572"
@@ -4837,6 +5239,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72559"
@@ -4849,6 +5252,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72541"
@@ -4861,6 +5265,7 @@
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72436"
@@ -4873,6 +5278,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72631"
@@ -4885,6 +5291,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72597"
@@ -4897,6 +5304,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72636"
@@ -4909,6 +5317,7 @@
       "stockCode": "GRZD",
       "stockName": "Grozd AD Strumica",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72534"
@@ -4921,6 +5330,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72599"
@@ -4933,6 +5343,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72579"
@@ -4945,6 +5356,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72466"
@@ -4957,6 +5369,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72456"
@@ -4969,6 +5382,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72262"
@@ -4981,6 +5395,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72460"
@@ -4993,6 +5408,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72642"
@@ -5005,6 +5421,7 @@
       "stockCode": "PKB",
       "stockName": "Pekabesko AD Kadino Ilinden",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72569"
@@ -5017,6 +5434,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72609"
@@ -5029,6 +5447,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72586"
@@ -5041,6 +5460,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72593"
@@ -5053,6 +5473,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72584"
@@ -5065,6 +5486,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72660"
@@ -5077,6 +5499,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72649"
@@ -5089,6 +5512,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72549"
@@ -5101,6 +5525,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72616"
@@ -5113,6 +5538,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72449"
@@ -5125,6 +5551,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72243"
@@ -5137,6 +5564,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72357"
@@ -5149,6 +5577,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72353"
@@ -5161,6 +5590,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72358"
@@ -5173,6 +5603,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72409"
@@ -5185,6 +5616,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72334"
@@ -5197,6 +5629,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72372"
@@ -5209,6 +5642,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72341"
@@ -5221,6 +5655,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72305"
@@ -5233,6 +5668,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72324"
@@ -5245,6 +5681,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72386"
@@ -5257,6 +5694,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72382"
@@ -5269,6 +5707,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72399"
@@ -5281,6 +5720,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72388"
@@ -5293,6 +5733,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72371"
@@ -5305,6 +5746,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72249"
@@ -5317,6 +5759,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72373"
@@ -5329,6 +5772,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72192"
@@ -5341,6 +5785,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72201"
@@ -5353,6 +5798,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72215"
@@ -5365,6 +5811,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72189"
@@ -5377,6 +5824,7 @@
       "stockCode": "FUBT",
       "stockName": "Fustelarko Borec AD Bitola",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72138"
@@ -5389,6 +5837,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72097"
@@ -5401,6 +5850,7 @@
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72047"
@@ -5413,6 +5863,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72029"
@@ -5425,6 +5876,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72025"
@@ -5437,6 +5889,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72020"
@@ -5449,6 +5902,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72003"
@@ -5461,6 +5915,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2025-04-22",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72001"
@@ -5473,6 +5928,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-17",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71955"
@@ -5485,6 +5941,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-16",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71918"
@@ -5497,6 +5954,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-16",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71931"
@@ -5509,6 +5967,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-03",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71769"
@@ -5521,6 +5980,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71752"
@@ -5533,6 +5993,7 @@
       "stockCode": "VITA",
       "stockName": "Vitaminka AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71688"
@@ -5545,6 +6006,7 @@
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-04-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71729"
@@ -5557,6 +6019,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71644"
@@ -5569,6 +6032,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71640"
@@ -5581,6 +6045,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71605"
@@ -5593,6 +6058,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71510"
@@ -5605,6 +6071,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71517"
@@ -5617,6 +6084,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-03",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71390"
@@ -5629,6 +6097,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-03",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71387"
@@ -5641,6 +6110,7 @@
       "stockCode": "STIL",
       "stockName": "Makstil AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-03",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71443"
@@ -5653,6 +6123,7 @@
       "stockCode": "BIM",
       "stockName": "BIM AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-03",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71385"
@@ -5665,6 +6136,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-03",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71415"
@@ -5677,6 +6149,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-03",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71408"
@@ -5689,6 +6162,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-03-03",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71424"
@@ -5701,6 +6175,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71317"
@@ -5713,6 +6188,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71341"
@@ -5725,6 +6201,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71313"
@@ -5737,6 +6214,7 @@
       "stockCode": "EVRO",
       "stockName": "Evropa AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71362"
@@ -5749,6 +6227,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71320"
@@ -5761,6 +6240,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71261"
@@ -5773,6 +6253,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71302"
@@ -5785,6 +6266,7 @@
       "stockCode": "POPK",
       "stockName": "Popova Kula AD Demir Kapija",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71220"
@@ -5797,6 +6279,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71364"
@@ -5809,6 +6292,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71324"
@@ -5821,6 +6305,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71329"
@@ -5833,6 +6318,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71340"
@@ -5845,6 +6331,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71370"
@@ -5857,6 +6344,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71251"
@@ -5869,6 +6357,7 @@
       "stockCode": "SPAZP",
       "stockName": "Skopski Pazar AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71175"
@@ -5881,6 +6370,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71179"
@@ -5893,6 +6383,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71188"
@@ -5905,6 +6396,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71181"
@@ -5917,6 +6409,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71186"
@@ -5929,6 +6422,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71195"
@@ -5941,6 +6435,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71153"
@@ -5953,6 +6448,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71123"
@@ -5965,6 +6461,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71127"
@@ -5977,6 +6474,7 @@
       "stockCode": "TEL",
       "stockName": "Makedonski Telekom AD – Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71115"
@@ -5989,6 +6487,7 @@
       "stockCode": "MODA",
       "stockName": "Moda AD Sveti Nikole",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-19",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71082"
@@ -6001,6 +6500,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-02-17",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71066"
@@ -6013,6 +6513,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-01-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70989"
@@ -6025,6 +6526,7 @@
       "stockCode": "STBP",
       "stockName": "Stopanska banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-01-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70988"
@@ -6037,6 +6539,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-01-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70991"
@@ -6049,6 +6552,7 @@
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-01-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70959"
@@ -6061,6 +6565,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-01-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70969"
@@ -6073,6 +6578,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2025-01-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70930"
@@ -6085,6 +6591,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-11-07",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70435"
@@ -6097,6 +6604,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-11-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70400"
@@ -6109,6 +6617,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70358"
@@ -6121,6 +6630,7 @@
       "stockCode": "TKPR",
       "stockName": "Tutunski kombinat AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70361"
@@ -6133,6 +6643,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70273"
@@ -6145,6 +6656,7 @@
       "stockCode": "DIMI",
       "stockName": "Dimko Mitrev AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70312"
@@ -6157,6 +6669,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70337"
@@ -6169,6 +6682,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70283"
@@ -6181,6 +6695,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70346"
@@ -6193,6 +6708,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70339"
@@ -6205,6 +6721,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70316"
@@ -6217,6 +6734,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70241"
@@ -6229,6 +6747,7 @@
       "stockCode": "RZUG",
       "stockName": "Ugotur AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70275"
@@ -6241,6 +6760,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70208"
@@ -6253,6 +6773,7 @@
       "stockCode": "MZPU",
       "stockName": "MZT Pumpi AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70178"
@@ -6265,6 +6786,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70219"
@@ -6277,6 +6799,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70217"
@@ -6289,6 +6812,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70224"
@@ -6301,6 +6825,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70213"
@@ -6313,6 +6838,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70223"
@@ -6325,6 +6851,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70157"
@@ -6337,6 +6864,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70140"
@@ -6349,6 +6877,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70150"
@@ -6361,6 +6890,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70079"
@@ -6373,6 +6903,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70094"
@@ -6385,6 +6916,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70048"
@@ -6397,6 +6929,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70024"
@@ -6409,6 +6942,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70063"
@@ -6421,6 +6955,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70051"
@@ -6433,6 +6968,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70012"
@@ -6445,6 +6981,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/70014"
@@ -6457,6 +6994,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69987"
@@ -6469,6 +7007,7 @@
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69974"
@@ -6481,6 +7020,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69991"
@@ -6493,6 +7033,7 @@
       "stockCode": "RZLV",
       "stockName": "Liberti AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-10-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69980"
@@ -6505,6 +7046,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-09-10",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69822"
@@ -6517,6 +7059,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-08-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69784"
@@ -6529,6 +7072,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-08-08",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69675"
@@ -6541,6 +7085,7 @@
       "stockCode": "MTUR",
       "stockName": "Makedonijaturist AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69606"
@@ -6553,6 +7098,7 @@
       "stockCode": "MAKS",
       "stockName": "Makoteks AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69558"
@@ -6565,6 +7111,7 @@
       "stockCode": "TTKO3",
       "stockName": "TTK Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69567"
@@ -6577,6 +7124,7 @@
       "stockCode": "MPOL",
       "stockName": "Hoteli Metropol Ohrid",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69578"
@@ -6589,6 +7137,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69539"
@@ -6601,6 +7150,7 @@
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69489"
@@ -6613,6 +7163,7 @@
       "stockCode": "OILK",
       "stockName": "OILKO KDA Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69531"
@@ -6625,6 +7176,7 @@
       "stockCode": "OKTA",
       "stockName": "OKTA AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69574"
@@ -6637,6 +7189,7 @@
       "stockCode": "PPIV",
       "stockName": "Prilepska pivarnica AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69547"
@@ -6649,6 +7202,7 @@
       "stockCode": "SLAV",
       "stockName": "Slavej  AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69452"
@@ -6661,6 +7215,7 @@
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69443"
@@ -6673,6 +7228,7 @@
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69556"
@@ -6685,6 +7241,7 @@
       "stockCode": "GTC",
       "stockName": "GTC AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69397"
@@ -6697,6 +7254,7 @@
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69418"
@@ -6709,6 +7267,7 @@
       "stockCode": "SSPR",
       "stockName": "Sigurnosno staklo AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69401"
@@ -6721,6 +7280,7 @@
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69406"
@@ -6733,6 +7293,7 @@
       "stockCode": "TEAL",
       "stockName": "TEAL AD  Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69346"
@@ -6745,6 +7306,7 @@
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69415"
@@ -6757,6 +7319,7 @@
       "stockCode": "SDOM",
       "stockName": "Sovremen dom AD Prilep",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69329"
@@ -6769,6 +7332,7 @@
       "stockCode": "TNB",
       "stockName": "NLB Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69264"
@@ -6781,6 +7345,7 @@
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69234"
@@ -6793,6 +7358,7 @@
       "stockCode": "KLST",
       "stockName": "Klanica so ladilnik AD Strumica",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69237"
@@ -6805,6 +7371,7 @@
       "stockCode": "UNIPO4",
       "stockName": "UNI Banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69242"
@@ -6817,6 +7384,7 @@
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-07-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69190"
@@ -6829,6 +7397,7 @@
       "stockCode": "MZHE",
       "stockName": "Vabtek MZT AD Skopje",
       "category": "earnings",
+      "filingTier": "routine",
       "publishedAt": "2024-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/67952"
@@ -6841,6 +7410,7 @@
       "stockCode": "KOMU",
       "stockName": "DS Smith AD Skopje",
       "category": "financials",
+      "filingTier": "routine",
       "publishedAt": "2024-03-01",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/66856"

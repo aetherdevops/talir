@@ -19,9 +19,9 @@ export function StockFilingsSection({ dated, undated }: StockFilingsSectionProps
     return (
         <div className="space-y-6">
             {dated.length > 0 && (
-                <div className="space-y-3">
+                <div className="space-y-2">
                     {dated.map((item) => (
-                        <NewsCard key={item.id} item={item} variant="list" />
+                        <NewsCard key={item.id} item={item} />
                     ))}
                 </div>
             )}
@@ -31,9 +31,9 @@ export function StockFilingsSection({ dated, undated }: StockFilingsSectionProps
                     <h3 className="text-sm font-semibold text-text-secondary font-heading">
                         {UPDATES_SECTION_TITLE} — date unknown
                     </h3>
-                    <div className="space-y-3 opacity-90">
+                    <div className="space-y-2 opacity-90">
                         {undated.map((item) => (
-                            <NewsCard key={item.id} item={item} variant="list" />
+                            <NewsCard key={item.id} item={item} />
                         ))}
                     </div>
                 </section>

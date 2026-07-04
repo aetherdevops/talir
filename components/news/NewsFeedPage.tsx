@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import type { NewsCategory, NewsItem } from '@/lib/types'
 import { NEWS_CATEGORY_LABELS } from '@/lib/news'
 import { NewsCard } from '@/components/news/NewsCard'
+import { FilingIndicatorLegend } from '@/components/news/FilingIndicatorLegend'
 import { cn, formatAsOfDate } from '@/lib/utils'
 
 type ScopeTab = 'all' | 'companies'
@@ -48,8 +49,6 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
         )
     }
 
-    const [featured, ...rest] = filtered
-
     return (
         <div className="space-y-5">
             <div className="flex flex-wrap items-center gap-2">
@@ -62,7 +61,7 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
                         type="button"
                         onClick={() => setScope(tab.id)}
                         className={cn(
-                            'px-4 py-2 rounded-full text-sm font-medium border transition-colors',
+                            'px-4 py-2 rounded-full text-sm font-medium border transition-colors min-h-[44px]',
                             scope === tab.id
                                 ? 'bg-accent-muted text-accent border-accent/30'
                                 : 'bg-surface border-border text-text-secondary hover:bg-surface-secondary'
@@ -80,7 +79,7 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
                         type="button"
                         onClick={() => setCategory(chip.id)}
                         className={cn(
-                            'px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors',
+                            'px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors min-h-[44px]',
                             category === chip.id
                                 ? 'bg-surface-secondary text-text-primary border-border-active'
                                 : 'bg-surface text-text-tertiary border-border hover:text-text-secondary'
@@ -93,25 +92,18 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
 
             {filtered.length === 0 ? (
                 <p className="text-sm text-text-tertiary py-8 text-center">No updates match these filters.</p>
-            ) : scope === 'all' ? (
-                <div className="space-y-6">
-                    {featured && <NewsCard item={featured} variant="featured" />}
-                    <div className="space-y-3">
-                        {rest.map((item) => (
-                            <NewsCard key={item.id} item={item} variant="list" />
-                        ))}
-                    </div>
-                </div>
             ) : (
-                <div className="space-y-3">
+                <div className="space-y-2 min-w-0">
                     {filtered.map((item) => (
-                        <NewsCard key={item.id} item={item} variant="list" />
+                        <NewsCard key={item.id} item={item} />
                     ))}
                 </div>
             )}
 
+            <FilingIndicatorLegend className="pt-3 border-t border-border" />
+
             {lastIssuerScan && (
-                <p className="text-xs text-text-tertiary font-data pt-2 border-t border-border">
+                <p className="text-xs text-text-tertiary font-data">
                     Last issuer scan: {formatAsOfDate(lastIssuerScan)}
                 </p>
             )}

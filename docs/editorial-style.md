@@ -41,6 +41,18 @@ Talir surfaces **regulatory filings and disclosures** from the Macedonian Stock 
 - Add analyst opinion, price targets, or sentiment.
 - Reframe negative filings with positive spin.
 
+## Filing indicator dots
+
+Dots on Updates items encode **filing type**, not market sentiment (see `getFilingIndicatorTier` in `lib/news.ts`):
+
+| Dot | Meaning |
+| --- | --- |
+| Red (`--down`) | Material event — delisting, suspension, bankruptcy, liquidation (keyword match on raw filing title) |
+| Gold (`--accent`) | Dividend / payout disclosure |
+| Gray (`--neutral`) | Routine filing — financials, earnings, corporate, other |
+
+Unknown titles default to routine/neutral. Material keywords include English, Latin transliterations, and Macedonian Cyrillic (e.g. ликвидација, стечај, суспензија, делистирање).
+
 ## Maintenance
 
 When adding new filing patterns in `parseReportTitle`, update this document with one example row.

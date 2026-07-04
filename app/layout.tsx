@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { getAllInstruments } from '@/lib/data'
 import { AppProviders } from '@/components/providers/AppProviders'
 import { InstrumentsProvider } from '@/components/providers/InstrumentsProvider'
+import { SiteFooter } from '@/components/layout/SiteFooter'
 import { ScrapeStatusBanner } from '@/components/data/ScrapeStatusBanner'
 
 const inter = Inter({
@@ -122,6 +123,7 @@ export default async function RootLayout({
                                 <div className="max-w-[1600px] mx-auto p-4 md:p-6 pb-28 md:pb-6 space-y-4">
                                     <ScrapeStatusBanner />
                                     {children}
+                                    <SiteFooter />
                                 </div>
                             </main>
                         </div>
