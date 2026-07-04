@@ -1,16 +1,22 @@
 import type { MarketIndex, StockSummary } from '@/lib/types'
-import type { MarketSentiment } from '@/lib/data'
+import type { DerivedBreadth, DerivedSectorRollup, MarketSentiment } from '@/lib/data'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
-import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { HomeIndexHero } from '@/components/home/HomeIndexHero'
 import { HomeLeaderboardTabs } from '@/components/home/HomeLeaderboardTabs'
+import { HomeMarketBreadth } from '@/components/home/HomeMarketBreadth'
+import { HomeSectorStrip } from '@/components/home/HomeSectorStrip'
 
 interface HomeMarketOverviewProps {
     indices: MarketIndex[]
     gainers: StockSummary[]
     losers: StockSummary[]
     mostActive: StockSummary[]
+    weekHighs: StockSummary[]
+    weekLows: StockSummary[]
+    consistentGainers: StockSummary[]
+    breadth: DerivedBreadth | null
+    sectors: DerivedSectorRollup[]
     sentiment: MarketSentiment
     asOfDate: string
 }
@@ -20,6 +26,11 @@ export function HomeMarketOverview({
     gainers,
     losers,
     mostActive,
+    weekHighs,
+    weekLows,
+    consistentGainers,
+    breadth,
+    sectors,
     sentiment,
     asOfDate,
 }: HomeMarketOverviewProps) {
@@ -34,16 +45,17 @@ export function HomeMarketOverview({
 
             <HomeIndexHero indices={indices} asOfDate={asOfDate} />
 
-            <MarketSentimentStrip
-                sentiment={sentiment}
-                asOfDate={asOfDate}
-                variant="breadth-only"
-            />
+            <HomeMarketBreadth sentiment={sentiment} breadth={breadth} asOfDate={asOfDate} />
+
+            <HomeSectorStrip sectors={sectors} asOfDate={asOfDate} />
 
             <HomeLeaderboardTabs
                 gainers={gainers}
                 losers={losers}
                 mostActive={mostActive}
+                weekHighs={weekHighs}
+                weekLows={weekLows}
+                consistentGainers={consistentGainers}
                 asOfDate={asOfDate}
             />
 

@@ -45,6 +45,7 @@ jobs:
         test -s lib/data/issuers.json
         test -s lib/data/news_feed.json
         node -e "const j=require('./lib/data/news_feed.json'); console.log('news_feed:', j.count, 'items, dated', j.datedCount, ', lastIssuerScan', j.lastIssuerScan)"
+        node -e "const d=require('./lib/data/derived_market.json'); const n=d.breadth?.history?.length ?? 0; console.log('derived breadth.history:', n, 'sessions (expected 10)'); if(n!==10) console.log('::warning:: breadth history length is', n, 'not 10');"
 
     - name: Commit Changes
       run: |

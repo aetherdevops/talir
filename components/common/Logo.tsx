@@ -15,7 +15,7 @@ export function Logo({ className, compact = false }: LogoProps) {
         >
             <TalirMark size={compact ? 32 : 40} className="talir-logo-mark shrink-0" />
             {!compact && (
-                <div className="hidden min-[420px]:flex items-center leading-none min-w-0">
+                <div className="hidden min-[360px]:flex items-center leading-none min-w-0">
                     <span className="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-text-primary whitespace-nowrap">
                         Talir<span className="text-accent">.</span>
                     </span>

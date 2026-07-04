@@ -9,6 +9,11 @@ import {
     getMarketSentiment,
     attachSparklines,
     getAllInstruments,
+    getMarketBreadth,
+    getSectorRollups,
+    getWeekHighStocks,
+    getWeekLowStocks,
+    getConsistentGainerStocks,
 } from '@/lib/data'
 import { HomeMarketOverview } from '@/components/home/HomeMarketOverview'
 import { HomePersonalRail } from '@/components/home/HomePersonalRail'
@@ -17,10 +22,23 @@ import { NewsFeed } from '@/components/news/NewsFeed'
 export const revalidate = 86400
 
 export default async function HomePage() {
-    const [gainersRaw, losersRaw, mostActiveRaw, indices, news, allInstruments] = await Promise.all([
+    const [
+        gainersRaw,
+        losersRaw,
+        mostActiveRaw,
+        weekHighs,
+        weekLows,
+        consistentGainers,
+        indices,
+        news,
+        allInstruments,
+    ] = await Promise.all([
         getTopGainers(5),
         getTopLosers(5),
         getMostActive(5),
+        getWeekHighStocks(5),
+        getWeekLowStocks(5),
+        getConsistentGainerStocks(5),
         getMarketIndices(),
         getLatestNews(4),
         getAllInstruments(),
@@ -28,6 +46,8 @@ export default async function HomePage() {
 
     const asOfDate = getMarketDataAsOf(allInstruments)
     const sentiment = getMarketSentiment(allInstruments)
+    const breadth = getMarketBreadth()
+    const sectors = getSectorRollups()
 
     const gainers = attachSparklines(gainersRaw)
     const losers = attachSparklines(losersRaw)
@@ -45,6 +65,11 @@ export default async function HomePage() {
                         gainers={gainers}
                         losers={losers}
                         mostActive={mostActive}
+                        weekHighs={weekHighs}
+                        weekLows={weekLows}
+                        consistentGainers={consistentGainers}
+                        breadth={breadth}
+                        sectors={sectors}
                         sentiment={sentiment}
                         asOfDate={asOfDate}
                     />

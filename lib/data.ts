@@ -2,6 +2,7 @@ import { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem, NewsFeedFil
 export type { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem, NewsFeedFile }
 import { transliterate } from './transliterate'
 import { CHANGE_ZERO_THRESHOLD, classifyChangePercent } from './utils'
+import { isExcludedEquityCode, isMseEquityInstrument } from './market-universe'
 
 // Static Data Imports (Bundled) - Using @/lib/data guaranteed to be in the build
 import marketSummaryData from '@/lib/data/market_summary.json'
@@ -175,6 +176,80 @@ export async function getMostActive(limit: number = 5): Promise<StockSummary[]> 
     return all.sort((a, b) => b.turnover - a.turnover).slice(0, limit)
 }
 
+export type BreadthHistoryPoint = {
+    date: string
+    advancers: number
+    decliners: number
+    unchanged: number
+}
+
+export type DerivedBreadth = {
+    history: BreadthHistoryPoint[]
+    pctAbove30dAvg: number
+    newHighs52w: number
+    newLows52w: number
+}
+
+export type DerivedSectorRollup = {
+    name: string
+    avgChangePct: number
+    advancers: number
+    decliners: number
+    unchanged: number
+    count: number
+}
+
+type DerivedMarketFile = {
+    asOfDate?: string
+    breadth?: DerivedBreadth
+    leaderboards?: {
+        weekHighs?: string[]
+        weekLows?: string[]
+        consistentGainers?: string[]
+    }
+    sectors?: DerivedSectorRollup[]
+}
+
+function getDerivedMarketFile(): DerivedMarketFile {
+    return derivedMarketData as DerivedMarketFile
+}
+
+export function getMarketBreadth(): DerivedBreadth | null {
+    const derived = getDerivedMarketFile()
+    const breadth = derived.breadth
+    if (!breadth?.history?.length) return null
+    return breadth
+}
+
+export function getSectorRollups(): DerivedSectorRollup[] {
+    const derived = getDerivedMarketFile()
+    return derived.sectors ?? []
+}
+
+async function resolveStocksByCodes(codes: string[]): Promise<StockSummary[]> {
+    if (!codes.length) return []
+    const all = await getAllStocks()
+    const byCode = new Map(all.map((stock) => [stock.code, stock]))
+    return codes
+        .map((code) => byCode.get(code))
+        .filter((stock): stock is StockSummary => stock != null)
+}
+
+export async function getWeekHighStocks(limit = 5): Promise<StockSummary[]> {
+    const codes = getDerivedMarketFile().leaderboards?.weekHighs ?? []
+    return attachSparklines(await resolveStocksByCodes(codes.slice(0, limit)))
+}
+
+export async function getWeekLowStocks(limit = 5): Promise<StockSummary[]> {
+    const codes = getDerivedMarketFile().leaderboards?.weekLows ?? []
+    return attachSparklines(await resolveStocksByCodes(codes.slice(0, limit)))
+}
+
+export async function getConsistentGainerStocks(limit = 5): Promise<StockSummary[]> {
+    const codes = getDerivedMarketFile().leaderboards?.consistentGainers ?? []
+    return attachSparklines(await resolveStocksByCodes(codes.slice(0, limit)))
+}
+
 export async function enrichStocksWithChartSeries(stocks: StockSummary[]): Promise<StockSummary[]> {
     return Promise.all(
         stocks.map(async (stock) => {
@@ -217,19 +292,35 @@ export interface MarketSentiment {
 }
 
 export function getMarketSentiment(stocks: StockSummary[]): MarketSentiment {
-    const equities = stocks.filter((s) => s.type !== 'Index')
+    const derived = derivedMarketData as {
+        sentiment?: { advancers: number; decliners: number; unchanged: number }
+    }
+
+    const mbi10 = stocks.find((s) => s.code === 'MBI10')
+
+    if (derived.sentiment) {
+        return {
+            advancers: derived.sentiment.advancers,
+            decliners: derived.sentiment.decliners,
+            unchanged: derived.sentiment.unchanged,
+            primaryIndex: mbi10
+                ? { name: mbi10.code, value: mbi10.price, changePercent: mbi10.changePercent }
+                : undefined,
+        }
+    }
+
     let advancers = 0
     let decliners = 0
     let unchanged = 0
 
-    for (const s of equities) {
+    for (const s of stocks) {
+        if (s.type === 'Index' || !isMseEquityInstrument(s.code, s.price, s.volume, s.turnover)) continue
         const direction = classifyChangePercent(s.changePercent)
         if (direction === 'up') advancers++
         else if (direction === 'down') decliners++
         else unchanged++
     }
 
-    const mbi10 = stocks.find((s) => s.code === 'MBI10')
     return {
         advancers,
         decliners,

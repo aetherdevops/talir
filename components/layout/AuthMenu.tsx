@@ -53,7 +53,7 @@ export function AuthMenu() {
     if (!user) {
         return (
             <div className="flex items-center gap-1.5 shrink-0">
-                <Link href="/settings" aria-label="Settings">
+                <Link href="/settings" aria-label="Settings" className="hidden md:inline-flex">
                     <Button
                         variant="ghost"
                         size="icon"
