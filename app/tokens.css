@@ -100,3 +100,28 @@
   --disc: transparent;
   --ink: var(--talir-gold-soft);
 }
+
+/* Session ambient accent — informational only; does not alter price data tokens (--up/--down). */
+:root[data-market='open'] {
+  --accent: var(--talir-gold-bright);
+  --accent-muted: rgba(220, 192, 121, 0.18);
+  --border-active: rgba(231, 217, 168, 0.32);
+}
+
+:root[data-market='closed'] {
+  --accent: var(--talir-gold);
+  --accent-muted: rgba(198, 162, 74, 0.12);
+}
+
+.dark[data-market='open'],
+:root[data-theme='dark'][data-market='open'] {
+  --accent: var(--talir-gold-bright);
+  --accent-muted: rgba(220, 192, 121, 0.2);
+  --border-active: rgba(231, 217, 168, 0.34);
+}
+
+.dark[data-market='closed'],
+:root[data-theme='dark'][data-market='closed'] {
+  --accent: var(--talir-gold-bright);
+  --accent-muted: rgba(220, 192, 121, 0.14);
+}

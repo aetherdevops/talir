@@ -12,7 +12,6 @@ import {
 } from '@/lib/data'
 import { HomePreviewTabs } from '@/components/home/HomePreviewTabs'
 import { HomeTopMovers } from '@/components/home/HomeTopMovers'
-import { MarketStatus } from '@/components/home/MarketStatus'
 import { NewsFeed } from '@/components/news/NewsFeed'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
@@ -54,8 +53,6 @@ export default async function HomePage() {
                 </section>
 
                 <SponsorSlot placement="mobile-in-flow" className="md:hidden" />
-
-                <MarketStatus />
 
                 <NewsFeed items={news} layout="home" />
             </div>

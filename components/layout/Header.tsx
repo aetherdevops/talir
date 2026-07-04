@@ -10,6 +10,7 @@ import { AuthMenu } from '@/components/layout/AuthMenu'
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils'
 import { SearchBar } from '@/components/layout/SearchBar'
+import { SessionIndicator } from '@/components/layout/SessionIndicator'
 import { StockSummary } from '@/lib/types'
 
 const MobileSearchSheet = dynamic(
@@ -25,14 +26,16 @@ export function Header({ className, instruments = [] }: { className?: string; in
         <>
             <header
                 className={cn(
-                    'relative z-50 flex h-16 w-full items-center justify-between',
+                    'relative z-50 flex h-16 w-full items-center justify-between gap-2',
                     'border-b border-border/80 bg-talir-navy text-talir-ivory px-4 md:px-6 flex-shrink-0',
                     'dark:bg-talir-navy-deep dark:border-border',
+                    'transition-[border-color] duration-500',
                     className
                 )}
             >
-                <div className="flex items-center gap-3 [&_.text-text-primary]:text-talir-ivory [&_.text-text-tertiary]:text-talir-gold-soft/70">
+                <div className="flex items-center gap-2 sm:gap-3 min-w-0 [&_.text-text-primary]:text-talir-ivory [&_.text-text-tertiary]:text-talir-gold-soft/70">
                     <Logo />
+                    <SessionIndicator />
                     <Link
                         href="/news"
                         className={cn(
