@@ -47,7 +47,7 @@ export default async function HomePage() {
                 losers={losers}
                 mostActive={mostActive}
             />
-            <SponsorSlot placement="mobile-in-flow" className="md:hidden" />
+            <SponsorSlot placement="mobile-banner" />
         </div>
     )
 

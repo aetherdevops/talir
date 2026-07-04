@@ -2,7 +2,6 @@
 name: Daily Stock Update v2
 
 on:
-
   schedule:
     # Runs at 02:00 UTC (04:00 Macedonia)
     - cron: '0 2 * * *'
@@ -22,7 +21,7 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '22'
         cache: 'npm'
         cache-dependency-path: package-lock.json
 
@@ -41,13 +40,19 @@ jobs:
     - name: Regenerate derived assets
       run: npm run generate:sparklines && npm run generate:derived && npm run generate:search-index
 
+    - name: Verify feed outputs
+      run: |
+        test -s lib/data/issuers.json
+        test -s lib/data/news_feed.json
+        node -e "const j=require('./lib/data/news_feed.json'); console.log('news_feed:', j.count, 'items, dated', j.datedCount, ', lastIssuerScan', j.lastIssuerScan)"
+
     - name: Commit Changes
       run: |
         git config --global user.name "Scraper Bot"
         git config --global user.email "bot@example.com"
 
         if [[ -n $(git status --porcelain lib/data) ]]; then
-          echo "New data found, committing..."
+          echo "New data found — staging lib/data (issuers.json, news_feed.json, scrape_meta.json, …)"
           git add lib/data
           git commit -m "chore: daily data refresh [skip ci]"
           git push

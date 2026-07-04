@@ -189,7 +189,7 @@ export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }
                                 />
                                 {(i + 1) % 8 === 0 && i < displayStocks.length - 1 && (
                                     <div className="py-2 border-t border-border">
-                                        <SponsorSlot placement="in-feed" />
+                                        <SponsorSlot placement="rectangle" />
                                     </div>
                                 )}
                             </div>

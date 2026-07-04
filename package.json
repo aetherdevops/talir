@@ -21,6 +21,7 @@
     "generate:news-feed": "node scripts/generate-news-feed.mjs",
     "generate:search-index": "node scripts/generate-search-index.mjs",
     "generate:icons": "node scripts/generate-icons.mjs",
+    "test:issuer-scrape": "node scripts/test-issuer-scrape.mjs",
     "test": "tsx --test lib/change.test.ts",
     "lighthouse:budget": "node scripts/lighthouse-budget.mjs",
     "prebuild": "node scripts/generate-sparklines.mjs && node scripts/generate-derived-market.mjs && node scripts/generate-search-index.mjs && node scripts/generate-news-feed.mjs"

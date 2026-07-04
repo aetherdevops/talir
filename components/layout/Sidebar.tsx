@@ -76,7 +76,7 @@ function SectionHeader({ label, onAdd, isCollapsed }: { label: string, onAdd?: (
 
 export function Sidebar({ className }: { className?: string }) {
     const pathname = usePathname()
-    const { isSidebarOpen, toggleSidebar } = useThemeStore()
+    const { isSidebarOpen, toggleSidebar, setSidebarOpen } = useThemeStore()
     const { portfolios, activePortfolioId, setActivePortfolio } = usePortfolioStore()
     const [mounted, setMounted] = useState(false)
     const [isCreateMenuOpen, setIsCreateMenuOpen] = useState(false)
@@ -86,6 +86,11 @@ export function Sidebar({ className }: { className?: string }) {
     }, [])
 
     const isOpen = mounted ? isSidebarOpen : false
+
+    const handleNavClick = (extra?: () => void) => () => {
+        extra?.()
+        if (isOpen) setSidebarOpen(false)
+    }
 
     return (
         <aside
@@ -99,9 +104,9 @@ export function Sidebar({ className }: { className?: string }) {
         >
             <nav className="flex-1 w-full overflow-y-auto scrollbar-hide pt-4">
                 <ul className="space-y-1 px-3">
-                    <SidebarItem icon={Home} label="Home" href="/" isActive={pathname === '/'} isCollapsed={!isOpen} />
-                    <SidebarItem icon={BarChart2} label="Markets" href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} />
-                    <SidebarItem icon={Newspaper} label="Updates" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} />
+                    <SidebarItem icon={Home} label="Home" href="/" isActive={pathname === '/'} isCollapsed={!isOpen} onClick={handleNavClick()} />
+                    <SidebarItem icon={BarChart2} label="Markets" href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} onClick={handleNavClick()} />
+                    <SidebarItem icon={Newspaper} label="Updates" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} onClick={handleNavClick()} />
 
                     <SectionHeader
                         label="Create"
@@ -119,7 +124,7 @@ export function Sidebar({ className }: { className?: string }) {
                             href="/portfolio"
                             isActive={pathname === '/portfolio' && activePortfolioId === p.id}
                             isCollapsed={!isOpen}
-                            onClick={() => setActivePortfolio(p.id)}
+                            onClick={handleNavClick(() => setActivePortfolio(p.id))}
                             iconClass={p.id === activePortfolioId ? "text-accent" : undefined}
                         />
                     ))}
@@ -132,6 +137,7 @@ export function Sidebar({ className }: { className?: string }) {
                         href="/watchlist"
                         isActive={pathname.startsWith('/watchlist')}
                         isCollapsed={!isOpen}
+                        onClick={handleNavClick()}
                     />
 
                     <SectionHeader label="Alerts" isCollapsed={!isOpen} />
@@ -142,6 +148,7 @@ export function Sidebar({ className }: { className?: string }) {
                         href="/alerts"
                         isActive={pathname === '/alerts'}
                         isCollapsed={!isOpen}
+                        onClick={handleNavClick()}
                     />
                 </ul>
             </nav>
@@ -159,7 +166,7 @@ export function Sidebar({ className }: { className?: string }) {
                 </div>
 
                 <ul className="space-y-1">
-                    <SidebarItem icon={Settings} label="Settings" href="/settings" isActive={pathname === '/settings'} isCollapsed={!isOpen} />
+                    <SidebarItem icon={Settings} label="Settings" href="/settings" isActive={pathname === '/settings'} isCollapsed={!isOpen} onClick={handleNavClick()} />
                 </ul>
             </div>
 

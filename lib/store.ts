@@ -7,6 +7,7 @@ interface ThemeStore {
     isSidebarOpen: boolean
     toggleTheme: () => void
     toggleSidebar: () => void
+    setSidebarOpen: (open: boolean) => void
     setTheme: (theme: ThemeMode) => void
 }
 
@@ -21,6 +22,7 @@ export const useThemeStore = create<ThemeStore>()(
                 return { theme: newTheme }
             }),
             toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
+            setSidebarOpen: (open) => set({ isSidebarOpen: open }),
             setTheme: (theme) => {
                 applyThemeToDocument(theme)
                 set({ theme })
