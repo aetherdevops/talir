@@ -59,7 +59,7 @@ export function AlertsClient() {
                                         disabled={triggered || expired}
                                         className={`w-12 h-6 rounded-full transition-all relative disabled:opacity-50 ${alert.isActive ? 'bg-brand-500' : 'bg-surface-tertiary'}`}
                                     >
-                                        <div className={`absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform shadow-sm ${alert.isActive ? 'translate-x-6' : 'translate-x-0'}`} />
+                                        <div className={`absolute top-1 left-1 bg-surface-elevated w-4 h-4 rounded-full transition-transform shadow-sm ${alert.isActive ? 'translate-x-6' : 'translate-x-0'}`} />
                                     </button>
 
                                     <div>

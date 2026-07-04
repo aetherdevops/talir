@@ -23,8 +23,8 @@ export function ThemeSetting() {
     }
 
     const options = [
-        { value: 'light' as const, label: 'Light', icon: Sun },
         { value: 'dark' as const, label: 'Dark', icon: Moon },
+        { value: 'light' as const, label: 'Light', icon: Sun },
     ]
 
     return (
@@ -39,7 +39,7 @@ export function ThemeSetting() {
                         className={cn(
                             'flex flex-col items-center justify-center gap-2 rounded-xl border p-4 transition-all',
                             selected
-                                ? 'border-brand-500 bg-brand-500/10 text-brand-600 dark:text-brand-400'
+                                ? 'border-accent bg-accent-muted text-accent'
                                 : 'border-border bg-surface hover:bg-surface-secondary text-text-secondary'
                         )}
                         aria-pressed={selected}

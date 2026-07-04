@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, memo, useCallback } from 'react'
 import { createChart, ColorType, IChartApi, ISeriesApi, Time } from 'lightweight-charts'
 import { cn, formatPrice, formatInteger } from '@/lib/utils'
+import { isDarkTheme } from '@/lib/theme'
 
 interface ChartData {
     time: string
@@ -40,18 +41,16 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, excludePeriod
     const chartRef = useRef<IChartApi | null>(null)
     const seriesRef = useRef<ISeriesApi<'Area'> | null>(null)
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(isDarkTheme)
     const [localTimeframe, setLocalTimeframe] = useState<'1D' | '5D' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '5Y' | 'MAX'>('1Y')
     const [tooltip, setTooltip] = useState<TooltipState>(null)
 
     useEffect(() => {
-        const checkDark = () =>
-            document.documentElement.classList.contains('dark') ||
-            document.documentElement.getAttribute('data-theme') === 'dark'
+        const checkDark = () => isDarkTheme()
         setIsDarkMode(checkDark())
 
         const observer = new MutationObserver(() => setIsDarkMode(checkDark()))
-        observer.observe(document.documentElement, { attributes: true })
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'data-theme'] })
         return () => observer.disconnect()
     }, [])
 

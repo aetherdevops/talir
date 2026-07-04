@@ -1,45 +1,36 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { applyThemeToDocument, DEFAULT_THEME, type ThemeMode } from '@/lib/theme'
 
 interface ThemeStore {
-    theme: 'light' | 'dark'
+    theme: ThemeMode
     isSidebarOpen: boolean
     toggleTheme: () => void
     toggleSidebar: () => void
-    setTheme: (theme: 'light' | 'dark') => void
+    setTheme: (theme: ThemeMode) => void
 }
 
 export const useThemeStore = create<ThemeStore>()(
     persist(
         (set) => ({
-            theme: 'light',
+            theme: DEFAULT_THEME,
             isSidebarOpen: true,
             toggleTheme: () => set((state) => {
                 const newTheme = state.theme === 'light' ? 'dark' : 'light'
-                if (typeof window !== 'undefined') {
-                    document.documentElement.classList.remove('light', 'dark')
-                    document.documentElement.classList.add(newTheme)
-                    document.documentElement.setAttribute('data-theme', newTheme)
-                }
+                applyThemeToDocument(newTheme)
                 return { theme: newTheme }
             }),
             toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
-            setTheme: (theme) => set(() => {
-                if (typeof window !== 'undefined') {
-                    document.documentElement.classList.remove('light', 'dark')
-                    document.documentElement.classList.add(theme)
-                    document.documentElement.setAttribute('data-theme', theme)
-                }
-                return { theme }
-            }),
+            setTheme: (theme) => {
+                applyThemeToDocument(theme)
+                set({ theme })
+            },
         }),
         {
             name: 'talir-ui-storage',
             onRehydrateStorage: () => (state) => {
                 if (state && typeof window !== 'undefined') {
-                    document.documentElement.classList.remove('light', 'dark')
-                    document.documentElement.classList.add(state.theme)
-                    document.documentElement.setAttribute('data-theme', state.theme)
+                    applyThemeToDocument(state.theme)
                 }
             }
         }

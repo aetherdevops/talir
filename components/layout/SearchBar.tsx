@@ -178,7 +178,7 @@ export function SearchBar({ className, items = [] }: { className?: string, items
                                 className={cn(
                                     "px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 whitespace-nowrap",
                                     activeTab === tab
-                                        ? "bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-400"
+                                        ? "bg-accent-muted text-accent"
                                         : "text-text-tertiary hover:bg-surface-secondary hover:text-text-secondary"
                                 )}
                             >

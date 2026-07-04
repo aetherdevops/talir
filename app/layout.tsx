@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport = {
-    themeColor: '#0F1F38',
+    themeColor: '#0A1424',
     viewportFit: 'cover' as const,
 }
 
@@ -78,16 +78,27 @@ export default async function RootLayout({
                         __html: `
               try {
                 const storage = localStorage.getItem('talir-ui-storage');
-                let theme = 'light';
+                const themeColors = { dark: '#0A1424', light: '#F5F2EA' };
+                let theme = 'dark';
                 if (storage) {
-                  const state = JSON.parse(storage).state;
-                  theme = state.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                  theme = 'dark';
+                  const parsed = JSON.parse(storage);
+                  if (parsed.state && (parsed.state.theme === 'light' || parsed.state.theme === 'dark')) {
+                    theme = parsed.state.theme;
+                  }
                 }
-                document.documentElement.classList.remove('light', 'dark');
-                document.documentElement.classList.add(theme);
-                document.documentElement.setAttribute('data-theme', theme);
+                const root = document.documentElement;
+                root.classList.remove('light', 'dark');
+                root.classList.add(theme);
+                root.setAttribute('data-theme', theme);
+                root.style.colorScheme = theme;
+                root.style.backgroundColor = themeColors[theme];
+                let meta = document.querySelector('meta[name="theme-color"]');
+                if (!meta) {
+                  meta = document.createElement('meta');
+                  meta.setAttribute('name', 'theme-color');
+                  document.head.appendChild(meta);
+                }
+                meta.setAttribute('content', themeColors[theme]);
               } catch (e) {}
             `,
                     }}

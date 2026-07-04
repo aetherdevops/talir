@@ -13,7 +13,7 @@ export function StockCard({ stock }: StockCardProps) {
         <Link href={`/stock/${stock.code}`}>
             <Card interactive className="p-4 flex flex-col gap-3 group">
                 <div className="flex justify-between items-start">
-                    <div className="bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-400 px-2 py-1 rounded text-xs font-bold tracking-wider">
+                    <div className="bg-accent-muted text-accent px-2 py-1 rounded text-xs font-bold tracking-wider">
                         {stock.code}
                     </div>
                     <PriceChangeBadge change={stock.changePercent} />

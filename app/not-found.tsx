@@ -6,9 +6,9 @@ export default function NotFound() {
     return (
         <div className="flex h-[calc(100vh-8rem)] w-full flex-col items-center justify-center text-center animate-fade-in font-sans">
             <div className="relative mb-8">
-                <div className="absolute inset-0 animate-pulse rounded-full bg-brand-500/20 blur-xl"></div>
-                <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-surface-secondary dark:bg-dark-elevated shadow-lg">
-                    <FileQuestion className="h-16 w-16 text-brand-600 dark:text-brand-400" />
+                <div className="absolute inset-0 animate-pulse rounded-full bg-accent/20 blur-xl"></div>
+                <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-surface-secondary shadow-lg">
+                    <FileQuestion className="h-16 w-16 text-accent" />
                 </div>
             </div>
 
@@ -19,7 +19,7 @@ export default function NotFound() {
 
             <div className="flex gap-4">
                 <Link href="/">
-                    <Button size="lg" className="rounded-full px-8 shadow-lg shadow-brand-500/20">
+                    <Button size="lg" className="rounded-full px-8 shadow-lg shadow-accent/20">
                         Return Home
                     </Button>
                 </Link>

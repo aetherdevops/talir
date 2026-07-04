@@ -19,7 +19,7 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: 
             >
                 <span
                     className={cn(
-                        'absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white transition-transform',
+                        'absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-surface-elevated transition-transform',
                         checked && 'translate-x-5'
                     )}
                 />

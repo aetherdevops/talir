@@ -170,7 +170,7 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
                                 )}
                             >
                                 <div className={cn(
-                                    "absolute top-1 left-1 bg-white w-3 h-3 rounded-full transition-transform shadow-sm",
+                                    "absolute top-1 left-1 bg-surface-elevated w-3 h-3 rounded-full transition-transform shadow-sm",
                                     isOpenEnded ? "translate-x-4" : "translate-x-0"
                                 )} />
                             </button>

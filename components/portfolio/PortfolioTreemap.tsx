@@ -30,7 +30,7 @@ const CustomContent = (props: any) => {
                 height={height}
                 style={{
                     fill: fill,
-                    stroke: '#fff',
+                    stroke: 'var(--surface)',
                     strokeWidth: 2 / (depth + 1e-10),
                     strokeOpacity: 1 / (depth + 1e-10),
                 }}
@@ -85,7 +85,7 @@ export function PortfolioTreemap({ isOpen, onClose, holdings }: PortfolioTreemap
                         height={200}
                         data={data.length > 0 ? treeMapData : []}
                         dataKey="size"
-                        stroke="#fff"
+                        stroke="var(--surface)"
                         fill="#5a6577"
                         content={<CustomContent />}
                     >
@@ -94,7 +94,7 @@ export function PortfolioTreemap({ isOpen, onClose, holdings }: PortfolioTreemap
                                 if (active && payload && payload.length) {
                                     const node = payload[0].payload;
                                     return (
-                                        <div className="bg-popover text-popover-foreground px-3 py-2 rounded-lg shadow-md border text-xs">
+                                        <div className="bg-surface text-text-primary px-3 py-2 rounded-lg shadow-md border border-border text-xs">
                                             <div className="font-bold">{node.name}</div>
                                             <div>Value: {formatPrice(node.size)}</div>
                                             <ChangeLabel change={node.changePercent} className="text-xs" />
