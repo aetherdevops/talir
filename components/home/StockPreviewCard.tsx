@@ -3,9 +3,10 @@ import { PreviewMarketCard } from '@/components/home/PreviewMarketCard'
 
 interface StockPreviewCardProps {
     stock: StockSummary
+    className?: string
 }
 
-export function StockPreviewCard({ stock }: StockPreviewCardProps) {
+export function StockPreviewCard({ stock, className }: StockPreviewCardProps) {
     return (
         <PreviewMarketCard
             href={`/stock/${stock.code}`}
@@ -14,6 +15,7 @@ export function StockPreviewCard({ stock }: StockPreviewCardProps) {
             chartSeries={stock.chartSeries ?? []}
             latestPrice={stock.price}
             changePercent={stock.changePercent}
+            className={className}
         />
     )
 }

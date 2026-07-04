@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
-import { CompactQuoteCard } from '@/components/home/CompactQuoteCard'
 import { DesktopScrollRow } from '@/components/home/DesktopScrollRow'
 import { StockPreviewCard } from '@/components/home/StockPreviewCard'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
@@ -134,15 +133,10 @@ export function HomeLeaderboardTabs({
                     <div className="hidden lg:block min-w-0">
                         <DesktopScrollRow>
                             {previewStocks.map((stock) => (
-                                <CompactQuoteCard
+                                <StockPreviewCard
                                     key={stock.code}
-                                    href={`/stock/${stock.code}`}
-                                    label={stock.code}
-                                    subtitle={stock.name}
-                                    valueKind="stock"
-                                    chartSeries={stock.chartSeries ?? []}
-                                    latestPrice={stock.price}
-                                    changePercent={stock.changePercent}
+                                    stock={stock}
+                                    className="w-[180px] shrink-0 snap-start"
                                 />
                             ))}
                         </DesktopScrollRow>
