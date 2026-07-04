@@ -9,7 +9,9 @@ interface MarketSentimentStripProps {
     sentiment: MarketSentiment
     asOfDate: string
     className?: string
+    /** @deprecated Prefer variant="breadth-only" on the homepage */
     hidePrimaryIndex?: boolean
+    variant?: 'default' | 'breadth-only'
 }
 
 export function MarketSentimentStrip({
@@ -17,7 +19,9 @@ export function MarketSentimentStrip({
     asOfDate,
     className,
     hidePrimaryIndex = false,
+    variant = 'default',
 }: MarketSentimentStripProps) {
+    const breadthOnly = variant === 'breadth-only' || hidePrimaryIndex
     const { advancers, decliners, unchanged, primaryIndex } = sentiment
     const total = advancers + decliners + unchanged
     const bullishPct = total > 0 ? (advancers / total) * 100 : 50
@@ -37,13 +41,33 @@ export function MarketSentimentStrip({
         return 'flat' as const
     })()
 
+    const leanLabel =
+        lean === 'up' ? (breadthOnly ? 'Up lean' : 'BULLISH') : lean === 'down' ? (breadthOnly ? 'Down lean' : 'BEARISH') : breadthOnly ? 'Mixed' : 'MIXED'
+
     return (
-        <div
+        <section
             className={cn(
-                'rounded-xl border border-border/60 bg-surface-secondary/40 px-3 py-2 space-y-1.5',
+                'rounded-xl border border-border/60 bg-surface-secondary/40 px-3 py-2 space-y-1.5 min-w-0',
                 className
             )}
+            aria-labelledby={breadthOnly ? 'session-breadth-heading' : undefined}
         >
+            {breadthOnly && (
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between min-w-0">
+                    <div className="min-w-0">
+                        <h2
+                            id="session-breadth-heading"
+                            className="font-heading text-sm font-bold text-text-primary tracking-tight"
+                        >
+                            Session breadth
+                        </h2>
+                        <p className="text-[11px] text-text-tertiary leading-snug">
+                            Advancers and decliners across MSE equities, end-of-day.
+                        </p>
+                    </div>
+                    <DataFreshnessLabel asOfDate={asOfDate} variant="compact" className="shrink-0" />
+                </div>
+            )}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
                     <span className="inline-flex items-center gap-1 text-up font-semibold font-data">
@@ -55,7 +79,7 @@ export function MarketSentimentStrip({
                         {decliners} down
                     </span>
                     <span className="text-text-tertiary font-data">{unchanged} flat</span>
-                    {primaryIndex && !hidePrimaryIndex && (
+                    {primaryIndex && !breadthOnly && (
                         <span className="text-text-secondary border-l border-border pl-4 font-data">
                             {primaryIndex.name}{' '}
                             <span className="font-medium text-text-primary">
@@ -65,7 +89,7 @@ export function MarketSentimentStrip({
                         </span>
                     )}
                 </div>
-                <DataFreshnessLabel asOfDate={asOfDate} variant="compact" />
+                {!breadthOnly && <DataFreshnessLabel asOfDate={asOfDate} variant="compact" />}
             </div>
 
             <div className="flex items-center gap-2">
@@ -87,9 +111,9 @@ export function MarketSentimentStrip({
                         lean === 'up' ? 'text-up' : lean === 'down' ? 'text-down' : 'text-text-tertiary'
                     )}
                 >
-                    {lean === 'up' ? 'BULLISH' : lean === 'down' ? 'BEARISH' : 'MIXED'}
+                    {leanLabel}
                 </span>
             </div>
-        </div>
+        </section>
     )
 }
