@@ -98,3 +98,12 @@ export function getPeriodChangePercent(series: { value: number }[]): number {
     if (first === 0) return 0
     return ((last - first) / first) * 100
 }
+
+/** Window change % for sparkline coloring (first vs last close in rendered series). */
+export function sparklineWindowChangePercent(series: { value: number }[]): number {
+    if (series.length < 2) return 0
+    const first = series[0].value
+    const last = series[series.length - 1].value
+    if (first === 0) return last > first ? 100 : last < first ? -100 : 0
+    return ((last - first) / first) * 100
+}

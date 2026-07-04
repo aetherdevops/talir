@@ -2,7 +2,7 @@ import type { MarketIndex, StockSummary } from '@/lib/types'
 import type { DerivedBreadth, DerivedSectorRollup, MarketSentiment } from '@/lib/data'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
-import { HomeIndexHero } from '@/components/home/HomeIndexHero'
+import { HomeIndexStrip } from '@/components/home/HomeIndexStrip'
 import { HomeLeaderboardTabs } from '@/components/home/HomeLeaderboardTabs'
 import { HomeMarketBreadth } from '@/components/home/HomeMarketBreadth'
 import { HomeSectorStrip } from '@/components/home/HomeSectorStrip'
@@ -43,12 +43,6 @@ export function HomeMarketOverview({
                 <DataFreshnessLabel asOfDate={asOfDate} />
             </header>
 
-            <HomeIndexHero indices={indices} asOfDate={asOfDate} />
-
-            <HomeMarketBreadth sentiment={sentiment} breadth={breadth} asOfDate={asOfDate} />
-
-            <HomeSectorStrip sectors={sectors} asOfDate={asOfDate} />
-
             <HomeLeaderboardTabs
                 gainers={gainers}
                 losers={losers}
@@ -59,7 +53,14 @@ export function HomeMarketOverview({
                 asOfDate={asOfDate}
             />
 
+            <HomeMarketBreadth sentiment={sentiment} breadth={breadth} asOfDate={asOfDate} />
+
+            <HomeSectorStrip sectors={sectors} />
+
             <SponsorSlot placement="mobile-banner" />
+            <SponsorSlot placement="rectangle" className="hidden md:flex" />
+
+            <HomeIndexStrip indices={indices} />
         </div>
     )
 }

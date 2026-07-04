@@ -1,17 +1,15 @@
 import type { CSSProperties } from 'react'
 import type { DerivedSectorRollup } from '@/lib/data'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
-import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { cn } from '@/lib/utils'
 
 interface HomeSectorStripProps {
     sectors: DerivedSectorRollup[]
-    asOfDate: string
 }
 
 const SECTOR_ROW_HEIGHT = 72
 
-export function HomeSectorStrip({ sectors, asOfDate }: HomeSectorStripProps) {
+export function HomeSectorStrip({ sectors }: HomeSectorStripProps) {
     if (!sectors.length) return null
 
     return (
@@ -19,19 +17,16 @@ export function HomeSectorStrip({ sectors, asOfDate }: HomeSectorStripProps) {
             className="space-y-2 min-w-0"
             aria-labelledby="home-sectors-heading"
         >
-            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between min-w-0">
-                <div className="min-w-0">
-                    <h2
-                        id="home-sectors-heading"
-                        className="font-heading text-base font-bold text-text-primary tracking-tight"
-                    >
-                        MSE sector (listing)
-                    </h2>
-                    <p className="text-[11px] text-text-tertiary leading-snug">
-                        Grouped by MSE listing sector, end-of-day.
-                    </p>
-                </div>
-                <DataFreshnessLabel asOfDate={asOfDate} variant="compact" className="shrink-0" />
+            <div className="min-w-0">
+                <h2
+                    id="home-sectors-heading"
+                    className="font-heading text-base font-bold text-text-primary tracking-tight"
+                >
+                    MSE sector (listing)
+                </h2>
+                <p className="text-[11px] text-text-tertiary leading-snug mt-1">
+                    Grouped by MSE listing sector, end-of-day.
+                </p>
             </div>
 
             {/*

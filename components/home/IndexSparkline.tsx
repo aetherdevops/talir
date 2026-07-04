@@ -1,13 +1,14 @@
 'use client'
 
 import { useId, useMemo } from 'react'
-import { cn, classifyChangePercent } from '@/lib/utils'
+import { cn, classifyChangePercent, formatPriceChange } from '@/lib/utils'
 
 interface IndexSparklineProps {
     series: { date: string; value: number }[]
     changePercent: number
     className?: string
     height?: number
+    windowLabel?: string
 }
 
 function strokeForChange(changePercent: number): string {
@@ -17,7 +18,20 @@ function strokeForChange(changePercent: number): string {
     return 'var(--neutral)'
 }
 
-export function IndexSparkline({ series, changePercent, className, height = 120 }: IndexSparklineProps) {
+function sparklineAriaLabel(windowLabel: string, changePercent: number): string {
+    const direction = classifyChangePercent(changePercent)
+    const trend =
+        direction === 'up' ? 'up' : direction === 'down' ? 'down' : 'flat'
+    return `${windowLabel} price trend, ${trend} ${formatPriceChange(changePercent)}`
+}
+
+export function IndexSparkline({
+    series,
+    changePercent,
+    className,
+    height = 120,
+    windowLabel = '30d',
+}: IndexSparklineProps) {
     const uid = useId().replace(/:/g, '')
     const path = useMemo(() => {
         if (!series.length) return ''
@@ -42,6 +56,8 @@ export function IndexSparkline({ series, changePercent, className, height = 120 
         return `${path} L 280,${height} L 0,${height} Z`
     }, [path, height])
 
+    const showVisibleWindowLabel = height > 24
+
     if (!series.length) {
         return (
             <div
@@ -54,29 +70,44 @@ export function IndexSparkline({ series, changePercent, className, height = 120 
 
     const stroke = strokeForChange(changePercent)
     const gradId = `grad-${uid}`
+    const ariaLabel = sparklineAriaLabel(windowLabel, changePercent)
 
     return (
-        <svg
-            viewBox={`0 0 280 ${height}`}
-            className={cn('w-full', className)}
+        <div
+            className={cn('relative w-full', className)}
             style={{ height }}
-            preserveAspectRatio="none"
-            aria-hidden
+            role="img"
+            aria-label={ariaLabel}
         >
-            <defs>
-                <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor={stroke} stopOpacity={height < 40 ? 0.15 : 0.2} />
-                    <stop offset="100%" stopColor={stroke} stopOpacity="0" />
-                </linearGradient>
-            </defs>
-            <path d={areaPath} fill={`url(#${gradId})`} />
-            <path
-                d={path}
-                fill="none"
-                stroke={stroke}
-                strokeWidth={height < 40 ? 1.5 : 2}
-                vectorEffect="non-scaling-stroke"
-            />
-        </svg>
+            <svg
+                viewBox={`0 0 280 ${height}`}
+                className="w-full h-full"
+                preserveAspectRatio="none"
+                aria-hidden
+            >
+                <defs>
+                    <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor={stroke} stopOpacity={height < 40 ? 0.15 : 0.2} />
+                        <stop offset="100%" stopColor={stroke} stopOpacity="0" />
+                    </linearGradient>
+                </defs>
+                <path d={areaPath} fill={`url(#${gradId})`} />
+                <path
+                    d={path}
+                    fill="none"
+                    stroke={stroke}
+                    strokeWidth={height < 40 ? 1.5 : 2}
+                    vectorEffect="non-scaling-stroke"
+                />
+            </svg>
+            {showVisibleWindowLabel ? (
+                <span
+                    className="absolute bottom-0 right-0 text-[9px] font-data text-text-tertiary leading-none pointer-events-none"
+                    aria-hidden
+                >
+                    {windowLabel}
+                </span>
+            ) : null}
+        </div>
     )
 }

@@ -12,6 +12,7 @@ interface MarketSentimentStripProps {
     /** @deprecated Prefer variant="breadth-only" on the homepage */
     hidePrimaryIndex?: boolean
     variant?: 'default' | 'breadth-only'
+    showFreshness?: boolean
 }
 
 export function MarketSentimentStrip({
@@ -20,6 +21,7 @@ export function MarketSentimentStrip({
     className,
     hidePrimaryIndex = false,
     variant = 'default',
+    showFreshness = true,
 }: MarketSentimentStripProps) {
     const breadthOnly = variant === 'breadth-only' || hidePrimaryIndex
     const { advancers, decliners, unchanged, primaryIndex } = sentiment
@@ -65,7 +67,9 @@ export function MarketSentimentStrip({
                             Advancers and decliners across MSE equities, end-of-day.
                         </p>
                     </div>
-                    <DataFreshnessLabel asOfDate={asOfDate} variant="compact" className="shrink-0" />
+                    {showFreshness && (
+                        <DataFreshnessLabel asOfDate={asOfDate} variant="compact" className="shrink-0" />
+                    )}
                 </div>
             )}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -89,7 +93,9 @@ export function MarketSentimentStrip({
                         </span>
                     )}
                 </div>
-                {!breadthOnly && <DataFreshnessLabel asOfDate={asOfDate} variant="compact" />}
+                {!breadthOnly && showFreshness && (
+                    <DataFreshnessLabel asOfDate={asOfDate} variant="compact" />
+                )}
             </div>
 
             <div className="flex items-center gap-2">

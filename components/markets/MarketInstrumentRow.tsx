@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { formatPrice, formatInteger } from '@/lib/utils'
+import { formatPrice, formatInteger, sparklineWindowChangePercent } from '@/lib/utils'
 import { StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
@@ -21,7 +21,8 @@ export const MARKET_ROW_PRICE_WIDTH = 76
 export const MARKET_ROW_ACTION_WIDTH = 28
 
 export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstrumentRowProps) {
-    const series = sparkline ?? stock.chartSeries ?? []
+    const series = (sparkline ?? stock.chartSeries ?? []).slice(-30)
+    const windowChange = sparklineWindowChangePercent(series)
 
     return (
         <Link
@@ -60,7 +61,7 @@ export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstr
             >
                 <IndexSparkline
                     series={series}
-                    changePercent={stock.changePercent}
+                    changePercent={windowChange}
                     height={MARKET_ROW_SPARKLINE_HEIGHT}
                     className="w-full"
                 />

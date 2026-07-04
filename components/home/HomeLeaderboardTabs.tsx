@@ -110,7 +110,7 @@ export function HomeLeaderboardTabs({
 
     return (
         <section className="space-y-2 min-w-0" aria-labelledby="home-leaderboards-heading">
-            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between min-w-0">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1 min-w-0">
                 <h2
                     id="home-leaderboards-heading"
                     className="font-heading text-base font-bold text-text-primary tracking-tight"

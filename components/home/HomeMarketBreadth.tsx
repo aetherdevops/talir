@@ -1,6 +1,5 @@
 import type { DerivedBreadth, MarketSentiment } from '@/lib/data'
 import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
-import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { BreadthAdvancersSparkline } from '@/components/home/BreadthAdvancersSparkline'
 
 interface HomeMarketBreadthProps {
@@ -13,31 +12,34 @@ export function HomeMarketBreadth({ sentiment, breadth, asOfDate }: HomeMarketBr
     const showExtended = breadth != null && breadth.history.length > 0
 
     return (
-        <div className="space-y-3 min-w-0">
+        <section
+            className="rounded-xl border border-border/60 bg-surface-secondary/20 p-3 space-y-3 min-w-0"
+            aria-labelledby="market-context-heading"
+        >
+            <h2
+                id="market-context-heading"
+                className="font-heading text-base font-bold text-text-primary tracking-tight"
+            >
+                Market context
+            </h2>
+
             <MarketSentimentStrip
                 sentiment={sentiment}
                 asOfDate={asOfDate}
                 variant="breadth-only"
+                showFreshness={false}
+                className="border-0 bg-transparent p-0"
             />
 
             {showExtended && (
-                <section
-                    className="rounded-xl border border-border/60 bg-surface-secondary/40 px-3 py-2.5 space-y-2 min-w-0"
-                    aria-labelledby="market-breadth-heading"
-                >
-                    <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between min-w-0">
-                        <div className="min-w-0">
-                            <h2
-                                id="market-breadth-heading"
-                                className="font-heading text-sm font-bold text-text-primary tracking-tight"
-                            >
-                                Market breadth
-                            </h2>
-                            <p className="text-[11px] text-text-tertiary leading-snug">
-                                Multi-session advancers trend and positioning vs 30-day average.
-                            </p>
-                        </div>
-                        <DataFreshnessLabel asOfDate={asOfDate} variant="compact" className="shrink-0" />
+                <div className="border-t border-border/60 pt-3 space-y-2 min-w-0">
+                    <div className="min-w-0">
+                        <h3 className="font-heading text-sm font-bold text-text-primary tracking-tight">
+                            Market breadth
+                        </h3>
+                        <p className="text-[11px] text-text-tertiary leading-snug">
+                            Multi-session advancers trend and positioning vs 30-day average.
+                        </p>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 min-w-0">
@@ -66,8 +68,8 @@ export function HomeMarketBreadth({ sentiment, breadth, asOfDate }: HomeMarketBr
                             </span>
                         </div>
                     </div>
-                </section>
+                </div>
             )}
-        </div>
+        </section>
     )
 }

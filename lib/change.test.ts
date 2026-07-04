@@ -4,6 +4,7 @@ import {
     CHANGE_ZERO_THRESHOLD,
     classifyChangePercent,
     formatPriceChange,
+    sparklineWindowChangePercent,
 } from './utils.ts'
 import { rankTopGainers, rankTopLosers } from './data.ts'
 import type { StockSummary } from './types.ts'
@@ -51,6 +52,30 @@ describe('classifyChangePercent (ChangeLabel threshold)', () => {
             assert.equal(classifyChangePercent(pct), expected)
         })
     }
+})
+
+describe('sparklineWindowChangePercent', () => {
+    it('returns 0 for empty or single-point series', () => {
+        assert.equal(sparklineWindowChangePercent([]), 0)
+        assert.equal(sparklineWindowChangePercent([{ value: 100 }]), 0)
+    })
+
+    it('computes uptrend over window', () => {
+        assert.equal(sparklineWindowChangePercent([{ value: 100 }, { value: 110 }]), 10)
+    })
+
+    it('computes downtrend over window', () => {
+        assert.equal(sparklineWindowChangePercent([{ value: 100 }, { value: 92 }]), -8)
+    })
+
+    it('returns 0 for flat window', () => {
+        assert.equal(sparklineWindowChangePercent([{ value: 50 }, { value: 50 }]), 0)
+    })
+
+    it('handles first close of zero', () => {
+        assert.equal(sparklineWindowChangePercent([{ value: 0 }, { value: 10 }]), 100)
+        assert.equal(sparklineWindowChangePercent([{ value: 0 }, { value: 0 }]), 0)
+    })
 })
 
 describe('rankTopGainers / rankTopLosers', () => {

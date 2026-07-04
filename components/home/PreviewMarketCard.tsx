@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { IndexSparkline } from '@/components/home/IndexSparkline'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
-import { formatIndexLevelCompact, formatPriceCompact, cn } from '@/lib/utils'
+import { formatIndexLevelCompact, formatPriceCompact, cn, sparklineWindowChangePercent } from '@/lib/utils'
 
 const SPARKLINE_HEIGHT = 40
 
@@ -27,6 +27,7 @@ export function PreviewMarketCard({
     className,
 }: PreviewMarketCardProps) {
     const series = chartSeries.slice(-30)
+    const windowChange = sparklineWindowChangePercent(series)
     const formattedValue =
         valueKind === 'index' ? formatIndexLevelCompact(latestPrice) : formatPriceCompact(latestPrice)
 
@@ -56,7 +57,7 @@ export function PreviewMarketCard({
             >
                 <IndexSparkline
                     series={series}
-                    changePercent={changePercent}
+                    changePercent={windowChange}
                     height={SPARKLINE_HEIGHT}
                     className="w-full h-full"
                 />
