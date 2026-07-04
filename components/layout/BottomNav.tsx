@@ -3,22 +3,19 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import dynamic from 'next/dynamic'
-import { Home, TrendingUp, List, Search, UserPlus } from 'lucide-react'
+import { Home, TrendingUp, List, Settings, Bookmark } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { CreateMenu } from '@/components/layout/CreateMenu'
-
-const MobileSearchSheet = dynamic(
-    () => import('@/components/layout/MobileSearchSheet').then((mod) => mod.MobileSearchSheet),
-    { ssr: false }
-)
+import { MyStuffSheet } from '@/components/layout/MyStuffSheet'
 
 const leftItems = [
     { icon: Home, label: 'Home', href: '/' },
     { icon: TrendingUp, label: 'Markets', href: '/markets' },
 ] as const
 
-const rightItems = [{ icon: List, label: 'Watchlist', href: '/watchlist' }] as const
+const rightItems = [
+    { icon: List, label: 'Watchlist', href: '/watchlist' },
+    { icon: Settings, label: 'Settings', href: '/settings' },
+] as const
 
 function NavTab({
     icon: Icon,
@@ -47,8 +44,7 @@ function NavTab({
 
 export function BottomNav() {
     const pathname = usePathname()
-    const [searchOpen, setSearchOpen] = useState(false)
-    const [createOpen, setCreateOpen] = useState(false)
+    const [myStuffOpen, setMyStuffOpen] = useState(false)
 
     const isActive = (href: string) =>
         pathname === href || (href !== '/' && pathname.startsWith(href))
@@ -70,35 +66,25 @@ export function BottomNav() {
                         {rightItems.map((item) => (
                             <NavTab key={item.label} {...item} isActive={isActive(item.href)} />
                         ))}
-                        <button
-                            type="button"
-                            onClick={() => setSearchOpen(true)}
-                            className="flex flex-1 flex-col items-center justify-center min-h-[52px] min-w-[44px] px-1 text-[10px] font-medium text-text-secondary"
-                            aria-label="Search"
-                        >
-                            <Search className="h-5 w-5 mb-0.5" />
-                            Search
-                        </button>
                     </div>
                     <div className="absolute left-1/2 -translate-x-1/2 -top-5">
                         <button
                             type="button"
-                            onClick={() => setCreateOpen(true)}
+                            onClick={() => setMyStuffOpen(true)}
                             className={cn(
                                 'flex h-14 w-14 items-center justify-center rounded-full',
                                 'bg-talir-navy text-accent shadow-lg shadow-talir-navy/40',
                                 'border-4 border-surface ring-2 ring-accent/30 transition-transform active:scale-95'
                             )}
-                            aria-label="Create watchlist or portfolio"
+                            aria-label="My stuff — watchlists, portfolios, and alerts"
                         >
-                            <UserPlus className="h-6 w-6" strokeWidth={2.25} />
+                            <Bookmark className="h-6 w-6" strokeWidth={2.25} />
                         </button>
                     </div>
                 </div>
             </nav>
 
-            <MobileSearchSheet open={searchOpen} onClose={() => setSearchOpen(false)} />
-            <CreateMenu open={createOpen} onClose={() => setCreateOpen(false)} variant="sheet" />
+            <MyStuffSheet open={myStuffOpen} onClose={() => setMyStuffOpen(false)} />
         </>
     )
 }

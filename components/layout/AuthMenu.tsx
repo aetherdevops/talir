@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { LogOut, User } from 'lucide-react'
+import { LogOut, User, Settings } from 'lucide-react'
 import { useAuth } from '@/components/auth/AuthProvider'
 import { Button } from '@/components/ui/Button'
 
@@ -18,7 +18,16 @@ export function AuthMenu() {
 
     if (!user) {
         return (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
+                <Link href="/settings" aria-label="Settings">
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        className="min-h-[44px] min-w-[44px] text-talir-gold-soft hover:text-talir-ivory hover:bg-white/10"
+                    >
+                        <Settings className="h-5 w-5" />
+                    </Button>
+                </Link>
                 <Link href="/login">
                     <Button variant="ghost" size="sm">Sign in</Button>
                 </Link>
@@ -50,6 +59,14 @@ export function AuthMenu() {
                             <p className="text-xs text-text-tertiary uppercase tracking-wide">Signed in as</p>
                             <p className="text-sm font-medium text-text-primary truncate">{user.email}</p>
                         </div>
+                        <Link
+                            href="/settings"
+                            className="flex items-center gap-2 px-4 py-2 text-sm text-text-primary hover:bg-surface-secondary"
+                            onClick={() => setOpen(false)}
+                        >
+                            <Settings className="h-4 w-4" />
+                            Settings
+                        </Link>
                         <Link
                             href="/account"
                             className="flex items-center gap-2 px-4 py-2 text-sm text-text-primary hover:bg-surface-secondary"

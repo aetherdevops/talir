@@ -217,9 +217,14 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                             {p.name}
                         </button>
                     ))}
-                    <Button variant="ghost" size="sm" onClick={() => { if (requireAuth()) setIsCreateModalOpen(true) }} className="text-brand-500 hover:text-brand-600 font-medium whitespace-nowrap">
-                        + New portfolio
-                    </Button>
+                    <button
+                        type="button"
+                        onClick={() => { if (requireAuth()) setIsCreateModalOpen(true) }}
+                        className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface-secondary/50 text-text-secondary hover:text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors shrink-0"
+                        aria-label="Create new portfolio"
+                    >
+                        <Plus className="h-4 w-4" />
+                    </button>
                 </div>
 
                 <div className="flex justify-between items-start">

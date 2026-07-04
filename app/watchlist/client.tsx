@@ -83,9 +83,6 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <h1 className="text-3xl font-normal tracking-tight text-text-primary">Your Lists</h1>
-                <Button onClick={() => { if (requireAuth()) setIsCreateModalOpen(true) }} variant="secondary" size="sm">
-                    <Plus className="w-4 h-4 mr-2" /> New list
-                </Button>
             </div>
 
             {/* Usage of Tabs */}
@@ -97,13 +94,21 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                         className={cn(
                             "px-4 py-2 rounded-t-lg text-sm font-bold whitespace-nowrap transition-colors border-b-2",
                             activeListId === list.id
-                                ? "text-brand-600 border-brand-600 bg-surface-secondary/30"
+                                ? "text-accent border-accent bg-surface-secondary/30"
                                 : "text-text-tertiary border-transparent hover:text-text-secondary hover:bg-surface-secondary/50"
                         )}
                     >
                         {list.name} <span className="ml-1 text-xs opacity-60">({list.items.length})</span>
                     </button>
                 ))}
+                <button
+                    type="button"
+                    onClick={() => { if (requireAuth()) setIsCreateModalOpen(true) }}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface-secondary/50 text-text-secondary hover:text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors"
+                    aria-label="Create new watchlist"
+                >
+                    <Plus className="h-4 w-4" />
+                </button>
             </div>
 
             {/* Toolbar */}

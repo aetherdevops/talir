@@ -3,23 +3,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { Eye, Briefcase, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { useCreateFlows } from '@/components/layout/useCreateFlows'
+import { useCreateFlows, CREATE_ACTIONS } from '@/components/layout/useCreateFlows'
 import { Modal } from '@/components/ui/Modal'
-
-export const CREATE_ACTIONS = [
-    {
-        id: 'watchlist' as const,
-        icon: Eye,
-        title: 'Create Watchlist',
-        description: 'Track instruments you care about',
-    },
-    {
-        id: 'portfolio' as const,
-        icon: Briefcase,
-        title: 'Create Portfolio',
-        description: 'Track investments & performance',
-    },
-]
 
 interface CreateMenuProps {
     open: boolean

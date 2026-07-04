@@ -55,7 +55,7 @@ export function Header({ className, instruments = [] }: { className?: string; in
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="md:hidden min-h-[44px] min-w-[44px]"
+                        className="md:hidden min-h-[44px] min-w-[44px] text-accent hover:text-talir-gold-bright hover:bg-white/10"
                         onClick={() => setSearchOpen(true)}
                         aria-label="Search"
                     >

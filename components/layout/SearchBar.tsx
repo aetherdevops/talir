@@ -9,7 +9,7 @@ import { PriceChangeBadge } from '@/components/ui/Badge'
 import { StockSummary } from '@/lib/types'
 import { useSearchIndex } from '@/components/providers/InstrumentsProvider'
 
-export function SearchBar({ className, items = [] }: { className?: string, items?: StockSummary[] }) {
+export function SearchBar({ className, items = [], autoFocus = false }: { className?: string, items?: StockSummary[], autoFocus?: boolean }) {
     const router = useRouter()
     const containerRef = useRef<HTMLDivElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)
@@ -32,6 +32,13 @@ export function SearchBar({ className, items = [] }: { className?: string, items
         setIsOpen(true)
         ensureLoaded()
     }
+
+    useEffect(() => {
+        if (autoFocus) {
+            openSearch()
+            inputRef.current?.focus()
+        }
+    }, [autoFocus])
 
     // Close on click outside
     useEffect(() => {

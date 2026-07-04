@@ -2,11 +2,27 @@
 
 import { useState, useCallback, ReactNode } from 'react'
 import { useRouter } from 'next/navigation'
+import { Eye, Briefcase } from 'lucide-react'
 import { useRequireAuth } from '@/lib/auth/use-require-auth'
 import { useWatchlistStore } from '@/lib/stores/watchlist'
 import { usePortfolioStore } from '@/lib/stores/portfolio'
 import { CreateListModal } from '@/components/watchlist/CreateListModal'
 import { CreatePortfolioModal } from '@/components/portfolio/CreatePortfolioModal'
+
+export const CREATE_ACTIONS = [
+    {
+        id: 'watchlist' as const,
+        icon: Eye,
+        title: 'Create Watchlist',
+        description: 'Track instruments you care about',
+    },
+    {
+        id: 'portfolio' as const,
+        icon: Briefcase,
+        title: 'Create Portfolio',
+        description: 'Track investments & performance',
+    },
+] as const
 
 export function useCreateFlows() {
     const router = useRouter()
