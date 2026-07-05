@@ -4,7 +4,14 @@ import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import type { StockValuationSnapshot } from '@/lib/stock-valuation'
 import { InfoPopover } from '@/components/ui/InfoPopover'
-import { formatDecimal, formatInteger, formatNewsDate } from '@/lib/utils'
+import { formatNewsDate } from '@/lib/utils'
+import {
+    formatEps,
+    formatGrossDps,
+    formatNetProfit,
+    formatPeRatio,
+    formatPercent,
+} from '@/lib/stock-fundamentals-display'
 
 interface StockFundamentalsStatsProps {
     snapshot: StockValuationSnapshot
@@ -33,13 +40,6 @@ function StatRow({
     )
 }
 
-function formatNetProfit(value: number): string {
-    if (value >= 1_000_000) {
-        return `${formatDecimal(value / 1_000_000, 2)}M ден.`
-    }
-    return `${formatInteger(value)} ден.`
-}
-
 export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentalsStatsProps) {
     if (!snapshot.hasAnyFundamentals) return null
 
@@ -66,7 +66,7 @@ export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentals
                     {snapshot.eps !== null ? (
                         <StatRow
                             label="EPS"
-                            value={`${formatDecimal(snapshot.eps, 2)} ден.`}
+                            value={formatEps(snapshot.eps)}
                             info="Basic earnings per share from the latest SECNet audited annual report we parsed for this issuer."
                         />
                     ) : null}
@@ -82,7 +82,7 @@ export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentals
                     {snapshot.peRatio !== null ? (
                         <StatRow
                             label="P/E"
-                            value={`${formatDecimal(snapshot.peRatio, 1)}×`}
+                            value={formatPeRatio(snapshot.peRatio)}
                             info="End-of-day close divided by disclosed EPS for the fiscal year shown. Not a live multiple."
                         />
                     ) : null}
@@ -90,7 +90,7 @@ export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentals
                     {snapshot.earningsYieldPct !== null ? (
                         <StatRow
                             label="Earnings yield"
-                            value={`${formatDecimal(snapshot.earningsYieldPct, 2)}%`}
+                            value={formatPercent(snapshot.earningsYieldPct)}
                             info="EPS divided by end-of-day close (inverse of P/E). From SECNet EPS and EOD price only."
                         />
                     ) : null}
@@ -106,9 +106,7 @@ export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentals
                     {snapshot.grossPerShare !== null ? (
                         <StatRow
                             label="Gross DPS"
-                            value={`${formatDecimal(snapshot.grossPerShare, 2)} ден.${
-                                snapshot.dividendProfitYear ? ` (FY ${snapshot.dividendProfitYear})` : ''
-                            }`}
+                            value={formatGrossDps(snapshot.grossPerShare, snapshot.dividendProfitYear)}
                             info="Latest fully parsed gross dividend per share from a SECNet dividend calendar."
                         />
                     ) : null}
@@ -116,7 +114,7 @@ export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentals
                     {snapshot.dividendYieldPct !== null ? (
                         <StatRow
                             label="Dividend yield"
-                            value={`${formatDecimal(snapshot.dividendYieldPct, 2)}%`}
+                            value={formatPercent(snapshot.dividendYieldPct)}
                             info="Last disclosed gross DPS divided by end-of-day close. Trailing, not forward yield."
                         />
                     ) : null}
@@ -124,7 +122,7 @@ export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentals
                     {snapshot.payoutRatioPct !== null ? (
                         <StatRow
                             label="Payout ratio"
-                            value={`${formatDecimal(snapshot.payoutRatioPct, 1)}%`}
+                            value={formatPercent(snapshot.payoutRatioPct, 1)}
                             info="Gross DPS divided by EPS for the matching profit year. Both from SECNet filings."
                         />
                     ) : null}

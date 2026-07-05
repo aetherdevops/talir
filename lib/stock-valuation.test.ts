@@ -142,6 +142,26 @@ describe('buildStockValuationSnapshot', () => {
         assert.equal(snapshot.hasAnyFundamentals, true)
     })
 
+    it('uses partial dividend for gross DPS and yield', () => {
+        const snapshot = buildStockValuationSnapshot({
+            price: 10000,
+            fundamentals: [],
+            dividends: [
+                dividend({ parseStatus: 'partial', grossPerShare: 49, exDate: '2026-05-28' }),
+                dividend({
+                    filedAt: '2025-04-01',
+                    parseStatus: 'parsed',
+                    grossPerShare: 40,
+                    exDate: '2025-05-01',
+                }),
+            ],
+        })
+
+        assert.equal(snapshot.grossPerShare, 49)
+        assert.equal(snapshot.dividendParseStatus, 'partial')
+        assert.ok(Math.abs(snapshot.dividendYieldPct! - 0.49) < 0.001)
+    })
+
     it('returns empty snapshot when no data', () => {
         const snapshot = buildStockValuationSnapshot({
             price: 1000,

@@ -37,6 +37,10 @@ export function parseReportTitle(rawTitle: string, stockCode: string): string {
         return `${code} files dividend disclosure`
     }
 
+    if (lower.includes('distribution of profit')) {
+        return `${code} files distribution of profit disclosure`
+    }
+
     if (lower.includes('profit') || lower.includes('loss') || lower.includes('p&l')) {
         const period = body.match(/(\d{2}\.\d{2}\.\s*[-–]\s*\d{2}\.\d{2}\.?)/)?.[1]
         const normalizedPeriod = period ? normalizePeriod(period) : null

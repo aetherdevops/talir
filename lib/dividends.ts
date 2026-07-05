@@ -1,5 +1,10 @@
 import { formatNewsDate } from './utils'
 
+export const DIVIDEND_PARSER_VERSION = '1.1.0'
+
+/** Max plausible gross DPS for MSE ordinary shares (den.). Totals often exceed this. */
+const MAX_PLAUSIBLE_GROSS_PER_SHARE = 50_000
+
 export type DividendParseStatus = 'parsed' | 'partial' | 'link_only'
 
 export interface DividendCalendarEntry {
@@ -84,6 +89,18 @@ export function parseAmountMk(value: string): number | null {
     return Number.isFinite(num) && num > 0 ? num : null
 }
 
+function looksLikeTotalDividendAmount(text: string, amount: number): boolean {
+    if (amount <= MAX_PLAUSIBLE_GROSS_PER_SHARE) return false
+    return /вкупен|total|износ од \d[\d.,\s]{5,}/i.test(text)
+}
+
+function sanitizeGrossPerShare(text: string, value: number | null): number | null {
+    if (value === null) return null
+    if (value < 1 || value > 1_000_000) return null
+    if (looksLikeTotalDividendAmount(text, value)) return null
+    return value
+}
+
 function firstMatch(text: string, patterns: RegExp[]): RegExpMatchArray | null {
     for (const pattern of patterns) {
         const m = text.match(pattern)
@@ -164,18 +181,29 @@ export function parseDividendCalendarText(
     const normalized = text.replace(/\s+/g, ' ').trim()
 
     let grossPerShare: number | null = null
-    const grossMatch = firstMatch(normalized, [
+    const grossPatterns = [
         /gross dividend per share is\s*(\d[\d\s.,]*)\s*(?:mkd|den|ден)?/i,
         /gross dividend per share[^0-9]{0,20}(\d[\d\s.,]*)\s*(?:mkd|den|ден|mkd)?/i,
         /gross amount of MKD\s*(\d[\d\s.,]*)\s*per/i,
         /gross amount of mkd\s*(\d[\d\s.,]*)\s*per\s*1?\s*ordinary share/i,
         /gross amount of\s*(\d[\d\s.,]*)\s*(?:mkd|den|ден)\s*per/i,
         /(\d[\d\s.,]*)\s*(?:mkd|den|ден|mkd)\s*per\s*(?:1\s*)?ordinary share/i,
+        /бруто-дивиденда по акција[^0-9]{0,40}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
+        /висината на бруто-дивиденда по акција[^0-9]{0,60}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
+        /(\d[\d\s.,]*)\s*(?:ден|mkd|денари)\s*бруто/i,
         /бруто[^0-9]{0,30}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
         /(\d[\d\s.,]*)\s*денари?\s*по\s*акци/i,
         /износ[^0-9]{0,40}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
-    ])
-    if (grossMatch) grossPerShare = parseAmountMk(grossMatch[1])
+    ]
+    for (const pattern of grossPatterns) {
+        const grossMatch = normalized.match(pattern)
+        if (!grossMatch) continue
+        const candidate = sanitizeGrossPerShare(normalized, parseAmountMk(grossMatch[1]))
+        if (candidate !== null) {
+            grossPerShare = candidate
+            break
+        }
+    }
 
     let cumDate: string | null = null
     const cumMatch = firstMatch(normalized, [
@@ -183,6 +211,8 @@ export function parseDividendCalendarText(
         /last date for trading with dividend right.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /last trading day cum[- ]dividend.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /cum[- ]dividend.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /последен датум на тргување со право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /последен ден на тргување со право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /последен ден.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /со право на дивиденда.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
     ])
@@ -194,7 +224,8 @@ export function parseDividendCalendarText(
         /first date of trading without right for dividends is\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /first trading day ex[- ]dividend[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /ex[- ]dividend[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
-        /без право на дивиденда[^0-9]{0,20}(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /прв датум на тргување без право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /без право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /прв ден[^0-9]{0,40}(\d{1,2}\.\d{1,2}\.\d{4})/i,
     ])
     if (exMatch) exDate = parseEuDateToIso(exMatch[1])
@@ -206,6 +237,8 @@ export function parseDividendCalendarText(
         /record date[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /datum na evidencija[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /ден на евиденција[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /датум на стекнување на право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /датум на евиденција[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /popis na akcioneri[^0-9]{0,40}(\d{1,2}\.\d{1,2}\.\d{4})/i,
     ])
     if (recordMatch) recordDate = parseEuDateToIso(recordMatch[1])
@@ -216,7 +249,9 @@ export function parseDividendCalendarText(
         /dividend payout will start at\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /commencement date for dividend payout.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /payment period[^0-9]{0,20}(\d{1,2}\.\d{1,2}\.\d{4})\s*[-–]\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /исплата на дивидендата[^0-9]{0,40}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /исплата[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /ќе започне од\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
     ])
     if (payStartMatch) {
         paymentStart = parseEuDateToIso(payStartMatch[1])
@@ -387,6 +422,28 @@ export function latestParsedDividend(entries: DividendCalendarEntry[]): Dividend
         entries
             .filter((e) => e.parseStatus === 'parsed' && e.grossPerShare !== null)
             .sort((a, b) => (b.exDate ?? b.filedAt).localeCompare(a.exDate ?? a.filedAt))[0] ?? null
+    )
+}
+
+/** Newest calendar with a disclosed gross amount — parsed or partial (for overview stats). */
+export function latestDisclosedDividend(entries: DividendCalendarEntry[]): DividendCalendarEntry | null {
+    const rank: Record<DividendCalendarEntry['parseStatus'], number> = {
+        parsed: 2,
+        partial: 1,
+        link_only: 0,
+    }
+    return (
+        entries
+            .filter(
+                (e) =>
+                    (e.parseStatus === 'parsed' || e.parseStatus === 'partial') &&
+                    e.grossPerShare !== null
+            )
+            .sort((a, b) => {
+                const dateCmp = (b.exDate ?? b.filedAt).localeCompare(a.exDate ?? a.filedAt)
+                if (dateCmp !== 0) return dateCmp
+                return rank[b.parseStatus] - rank[a.parseStatus]
+            })[0] ?? null
     )
 }
 

@@ -27,7 +27,7 @@ export interface StockData {
     company_code: string
     company_name: string // Latin
     company_name_original?: string // Cyrillic (stored but usually hidden)
-    sector?: string
+    sector?: string // MSE listing sector from issuers scrape
     history: DailyPrice[]
     first_trade_date: string
     issuer_data?: IssuerData

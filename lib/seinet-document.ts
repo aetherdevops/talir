@@ -3,7 +3,11 @@
  */
 import * as cheerio from 'cheerio'
 import { PDFParse } from 'pdf-parse'
-import { loadOcrCache, ocrPdfBuffer, type OcrCache } from './dividend-ocr'
+import {
+    loadCachedText,
+    ocrPdfBuffer,
+    sha256Buffer,
+} from './document-ocr'
 
 const SEINET_API = 'https://api.seinet.com.mk/public/documents'
 export const DIVIDEND_CALENDAR_LAYOUT_CODE = 'DOC_10688'
@@ -53,6 +57,8 @@ export type DividendTextSource = 'pdf_text' | 'html' | 'ocr'
 export interface DividendDocumentText {
     text: string
     source: DividendTextSource
+    attachmentId?: number
+    textSha256?: string
 }
 
 interface RawSeinetDocument {
@@ -300,13 +306,16 @@ function isPdfAttachment(att: SeinetAttachment): boolean {
  */
 export async function fetchDividendDocumentText(
     documentUrl: string,
-    options?: { allowOcr?: boolean; ocrCache?: OcrCache; persistOcrCache?: boolean }
+    options?: {
+        allowOcr?: boolean
+        documentId?: number
+        maxOcrPages?: number
+    }
 ): Promise<DividendDocumentText | null> {
-    const documentId = parseDocumentIdFromUrl(documentUrl)
+    const documentId = options?.documentId ?? parseDocumentIdFromUrl(documentUrl)
     if (!documentId) return null
 
     const allowOcr = options?.allowOcr ?? process.env.TALIR_OCR_DIVIDENDS === '1'
-    const ocrCache = options?.ocrCache ?? (allowOcr ? loadOcrCache() : {})
 
     const doc = await resolveSourceDocument(documentId)
     if (!doc) return null
@@ -318,21 +327,54 @@ export async function fetchDividendDocumentText(
         const buffer = await downloadAttachmentBuffer(att.attachmentId)
         if (!buffer) continue
 
+        const hash = sha256Buffer(buffer)
+
         if (isPdfAttachment(att)) {
+            const cached = await loadCachedText(att.attachmentId, hash)
+            if (cached) {
+                return {
+                    text: cached,
+                    source: 'ocr',
+                    attachmentId: att.attachmentId,
+                    textSha256: hash,
+                }
+            }
+
             const pdfText = await extractPdfText(buffer)
-            if (pdfText) return { text: pdfText, source: 'pdf_text' }
+            if (pdfText) {
+                return {
+                    text: pdfText,
+                    source: 'pdf_text',
+                    attachmentId: att.attachmentId,
+                    textSha256: hash,
+                }
+            }
 
             if (allowOcr) {
-                const ocrText = await ocrPdfBuffer(buffer, att.attachmentId, ocrCache)
+                const ocrText = await ocrPdfBuffer(buffer, att.attachmentId, {
+                    maxPages: options?.maxOcrPages,
+                })
                 if (ocrText) {
-                    return { text: ocrText, source: 'ocr' }
+                    return {
+                        text: ocrText,
+                        source: 'ocr',
+                        attachmentId: att.attachmentId,
+                        textSha256: hash,
+                    }
                 }
             }
             continue
         }
 
         const htmlText = htmlToPlainText(buffer.toString('utf8'))
-        if (htmlText.length > 40) return { text: htmlText, source: 'html' }
+        if (htmlText.length > 40) {
+            return {
+                text: htmlText,
+                source: 'html',
+                attachmentId: att.attachmentId,
+                textSha256: hash,
+            }
+        }
     }
 
     if (doc.contentHtml) {
@@ -342,4 +384,11 @@ export async function fetchDividendDocumentText(
     }
 
     return null
+}
+
+export async function fetchSeinetDocumentAttachmentIds(documentUrl: string): Promise<number[]> {
+    const documentId = parseDocumentIdFromUrl(documentUrl)
+    if (!documentId) return []
+    const doc = await resolveSourceDocument(documentId)
+    return doc?.attachments.map((a) => a.attachmentId) ?? []
 }

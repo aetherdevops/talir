@@ -9,6 +9,7 @@ import {
     earliestCalendarYear,
     formatDividendRowDetail,
     inferPayoutFrequency,
+    latestDisclosedDividend,
     latestParsedDividend,
     nextUpcomingExDividend,
     resolveProfitYear,
@@ -68,12 +69,13 @@ export function StockDividendsSidebarCard({ dividends }: StockDividendsSidebarCa
     )
     const showChart = parsedForChart.length >= 2
     const upcoming = nextUpcomingExDividend(sorted)
+    const latestDisclosed = latestDisclosedDividend(sorted)
     const latestParsed = latestParsedDividend(sorted)
     const sinceYear = earliestCalendarYear(sorted)
     const calendarYears = countCalendarYears(sorted)
     const calendars5y = countCalendarsInLastYears(sorted, 5)
     const payoutFrequency = inferPayoutFrequency()
-    const latestFy = latestParsed ? resolveProfitYear(latestParsed) : null
+    const latestFy = latestDisclosed ? resolveProfitYear(latestDisclosed) : null
 
     return (
         <Card>
@@ -111,21 +113,30 @@ export function StockDividendsSidebarCard({ dividends }: StockDividendsSidebarCa
 
                 {showChart ? (
                     <DividendHistoryChart entries={sorted} />
+                ) : latestDisclosed ? (
+                    <p className="text-[11px] font-data text-text-tertiary leading-snug">
+                        {latestDisclosed.parseStatus === 'partial'
+                            ? 'Partial parse — chart needs two fully parsed calendars with gross amounts.'
+                            : 'Chart needs two fully parsed calendars with gross amounts.'}
+                    </p>
                 ) : (
                     <LinkOnlyTimeline entries={sorted} />
                 )}
 
                 <dl className="grid grid-cols-2 gap-3">
-                    {latestParsed ? (
+                    {latestDisclosed ? (
                         <div className="space-y-0.5 col-span-2">
                             <dt className="flex items-center gap-1 text-[11px] text-text-secondary">
                                 Last disclosed gross
                                 <InfoPopover label="last disclosed gross">
-                                    Gross dividend per share from the most recent fully parsed SECNet calendar.
+                                    Gross dividend per share from the most recent SECNet calendar with a parsed amount.
+                                    {latestDisclosed.parseStatus === 'partial'
+                                        ? ' Partial parse — verify on SECNet.'
+                                        : ''}
                                 </InfoPopover>
                             </dt>
                             <dd className="font-data text-sm font-semibold text-text-primary tabular-nums">
-                                {latestParsed.grossPerShare!.toLocaleString('en-US', {
+                                {latestDisclosed.grossPerShare!.toLocaleString('en-US', {
                                     minimumFractionDigits: 0,
                                     maximumFractionDigits: 2,
                                 })}{' '}
@@ -133,6 +144,11 @@ export function StockDividendsSidebarCard({ dividends }: StockDividendsSidebarCa
                                 {latestFy ? (
                                     <span className="ml-1 text-xs font-normal text-text-tertiary">
                                         for FY {latestFy}
+                                    </span>
+                                ) : null}
+                                {latestDisclosed.parseStatus === 'partial' ? (
+                                    <span className="ml-1 text-xs font-normal text-text-tertiary">
+                                        · partial parse
                                     </span>
                                 ) : null}
                             </dd>
@@ -233,6 +249,10 @@ export function StockDividendsSidebarCard({ dividends }: StockDividendsSidebarCa
                 {latestParsed ? (
                     <p className="text-[11px] font-data text-text-tertiary truncate">
                         {formatDividendRowDetail(latestParsed)}
+                    </p>
+                ) : latestDisclosed ? (
+                    <p className="text-[11px] font-data text-text-tertiary truncate">
+                        {formatDividendRowDetail(latestDisclosed)}
                     </p>
                 ) : null}
 

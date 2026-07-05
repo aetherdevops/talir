@@ -1,19 +1,35 @@
+import { Suspense } from 'react'
 import { notFound } from 'next/navigation'
-import { getStock, getChartData, getCompanyFilings, getAllStocks, getResultsForIssuer, getExpectedForIssuer, getDividendsForIssuer, getFundamentalsForIssuer } from '@/lib/data'
+import {
+    getStock,
+    getChartData,
+    getCompanyFilings,
+    getResultsForIssuer,
+    getExpectedForIssuer,
+    getDividendsForIssuer,
+    getFundamentalsForIssuer,
+    getRelatedStocksBySector,
+} from '@/lib/data'
 import { StockClient } from './StockClient'
 
 export const revalidate = 86400
 
 export async function generateStaticParams() {
+    const { getAllStocks } = await import('@/lib/data')
     const stocks = await getAllStocks()
     return stocks.map((stock) => ({ code: stock.code }))
+}
+
+function StockPageFallback() {
+    return (
+        <div className="w-full max-w-[1200px] mx-auto min-h-[400px] animate-pulse rounded-xl bg-surface border border-border" />
+    )
 }
 
 export default async function StockPage({ params }: { params: Promise<{ code: string }> }) {
     const resolvedParams = await params
     const code = resolvedParams.code
 
-    // Check if code is valid/exists
     if (!code) {
         notFound()
     }
@@ -29,29 +45,30 @@ export default async function StockPage({ params }: { params: Promise<{ code: st
     const issuerExpected = getExpectedForIssuer(code)
     const issuerDividends = getDividendsForIssuer(code)
     const issuerFundamentals = getFundamentalsForIssuer(code)
+    const relatedStocks = await getRelatedStocksBySector(code, stock.sector, 4)
 
     const { history } = stock
-    // JSON history is Oldest -> Newest (ASC), so latest is the last item
     const latest = history[history.length - 1] || {}
-    const chartData = getChartData(history, 2000) // Ensure we have ample data for MAX/5Y
-
-    // Current Price for client
+    const chartData = getChartData(history, 2000)
     const currentPrice = latest.last_transaction_price || 0
     const asOfDate = latest.date || new Date().toISOString().split('T')[0]
 
     return (
-        <StockClient
-            stock={stock}
-            history={history}
-            chartData={chartData}
-            currentPrice={currentPrice}
-            filingsDated={dated}
-            filingsUndated={undated}
-            issuerResults={issuerResults}
-            issuerExpected={issuerExpected}
-            issuerDividends={issuerDividends}
-            issuerFundamentals={issuerFundamentals}
-            asOfDate={asOfDate}
-        />
+        <Suspense fallback={<StockPageFallback />}>
+            <StockClient
+                stock={stock}
+                history={history}
+                chartData={chartData}
+                currentPrice={currentPrice}
+                filingsDated={dated}
+                filingsUndated={undated}
+                issuerResults={issuerResults}
+                issuerExpected={issuerExpected}
+                issuerDividends={issuerDividends}
+                issuerFundamentals={issuerFundamentals}
+                relatedStocks={relatedStocks}
+                asOfDate={asOfDate}
+            />
+        </Suspense>
     )
 }

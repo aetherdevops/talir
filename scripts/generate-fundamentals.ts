@@ -12,11 +12,16 @@ import path from 'path'
 import { parseReportDate } from '../lib/news-dates'
 import {
     buildFundamentalsFile,
+    FUNDAMENTAL_PARSER_VERSION,
     inferFiscalYearFromTitle,
     isAnnualFundamentalTitle,
     parseFundamentalText,
     type FundamentalEntry,
 } from '../lib/fundamentals'
+import {
+    isDocumentStoreEnabled,
+    loadFundamentalExtractionsFromStore,
+} from '../lib/document-store'
 import {
     fetchDividendDocumentText,
     parseDocumentIdFromUrl,
@@ -170,6 +175,25 @@ async function backfillFromLayoutChain(
     return mergeEntries(seeds, chainEntries)
 }
 
+async function mergeFromDocumentStore(entries: FundamentalEntry[]): Promise<number> {
+    if (!isDocumentStoreEnabled()) return 0
+    const stored = await loadFundamentalExtractionsFromStore(FUNDAMENTAL_PARSER_VERSION)
+    let merged = 0
+
+    for (const entry of entries) {
+        const docId = parseDocumentIdFromUrl(entry.url)
+        if (!docId) continue
+        const row = stored.get(docId)
+        if (!row) continue
+        entry.eps = (row.fields.eps as number | null) ?? null
+        entry.netProfit = (row.fields.netProfit as number | null) ?? null
+        entry.parseStatus = row.parse_status as FundamentalEntry['parseStatus']
+        merged++
+    }
+
+    return merged
+}
+
 async function enrichWithDocumentParse(entries: FundamentalEntry[]): Promise<void> {
     if (process.env.TALIR_PARSE_FUNDAMENTALS !== '1') return
 
@@ -209,6 +233,13 @@ async function enrichWithDocumentParse(entries: FundamentalEntry[]): Promise<voi
     let attempted = 0
 
     for (const entry of toParse) {
+        if (entry.parseStatus !== 'link_only') {
+            if (entry.parseStatus === 'parsed') parsed++
+            else if (entry.parseStatus === 'partial') partial++
+            reused++
+            continue
+        }
+
         const cached = !forceReparse ? existingByUrl.get(entry.url.toLowerCase()) : undefined
         if (cached) {
             Object.assign(entry, cached)
@@ -224,7 +255,10 @@ async function enrichWithDocumentParse(entries: FundamentalEntry[]): Promise<voi
             console.log(`Fundamentals parse: ${attempted} new attachments fetched…`)
         }
 
-        const result = await fetchDividendDocumentText(entry.url)
+        const result = await fetchDividendDocumentText(entry.url, {
+            allowOcr: process.env.TALIR_OCR_FUNDAMENTALS === '1',
+            documentId: parseDocumentIdFromUrl(entry.url) ?? undefined,
+        })
         if (!result) {
             linkOnly++
             continue
@@ -265,6 +299,11 @@ async function main(): Promise<void> {
         console.log(
             `Fundamentals filter: kept ${entries.length} filings for ${knownCodes.size} scraped issuers (dropped ${beforeFilter - entries.length} delisted/other)`
         )
+    }
+
+    const mergedFromStore = await mergeFromDocumentStore(entries)
+    if (mergedFromStore > 0) {
+        console.log(`Fundamentals store: merged ${mergedFromStore} extractions from Supabase`)
     }
 
     await enrichWithDocumentParse(entries)

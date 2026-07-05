@@ -40,11 +40,48 @@ jobs:
     - name: Generate results calendar
       run: npm run generate:results-calendar
 
+    - name: Scrape MBI10 constituents
+      run: npm run script:mbi10
+
+    - name: Ingest dividend documents (MBI10, OCR + Supabase)
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        TALIR_DOCUMENT_STORE: supabase
+        TALIR_SCOPE: ALL
+        TALIR_OCR_DIVIDENDS: '1'
+        TALIR_PARSE_FORCE: '0'
+      run: npm run ingest:dividends
+      continue-on-error: true
+
+    - name: Ingest fundamental documents (MBI10, OCR + Supabase)
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        TALIR_DOCUMENT_STORE: supabase
+        TALIR_SCOPE: ALL
+        TALIR_OCR_FUNDAMENTALS: '1'
+        TALIR_PARSE_FORCE: '0'
+      run: npm run ingest:fundamentals
+      continue-on-error: true
+
     - name: Generate fundamentals
-      run: TALIR_PARSE_FUNDAMENTALS=1 npm run generate:fundamentals
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        TALIR_DOCUMENT_STORE: supabase
+        TALIR_PARSE_FUNDAMENTALS: '1'
+        TALIR_OCR_FUNDAMENTALS: '1'
+      run: npm run generate:fundamentals
 
     - name: Generate dividends calendar
-      run: TALIR_PARSE_DIVIDENDS=1 npm run generate:dividends
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        TALIR_DOCUMENT_STORE: supabase
+        TALIR_PARSE_DIVIDENDS: '1'
+        TALIR_OCR_DIVIDENDS: '1'
+      run: npm run generate:dividends
 
     - name: Regenerate derived assets
       run: npm run generate:sparklines && npm run generate:derived && npm run generate:search-index

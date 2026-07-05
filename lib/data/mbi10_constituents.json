@@ -1,0 +1,16 @@
+{
+  "asOfDate": "2026-07-05",
+  "codes": [
+    "ALK",
+    "GRNT",
+    "KMB",
+    "MPT",
+    "REPL",
+    "STB",
+    "TEL",
+    "TNB",
+    "TTK",
+    "UNI"
+  ],
+  "source": "mse-scrape"
+}

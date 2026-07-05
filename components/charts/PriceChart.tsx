@@ -15,6 +15,7 @@ interface PriceChartProps {
     data: ChartData[]
     timeframe?: '1D' | '5D' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '5Y' | 'MAX'
     onTimeframeChange?: (timeframe: '1D' | '5D' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '5Y' | 'MAX') => void
+    prevClose?: number | null
     colors?: {
         upColor?: string
         downColor?: string
@@ -36,7 +37,7 @@ function readCssVar(name: string, fallback: string): string {
     return value || fallback
 }
 
-function PriceChartComponent({ data, timeframe, onTimeframeChange, excludePeriods = [] }: PriceChartProps) {
+function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, excludePeriods = [] }: PriceChartProps) {
     const chartContainerRef = useRef<HTMLDivElement>(null)
     const chartRef = useRef<IChartApi | null>(null)
     const seriesRef = useRef<ISeriesApi<'Area'> | null>(null)
@@ -237,6 +238,12 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, excludePeriod
                     </div>
                 )}
             </div>
+
+            {prevClose != null && prevClose > 0 ? (
+                <p className="text-xs font-data text-text-muted tabular-nums pl-2 md:pl-0">
+                    Prev. close {formatPrice(prevClose)}
+                </p>
+            ) : null}
 
             <div className="flex justify-start gap-1 flex-wrap pl-2 md:pl-0">
                 {(['1D', '5D', '1M', '3M', '6M', 'YTD', '1Y', '5Y', 'MAX'] as const)

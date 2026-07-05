@@ -105,6 +105,23 @@ export async function getAllStocks(): Promise<StockSummary[]> {
     }
 }
 
+/** Same-sector peers ranked by turnover (EOD). */
+export async function getRelatedStocksBySector(
+    code: string,
+    sector: string | undefined,
+    limit = 4
+): Promise<StockSummary[]> {
+    if (!sector) return []
+
+    const [all, issuers] = await Promise.all([getAllStocks(), getIssuers()])
+    const sectorByCode = new Map(issuers.map((i: { code: string; sector?: string }) => [i.code, i.sector]))
+
+    return all
+        .filter((s) => s.code !== code && sectorByCode.get(s.code) === sector)
+        .sort((a, b) => b.turnover - a.turnover)
+        .slice(0, limit)
+}
+
 // Fetch all issuers (cached in memory for the lambda lifetime)
 let issuersCache: any[] | null = null;
 
@@ -150,6 +167,7 @@ export async function getStock(code: string): Promise<StockData | null> {
             company_code: stock.company_code,
             company_name: stock.company_name,
             company_name_original: stock.company_name,
+            sector: issuerDetails?.sector || undefined,
             history: history,
             first_trade_date: history.length > 0 ? history[0].date : '',
             issuer_data: mergedIssuerData

@@ -12,6 +12,8 @@ import {
     findCloseOnOrBefore,
     formatDividendRowDetail,
     isDividendCalendarTitle,
+    latestDisclosedDividend,
+    latestParsedDividend,
     parseAmountMk,
     parseDividendCalendarText,
 } from './dividends.ts'
@@ -82,6 +84,32 @@ describe('parseDividendCalendarText', () => {
         assert.equal(parsed.paymentStart, '2026-05-04')
         assert.equal(parsed.profitYear, 2025)
         assert.equal(parsed.parseStatus, 'parsed')
+    })
+
+    it('parses ALK Cyrillic OCR-style calendar text', () => {
+        const alkOcrSnippet = `
+            дивиденда за 2018 година во висина од 272,00 денари нето, односно 320,00 денари бруто, за една акција.
+            Последен датум на тргување со право на дивиденда за 2018 година е 23.04.2019 година.
+            Прв датум на тргување без право на дивиденда за 2018 година е 24.04.2019 година.
+            Датум на стекнување на право на дивиденда за 2018 година е 25.04.2019 година.
+            Исплата на дивидендата за 2018 година ќе започне од 22.05.2019 година.
+        `
+        const parsed = parseDividendCalendarText(alkOcrSnippet, { fromOcr: true })
+
+        assert.equal(parsed.grossPerShare, 320)
+        assert.equal(parsed.exDate, '2019-04-24')
+        assert.equal(parsed.cumDate, '2019-04-23')
+        assert.equal(parsed.recordDate, '2019-04-25')
+        assert.equal(parsed.paymentStart, '2019-05-22')
+        assert.equal(parsed.profitYear, 2018)
+        assert.equal(parsed.parseStatus, 'partial')
+    })
+
+    it('rejects total dividend amount mistaken for per-share', () => {
+        const parsed = parseDividendCalendarText(
+            'Да се исплати дивидендата во бруто износ од 95.328.240 денари. Висината на бруто-дивиденда по акција ќе изнесува 105,00 денари.'
+        )
+        assert.equal(parsed.grossPerShare, 105)
     })
 
     it('returns partial when only amount is found', () => {
@@ -326,5 +354,72 @@ describe('enrichDividendDerivedMetrics', () => {
         assert.equal(entries[1].trailingYieldAtEx, 5)
         assert.equal(entries[1].yoyGrowthPct, 12.5)
         assert.equal(entries[0].yoyGrowthPct, null)
+    })
+})
+
+describe('latestDisclosedDividend', () => {
+    const base = {
+        stockCode: 'GRNT',
+        stockName: 'Granit AD Skopje',
+        filedAt: '2026-05-18',
+        url: 'https://seinet.com.mk/en/document/77219',
+        cumDate: '2026-05-27',
+        exDate: '2026-05-28',
+        recordDate: null,
+        paymentStart: null,
+        paymentEnd: null,
+        trailingYieldAtEx: null,
+        yoyGrowthPct: null,
+        profitYear: 2025,
+        payoutRatioPct: null,
+        source: 'SECNet' as const,
+    }
+
+    it('prefers newer partial over older parsed', () => {
+        const picked = latestDisclosedDividend([
+            { ...base, grossPerShare: 49, parseStatus: 'partial' },
+            {
+                ...base,
+                filedAt: '2025-05-01',
+                exDate: '2025-05-02',
+                grossPerShare: 40,
+                parseStatus: 'parsed',
+            },
+        ])
+        assert.equal(picked?.grossPerShare, 49)
+        assert.equal(picked?.parseStatus, 'partial')
+    })
+
+    it('ignores link_only entries', () => {
+        const picked = latestDisclosedDividend([
+            { ...base, grossPerShare: null, parseStatus: 'link_only' },
+        ])
+        assert.equal(picked, null)
+    })
+})
+
+describe('latestParsedDividend', () => {
+    it('excludes partial entries', () => {
+        const picked = latestParsedDividend([
+            {
+                stockCode: 'GRNT',
+                stockName: 'Granit',
+                filedAt: '2026-05-18',
+                url: 'https://example.com',
+                grossPerShare: 49,
+                cumDate: null,
+                exDate: '2026-05-28',
+                recordDate: null,
+                paymentStart: null,
+                paymentEnd: null,
+                parseStatus: 'partial',
+                trailingYieldAtEx: null,
+                yoyGrowthPct: null,
+                profitYear: null,
+                payoutRatioPct: null,
+                source: 'SECNet',
+            },
+        ])
+        assert.equal(picked, null)
     })
 })

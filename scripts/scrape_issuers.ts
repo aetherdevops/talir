@@ -3,10 +3,15 @@ import fs from 'fs';
 import path from 'path';
 import * as cheerio from 'cheerio';
 
-const ISSUERS_URL = 'https://www.mse.mk/en/issuers/shares-listing/super-listing'; // Starting point, but we need all listings
 const BASE_URL = 'https://www.mse.mk';
 const DATA_DIR = path.join(process.cwd(), 'lib', 'data');
 const OUTPUT_FILE = path.join(DATA_DIR, 'issuers.json');
+
+interface ReportLink {
+    title: string;
+    url: string;
+    date: string;
+}
 
 interface IssuerDetails {
     code: string;
@@ -16,7 +21,8 @@ interface IssuerDetails {
     city: string;
     phone: string;
     website: string;
-    reportLinks: { title: string; url: string; date: string }[];
+    reportLinks: ReportLink[];
+    disclosureLinks: ReportLink[];
 }
 
 async function fetchHtml(url: string): Promise<string | null> {
@@ -30,52 +36,45 @@ async function fetchHtml(url: string): Promise<string | null> {
     }
 }
 
-// Old scrapeListingPage removed
+function normalizeIsoDate(value: string): string {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
 
+    const us = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    if (us) return formatIso(Number(us[3]), Number(us[1]), Number(us[2]));
 
-async function scrapeIssuerDetails(code: string, details: IssuerDetails) {
-    const url = `${BASE_URL}/en/symbol/${code}`;
-    console.log(`Scraping details for ${code} (${url})...`);
-    const html = await fetchHtml(url);
-    if (!html) return;
+    const eu = value.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+    if (eu) return formatIso(Number(eu[3]), Number(eu[2]), Number(eu[1]));
 
-    const $ = cheerio.load(html);
+    return '';
+}
 
-    const reportLinks: { title: string; url: string; date: string }[] = [];
-    const seenUrls = new Set<string>();
+function formatIso(year: number, month: number, day: number): string {
+    if (month < 1 || month > 12 || day < 1 || day > 31) return '';
+    return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
 
-    function parseReportDate(title: string, explicitDate?: string): string {
-        if (explicitDate?.trim()) {
-            const iso = normalizeIsoDate(explicitDate.trim());
-            if (iso) return iso;
-        }
-
-        const fromTitle = title.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
-        if (fromTitle) {
-            return formatIso(Number(fromTitle[3]), Number(fromTitle[1]), Number(fromTitle[2]));
-        }
-
-        return '';
+function parseReportDate(title: string, explicitDate?: string): string {
+    if (explicitDate?.trim()) {
+        const iso = normalizeIsoDate(explicitDate.trim());
+        if (iso) return iso;
     }
 
-    function normalizeIsoDate(value: string): string {
-        if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
-
-        const us = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-        if (us) return formatIso(Number(us[3]), Number(us[1]), Number(us[2]));
-
-        const eu = value.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
-        if (eu) return formatIso(Number(eu[3]), Number(eu[2]), Number(eu[1]));
-
-        return '';
+    const fromTitle = title.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+    if (fromTitle) {
+        return formatIso(Number(fromTitle[3]), Number(fromTitle[1]), Number(fromTitle[2]));
     }
 
-    function formatIso(year: number, month: number, day: number): string {
-        if (month < 1 || month > 12 || day < 1 || day > 31) return '';
-        return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    }
+    return '';
+}
 
-    $('div#seiNetIssuerFinancialNews a').each((_, el) => {
+function scrapeLinksFromContainer(
+    $: cheerio.CheerioAPI,
+    selector: string,
+    seenUrls: Set<string>
+): ReportLink[] {
+    const links: ReportLink[] = [];
+
+    $(`${selector} a`).each((_, el) => {
         const href = $(el).attr('href');
         const text = $(el).text().trim();
         if (!href || !(href.includes('seinet.com.mk') || href.includes('ViewNews'))) return;
@@ -91,14 +90,33 @@ async function scrapeIssuerDetails(code: string, details: IssuerDetails) {
             ?? rowText.match(/(\d{1,2}\.\d{1,2}\.\d{4})/)?.[1]
             ?? '';
 
-        reportLinks.push({
+        links.push({
             title: text,
             url: absoluteUrl,
             date: parseReportDate(text, siblingDate),
         });
     });
 
-    details.reportLinks = reportLinks;
+    return links;
+}
+
+async function scrapeIssuerDetails(code: string, details: IssuerDetails) {
+    const url = `${BASE_URL}/en/symbol/${code}`;
+    console.log(`Scraping details for ${code} (${url})...`);
+    const html = await fetchHtml(url);
+    if (!html) return;
+
+    const $ = cheerio.load(html);
+    const seenUrls = new Set<string>();
+
+    details.reportLinks = scrapeLinksFromContainer($, 'div#seiNetIssuerFinancialNews', seenUrls);
+    details.disclosureLinks = scrapeLinksFromContainer($, 'div#seiNetIssuerLatestNews', seenUrls);
+}
+
+function isExcludedEquityCode(code: string): boolean {
+    if (code === 'MBI10' || code === 'OMB') return true;
+    if (/^M\d/.test(code) || code.startsWith('RMDEN')) return true;
+    return false;
 }
 
 async function main() {
@@ -108,41 +126,47 @@ async function main() {
 
     const issuers = new Map<string, IssuerDetails>();
 
-    // 0. Load Market Summary to map Name -> Code
     const summaryFile = path.join(DATA_DIR, 'market_summary.json');
-    const summaryData = JSON.parse(fs.readFileSync(summaryFile, 'utf8'));
+    const summaryData = JSON.parse(fs.readFileSync(summaryFile, 'utf8')) as Array<{ code: string; name: string }>;
     const nameToCode = new Map<string, string>();
 
-    summaryData.forEach((item: any) => {
-        if (item.name && item.code) {
-            nameToCode.set(item.name.toLowerCase().trim(), item.code);
-            // Also add some variations/normalizations if needed
-            nameToCode.set(item.name.toLowerCase().replace(/\s+/g, ' ').trim(), item.code);
+    summaryData.forEach((item) => {
+        if (!item.name || !item.code || isExcludedEquityCode(item.code)) return;
+        nameToCode.set(item.name.toLowerCase().trim(), item.code);
+        nameToCode.set(item.name.toLowerCase().replace(/\s+/g, ' ').trim(), item.code);
+
+        if (!issuers.has(item.code)) {
+            issuers.set(item.code, {
+                code: item.code,
+                name: item.name.trim(),
+                sector: '',
+                address: '',
+                city: '',
+                phone: '',
+                website: '',
+                reportLinks: [],
+                disclosureLinks: [],
+            });
         }
     });
 
-    console.log(`Loaded ${nameToCode.size} name mappings.`);
+    console.log(`Seeded ${issuers.size} issuers from market summary.`);
 
-    // 1. Scrape listing pages
-    // MSE has Super Listing, Exchange Listing, Mandatory Listing
     await scrapeListingPage(`${BASE_URL}/en/issuers/super-listing`, issuers, nameToCode);
     await scrapeListingPage(`${BASE_URL}/en/issuers/exchange-listing`, issuers, nameToCode);
     await scrapeListingPage(`${BASE_URL}/en/issuers/mandatory-listing`, issuers, nameToCode);
 
     console.log(`Found ${issuers.size} issuers. Starting detail scrape...`);
 
-    // 2. Scrape details for each issuer (concurrency constrained)
     const codes = Array.from(issuers.keys());
     const CHUNK_SIZE = 5;
 
     for (let i = 0; i < codes.length; i += CHUNK_SIZE) {
         const chunk = codes.slice(i, i + CHUNK_SIZE);
         await Promise.all(chunk.map(code => scrapeIssuerDetails(code, issuers.get(code)!)));
-        // polite delay
         await new Promise(r => setTimeout(r, 500));
     }
 
-    // 3. Save
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(Array.from(issuers.values()), null, 2));
     console.log(`Saved issuers data to ${OUTPUT_FILE}`);
 }
@@ -153,27 +177,21 @@ async function scrapeListingPage(url: string, issuers: Map<string, IssuerDetails
     if (!html) return;
 
     const $ = cheerio.load(html);
-    // Explicitly target tables
     const rows = $('table.table tbody tr');
 
     for (const row of rows) {
         const cells = $(row).find('td');
         if (cells.length < 7) continue;
 
-        // Name is in 1
         const nameLink = $(cells[1]).find('a');
         const nameText = nameLink.text().trim();
 
         let code = nameToCode.get(nameText.toLowerCase());
-
         if (!code) {
-            // Try normalized space match
             code = nameToCode.get(nameText.toLowerCase().replace(/\s+/g, ' '));
         }
 
         if (!code) {
-            // Fallback: Check if the link itself contains the code (unlikely based on analysis)
-            // Or skip
             console.warn(`No code found for company: "${nameText}"`);
             continue;
         }
@@ -184,15 +202,17 @@ async function scrapeListingPage(url: string, issuers: Map<string, IssuerDetails
         const phone = $(cells[5]).text().trim();
         const siteLink = $(cells[6]).find('a').attr('href') || '';
 
+        const existing = issuers.get(code);
         issuers.set(code, {
             code,
-            name: nameText,
-            sector: business,
-            address,
-            city,
-            phone,
-            website: siteLink,
-            reportLinks: []
+            name: nameText || existing?.name || code,
+            sector: business || existing?.sector || '',
+            address: address || existing?.address || '',
+            city: city || existing?.city || '',
+            phone: phone || existing?.phone || '',
+            website: siteLink || existing?.website || '',
+            reportLinks: existing?.reportLinks ?? [],
+            disclosureLinks: existing?.disclosureLinks ?? [],
         });
     }
 }

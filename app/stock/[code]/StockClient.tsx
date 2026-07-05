@@ -2,29 +2,30 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Star, Bell, Share2, Globe, Phone, ExternalLink } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
-import { Card, CardHeader, CardContent } from '@/components/ui/Card'
-import { PriceChangeBadge } from '@/components/ui/Badge'
+import { ArrowLeft } from 'lucide-react'
 import { ClientPriceChart } from '@/components/charts/ClientPriceChart'
-import { formatPrice, formatInteger, formatDecimal, cn } from '@/lib/utils'
-import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
+import { formatDecimal } from '@/lib/utils'
 import { StockPageActions } from '@/components/stock/StockPageActions'
 import { StickyStockHeader } from '@/components/stock/StickyStockHeader'
 import { usePreferencesStore, type ChartRange } from '@/lib/stores/preferences'
 import { PortfolioHoldingIndicator } from '@/components/portfolio/PortfolioHoldingIndicator'
 import { StockDividendsSidebarCard } from '@/components/dividends/StockDividendsSidebarCard'
-import { StockFundamentalsStats } from '@/components/stock/StockFundamentalsStats'
 import { StockFilingsSection } from '@/components/stock/StockFilingsSection'
-import { ResponsiveText } from '@/components/ui/ResponsiveText'
-import { StockSummary, DailyPrice, NewsItem } from '@/lib/types'
+import { DailyPrice, NewsItem, StockData, StockSummary } from '@/lib/types'
 import type { DividendCalendarEntry } from '@/lib/dividends'
 import type { FundamentalEntry } from '@/lib/fundamentals'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { buildStockValuationSnapshot } from '@/lib/stock-valuation'
-import { UPDATES_SECTION_TITLE } from '@/lib/news-style'
+import { computeAvgVolume, computePrevClose, computeYearRange } from '@/lib/stock-stats'
+import { StockPageHero } from '@/components/stock/StockPageHero'
+import { StockKeyStatisticsGrid } from '@/components/stock/StockKeyStatisticsGrid'
+import { StockPageTabList, useStockPageTab } from '@/components/stock/StockPageTabs'
+import { StockRelatedRow } from '@/components/stock/StockRelatedRow'
+import { StockProfileCard } from '@/components/stock/StockProfileCard'
+import { StockFinancialsTab } from '@/components/stock/StockFinancialsTab'
+import { StockDividendOverviewTeaser } from '@/components/stock/StockDividendOverviewTeaser'
+import { NewsCard } from '@/components/news/NewsCard'
 
-// Replicate the ChartData interface locally or import it
 interface ChartData {
     time: string
     value: number
@@ -32,7 +33,7 @@ interface ChartData {
 }
 
 interface StockClientProps {
-    stock: any
+    stock: StockData
     history: DailyPrice[]
     currentPrice: number
     chartData: ChartData[]
@@ -42,6 +43,7 @@ interface StockClientProps {
     issuerExpected: ExpectedResultsEntry[]
     issuerDividends: DividendCalendarEntry[]
     issuerFundamentals: FundamentalEntry[]
+    relatedStocks: StockSummary[]
     asOfDate: string
 }
 
@@ -62,10 +64,12 @@ export function StockClient({
     issuerExpected,
     issuerDividends,
     issuerFundamentals,
+    relatedStocks,
     asOfDate,
 }: StockClientProps) {
     const defaultChartRange = usePreferencesStore((s) => s.defaultChartRange)
     const [timeframe, setTimeframe] = useState<Timeframe>(() => chartRangeToTimeframe(defaultChartRange))
+    const [activeTab, setActiveTab] = useStockPageTab()
 
     const valuationSnapshot = useMemo(
         () =>
@@ -77,58 +81,50 @@ export function StockClient({
         [currentPrice, issuerFundamentals, issuerDividends]
     )
 
-    // Filter Logic with Index-based fallback for short periods to ensure data display
     const filteredData = useMemo(() => {
         if (!chartData.length) return []
         const now = new Date()
 
         switch (timeframe) {
             case '1D':
-                // Show last 2 points to create a line segment if possible, or just last 1
                 return chartData.slice(-2)
             case '5D':
-                // Last 5 trading days
                 return chartData.slice(-5)
             case '1M':
-                // Approx 22 trading days
                 return chartData.slice(-22)
             case '3M':
-                // Approx 66 trading days
                 return chartData.slice(-66)
             case '6M':
-                // Approx 132 trading days
                 return chartData.slice(-132)
-            case 'YTD':
-                const startOfYear = new Date(now.getFullYear(), 0, 1);
-                return chartData.filter(d => new Date(d.time) >= startOfYear)
-            case '1Y':
-                const oneYearAgo = new Date();
-                oneYearAgo.setFullYear(now.getFullYear() - 1);
-                return chartData.filter(d => new Date(d.time) >= oneYearAgo)
-            case '5Y':
-                const fiveYearsAgo = new Date();
-                fiveYearsAgo.setFullYear(now.getFullYear() - 5);
-                return chartData.filter(d => new Date(d.time) >= fiveYearsAgo)
+            case 'YTD': {
+                const startOfYear = new Date(now.getFullYear(), 0, 1)
+                return chartData.filter((d) => new Date(d.time) >= startOfYear)
+            }
+            case '1Y': {
+                const oneYearAgo = new Date()
+                oneYearAgo.setFullYear(now.getFullYear() - 1)
+                return chartData.filter((d) => new Date(d.time) >= oneYearAgo)
+            }
+            case '5Y': {
+                const fiveYearsAgo = new Date()
+                fiveYearsAgo.setFullYear(now.getFullYear() - 5)
+                return chartData.filter((d) => new Date(d.time) >= fiveYearsAgo)
+            }
             case 'MAX':
-                return chartData;
+                return chartData
             default:
                 return chartData
         }
     }, [chartData, timeframe])
 
-    // Calculate Dynamic Stats
     const displayStats = useMemo(() => {
-        // Default to "Daily" stats if 1D or logic fails
-        const latestHistory = stock.history[stock.history.length - 1] || {}
+        const latestHistory = history[history.length - 1] || {}
         let change = latestHistory.percent_change || 0
         let absChange = (currentPrice * change) / 100
-        let label = "Today"
+        let label = 'Today'
 
         if (timeframe !== '1D' && filteredData.length > 0) {
             const first = filteredData[0]
-            const last = filteredData[filteredData.length - 1] // or currentPrice
-
-            // Should accurate calculation use currentPrice as the "latest"?
             const latestVal = currentPrice
             const startVal = first.value
 
@@ -137,97 +133,80 @@ export function StockClient({
                 change = (absChange / startVal) * 100
             }
 
-            // Set Label based on timeframe
             if (timeframe === 'YTD') label = 'Year-to-Date'
             else if (timeframe === 'MAX') label = 'All Time'
             else label = timeframe
         } else if (timeframe === '1D') {
-            // Keep default daily calc
             const latest = history[history.length - 1] || {}
             change = latest.percent_change || 0
             absChange = (currentPrice * change) / 100
         }
 
         return { change, absChange, label }
-    }, [timeframe, filteredData, currentPrice, stock, history])
+    }, [timeframe, filteredData, currentPrice, history])
 
-    // Derived Stats for Sidebar
     const latest = history[history.length - 1] || {}
-    const low = latest.min_price
-    const high = latest.max_price
-    const volume = latest.quantity
-    const turnover = latest.total_turnover_mkd
-    const avgPrice = latest.average_price
+    const prevClose = computePrevClose(history)
+    const avgVolume = computeAvgVolume(history, 20)
+    const { low: yearLow, high: yearHigh } = useMemo(() => computeYearRange(chartData), [chartData])
 
-    // 52 Week Range calc (could be outside, but fast enough here)
-    const yearLow = useMemo(() => {
-        const yearData = chartData.filter(d => {
-            const cut = new Date(); cut.setFullYear(cut.getFullYear() - 1);
-            return new Date(d.time) >= cut
-        })
-        return yearData.length ? Math.min(...yearData.map(d => d.value)) : 0
-    }, [chartData])
+    const stockSummary: StockSummary = useMemo(
+        () => ({
+            code: stock.company_code,
+            name: stock.company_name,
+            price: currentPrice,
+            change: displayStats.absChange,
+            changePercent: displayStats.change,
+            volume: latest.quantity || 0,
+            turnover: latest.total_turnover_mkd || 0,
+            date: asOfDate,
+            type: 'Stock',
+        }),
+        [stock, currentPrice, displayStats, latest, asOfDate]
+    )
 
-    const yearHigh = useMemo(() => {
-        const yearData = chartData.filter(d => {
-            const cut = new Date(); cut.setFullYear(cut.getFullYear() - 1);
-            return new Date(d.time) >= cut
-        })
-        return yearData.length ? Math.max(...yearData.map(d => d.value)) : 0
-    }, [chartData])
+    const recentFilings = useMemo(
+        () =>
+            [...filingsDated]
+                .sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''))
+                .slice(0, 6),
+        [filingsDated]
+    )
 
+    const eodStats = {
+        dayLow: latest.min_price,
+        dayHigh: latest.max_price,
+        prevClose,
+        volume: latest.quantity ?? null,
+        avgVolume,
+        turnover: latest.total_turnover_mkd ?? null,
+        avgPrice: latest.average_price > 0 ? latest.average_price : null,
+        yearLow: yearLow && yearLow > 0 ? yearLow : null,
+        yearHigh: yearHigh && yearHigh > 0 ? yearHigh : null,
+        firstTradeDate: stock.first_trade_date || null,
+    }
 
     return (
-        <div className="flex flex-col gap-6 animate-fade-in w-full max-w-[1600px] mx-auto min-w-0">
-            {/* Breadcrumb / Back */}
-            <Link href="/" className="flex items-center gap-2 text-sm text-text-tertiary hover:text-text-primary transition-colors w-fit">
+        <div className="flex flex-col gap-6 animate-fade-in w-full max-w-[1200px] mx-auto min-w-0">
+            <Link
+                href="/"
+                className="flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors w-fit"
+            >
                 <ArrowLeft className="h-4 w-4" />
                 <span>Back to Overview</span>
             </Link>
 
-            {/* Header */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-border pb-6">
-                <div className="flex flex-col gap-2">
-                    <div className="flex flex-col gap-1 items-start">
-                        <div className="bg-brand-active/10 text-brand-text px-2 py-0.5 rounded text-xs font-bold tracking-wider uppercase border border-brand-active/20">
-                            {stock.company_code}
-                        </div>
-                        <h1 className="text-2xl md:text-3xl font-bold text-text-primary tracking-tight leading-tight">
-                            {stock.company_name}
-                        </h1>
-                    </div>
-                    <div className="flex items-end gap-4 mt-2">
-                        <span className="text-4xl font-mono font-bold text-text-primary tracking-tighter">
-                            {formatPrice(currentPrice)}
-                        </span>
-                        <div className="mb-1.5 flex items-center gap-2 flex-wrap">
-                            <PriceChangeBadge change={displayStats.change} className="scale-110 origin-left" />
-                            <span className="text-sm text-text-tertiary font-data">
-                                ({displayStats.absChange > 0 ? '+' : ''}{formatDecimal(displayStats.absChange)} ден.) {displayStats.label}
-                            </span>
-                        </div>
-                    </div>
-                    <DataFreshnessLabel asOfDate={asOfDate} />
-                    <span className="text-xs text-text-tertiary">
-                        Last trade: {latest.date} • {stock.sector ? stock.sector : 'Market: MSE'}
-                    </span>
-                </div>
-
-                {/* Actions */}
-                <StockPageActions
-                    stockCode={stock.company_code}
-                    stockData={{
-                        code: stock.company_code,
-                        name: stock.company_name,
-                        price: currentPrice,
-                        change: displayStats.absChange,
-                        changePercent: displayStats.change,
-                        volume: volume || 0,
-                        turnover: turnover || 0,
-                        date: new Date().toISOString()
-                    }}
-                />
-            </div>
+            <StockPageHero
+                code={stock.company_code}
+                name={stock.company_name}
+                sector={stock.sector}
+                price={currentPrice}
+                changePercent={displayStats.change}
+                absChange={displayStats.absChange}
+                changeLabel={displayStats.label}
+                asOfDate={asOfDate}
+                stockData={stockSummary}
+            />
 
             <StickyStockHeader
                 code={stock.company_code}
@@ -236,159 +215,112 @@ export function StockClient({
                 changePercent={displayStats.change}
             />
 
-            {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <section
+                aria-label="Price chart"
+                className="rounded-xl border border-border bg-surface p-3 md:p-4 min-h-[450px]"
+            >
+                <ClientPriceChart
+                    data={filteredData}
+                    timeframe={timeframe}
+                    onTimeframeChange={setTimeframe}
+                    prevClose={prevClose}
+                />
+            </section>
 
-                {/* Chart Section (2/3 width) */}
-                <div className="lg:col-span-2 space-y-6">
+            <StockPageTabList activeTab={activeTab} onTabChange={setActiveTab} />
 
-
-                    <Card className="p-1 border-none shadow-none bg-transparent lg:bg-surface lg:shadow-card lg:border lg:border-border">
-                        <CardHeader className="px-0 pt-0 lg:px-6 lg:pt-6 border-none pb-2">
-                            <h2 className="text-lg font-bold text-text-primary">Price Performance</h2>
-                        </CardHeader>
-                        <CardContent className="px-0 lg:px-6 pb-0 lg:pb-6 min-h-[450px]">
-                            <ClientPriceChart
-                                data={filteredData} // Passing Pre-Filtered Data
-                                timeframe={timeframe}
-                                onTimeframeChange={setTimeframe}
-                            // We might need to tell PriceChart NOT to filter internally if we pass pre-filtered data
-                            // But keeping PriceChart dump is better.
-                            />
-                        </CardContent>
-                    </Card>
-
-                    {/* Filings */}
-                    <div className="flex flex-col gap-4">
-                        <h2 className="text-lg font-semibold text-text-primary font-heading border-b border-border pb-3">
-                            {UPDATES_SECTION_TITLE}
-                        </h2>
-                        <StockFilingsSection
-                            dated={filingsDated}
-                            undated={filingsUndated}
-                            results={issuerResults}
-                            expected={issuerExpected}
+            <div role="tabpanel" className="space-y-6 min-w-0">
+                {activeTab === 'overview' ? (
+                    <>
+                        <StockKeyStatisticsGrid
+                            eod={eodStats}
+                            snapshot={valuationSnapshot}
                             dividends={issuerDividends}
                         />
-                    </div>
-                </div>
 
-                {/* Right Sidebar (Stats & Info) */}
-                <div className="flex flex-col gap-6">
-                    <PortfolioHoldingIndicator stockCode={stock.company_code} currentPrice={currentPrice} />
+                        {issuerDividends.length > 0 ? (
+                            <StockDividendOverviewTeaser
+                                dividends={issuerDividends}
+                                onViewDividends={() => setActiveTab('dividends')}
+                            />
+                        ) : null}
 
-                    <StockDividendsSidebarCard dividends={issuerDividends} />
+                        {stock.sector ? (
+                            <StockRelatedRow stocks={relatedStocks} sector={stock.sector} />
+                        ) : null}
 
-                    <Card>
-                        <CardHeader>
-                            <h2 className="text-lg font-bold text-text-primary">Key Statistics</h2>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                            {/* Previous Close Calculation */}
-                            {history.length > 1 && (
-                                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                    <span className="text-xs text-text-secondary">Previous Close</span>
-                                    <span className="text-xs font-mono font-medium text-text-primary">
-                                        {formatPrice(history[history.length - 2]?.last_transaction_price || 0)}
-                                    </span>
-                                </div>
-                            )}
-
-                            {low !== null && high !== null && (
-                                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                    <span className="text-xs text-text-secondary">Day Range</span>
-                                    <span className="text-xs font-mono font-medium text-text-primary whitespace-nowrap">
-                                        {formatPrice(low)} - {formatPrice(high)}
-                                    </span>
-                                </div>
-                            )}
-
-                            <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                <span className="text-xs text-text-secondary">52 Week Range</span>
-                                <span className="text-xs font-mono font-medium text-text-primary whitespace-nowrap">
-                                    {formatPrice(yearLow)} - {formatPrice(yearHigh)}
-                                </span>
-                            </div>
-
-                            {avgPrice > 0 && (
-                                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                    <span className="text-xs text-text-secondary">Average Price</span>
-                                    <span className="text-xs font-mono font-medium text-text-primary">
-                                        {formatPrice(avgPrice)}
-                                    </span>
-                                </div>
-                            )}
-
-                            {volume > 0 && (
-                                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                    <span className="text-xs text-text-secondary">Volume</span>
-                                    <span className="text-xs font-mono font-medium text-text-primary">
-                                        {formatInteger(volume)}
-                                    </span>
-                                </div>
-                            )}
-
-                            {turnover > 0 && (
-                                <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                    <span className="text-xs text-text-secondary">Turnover</span>
-                                    <span className="text-xs font-mono font-medium text-text-primary">
-                                        {formatPrice(turnover)}
-                                    </span>
-                                </div>
-                            )}
-
-                            <div className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
-                                <span className="text-xs text-text-secondary">First Trade</span>
-                                <span className="text-xs font-medium text-text-primary">
-                                    {stock.first_trade_date}
-                                </span>
-                            </div>
-
-                            <StockFundamentalsStats snapshot={valuationSnapshot} asOfDate={asOfDate} />
-                        </CardContent>
-                    </Card>
-
-                    {/* Company Info */}
-                    {(stock.issuer_data?.address || stock.issuer_data?.phone || stock.issuer_data?.website) && (
-                        <Card>
-                            <CardHeader>
-                                <h2 className="text-lg font-bold text-text-primary">Company Info</h2>
-                            </CardHeader>
-                            <CardContent className="space-y-4">
-                                {stock.issuer_data.address && (
-                                    <div className="text-sm text-text-secondary">
-                                        <p className="font-medium text-text-primary mb-1">Address</p>
-                                        {stock.issuer_data.address}, {stock.issuer_data.city}
-                                    </div>
-                                )}
-
-                                {stock.issuer_data.phone && (
-                                    <div className="flex items-center gap-2 text-sm">
-                                        <Phone className="h-4 w-4 text-text-tertiary" />
-                                        <a href={`tel:${stock.issuer_data.phone}`} className="text-text-primary hover:text-brand-500 hover:underline transition-colors">
-                                            {stock.issuer_data.phone}
-                                        </a>
-                                    </div>
-                                )}
-
-                                {stock.issuer_data.website && (
-                                    <div className="flex items-center gap-2 text-sm">
-                                        <Globe className="h-4 w-4 text-text-tertiary" />
-                                        <a
-                                            href={`https://${stock.issuer_data.website}?ref=talir`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-brand-500 hover:text-brand-600 hover:underline transition-colors flex items-center gap-1"
+                        {recentFilings.length > 0 ? (
+                            <section aria-labelledby="recent-filings-heading" className="space-y-3">
+                                <div className="flex items-center justify-between gap-2">
+                                    <h2 id="recent-filings-heading" className="text-sm font-semibold text-text-primary">
+                                        Recent updates
+                                    </h2>
+                                    {filingsDated.length > 6 ? (
+                                        <button
+                                            type="button"
+                                            onClick={() => setActiveTab('updates')}
+                                            className="text-xs text-accent hover:underline font-medium min-h-[44px] px-2"
                                         >
-                                            {stock.issuer_data.website}
-                                            <ExternalLink className="h-3 w-3" />
-                                        </a>
-                                    </div>
-                                )}
-                            </CardContent>
-                        </Card>
-                    )}
-                </div>
+                                            Show all
+                                        </button>
+                                    ) : null}
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    {recentFilings.map((item) => (
+                                        <NewsCard key={item.id} item={item} />
+                                    ))}
+                                </div>
+                            </section>
+                        ) : null}
+
+                        <StockProfileCard
+                            companyName={stock.company_name}
+                            sector={stock.sector}
+                            issuerData={stock.issuer_data}
+                            asOfDate={asOfDate}
+                        />
+                    </>
+                ) : null}
+
+                {activeTab === 'updates' ? (
+                    <StockFilingsSection
+                        dated={filingsDated}
+                        undated={filingsUndated}
+                        results={issuerResults}
+                        expected={issuerExpected}
+                        dividends={issuerDividends}
+                    />
+                ) : null}
+
+                {activeTab === 'dividends' ? (
+                    issuerDividends.length > 0 ? (
+                        <StockDividendsSidebarCard dividends={issuerDividends} />
+                    ) : (
+                        <p className="text-sm text-text-secondary py-4">
+                            No dividend calendar filings from SECNet for this issuer yet.
+                        </p>
+                    )
+                ) : null}
+
+                {activeTab === 'financials' ? (
+                    <StockFinancialsTab fundamentals={issuerFundamentals} asOfDate={asOfDate} />
+                ) : null}
+
+                {activeTab === 'portfolio' ? (
+                    <div className="space-y-4">
+                        <PortfolioHoldingIndicator
+                            stockCode={stock.company_code}
+                            currentPrice={currentPrice}
+                        />
+                        <div className="rounded-xl border border-border bg-surface p-4 md:p-5 space-y-3">
+                            <h2 className="text-sm font-semibold text-text-primary">Watchlist &amp; portfolio</h2>
+                            <p className="text-sm text-text-secondary">
+                                Add this issuer to a watchlist, portfolio, or price alert.
+                            </p>
+                            <StockPageActions stockCode={stock.company_code} stockData={stockSummary} />
+                        </div>
+                    </div>
+                ) : null}
             </div>
         </div>
     )

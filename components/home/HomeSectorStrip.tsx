@@ -22,7 +22,7 @@ export function HomeSectorStrip({ sectors }: HomeSectorStripProps) {
                     id="home-sectors-heading"
                     className="font-heading text-base font-bold text-text-primary tracking-tight"
                 >
-                    MSE sector (listing)
+                    MSE Sectors
                 </h2>
                 <p className="text-[11px] text-text-tertiary leading-snug mt-1">
                     Grouped by MSE listing sector, end-of-day.

@@ -27,8 +27,19 @@ Talir surfaces **regulatory filings and disclosures** from the Macedonian Stock 
 | Non-audited profit&loss account 01.01. - 30.09. | `KMB reports profit and loss for 01.01.–30.09.` |
 | Audited financial statements | `KMB files audited financial statements` |
 | Dividend … | `KMB files dividend disclosure` |
+| Dividend Calendar (SECNet) | `KMB files dividend calendar` |
+| Distribution of profit (link only) | `KMB files distribution of profit disclosure` |
 | Annual report | `KMB files annual report` |
 | Title containing “loss” | `KMB reports loss for {period}` (when period known) |
+
+## Dividend calendars (Phase II)
+
+- Headlines for **Dividend Calendar** filings use **“files dividend calendar”** — never “announces generous payout” or yield language.
+- When gross per share is parsed from the SECNet document, subcopy may read **“disclosed X ден. per share”** — always label as filed data, not a forecast.
+- **Distribution of profit** links are disclosure rows only until a calendar is filed; do not imply payout dates or amounts.
+- UI labels must state **SECNet source**, **end-of-day**, and **not a forecast** where dividend amounts or ex-dates appear.
+- **No expected-dividend lane** — upcoming ex-dates come only from parsed official calendar entries (`parseStatus !== 'link_only'`).
+- Optional trailing yield (if shown later): **“From last disclosed dividend · not a forecast”** only when both gross and EOD close exist.
 
 ## Dates
 

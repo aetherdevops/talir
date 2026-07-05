@@ -54,7 +54,7 @@ function formatIso(year, month, day) {
 
 function categorizeReport(rawTitle) {
     const lower = rawTitle.toLowerCase()
-    if (lower.includes('dividend')) return 'dividend'
+    if (lower.includes('dividend') || lower.includes('distribution of profit')) return 'dividend'
     if (lower.includes('profit') || lower.includes('loss') || lower.includes('p&l')) return 'earnings'
     if (lower.includes('financial statement') || lower.includes('balance sheet') || lower.includes('audited')) {
         return 'financials'
@@ -147,9 +147,13 @@ function buildFeed(issuers) {
     const undatedByCode = {}
 
     for (const issuer of issuers) {
-        if (!issuer.reportLinks?.length) continue
+        const allReports = [
+            ...(issuer.reportLinks ?? []),
+            ...(issuer.disclosureLinks ?? []),
+        ]
+        if (!allReports.length) continue
 
-        for (const report of issuer.reportLinks) {
+        for (const report of allReports) {
             const url = normalizeNewsUrl(report.url)
             if (!url) continue
 

@@ -15,6 +15,8 @@ const MIGRATIONS = [
     '001_user_data.sql',
     '002_user_preferences.sql',
     '003_delete_user_account.sql',
+    '004_seinet_documents.sql',
+    '005_drop_document_text_extractions.sql',
 ]
 
 function loadEnvFile(filePath) {

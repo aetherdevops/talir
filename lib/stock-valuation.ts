@@ -1,7 +1,7 @@
 import type { DividendCalendarEntry } from './dividends'
 import {
     computePayoutRatioPct,
-    latestParsedDividend,
+    latestDisclosedDividend,
     resolveProfitYear,
 } from './dividends'
 import type { FundamentalEntry } from './fundamentals'
@@ -18,6 +18,7 @@ export interface StockValuationSnapshot {
     grossPerShare: number | null
     dividendYieldPct: number | null
     payoutRatioPct: number | null
+    dividendParseStatus: DividendCalendarEntry['parseStatus'] | null
     hasAnyFundamentals: boolean
 }
 
@@ -99,7 +100,7 @@ export function buildStockValuationSnapshot(input: {
     dividends: DividendCalendarEntry[]
 }): StockValuationSnapshot {
     const latest = pickLatestFundamental(input.fundamentals)
-    const latestDividend = latestParsedDividend(input.dividends)
+    const latestDividend = latestDisclosedDividend(input.dividends)
     const epsByYear = buildEpsByYear(input.fundamentals)
 
     const eps = latest?.eps ?? null
@@ -134,6 +135,7 @@ export function buildStockValuationSnapshot(input: {
         grossPerShare,
         dividendYieldPct: computeTrailingDividendYieldPct(input.price, grossPerShare),
         payoutRatioPct,
+        dividendParseStatus: latestDividend?.parseStatus ?? null,
         hasAnyFundamentals: hasFundamentalRow || hasDividendRow,
     }
 }

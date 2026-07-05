@@ -4,32 +4,35 @@
  *
  * Set TALIR_PARSE_DIVIDENDS=1 to fetch SEInet attachments (PDF/HTML) and parse fields.
  * Set TALIR_OCR_DIVIDENDS=1 to OCR scanned PDF attachments (partial parseStatus only).
- * Set TALIR_OCR_DIVIDEND_CODES=KMB,TNB to limit OCR to specific issuers (optional).
+ * Set TALIR_DOCUMENT_STORE=supabase to merge parsed fields from Supabase ingest.
  */
 import fs from 'fs'
 import path from 'path'
-import { loadOcrCache, saveOcrCache } from '../lib/dividend-ocr'
-import { parseReportDate } from '../lib/news-dates'
+import { loadEnvLocal } from '../lib/load-env-local'
+
+loadEnvLocal()
 import {
     buildDividendsCalendarFile,
+    DIVIDEND_PARSER_VERSION,
     enrichDividendDerivedMetrics,
     enrichDividendPayoutRatios,
-    isDividendCalendarTitle,
     parseDividendCalendarText,
+    type DividendCalendarEntry,
     type EodPriceRow,
 } from '../lib/dividends'
 import { buildEpsIndex, type FundamentalEntry } from '../lib/fundamentals'
-import type { DividendCalendarEntry } from '../lib/dividends'
 import {
-    fetchDividendDocumentText,
-    parseDocumentIdFromUrl,
-    walkDividendCalendarChain,
-    type SeinetCalendarMeta,
-} from '../lib/seinet-document'
+    defaultDataPaths,
+    discoverAllDividendCalendars,
+    entryDocKey,
+} from '../lib/dividend-discovery'
+import {
+    isDocumentStoreEnabled,
+    loadDividendExtractionsFromStore,
+} from '../lib/document-store'
+import { fetchDividendDocumentText, parseDocumentIdFromUrl } from '../lib/seinet-document'
 
-const dataDir = path.join(process.cwd(), 'lib', 'data')
-const issuersPath = path.join(dataDir, 'issuers.json')
-const feedPath = path.join(dataDir, 'news_feed.json')
+const { dataDir, issuersPath } = defaultDataPaths()
 const stocksDir = path.join(dataDir, 'stocks')
 const outPath = path.join(dataDir, 'derived_dividends.json')
 const fundamentalsPath = path.join(dataDir, 'derived_fundamentals.json')
@@ -44,9 +47,7 @@ function loadStockHistory(stockCode: string): EodPriceRow[] | null {
         return null
     }
     try {
-        const raw = JSON.parse(fs.readFileSync(filePath, 'utf8')) as {
-            history?: EodPriceRow[]
-        }
+        const raw = JSON.parse(fs.readFileSync(filePath, 'utf8')) as { history?: EodPriceRow[] }
         const history = Array.isArray(raw.history) ? raw.history : null
         historyCache.set(stockCode, history)
         return history
@@ -56,32 +57,7 @@ function loadStockHistory(stockCode: string): EodPriceRow[] | null {
     }
 }
 
-interface ReportLink {
-    title: string
-    url: string
-    date?: string
-}
-
-interface IssuerRow {
-    code: string
-    name: string
-    reportLinks?: ReportLink[]
-    disclosureLinks?: ReportLink[]
-}
-
-function normalizeUrl(url: string | undefined): string | null {
-    if (!url?.trim()) return null
-    const trimmed = url.trim()
-    if (trimmed.startsWith('http')) return trimmed
-    if (trimmed.startsWith('//')) return `https:${trimmed}`
-    return `https://${trimmed}`
-}
-
-function filedAtFromTitle(title: string, dateField?: string): string | null {
-    return parseReportDate(title, dateField ?? undefined)
-}
-
-function emptyCalendarFields(): Pick<
+type ParsedFieldSnapshot = Pick<
     DividendCalendarEntry,
     | 'grossPerShare'
     | 'cumDate'
@@ -94,91 +70,81 @@ function emptyCalendarFields(): Pick<
     | 'yoyGrowthPct'
     | 'profitYear'
     | 'payoutRatioPct'
-> {
-    return {
-        grossPerShare: null,
-        cumDate: null,
-        exDate: null,
-        recordDate: null,
-        paymentStart: null,
-        paymentEnd: null,
-        parseStatus: 'link_only',
-        trailingYieldAtEx: null,
-        yoyGrowthPct: null,
-        profitYear: null,
-        payoutRatioPct: null,
-    }
-}
+>
 
-function loadEpsIndex(): Map<string, number> {
-    if (!fs.existsSync(fundamentalsPath)) return new Map()
+function loadExistingParsedFields(): Map<string, ParsedFieldSnapshot> {
+    if (!fs.existsSync(outPath)) return new Map()
+
     try {
-        const raw = JSON.parse(fs.readFileSync(fundamentalsPath, 'utf8')) as {
-            all: FundamentalEntry[]
+        const existing = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { all?: DividendCalendarEntry[] }
+        const preserved = new Map<string, ParsedFieldSnapshot>()
+
+        for (const entry of existing.all ?? []) {
+            if (entry.parseStatus === 'link_only') continue
+            preserved.set(entryDocKey(entry.url), {
+                grossPerShare: entry.grossPerShare,
+                cumDate: entry.cumDate,
+                exDate: entry.exDate,
+                recordDate: entry.recordDate,
+                paymentStart: entry.paymentStart,
+                paymentEnd: entry.paymentEnd,
+                parseStatus: entry.parseStatus,
+                trailingYieldAtEx: entry.trailingYieldAtEx,
+                yoyGrowthPct: entry.yoyGrowthPct,
+                profitYear: entry.profitYear,
+                payoutRatioPct: entry.payoutRatioPct,
+            })
         }
-        return buildEpsIndex(raw.all ?? [])
+
+        return preserved
     } catch {
         return new Map()
     }
 }
 
-function buildEntryFromLink(issuer: IssuerRow, link: ReportLink): DividendCalendarEntry | null {
-    if (!isDividendCalendarTitle(link.title)) return null
-    const url = normalizeUrl(link.url)
-    const filedAt = filedAtFromTitle(link.title, link.date)
-    if (!url || !filedAt) return null
-
-    return {
-        stockCode: issuer.code,
-        stockName: issuer.name,
-        filedAt,
-        url,
-        ...emptyCalendarFields(),
-        source: 'SECNet',
+function restoreParsedFields(
+    entries: DividendCalendarEntry[],
+    preserved: Map<string, ParsedFieldSnapshot>
+): number {
+    let restored = 0
+    for (const entry of entries) {
+        const snapshot = preserved.get(entryDocKey(entry.url))
+        if (!snapshot) continue
+        Object.assign(entry, snapshot)
+        restored++
     }
+    return restored
 }
 
-function buildEntryFromChainMeta(meta: SeinetCalendarMeta, issuerNames: Map<string, string>): DividendCalendarEntry {
-    return {
-        stockCode: meta.stockCode,
-        stockName: issuerNames.get(meta.stockCode) ?? meta.stockName,
-        filedAt: meta.filedAt,
-        url: meta.url,
-        ...emptyCalendarFields(),
-        source: 'SECNet',
-    }
+function applyStoredExtraction(
+    entry: DividendCalendarEntry,
+    fields: Record<string, unknown>,
+    parseStatus: DividendCalendarEntry['parseStatus']
+): void {
+    entry.grossPerShare = (fields.grossPerShare as number | null) ?? null
+    entry.cumDate = (fields.cumDate as string | null) ?? null
+    entry.exDate = (fields.exDate as string | null) ?? null
+    entry.recordDate = (fields.recordDate as string | null) ?? null
+    entry.paymentStart = (fields.paymentStart as string | null) ?? null
+    entry.paymentEnd = (fields.paymentEnd as string | null) ?? null
+    entry.profitYear = (fields.profitYear as number | null) ?? null
+    entry.parseStatus = parseStatus
 }
 
-function mergeEntries(primary: DividendCalendarEntry[], extra: DividendCalendarEntry[]): DividendCalendarEntry[] {
-    const byDocId = new Map<string, DividendCalendarEntry>()
+async function mergeFromDocumentStore(entries: DividendCalendarEntry[]): Promise<number> {
+    const stored = await loadDividendExtractionsFromStore(DIVIDEND_PARSER_VERSION)
+    let merged = 0
 
-    for (const entry of [...primary, ...extra]) {
+    for (const entry of entries) {
         const docId = parseDocumentIdFromUrl(entry.url)
-        const key = docId ? String(docId) : entry.url.toLowerCase()
-        if (!byDocId.has(key)) {
-            byDocId.set(key, entry)
-        }
+        if (!docId) continue
+        const row = stored.get(docId)
+        if (!row) continue
+        applyStoredExtraction(entry, row.fields, row.parse_status)
+        merged++
     }
 
-    return Array.from(byDocId.values())
-}
-
-async function backfillFromLayoutChain(
-    seeds: DividendCalendarEntry[],
-    issuerNames: Map<string, string>
-): Promise<DividendCalendarEntry[]> {
-    const startId = seeds
-        .map((entry) => parseDocumentIdFromUrl(entry.url))
-        .find((id): id is number => id !== null)
-
-    if (!startId) return seeds
-
-    console.log(`Dividend backfill: walking layoutLink chain from document ${startId}…`)
-    const chain = await walkDividendCalendarChain(startId)
-    const chainEntries = chain.map((meta) => buildEntryFromChainMeta(meta, issuerNames))
-    console.log(`Dividend backfill: ${chain.length} calendar documents in SECNet chain`)
-
-    return mergeEntries(seeds, chainEntries)
+    return merged
 }
 
 async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promise<void> {
@@ -188,7 +154,6 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
     const ocrCodes = process.env.TALIR_OCR_DIVIDEND_CODES?.split(',')
         .map((code) => code.trim().toUpperCase())
         .filter(Boolean)
-    const ocrCache = allowOcr ? loadOcrCache() : {}
 
     let parsed = 0
     let partial = 0
@@ -196,13 +161,15 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
     let ocrAttempted = 0
 
     for (const entry of entries) {
+        if (entry.parseStatus !== 'link_only') continue
+
         const shouldOcr =
             allowOcr && (!ocrCodes?.length || ocrCodes.includes(entry.stockCode.toUpperCase()))
 
+        const documentId = parseDocumentIdFromUrl(entry.url) ?? undefined
         const result = await fetchDividendDocumentText(entry.url, {
             allowOcr: shouldOcr,
-            ocrCache,
-            persistOcrCache: false,
+            documentId,
         })
         if (result?.source === 'ocr') ocrAttempted++
 
@@ -222,7 +189,6 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
     }
 
     if (allowOcr) {
-        saveOcrCache(ocrCache)
         console.log(`Dividend OCR: ${ocrAttempted} attachments OCR'd`)
     }
 
@@ -231,69 +197,30 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
     )
 }
 
-function collectFromIssuers(issuers: IssuerRow[]): DividendCalendarEntry[] {
-    const byUrl = new Map<string, DividendCalendarEntry>()
-
-    for (const issuer of issuers) {
-        const links = [...(issuer.reportLinks ?? []), ...(issuer.disclosureLinks ?? [])]
-        for (const link of links) {
-            const entry = buildEntryFromLink(issuer, link)
-            if (!entry) continue
-            byUrl.set(entry.url.toLowerCase(), entry)
-        }
-    }
-
-    return Array.from(byUrl.values())
-}
-
-function collectFromNewsFeed(): DividendCalendarEntry[] {
-    if (!fs.existsSync(feedPath)) return []
-    const feed = JSON.parse(fs.readFileSync(feedPath, 'utf8')) as {
-        items: Array<{
-            rawTitle?: string
-            stockCode: string
-            stockName?: string
-            url: string
-            publishedAt: string | null
-            category: string
-        }>
-    }
-
-    const entries: DividendCalendarEntry[] = []
-    for (const item of feed.items) {
-        const rawTitle = item.rawTitle ?? ''
-        if (!isDividendCalendarTitle(rawTitle)) continue
-        if (!item.publishedAt) continue
-        entries.push({
-            stockCode: item.stockCode,
-            stockName: item.stockName ?? item.stockCode,
-            filedAt: item.publishedAt,
-            url: item.url,
-            ...emptyCalendarFields(),
-            source: 'SECNet',
-        })
-    }
-    return entries
-}
-
 async function main(): Promise<void> {
     if (!fs.existsSync(issuersPath)) {
         console.error(`Missing ${issuersPath}. Run npm run script:issuers first.`)
         process.exit(1)
     }
 
-    const issuers = JSON.parse(fs.readFileSync(issuersPath, 'utf8')) as IssuerRow[]
-    const issuerNames = new Map(issuers.map((issuer) => [issuer.code, issuer.name]))
+    const { entries, issuers } = await discoverAllDividendCalendars()
 
-    let entries = collectFromIssuers(issuers)
+    const preservedParsed =
+        process.env.TALIR_PARSE_DIVIDENDS === '1' && !isDocumentStoreEnabled()
+            ? new Map<string, ParsedFieldSnapshot>()
+            : loadExistingParsedFields()
 
-    if (!entries.length) {
-        entries = collectFromNewsFeed()
+    if (isDocumentStoreEnabled()) {
+        const merged = await mergeFromDocumentStore(entries)
+        console.log(`Dividend store: merged ${merged} extractions from Supabase`)
     }
 
-    entries = await backfillFromLayoutChain(entries, issuerNames)
-
     await enrichWithDocumentParse(entries)
+
+    if (preservedParsed.size > 0) {
+        const restored = restoreParsedFields(entries, preservedParsed)
+        console.log(`Dividend preserve: restored parsed fields for ${restored} entries from existing ${outPath}`)
+    }
 
     enrichDividendDerivedMetrics(entries, loadStockHistory)
     const withYield = entries.filter((e) => e.trailingYieldAtEx !== null).length
@@ -318,6 +245,16 @@ async function main(): Promise<void> {
     console.log(
         `Wrote dividends calendar: ${payload.all.length} total, ${payload.recent.length} recent, ${payload.upcomingExDates.length} upcoming ex-dates, ${Object.keys(payload.byIssuer).length} issuers → ${outPath}`
     )
+}
+
+function loadEpsIndex(): Map<string, number> {
+    if (!fs.existsSync(fundamentalsPath)) return new Map()
+    try {
+        const raw = JSON.parse(fs.readFileSync(fundamentalsPath, 'utf8')) as { all: FundamentalEntry[] }
+        return buildEpsIndex(raw.all ?? [])
+    } catch {
+        return new Map()
+    }
 }
 
 main().catch((err) => {
