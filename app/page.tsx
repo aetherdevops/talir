@@ -16,10 +16,13 @@ import {
     getConsistentGainerStocks,
     getRecentResults,
     getExpectedResults,
+    getRecentDividends,
+    getUpcomingExDates,
+    getNewsFeedMeta,
 } from '@/lib/data'
 import { HomeMarketOverview } from '@/components/home/HomeMarketOverview'
 import { HomePersonalRail } from '@/components/home/HomePersonalRail'
-import { NewsFeed } from '@/components/news/NewsFeed'
+import { HomeDividendsPanel } from '@/components/dividends/HomeDividendsPanel'
 
 export const revalidate = 86400
 
@@ -36,6 +39,9 @@ export default async function HomePage() {
         allInstruments,
         recentResults,
         expectedResults,
+        recentDividends,
+        upcomingExDates,
+        newsMeta,
     ] = await Promise.all([
         getTopGainers(5),
         getTopLosers(5),
@@ -44,10 +50,13 @@ export default async function HomePage() {
         getWeekLowStocks(5),
         getConsistentGainerStocks(5),
         getMarketIndices(),
-        getLatestNews(4),
+        getLatestNews(8),
         getAllInstruments(),
         Promise.resolve(getRecentResults(5)),
         Promise.resolve(getExpectedResults(5)),
+        Promise.resolve(getRecentDividends(5)),
+        Promise.resolve(getUpcomingExDates(5)),
+        Promise.resolve(getNewsFeedMeta()),
     ])
 
     const asOfDate = getMarketDataAsOf(allInstruments)
@@ -78,16 +87,21 @@ export default async function HomePage() {
                         sectors={sectors}
                         sentiment={sentiment}
                         asOfDate={asOfDate}
+                        news={news}
                         recentResults={recentResults}
                         expectedResults={expectedResults}
+                        recentDividends={recentDividends}
+                        upcomingExDates={upcomingExDates}
+                        lastIssuerScan={newsMeta.lastIssuerScan}
                     />
-                    <div className="lg:hidden min-w-0">
-                        <NewsFeed items={news} layout="home" />
-                    </div>
                 </div>
 
                 <aside className="hidden lg:block lg:col-span-4 xl:col-span-1 min-w-0 pl-6">
-                    <NewsFeed items={news} layout="home-rail" />
+                    <HomeDividendsPanel
+                        recent={recentDividends}
+                        upcoming={upcomingExDates}
+                        variant="aside"
+                    />
                 </aside>
             </div>
         </div>

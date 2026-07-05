@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Home, Newspaper, PieChart, Bookmark, Settings, Plus, BarChart2, ChevronLeft, ChevronRight, Bell } from 'lucide-react'
+import { Home, Newspaper, PieChart, Bookmark, Settings, Plus, BarChart2, ChevronLeft, ChevronRight, Bell, Coins } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { useThemeStore } from '@/lib/store'
@@ -106,6 +106,7 @@ export function Sidebar({ className }: { className?: string }) {
                 <ul className="space-y-1 px-3">
                     <SidebarItem icon={Home} label="Home" href="/" isActive={pathname === '/'} isCollapsed={!isOpen} onClick={handleNavClick()} />
                     <SidebarItem icon={BarChart2} label="Markets" href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} onClick={handleNavClick()} />
+                    <SidebarItem icon={Coins} label="Dividends" href="/dividends" isActive={pathname === '/dividends'} isCollapsed={!isOpen} onClick={handleNavClick()} />
                     <SidebarItem icon={Newspaper} label="Updates" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} onClick={handleNavClick()} />
 
                     <SectionHeader

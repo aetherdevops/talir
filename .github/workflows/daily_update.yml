@@ -40,6 +40,9 @@ jobs:
     - name: Generate results calendar
       run: npm run generate:results-calendar
 
+    - name: Generate dividends calendar
+      run: npm run generate:dividends
+
     - name: Regenerate derived assets
       run: npm run generate:sparklines && npm run generate:derived && npm run generate:search-index
 
@@ -48,8 +51,10 @@ jobs:
         test -s lib/data/issuers.json
         test -s lib/data/news_feed.json
         test -s lib/data/derived_results_calendar.json
+        test -s lib/data/derived_dividends.json
         node -e "const j=require('./lib/data/news_feed.json'); console.log('news_feed:', j.count, 'items, dated', j.datedCount, ', lastIssuerScan', j.lastIssuerScan)"
         node -e "const r=require('./lib/data/derived_results_calendar.json'); console.log('results_calendar:', r.all.length, 'filed,', r.expected.length, 'expected')"
+        node -e "const dv=require('./lib/data/derived_dividends.json'); console.log('dividends:', dv.all.length, 'calendars,', dv.upcomingExDates.length, 'upcoming ex-dates')"
         node -e "const d=require('./lib/data/derived_market.json'); const n=d.breadth?.history?.length ?? 0; console.log('derived breadth.history:', n, 'sessions (expected 10)'); if(n!==10) console.log('::warning:: breadth history length is', n, 'not 10');"
 
     - name: Commit Changes

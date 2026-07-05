@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { StockSummary } from '@/lib/types'
 import type { MarketSentiment, SparklineMap } from '@/lib/data'
+import type { DividendCalendarEntry } from '@/lib/dividends'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { Search, ArrowUp, ArrowDown } from 'lucide-react'
 import {
@@ -15,6 +16,7 @@ import {
 } from '@/components/markets/MarketInstrumentRow'
 import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
 import { MarketsResultsTable } from '@/components/results/MarketsResultsTable'
+import { MarketsDividendsTable } from '@/components/dividends/MarketsDividendsTable'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { cn } from '@/lib/utils'
 
@@ -25,11 +27,13 @@ interface MarketsClientProps {
     sparklines: SparklineMap
     results: ResultsCalendarEntry[]
     expected: ExpectedResultsEntry[]
+    dividends: DividendCalendarEntry[]
+    upcomingExDates: DividendCalendarEntry[]
     lastIssuerScan: string | null
     issuerCount: number
 }
 
-type MarketsView = 'instruments' | 'results'
+type MarketsView = 'instruments' | 'results' | 'dividends'
 
 type SortKey = 'turnover' | 'change' | 'price' | 'name'
 type SortOrder = 'asc' | 'desc'
@@ -41,19 +45,25 @@ export function MarketsClient({
     sparklines,
     results,
     expected,
+    dividends,
+    upcomingExDates,
     lastIssuerScan,
     issuerCount,
 }: MarketsClientProps) {
     const searchParams = useSearchParams()
     const router = useRouter()
 
-    const view: MarketsView = searchParams.get('view') === 'results' ? 'results' : 'instruments'
+    const viewParam = searchParams.get('view')
+    const view: MarketsView =
+        viewParam === 'results' ? 'results' : viewParam === 'dividends' ? 'dividends' : 'instruments'
 
     const setView = useCallback(
         (next: MarketsView) => {
             const params = new URLSearchParams(searchParams.toString())
             if (next === 'results') {
                 params.set('view', 'results')
+            } else if (next === 'dividends') {
+                params.set('view', 'dividends')
             } else {
                 params.delete('view')
             }
@@ -160,6 +170,7 @@ export function MarketsClient({
                     [
                         { id: 'instruments' as const, label: 'All instruments' },
                         { id: 'results' as const, label: 'Recent results' },
+                        { id: 'dividends' as const, label: 'Dividends' },
                     ] as const
                 ).map((tab) => (
                     <button
@@ -182,6 +193,13 @@ export function MarketsClient({
                 <MarketsResultsTable
                     results={results}
                     expected={expected}
+                    lastIssuerScan={lastIssuerScan}
+                    issuerCount={issuerCount}
+                />
+            ) : view === 'dividends' ? (
+                <MarketsDividendsTable
+                    recent={dividends}
+                    upcoming={upcomingExDates}
                     lastIssuerScan={lastIssuerScan}
                     issuerCount={issuerCount}
                 />

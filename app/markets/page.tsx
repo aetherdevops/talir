@@ -8,6 +8,8 @@ import {
     getAllResults,
     getExpectedResults,
     getResultsCalendar,
+    getAllDividends,
+    getUpcomingExDates,
     getNewsFeedMeta,
 } from '@/lib/data'
 import { Suspense } from 'react'
@@ -28,6 +30,8 @@ export default async function MarketsPage() {
     const sparklines = getMarketSparklines()
     const results = getAllResults()
     const expected = getExpectedResults()
+    const dividends = getAllDividends()
+    const upcomingExDates = getUpcomingExDates()
     const resultsCalendar = getResultsCalendar()
     const newsMeta = getNewsFeedMeta()
 
@@ -41,6 +45,8 @@ export default async function MarketsPage() {
                     sparklines={sparklines}
                     results={results}
                     expected={expected}
+                    dividends={dividends}
+                    upcomingExDates={upcomingExDates}
                     lastIssuerScan={newsMeta.lastIssuerScan ?? resultsCalendar.lastIssuerScan}
                     issuerCount={resultsCalendar.issuerCount}
                 />

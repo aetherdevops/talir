@@ -13,9 +13,11 @@ import { StockPageActions } from '@/components/stock/StockPageActions'
 import { StickyStockHeader } from '@/components/stock/StickyStockHeader'
 import { usePreferencesStore, type ChartRange } from '@/lib/stores/preferences'
 import { PortfolioHoldingIndicator } from '@/components/portfolio/PortfolioHoldingIndicator'
+import { StockDividendsSidebarCard } from '@/components/dividends/StockDividendsSidebarCard'
 import { StockFilingsSection } from '@/components/stock/StockFilingsSection'
 import { ResponsiveText } from '@/components/ui/ResponsiveText'
 import { StockSummary, DailyPrice, NewsItem } from '@/lib/types'
+import type { DividendCalendarEntry } from '@/lib/dividends'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { UPDATES_SECTION_TITLE } from '@/lib/news-style'
 
@@ -35,6 +37,7 @@ interface StockClientProps {
     filingsUndated: NewsItem[]
     issuerResults: ResultsCalendarEntry[]
     issuerExpected: ExpectedResultsEntry[]
+    issuerDividends: DividendCalendarEntry[]
     asOfDate: string
 }
 
@@ -53,6 +56,7 @@ export function StockClient({
     filingsUndated,
     issuerResults,
     issuerExpected,
+    issuerDividends,
     asOfDate,
 }: StockClientProps) {
     const defaultChartRange = usePreferencesStore((s) => s.defaultChartRange)
@@ -249,6 +253,7 @@ export function StockClient({
                             undated={filingsUndated}
                             results={issuerResults}
                             expected={issuerExpected}
+                            dividends={issuerDividends}
                         />
                     </div>
                 </div>
@@ -256,6 +261,8 @@ export function StockClient({
                 {/* Right Sidebar (Stats & Info) */}
                 <div className="flex flex-col gap-6">
                     <PortfolioHoldingIndicator stockCode={stock.company_code} currentPrice={currentPrice} />
+
+                    <StockDividendsSidebarCard dividends={issuerDividends} />
 
                     <Card>
                         <CardHeader>

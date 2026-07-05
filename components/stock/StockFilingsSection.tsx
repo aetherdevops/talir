@@ -1,7 +1,9 @@
 import type { NewsItem } from '@/lib/types'
+import type { DividendCalendarEntry } from '@/lib/dividends'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { NewsCard } from '@/components/news/NewsCard'
 import { StockResultsSection } from '@/components/results/StockResultsSection'
+import { StockDividendsSection } from '@/components/dividends/StockDividendsSection'
 import { UPDATES_SECTION_TITLE } from '@/lib/news-style'
 
 interface StockFilingsSectionProps {
@@ -9,6 +11,7 @@ interface StockFilingsSectionProps {
     undated: NewsItem[]
     results?: ResultsCalendarEntry[]
     expected?: ExpectedResultsEntry[]
+    dividends?: DividendCalendarEntry[]
 }
 
 export function StockFilingsSection({
@@ -16,8 +19,9 @@ export function StockFilingsSection({
     undated,
     results = [],
     expected = [],
+    dividends = [],
 }: StockFilingsSectionProps) {
-    if (!dated.length && !undated.length && !results.length && !expected.length) {
+    if (!dated.length && !undated.length && !results.length && !expected.length && !dividends.length) {
         return (
             <div className="text-center py-12 text-text-tertiary text-sm rounded-xl border border-dashed border-border">
                 No updates available for this company.
@@ -28,8 +32,9 @@ export function StockFilingsSection({
     return (
         <div className="space-y-6">
             <StockResultsSection results={results} expected={expected} />
+            <StockDividendsSection dividends={dividends} />
 
-            {(dated.length > 0 || undated.length > 0) && (results.length > 0 || expected.length > 0) ? (
+            {(dated.length > 0 || undated.length > 0) && (results.length > 0 || expected.length > 0 || dividends.length > 0) ? (
                 <h3 className="text-sm font-semibold text-text-secondary font-heading pt-2 border-t border-border">
                     All filings
                 </h3>

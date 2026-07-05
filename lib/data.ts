@@ -13,12 +13,15 @@ import scrapeMetaData from '@/lib/data/scrape_meta.json'
 import searchIndexData from '@/lib/data/search_index.json'
 import newsFeedData from '@/lib/data/news_feed.json'
 import resultsCalendarData from '@/lib/data/derived_results_calendar.json'
+import dividendsCalendarData from '@/lib/data/derived_dividends.json'
 import type {
     ExpectedResultsEntry,
     ResultsCalendarEntry,
     ResultsCalendarFile,
 } from './results-calendar'
+import type { DividendCalendarEntry, DividendsCalendarFile } from './dividends'
 export type { ExpectedResultsEntry, ResultsCalendarEntry, ResultsCalendarFile }
+export type { DividendCalendarEntry, DividendsCalendarFile }
 
 // Unified fetcher for both stocks and indices
 export async function getAllInstruments(): Promise<StockSummary[]> {
@@ -456,6 +459,27 @@ export function getResultsForIssuer(stockCode: string): ResultsCalendarEntry[] {
 
 export function getExpectedForIssuer(stockCode: string): ExpectedResultsEntry[] {
     return getResultsCalendar().expected.filter((entry) => entry.stockCode === stockCode)
+}
+
+export function getDividendsCalendar(): DividendsCalendarFile {
+    return dividendsCalendarData as DividendsCalendarFile
+}
+
+export function getRecentDividends(limit = 8): DividendCalendarEntry[] {
+    return getDividendsCalendar().recent.slice(0, limit)
+}
+
+export function getAllDividends(): DividendCalendarEntry[] {
+    return getDividendsCalendar().all
+}
+
+export function getUpcomingExDates(limit?: number): DividendCalendarEntry[] {
+    const upcoming = getDividendsCalendar().upcomingExDates
+    return limit ? upcoming.slice(0, limit) : upcoming
+}
+
+export function getDividendsForIssuer(stockCode: string): DividendCalendarEntry[] {
+    return getDividendsCalendar().byIssuer[stockCode] ?? []
 }
 
 export async function getLatestNews(limit: number = 6, stockCode?: string): Promise<NewsItem[]> {
