@@ -4,6 +4,7 @@
  *
  * Set TALIR_PARSE_DIVIDENDS=1 to fetch SEInet attachments (PDF/HTML) and parse fields.
  * Set TALIR_OCR_DIVIDENDS=1 to OCR scanned PDF attachments (partial parseStatus only).
+ * Set TALIR_OCR_DIVIDEND_CODES=KMB,TNB to limit OCR to specific issuers (optional).
  */
 import fs from 'fs'
 import path from 'path'
@@ -184,18 +185,27 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
     if (process.env.TALIR_PARSE_DIVIDENDS !== '1') return
 
     const allowOcr = process.env.TALIR_OCR_DIVIDENDS === '1'
+    const ocrCodes = process.env.TALIR_OCR_DIVIDEND_CODES?.split(',')
+        .map((code) => code.trim().toUpperCase())
+        .filter(Boolean)
     const ocrCache = allowOcr ? loadOcrCache() : {}
 
     let parsed = 0
     let partial = 0
     let linkOnly = 0
+    let ocrAttempted = 0
 
     for (const entry of entries) {
+        const shouldOcr =
+            allowOcr && (!ocrCodes?.length || ocrCodes.includes(entry.stockCode.toUpperCase()))
+
         const result = await fetchDividendDocumentText(entry.url, {
-            allowOcr,
+            allowOcr: shouldOcr,
             ocrCache,
             persistOcrCache: false,
         })
+        if (result?.source === 'ocr') ocrAttempted++
+
         if (!result) {
             linkOnly++
             continue
@@ -213,6 +223,7 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
 
     if (allowOcr) {
         saveOcrCache(ocrCache)
+        console.log(`Dividend OCR: ${ocrAttempted} attachments OCR'd`)
     }
 
     console.log(

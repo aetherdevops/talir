@@ -5,8 +5,10 @@ import { ExternalLink } from 'lucide-react'
 import type { DividendCalendarEntry } from '@/lib/dividends'
 import {
     countCalendarYears,
+    countCalendarsInLastYears,
     earliestCalendarYear,
     formatDividendRowDetail,
+    inferPayoutFrequency,
     latestParsedDividend,
     nextUpcomingExDividend,
     resolveProfitYear,
@@ -69,6 +71,8 @@ export function StockDividendsSidebarCard({ dividends }: StockDividendsSidebarCa
     const latestParsed = latestParsedDividend(sorted)
     const sinceYear = earliestCalendarYear(sorted)
     const calendarYears = countCalendarYears(sorted)
+    const calendars5y = countCalendarsInLastYears(sorted, 5)
+    const payoutFrequency = inferPayoutFrequency()
     const latestFy = latestParsed ? resolveProfitYear(latestParsed) : null
 
     return (
@@ -78,7 +82,7 @@ export function StockDividendsSidebarCard({ dividends }: StockDividendsSidebarCa
                     <div className="space-y-1">
                         <h2 className="text-lg font-bold font-heading text-text-primary">Dividends</h2>
                         <p className="text-[11px] font-data text-text-tertiary">
-                            SECNet · annual
+                            SECNet · {payoutFrequency}
                             {sinceYear ? ` since ${sinceYear}` : ''}
                             {' · '}
                             not a forecast
@@ -178,6 +182,30 @@ export function StockDividendsSidebarCard({ dividends }: StockDividendsSidebarCa
                         </div>
                     ) : null}
 
+                    <div className="space-y-0.5">
+                        <dt className="flex items-center gap-1 text-[11px] text-text-secondary">
+                            Payout frequency
+                            <InfoPopover label="payout frequency">
+                                MSE issuers typically file one dividend calendar per year after the AGM. We do not
+                                infer monthly or quarterly schedules unless filings clearly support it.
+                            </InfoPopover>
+                        </dt>
+                        <dd className="font-data text-sm font-semibold text-text-primary capitalize tabular-nums">
+                            {payoutFrequency} (MSE)
+                        </dd>
+                    </div>
+                    <div className="space-y-0.5">
+                        <dt className="flex items-center gap-1 text-[11px] text-text-secondary">
+                            Calendars (5y)
+                            <InfoPopover label="calendars in last five years">
+                                SECNet dividend calendar disclosures filed in the last five calendar years — a
+                                consistency proxy, not payout frequency.
+                            </InfoPopover>
+                        </dt>
+                        <dd className="font-data text-sm font-semibold text-text-primary tabular-nums">
+                            {calendars5y}
+                        </dd>
+                    </div>
                     <div className="space-y-0.5">
                         <dt className="flex items-center gap-1 text-[11px] text-text-secondary">
                             Calendars filed

@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import type { DividendCalendarEntry, DividendsCalendarFile } from '@/lib/dividends'
 import {
-    countCalendarYears,
+    countCalendarsInLastYears,
     earliestCalendarYear,
     highestDisclosedGross,
+    inferPayoutFrequency,
     latestParsedDividend,
     mostCalendarFilings,
     nextUpcomingExDividend,
@@ -52,6 +53,8 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
     const latestParsed = latestParsedDividend(selectedEntries)
     const latestFy = latestParsed ? resolveProfitYear(latestParsed) : null
     const sinceYear = earliestCalendarYear(selectedEntries)
+    const calendars5y = countCalendarsInLastYears(selectedEntries, 5)
+    const payoutFrequency = inferPayoutFrequency()
 
     const [leaderboardTab, setLeaderboardTab] = useState<LeaderboardTab>('recent')
 
@@ -176,7 +179,9 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
                                     {selectedCode}
                                     {sinceYear ? ` · calendars since ${sinceYear}` : ''}
                                     {' · '}
-                                    {countCalendarYears(selectedEntries)} filing years
+                                    {payoutFrequency} (MSE)
+                                    {' · '}
+                                    {calendars5y} in 5y
                                 </p>
                             </div>
                             {upcomingIssuer ? (

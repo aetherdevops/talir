@@ -7,6 +7,7 @@ import { loadOcrCache, ocrPdfBuffer, type OcrCache } from './dividend-ocr'
 
 const SEINET_API = 'https://api.seinet.com.mk/public/documents'
 export const DIVIDEND_CALENDAR_LAYOUT_CODE = 'DOC_10688'
+export const AUDITED_FINANCIAL_LAYOUT_CODE = 'DOC_10682'
 
 export interface SeinetAttachment {
     attachmentId: number
@@ -20,6 +21,17 @@ export interface SeinetLayoutLink {
 }
 
 export interface SeinetCalendarMeta {
+    documentId: number
+    issuerId: number
+    stockCode: string
+    stockName: string
+    filedAt: string
+    url: string
+    layoutCode: string
+    layoutLink: SeinetLayoutLink
+}
+
+export interface SeinetFundamentalMeta {
     documentId: number
     issuerId: number
     stockCode: string
@@ -155,13 +167,32 @@ export function mapRawToCalendarMeta(raw: RawSeinetDocument): SeinetCalendarMeta
     }
 }
 
-/**
- * Walk the global DOC_10688 layoutLink chain (market-wide, not per issuer).
- * Returns all dividend calendar documents in the chain.
- */
-export async function walkDividendCalendarChain(startDocumentId: number): Promise<SeinetCalendarMeta[]> {
+export function mapRawToFundamentalMeta(raw: RawSeinetDocument): SeinetFundamentalMeta | null {
+    const layoutCode = raw.layout?.layoutCode ?? ''
+    if (layoutCode !== AUDITED_FINANCIAL_LAYOUT_CODE) return null
+
+    const stockCode = raw.issuer?.code?.trim()
+    const filedAt = publishedDateToIso(raw)
+    if (!stockCode || !filedAt) return null
+
+    return {
+        documentId: raw.documentId,
+        issuerId: raw.issuerId ?? raw.issuer?.issuerId ?? 0,
+        stockCode,
+        stockName: issuerDisplayName(raw),
+        filedAt,
+        url: buildSeinetDocumentUrl(raw.documentId),
+        layoutCode,
+        layoutLink: mapLayoutLink(raw.layoutLink),
+    }
+}
+
+async function walkLayoutLinkChain<T extends { documentId: number }>(
+    startDocumentId: number,
+    mapMeta: (raw: RawSeinetDocument) => T | null
+): Promise<T[]> {
     const seen = new Set<number>()
-    const metas = new Map<number, SeinetCalendarMeta>()
+    const metas = new Map<number, T>()
 
     async function walk(documentId: number | null | undefined): Promise<void> {
         while (documentId && !seen.has(documentId)) {
@@ -169,7 +200,7 @@ export async function walkDividendCalendarChain(startDocumentId: number): Promis
             const raw = await fetchSeinetDocumentRaw(documentId)
             if (!raw) break
 
-            const meta = mapRawToCalendarMeta(raw)
+            const meta = mapMeta(raw)
             if (meta) metas.set(meta.documentId, meta)
 
             documentId = raw.layoutLink?.previousId ?? null
@@ -182,7 +213,7 @@ export async function walkDividendCalendarChain(startDocumentId: number): Promis
             const raw = await fetchSeinetDocumentRaw(documentId)
             if (!raw) break
 
-            const meta = mapRawToCalendarMeta(raw)
+            const meta = mapMeta(raw)
             if (meta) metas.set(meta.documentId, meta)
 
             documentId = raw.layoutLink?.nextId ?? null
@@ -192,13 +223,28 @@ export async function walkDividendCalendarChain(startDocumentId: number): Promis
     const startRaw = await fetchSeinetDocumentRaw(startDocumentId)
     if (!startRaw) return []
 
-    const startMeta = mapRawToCalendarMeta(startRaw)
+    const startMeta = mapMeta(startRaw)
     if (startMeta) metas.set(startMeta.documentId, startMeta)
 
     await walk(startRaw.layoutLink?.previousId ?? null)
     await walkNext(startRaw.layoutLink?.nextId ?? null)
 
     return Array.from(metas.values())
+}
+
+/**
+ * Walk the global DOC_10688 layoutLink chain (market-wide, not per issuer).
+ * Returns all dividend calendar documents in the chain.
+ */
+export async function walkDividendCalendarChain(startDocumentId: number): Promise<SeinetCalendarMeta[]> {
+    return walkLayoutLinkChain(startDocumentId, mapRawToCalendarMeta)
+}
+
+/**
+ * Walk the global DOC_10682 layoutLink chain for audited annual financial statements.
+ */
+export async function walkAuditedFinancialChain(startDocumentId: number): Promise<SeinetFundamentalMeta[]> {
+    return walkLayoutLinkChain(startDocumentId, mapRawToFundamentalMeta)
 }
 
 /** Follow auto-generated EN wrappers to the MK original when attachments are absent. */

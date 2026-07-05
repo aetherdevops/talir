@@ -1,9 +1,11 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
 import {
+    applyOcrParseCap,
     computePayoutRatioPct,
     computeTrailingYieldAtEx,
     computeYoyGrowthPct,
+    countCalendarsInLastYears,
     deriveDividendParseStatus,
     earliestCalendarYear,
     enrichDividendDerivedMetrics,
@@ -108,6 +110,55 @@ describe('parseDividendCalendarText', () => {
 
         assert.equal(parsed.grossPerShare, 2571)
         assert.equal(parsed.parseStatus, 'partial')
+    })
+
+    it('downgrades OCR partial without ex-date to link_only', () => {
+        const parsed = parseDividendCalendarText('gross dividend per share is 150 denars', { fromOcr: true })
+        assert.equal(parsed.grossPerShare, 150)
+        assert.equal(parsed.parseStatus, 'link_only')
+    })
+})
+
+describe('applyOcrParseCap', () => {
+    it('requires gross and ex-date for OCR partial', () => {
+        assert.equal(
+            applyOcrParseCap(
+                {
+                    grossPerShare: 100,
+                    cumDate: null,
+                    exDate: '2026-06-10',
+                    recordDate: null,
+                    paymentStart: null,
+                    paymentEnd: null,
+                },
+                true
+            ),
+            'partial'
+        )
+        assert.equal(
+            applyOcrParseCap(
+                {
+                    grossPerShare: 100,
+                    cumDate: null,
+                    exDate: null,
+                    recordDate: null,
+                    paymentStart: null,
+                    paymentEnd: null,
+                },
+                true
+            ),
+            'link_only'
+        )
+    })
+})
+
+describe('countCalendarsInLastYears', () => {
+    it('counts filings within rolling window', () => {
+        const entries = [
+            { filedAt: '2026-01-01', exDate: '2026-06-01' },
+            { filedAt: '2019-01-01', exDate: '2019-06-01' },
+        ] as Parameters<typeof countCalendarsInLastYears>[0]
+        assert.equal(countCalendarsInLastYears(entries, 5, new Date('2026-07-03')), 1)
     })
 })
 

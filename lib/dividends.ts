@@ -92,6 +92,38 @@ function firstMatch(text: string, patterns: RegExp[]): RegExpMatchArray | null {
     return null
 }
 
+function isPlausibleIsoDate(value: string | null): boolean {
+    if (!value) return false
+    const year = Number(value.slice(0, 4))
+    return year >= 2000 && year <= 2036
+}
+
+/** OCR text is never promoted to parsed; weak partial rows downgrade to link_only. */
+export function applyOcrParseCap(
+    fields: {
+        grossPerShare: number | null
+        cumDate: string | null
+        exDate: string | null
+        recordDate: string | null
+        paymentStart: string | null
+        paymentEnd: string | null
+    },
+    fromOcr?: boolean
+): DividendParseStatus {
+    let status = deriveDividendParseStatus(fields)
+    if (!fromOcr) return status
+
+    if (status === 'parsed') status = 'partial'
+
+    if (status === 'partial') {
+        if (fields.grossPerShare === null || fields.exDate === null) return 'link_only'
+        if (!isPlausibleIsoDate(fields.exDate)) return 'link_only'
+        if (fields.grossPerShare < 1 || fields.grossPerShare > 1_000_000) return 'link_only'
+    }
+
+    return status
+}
+
 export function deriveDividendParseStatus(fields: {
     grossPerShare: number | null
     cumDate: string | null
@@ -202,18 +234,17 @@ export function parseDividendCalendarText(
     ])
     if (profitYearMatch) profitYear = Number(profitYearMatch[1])
 
-    let parseStatus = deriveDividendParseStatus({
-        grossPerShare,
-        cumDate,
-        exDate,
-        recordDate,
-        paymentStart,
-        paymentEnd,
-    })
-
-    if (options?.fromOcr && parseStatus === 'parsed') {
-        parseStatus = 'partial'
-    }
+    let parseStatus = applyOcrParseCap(
+        {
+            grossPerShare,
+            cumDate,
+            exDate,
+            recordDate,
+            paymentStart,
+            paymentEnd,
+        },
+        options?.fromOcr
+    )
 
     return {
         grossPerShare,
@@ -331,6 +362,24 @@ export function earliestCalendarYear(entries: DividendCalendarEntry[]): number |
 export function countCalendarYears(entries: DividendCalendarEntry[]): number {
     const years = new Set(entries.map((e) => (e.exDate ?? e.filedAt).slice(0, 4)))
     return years.size
+}
+
+/** MSE listed issuers overwhelmingly file one dividend calendar per year. */
+export function inferPayoutFrequency(): 'annual' {
+    return 'annual'
+}
+
+/** Calendars filed within the last N calendar years (inclusive). */
+export function countCalendarsInLastYears(
+    entries: DividendCalendarEntry[],
+    years: number,
+    referenceDate = new Date()
+): number {
+    const cutoffYear = referenceDate.getFullYear() - years + 1
+    return entries.filter((entry) => {
+        const year = Number((entry.exDate ?? entry.filedAt).slice(0, 4))
+        return year >= cutoffYear
+    }).length
 }
 
 export function latestParsedDividend(entries: DividendCalendarEntry[]): DividendCalendarEntry | null {
