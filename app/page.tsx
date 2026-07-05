@@ -14,6 +14,10 @@ import {
     getWeekHighStocks,
     getWeekLowStocks,
     getConsistentGainerStocks,
+    getRecentResults,
+    getExpectedResults,
+    getResultsCalendar,
+    getNewsFeedMeta,
 } from '@/lib/data'
 import { HomeMarketOverview } from '@/components/home/HomeMarketOverview'
 import { HomePersonalRail } from '@/components/home/HomePersonalRail'
@@ -32,6 +36,10 @@ export default async function HomePage() {
         indices,
         news,
         allInstruments,
+        recentResults,
+        expectedResults,
+        resultsCalendar,
+        newsMeta,
     ] = await Promise.all([
         getTopGainers(5),
         getTopLosers(5),
@@ -42,6 +50,10 @@ export default async function HomePage() {
         getMarketIndices(),
         getLatestNews(4),
         getAllInstruments(),
+        Promise.resolve(getRecentResults(8)),
+        Promise.resolve(getExpectedResults(5)),
+        Promise.resolve(getResultsCalendar()),
+        Promise.resolve(getNewsFeedMeta()),
     ])
 
     const asOfDate = getMarketDataAsOf(allInstruments)
@@ -72,6 +84,10 @@ export default async function HomePage() {
                         sectors={sectors}
                         sentiment={sentiment}
                         asOfDate={asOfDate}
+                        recentResults={recentResults}
+                        expectedResults={expectedResults}
+                        lastIssuerScan={newsMeta.lastIssuerScan ?? resultsCalendar.lastIssuerScan}
+                        issuerCount={resultsCalendar.issuerCount}
                     />
                     <div className="lg:hidden min-w-0">
                         <NewsFeed items={news} layout="home" />

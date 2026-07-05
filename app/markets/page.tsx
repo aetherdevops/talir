@@ -1,6 +1,15 @@
 
 import { MarketsClient } from './client'
-import { getAllInstruments, getMarketSentiment, getMarketDataAsOf, getMarketSparklines } from '@/lib/data'
+import {
+    getAllInstruments,
+    getMarketSentiment,
+    getMarketDataAsOf,
+    getMarketSparklines,
+    getAllResults,
+    getExpectedResults,
+    getResultsCalendar,
+    getNewsFeedMeta,
+} from '@/lib/data'
 import { Suspense } from 'react'
 import { MarketsLoadingSkeleton } from './loading-skeleton'
 import { Metadata } from 'next'
@@ -17,6 +26,10 @@ export default async function MarketsPage() {
     const sentiment = getMarketSentiment(stocks)
     const asOfDate = getMarketDataAsOf(stocks)
     const sparklines = getMarketSparklines()
+    const results = getAllResults()
+    const expected = getExpectedResults()
+    const resultsCalendar = getResultsCalendar()
+    const newsMeta = getNewsFeedMeta()
 
     return (
         <main className="max-w-7xl mx-auto animate-in fade-in duration-500">
@@ -26,6 +39,10 @@ export default async function MarketsPage() {
                     sentiment={sentiment}
                     asOfDate={asOfDate}
                     sparklines={sparklines}
+                    results={results}
+                    expected={expected}
+                    lastIssuerScan={newsMeta.lastIssuerScan ?? resultsCalendar.lastIssuerScan}
+                    issuerCount={resultsCalendar.issuerCount}
                 />
             </Suspense>
         </main>

@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { StockSummary } from '@/lib/types'
 import type { MarketSentiment, SparklineMap } from '@/lib/data'
+import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { Search, ArrowUp, ArrowDown } from 'lucide-react'
 import {
     MarketInstrumentRow,
@@ -13,6 +14,7 @@ import {
     MARKET_ROW_SPARKLINE_WIDTH,
 } from '@/components/markets/MarketInstrumentRow'
 import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
+import { MarketsResultsTable } from '@/components/results/MarketsResultsTable'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { cn } from '@/lib/utils'
 
@@ -21,14 +23,45 @@ interface MarketsClientProps {
     sentiment: MarketSentiment
     asOfDate: string
     sparklines: SparklineMap
+    results: ResultsCalendarEntry[]
+    expected: ExpectedResultsEntry[]
+    lastIssuerScan: string | null
+    issuerCount: number
 }
+
+type MarketsView = 'instruments' | 'results'
 
 type SortKey = 'turnover' | 'change' | 'price' | 'name'
 type SortOrder = 'asc' | 'desc'
 
-export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }: MarketsClientProps) {
+export function MarketsClient({
+    initialStocks,
+    sentiment,
+    asOfDate,
+    sparklines,
+    results,
+    expected,
+    lastIssuerScan,
+    issuerCount,
+}: MarketsClientProps) {
     const searchParams = useSearchParams()
     const router = useRouter()
+
+    const view: MarketsView = searchParams.get('view') === 'results' ? 'results' : 'instruments'
+
+    const setView = useCallback(
+        (next: MarketsView) => {
+            const params = new URLSearchParams(searchParams.toString())
+            if (next === 'results') {
+                params.set('view', 'results')
+            } else {
+                params.delete('view')
+            }
+            const query = params.toString()
+            router.replace(query ? `/markets?${query}` : '/markets', { scroll: false })
+        },
+        [router, searchParams]
+    )
 
     const [query, setQuery] = useState('')
     const [sortKey, setSortKey] = useState<SortKey>(() => {
@@ -42,12 +75,12 @@ export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }
 
     const syncUrl = useCallback(
         (key: SortKey, order: SortOrder) => {
-            const params = new URLSearchParams()
+            const params = new URLSearchParams(searchParams.toString())
             params.set('sort', key === 'turnover' ? 'volume' : key)
             params.set('order', order)
             router.replace(`/markets?${params.toString()}`, { scroll: false })
         },
-        [router]
+        [router, searchParams]
     )
 
     const displayStocks = useMemo(() => {
@@ -122,6 +155,38 @@ export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }
 
             <MarketSentimentStrip sentiment={sentiment} asOfDate={asOfDate} />
 
+            <div className="flex flex-wrap gap-2">
+                {(
+                    [
+                        { id: 'instruments' as const, label: 'All instruments' },
+                        { id: 'results' as const, label: 'Recent results' },
+                    ] as const
+                ).map((tab) => (
+                    <button
+                        key={tab.id}
+                        type="button"
+                        onClick={() => setView(tab.id)}
+                        className={cn(
+                            'px-3 py-2 rounded-full text-xs font-semibold transition-all border min-h-[44px]',
+                            view === tab.id
+                                ? 'bg-surface shadow-sm text-accent border-accent/20'
+                                : 'bg-surface-secondary/40 text-text-tertiary border-border hover:text-text-secondary'
+                        )}
+                    >
+                        {tab.label}
+                    </button>
+                ))}
+            </div>
+
+            {view === 'results' ? (
+                <MarketsResultsTable
+                    results={results}
+                    expected={expected}
+                    lastIssuerScan={lastIssuerScan}
+                    issuerCount={issuerCount}
+                />
+            ) : (
+                <>
             <div className="sticky top-0 z-10 py-2 bg-background/95 backdrop-blur-md border-b border-border space-y-2 min-w-0">
                 <div className="relative w-full md:max-w-md group">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-text-tertiary group-focus-within:text-accent transition-colors" />
@@ -201,6 +266,8 @@ export function MarketsClient({ initialStocks, sentiment, asOfDate, sparklines }
                     </div>
                 )}
             </div>
+                </>
+            )}
         </div>
     )
 }

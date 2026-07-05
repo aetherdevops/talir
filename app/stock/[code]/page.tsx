@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getStock, getChartData, getCompanyFilings, getAllStocks } from '@/lib/data'
+import { getStock, getChartData, getCompanyFilings, getAllStocks, getResultsForIssuer, getExpectedForIssuer } from '@/lib/data'
 import { StockClient } from './StockClient'
 
 export const revalidate = 86400
@@ -25,6 +25,8 @@ export default async function StockPage({ params }: { params: Promise<{ code: st
     }
 
     const { dated, undated } = getCompanyFilings(code)
+    const issuerResults = getResultsForIssuer(code)
+    const issuerExpected = getExpectedForIssuer(code)
 
     const { history } = stock
     // JSON history is Oldest -> Newest (ASC), so latest is the last item
@@ -43,6 +45,8 @@ export default async function StockPage({ params }: { params: Promise<{ code: st
             currentPrice={currentPrice}
             filingsDated={dated}
             filingsUndated={undated}
+            issuerResults={issuerResults}
+            issuerExpected={issuerExpected}
             asOfDate={asOfDate}
         />
     )

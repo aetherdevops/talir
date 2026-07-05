@@ -12,6 +12,13 @@ import derivedMarketData from '@/lib/data/derived_market.json'
 import scrapeMetaData from '@/lib/data/scrape_meta.json'
 import searchIndexData from '@/lib/data/search_index.json'
 import newsFeedData from '@/lib/data/news_feed.json'
+import resultsCalendarData from '@/lib/data/derived_results_calendar.json'
+import type {
+    ExpectedResultsEntry,
+    ResultsCalendarEntry,
+    ResultsCalendarFile,
+} from './results-calendar'
+export type { ExpectedResultsEntry, ResultsCalendarEntry, ResultsCalendarFile }
 
 // Unified fetcher for both stocks and indices
 export async function getAllInstruments(): Promise<StockSummary[]> {
@@ -424,6 +431,31 @@ export function getCompanyFilings(stockCode: string): { dated: NewsItem[]; undat
         dated: feed.items.filter((item) => item.stockCode === stockCode),
         undated: feed.undatedByCode?.[stockCode] ?? [],
     }
+}
+
+export function getResultsCalendar(): ResultsCalendarFile {
+    return resultsCalendarData as ResultsCalendarFile
+}
+
+export function getRecentResults(limit = 8): ResultsCalendarEntry[] {
+    return getResultsCalendar().recent.slice(0, limit)
+}
+
+export function getAllResults(): ResultsCalendarEntry[] {
+    return getResultsCalendar().all
+}
+
+export function getExpectedResults(limit?: number): ExpectedResultsEntry[] {
+    const expected = getResultsCalendar().expected
+    return limit ? expected.slice(0, limit) : expected
+}
+
+export function getResultsForIssuer(stockCode: string): ResultsCalendarEntry[] {
+    return getResultsCalendar().byIssuer[stockCode] ?? []
+}
+
+export function getExpectedForIssuer(stockCode: string): ExpectedResultsEntry[] {
+    return getResultsCalendar().expected.filter((entry) => entry.stockCode === stockCode)
 }
 
 export async function getLatestNews(limit: number = 6, stockCode?: string): Promise<NewsItem[]> {

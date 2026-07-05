@@ -16,6 +16,7 @@ import { PortfolioHoldingIndicator } from '@/components/portfolio/PortfolioHoldi
 import { StockFilingsSection } from '@/components/stock/StockFilingsSection'
 import { ResponsiveText } from '@/components/ui/ResponsiveText'
 import { StockSummary, DailyPrice, NewsItem } from '@/lib/types'
+import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { UPDATES_SECTION_TITLE } from '@/lib/news-style'
 
 // Replicate the ChartData interface locally or import it
@@ -32,6 +33,8 @@ interface StockClientProps {
     chartData: ChartData[]
     filingsDated: NewsItem[]
     filingsUndated: NewsItem[]
+    issuerResults: ResultsCalendarEntry[]
+    issuerExpected: ExpectedResultsEntry[]
     asOfDate: string
 }
 
@@ -41,7 +44,17 @@ function chartRangeToTimeframe(range: ChartRange): Timeframe {
     return range as Timeframe
 }
 
-export function StockClient({ stock, history, currentPrice, chartData, filingsDated, filingsUndated, asOfDate }: StockClientProps) {
+export function StockClient({
+    stock,
+    history,
+    currentPrice,
+    chartData,
+    filingsDated,
+    filingsUndated,
+    issuerResults,
+    issuerExpected,
+    asOfDate,
+}: StockClientProps) {
     const defaultChartRange = usePreferencesStore((s) => s.defaultChartRange)
     const [timeframe, setTimeframe] = useState<Timeframe>(() => chartRangeToTimeframe(defaultChartRange))
 
@@ -231,7 +244,12 @@ export function StockClient({ stock, history, currentPrice, chartData, filingsDa
                         <h2 className="text-lg font-semibold text-text-primary font-heading border-b border-border pb-3">
                             {UPDATES_SECTION_TITLE}
                         </h2>
-                        <StockFilingsSection dated={filingsDated} undated={filingsUndated} />
+                        <StockFilingsSection
+                            dated={filingsDated}
+                            undated={filingsUndated}
+                            results={issuerResults}
+                            expected={issuerExpected}
+                        />
                     </div>
                 </div>
 

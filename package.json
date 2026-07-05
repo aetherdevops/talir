@@ -19,12 +19,13 @@
     "generate:sparklines": "node scripts/generate-sparklines.mjs",
     "generate:derived": "node scripts/generate-derived-market.mjs",
     "generate:news-feed": "node scripts/generate-news-feed.mjs",
+    "generate:results-calendar": "tsx scripts/generate-results-calendar.ts",
     "generate:search-index": "node scripts/generate-search-index.mjs",
     "generate:icons": "node scripts/generate-icons.mjs",
     "test:issuer-scrape": "node scripts/test-issuer-scrape.mjs",
-    "test": "tsx --test lib/change.test.ts lib/news-tier.test.ts",
+    "test": "tsx --test lib/change.test.ts lib/news-tier.test.ts lib/results-calendar.test.ts",
     "lighthouse:budget": "node scripts/lighthouse-budget.mjs",
-    "prebuild": "node scripts/generate-sparklines.mjs && node scripts/generate-derived-market.mjs && node scripts/generate-search-index.mjs && node scripts/generate-news-feed.mjs"
+    "prebuild": "node scripts/generate-sparklines.mjs && node scripts/generate-derived-market.mjs && node scripts/generate-search-index.mjs && node scripts/generate-news-feed.mjs && tsx scripts/generate-results-calendar.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",

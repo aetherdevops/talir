@@ -1,11 +1,13 @@
 import type { MarketIndex, StockSummary } from '@/lib/types'
 import type { DerivedBreadth, DerivedSectorRollup, MarketSentiment } from '@/lib/data'
+import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { HomeIndexStrip } from '@/components/home/HomeIndexStrip'
 import { HomeLeaderboardTabs } from '@/components/home/HomeLeaderboardTabs'
 import { HomeMarketBreadth } from '@/components/home/HomeMarketBreadth'
 import { HomeSectorStrip } from '@/components/home/HomeSectorStrip'
+import { RecentResultsSection, ExpectedResultsSection } from '@/components/results/ResultsCalendarSections'
 
 interface HomeMarketOverviewProps {
     indices: MarketIndex[]
@@ -19,6 +21,10 @@ interface HomeMarketOverviewProps {
     sectors: DerivedSectorRollup[]
     sentiment: MarketSentiment
     asOfDate: string
+    recentResults: ResultsCalendarEntry[]
+    expectedResults: ExpectedResultsEntry[]
+    lastIssuerScan: string | null
+    issuerCount: number
 }
 
 export function HomeMarketOverview({
@@ -33,6 +39,10 @@ export function HomeMarketOverview({
     sectors,
     sentiment,
     asOfDate,
+    recentResults,
+    expectedResults,
+    lastIssuerScan,
+    issuerCount,
 }: HomeMarketOverviewProps) {
     return (
         <div className="space-y-4 min-w-0">
@@ -52,6 +62,14 @@ export function HomeMarketOverview({
                 consistentGainers={consistentGainers}
                 asOfDate={asOfDate}
             />
+
+            <RecentResultsSection
+                recent={recentResults}
+                lastIssuerScan={lastIssuerScan}
+                issuerCount={issuerCount}
+            />
+
+            <ExpectedResultsSection expected={expectedResults} />
 
             <HomeMarketBreadth sentiment={sentiment} breadth={breadth} asOfDate={asOfDate} />
 
