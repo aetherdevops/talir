@@ -14,14 +14,17 @@ import searchIndexData from '@/lib/data/search_index.json'
 import newsFeedData from '@/lib/data/news_feed.json'
 import resultsCalendarData from '@/lib/data/derived_results_calendar.json'
 import dividendsCalendarData from '@/lib/data/derived_dividends.json'
+import fundamentalsData from '@/lib/data/derived_fundamentals.json'
 import type {
     ExpectedResultsEntry,
     ResultsCalendarEntry,
     ResultsCalendarFile,
 } from './results-calendar'
 import type { DividendCalendarEntry, DividendsCalendarFile } from './dividends'
+import type { FundamentalEntry, FundamentalsFile } from './fundamentals'
 export type { ExpectedResultsEntry, ResultsCalendarEntry, ResultsCalendarFile }
 export type { DividendCalendarEntry, DividendsCalendarFile }
+export type { FundamentalEntry, FundamentalsFile }
 
 // Unified fetcher for both stocks and indices
 export async function getAllInstruments(): Promise<StockSummary[]> {
@@ -480,6 +483,14 @@ export function getUpcomingExDates(limit?: number): DividendCalendarEntry[] {
 
 export function getDividendsForIssuer(stockCode: string): DividendCalendarEntry[] {
     return getDividendsCalendar().byIssuer[stockCode] ?? []
+}
+
+export function getFundamentalsCalendar(): FundamentalsFile {
+    return fundamentalsData as FundamentalsFile
+}
+
+export function getFundamentalsForIssuer(stockCode: string): FundamentalEntry[] {
+    return getFundamentalsCalendar().byIssuer[stockCode] ?? []
 }
 
 export async function getLatestNews(limit: number = 6, stockCode?: string): Promise<NewsItem[]> {

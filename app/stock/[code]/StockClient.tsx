@@ -14,11 +14,14 @@ import { StickyStockHeader } from '@/components/stock/StickyStockHeader'
 import { usePreferencesStore, type ChartRange } from '@/lib/stores/preferences'
 import { PortfolioHoldingIndicator } from '@/components/portfolio/PortfolioHoldingIndicator'
 import { StockDividendsSidebarCard } from '@/components/dividends/StockDividendsSidebarCard'
+import { StockFundamentalsStats } from '@/components/stock/StockFundamentalsStats'
 import { StockFilingsSection } from '@/components/stock/StockFilingsSection'
 import { ResponsiveText } from '@/components/ui/ResponsiveText'
 import { StockSummary, DailyPrice, NewsItem } from '@/lib/types'
 import type { DividendCalendarEntry } from '@/lib/dividends'
+import type { FundamentalEntry } from '@/lib/fundamentals'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
+import { buildStockValuationSnapshot } from '@/lib/stock-valuation'
 import { UPDATES_SECTION_TITLE } from '@/lib/news-style'
 
 // Replicate the ChartData interface locally or import it
@@ -38,6 +41,7 @@ interface StockClientProps {
     issuerResults: ResultsCalendarEntry[]
     issuerExpected: ExpectedResultsEntry[]
     issuerDividends: DividendCalendarEntry[]
+    issuerFundamentals: FundamentalEntry[]
     asOfDate: string
 }
 
@@ -57,10 +61,21 @@ export function StockClient({
     issuerResults,
     issuerExpected,
     issuerDividends,
+    issuerFundamentals,
     asOfDate,
 }: StockClientProps) {
     const defaultChartRange = usePreferencesStore((s) => s.defaultChartRange)
     const [timeframe, setTimeframe] = useState<Timeframe>(() => chartRangeToTimeframe(defaultChartRange))
+
+    const valuationSnapshot = useMemo(
+        () =>
+            buildStockValuationSnapshot({
+                price: currentPrice,
+                fundamentals: issuerFundamentals,
+                dividends: issuerDividends,
+            }),
+        [currentPrice, issuerFundamentals, issuerDividends]
+    )
 
     // Filter Logic with Index-based fallback for short periods to ensure data display
     const filteredData = useMemo(() => {
@@ -328,6 +343,8 @@ export function StockClient({
                                     {stock.first_trade_date}
                                 </span>
                             </div>
+
+                            <StockFundamentalsStats snapshot={valuationSnapshot} asOfDate={asOfDate} />
                         </CardContent>
                     </Card>
 
