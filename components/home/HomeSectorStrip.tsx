@@ -43,7 +43,7 @@ export function HomeSectorStrip({ sectors }: HomeSectorStripProps) {
                     <div
                         key={sector.name}
                         className={cn(
-                            'rounded-xl border border-border/60 bg-surface px-3 py-2 min-w-0',
+                            'rounded-xl bg-surface-secondary px-3 py-2 min-w-0',
                             'flex flex-col justify-center',
                             'w-[calc(50%-0.25rem)] max-md:min-h-[var(--sector-row-h)]',
                             'md:w-auto md:min-w-[140px] md:flex-1 md:max-w-[180px]'

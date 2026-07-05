@@ -30,26 +30,40 @@ export function FilingIndicatorDot({ tier, className }: FilingIndicatorDotProps)
 
 interface FilingIndicatorLegendProps {
     className?: string
-    compact?: boolean
+    /** Vertical stack for narrow rails (300px) and mobile */
+    stacked?: boolean
 }
 
-export function FilingIndicatorLegend({ className, compact = false }: FilingIndicatorLegendProps) {
+export function FilingIndicatorLegend({ className, stacked = false }: FilingIndicatorLegendProps) {
     const tiers: FilingIndicatorTier[] = ['material', 'dividend', 'routine']
 
     return (
         <div
             className={cn(
-                'text-[10px] font-data text-text-tertiary',
-                compact ? 'space-y-1' : 'flex flex-wrap gap-x-4 gap-y-1.5',
+                'text-[10px] font-data text-text-tertiary min-w-0',
+                stacked ? 'flex flex-col gap-1.5' : 'flex flex-wrap gap-x-4 gap-y-2',
                 className
             )}
             aria-label="Filing type key"
         >
-            {!compact && <span className="font-semibold text-text-secondary w-full sm:w-auto">Filing type key</span>}
+            {!stacked && (
+                <span className="font-semibold text-text-secondary w-full sm:w-auto shrink-0">
+                    Filing type key
+                </span>
+            )}
+            {stacked && (
+                <span className="font-semibold text-text-secondary text-[10px]">Filing type key</span>
+            )}
             {tiers.map((tier) => (
-                <span key={tier} className="inline-flex items-center gap-1.5">
-                    <FilingIndicatorDot tier={tier} />
-                    <span>{FILING_TIER_LABELS[tier]}</span>
+                <span
+                    key={tier}
+                    className={cn(
+                        'flex items-start gap-2 min-w-0',
+                        stacked ? 'w-full' : 'inline-flex items-center'
+                    )}
+                >
+                    <FilingIndicatorDot tier={tier} className="mt-1" />
+                    <span className="leading-snug break-words">{FILING_TIER_LABELS[tier]}</span>
                 </span>
             ))}
         </div>

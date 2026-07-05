@@ -5,6 +5,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 
+const DRAG_THRESHOLD_PX = 5
+
 interface DesktopScrollRowProps {
     children: ReactNode
     className?: string
@@ -23,6 +25,18 @@ export function DesktopScrollRow({
     const scrollRef = useRef<HTMLDivElement>(null)
     const [canScrollLeft, setCanScrollLeft] = useState(false)
     const [canScrollRight, setCanScrollRight] = useState(false)
+    const [isDragging, setIsDragging] = useState(false)
+
+    const dragState = useRef({
+        active: false,
+        didDrag: false,
+        startX: 0,
+        scrollLeft: 0,
+        lastX: 0,
+        lastTime: 0,
+        velocity: 0,
+        momentumId: 0,
+    })
 
     const updateScrollState = useCallback(() => {
         const el = scrollRef.current
@@ -50,7 +64,111 @@ export function DesktopScrollRow({
         }
     }, [updateScrollState, children])
 
+    const stopMomentum = useCallback(() => {
+        if (dragState.current.momentumId) {
+            cancelAnimationFrame(dragState.current.momentumId)
+            dragState.current.momentumId = 0
+        }
+    }, [])
+
+    const startMomentum = useCallback(() => {
+        const el = scrollRef.current
+        if (!el) return
+        let velocity = dragState.current.velocity
+        if (Math.abs(velocity) < 0.15) return
+
+        const step = () => {
+            if (!scrollRef.current || Math.abs(velocity) < 0.05) {
+                dragState.current.momentumId = 0
+                return
+            }
+            scrollRef.current.scrollLeft -= velocity * 16
+            velocity *= 0.92
+            dragState.current.momentumId = requestAnimationFrame(step)
+        }
+        dragState.current.momentumId = requestAnimationFrame(step)
+    }, [])
+
+    const onPointerDown = useCallback(
+        (event: React.PointerEvent<HTMLDivElement>) => {
+            if (event.pointerType === 'touch') return
+            if (event.button !== 0) return
+
+            stopMomentum()
+            const el = scrollRef.current
+            if (!el) return
+
+            el.setPointerCapture(event.pointerId)
+            dragState.current = {
+                ...dragState.current,
+                active: true,
+                didDrag: false,
+                startX: event.clientX,
+                scrollLeft: el.scrollLeft,
+                lastX: event.clientX,
+                lastTime: performance.now(),
+                velocity: 0,
+            }
+        },
+        [stopMomentum]
+    )
+
+    const onPointerMove = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
+        if (event.pointerType === 'touch') return
+        if (!dragState.current.active) return
+
+        const el = scrollRef.current
+        if (!el) return
+
+        const dx = event.clientX - dragState.current.startX
+        if (!dragState.current.didDrag && Math.abs(dx) > DRAG_THRESHOLD_PX) {
+            dragState.current.didDrag = true
+            setIsDragging(true)
+        }
+
+        if (dragState.current.didDrag) {
+            el.scrollLeft = dragState.current.scrollLeft - dx
+            const now = performance.now()
+            const dt = now - dragState.current.lastTime
+            if (dt > 0) {
+                dragState.current.velocity =
+                    (event.clientX - dragState.current.lastX) / dt
+            }
+            dragState.current.lastX = event.clientX
+            dragState.current.lastTime = now
+            event.preventDefault()
+        }
+    }, [])
+
+    const onPointerUp = useCallback(
+        (event: React.PointerEvent<HTMLDivElement>) => {
+            if (event.pointerType === 'touch') return
+            if (!dragState.current.active) return
+
+            dragState.current.active = false
+            setIsDragging(false)
+
+            if (scrollRef.current?.hasPointerCapture(event.pointerId)) {
+                scrollRef.current.releasePointerCapture(event.pointerId)
+            }
+
+            if (dragState.current.didDrag) {
+                startMomentum()
+            }
+        },
+        [startMomentum]
+    )
+
+    const onClickCapture = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
+        if (dragState.current.didDrag) {
+            event.preventDefault()
+            event.stopPropagation()
+            dragState.current.didDrag = false
+        }
+    }, [])
+
     const scroll = (direction: 'left' | 'right') => {
+        stopMomentum()
         scrollRef.current?.scrollBy({
             left: direction === 'left' ? -scrollAmount : scrollAmount,
             behavior: 'smooth',
@@ -76,7 +194,15 @@ export function DesktopScrollRow({
 
             <div
                 ref={scrollRef}
-                className="flex flex-1 gap-2 min-w-0 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+                className={cn(
+                    'flex flex-1 gap-2 min-w-0 overflow-x-auto scrollbar-hide snap-x snap-mandatory touch-pan-x',
+                    isDragging ? 'cursor-grabbing select-none' : 'cursor-grab'
+                )}
+                onPointerDown={onPointerDown}
+                onPointerMove={onPointerMove}
+                onPointerUp={onPointerUp}
+                onPointerCancel={onPointerUp}
+                onClickCapture={onClickCapture}
             >
                 {children}
             </div>

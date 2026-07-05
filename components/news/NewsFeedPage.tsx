@@ -100,7 +100,7 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
                 </div>
             )}
 
-            <FilingIndicatorLegend className="pt-3 border-t border-border" />
+            <FilingIndicatorLegend stacked className="pt-3" />
 
             {lastIssuerScan && (
                 <p className="text-xs text-text-tertiary font-data">

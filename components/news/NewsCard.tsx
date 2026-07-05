@@ -35,7 +35,7 @@ export function NewsCard({ item }: NewsCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={ariaLabel}
-            className="group block rounded-lg border border-border/60 bg-surface px-3 py-2.5 hover:border-border-active transition-colors min-w-0 min-h-[44px]"
+            className="group block rounded-lg bg-surface-secondary px-3 py-2.5 hover:bg-surface-elevated transition-colors min-w-0 min-h-[44px]"
         >
             <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 min-w-0">
                 <FilingIndicatorDot tier={tier} className="self-center" />

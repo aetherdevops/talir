@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import { Bookmark, Bell, Briefcase, ChevronRight } from 'lucide-react'
+import { Bookmark, Bell, Briefcase, ChevronRight, X } from 'lucide-react'
 import { useAuth } from '@/components/auth/AuthProvider'
 import { useInstruments } from '@/components/providers/InstrumentsProvider'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
@@ -13,6 +13,7 @@ import { useWatchlistStore } from '@/lib/stores/watchlist'
 import { cn, formatPrice, classifyChangePercent } from '@/lib/utils'
 
 const MAX_WATCHLIST_PREVIEW = 5
+const RAIL_COLLAPSED_KEY = 'talir-personal-rail-collapsed'
 
 interface HomePersonalRailProps {
     variant?: 'rail' | 'compact'
@@ -29,7 +30,7 @@ function GhostRow({
     description: string
 }) {
     return (
-        <div className="rounded-lg border border-dashed border-border/80 bg-surface-secondary/30 px-3 py-2.5 min-w-0">
+        <div className="rounded-lg bg-surface-tertiary px-3 py-2.5 min-w-0">
             <div className="flex items-start gap-2 min-w-0">
                 <Icon className="h-4 w-4 shrink-0 text-text-tertiary mt-0.5" aria-hidden />
                 <div className="min-w-0">
@@ -145,7 +146,7 @@ function SignedInContent({ compact }: { compact: boolean }) {
                             <li key={code} className="min-w-0">
                                 <Link
                                     href={`/stock/${code}`}
-                                    className="flex items-center justify-between gap-2 rounded-lg px-2 py-1.5 hover:bg-surface-secondary/60 transition-colors min-w-0"
+                                    className="flex items-center justify-between gap-2 rounded-lg px-2 py-1.5 hover:bg-surface-tertiary/80 transition-colors min-w-0"
                                 >
                                     <span className="font-data text-xs font-semibold text-text-primary truncate">
                                         {code}
@@ -170,7 +171,7 @@ function SignedInContent({ compact }: { compact: boolean }) {
                 )}
             </section>
 
-            <section className="space-y-2 min-w-0 border-t border-border/60 pt-3">
+            <section className="space-y-2 min-w-0 pt-3">
                 <div className="flex items-center justify-between gap-2 min-w-0">
                     <h3 className="text-xs font-bold uppercase tracking-widest text-text-tertiary">
                         Portfolio
@@ -184,7 +185,7 @@ function SignedInContent({ compact }: { compact: boolean }) {
                     </Link>
                 </div>
                 {portfolioSummary ? (
-                    <div className="rounded-lg border border-border/60 bg-surface-secondary/40 px-3 py-2 min-w-0">
+                    <div className="rounded-lg bg-surface-tertiary px-3 py-2 min-w-0">
                         <p className="text-xs font-semibold text-text-primary truncate">{portfolioSummary.name}</p>
                         <p className="text-[11px] text-text-tertiary font-data mt-0.5">
                             {portfolioSummary.holdingCount} holding
@@ -217,7 +218,7 @@ function SignedInContent({ compact }: { compact: boolean }) {
                 )}
             </section>
 
-            <section className="space-y-2 min-w-0 border-t border-border/60 pt-3">
+            <section className="space-y-2 min-w-0 pt-3">
                 <div className="flex items-center justify-between gap-2 min-w-0">
                     <h3 className="text-xs font-bold uppercase tracking-widest text-text-tertiary">
                         Alerts
@@ -253,18 +254,42 @@ function SignedInContent({ compact }: { compact: boolean }) {
 export function HomePersonalRail({ variant = 'rail', className }: HomePersonalRailProps) {
     const { user, loading } = useAuth()
     const [hydrated, setHydrated] = useState(false)
+    const [collapsed, setCollapsed] = useState(false)
 
     useEffect(() => {
         setHydrated(true)
+        try {
+            setCollapsed(localStorage.getItem(RAIL_COLLAPSED_KEY) === '1')
+        } catch {
+            /* ignore */
+        }
     }, [])
 
     const compact = variant === 'compact'
+
+    const dismissRail = () => {
+        setCollapsed(true)
+        try {
+            localStorage.setItem(RAIL_COLLAPSED_KEY, '1')
+        } catch {
+            /* ignore */
+        }
+    }
+
+    const expandRail = () => {
+        setCollapsed(false)
+        try {
+            localStorage.removeItem(RAIL_COLLAPSED_KEY)
+        } catch {
+            /* ignore */
+        }
+    }
 
     if (!hydrated || loading) {
         return (
             <aside
                 className={cn(
-                    'rounded-xl border border-border/60 bg-surface-secondary/30 min-w-0',
+                    'rounded-xl bg-surface-secondary min-w-0',
                     compact ? 'p-3' : 'p-4',
                     className
                 )}
@@ -275,18 +300,48 @@ export function HomePersonalRail({ variant = 'rail', className }: HomePersonalRa
         )
     }
 
+    if (collapsed) {
+        return (
+            <aside className={cn('min-w-0', className)} aria-label="My Talir">
+                <button
+                    type="button"
+                    onClick={expandRail}
+                    className={cn(
+                        'w-full min-h-[44px] rounded-xl bg-surface-secondary px-3 py-2.5',
+                        'font-heading text-sm font-bold text-text-primary tracking-tight',
+                        'hover:bg-surface-elevated transition-colors text-left',
+                        !compact && 'xl:sticky xl:top-4 xl:self-start'
+                    )}
+                    aria-label="Open My Talir"
+                >
+                    My Talir
+                </button>
+            </aside>
+        )
+    }
+
     return (
         <aside
             className={cn(
-                'rounded-xl border border-border/60 bg-surface min-w-0',
+                'rounded-xl bg-surface-secondary min-w-0',
                 compact ? 'p-3' : 'p-4 xl:sticky xl:top-4 xl:self-start',
                 className
             )}
             aria-label="My Talir"
         >
-            <h2 className="font-heading text-base font-bold text-text-primary tracking-tight mb-3">
-                My Talir
-            </h2>
+            <div className="flex items-start justify-between gap-2 mb-3 min-w-0">
+                <h2 className="font-heading text-base font-bold text-text-primary tracking-tight">
+                    My Talir
+                </h2>
+                <button
+                    type="button"
+                    onClick={dismissRail}
+                    className="inline-flex items-center justify-center h-8 w-8 shrink-0 rounded-lg text-text-tertiary hover:text-text-primary hover:bg-surface-tertiary transition-colors"
+                    aria-label="Dismiss My Talir panel"
+                >
+                    <X className="h-4 w-4" aria-hidden />
+                </button>
+            </div>
             {user ? <SignedInContent compact={compact} /> : <SignedOutContent compact={compact} />}
         </aside>
     )

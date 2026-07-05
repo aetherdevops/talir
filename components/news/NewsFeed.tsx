@@ -39,7 +39,7 @@ export function NewsFeed({
                         <NewsCard key={item.id} item={item} />
                     ))}
                 </div>
-                {showLegend && <FilingIndicatorLegend compact className="pt-2 border-t border-border/60" />}
+                {showLegend && <FilingIndicatorLegend stacked className="pt-2" />}
             </section>
         )
     }
@@ -48,7 +48,7 @@ export function NewsFeed({
 
     return (
         <section
-            className={cn('min-w-0', isRail ? 'space-y-3 sticky top-4' : 'space-y-5 pt-6 border-t border-border')}
+            className={cn('min-w-0', isRail ? 'space-y-3 sticky top-4' : 'space-y-5 pt-6')}
             aria-labelledby={showHeader ? 'updates-section-heading' : undefined}
         >
             {showHeader && (
@@ -99,7 +99,7 @@ export function NewsFeed({
             </div>
 
             {showLegend && (
-                <FilingIndicatorLegend compact={isRail} className="pt-1 border-t border-border/60" />
+                <FilingIndicatorLegend stacked={isRail} className="pt-2" />
             )}
         </section>
     )

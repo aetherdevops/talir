@@ -1,6 +1,7 @@
 import type { MarketSentiment } from '@/lib/data'
 import { formatIndexLevel } from '@/lib/utils'
 import { cn } from '@/lib/utils'
+import { InfoPopover } from '@/components/ui/InfoPopover'
 import { DataFreshnessLabel } from './DataFreshnessLabel'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { ArrowDown, ArrowUp } from 'lucide-react'
@@ -49,7 +50,7 @@ export function MarketSentimentStrip({
     return (
         <section
             className={cn(
-                'rounded-xl border border-border/60 bg-surface-secondary/40 px-3 py-2 space-y-1.5 min-w-0',
+                'rounded-xl bg-surface-secondary px-3 py-2 space-y-1.5 min-w-0',
                 className
             )}
             aria-labelledby={breadthOnly ? 'session-breadth-heading' : undefined}
@@ -57,12 +58,18 @@ export function MarketSentimentStrip({
             {breadthOnly && (
                 <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between min-w-0">
                     <div className="min-w-0">
-                        <h2
-                            id="session-breadth-heading"
-                            className="font-heading text-sm font-bold text-text-primary tracking-tight"
-                        >
-                            Session breadth
-                        </h2>
+                        <div className="flex items-center gap-1.5 min-w-0">
+                            <h2
+                                id="session-breadth-heading"
+                                className="font-heading text-sm font-bold text-text-primary tracking-tight"
+                            >
+                                Session breadth
+                            </h2>
+                            <InfoPopover label="Session breadth">
+                                How many stocks rose, fell, or stayed flat in the last session — participation,
+                                not magnitude.
+                            </InfoPopover>
+                        </div>
                         <p className="text-[11px] text-text-tertiary leading-snug">
                             Advancers and decliners across MSE equities, end-of-day.
                         </p>

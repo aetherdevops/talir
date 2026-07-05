@@ -78,7 +78,7 @@ export default async function HomePage() {
                     </div>
                 </div>
 
-                <aside className="hidden lg:block lg:col-span-4 xl:col-span-1 min-w-0 border-l border-border pl-6">
+                <aside className="hidden lg:block lg:col-span-4 xl:col-span-1 min-w-0 pl-6">
                     <NewsFeed items={news} layout="home-rail" />
                 </aside>
             </div>
