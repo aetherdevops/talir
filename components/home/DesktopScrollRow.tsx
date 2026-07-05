@@ -14,8 +14,8 @@ interface DesktopScrollRowProps {
 }
 
 /**
- * Horizontal quote row for lg+ only. Parent must hide this below lg
- * so overflow-x-auto never activates on mobile/tablet.
+ * Horizontal quote row for lg+ with chevrons and pointer drag.
+ * Parent must clip mobile/tablet with MobileLeaderboardScrollRow instead.
  */
 export function DesktopScrollRow({
     children,

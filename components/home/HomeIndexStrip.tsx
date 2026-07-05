@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { MarketIndex } from '@/lib/types'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
+import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { formatIndexLevelCompact } from '@/lib/utils'
 import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -9,10 +10,11 @@ const INDEX_CODES = ['MBI10', 'OMB'] as const
 
 interface HomeIndexStripProps {
     indices: MarketIndex[]
+    asOfDate: string
     className?: string
 }
 
-export function HomeIndexStrip({ indices, className }: HomeIndexStripProps) {
+export function HomeIndexStrip({ indices, asOfDate, className }: HomeIndexStripProps) {
     const rows = INDEX_CODES.map((code) =>
         indices.find((idx) => idx.name === code)
     ).filter((idx): idx is MarketIndex => idx != null)
@@ -26,6 +28,7 @@ export function HomeIndexStrip({ indices, className }: HomeIndexStripProps) {
                 >
                     Indices
                 </h2>
+                <DataFreshnessLabel asOfDate={asOfDate} className="mb-2" />
                 <p className="text-sm text-text-tertiary py-2 text-center">No index data available</p>
             </section>
         )
@@ -39,6 +42,7 @@ export function HomeIndexStrip({ indices, className }: HomeIndexStripProps) {
             >
                 Indices
             </h2>
+            <DataFreshnessLabel asOfDate={asOfDate} className="mb-2" />
             <div className="rounded-xl border border-border/60 bg-surface-secondary/30 divide-y divide-border/60 min-w-0">
                 {rows.map((idx) => (
                     <Link

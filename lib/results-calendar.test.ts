@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import {
     buildResultsEntriesFromNews,
     classifyReportKind,
+    formatFiledResultsLine,
     inferPeriodYear,
     isResultsReport,
     newsItemToResultsEntry,
@@ -96,15 +97,20 @@ describe('newsItemToResultsEntry dedupe', () => {
         assert.equal(entries[0].periodEnd, '2026-03-31')
     })
 
-    it('returns null for non-result filings', () => {
-        assert.equal(
-            newsItemToResultsEntry(
-                mockItem({
-                    rawTitle: '5/20/2026 - KMB - Corporate governance questionnaire',
-                    publishedAt: '2026-05-20',
-                })
-            ),
-            null
-        )
+    it('omits period when not parsed', () => {
+        const line = formatFiledResultsLine({
+            stockCode: 'SIL',
+            stockName: 'Sileks',
+            reportKind: 'fy_audited',
+            periodStart: null,
+            periodEnd: null,
+            periodLabel: null,
+            filedAt: '2026-06-30',
+            headline: 'SIL files audited financial statements',
+            url: 'https://seinet.com.mk/en/document/1',
+            source: 'SECNet',
+        })
+        assert.equal(line, 'FY audited · filed 30.06.2026')
+        assert.doesNotMatch(line, /period not stated/)
     })
 })

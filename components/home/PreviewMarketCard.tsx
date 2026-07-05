@@ -35,8 +35,8 @@ export function PreviewMarketCard({
         <Link
             href={href}
             className={cn(
-                'block w-full min-w-0 rounded-xl bg-surface-secondary hover:bg-surface-elevated transition-colors',
-                'p-2.5 flex flex-col gap-1.5 min-h-[44px]',
+                'block min-w-0 rounded-xl bg-surface-secondary hover:bg-surface-elevated transition-colors',
+                'p-2.5 flex flex-col gap-1.5 overflow-hidden',
                 className
             )}
         >

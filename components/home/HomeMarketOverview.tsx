@@ -1,7 +1,6 @@
 import type { MarketIndex, StockSummary } from '@/lib/types'
 import type { DerivedBreadth, DerivedSectorRollup, MarketSentiment } from '@/lib/data'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
-import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { HomeIndexStrip } from '@/components/home/HomeIndexStrip'
 import { HomeLeaderboardTabs } from '@/components/home/HomeLeaderboardTabs'
@@ -23,8 +22,6 @@ interface HomeMarketOverviewProps {
     asOfDate: string
     recentResults: ResultsCalendarEntry[]
     expectedResults: ExpectedResultsEntry[]
-    lastIssuerScan: string | null
-    issuerCount: number
 }
 
 export function HomeMarketOverview({
@@ -41,18 +38,9 @@ export function HomeMarketOverview({
     asOfDate,
     recentResults,
     expectedResults,
-    lastIssuerScan,
-    issuerCount,
 }: HomeMarketOverviewProps) {
     return (
-        <div className="space-y-4 min-w-0">
-            <header className="space-y-1 min-w-0">
-                <h1 className="font-heading text-xl font-bold text-text-primary tracking-tight">
-                    Market overview
-                </h1>
-                <DataFreshnessLabel asOfDate={asOfDate} />
-            </header>
-
+        <div className="space-y-4 min-w-0 max-w-full">
             <HomeLeaderboardTabs
                 gainers={gainers}
                 losers={losers}
@@ -63,13 +51,9 @@ export function HomeMarketOverview({
                 asOfDate={asOfDate}
             />
 
-            <RecentResultsSection
-                recent={recentResults}
-                lastIssuerScan={lastIssuerScan}
-                issuerCount={issuerCount}
-            />
+            <RecentResultsSection recent={recentResults} limit={5} />
 
-            <ExpectedResultsSection expected={expectedResults} />
+            <ExpectedResultsSection expected={expectedResults} limit={5} />
 
             <HomeMarketBreadth sentiment={sentiment} breadth={breadth} asOfDate={asOfDate} />
 
@@ -78,7 +62,7 @@ export function HomeMarketOverview({
             <SponsorSlot placement="mobile-banner" />
             <SponsorSlot placement="rectangle" className="hidden md:flex" />
 
-            <HomeIndexStrip indices={indices} />
+            <HomeIndexStrip indices={indices} asOfDate={asOfDate} />
         </div>
     )
 }

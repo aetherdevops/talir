@@ -5,6 +5,10 @@ import Link from 'next/link'
 import { StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { DesktopScrollRow } from '@/components/home/DesktopScrollRow'
+import {
+    LEADERBOARD_CARD_CLASS,
+    MobileLeaderboardScrollRow,
+} from '@/components/home/MobileLeaderboardScrollRow'
 import { StockPreviewCard } from '@/components/home/StockPreviewCard'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { ChevronRight } from 'lucide-react'
@@ -40,7 +44,7 @@ function TabPills<T extends string>({
 }) {
     return (
         <div
-            className="flex p-1 bg-surface-secondary/50 rounded-xl overflow-x-auto scrollbar-hide min-w-0"
+            className="flex p-1 bg-surface-secondary/50 rounded-xl overflow-x-auto scrollbar-hide min-w-0 max-w-full"
             role="tablist"
         >
             {options.map((opt) => (
@@ -62,10 +66,6 @@ function TabPills<T extends string>({
             ))}
         </div>
     )
-}
-
-function PreviewGrid({ children }: { children: React.ReactNode }) {
-    return <div className="grid grid-cols-2 gap-2 w-full min-w-0">{children}</div>
 }
 
 export function HomeLeaderboardTabs({
@@ -107,8 +107,12 @@ export function HomeLeaderboardTabs({
     const previewStocks = activeStocks.slice(0, MAX_PREVIEW_ITEMS)
     const hasMoreStocks = activeStocks.length > MAX_PREVIEW_ITEMS
 
+    const cardNodes = previewStocks.map((stock) => (
+        <StockPreviewCard key={stock.code} stock={stock} className={LEADERBOARD_CARD_CLASS} />
+    ))
+
     return (
-        <section className="space-y-2 min-w-0" aria-labelledby="home-leaderboards-heading">
+        <section className="space-y-2 min-w-0 max-w-full" aria-labelledby="home-leaderboards-heading">
             <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1 min-w-0">
                 <h2
                     id="home-leaderboards-heading"
@@ -123,23 +127,9 @@ export function HomeLeaderboardTabs({
 
             {previewStocks.length > 0 ? (
                 <>
-                    <div className="lg:hidden min-w-0">
-                        <PreviewGrid>
-                            {previewStocks.map((stock) => (
-                                <StockPreviewCard key={stock.code} stock={stock} />
-                            ))}
-                        </PreviewGrid>
-                    </div>
-                    <div className="hidden lg:block min-w-0">
-                        <DesktopScrollRow>
-                            {previewStocks.map((stock) => (
-                                <StockPreviewCard
-                                    key={stock.code}
-                                    stock={stock}
-                                    className="w-[180px] shrink-0 snap-start"
-                                />
-                            ))}
-                        </DesktopScrollRow>
+                    <MobileLeaderboardScrollRow>{cardNodes}</MobileLeaderboardScrollRow>
+                    <div className="hidden lg:block min-w-0 max-w-full">
+                        <DesktopScrollRow>{cardNodes}</DesktopScrollRow>
                     </div>
                 </>
             ) : (

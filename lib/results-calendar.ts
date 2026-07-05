@@ -1,4 +1,5 @@
 import type { NewsItem } from './types'
+import { formatNewsDate } from './utils'
 
 export type ResultsReportKind = 'q1_pl' | 'q3_pl' | 'h1_fs' | 'fy_interim' | 'fy_audited'
 
@@ -423,4 +424,29 @@ export function buildResultsCalendarFile(
         expected: buildExpectedResults(all, referenceDate),
         regulatoryDeadlines: REGULATORY_DEADLINES,
     }
+}
+
+function formatPeriodSuffix(entry: ResultsCalendarEntry): string | null {
+    if (entry.reportKind === 'fy_audited' || entry.reportKind === 'fy_interim') {
+        const year = entry.periodEnd?.slice(0, 4)
+        return year ? `FY ${year}` : null
+    }
+    return entry.periodLabel
+}
+
+export function formatFiledResultsLine(entry: ResultsCalendarEntry): string {
+    const kind = REPORT_KIND_LABELS[entry.reportKind]
+    const filed = formatNewsDate(entry.filedAt)
+    const period = formatPeriodSuffix(entry)
+    if (period) return `${kind} · ${period} · filed ${filed}`
+    return `${kind} · filed ${filed}`
+}
+
+export function formatExpectedResultsLine(entry: ExpectedResultsEntry, includeRegulatory: boolean): string {
+    const kind = REPORT_KIND_LABELS[entry.reportKind]
+    let line = `${kind} · ${entry.expectedLabel}`
+    if (includeRegulatory && entry.regulatoryLatest) {
+        line += ` · regulatory latest ${formatNewsDate(entry.regulatoryLatest)}`
+    }
+    return line
 }

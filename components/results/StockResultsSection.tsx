@@ -20,7 +20,7 @@ export function StockResultsSection({ results, expected }: StockResultsSectionPr
                     <p className="text-[11px] font-data text-text-tertiary">
                         Filed on SECNet · filing date shown
                     </p>
-                    <div className="space-y-1.5">
+                    <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
                         {results.slice(0, 6).map((entry) => (
                             <ResultsCalendarRow key={`${entry.reportKind}-${entry.filedAt}`} entry={entry} />
                         ))}
@@ -28,7 +28,7 @@ export function StockResultsSection({ results, expected }: StockResultsSectionPr
                 </section>
             )}
 
-            <ExpectedResultsSection expected={expected} limit={3} />
+            <ExpectedResultsSection expected={expected} limit={3} includeRegulatory />
         </div>
     )
 }
