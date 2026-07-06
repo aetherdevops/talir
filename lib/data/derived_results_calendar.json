@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-05T20:26:56.163Z",
-  "lastIssuerScan": "2026-07-05",
+  "generatedAt": "2026-07-06T06:43:07.620Z",
+  "lastIssuerScan": "2026-07-06",
   "issuerCount": 170,
   "recent": [
     {
@@ -2293,18 +2293,6 @@
       "filedAt": "2026-04-14",
       "headline": "ORAN reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/76238",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TTK",
-      "stockName": "TTK Banka AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-07",
-      "headline": "TTK files profit and loss report",
-      "url": "https://seinet.com.mk/en/document/76209",
       "source": "SECNet"
     }
   ],
