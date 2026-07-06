@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState, type CSSProperties } from 'react'
-import type { DerivedSectorRollup } from '@/lib/data'
+import type { DerivedSectorRollup } from '@/lib/market-derived-types'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { IssuerDisplayName } from '@/components/common/IssuerDisplayName'
 import { LocaleLink } from '@/components/layout/LocaleLink'

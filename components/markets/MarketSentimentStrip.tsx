@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import type { MarketSentiment } from '@/lib/data'
+import type { MarketSentiment } from '@/lib/market-derived-types'
 import { formatIndexLevel } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 import { InfoPopover } from '@/components/ui/InfoPopover'

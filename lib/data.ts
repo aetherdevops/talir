@@ -22,6 +22,22 @@ import type {
 } from './results-calendar'
 import type { DividendCalendarEntry, DividendsCalendarFile } from './dividends'
 import type { FundamentalEntry, FundamentalsFile } from './fundamentals'
+import type {
+    BreadthHistoryPoint,
+    DerivedBreadth,
+    DerivedSectorRollup,
+    MarketSentiment,
+    SearchIndexItem,
+    SparklineMap,
+} from './market-derived-types'
+export type {
+    BreadthHistoryPoint,
+    DerivedBreadth,
+    DerivedSectorRollup,
+    MarketSentiment,
+    SearchIndexItem,
+    SparklineMap,
+} from './market-derived-types'
 export type { ExpectedResultsEntry, ResultsCalendarEntry, ResultsCalendarFile }
 export type { DividendCalendarEntry, DividendsCalendarFile }
 export type { FundamentalEntry, FundamentalsFile }
@@ -219,31 +235,6 @@ export async function getMostActive(limit: number = 5): Promise<StockSummary[]> 
     return all.sort((a, b) => b.turnover - a.turnover).slice(0, limit)
 }
 
-export type BreadthHistoryPoint = {
-    date: string
-    advancers: number
-    decliners: number
-    unchanged: number
-}
-
-export type DerivedBreadth = {
-    history: BreadthHistoryPoint[]
-    pctAbove30dAvg: number
-    newHighs52w: number
-    newLows52w: number
-    high52wCodes?: string[]
-    low52wCodes?: string[]
-}
-
-export type DerivedSectorRollup = {
-    name: string
-    avgChangePct: number
-    advancers: number
-    decliners: number
-    unchanged: number
-    count: number
-}
-
 type DerivedMarketFile = {
     asOfDate?: string
     breadth?: DerivedBreadth
@@ -329,13 +320,6 @@ export function getRecentDailyCloses(history: DailyPrice[], tradingDays = 30) {
         .map(([date, value]) => ({ date, value }))
 }
 
-export interface MarketSentiment {
-    advancers: number
-    decliners: number
-    unchanged: number
-    primaryIndex?: { name: string; value: number; changePercent: number }
-}
-
 export function getMarketSentiment(stocks: StockSummary[]): MarketSentiment {
     const derived = derivedMarketData as {
         sentiment?: { advancers: number; decliners: number; unchanged: number }
@@ -399,13 +383,6 @@ export function getScrapeMeta(): ScrapeMeta {
     return scrapeMetaData as ScrapeMeta
 }
 
-export type SearchIndexItem = {
-    code: string
-    name: string
-    type: 'Stock' | 'Index'
-    q: string
-}
-
 export function getSearchIndex(): SearchIndexItem[] {
     const index = searchIndexData as { items?: SearchIndexItem[] }
     return index.items ?? []
@@ -418,8 +395,6 @@ export function attachSparklines(stocks: StockSummary[]): StockSummary[] {
         chartSeries: s.chartSeries?.length ? s.chartSeries : sparklines[s.code] ?? [],
     }))
 }
-
-export type SparklineMap = Record<string, { date: string; value: number }[]>
 
 /** Precomputed 30-day sparklines — see scripts/generate-sparklines.mjs */
 export function getMarketSparklines(): SparklineMap {

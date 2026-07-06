@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useState } from 'react'
 import type { StockSummary } from '@/lib/types'
-import type { SearchIndexItem } from '@/lib/data'
+import type { SearchIndexItem } from '@/lib/market-derived-types'
 
 const InstrumentsContext = createContext<StockSummary[]>([])
 

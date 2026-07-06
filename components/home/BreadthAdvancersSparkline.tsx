@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
-import type { BreadthHistoryPoint } from '@/lib/data'
+import type { BreadthHistoryPoint } from '@/lib/market-derived-types'
 import { cn, classifyChangePercent } from '@/lib/utils'
 
 const SPARKLINE_HEIGHT = 40

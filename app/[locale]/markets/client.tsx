@@ -3,7 +3,7 @@
 import { useState, useMemo, useCallback } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { StockSummary } from '@/lib/types'
-import type { MarketSentiment, SparklineMap } from '@/lib/data'
+import type { MarketSentiment, SparklineMap } from '@/lib/market-derived-types'
 import type { DividendCalendarEntry } from '@/lib/dividends'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { Search, ArrowUp, ArrowDown } from 'lucide-react'

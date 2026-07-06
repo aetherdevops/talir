@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import type { DerivedBreadth, MarketSentiment } from '@/lib/data'
+import type { DerivedBreadth, MarketSentiment } from '@/lib/market-derived-types'
 import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
 import { BreadthAdvancersSparkline } from '@/components/home/BreadthAdvancersSparkline'
 import { BreadthStockPreview } from '@/components/markets/BreadthStockPreview'
