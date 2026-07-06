@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/Button'
 import { PriceChangeBadge } from '@/components/ui/Badge'
 import { StockSummary } from '@/lib/types'
 import { useSearchIndex } from '@/components/providers/InstrumentsProvider'
+import { IssuerDisplayName } from '@/components/common/IssuerDisplayName'
+import { useLocale } from '@/components/providers/LocaleProvider'
+import { localizedPath } from '@/lib/i18n/routing'
 
 export function SearchBar({ className, items = [], autoFocus = false }: { className?: string, items?: StockSummary[], autoFocus?: boolean }) {
     const router = useRouter()
@@ -19,14 +22,19 @@ export function SearchBar({ className, items = [], autoFocus = false }: { classN
     const [isOpen, setIsOpen] = useState(false)
     const [focusedIndex, setFocusedIndex] = useState(-1)
     const { items: searchIndex, loading: indexLoading, ensureLoaded } = useSearchIndex()
+    const { locale, t } = useLocale()
+
+    const tabs = [
+        { id: 'All', label: t('search.all') },
+        { id: 'Index', label: t('search.index') },
+        { id: 'Stock', label: t('search.stock') },
+    ] as const
 
     const instrumentByCode = useMemo(() => {
         const map = new Map<string, StockSummary>()
         for (const item of items) map.set(item.code, item)
         return map
     }, [items])
-
-    const tabs = ['All', 'Index', 'Stock']
 
     const openSearch = () => {
         setIsOpen(true)
@@ -84,9 +92,9 @@ export function SearchBar({ className, items = [], autoFocus = false }: { classN
 
     const handleSelect = (item: StockSummary) => {
         if (item.type === 'Index') {
-            router.push(`/market/${item.code}`)
+            router.push(localizedPath(`/market/${item.code}`, locale))
         } else {
-            router.push(`/stock/${item.code}`)
+            router.push(localizedPath(`/stock/${item.code}`, locale))
         }
 
         setQuery('')
@@ -138,7 +146,7 @@ export function SearchBar({ className, items = [], autoFocus = false }: { classN
                 <input
                     ref={inputRef}
                     type="text"
-                    placeholder="Search for stocks, ETFs & more"
+                    placeholder={t('search.placeholder')}
                     value={query}
                     onChange={(e) => {
                         setQuery(e.target.value)
@@ -174,29 +182,29 @@ export function SearchBar({ className, items = [], autoFocus = false }: { classN
                 <div className="absolute top-full left-0 right-0 bg-surface border-x border-b border-border rounded-b-2xl shadow-xl overflow-hidden z-20">
                     {/* Tabs */}
                     <div className="flex flex-wrap items-center gap-1 px-4 py-2 border-b border-border">
-                        {tabs.map(tab => (
+                        {tabs.map((tab) => (
                             <button
-                                key={tab}
+                                key={tab.id}
                                 onClick={(e) => {
                                     e.preventDefault()
-                                    setActiveTab(tab)
+                                    setActiveTab(tab.id)
                                     inputRef.current?.focus()
                                 }}
                                 className={cn(
                                     "px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 whitespace-nowrap",
-                                    activeTab === tab
+                                    activeTab === tab.id
                                         ? "bg-accent-muted text-accent"
                                         : "text-text-tertiary hover:bg-surface-secondary hover:text-text-secondary"
                                 )}
                             >
-                                {tab}
+                                {tab.label}
                             </button>
                         ))}
                     </div>
 
                     {/* Info */}
                     <div className="px-4 py-3 flex items-center gap-2 text-xs text-text-tertiary">
-                        <span>About these suggestions</span>
+                        <span>{t('search.aboutSuggestions')}</span>
                         <div className="h-4 w-4 rounded-full border border-text-tertiary/30 flex items-center justify-center text-[10px] font-mono cursor-help">i</div>
                     </div>
 
@@ -204,7 +212,7 @@ export function SearchBar({ className, items = [], autoFocus = false }: { classN
                     <div className="max-h-[400px] overflow-y-auto">
                         {indexLoading && query.trim().length > 0 ? (
                             <div className="px-4 py-8 text-center text-sm text-text-tertiary">
-                                Loading search index…
+                                {t('search.loading')}
                             </div>
                         ) : filteredData.length > 0 ? (
                             filteredData.map((item, index) => (
@@ -219,7 +227,11 @@ export function SearchBar({ className, items = [], autoFocus = false }: { classN
                                 >
                                     <div className="flex flex-col gap-0.5">
                                         <span className="text-sm font-medium text-text-primary">
-                                            {item.name}
+                                            {item.type === 'Index' ? (
+                                                item.name
+                                            ) : (
+                                                <IssuerDisplayName code={item.code} name={item.name} />
+                                            )}
                                         </span>
                                         <span className="text-xs text-text-tertiary font-bold tracking-wider">
                                             {item.code} <span className="font-normal opacity-50">• {(item.type || 'Stock').toUpperCase()}</span>
@@ -235,14 +247,14 @@ export function SearchBar({ className, items = [], autoFocus = false }: { classN
                             ))
                         ) : (
                             <div className="px-4 py-8 text-center text-sm text-text-tertiary">
-                                No results found for {activeTab}
+                                {t('search.noResults', { tab: activeTab })}
                             </div>
                         )}
                     </div>
 
                     {/* Footer hint */}
                     <div className="bg-surface-secondary/30 px-4 py-2 text-[10px] text-text-tertiary border-t border-border text-center">
-                        Press <kbd className="font-sans px-1 py-0.5 rounded bg-surface border border-border mx-1">Enter</kbd> to see all results
+                        {t('search.pressEnter')}
                     </div>
                 </div>
             )}

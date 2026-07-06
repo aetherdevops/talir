@@ -1,6 +1,6 @@
 import { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem, NewsFeedFile } from './types'
 export type { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem, NewsFeedFile }
-import { transliterate } from './transliterate'
+import { getIssuerDisplayName, getIssuerMarketCapThousands } from './issuer-display-name'
 import { CHANGE_ZERO_THRESHOLD, classifyChangePercent } from './utils'
 import { isExcludedEquityCode, isMseEquityInstrument } from './market-universe'
 
@@ -64,6 +64,8 @@ export async function getAllStocks(): Promise<StockSummary[]> {
                 volume: number
                 turnover: number
                 date: string
+                sector?: string | null
+                marketCapThousandsMkd?: number
             }>
         }
 
@@ -81,6 +83,8 @@ export async function getAllStocks(): Promise<StockSummary[]> {
                     date: item.date,
                     type: 'Stock' as const,
                     chartSeries: sparklines[item.code],
+                    sector: item.sector || undefined,
+                    marketCapThousandsMkd: item.marketCapThousandsMkd,
                 }))
                 .filter((s) => s.price > 0 || s.volume > 0)
         }
@@ -118,7 +122,12 @@ export async function getRelatedStocksBySector(
 
     return all
         .filter((s) => s.code !== code && sectorByCode.get(s.code) === sector)
-        .sort((a, b) => b.turnover - a.turnover)
+        .sort((a, b) => {
+            const capA = a.marketCapThousandsMkd ?? getIssuerMarketCapThousands(a.code) ?? 0
+            const capB = b.marketCapThousandsMkd ?? getIssuerMarketCapThousands(b.code) ?? 0
+            if (capB !== capA) return capB - capA
+            return b.turnover - a.turnover
+        })
         .slice(0, limit)
 }
 
@@ -155,18 +164,21 @@ export async function getStock(code: string): Promise<StockData | null> {
         // Find issuer data
         const issuerDetails = issuers.find((i: any) => i.code === code);
 
+        const latinName = stock.company_name || issuerDetails?.name || code
+        const nameMk = getIssuerDisplayName('mk', code, latinName)
+
         // Merge scraped issuer data with any existing data
         const mergedIssuerData = {
             ...stock.issuer_data,
             ...issuerDetails,
-            company_name: stock.company_name || issuerDetails?.name, // Prefer file source of truth
-            name: stock.company_name || issuerDetails?.name, // Ensure 'name' is also consistent
+            company_name: latinName,
+            name: latinName,
         };
 
         return {
             company_code: stock.company_code,
-            company_name: stock.company_name,
-            company_name_original: stock.company_name,
+            company_name: latinName,
+            company_name_original: nameMk,
             sector: issuerDetails?.sector || undefined,
             history: history,
             first_trade_date: history.length > 0 ? history[0].date : '',
@@ -219,6 +231,8 @@ export type DerivedBreadth = {
     pctAbove30dAvg: number
     newHighs52w: number
     newLows52w: number
+    high52wCodes?: string[]
+    low52wCodes?: string[]
 }
 
 export type DerivedSectorRollup = {
@@ -501,6 +515,27 @@ export function getUpcomingExDates(limit?: number): DividendCalendarEntry[] {
 
 export function getDividendsForIssuer(stockCode: string): DividendCalendarEntry[] {
     return getDividendsCalendar().byIssuer[stockCode] ?? []
+}
+
+/** First trade date per ticker from bundled EOD history (for dividend scorecards). */
+export async function getFirstTradeDateByCode(codes: string[]): Promise<Record<string, string>> {
+    const result: Record<string, string> = {}
+    const unique = [...new Set(codes)]
+
+    await Promise.all(
+        unique.map(async (code) => {
+            try {
+                const stockModule = await import(`@/lib/data/stocks/${code}.json`)
+                const stock = stockModule.default as { history?: { date: string }[] }
+                const first = stock.history?.[0]?.date
+                if (first) result[code] = first
+            } catch {
+                // Missing history file — skip
+            }
+        })
+    )
+
+    return result
 }
 
 export function getFundamentalsCalendar(): FundamentalsFile {

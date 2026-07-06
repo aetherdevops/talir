@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import { Card } from '@/components/ui/Card'
 import { PriceChangeBadge } from '@/components/ui/Badge'
+import { IssuerDisplayName } from '@/components/common/IssuerDisplayName'
 import { formatPrice } from '@/lib/utils'
 import { StockSummary } from '@/lib/types'
 
@@ -20,8 +23,8 @@ export function StockCard({ stock }: StockCardProps) {
                 </div>
 
                 <div className="flex flex-col gap-1">
-                    <h3 className="text-sm font-medium text-text-primary line-clamp-1 group-hover:text-brand-active transition-colors" title={stock.name}>
-                        {stock.name}
+                    <h3 className="text-sm font-medium text-text-primary line-clamp-1 group-hover:text-brand-active transition-colors">
+                        <IssuerDisplayName code={stock.code} name={stock.name} />
                     </h3>
                     <div className="flex items-baseline gap-2">
                         <span className="text-lg font-mono font-bold text-text-primary">

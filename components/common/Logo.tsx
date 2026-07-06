@@ -1,6 +1,9 @@
+'use client'
+
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
+import { LocaleLink } from '@/components/layout/LocaleLink'
 import { TalirMark } from '@/components/common/TalirMark'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface LogoProps {
     className?: string
@@ -8,8 +11,10 @@ interface LogoProps {
 }
 
 export function Logo({ className, compact = false }: LogoProps) {
+    const { t } = useLocale()
+
     return (
-        <Link
+        <LocaleLink
             href="/"
             className={cn('flex items-center gap-2.5 min-h-[44px] min-w-0 group', className)}
         >
@@ -17,10 +22,11 @@ export function Logo({ className, compact = false }: LogoProps) {
             {!compact && (
                 <div className="hidden min-[360px]:flex items-center leading-none min-w-0">
                     <span className="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-text-primary whitespace-nowrap">
-                        Talir<span className="text-accent">.</span>
+                        {t('brand.wordmark')}
+                        <span className="text-accent">.</span>
                     </span>
                 </div>
             )}
-        </Link>
+        </LocaleLink>
     )
 }

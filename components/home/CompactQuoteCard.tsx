@@ -1,10 +1,11 @@
+import type { ReactNode } from 'react'
 import { PreviewMarketCard } from '@/components/home/PreviewMarketCard'
 import { cn } from '@/lib/utils'
 
 interface CompactQuoteCardProps {
     href: string
     label: string
-    subtitle?: string
+    subtitle?: ReactNode
     chartSeries: { date: string; value: number }[]
     latestPrice: number
     changePercent: number

@@ -1,7 +1,8 @@
 "use client"
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useBarePathname } from '@/lib/i18n/use-bare-pathname'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { Home, Newspaper, PieChart, Bookmark, Settings, Plus, BarChart2, ChevronLeft, ChevronRight, Bell, Coins } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
@@ -26,7 +27,7 @@ const ICON_CONTAINER_CLASS = "flex items-center justify-center w-10 h-10 flex-sh
 function SidebarItem({ icon: Icon, label, href, isActive, isCollapsed, iconClass, onClick }: SidebarItemProps) {
     return (
         <li>
-            <Link
+            <LocaleLink
                 href={href}
                 onClick={onClick}
                 className={cn(
@@ -48,7 +49,7 @@ function SidebarItem({ icon: Icon, label, href, isActive, isCollapsed, iconClass
                 )}>
                     <span className="text-sm font-medium">{label}</span>
                 </div>
-            </Link>
+            </LocaleLink>
         </li>
     )
 }
@@ -75,7 +76,8 @@ function SectionHeader({ label, onAdd, isCollapsed }: { label: string, onAdd?: (
 }
 
 export function Sidebar({ className }: { className?: string }) {
-    const pathname = usePathname()
+    const pathname = useBarePathname()
+    const { t } = useLocale()
     const { isSidebarOpen, toggleSidebar, setSidebarOpen } = useThemeStore()
     const { portfolios, activePortfolioId, setActivePortfolio } = usePortfolioStore()
     const [mounted, setMounted] = useState(false)
@@ -104,18 +106,18 @@ export function Sidebar({ className }: { className?: string }) {
         >
             <nav className="flex-1 w-full overflow-y-auto scrollbar-hide pt-4">
                 <ul className="space-y-1 px-3">
-                    <SidebarItem icon={Home} label="Home" href="/" isActive={pathname === '/'} isCollapsed={!isOpen} onClick={handleNavClick()} />
-                    <SidebarItem icon={BarChart2} label="Markets" href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} onClick={handleNavClick()} />
-                    <SidebarItem icon={Coins} label="Dividends" href="/dividends" isActive={pathname === '/dividends'} isCollapsed={!isOpen} onClick={handleNavClick()} />
-                    <SidebarItem icon={Newspaper} label="Updates" href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} onClick={handleNavClick()} />
+                    <SidebarItem icon={Home} label={t('nav.home')} href="/" isActive={pathname === '/'} isCollapsed={!isOpen} onClick={handleNavClick()} />
+                    <SidebarItem icon={BarChart2} label={t('nav.markets')} href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} onClick={handleNavClick()} />
+                    <SidebarItem icon={Coins} label={t('nav.dividends')} href="/dividends" isActive={pathname === '/dividends'} isCollapsed={!isOpen} onClick={handleNavClick()} />
+                    <SidebarItem icon={Newspaper} label={t('nav.updates')} href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} onClick={handleNavClick()} />
 
                     <SectionHeader
-                        label="Create"
+                        label={t('nav.create')}
                         onAdd={() => setIsCreateMenuOpen(true)}
                         isCollapsed={!isOpen}
                     />
 
-                    <SectionHeader label="Portfolios" isCollapsed={!isOpen} />
+                    <SectionHeader label={t('nav.portfolios')} isCollapsed={!isOpen} />
 
                     {portfolios.map(p => (
                         <SidebarItem
@@ -130,22 +132,22 @@ export function Sidebar({ className }: { className?: string }) {
                         />
                     ))}
 
-                    <SectionHeader label="Watchlists" isCollapsed={!isOpen} />
+                    <SectionHeader label={t('nav.watchlists')} isCollapsed={!isOpen} />
 
                     <SidebarItem
                         icon={Bookmark}
-                        label="My Watchlist"
+                        label={t('nav.myWatchlist')}
                         href="/watchlist"
                         isActive={pathname.startsWith('/watchlist')}
                         isCollapsed={!isOpen}
                         onClick={handleNavClick()}
                     />
 
-                    <SectionHeader label="Alerts" isCollapsed={!isOpen} />
+                    <SectionHeader label={t('nav.alerts')} isCollapsed={!isOpen} />
 
                     <SidebarItem
                         icon={Bell}
-                        label="My Alerts"
+                        label={t('nav.myAlerts')}
                         href="/alerts"
                         isActive={pathname === '/alerts'}
                         isCollapsed={!isOpen}
@@ -167,7 +169,7 @@ export function Sidebar({ className }: { className?: string }) {
                 </div>
 
                 <ul className="space-y-1">
-                    <SidebarItem icon={Settings} label="Settings" href="/settings" isActive={pathname === '/settings'} isCollapsed={!isOpen} onClick={handleNavClick()} />
+                    <SidebarItem icon={Settings} label={t('nav.settings')} href="/settings" isActive={pathname === '/settings'} isCollapsed={!isOpen} onClick={handleNavClick()} />
                 </ul>
             </div>
 

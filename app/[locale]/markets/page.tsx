@@ -11,6 +11,7 @@ import {
     getAllDividends,
     getUpcomingExDates,
     getNewsFeedMeta,
+    getMarketBreadth,
 } from '@/lib/data'
 import { Suspense } from 'react'
 import { MarketsLoadingSkeleton } from './loading-skeleton'
@@ -34,6 +35,7 @@ export default async function MarketsPage() {
     const upcomingExDates = getUpcomingExDates()
     const resultsCalendar = getResultsCalendar()
     const newsMeta = getNewsFeedMeta()
+    const breadth = getMarketBreadth()
 
     return (
         <main className="max-w-7xl mx-auto animate-in fade-in duration-500">
@@ -49,6 +51,8 @@ export default async function MarketsPage() {
                     upcomingExDates={upcomingExDates}
                     lastIssuerScan={newsMeta.lastIssuerScan ?? resultsCalendar.lastIssuerScan}
                     issuerCount={resultsCalendar.issuerCount}
+                    high52wCodes={breadth?.high52wCodes ?? []}
+                    low52wCodes={breadth?.low52wCodes ?? []}
                 />
             </Suspense>
         </main>

@@ -1,5 +1,8 @@
+'use client'
+
 import { formatAsOfDate } from '@/lib/utils'
 import { cn } from '@/lib/utils'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface DataFreshnessLabelProps {
     asOfDate: string
@@ -8,21 +11,23 @@ interface DataFreshnessLabelProps {
 }
 
 export function DataFreshnessLabel({ asOfDate, className, variant = 'default' }: DataFreshnessLabelProps) {
+    const { t } = useLocale()
     const formatted = formatAsOfDate(asOfDate)
 
     if (variant === 'compact') {
         return (
             <span className={cn('text-[11px] text-text-tertiary font-data', className)}>
-                End-of-day · {formatted}
+                {t('freshness.eodCompact', { date: formatted })}
             </span>
         )
     }
 
     return (
         <p className={cn('text-xs text-text-tertiary', className)}>
-            Data as of <span className="font-medium text-text-secondary font-data">{formatted}</span>
+            {t('freshness.dataAsOf')}{' '}
+            <span className="font-medium text-text-secondary font-data">{formatted}</span>
             {' · '}
-            <span className="text-text-tertiary">end-of-day close, not live</span>
+            <span className="text-text-tertiary">{t('freshness.eodNotLive')}</span>
         </p>
     )
 }

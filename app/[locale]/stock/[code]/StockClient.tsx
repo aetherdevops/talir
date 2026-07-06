@@ -1,8 +1,9 @@
 "use client"
 
 import { useState, useMemo } from 'react'
-import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { ClientPriceChart } from '@/components/charts/ClientPriceChart'
 import { formatDecimal } from '@/lib/utils'
 import { StockPageActions } from '@/components/stock/StockPageActions'
@@ -67,6 +68,7 @@ export function StockClient({
     relatedStocks,
     asOfDate,
 }: StockClientProps) {
+    const { t } = useLocale()
     const defaultChartRange = usePreferencesStore((s) => s.defaultChartRange)
     const [timeframe, setTimeframe] = useState<Timeframe>(() => chartRangeToTimeframe(defaultChartRange))
     const [activeTab, setActiveTab] = useStockPageTab()
@@ -121,7 +123,7 @@ export function StockClient({
         const latestHistory = history[history.length - 1] || {}
         let change = latestHistory.percent_change || 0
         let absChange = (currentPrice * change) / 100
-        let label = 'Today'
+        let label = t('stock.changeToday')
 
         if (timeframe !== '1D' && filteredData.length > 0) {
             const first = filteredData[0]
@@ -133,8 +135,8 @@ export function StockClient({
                 change = (absChange / startVal) * 100
             }
 
-            if (timeframe === 'YTD') label = 'Year-to-Date'
-            else if (timeframe === 'MAX') label = 'All Time'
+            if (timeframe === 'YTD') label = t('stock.changeYtd')
+            else if (timeframe === 'MAX') label = t('stock.changeAllTime')
             else label = timeframe
         } else if (timeframe === '1D') {
             const latest = history[history.length - 1] || {}
@@ -143,7 +145,7 @@ export function StockClient({
         }
 
         return { change, absChange, label }
-    }, [timeframe, filteredData, currentPrice, history])
+    }, [timeframe, filteredData, currentPrice, history, t])
 
     const latest = history[history.length - 1] || {}
     const prevClose = computePrevClose(history)
@@ -188,13 +190,13 @@ export function StockClient({
 
     return (
         <div className="flex flex-col gap-6 animate-fade-in w-full max-w-[1200px] mx-auto min-w-0">
-            <Link
+            <LocaleLink
                 href="/"
                 className="flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors w-fit"
             >
                 <ArrowLeft className="h-4 w-4" />
-                <span>Back to Overview</span>
-            </Link>
+                <span>{t('stock.backToOverview')}</span>
+            </LocaleLink>
 
             <StockPageHero
                 code={stock.company_code}
@@ -216,7 +218,7 @@ export function StockClient({
             />
 
             <section
-                aria-label="Price chart"
+                aria-label={t('stock.priceChartAria')}
                 className="rounded-xl border border-border bg-surface p-3 md:p-4 min-h-[450px]"
             >
                 <ClientPriceChart
@@ -253,7 +255,7 @@ export function StockClient({
                             <section aria-labelledby="recent-filings-heading" className="space-y-3">
                                 <div className="flex items-center justify-between gap-2">
                                     <h2 id="recent-filings-heading" className="text-sm font-semibold text-text-primary">
-                                        Recent updates
+                                        {t('stock.recentUpdates')}
                                     </h2>
                                     {filingsDated.length > 6 ? (
                                         <button
@@ -261,7 +263,7 @@ export function StockClient({
                                             onClick={() => setActiveTab('updates')}
                                             className="text-xs text-accent hover:underline font-medium min-h-[44px] px-2"
                                         >
-                                            Show all
+                                            {t('stock.showAll')}
                                         </button>
                                     ) : null}
                                 </div>
@@ -274,6 +276,7 @@ export function StockClient({
                         ) : null}
 
                         <StockProfileCard
+                            companyCode={stock.company_code}
                             companyName={stock.company_name}
                             sector={stock.sector}
                             issuerData={stock.issuer_data}
@@ -289,15 +292,21 @@ export function StockClient({
                         results={issuerResults}
                         expected={issuerExpected}
                         dividends={issuerDividends}
+                        onViewDividends={() => setActiveTab('dividends')}
                     />
                 ) : null}
 
                 {activeTab === 'dividends' ? (
                     issuerDividends.length > 0 ? (
-                        <StockDividendsSidebarCard dividends={issuerDividends} />
+                        <StockDividendsSidebarCard
+                            stockCode={stock.company_code}
+                            dividends={issuerDividends}
+                            currentPrice={currentPrice}
+                            firstTradeDate={eodStats.firstTradeDate}
+                        />
                     ) : (
                         <p className="text-sm text-text-secondary py-4">
-                            No dividend calendar filings from SECNet for this issuer yet.
+                            {t('stock.noDividends')}
                         </p>
                     )
                 ) : null}
@@ -313,9 +322,9 @@ export function StockClient({
                             currentPrice={currentPrice}
                         />
                         <div className="rounded-xl border border-border bg-surface p-4 md:p-5 space-y-3">
-                            <h2 className="text-sm font-semibold text-text-primary">Watchlist &amp; portfolio</h2>
+                            <h2 className="text-sm font-semibold text-text-primary">{t('stock.watchlistPortfolio')}</h2>
                             <p className="text-sm text-text-secondary">
-                                Add this issuer to a watchlist, portfolio, or price alert.
+                                {t('stock.watchlistPortfolioHint')}
                             </p>
                             <StockPageActions stockCode={stock.company_code} stockData={stockSummary} />
                         </div>

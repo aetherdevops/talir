@@ -3,6 +3,7 @@
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import type { DividendCalendarEntry } from '@/lib/dividends'
 import { resolveProfitYear } from '@/lib/dividends'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { formatNewsDate } from '@/lib/utils'
 
 const CHART_HEIGHT = 160
@@ -12,6 +13,7 @@ interface DividendHistoryChartProps {
 }
 
 export function DividendHistoryChart({ entries }: DividendHistoryChartProps) {
+    const { t } = useLocale()
     const parsed = entries
         .filter((entry) => entry.parseStatus === 'parsed' && entry.grossPerShare !== null)
         .sort((a, b) => (resolveProfitYear(a) ?? 0) - (resolveProfitYear(b) ?? 0))
@@ -30,7 +32,7 @@ export function DividendHistoryChart({ entries }: DividendHistoryChartProps) {
 
     return (
         <div className="min-w-0 space-y-1">
-            <p className="text-[10px] font-data text-text-tertiary">Gross per share by profit year (SECNet)</p>
+            <p className="text-[10px] font-data text-text-tertiary">{t('dividends.chartCaption')}</p>
             <div style={{ height: CHART_HEIGHT }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
@@ -47,7 +49,7 @@ export function DividendHistoryChart({ entries }: DividendHistoryChartProps) {
                             width={48}
                         />
                         <Tooltip
-                            formatter={(value: number) => [`${value} ден.`, 'Gross per share']}
+                            formatter={(value: number) => [`${value} ${t('common.den')}`, t('dividends.grossPerShare')]}
                             labelFormatter={(label, payload) => {
                                 const row = payload?.[0]?.payload as (typeof data)[0] | undefined
                                 if (!row) return `FY ${label}`

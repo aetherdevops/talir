@@ -1,21 +1,12 @@
 'use client'
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { Home, TrendingUp, List, Settings, Bookmark } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { MyStuffSheet } from '@/components/layout/MyStuffSheet'
-
-const leftItems = [
-    { icon: Home, label: 'Home', href: '/' },
-    { icon: TrendingUp, label: 'Markets', href: '/markets' },
-] as const
-
-const rightItems = [
-    { icon: List, label: 'Watchlist', href: '/watchlist' },
-    { icon: Settings, label: 'Settings', href: '/settings' },
-] as const
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useBarePathname } from '@/lib/i18n/use-bare-pathname'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 function NavTab({
     icon: Icon,
@@ -29,7 +20,7 @@ function NavTab({
     isActive: boolean
 }) {
     return (
-        <Link
+        <LocaleLink
             href={href}
             className={cn(
                 'flex flex-1 flex-col items-center justify-center min-h-[52px] min-w-[44px] px-1 text-[10px] font-medium transition-colors',
@@ -38,13 +29,24 @@ function NavTab({
         >
             <Icon className={cn('h-5 w-5 mb-0.5', isActive && 'stroke-[2.5]')} />
             {label}
-        </Link>
+        </LocaleLink>
     )
 }
 
 export function BottomNav() {
-    const pathname = usePathname()
+    const pathname = useBarePathname()
+    const { t } = useLocale()
     const [myStuffOpen, setMyStuffOpen] = useState(false)
+
+    const leftItems = [
+        { icon: Home, label: t('nav.home'), href: '/' },
+        { icon: TrendingUp, label: t('nav.markets'), href: '/markets' },
+    ] as const
+
+    const rightItems = [
+        { icon: List, label: t('nav.watchlist'), href: '/watchlist' },
+        { icon: Settings, label: t('nav.settings'), href: '/settings' },
+    ] as const
 
     const isActive = (href: string) =>
         pathname === href || (href !== '/' && pathname.startsWith(href))
@@ -58,13 +60,13 @@ export function BottomNav() {
                 <div className="relative flex items-stretch pt-1">
                     <div className="flex flex-1 justify-around">
                         {leftItems.map((item) => (
-                            <NavTab key={item.label} {...item} isActive={isActive(item.href)} />
+                            <NavTab key={item.href} {...item} isActive={isActive(item.href)} />
                         ))}
                     </div>
                     <div className="w-16 shrink-0" aria-hidden />
                     <div className="flex flex-1 justify-around">
                         {rightItems.map((item) => (
-                            <NavTab key={item.label} {...item} isActive={isActive(item.href)} />
+                            <NavTab key={item.href} {...item} isActive={isActive(item.href)} />
                         ))}
                     </div>
                     <div className="absolute left-1/2 -translate-x-1/2 -top-5">
@@ -76,7 +78,7 @@ export function BottomNav() {
                                 'bg-talir-navy text-accent shadow-lg shadow-talir-navy/40',
                                 'border-4 border-surface ring-2 ring-accent/30 transition-transform active:scale-95'
                             )}
-                            aria-label="My stuff — watchlists, portfolios, and alerts"
+                            aria-label={t('nav.myStuff')}
                         >
                             <Bookmark className="h-6 w-6" strokeWidth={2.25} />
                         </button>

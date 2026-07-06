@@ -1,15 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter, IBM_Plex_Mono, Source_Serif_4 } from 'next/font/google'
 import './globals.css'
-import { Header } from '@/components/layout/Header'
-import { Sidebar } from '@/components/layout/Sidebar'
-import { BottomNav } from '@/components/layout/BottomNav'
 import { cn } from '@/lib/utils'
-import { getAllInstruments } from '@/lib/data'
-import { AppProviders } from '@/components/providers/AppProviders'
-import { InstrumentsProvider } from '@/components/providers/InstrumentsProvider'
-import { SiteFooter } from '@/components/layout/SiteFooter'
-import { ScrapeStatusBanner } from '@/components/data/ScrapeStatusBanner'
+import { headers } from 'next/headers'
+import { defaultLocale, isLocale, type Locale } from '@/lib/i18n/config'
 
 const inter = Inter({
     subsets: ['latin', 'cyrillic'],
@@ -30,48 +24,23 @@ const ibmPlexMono = IBM_Plex_Mono({
     display: 'swap',
 })
 
-export const metadata: Metadata = {
-    title: 'Talir — Macedonian Stock Exchange',
-    description: 'End-of-day data from the Macedonian Stock Exchange',
-    manifest: '/manifest.json',
-    icons: {
-        icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
-        apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
-    },
-    openGraph: {
-        title: 'Talir — Macedonian Stock Exchange',
-        description: 'End-of-day data from the Macedonian Stock Exchange',
-        images: [
-            {
-                url: '/og.png',
-                width: 1200,
-                height: 630,
-                alt: 'Talir — Makedonska Berza · Markets',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Talir — Macedonian Stock Exchange',
-        description: 'End-of-day data from the Macedonian Stock Exchange',
-        images: ['/og.png'],
-    },
-}
-
 export const viewport = {
     themeColor: '#0A1424',
     viewportFit: 'cover' as const,
 }
 
-export default async function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
-    const instruments = await getAllInstruments()
+async function resolveHtmlLang(): Promise<string> {
+    const headerStore = await headers()
+    const locale = headerStore.get('x-locale')
+    if (locale && isLocale(locale)) return locale === 'mk' ? 'mk' : 'en'
+    return defaultLocale === 'mk' ? 'mk' : 'en'
+}
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+    const lang = await resolveHtmlLang()
 
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang={lang} suppressHydrationWarning>
             <head>
                 <script
                     dangerouslySetInnerHTML={{
@@ -112,25 +81,7 @@ export default async function RootLayout({
                     ibmPlexMono.variable
                 )}
             >
-                <AppProviders>
-                    <InstrumentsProvider instruments={instruments}>
-                        <Header instruments={instruments} />
-
-                        <div className="flex flex-1 overflow-hidden">
-                            <Sidebar />
-
-                            <main className="flex-1 overflow-y-auto overflow-x-hidden relative scroll-smooth">
-                                <div className="max-w-[1600px] mx-auto p-4 md:p-6 pb-28 md:pb-6 space-y-4">
-                                    <ScrapeStatusBanner />
-                                    {children}
-                                    <SiteFooter />
-                                </div>
-                            </main>
-                        </div>
-
-                        <BottomNav />
-                    </InstrumentsProvider>
-                </AppProviders>
+                {children}
             </body>
         </html>
     )

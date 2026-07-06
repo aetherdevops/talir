@@ -1,9 +1,10 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import Link from 'next/link'
 import { Bookmark, Bell, Briefcase, ChevronRight, X } from 'lucide-react'
 import { useAuth } from '@/components/auth/AuthProvider'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { useInstruments } from '@/components/providers/InstrumentsProvider'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { Button } from '@/components/ui/Button'
@@ -43,50 +44,53 @@ function GhostRow({
 }
 
 function SignedOutContent({ compact }: { compact: boolean }) {
+    const { t } = useLocale()
+
     return (
         <div className="space-y-3 min-w-0">
             {!compact && (
                 <p className="text-xs text-text-tertiary leading-relaxed">
-                    Track watchlists, portfolio P&amp;L, and price alerts — synced when you register.
+                    {t('home.personalRailSignedOutHint')}
                 </p>
             )}
             <GhostRow
                 icon={Bookmark}
-                title="Your watchlist"
-                description="Pin MSE tickers and follow end-of-day moves."
+                title={t('home.yourWatchlist')}
+                description={t('home.watchlistGhostDesc')}
             />
             <GhostRow
                 icon={Briefcase}
-                title="Portfolio P&amp;L"
-                description="Holdings, day gain, and total return in one place."
+                title={t('home.portfolioPnl')}
+                description={t('home.portfolioGhostDesc')}
             />
             <GhostRow
                 icon={Bell}
-                title="Price alerts"
-                description="Get notified when a stock crosses your target."
+                title={t('home.priceAlerts')}
+                description={t('home.alertsGhostDesc')}
             />
             <div className="flex flex-col gap-2 pt-1">
-                <Link href="/register">
-                    <Button className="w-full min-h-[44px]">Register free</Button>
-                </Link>
-                <Link
+                <LocaleLink href="/register">
+                    <Button className="w-full min-h-[44px]">{t('home.registerFree')}</Button>
+                </LocaleLink>
+                <LocaleLink
                     href="/login"
                     className="text-center text-xs font-semibold text-accent hover:text-accent/80 min-h-[44px] flex items-center justify-center"
                 >
-                    Sign in
-                </Link>
-                <Link
+                    {t('home.signIn')}
+                </LocaleLink>
+                <LocaleLink
                     href="/markets"
                     className="text-center text-[11px] text-text-tertiary hover:text-text-secondary min-h-[44px] flex items-center justify-center"
                 >
-                    Browse markets without an account
-                </Link>
+                    {t('home.browseWithoutAccount')}
+                </LocaleLink>
             </div>
         </div>
     )
 }
 
 function SignedInContent({ compact }: { compact: boolean }) {
+    const { t } = useLocale()
     const instruments = useInstruments()
     const { watchlists, activeListId } = useWatchlistStore()
     const { portfolios, activePortfolioId } = usePortfolioStore()
@@ -130,21 +134,21 @@ function SignedInContent({ compact }: { compact: boolean }) {
             <section className="space-y-2 min-w-0">
                 <div className="flex items-center justify-between gap-2 min-w-0">
                     <h3 className="text-xs font-bold uppercase tracking-widest text-text-tertiary">
-                        Watchlist
+                        {t('nav.watchlist')}
                     </h3>
-                    <Link
+                    <LocaleLink
                         href="/watchlist"
                         className="text-[11px] font-semibold text-accent hover:text-accent/80 shrink-0 inline-flex items-center gap-0.5"
                     >
-                        Open
+                        {t('home.open')}
                         <ChevronRight className="h-3 w-3" aria-hidden />
-                    </Link>
+                    </LocaleLink>
                 </div>
                 {watchlistPreview.length > 0 ? (
                     <ul className="space-y-1 min-w-0">
                         {watchlistPreview.map(({ code, stock }) => (
                             <li key={code} className="min-w-0">
-                                <Link
+                                <LocaleLink
                                     href={`/stock/${code}`}
                                     className="flex items-center justify-between gap-2 rounded-lg px-2 py-1.5 hover:bg-surface-tertiary/80 transition-colors min-w-0"
                                 >
@@ -157,16 +161,16 @@ function SignedInContent({ compact }: { compact: boolean }) {
                                         </span>
                                         <ChangeLabel change={stock.changePercent} className="text-[11px]" />
                                     </div>
-                                </Link>
+                                </LocaleLink>
                             </li>
                         ))}
                     </ul>
                 ) : (
                     <p className="text-[11px] text-text-tertiary px-1">
-                        No tickers yet.{' '}
-                        <Link href="/watchlist" className="text-accent font-semibold hover:text-accent/80">
-                            Add instruments
-                        </Link>
+                        {t('home.noTickersYet')}{' '}
+                        <LocaleLink href="/watchlist" className="text-accent font-semibold hover:text-accent/80">
+                            {t('home.addInstruments')}
+                        </LocaleLink>
                     </p>
                 )}
             </section>
@@ -174,22 +178,23 @@ function SignedInContent({ compact }: { compact: boolean }) {
             <section className="space-y-2 min-w-0 pt-3">
                 <div className="flex items-center justify-between gap-2 min-w-0">
                     <h3 className="text-xs font-bold uppercase tracking-widest text-text-tertiary">
-                        Portfolio
+                        {t('stock.portfolio')}
                     </h3>
-                    <Link
+                    <LocaleLink
                         href="/portfolio"
                         className="text-[11px] font-semibold text-accent hover:text-accent/80 shrink-0 inline-flex items-center gap-0.5"
                     >
-                        Open
+                        {t('home.open')}
                         <ChevronRight className="h-3 w-3" aria-hidden />
-                    </Link>
+                    </LocaleLink>
                 </div>
                 {portfolioSummary ? (
                     <div className="rounded-lg bg-surface-tertiary px-3 py-2 min-w-0">
                         <p className="text-xs font-semibold text-text-primary truncate">{portfolioSummary.name}</p>
                         <p className="text-[11px] text-text-tertiary font-data mt-0.5">
-                            {portfolioSummary.holdingCount} holding
-                            {portfolioSummary.holdingCount === 1 ? '' : 's'}
+                            {portfolioSummary.holdingCount === 1
+                                ? t('home.holdingCount', { count: portfolioSummary.holdingCount })
+                                : t('home.holdingsCount', { count: portfolioSummary.holdingCount })}
                         </p>
                         <div className="flex items-baseline gap-2 mt-1.5 flex-wrap">
                             <span
@@ -210,10 +215,10 @@ function SignedInContent({ compact }: { compact: boolean }) {
                     </div>
                 ) : (
                     <p className="text-[11px] text-text-tertiary px-1">
-                        No holdings yet.{' '}
-                        <Link href="/portfolio" className="text-accent font-semibold hover:text-accent/80">
-                            Create a portfolio
-                        </Link>
+                        {t('home.noHoldingsYet')}{' '}
+                        <LocaleLink href="/portfolio" className="text-accent font-semibold hover:text-accent/80">
+                            {t('home.createPortfolio')}
+                        </LocaleLink>
                     </p>
                 )}
             </section>
@@ -221,37 +226,40 @@ function SignedInContent({ compact }: { compact: boolean }) {
             <section className="space-y-2 min-w-0 pt-3">
                 <div className="flex items-center justify-between gap-2 min-w-0">
                     <h3 className="text-xs font-bold uppercase tracking-widest text-text-tertiary">
-                        Alerts
+                        {t('nav.alerts')}
                     </h3>
-                    <Link
+                    <LocaleLink
                         href="/alerts"
                         className="text-[11px] font-semibold text-accent hover:text-accent/80 shrink-0 inline-flex items-center gap-0.5"
                     >
-                        Open
+                        {t('home.open')}
                         <ChevronRight className="h-3 w-3" aria-hidden />
-                    </Link>
+                    </LocaleLink>
                 </div>
                 <p className="text-xs text-text-secondary font-data px-1">
                     {activeAlertCount > 0
-                        ? `${activeAlertCount} active alert${activeAlertCount === 1 ? '' : 's'}`
-                        : 'No active alerts'}
+                        ? activeAlertCount === 1
+                            ? t('home.activeAlert', { count: activeAlertCount })
+                            : t('home.activeAlerts', { count: activeAlertCount })
+                        : t('home.noActiveAlerts')}
                 </p>
             </section>
 
             {compact && (
-                <Link
+                <LocaleLink
                     href="/watchlist"
                     className="flex items-center justify-center gap-1 min-h-[44px] text-xs font-semibold text-accent hover:text-accent/80"
                 >
-                    My Talir
+                    {t('home.myTalir')}
                     <ChevronRight className="h-3.5 w-3.5" aria-hidden />
-                </Link>
+                </LocaleLink>
             )}
         </div>
     )
 }
 
 export function HomePersonalRail({ variant = 'rail', className }: HomePersonalRailProps) {
+    const { t } = useLocale()
     const { user, loading } = useAuth()
     const [hydrated, setHydrated] = useState(false)
     const [collapsed, setCollapsed] = useState(false)
@@ -302,7 +310,7 @@ export function HomePersonalRail({ variant = 'rail', className }: HomePersonalRa
 
     if (collapsed) {
         return (
-            <aside className={cn('min-w-0', className)} aria-label="My Talir">
+            <aside className={cn('min-w-0', className)} aria-label={t('home.myTalir')}>
                 <button
                     type="button"
                     onClick={expandRail}
@@ -312,9 +320,9 @@ export function HomePersonalRail({ variant = 'rail', className }: HomePersonalRa
                         'hover:bg-surface-elevated transition-colors text-left',
                         !compact && 'xl:sticky xl:top-4 xl:self-start'
                     )}
-                    aria-label="Open My Talir"
+                    aria-label={t('home.openMyTalir')}
                 >
-                    My Talir
+                    {t('home.myTalir')}
                 </button>
             </aside>
         )
@@ -327,17 +335,17 @@ export function HomePersonalRail({ variant = 'rail', className }: HomePersonalRa
                 compact ? 'p-3' : 'p-4 xl:sticky xl:top-4 xl:self-start',
                 className
             )}
-            aria-label="My Talir"
+            aria-label={t('home.myTalir')}
         >
             <div className="flex items-start justify-between gap-2 mb-3 min-w-0">
                 <h2 className="font-heading text-base font-bold text-text-primary tracking-tight">
-                    My Talir
+                    {t('home.myTalir')}
                 </h2>
                 <button
                     type="button"
                     onClick={dismissRail}
                     className="inline-flex items-center justify-center h-8 w-8 shrink-0 rounded-lg text-text-tertiary hover:text-text-primary hover:bg-surface-tertiary transition-colors"
-                    aria-label="Dismiss My Talir panel"
+                    aria-label={t('home.dismissMyTalir')}
                 >
                     <X className="h-4 w-4" aria-hidden />
                 </button>

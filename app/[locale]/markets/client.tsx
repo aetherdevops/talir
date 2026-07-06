@@ -18,6 +18,13 @@ import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
 import { MarketsResultsTable } from '@/components/results/MarketsResultsTable'
 import { MarketsDividendsTable } from '@/components/dividends/MarketsDividendsTable'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
+import { useLocale } from '@/components/providers/LocaleProvider'
+import {
+    filterStocksByMove,
+    filterStocksByRange,
+    type BreadthMove,
+    type BreadthRange,
+} from '@/lib/market-breadth-utils'
 import { cn } from '@/lib/utils'
 
 interface MarketsClientProps {
@@ -31,6 +38,8 @@ interface MarketsClientProps {
     upcomingExDates: DividendCalendarEntry[]
     lastIssuerScan: string | null
     issuerCount: number
+    high52wCodes: string[]
+    low52wCodes: string[]
 }
 
 type MarketsView = 'instruments' | 'results' | 'dividends'
@@ -49,7 +58,10 @@ export function MarketsClient({
     upcomingExDates,
     lastIssuerScan,
     issuerCount,
+    high52wCodes,
+    low52wCodes,
 }: MarketsClientProps) {
+    const { t } = useLocale()
     const searchParams = useSearchParams()
     const router = useRouter()
 
@@ -93,8 +105,17 @@ export function MarketsClient({
         [router, searchParams]
     )
 
+    const moveParam = searchParams.get('move') as BreadthMove | null
+    const rangeParam = searchParams.get('range') as BreadthRange | null
+
     const displayStocks = useMemo(() => {
         let result = [...initialStocks]
+
+        if (moveParam === 'up' || moveParam === 'down' || moveParam === 'flat') {
+            result = filterStocksByMove(result, moveParam)
+        } else if (rangeParam === '52w-high' || rangeParam === '52w-low') {
+            result = filterStocksByRange(result, rangeParam, high52wCodes, low52wCodes)
+        }
 
         if (query) {
             const lowerQ = query.toLowerCase()
@@ -129,7 +150,7 @@ export function MarketsClient({
         })
 
         return result
-    }, [initialStocks, query, sortKey, sortOrder])
+    }, [initialStocks, query, sortKey, sortOrder, moveParam, rangeParam, high52wCodes, low52wCodes])
 
     const handleSort = (key: SortKey) => {
         const nextOrder = sortKey === key ? (sortOrder === 'asc' ? 'desc' : 'asc') : 'desc'
@@ -139,10 +160,10 @@ export function MarketsClient({
     }
 
     const pills: { label: string; key: SortKey }[] = [
-        { label: 'Most Active', key: 'turnover' },
-        { label: 'Top Movers', key: 'change' },
-        { label: 'Price', key: 'price' },
-        { label: 'Name', key: 'name' },
+        { label: t('markets.mostActive'), key: 'turnover' },
+        { label: t('markets.topMovers'), key: 'change' },
+        { label: t('markets.price'), key: 'price' },
+        { label: t('markets.name'), key: 'name' },
     ]
 
     const columnHeaderStyle = {
@@ -156,11 +177,9 @@ export function MarketsClient({
         <div className="flex flex-col gap-3 min-w-0">
             <header className="space-y-1">
                 <h1 className="text-2xl sm:text-3xl font-semibold font-heading text-text-primary tracking-tight">
-                    Market Overview
+                    {t('markets.title')}
                 </h1>
-                <p className="text-text-secondary text-sm">
-                    All companies listed on the Macedonian Stock Exchange — end-of-day data.
-                </p>
+                <p className="text-text-secondary text-sm">{t('markets.subtitle')}</p>
             </header>
 
             <MarketSentimentStrip sentiment={sentiment} asOfDate={asOfDate} />
@@ -168,9 +187,9 @@ export function MarketsClient({
             <div className="flex flex-wrap gap-2">
                 {(
                     [
-                        { id: 'instruments' as const, label: 'All instruments' },
-                        { id: 'results' as const, label: 'Recent results' },
-                        { id: 'dividends' as const, label: 'Dividends' },
+                        { id: 'instruments' as const, label: t('markets.allInstruments') },
+                        { id: 'results' as const, label: t('markets.recentResults') },
+                        { id: 'dividends' as const, label: t('markets.dividendsTab') },
                     ] as const
                 ).map((tab) => (
                     <button
@@ -210,7 +229,7 @@ export function MarketsClient({
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-text-tertiary group-focus-within:text-accent transition-colors" />
                     <input
                         type="text"
-                        placeholder="Search markets..."
+                        placeholder={t('markets.searchPlaceholder')}
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         className="w-full pl-10 pr-4 py-2.5 bg-surface border border-border rounded-xl text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all min-h-[44px]"
@@ -243,7 +262,7 @@ export function MarketsClient({
             </div>
 
             <div className="text-xs text-text-tertiary font-data tabular-nums">
-                {displayStocks.length} instruments
+                {t('markets.instrumentCount', { count: displayStocks.length })}
             </div>
 
             <div className="min-w-0 border-t border-border">
@@ -251,10 +270,10 @@ export function MarketsClient({
                     className="hidden sm:grid items-center gap-2 px-0 py-2 text-[10px] font-bold uppercase tracking-wider text-text-tertiary border-b border-border min-w-0 grid-cols-[minmax(0,1fr)_var(--sparkline)_var(--change)_var(--price)_var(--action)]"
                     style={columnHeaderStyle}
                 >
-                    <span>Instrument</span>
-                    <span className="text-center">Trend</span>
-                    <span className="text-right">Change</span>
-                    <span className="text-right">Close</span>
+                    <span>{t('markets.instrument')}</span>
+                    <span className="text-center">{t('markets.trend')}</span>
+                    <span className="text-right">{t('markets.change')}</span>
+                    <span className="text-right">{t('markets.close')}</span>
                     <span />
                 </div>
 
@@ -280,7 +299,7 @@ export function MarketsClient({
                     </div>
                 ) : (
                     <div className="py-12 text-center text-text-tertiary">
-                        No stocks found matching &quot;{query}&quot;
+                        {t('markets.noMatch', { query })}
                     </div>
                 )}
             </div>

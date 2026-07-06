@@ -1,5 +1,8 @@
+'use client'
+
 import { StockSummary } from '@/lib/types'
 import { PreviewMarketCard } from '@/components/home/PreviewMarketCard'
+import { IssuerDisplayName } from '@/components/common/IssuerDisplayName'
 
 interface StockPreviewCardProps {
     stock: StockSummary
@@ -11,7 +14,7 @@ export function StockPreviewCard({ stock, className }: StockPreviewCardProps) {
         <PreviewMarketCard
             href={`/stock/${stock.code}`}
             label={stock.code}
-            subtitle={stock.name}
+            subtitle={<IssuerDisplayName code={stock.code} name={stock.name} />}
             chartSeries={stock.chartSeries ?? []}
             latestPrice={stock.price}
             changePercent={stock.changePercent}

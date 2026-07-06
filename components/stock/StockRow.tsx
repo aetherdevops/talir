@@ -1,6 +1,7 @@
 "use client"
 
 import Link from 'next/link'
+import { IssuerDisplayName } from '@/components/common/IssuerDisplayName'
 import { formatPrice, formatPriceCompact, formatInteger } from '@/lib/utils'
 import { StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
@@ -35,9 +36,11 @@ export function StockRow({ stock, showVolume = false, variant = 'default', class
                     {stock.code}
                 </div>
                 <div className="flex flex-col min-w-0 flex-1">
-                    <span className="text-sm font-medium text-text-primary truncate">
-                        {stock.name}
-                    </span>
+                    <IssuerDisplayName
+                        code={stock.code}
+                        name={stock.name}
+                        className="text-sm font-medium text-text-primary truncate"
+                    />
                     {showVolume && (
                         <span className="text-[10px] text-text-tertiary tabular-nums">
                             Vol: {formatInteger(stock.volume)}

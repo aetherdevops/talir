@@ -1,7 +1,10 @@
+'use client'
+
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { ResultsCalendarRow } from '@/components/results/ResultsCalendarRow'
 import { ExpectedResultsSection } from '@/components/results/ResultsCalendarSections'
 import { InfoPopover } from '@/components/ui/InfoPopover'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface MarketsResultsTableProps {
     results: ResultsCalendarEntry[]
@@ -16,19 +19,20 @@ export function MarketsResultsTable({
     lastIssuerScan,
     issuerCount,
 }: MarketsResultsTableProps) {
+    const { t } = useLocale()
+
     return (
         <div className="space-y-6 min-w-0">
             <section className="space-y-1.5 min-w-0" aria-labelledby="markets-recent-results">
                 <header className="space-y-1 min-w-0">
                     <h2 id="markets-recent-results" className="text-lg font-semibold font-heading text-text-primary">
-                        Recent results
+                        {t('markets.recentResults')}
                     </h2>
-                    <p className="text-xs text-text-tertiary font-data">
-                        Filed on SECNet · not live estimates
-                    </p>
+                    <p className="text-xs text-text-tertiary font-data">{t('filings.secnetNotLive')}</p>
                     {lastIssuerScan ? (
                         <p className="text-[10px] font-data text-text-tertiary tabular-nums">
-                            Last issuer scan {lastIssuerScan.replace(/-/g, '.')} · {issuerCount} issuers in feed
+                            {t('filings.lastIssuerScan', { date: lastIssuerScan.replace(/-/g, '.') })} ·{' '}
+                            {t('common.issuersInFeed', { count: issuerCount })}
                         </p>
                     ) : null}
                 </header>
@@ -44,7 +48,7 @@ export function MarketsResultsTable({
                     </div>
                 ) : (
                     <p className="text-sm text-text-tertiary py-6 text-center border border-dashed border-border rounded-xl">
-                        No result filings in the current feed.
+                        {t('filings.noRecentResults')}
                     </p>
                 )}
             </section>
@@ -53,16 +57,14 @@ export function MarketsResultsTable({
 
             <section className="space-y-2 pt-2 border-t border-border min-w-0">
                 <div className="flex items-center gap-1.5">
-                    <h3 className="text-sm font-semibold font-heading text-text-primary">Regulatory latest dates</h3>
-                    <InfoPopover label="Regulatory latest dates">
-                        Market-wide latest publication dates from MSE listing rules — not per-issuer schedules.
-                    </InfoPopover>
+                    <h3 className="text-sm font-semibold font-heading text-text-primary">{t('results.regulatoryLatestDates')}</h3>
+                    <InfoPopover label={t('results.regulatoryLatestDates')}>{t('results.regulatoryLatestPopover')}</InfoPopover>
                 </div>
                 <ul className="text-xs font-data text-text-tertiary space-y-1 tabular-nums px-1">
-                    <li>Q1 P&L (31.03) · latest 30.04</li>
-                    <li>H1 statements (30.06) · latest 31.07</li>
-                    <li>9M P&L (30.09) · latest 31.10</li>
-                    <li>FY audited · latest 31.05</li>
+                    <li>{t('results.regulatoryQ1')}</li>
+                    <li>{t('results.regulatoryH1')}</li>
+                    <li>{t('results.regulatory9M')}</li>
+                    <li>{t('results.regulatoryFy')}</li>
                 </ul>
             </section>
         </div>

@@ -1,6 +1,8 @@
 'use client'
 
-import Link from 'next/link'
+import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
@@ -21,6 +23,7 @@ const MobileSearchSheet = dynamic(
 
 export function Header({ className, instruments = [] }: { className?: string; instruments?: StockSummary[] }) {
     const pathname = usePathname()
+    const { t } = useLocale()
     const [searchOpen, setSearchOpen] = useState(false)
     const { isSidebarOpen, toggleSidebar } = useThemeStore()
     const [mounted, setMounted] = useState(false)
@@ -49,7 +52,7 @@ export function Header({ className, instruments = [] }: { className?: string; in
                             size="icon"
                             onClick={toggleSidebar}
                             className="hidden md:flex h-11 w-11 shrink-0 text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5"
-                            aria-label="Expand sidebar navigation"
+                            aria-label={t('nav.expandSidebar')}
                         >
                             <Menu className="h-5 w-5" />
                         </Button>
@@ -70,20 +73,21 @@ export function Header({ className, instruments = [] }: { className?: string; in
                         size="icon"
                         className="md:hidden h-11 w-11 shrink-0 text-accent hover:text-talir-gold-bright hover:bg-white/10"
                         onClick={() => setSearchOpen(true)}
-                        aria-label="Search"
+                        aria-label={t('nav.search')}
                     >
                         <Search className="h-5 w-5" />
                     </Button>
-                    <Link
+                    <LocaleLink
                         href="/news"
                         className={cn(
                             'hidden min-[320px]:flex md:hidden shrink-0 h-11 w-11 items-center justify-center rounded-lg text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5 transition-colors',
-                            pathname === '/news' && 'text-accent'
+                            (pathname === '/news' || pathname.endsWith('/news')) && 'text-accent'
                         )}
-                        aria-label="Updates"
+                        aria-label={t('nav.updates')}
                     >
                         <Newspaper className="h-5 w-5" />
-                    </Link>
+                    </LocaleLink>
+                    <LanguageSwitcher className="hidden sm:inline-flex" />
                     <AuthMenu />
                 </div>
             </header>

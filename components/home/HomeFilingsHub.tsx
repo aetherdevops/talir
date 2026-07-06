@@ -1,11 +1,13 @@
-import Link from 'next/link'
+'use client'
+
 import type { NewsItem } from '@/lib/types'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { NewsCard } from '@/components/news/NewsCard'
 import { FilingIndicatorLegend } from '@/components/news/FilingIndicatorLegend'
 import { ResultsCalendarRow, ExpectedResultsRow } from '@/components/results/ResultsCalendarRow'
 import { InfoPopover } from '@/components/ui/InfoPopover'
-import { UPDATES_SECTION_SUBTITLE, UPDATES_SECTION_TITLE } from '@/lib/news-style'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface HomeFilingsHubProps {
     news: NewsItem[]
@@ -20,6 +22,8 @@ export function HomeFilingsHub({
     expectedResults,
     lastIssuerScan,
 }: HomeFilingsHubProps) {
+    const { t } = useLocale()
+
     const filingItems = news.slice(0, 5)
     const resultItems = recentResults.slice(0, 5)
     const expectedItems = expectedResults.slice(0, 5)
@@ -32,16 +36,16 @@ export function HomeFilingsHub({
                         id="home-filings-hub-heading"
                         className="font-heading text-base font-bold text-text-primary tracking-tight"
                     >
-                        {UPDATES_SECTION_TITLE}
+                        {t('filings.updates')}
                     </h2>
-                    <Link href="/news" className="text-xs font-medium text-accent hover:underline shrink-0">
-                        View all
-                    </Link>
+                    <LocaleLink href="/news" className="text-xs font-medium text-accent hover:underline shrink-0">
+                        {t('filings.viewAll')}
+                    </LocaleLink>
                 </div>
-                <p className="text-xs text-text-tertiary">{UPDATES_SECTION_SUBTITLE}</p>
+                <p className="text-xs text-text-tertiary">{t('filings.hubDescription')}</p>
             </header>
 
-            <FilingsSubBlock title="Latest filings" href="/news" hrefLabel="All filings">
+            <FilingsSubBlock title={t('filings.latestFilings')} href="/news" hrefLabel={t('filings.allFilings')}>
                 {filingItems.length ? (
                     <div className="min-w-0 space-y-1.5">
                         {filingItems.map((item) => (
@@ -49,13 +53,17 @@ export function HomeFilingsHub({
                         ))}
                     </div>
                 ) : (
-                    <p className="text-xs text-text-tertiary px-1">No filings in the current feed.</p>
+                    <p className="text-xs text-text-tertiary px-1">{t('filings.noFilings')}</p>
                 )}
             </FilingsSubBlock>
 
-            <FilingsSubBlock title="Recent results" href="/markets?view=results" hrefLabel="All results">
+            <FilingsSubBlock
+                title={t('filings.recentResults')}
+                href="/markets?view=results"
+                hrefLabel={t('filings.allResults')}
+            >
                 <p className="text-xs text-text-tertiary font-data truncate mb-1.5">
-                    Filed on SECNet · not live estimates
+                    {t('filings.secnetNotLive')}
                 </p>
                 {resultItems.length ? (
                     <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
@@ -67,24 +75,27 @@ export function HomeFilingsHub({
                         ))}
                     </div>
                 ) : (
-                    <p className="text-xs text-text-tertiary px-1">No recent result filings.</p>
+                    <p className="text-xs text-text-tertiary px-1">{t('filings.noRecentResults')}</p>
                 )}
                 {lastIssuerScan ? (
                     <p className="text-[10px] font-data text-text-tertiary px-1 tabular-nums mt-1.5">
-                        Last issuer scan {lastIssuerScan.replace(/-/g, '.')}
+                        {t('filings.lastIssuerScan', { date: lastIssuerScan.replace(/-/g, '.') })}
                     </p>
                 ) : null}
             </FilingsSubBlock>
 
             {expectedItems.length > 0 && (
-                <FilingsSubBlock title="Expected reports" href="/markets?view=results" hrefLabel="All expected">
+                <FilingsSubBlock
+                    title={t('filings.expectedReports')}
+                    href="/markets?view=results"
+                    hrefLabel={t('filings.allExpected')}
+                >
                     <div className="flex items-center gap-1 mb-1.5">
                         <p className="text-xs text-text-tertiary font-data truncate flex-1">
-                            Expected, based on past filings — not a published schedule
+                            {t('filings.expectedHint')}
                         </p>
-                        <InfoPopover label="Expected reports">
-                            Not scheduled. Windows are inferred from each issuer&apos;s past filing dates on SECNet. No
-                            analyst estimates.
+                        <InfoPopover label={t('filings.expectedReports')}>
+                            {t('filings.expectedPopoverBody')}
                         </InfoPopover>
                     </div>
                     <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
@@ -118,9 +129,9 @@ function FilingsSubBlock({
         <div className="space-y-1.5 min-w-0 pt-3 border-t border-border/60 first:border-t-0 first:pt-0">
             <div className="flex items-center justify-between gap-2 min-w-0">
                 <h3 className="text-sm font-semibold font-heading text-text-primary">{title}</h3>
-                <Link href={href} className="text-xs font-medium text-accent hover:underline shrink-0">
+                <LocaleLink href={href} className="text-xs font-medium text-accent hover:underline shrink-0">
                     {hrefLabel}
-                </Link>
+                </LocaleLink>
             </div>
             {children}
         </div>

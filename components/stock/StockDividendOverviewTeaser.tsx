@@ -6,6 +6,7 @@ import {
     latestDisclosedDividend,
     resolveProfitYear,
 } from '@/lib/dividends'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { formatNewsDate } from '@/lib/utils'
 
 interface StockDividendOverviewTeaserProps {
@@ -17,6 +18,8 @@ export function StockDividendOverviewTeaser({
     dividends,
     onViewDividends,
 }: StockDividendOverviewTeaserProps) {
+    const { t } = useLocale()
+
     if (!dividends.length) return null
 
     const sorted = [...dividends].sort((a, b) =>
@@ -25,7 +28,7 @@ export function StockDividendOverviewTeaser({
     const latestDisclosed = latestDisclosedDividend(sorted)
     const headline = latestDisclosed
         ? formatDividendRowDetail(latestDisclosed)
-        : `Last filing ${formatNewsDate(sorted[0].filedAt)}`
+        : t('stock.lastFiling', { date: formatNewsDate(sorted[0].filedAt) })
     const fy = latestDisclosed ? resolveProfitYear(latestDisclosed) : null
     const isPartial = latestDisclosed?.parseStatus === 'partial'
 
@@ -37,10 +40,10 @@ export function StockDividendOverviewTeaser({
             <div className="flex items-start justify-between gap-3 min-w-0">
                 <div className="space-y-1 min-w-0">
                     <h2 id="stock-dividend-teaser-heading" className="text-sm font-semibold text-text-primary">
-                        Dividends
+                        {t('stock.dividends')}
                     </h2>
                     <p className="text-[11px] font-data text-text-tertiary leading-snug">
-                        SECNet dividend calendars · end-of-day · not a forecast
+                        {t('stock.dividendTeaserSubtitle')}
                     </p>
                 </div>
                 <button
@@ -48,7 +51,7 @@ export function StockDividendOverviewTeaser({
                     onClick={onViewDividends}
                     className="shrink-0 text-xs font-medium text-accent hover:underline min-h-[44px] px-2"
                 >
-                    View all
+                    {t('stock.showAll')}
                 </button>
             </div>
 
@@ -56,13 +59,17 @@ export function StockDividendOverviewTeaser({
 
             {isPartial ? (
                 <p className="text-[11px] font-data text-text-tertiary">
-                    Partial parse from SECNet filing{fy ? ` · FY ${fy}` : ''} — open Dividends tab for full history.
+                    {t('stock.dividendTeaserPartial', {
+                        fy: fy ? t('stock.dividendTeaserPartialFy', { year: fy }) : '',
+                    })}
                 </p>
             ) : null}
 
             {!latestDisclosed && sorted.length > 0 ? (
                 <p className="text-[11px] font-data text-text-tertiary">
-                    {sorted.length} calendar{sorted.length === 1 ? '' : 's'} on file — amounts not parsed yet.
+                    {sorted.length === 1
+                        ? t('stock.dividendTeaserUnparsedOne')
+                        : t('stock.dividendTeaserUnparsedMany', { count: sorted.length })}
                 </p>
             ) : null}
         </section>

@@ -13,6 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const stocksDir = path.join(__dirname, '../lib/data/stocks')
 const summaryPath = path.join(__dirname, '../lib/data/market_summary.json')
 const issuersPath = path.join(__dirname, '../lib/data/issuers.json')
+const issuerMetaPath = path.join(__dirname, '../lib/data/issuer_meta.json')
 const derivedPath = path.join(__dirname, '../lib/data/derived_market.json')
 const metaPath = path.join(__dirname, '../lib/data/scrape_meta.json')
 
@@ -76,6 +77,24 @@ function loadSectorMap() {
         if (issuer.code && issuer.sector) map.set(issuer.code, issuer.sector)
     }
     return map
+}
+
+function loadIssuerMetaMap() {
+    if (!fs.existsSync(issuerMetaPath)) return new Map()
+    try {
+        const file = JSON.parse(fs.readFileSync(issuerMetaPath, 'utf8'))
+        const entries = file.issuers ?? file
+        const map = new Map()
+        for (const [code, entry] of Object.entries(entries)) {
+            if (code === 'generatedAt' || code === 'count') continue
+            if (entry && typeof entry === 'object' && entry.marketCapThousandsMkd > 0) {
+                map.set(code, entry.marketCapThousandsMkd)
+            }
+        }
+        return map
+    } catch {
+        return new Map()
+    }
 }
 
 function loadStockCloses(code) {
@@ -164,6 +183,7 @@ function computeConsistentGainerStreak(closes, asOfDate) {
 }
 
 const sectorMap = loadSectorMap()
+const marketCapMap = loadIssuerMetaMap()
 const summary = loadSummary()
 const instruments = []
 const equityClosesMap = new Map()
@@ -194,6 +214,9 @@ for (const item of summary) {
 
     if (date > asOfDate) asOfDate = date
 
+    const sector = sectorMap.get(code) || null
+    const marketCapThousandsMkd = marketCapMap.get(code)
+
     instruments.push({
         code,
         name: item.name || '',
@@ -204,7 +227,8 @@ for (const item of summary) {
         turnover: item.turnover || 0,
         date,
         unchanged,
-        sector: sectorMap.get(code) || null,
+        sector,
+        ...(marketCapThousandsMkd != null ? { marketCapThousandsMkd } : {}),
     })
 }
 
@@ -327,6 +351,8 @@ const derived = {
         pctAbove30dAvg: Math.round(pctAbove30dAvg * 10) / 10,
         newHighs52w,
         newLows52w,
+        high52wCodes: weekHighs,
+        low52wCodes: weekLows,
     },
     leaderboards: {
         weekHighs: weekHighs.slice(0, LEADERBOARD_LIMIT),

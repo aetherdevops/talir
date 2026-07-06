@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { IndexSparkline } from '@/components/home/IndexSparkline'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
@@ -8,7 +9,7 @@ const SPARKLINE_HEIGHT = 40
 interface PreviewMarketCardProps {
     href: string
     label: string
-    subtitle?: string
+    subtitle?: ReactNode
     chartSeries: { date: string; value: number }[]
     latestPrice: number
     changePercent: number

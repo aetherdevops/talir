@@ -2,16 +2,27 @@
 
 import { Globe, Phone, ExternalLink } from 'lucide-react'
 import type { IssuerData } from '@/lib/types'
+import { getIssuerDisplayName } from '@/lib/issuer-display-name'
+import { useLocale } from '@/components/providers/LocaleProvider'
+import { translateSector } from '@/lib/sectors'
 import { formatNewsDate } from '@/lib/utils'
 
 interface StockProfileCardProps {
+    companyCode: string
     companyName: string
     sector?: string
     issuerData?: IssuerData
     asOfDate: string
 }
 
-export function StockProfileCard({ companyName, sector, issuerData, asOfDate }: StockProfileCardProps) {
+export function StockProfileCard({
+    companyCode,
+    companyName,
+    sector,
+    issuerData,
+    asOfDate,
+}: StockProfileCardProps) {
+    const { locale, t } = useLocale()
     const address = issuerData?.address
     const city = issuerData?.city
     const phone = issuerData?.phone
@@ -28,20 +39,22 @@ export function StockProfileCard({ companyName, sector, issuerData, asOfDate }: 
 
     return (
         <section aria-labelledby="stock-profile-heading" className="border border-border rounded-xl bg-surface p-4 md:p-5 space-y-4">
-            <h2 id="stock-profile-heading" className="text-sm font-semibold text-text-primary">
-                About {companyName}
+            <h2 id="stock-profile-heading" className="text-sm font-semibold text-text-primary font-heading">
+                {t('stock.about', {
+                    company: getIssuerDisplayName(locale, companyCode, companyName),
+                })}
             </h2>
 
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
                 {sector ? (
                     <div>
-                        <dt className="text-xs text-text-secondary mb-0.5">Sector</dt>
-                        <dd className="text-text-primary">{sector}</dd>
+                        <dt className="text-xs text-text-secondary mb-0.5">{t('stock.sector')}</dt>
+                        <dd className="text-text-primary">{translateSector(sector, t)}</dd>
                     </div>
                 ) : null}
                 {address ? (
                     <div>
-                        <dt className="text-xs text-text-secondary mb-0.5">Headquarters</dt>
+                        <dt className="text-xs text-text-secondary mb-0.5">{t('stock.headquarters')}</dt>
                         <dd className="text-text-primary">
                             {address}
                             {city ? `, ${city}` : ''}
@@ -50,7 +63,7 @@ export function StockProfileCard({ companyName, sector, issuerData, asOfDate }: 
                 ) : null}
                 {phone ? (
                     <div>
-                        <dt className="text-xs text-text-secondary mb-0.5">Phone</dt>
+                        <dt className="text-xs text-text-secondary mb-0.5">{t('stock.phone')}</dt>
                         <dd>
                             <a
                                 href={`tel:${phone}`}
@@ -64,25 +77,25 @@ export function StockProfileCard({ companyName, sector, issuerData, asOfDate }: 
                 ) : null}
                 {websiteHref ? (
                     <div>
-                        <dt className="text-xs text-text-secondary mb-0.5">Website</dt>
+                        <dt className="text-xs text-text-secondary mb-0.5">{t('stock.website')}</dt>
                         <dd>
                             <a
-                                href={`${websiteHref}?ref=talir`}
+                                href={websiteHref}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-accent hover:underline transition-colors"
+                                className="inline-flex items-center gap-1.5 text-text-primary hover:text-accent transition-colors break-all"
                             >
-                                <Globe className="h-3.5 w-3.5" aria-hidden />
+                                <Globe className="h-3.5 w-3.5 text-text-secondary shrink-0" aria-hidden />
                                 {website}
-                                <ExternalLink className="h-3 w-3" aria-hidden />
+                                <ExternalLink className="h-3 w-3 text-text-tertiary shrink-0" aria-hidden />
                             </a>
                         </dd>
                     </div>
                 ) : null}
             </dl>
 
-            <p className="text-[10px] font-data text-text-secondary leading-snug">
-                Listed on MSE · Data as of {formatNewsDate(asOfDate)} · end-of-day close, not live
+            <p className="text-[11px] font-data text-text-tertiary">
+                {formatNewsDate(asOfDate)}
             </p>
         </section>
     )

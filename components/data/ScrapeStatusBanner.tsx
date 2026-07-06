@@ -1,16 +1,17 @@
+'use client'
+
 import { AlertTriangle } from 'lucide-react'
 import { getScrapeMeta } from '@/lib/data'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn } from '@/lib/utils'
 
 export function ScrapeStatusBanner({ className }: { className?: string }) {
+    const { t } = useLocale()
     const meta = getScrapeMeta()
 
     if (meta.status === 'ok') return null
 
     const isFailed = meta.status === 'failed'
-    const message = isFailed
-        ? 'Market data could not be refreshed. Showing the last available end-of-day snapshot.'
-        : 'Some instruments may be missing from today’s scrape. Figures shown are end-of-day where available.'
 
     return (
         <div
@@ -26,12 +27,14 @@ export function ScrapeStatusBanner({ className }: { className?: string }) {
             <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" aria-hidden />
             <div>
                 <p className="font-semibold font-heading">
-                    {isFailed ? 'Data refresh failed' : 'Partial market data'}
+                    {isFailed ? t('scrape.refreshFailed') : t('scrape.partialData')}
                 </p>
-                <p className="mt-0.5 opacity-90">{message}</p>
+                {isFailed ? (
+                    <p className="mt-0.5 opacity-90">{t('scrape.refreshFailedBody')}</p>
+                ) : null}
                 {meta.asOfDate && (
                     <p className="mt-1 font-data text-[11px] opacity-80">
-                        Last successful close · {meta.asOfDate}
+                        {t('scrape.lastSuccessful', { date: meta.asOfDate })}
                     </p>
                 )}
             </div>

@@ -1,10 +1,10 @@
+'use client'
+
 import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
-import {
-    formatExpectedResultsLine,
-    formatFiledResultsLine,
-} from '@/lib/results-calendar'
+import { formatExpectedResultsLine, formatFiledResultsLine } from '@/lib/results-calendar'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn } from '@/lib/utils'
 
 interface ResultsCalendarRowProps {
@@ -13,6 +13,7 @@ interface ResultsCalendarRowProps {
 }
 
 export function ResultsCalendarRow({ entry, className }: ResultsCalendarRowProps) {
+    const { t } = useLocale()
     const detail = formatFiledResultsLine(entry)
 
     return (
@@ -39,7 +40,7 @@ export function ResultsCalendarRow({ entry, className }: ResultsCalendarRowProps
                 target="_blank"
                 rel="noopener noreferrer"
                 className="shrink-0 inline-flex items-center justify-center h-7 w-7 text-text-tertiary hover:text-accent transition-colors"
-                aria-label={`Open SECNet filing for ${entry.stockCode}`}
+                aria-label={t('results.openFiling', { code: entry.stockCode })}
             >
                 <ExternalLink className="h-3.5 w-3.5" aria-hidden />
             </a>

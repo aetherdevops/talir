@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import type { StockValuationSnapshot } from '@/lib/stock-valuation'
 import { InfoPopover } from '@/components/ui/InfoPopover'
+import { useLocale } from '@/components/providers/LocaleProvider'
+import { displayFilingSource } from '@/lib/i18n/display-source'
 import { formatNewsDate } from '@/lib/utils'
 import {
     formatEps,
@@ -41,6 +43,8 @@ function StatRow({
 }
 
 export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentalsStatsProps) {
+    const { locale, t } = useLocale()
+
     if (!snapshot.hasAnyFundamentals) return null
 
     const showFundamentalsSection =
@@ -54,44 +58,46 @@ export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentals
         snapshot.dividendYieldPct !== null ||
         snapshot.payoutRatioPct !== null
 
+    const fyLabel = snapshot.fiscalYear ? ` · ${t('common.fy', { year: snapshot.fiscalYear })}` : ''
+
     return (
         <div className="space-y-3 pt-2 border-t border-border">
             {showFundamentalsSection ? (
                 <div className="space-y-0">
                     <p className="text-[10px] font-data uppercase tracking-wide text-text-tertiary pb-1">
-                        Fundamentals
-                        {snapshot.fiscalYear ? ` · FY ${snapshot.fiscalYear}` : ''}
+                        {t('stock.fundamentals.section')}
+                        {fyLabel}
                     </p>
 
                     {snapshot.eps !== null ? (
                         <StatRow
-                            label="EPS"
+                            label={t('stock.fundamentals.eps')}
                             value={formatEps(snapshot.eps)}
-                            info="Basic earnings per share from the latest SECNet audited annual report we parsed for this issuer."
+                            info={t('stock.fundamentals.epsHelp')}
                         />
                     ) : null}
 
                     {snapshot.netProfit !== null ? (
                         <StatRow
-                            label="Net profit"
+                            label={t('stock.fundamentals.netProfit')}
                             value={formatNetProfit(snapshot.netProfit)}
-                            info="Net profit for the fiscal year from the same SECNet annual filing. Shown when parsed even if EPS is missing."
+                            info={t('stock.fundamentals.netProfitHelp')}
                         />
                     ) : null}
 
                     {snapshot.peRatio !== null ? (
                         <StatRow
-                            label="P/E"
+                            label={t('stock.fundamentals.pe')}
                             value={formatPeRatio(snapshot.peRatio)}
-                            info="End-of-day close divided by disclosed EPS for the fiscal year shown. Not a live multiple."
+                            info={t('stock.fundamentals.peHelp')}
                         />
                     ) : null}
 
                     {snapshot.earningsYieldPct !== null ? (
                         <StatRow
-                            label="Earnings yield"
+                            label={t('stock.fundamentals.earningsYield')}
                             value={formatPercent(snapshot.earningsYieldPct)}
-                            info="EPS divided by end-of-day close (inverse of P/E). From SECNet EPS and EOD price only."
+                            info={t('stock.fundamentals.earningsYieldHelp')}
                         />
                     ) : null}
                 </div>
@@ -100,38 +106,40 @@ export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentals
             {showDividendSection ? (
                 <div className="space-y-0">
                     <p className="text-[10px] font-data uppercase tracking-wide text-text-tertiary pb-1">
-                        Dividend valuation
+                        {t('stock.fundamentals.dividendSection')}
                     </p>
 
                     {snapshot.grossPerShare !== null ? (
                         <StatRow
-                            label="Gross DPS"
+                            label={t('stock.fundamentals.grossDps')}
                             value={formatGrossDps(snapshot.grossPerShare, snapshot.dividendProfitYear)}
-                            info="Latest fully parsed gross dividend per share from a SECNet dividend calendar."
+                            info={t('stock.fundamentals.grossDpsHelp')}
                         />
                     ) : null}
 
                     {snapshot.dividendYieldPct !== null ? (
                         <StatRow
-                            label="Dividend yield"
+                            label={t('stock.fundamentals.dividendYield')}
                             value={formatPercent(snapshot.dividendYieldPct)}
-                            info="Last disclosed gross DPS divided by end-of-day close. Trailing, not forward yield."
+                            info={t('stock.fundamentals.dividendYieldHelp')}
                         />
                     ) : null}
 
                     {snapshot.payoutRatioPct !== null ? (
                         <StatRow
-                            label="Payout ratio"
+                            label={t('stock.fundamentals.payoutRatio')}
                             value={formatPercent(snapshot.payoutRatioPct, 1)}
-                            info="Gross DPS divided by EPS for the matching profit year. Both from SECNet filings."
+                            info={t('stock.fundamentals.payoutHelp')}
                         />
                     ) : null}
                 </div>
             ) : null}
 
             <p className="text-[10px] font-data text-text-tertiary leading-snug">
-                Data as of {formatNewsDate(asOfDate)} · end-of-day close, not live
-                {snapshot.filedAt ? ` · FY filing ${formatNewsDate(snapshot.filedAt)}` : ''}
+                {t('stock.fundamentals.dataLine', { date: formatNewsDate(asOfDate) })}
+                {snapshot.filedAt
+                    ? ` · ${t('stock.fundamentals.fyFiling', { date: formatNewsDate(snapshot.filedAt) })}`
+                    : ''}
                 {snapshot.filingUrl ? (
                     <>
                         {' · '}
@@ -141,7 +149,7 @@ export function StockFundamentalsStats({ snapshot, asOfDate }: StockFundamentals
                             rel="noopener noreferrer"
                             className="text-accent hover:underline inline-flex items-center gap-0.5"
                         >
-                            SECNet
+                            {displayFilingSource(locale, 'SECNet')}
                             <ExternalLink className="h-2.5 w-2.5" aria-hidden />
                         </Link>
                     </>

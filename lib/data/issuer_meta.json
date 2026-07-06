@@ -1,0 +1,571 @@
+{
+  "generatedAt": "2026-07-06T09:45:11.037Z",
+  "count": 170,
+  "issuers": {
+    "11OK": {
+      "nameMk": "Печатница 11 Октомври Прилеп"
+    },
+    "ADIN": {
+      "nameMk": "Адинг АД Скопје"
+    },
+    "AITO": {
+      "nameMk": "Аитоникс АД Скопје"
+    },
+    "ALK": {
+      "marketCapThousandsMkd": 35778987,
+      "nameMk": "Алкалоид АД Скопје"
+    },
+    "ALKB": {
+      "nameMk": "Алкалоид Берово"
+    },
+    "AMBR": {
+      "nameMk": "АМ Брокер АД Скопје"
+    },
+    "AMEH": {
+      "nameMk": "Агромеханика АД Скопје - долгорочно суспендирано од котација"
+    },
+    "APTK": {
+      "nameMk": "Ангропромет Тиквешанка АД Кавадарци"
+    },
+    "ATPP": {
+      "nameMk": "АТП Пролетер Крива Паланка"
+    },
+    "AUMK": {
+      "marketCapThousandsMkd": 257490,
+      "nameMk": "Аутомакедонија АД Скопје"
+    },
+    "BANA": {
+      "nameMk": "Рудници Бањани АД Скопје"
+    },
+    "BGOR": {
+      "nameMk": "Кристал 1923 АД Велес"
+    },
+    "BIKF": {
+      "nameMk": "Текстил Елма АД Прилеп"
+    },
+    "BIM": {
+      "marketCapThousandsMkd": 182800,
+      "nameMk": "БИМ АД Свети Николе"
+    },
+    "BLTU": {
+      "nameMk": "Благој Туфанов АД Радовиш - долгорочно суспендирано од котација"
+    },
+    "CBNG": {
+      "nameMk": "Црвени брегови Неготино"
+    },
+    "CEVI": {
+      "marketCapThousandsMkd": 195909,
+      "nameMk": "ФЗЦ 11-ти ОКТОМВРИ АД Куманово"
+    },
+    "CKB": {
+      "marketCapThousandsMkd": 188050,
+      "nameMk": "Централна кооперативна банка АД Скопје"
+    },
+    "CKBKO2": {
+      "marketCapThousandsMkd": 188050,
+      "nameMk": "Централна кооперативна банка АД Скопје"
+    },
+    "DEBA": {
+      "nameMk": "Дебарски Бањи –Цапа АД Дебар"
+    },
+    "DIMI": {
+      "nameMk": "Димко Митрев АД Велес"
+    },
+    "EDST": {
+      "nameMk": "Единство Струга"
+    },
+    "ELMA": {
+      "nameMk": "Елмар Штип"
+    },
+    "ENER": {
+      "nameMk": "Енергомонт Скопје"
+    },
+    "EUHA": {
+      "nameMk": "Еурохаус АД Скопје"
+    },
+    "EVRO": {
+      "marketCapThousandsMkd": 766749,
+      "nameMk": "Европа АД Скопје"
+    },
+    "FAKM": {
+      "marketCapThousandsMkd": 467928,
+      "nameMk": "ФАКОМ АД Скопје"
+    },
+    "FERS": {
+      "nameMk": "Фершпед АД Скопје"
+    },
+    "FKBR": {
+      "nameMk": "ФК Брегалница АД Штип"
+    },
+    "FKPO": {
+      "nameMk": "ФК Победа АД Прилеп"
+    },
+    "FKTK": {
+      "nameMk": "Градски Фудбалски клуб Тиквеш 1930 АД Кавадарци"
+    },
+    "FUBT": {
+      "marketCapThousandsMkd": 193614,
+      "nameMk": "Фустеларко Борец АД Битола"
+    },
+    "GALE": {
+      "nameMk": "Галеб Охрид"
+    },
+    "GDKM": {
+      "nameMk": "ЗИК Градиште Куманово"
+    },
+    "GIMS": {
+      "nameMk": "Градежен институт Македонија АД Скопје"
+    },
+    "GRDN": {
+      "nameMk": "Градинар АД Охрид"
+    },
+    "GRNT": {
+      "marketCapThousandsMkd": 4822154,
+      "nameMk": "Гранит АД Скопје"
+    },
+    "GRZD": {
+      "marketCapThousandsMkd": 57490,
+      "nameMk": "Грозд АД Струмица"
+    },
+    "GTC": {
+      "marketCapThousandsMkd": 3304922,
+      "nameMk": "ГТЦ АД Скопје"
+    },
+    "GTRG": {
+      "nameMk": "Гетро Гостивар"
+    },
+    "GUMA": {
+      "nameMk": "Автогума Скопје"
+    },
+    "IJUG": {
+      "nameMk": "Институт за заварув. Југ Скопје"
+    },
+    "INB": {
+      "nameMk": "Шпаркасе банка Македонија АД Скопје"
+    },
+    "INBR": {
+      "nameMk": "ИНВЕСТБРОКЕР АД Скопје"
+    },
+    "INDI": {
+      "nameMk": "Инекс Дрим АД Струга"
+    },
+    "INHO": {
+      "nameMk": "Интернешнел Хотелс АД Скопје"
+    },
+    "INOV": {
+      "nameMk": "Иново Брокер АД Скопје"
+    },
+    "INPR": {
+      "marketCapThousandsMkd": 222419,
+      "nameMk": "Интерпромет АД Тетово"
+    },
+    "INTP": {
+      "nameMk": "Капитал Банка АД Скопје"
+    },
+    "JAKO": {
+      "nameMk": "Јавор Консалтинг Битола"
+    },
+    "JULI": {
+      "nameMk": "Палпласт АД Куманово"
+    },
+    "JUSK": {
+      "nameMk": "Југотутун Скопје"
+    },
+    "KARO": {
+      "nameMk": "Караорман Скопје"
+    },
+    "KJUBI": {
+      "nameMk": "Македонија осигурување АД Скопје - Виена Иншуренс Груп"
+    },
+    "KKFI": {
+      "nameMk": "МКК Еуроникел 2005 АД Кавадарци"
+    },
+    "KLST": {
+      "marketCapThousandsMkd": 40560,
+      "nameMk": "Кланица со ладилник АД Струмица"
+    },
+    "KMB": {
+      "marketCapThousandsMkd": 63460507,
+      "nameMk": "Комерцијална банка АД Скопје"
+    },
+    "KMPR": {
+      "nameMk": "Комунапроект Тетово"
+    },
+    "KOMU": {
+      "marketCapThousandsMkd": 133920,
+      "nameMk": "ДС Смитх АД Скопје"
+    },
+    "KONF": {
+      "nameMk": "Конзервна фабрика Струмица"
+    },
+    "KONZ": {
+      "marketCapThousandsMkd": 172453,
+      "nameMk": "Фруктал Мак АД Скопје"
+    },
+    "KORZ": {
+      "nameMk": "ЈАВОР Стоковна куќа КОРЗО АД Битола"
+    },
+    "KPSS": {
+      "nameMk": "Фабрика Карпош АД Скопје"
+    },
+    "KVAS": {
+      "nameMk": "Квасара АД Битола"
+    },
+    "LOTO": {
+      "marketCapThousandsMkd": 24231,
+      "nameMk": "Лотарија на Македонија АД Скопје"
+    },
+    "LOZP": {
+      "marketCapThousandsMkd": 131472,
+      "nameMk": "Пелистерка АД Скопје"
+    },
+    "MAGP": {
+      "nameMk": "1932 АД Скопје"
+    },
+    "MAKP": {
+      "nameMk": "Макпромет АД Штип"
+    },
+    "MAKS": {
+      "marketCapThousandsMkd": 1881,
+      "nameMk": "Макотекс АД Скопје"
+    },
+    "MB": {
+      "nameMk": "Македонска берза АД Скопје"
+    },
+    "MERM": {
+      "marketCapThousandsMkd": 15466631,
+      "nameMk": "Мермерен комбинат АД Прилеп"
+    },
+    "MKSD": {
+      "nameMk": "Макошпед АД Скопје"
+    },
+    "MLKR": {
+      "nameMk": "Млекара Битола"
+    },
+    "MODA": {
+      "marketCapThousandsMkd": 141730,
+      "nameMk": "Мода АД Свети Николе"
+    },
+    "MOKL": {
+      "nameMk": "Мокел ЕЕ ИИ АД Битола"
+    },
+    "MPOL": {
+      "marketCapThousandsMkd": 297045,
+      "nameMk": "Хотели Метропол Охрид"
+    },
+    "MPT": {
+      "marketCapThousandsMkd": 12474402,
+      "nameMk": "Макпетрол АД Скопје"
+    },
+    "MTUR": {
+      "marketCapThousandsMkd": 4453276,
+      "nameMk": "Македонијатурист АД Скопје"
+    },
+    "MZHE": {
+      "marketCapThousandsMkd": 405081,
+      "nameMk": "Вабтек МЗТ АД Скопје"
+    },
+    "MZOV": {
+      "nameMk": "МЗТ Опрема за возила Скопје"
+    },
+    "MZPU": {
+      "marketCapThousandsMkd": 38884,
+      "nameMk": "МЗТ Пумпи АД Скопје"
+    },
+    "NEME": {
+      "nameMk": "Неметали Огражден АД Струмица"
+    },
+    "NOSK": {
+      "nameMk": "Нова Стоковна куќа АД Струмица"
+    },
+    "OBMT": {
+      "nameMk": "Мак тренд брокер Скопје"
+    },
+    "OHTU": {
+      "nameMk": "Охридтурист Охрид"
+    },
+    "OILK": {
+      "marketCapThousandsMkd": 1505538,
+      "nameMk": "ОИЛКО КДА Скопје"
+    },
+    "OKTA": {
+      "marketCapThousandsMkd": 4147164,
+      "nameMk": "ОКТА АД Скопје"
+    },
+    "OMOS": {
+      "nameMk": "Вега осигурување АД Скопје"
+    },
+    "OPFO": {
+      "nameMk": "Опфолио АД Скопје"
+    },
+    "OPTK": {
+      "nameMk": "Очна оптика Геталдус Скопје"
+    },
+    "ORAN": {
+      "nameMk": "Оранжерии Хамзали Струмица"
+    },
+    "OSPO": {
+      "nameMk": "Осигурителна полиса АД Скопје"
+    },
+    "OTEK": {
+      "nameMk": "Отекс Охрид"
+    },
+    "PALT": {
+      "nameMk": "Дамјанов АД Делчево"
+    },
+    "PKB": {
+      "marketCapThousandsMkd": 584100,
+      "nameMk": "Пекабеско АД Кадино Илинден"
+    },
+    "POPK": {
+      "marketCapThousandsMkd": 43200,
+      "nameMk": "Попова Кула АД Демир Капија"
+    },
+    "PPIV": {
+      "marketCapThousandsMkd": 1437088,
+      "nameMk": "Прилепска пиварница АД Прилеп"
+    },
+    "PROD": {
+      "nameMk": "ОП Просветно Дело Скопје"
+    },
+    "PROT": {
+      "nameMk": "Протектор АД Прилеп"
+    },
+    "RADE": {
+      "nameMk": "Раде Кончар- Апаратна техника АД Скопје"
+    },
+    "REPL": {
+      "marketCapThousandsMkd": 4212000,
+      "nameMk": "Реплек АД Скопје"
+    },
+    "RIMI": {
+      "nameMk": "РИМИ АД Штип"
+    },
+    "RINS": {
+      "nameMk": "Реинг АД Скопје"
+    },
+    "RZEK": {
+      "nameMk": "РЖ Економика АД Скопје"
+    },
+    "RZIT": {
+      "nameMk": "РЖ Интер-Трансшпед АД Скопје"
+    },
+    "RZLE": {
+      "nameMk": "АрцелорМиттал (ХРМ) АД Скопје - долгорочно суспендирано од котација"
+    },
+    "RZLV": {
+      "marketCapThousandsMkd": 197704,
+      "nameMk": "Либерти АД Скопје"
+    },
+    "RZTK": {
+      "nameMk": "РЖ Техничка Контрола АД Скопје"
+    },
+    "RZUG": {
+      "marketCapThousandsMkd": 17323,
+      "nameMk": "Уготур АД Скопје"
+    },
+    "RZUS": {
+      "nameMk": "РЖ Услуги АД Скопје"
+    },
+    "S2909331": {
+      "nameMk": "Република Северна Македонија"
+    },
+    "S2909332": {
+      "nameMk": "Република Северна Македонија"
+    },
+    "S2909333": {
+      "nameMk": "Република Северна Македонија"
+    },
+    "SBT": {
+      "marketCapThousandsMkd": 1476720,
+      "nameMk": "АЛТА банка АД Битола"
+    },
+    "SDOM": {
+      "marketCapThousandsMkd": 20540,
+      "nameMk": "Современ дом АД Прилеп"
+    },
+    "SIGA": {
+      "nameMk": "Уника АД Скопје"
+    },
+    "SIL": {
+      "marketCapThousandsMkd": 31602,
+      "nameMk": "Силекс АД Кратово"
+    },
+    "SKP": {
+      "nameMk": "Пивара Скопје АД Скопје"
+    },
+    "SLAV": {
+      "nameMk": "Славеј АД Скопје"
+    },
+    "SOLN": {
+      "nameMk": "2001 Гевгелија"
+    },
+    "SPAZ": {
+      "marketCapThousandsMkd": 532028,
+      "nameMk": "Скопски Пазар АД Скопје"
+    },
+    "SPAZP": {
+      "marketCapThousandsMkd": 532028,
+      "nameMk": "Скопски Пазар АД Скопје"
+    },
+    "SPOL": {
+      "nameMk": "Струмичко поле с. Василево"
+    },
+    "SSPR": {
+      "marketCapThousandsMkd": 7696,
+      "nameMk": "Сигурносно стакло АД Прилеп"
+    },
+    "STB": {
+      "marketCapThousandsMkd": 45773608,
+      "nameMk": "Стопанска банка АД Скопје"
+    },
+    "STBP": {
+      "marketCapThousandsMkd": 45773608,
+      "nameMk": "Стопанска банка АД Скопје"
+    },
+    "STEL": {
+      "nameMk": "ЕР АД Штип"
+    },
+    "STIL": {
+      "marketCapThousandsMkd": 1872322,
+      "nameMk": "Макстил АД Скопје"
+    },
+    "STOK": {
+      "marketCapThousandsMkd": 39600,
+      "nameMk": "Стокопромет АД Скопје"
+    },
+    "TAJM": {
+      "nameMk": "Тајмиште АД Кичево - долгорочно суспендирано од котација"
+    },
+    "TASK": {
+      "nameMk": "Таска АД Кавадарци"
+    },
+    "TEAL": {
+      "nameMk": "ТЕАЛ АД Тетово"
+    },
+    "TEHN": {
+      "marketCapThousandsMkd": 22000,
+      "nameMk": "Технокомерц АД Скопје"
+    },
+    "TEL": {
+      "nameMk": "Македонски Телеком АД – Скопје"
+    },
+    "TETE": {
+      "marketCapThousandsMkd": 952593,
+      "nameMk": "Тетекс АД Тетово"
+    },
+    "TIGA": {
+      "nameMk": "Тигар Крива Паланка"
+    },
+    "TIKV": {
+      "nameMk": "ГД-ТИКВЕШ АД Кавадарци"
+    },
+    "TKPR": {
+      "marketCapThousandsMkd": 795135,
+      "nameMk": "Тутунски комбинат АД Прилеп"
+    },
+    "TKVS": {
+      "nameMk": "ВВ Тиквеш АД Кавадарци"
+    },
+    "TNB": {
+      "marketCapThousandsMkd": 48168511,
+      "nameMk": "НЛБ Банка АД Скопје"
+    },
+    "TRDB": {
+      "nameMk": "Трудбеник АД Охрид - долгорочно суспендирано од котација"
+    },
+    "TROZ": {
+      "nameMk": "Триглав осигурување живот АД Скопје"
+    },
+    "TRPS": {
+      "nameMk": "Патнички сообраќај Транскоп АД Битола"
+    },
+    "TRUB": {
+      "nameMk": "Факултетско земјоделско стопанство с.Трубарево"
+    },
+    "TSMP": {
+      "nameMk": "Трготекстил Малопродажба АД Скопје"
+    },
+    "TTK": {
+      "marketCapThousandsMkd": 1704735,
+      "nameMk": "ТТК Банка АД Скопје"
+    },
+    "TTKO2": {
+      "marketCapThousandsMkd": 1704735,
+      "nameMk": "ТТК Банка АД Скопје"
+    },
+    "TTKO3": {
+      "marketCapThousandsMkd": 1704735,
+      "nameMk": "ТТК Банка АД Скопје"
+    },
+    "TURT": {
+      "nameMk": "Туртел Штип"
+    },
+    "UNI": {
+      "nameMk": "УНИ Банка АД Скопје"
+    },
+    "UNIPO2": {
+      "nameMk": "УНИ Банка АД Скопје"
+    },
+    "UNIPO3": {
+      "nameMk": "УНИ Банка АД Скопје"
+    },
+    "UNIPO4": {
+      "nameMk": "УНИ Банка АД Скопје"
+    },
+    "USJE": {
+      "nameMk": "ТИТАН УСЈЕ АД Скопје"
+    },
+    "VARG": {
+      "nameMk": "АД Вардар Градско"
+    },
+    "VENC": {
+      "nameMk": "Венец АД Долни Дисан"
+    },
+    "VITA": {
+      "marketCapThousandsMkd": 959000,
+      "nameMk": "Витаминка АД Прилеп"
+    },
+    "VROS": {
+      "nameMk": "Триглав Осигурување АД Скопје"
+    },
+    "VSC": {
+      "nameMk": "Ветеринарно сточарски центар АД Куманово"
+    },
+    "VTKS": {
+      "marketCapThousandsMkd": 30108,
+      "nameMk": "Ветекс АД Велес"
+    },
+    "ZAS": {
+      "nameMk": "ЖАС АД Скопје"
+    },
+    "ZELE": {
+      "nameMk": "Челичен лив и гранулат Железник Демир Хисар"
+    },
+    "ZILU": {
+      "nameMk": "Жито Лукс АД Скопје"
+    },
+    "ZILUP": {
+      "nameMk": "Жито Лукс АД Скопје"
+    },
+    "ZKAR": {
+      "nameMk": "Жито Караорман АД Кичево"
+    },
+    "ZLRB": {
+      "nameMk": "Златара Рубин Скопје"
+    },
+    "ZPKO": {
+      "marketCapThousandsMkd": 710119,
+      "nameMk": "ЗК Пелагонија АД Битола"
+    },
+    "ZPOG": {
+      "nameMk": "Жито Полог АД Тетово"
+    },
+    "ZSIL": {
+      "nameMk": "ЗС Илинден Скопје"
+    },
+    "ZUS": {
+      "nameMk": "ЗУС Скопје"
+    }
+  }
+}

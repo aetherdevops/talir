@@ -1,6 +1,9 @@
-import Link from 'next/link'
+'use client'
+
 import type { DividendCalendarEntry } from '@/lib/dividends'
 import { DividendRow } from '@/components/dividends/DividendRow'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn } from '@/lib/utils'
 
 interface HomeDividendsPanelProps {
@@ -16,6 +19,7 @@ export function HomeDividendsPanel({
     variant = 'aside',
     className,
 }: HomeDividendsPanelProps) {
+    const { t } = useLocale()
     const recentItems = recent.slice(0, 5)
     const upcomingItems = upcoming.slice(0, 5)
     const isAside = variant === 'aside'
@@ -38,18 +42,18 @@ export function HomeDividendsPanel({
                             isAside ? 'text-lg' : 'text-base font-bold'
                         )}
                     >
-                        Dividends
+                        {t('dividends.title')}
                     </h2>
-                    <Link href="/dividends" className="text-xs font-medium text-accent hover:underline shrink-0">
-                        View all
-                    </Link>
+                    <LocaleLink href="/dividends" className="text-xs font-medium text-accent hover:underline shrink-0">
+                        {t('filings.viewAll')}
+                    </LocaleLink>
                 </div>
                 <p className="text-xs text-text-tertiary font-data leading-snug">
-                    From SECNet dividend calendars · not live · not a forecast
+                    {t('dividends.panelSubtitle')}
                 </p>
             </header>
 
-            <DividendSubBlock title="Recent calendars">
+            <DividendSubBlock title={t('dividends.recentCalendars')}>
                 {recentItems.length ? (
                     <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
                         {recentItems.map((entry) => (
@@ -58,15 +62,15 @@ export function HomeDividendsPanel({
                     </div>
                 ) : (
                     <p className="text-xs text-text-tertiary px-1">
-                        No dividend calendars in the current feed.
+                        {t('dividends.noInFeed')}
                     </p>
                 )}
             </DividendSubBlock>
 
             {upcomingItems.length > 0 && (
-                <DividendSubBlock title="Upcoming ex-dates">
+                <DividendSubBlock title={t('dividends.upcomingExDates')}>
                     <p className="text-xs text-text-tertiary font-data mb-1.5">
-                        Official ex-dates from filed calendars only
+                        {t('dividends.upcomingExHint')}
                     </p>
                     <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
                         {upcomingItems.map((entry) => (

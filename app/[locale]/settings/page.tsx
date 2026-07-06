@@ -1,11 +1,13 @@
 'use client'
 
-import Link from 'next/link'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
 import { ThemeSetting } from '@/components/settings/ThemeSetting'
 import { NotificationSettings } from '@/components/settings/NotificationSettings'
 import { DataPrivacySettings } from '@/components/settings/DataPrivacySettings'
 import { AboutSection } from '@/components/settings/AboutSection'
 import { DisplaySettings, DefaultSettings } from '@/components/settings/DisplaySettings'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 function SettingsSection({
     title,
@@ -28,40 +30,46 @@ function SettingsSection({
 }
 
 export default function SettingsPage() {
+    const { t } = useLocale()
+
     return (
         <div className="max-w-2xl mx-auto py-8 space-y-6">
             <header>
-                <h1 className="text-3xl font-bold text-text-primary">Settings</h1>
-                <p className="text-text-secondary mt-2">Customize your Talir experience</p>
+                <h1 className="text-3xl font-bold text-text-primary">{t('settings.title')}</h1>
+                <p className="text-text-secondary mt-2">{t('settings.subtitle')}</p>
             </header>
 
-            <SettingsSection title="Appearance" description="Choose light or dark mode">
+            <SettingsSection title={t('settings.appearance')} description={t('settings.appearanceHint')}>
                 <ThemeSetting />
             </SettingsSection>
 
-            <SettingsSection title="Notifications" description="In-app alert behavior">
+            <SettingsSection title={t('settings.notifications')}>
                 <NotificationSettings />
             </SettingsSection>
 
-            <SettingsSection title="Display" description="Charts and list layout">
+            <SettingsSection title={t('settings.display')}>
                 <DisplaySettings />
             </SettingsSection>
 
-            <SettingsSection title="Defaults" description="New portfolio defaults">
+            <SettingsSection title={t('settings.defaults')}>
                 <DefaultSettings />
             </SettingsSection>
 
-            <SettingsSection title="Data & privacy">
+            <SettingsSection title={t('settings.language')}>
+                <LanguageSwitcher className="border-border bg-surface-secondary/40 text-text-primary" />
+            </SettingsSection>
+
+            <SettingsSection title={t('settings.dataPrivacy')}>
                 <DataPrivacySettings />
             </SettingsSection>
 
-            <SettingsSection title="Account">
-                <Link href="/account" className="text-sm text-accent hover:underline">
-                    Account & security →
-                </Link>
+            <SettingsSection title={t('auth.account')}>
+                <LocaleLink href="/account" className="text-sm text-accent hover:underline">
+                    {t('settings.accountSecurity')}
+                </LocaleLink>
             </SettingsSection>
 
-            <SettingsSection title="About">
+            <SettingsSection title={t('settings.about')}>
                 <AboutSection />
             </SettingsSection>
         </div>

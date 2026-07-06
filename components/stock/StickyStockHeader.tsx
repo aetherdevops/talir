@@ -1,5 +1,6 @@
 'use client'
 
+import { IssuerDisplayName } from '@/components/common/IssuerDisplayName'
 import { formatPrice } from '@/lib/utils'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { cn } from '@/lib/utils'
@@ -23,7 +24,9 @@ export function StickyStockHeader({ code, name, price, changePercent, className 
         >
             <div className="min-w-0 flex-1">
                 <p className="text-xs font-bold text-text-secondary uppercase tracking-wide font-data">{code}</p>
-                <p className="text-[11px] text-text-tertiary truncate">{name}</p>
+                <p className="text-[11px] text-text-tertiary truncate">
+                    <IssuerDisplayName code={code} name={name} />
+                </p>
             </div>
             <div className="flex items-center gap-2 shrink-0">
                 <span className="text-sm font-semibold text-text-primary tabular-nums font-data">

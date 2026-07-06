@@ -3,16 +3,17 @@
 import { useCallback } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 export const STOCK_TABS = ['overview', 'updates', 'dividends', 'financials', 'portfolio'] as const
 export type StockPageTab = (typeof STOCK_TABS)[number]
 
-const TAB_LABELS: Record<StockPageTab, string> = {
-    overview: 'Overview',
-    updates: 'Updates',
-    dividends: 'Dividends',
-    financials: 'Financials',
-    portfolio: 'Portfolio',
+const TAB_KEYS: Record<StockPageTab, string> = {
+    overview: 'stock.overview',
+    updates: 'stock.updates',
+    dividends: 'stock.dividends',
+    financials: 'stock.financials',
+    portfolio: 'stock.portfolio',
 }
 
 function parseTab(value: string | null): StockPageTab {
@@ -29,6 +30,8 @@ interface StockPageTabsProps {
 }
 
 export function StockPageTabList({ activeTab, onTabChange, className }: StockPageTabsProps) {
+    const { t } = useLocale()
+
     return (
         <div
             className={cn(
@@ -52,7 +55,7 @@ export function StockPageTabList({ activeTab, onTabChange, className }: StockPag
                             : 'text-text-secondary hover:text-text-primary hover:bg-surface/80'
                     )}
                 >
-                    {TAB_LABELS[tab]}
+                    {t(TAB_KEYS[tab])}
                 </button>
             ))}
         </div>

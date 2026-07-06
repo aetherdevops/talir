@@ -1,10 +1,11 @@
 'use client'
 
-import Link from 'next/link'
 import { useState } from 'react'
 import { LogOut, User, Settings } from 'lucide-react'
 import { useAuth } from '@/components/auth/AuthProvider'
 import { Button } from '@/components/ui/Button'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn } from '@/lib/utils'
 
 function AuthDropdown({
@@ -37,6 +38,7 @@ function AuthDropdown({
 
 export function AuthMenu() {
     const { user, loading, signOut } = useAuth()
+    const { t } = useLocale()
     const [open, setOpen] = useState(false)
 
     const close = () => setOpen(false)
@@ -53,7 +55,7 @@ export function AuthMenu() {
     if (!user) {
         return (
             <div className="flex items-center gap-1.5 shrink-0">
-                <Link href="/settings" aria-label="Settings" className="hidden md:inline-flex">
+                <LocaleLink href="/settings" aria-label={t('nav.settings')} className="hidden md:inline-flex">
                     <Button
                         variant="ghost"
                         size="icon"
@@ -61,12 +63,12 @@ export function AuthMenu() {
                     >
                         <Settings className="h-5 w-5" />
                     </Button>
-                </Link>
-                <Link href="/register" className="hidden md:block">
+                </LocaleLink>
+                <LocaleLink href="/register" className="hidden md:block">
                     <Button size="sm" className="min-h-[44px]">
-                        Register
+                        {t('auth.register')}
                     </Button>
-                </Link>
+                </LocaleLink>
                 <div className="relative shrink-0">
                     <Button
                         variant="ghost"
@@ -74,26 +76,26 @@ export function AuthMenu() {
                         type="button"
                         onClick={() => setOpen((value) => !value)}
                         className="h-11 w-11 shrink-0 text-talir-gold-soft hover:text-talir-ivory hover:bg-white/10"
-                        aria-label="Sign in"
+                        aria-label={t('auth.signIn')}
                         aria-expanded={open}
                     >
                         <User className="h-5 w-5" />
                     </Button>
                     <AuthDropdown open={open} onClose={close}>
-                        <Link
+                        <LocaleLink
                             href="/login"
                             className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-text-primary hover:bg-surface-secondary min-h-[44px]"
                             onClick={close}
                         >
-                            Sign in
-                        </Link>
-                        <Link
+                            {t('auth.signIn')}
+                        </LocaleLink>
+                        <LocaleLink
                             href="/register"
                             className="flex items-center gap-2 px-4 py-2.5 text-sm text-text-primary hover:bg-surface-secondary min-h-[44px] md:hidden"
                             onClick={close}
                         >
-                            Register
-                        </Link>
+                            {t('auth.register')}
+                        </LocaleLink>
                     </AuthDropdown>
                 </div>
             </div>
@@ -108,7 +110,7 @@ export function AuthMenu() {
                 type="button"
                 onClick={() => setOpen((value) => !value)}
                 className="h-11 w-11 min-h-[44px] min-w-[44px] rounded-full bg-gradient-to-br from-accent to-talir-gold text-talir-navy flex items-center justify-center font-bold text-sm shadow-md hover:ring-2 hover:ring-offset-2 hover:ring-accent transition-all dark:ring-offset-talir-navy-deep"
-                aria-label="Account menu"
+                aria-label={t('auth.accountMenu')}
                 aria-expanded={open}
             >
                 {initial}
@@ -116,25 +118,25 @@ export function AuthMenu() {
 
             <AuthDropdown open={open} onClose={close}>
                 <div className="px-4 py-2 border-b border-border">
-                    <p className="text-xs text-text-tertiary uppercase tracking-wide">Signed in as</p>
+                    <p className="text-xs text-text-tertiary uppercase tracking-wide">{t('auth.signedInAs')}</p>
                     <p className="text-sm font-medium text-text-primary truncate">{user.email}</p>
                 </div>
-                <Link
+                <LocaleLink
                     href="/settings"
                     className="flex items-center gap-2 px-4 py-2 text-sm text-text-primary hover:bg-surface-secondary min-h-[44px]"
                     onClick={close}
                 >
                     <Settings className="h-4 w-4" />
-                    Settings
-                </Link>
-                <Link
+                    {t('nav.settings')}
+                </LocaleLink>
+                <LocaleLink
                     href="/account"
                     className="flex items-center gap-2 px-4 py-2 text-sm text-text-primary hover:bg-surface-secondary min-h-[44px]"
                     onClick={close}
                 >
                     <User className="h-4 w-4" />
-                    Account
-                </Link>
+                    {t('auth.account')}
+                </LocaleLink>
                 <button
                     type="button"
                     className="w-full flex items-center gap-2 px-4 py-2 text-sm text-text-primary hover:bg-surface-secondary min-h-[44px]"
@@ -144,7 +146,7 @@ export function AuthMenu() {
                     }}
                 >
                     <LogOut className="h-4 w-4" />
-                    Sign out
+                    {t('auth.signOut')}
                 </button>
             </AuthDropdown>
         </div>

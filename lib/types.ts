@@ -45,6 +45,8 @@ export interface StockSummary {
     date: string
     type?: 'Stock' | 'Index'
     chartSeries?: { date: string; value: number }[]
+    sector?: string
+    marketCapThousandsMkd?: number
 }
 
 export interface MarketIndex {

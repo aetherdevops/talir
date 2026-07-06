@@ -3,10 +3,9 @@
 import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import type { FundamentalEntry } from '@/lib/fundamentals'
-import {
-    formatEps,
-    formatNetProfit,
-} from '@/lib/stock-fundamentals-display'
+import { useLocale } from '@/components/providers/LocaleProvider'
+import { displayFilingSource } from '@/lib/i18n/display-source'
+import { formatEps, formatNetProfit } from '@/lib/stock-fundamentals-display'
 import { formatNewsDate } from '@/lib/utils'
 
 interface StockFinancialsTabProps {
@@ -39,48 +38,47 @@ function dedupeByFiscalYear(entries: FundamentalEntry[]): FundamentalEntry[] {
 }
 
 export function StockFinancialsTab({ fundamentals, asOfDate }: StockFinancialsTabProps) {
+    const { locale, t } = useLocale()
     const rows = dedupeByFiscalYear(
         fundamentals.filter((e) => e.parseStatus !== 'link_only' || e.netProfit !== null || e.eps !== null)
     )
 
     if (!rows.length) {
-        return (
-            <p className="text-sm text-text-secondary py-4">
-                No parsed annual financials from SECNet for this issuer yet. Check Updates for filing links.
-            </p>
-        )
+        return <p className="text-sm text-text-secondary py-4">{t('stock.fundamentals.empty')}</p>
     }
 
     return (
         <div className="space-y-4">
             <p className="text-xs font-data text-text-secondary">
-                Annual reports from SECNet · Data as of {formatNewsDate(asOfDate)} · end-of-day close, not live
+                {t('stock.fundamentals.subtitle', { date: formatNewsDate(asOfDate) })}
             </p>
             <div className="overflow-x-auto rounded-xl border border-border">
                 <table className="w-full text-sm min-w-[480px]">
                     <thead>
                         <tr className="border-b border-border bg-surface-secondary/50">
                             <th className="text-left py-2.5 px-3 text-xs font-data text-text-secondary font-medium">
-                                Fiscal year
+                                {t('stock.fundamentals.fyColumn')}
                             </th>
                             <th className="text-right py-2.5 px-3 text-xs font-data text-text-secondary font-medium">
-                                EPS
+                                {t('stock.fundamentals.eps')}
                             </th>
                             <th className="text-right py-2.5 px-3 text-xs font-data text-text-secondary font-medium">
-                                Net profit
+                                {t('stock.fundamentals.netProfit')}
                             </th>
                             <th className="text-left py-2.5 px-3 text-xs font-data text-text-secondary font-medium">
-                                Filed
+                                {t('stock.filed')}
                             </th>
                             <th className="text-right py-2.5 px-3 text-xs font-data text-text-secondary font-medium">
-                                Source
+                                {t('stock.source')}
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         {rows.map((row) => (
                             <tr key={`${row.fiscalYear}-${row.url}`} className="border-b border-border/50 last:border-0">
-                                <td className="py-2.5 px-3 font-data tabular-nums text-text-primary">FY {row.fiscalYear}</td>
+                                <td className="py-2.5 px-3 font-data tabular-nums text-text-primary">
+                                    {t('common.fy', { year: row.fiscalYear })}
+                                </td>
                                 <td className="py-2.5 px-3 text-right font-data tabular-nums text-text-primary">
                                     {row.eps != null ? formatEps(row.eps) : '—'}
                                 </td>
@@ -97,7 +95,7 @@ export function StockFinancialsTab({ fundamentals, asOfDate }: StockFinancialsTa
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-1 text-xs text-accent hover:underline font-data"
                                     >
-                                        SECNet
+                                        {displayFilingSource(locale, 'SECNet')}
                                         <ExternalLink className="h-3 w-3" aria-hidden />
                                     </Link>
                                 </td>

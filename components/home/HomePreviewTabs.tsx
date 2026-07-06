@@ -1,13 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { MarketIndex, StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { PreviewMarketCard } from '@/components/home/PreviewMarketCard'
 import { CompactQuoteCard } from '@/components/home/CompactQuoteCard'
 import { DesktopScrollRow } from '@/components/home/DesktopScrollRow'
 import { StockPreviewCard } from '@/components/home/StockPreviewCard'
+import { IssuerDisplayName } from '@/components/common/IssuerDisplayName'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { ChevronRight } from 'lucide-react'
 
 type MainTab = 'indices' | 'stocks'
@@ -60,13 +62,13 @@ function PreviewGrid({ children }: { children: React.ReactNode }) {
 
 function ViewAllLink({ href, label }: { href: string; label: string }) {
     return (
-        <Link
+        <LocaleLink
             href={href}
             className="flex items-center justify-center gap-1 min-h-[44px] text-xs font-semibold text-accent hover:text-accent/80 transition-colors"
         >
             {label}
             <ChevronRight className="h-3.5 w-3.5" aria-hidden />
-        </Link>
+        </LocaleLink>
     )
 }
 
@@ -76,6 +78,7 @@ export function HomePreviewTabs({
     losers,
     mostActive,
 }: HomePreviewTabsProps) {
+    const { t } = useLocale()
     const [mainTab, setMainTab] = useState<MainTab>('indices')
     const [stockTab, setStockTab] = useState<StockTab>('active')
 
@@ -94,8 +97,8 @@ export function HomePreviewTabs({
         <div className="space-y-2 min-w-0">
             <TabPills
                 options={[
-                    { id: 'indices', label: 'Indices' },
-                    { id: 'stocks', label: 'Stocks' },
+                    { id: 'indices', label: t('home.indices') },
+                    { id: 'stocks', label: t('home.stocks') },
                 ]}
                 value={mainTab}
                 onChange={setMainTab}
@@ -134,9 +137,9 @@ export function HomePreviewTabs({
                         </DesktopScrollRow>
                     </div>
                     {previewIndices.length === 0 && (
-                        <p className="text-sm text-text-tertiary py-4 text-center">No index data available</p>
+                        <p className="text-sm text-text-tertiary py-4 text-center">{t('home.noIndexData')}</p>
                     )}
-                    {hasMoreIndices && <ViewAllLink href="/markets" label="View all indices" />}
+                    {hasMoreIndices && <ViewAllLink href="/markets" label={t('home.viewAllIndices')} />}
                 </div>
             )}
 
@@ -144,9 +147,9 @@ export function HomePreviewTabs({
                 <div className="space-y-2 min-w-0">
                     <TabPills
                         options={[
-                            { id: 'active', label: 'Active' },
-                            { id: 'gainers', label: 'Gainers' },
-                            { id: 'losers', label: 'Losers' },
+                            { id: 'active', label: t('home.active') },
+                            { id: 'gainers', label: t('home.gainers') },
+                            { id: 'losers', label: t('home.losers') },
                         ]}
                         value={stockTab}
                         onChange={setStockTab}
@@ -167,7 +170,9 @@ export function HomePreviewTabs({
                                             key={stock.code}
                                             href={`/stock/${stock.code}`}
                                             label={stock.code}
-                                            subtitle={stock.name}
+                                            subtitle={
+                                                <IssuerDisplayName code={stock.code} name={stock.name} />
+                                            }
                                             valueKind="stock"
                                             chartSeries={stock.chartSeries ?? []}
                                             latestPrice={stock.price}
@@ -178,9 +183,9 @@ export function HomePreviewTabs({
                             </div>
                         </>
                     ) : (
-                        <p className="text-sm text-text-tertiary py-4 text-center">No data available</p>
+                        <p className="text-sm text-text-tertiary py-4 text-center">{t('home.noData')}</p>
                     )}
-                    {hasMoreStocks && <ViewAllLink href="/markets" label="View all stocks" />}
+                    {hasMoreStocks && <ViewAllLink href="/markets" label={t('home.viewAllStocks')} />}
                 </div>
             )}
         </div>

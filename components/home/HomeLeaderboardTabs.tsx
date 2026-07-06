@@ -1,7 +1,6 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import Link from 'next/link'
 import { StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { DesktopScrollRow } from '@/components/home/DesktopScrollRow'
@@ -11,6 +10,8 @@ import {
 } from '@/components/home/MobileLeaderboardScrollRow'
 import { StockPreviewCard } from '@/components/home/StockPreviewCard'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { ChevronRight } from 'lucide-react'
 
 type StockTab =
@@ -77,19 +78,21 @@ export function HomeLeaderboardTabs({
     consistentGainers,
     asOfDate,
 }: HomeLeaderboardTabsProps) {
+    const { t } = useLocale()
+
     const tabOptions = useMemo(() => {
         const options: { id: StockTab; label: string }[] = [
-            { id: 'active', label: 'Most active' },
-            { id: 'gainers', label: 'Gainers' },
-            { id: 'losers', label: 'Losers' },
+            { id: 'active', label: t('home.mostActive') },
+            { id: 'gainers', label: t('home.gainers') },
+            { id: 'losers', label: t('home.losers') },
         ]
-        if (weekHighs.length > 0) options.push({ id: 'weekHighs', label: '52w highs' })
-        if (weekLows.length > 0) options.push({ id: 'weekLows', label: '52w lows' })
+        if (weekHighs.length > 0) options.push({ id: 'weekHighs', label: t('home.weekHighs') })
+        if (weekLows.length > 0) options.push({ id: 'weekLows', label: t('home.weekLows') })
         if (consistentGainers.length > 0) {
-            options.push({ id: 'consistentGainers', label: '5-day streak' })
+            options.push({ id: 'consistentGainers', label: t('home.streak') })
         }
         return options
-    }, [weekHighs.length, weekLows.length, consistentGainers.length])
+    }, [weekHighs.length, weekLows.length, consistentGainers.length, t])
 
     const [stockTab, setStockTab] = useState<StockTab>('active')
 
@@ -113,13 +116,10 @@ export function HomeLeaderboardTabs({
 
     return (
         <section className="space-y-2 min-w-0 max-w-full" aria-labelledby="home-leaderboards-heading">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1 min-w-0">
-                <h2
-                    id="home-leaderboards-heading"
-                    className="font-heading text-base font-bold text-text-primary tracking-tight"
-                >
-                    Leaderboards
-                </h2>
+            <h2 id="home-leaderboards-heading" className="sr-only">
+                {t('home.leaderboardsSrOnly')}
+            </h2>
+            <div className="flex flex-wrap items-baseline justify-end gap-x-2 gap-y-1 min-w-0">
                 <DataFreshnessLabel asOfDate={asOfDate} variant="compact" />
             </div>
 
@@ -133,17 +133,17 @@ export function HomeLeaderboardTabs({
                     </div>
                 </>
             ) : (
-                <p className="text-sm text-text-tertiary py-4 text-center">No data available</p>
+                <p className="text-sm text-text-tertiary py-4 text-center">{t('home.noData')}</p>
             )}
 
             {hasMoreStocks && (
-                <Link
+                <LocaleLink
                     href="/markets"
                     className="flex items-center justify-center gap-1 min-h-[44px] text-xs font-semibold text-accent hover:text-accent/80 transition-colors"
                 >
-                    View all on Markets
+                    {t('home.viewAllMarkets')}
                     <ChevronRight className="h-3.5 w-3.5" aria-hidden />
-                </Link>
+                </LocaleLink>
             )}
         </section>
     )

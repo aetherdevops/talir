@@ -1,34 +1,33 @@
 'use client'
 
 import { useCallback, useMemo, useState } from 'react'
-import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import type { DividendCalendarEntry, DividendsCalendarFile } from '@/lib/dividends'
 import {
     countCalendarsInLastYears,
     earliestCalendarYear,
     highestDisclosedGross,
-    inferPayoutFrequency,
-    latestParsedDividend,
     mostCalendarFilings,
-    nextUpcomingExDividend,
-    resolveProfitYear,
 } from '@/lib/dividends'
-import { DividendHistoryChart } from '@/components/dividends/DividendHistoryChart'
+import { DividendScorecardPanel } from '@/components/dividends/DividendScorecardPanel'
 import { DividendRow } from '@/components/dividends/DividendRow'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { InfoPopover } from '@/components/ui/InfoPopover'
-import { ChangeLabel } from '@/components/ui/ChangeLabel'
-import { cn, formatNewsDate } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 
 type LeaderboardTab = 'recent' | 'upcoming' | 'highest' | 'consistent'
 
 interface DividendsPageClientProps {
     calendar: DividendsCalendarFile
     asOfDate: string
+    priceByCode: Record<string, number>
+    firstTradeByCode: Record<string, string>
 }
 
-export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientProps) {
+export function DividendsPageClient({ calendar, asOfDate, priceByCode, firstTradeByCode }: DividendsPageClientProps) {
+    const { t } = useLocale()
     const router = useRouter()
     const searchParams = useSearchParams()
 
@@ -49,12 +48,8 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
             : issuerOptions[0]?.code ?? null
 
     const selectedEntries = selectedCode ? calendar.byIssuer[selectedCode] ?? [] : []
-    const upcomingIssuer = nextUpcomingExDividend(selectedEntries)
-    const latestParsed = latestParsedDividend(selectedEntries)
-    const latestFy = latestParsed ? resolveProfitYear(latestParsed) : null
     const sinceYear = earliestCalendarYear(selectedEntries)
     const calendars5y = countCalendarsInLastYears(selectedEntries, 5)
-    const payoutFrequency = inferPayoutFrequency()
 
     const [leaderboardTab, setLeaderboardTab] = useState<LeaderboardTab>('recent')
 
@@ -77,7 +72,7 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
                         ))}
                     </div>
                 ) : (
-                    <p className="text-sm text-text-tertiary py-4 text-center">No upcoming parsed ex-dates.</p>
+                    <p className="text-sm text-text-tertiary py-4 text-center">{t('dividends.noUpcoming')}</p>
                 )
             case 'highest':
                 return (
@@ -101,7 +96,7 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
                                         {row.stockCode}
                                     </span>
                                     <span className="font-data text-xs text-text-secondary tabular-nums">
-                                        {row.count} filings · 5y
+                                        {t('dividends.in5y', { count: row.count })}
                                     </span>
                                 </button>
                             </li>
@@ -118,20 +113,18 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
                     </div>
                 )
         }
-    }, [calendar, leaderboardTab, setSelectedCode])
+    }, [calendar, leaderboardTab, setSelectedCode, t])
 
-    const showChart =
-        selectedEntries.filter((e) => e.parseStatus === 'parsed' && e.grossPerShare !== null).length >= 2
+    const selectedPrice = selectedCode ? priceByCode[selectedCode] ?? null : null
+    const selectedFirstTrade = selectedCode ? firstTradeByCode[selectedCode] ?? null : null
 
     return (
         <div className="flex flex-col gap-8 min-w-0">
             <header className="flex flex-col gap-2">
                 <h1 className="text-2xl sm:text-3xl font-semibold font-heading text-text-primary tracking-tight">
-                    Dividends
+                    {t('dividends.title')}
                 </h1>
-                <p className="text-sm text-text-secondary">
-                    SECNet dividend calendars · end-of-day prices · not a forecast
-                </p>
+                <p className="text-sm text-text-secondary">{t('dividends.subtitle')}</p>
                 <DataFreshnessLabel asOfDate={asOfDate} />
             </header>
 
@@ -139,7 +132,7 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
                 <div className="flex flex-col sm:flex-row sm:items-end gap-3 justify-between">
                     <div className="space-y-1">
                         <h2 id="dividends-deep-dive" className="text-lg font-semibold font-heading text-text-primary">
-                            Company deep-dive
+                            {t('dividends.deepDive')}
                         </h2>
                         <p className="text-xs font-data text-text-tertiary">
                             {calendar.all.length} calendars · {Object.keys(calendar.byIssuer).length} issuers in dataset
@@ -148,7 +141,7 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
                     {issuerOptions.length > 0 ? (
                         <label className="flex flex-col gap-1 min-w-[200px]">
                             <span className="text-[11px] font-data text-text-tertiary uppercase tracking-wide">
-                                Issuer
+                                {t('dividends.issuer')}
                             </span>
                             <select
                                 value={selectedCode ?? ''}
@@ -169,79 +162,33 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
                     <div className="rounded-xl border border-border bg-surface p-4 sm:p-6 space-y-4 min-w-0">
                         <div className="flex flex-wrap items-start justify-between gap-3">
                             <div>
-                                <Link
+                                <LocaleLink
                                     href={`/stock/${selectedCode}`}
                                     className="font-heading text-xl font-bold text-text-primary hover:text-accent"
                                 >
                                     {selectedEntries[0].stockName}
-                                </Link>
+                                </LocaleLink>
                                 <p className="text-xs font-data text-text-tertiary mt-1">
                                     {selectedCode}
-                                    {sinceYear ? ` · calendars since ${sinceYear}` : ''}
+                                    {sinceYear ? ` · ${t('dividends.calendarsSince', { year: sinceYear })}` : ''}
                                     {' · '}
-                                    {payoutFrequency} (MSE)
+                                    {t('dividends.annualMse')}
                                     {' · '}
-                                    {calendars5y} in 5y
+                                    {t('dividends.in5y', { count: calendars5y })}
                                 </p>
                             </div>
-                            {upcomingIssuer ? (
-                                <div className="text-right">
-                                    <p className="text-[11px] text-text-tertiary font-data">Next ex-date</p>
-                                    <p className="font-data text-lg font-semibold text-text-primary tabular-nums">
-                                        {formatNewsDate(upcomingIssuer.exDate!)}
-                                    </p>
-                                </div>
-                            ) : latestParsed?.trailingYieldAtEx !== null &&
-                              latestParsed?.trailingYieldAtEx !== undefined ? (
-                                <div className="text-right">
-                                    <p className="text-[11px] text-text-tertiary font-data">Yield at last ex-date</p>
-                                    <p className="font-data text-lg font-semibold text-text-primary tabular-nums">
-                                        {latestParsed.trailingYieldAtEx.toFixed(2)}%
-                                    </p>
-                                </div>
-                            ) : null}
                         </div>
 
-                        {showChart ? (
-                            <DividendHistoryChart entries={selectedEntries} />
-                        ) : (
-                            <p className="text-sm text-text-tertiary font-data py-4 border border-dashed border-border rounded-lg text-center px-4">
-                                Payout chart needs at least two fully parsed calendars with disclosed gross per share.
-                            </p>
-                        )}
-
-                        {latestParsed ? (
-                            <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-border">
-                                <Metric
-                                    label="Last gross"
-                                    value={`${latestParsed.grossPerShare!.toLocaleString('en-US')} ден.${latestFy ? ` (FY ${latestFy})` : ''}`}
-                                />
-                                {latestParsed.payoutRatioPct !== null && latestParsed.payoutRatioPct !== undefined ? (
-                                    <Metric
-                                        label="Payout ratio"
-                                        value={`${latestParsed.payoutRatioPct.toFixed(1)}%`}
-                                    />
-                                ) : null}
-                                {latestParsed.yoyGrowthPct !== null && latestParsed.yoyGrowthPct !== undefined ? (
-                                    <div>
-                                        <dt className="text-[11px] text-text-tertiary font-data">YoY gross</dt>
-                                        <dd className="mt-0.5">
-                                            <ChangeLabel change={latestParsed.yoyGrowthPct} />
-                                        </dd>
-                                    </div>
-                                ) : null}
-                            </dl>
-                        ) : null}
-
-                        <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1 max-h-[320px] overflow-y-auto">
-                            {selectedEntries.map((entry) => (
-                                <DividendRow key={entry.url} entry={entry} />
-                            ))}
-                        </div>
+                        <DividendScorecardPanel
+                            stockCode={selectedCode}
+                            dividends={selectedEntries}
+                            currentPrice={selectedPrice}
+                            firstTradeDate={selectedFirstTrade}
+                        />
                     </div>
                 ) : (
                     <p className="text-sm text-text-tertiary py-8 text-center border border-dashed border-border rounded-xl">
-                        No dividend calendars in the current dataset.
+                        {t('dividends.noCalendars')}
                     </p>
                 )}
             </section>
@@ -249,21 +196,18 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
             <section className="space-y-3 min-w-0" aria-labelledby="dividends-leaderboards">
                 <div className="flex items-center gap-2">
                     <h2 id="dividends-leaderboards" className="text-lg font-semibold font-heading text-text-primary">
-                        Market leaderboards
+                        {t('dividends.leaderboards')}
                     </h2>
-                    <InfoPopover label="leaderboards">
-                        Filing-based views only. Highest gross uses parsed SECNet calendars; consistency counts calendar
-                        filings in the last five years.
-                    </InfoPopover>
+                    <InfoPopover label={t('dividends.leaderboards')}>{t('dividends.hubFootnote')}</InfoPopover>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
                     {(
                         [
-                            ['recent', 'Recent filings'],
-                            ['upcoming', 'Upcoming ex-dates'],
-                            ['highest', 'Highest gross'],
-                            ['consistent', 'Most filings (5y)'],
+                            ['recent', t('dividends.recentFilings')],
+                            ['upcoming', t('dividends.upcomingExDates')],
+                            ['highest', t('dividends.highestGross')],
+                            ['consistent', t('dividends.mostFilings')],
                         ] as const
                     ).map(([id, label]) => (
                         <button
@@ -285,22 +229,12 @@ export function DividendsPageClient({ calendar, asOfDate }: DividendsPageClientP
                 {leaderboardContent}
 
                 <p className="text-[11px] font-data text-text-tertiary pt-2">
-                    Table view also on{' '}
-                    <Link href="/markets?view=dividends" className="text-accent hover:underline">
-                        Markets → Dividends
-                    </Link>
-                    . Under MSE listing rules, dividend calendars are filed after shareholders&apos; assembly approval.
+                    <LocaleLink href="/markets?view=dividends" className="text-accent hover:underline">
+                        {t('dividends.marketsLink')}
+                    </LocaleLink>
+                    . {t('dividends.regulatoryNote')}
                 </p>
             </section>
-        </div>
-    )
-}
-
-function Metric({ label, value }: { label: string; value: string }) {
-    return (
-        <div>
-            <dt className="text-[11px] text-text-tertiary font-data">{label}</dt>
-            <dd className="font-data text-sm font-semibold text-text-primary tabular-nums mt-0.5">{value}</dd>
         </div>
     )
 }

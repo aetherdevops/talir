@@ -17,7 +17,8 @@ export const revalidate = 86400
 export async function generateStaticParams() {
     const { getAllStocks } = await import('@/lib/data')
     const stocks = await getAllStocks()
-    return stocks.map((stock) => ({ code: stock.code }))
+    const locales = ['mk', 'en'] as const
+    return locales.flatMap((locale) => stocks.map((stock) => ({ locale, code: stock.code })))
 }
 
 function StockPageFallback() {

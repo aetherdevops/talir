@@ -1,6 +1,8 @@
 'use client'
 
-import Link from 'next/link'
+import { IssuerDisplayName } from '@/components/common/IssuerDisplayName'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { formatPrice, formatInteger, sparklineWindowChangePercent } from '@/lib/utils'
 import { StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
@@ -21,11 +23,12 @@ export const MARKET_ROW_PRICE_WIDTH = 76
 export const MARKET_ROW_ACTION_WIDTH = 28
 
 export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstrumentRowProps) {
+    const { t } = useLocale()
     const series = (sparkline ?? stock.chartSeries ?? []).slice(-30)
     const windowChange = sparklineWindowChangePercent(series)
 
     return (
-        <Link
+        <LocaleLink
             href={stock.type === 'Index' ? `/market/${stock.code}` : `/stock/${stock.code}`}
             className={cn(
                 'grid items-center gap-2 min-h-[44px] py-2 hover:bg-surface-secondary/60 transition-colors group min-w-0',
@@ -45,11 +48,11 @@ export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstr
                 </div>
                 <div className="flex flex-col min-w-0 gap-0.5">
                     <span className="text-sm font-medium text-text-primary truncate leading-tight">
-                        {stock.name}
+                        <IssuerDisplayName code={stock.code} name={stock.name} />
                     </span>
                     {stock.type !== 'Index' && (
                         <span className="text-[10px] text-text-tertiary font-data leading-none">
-                            Vol {formatInteger(stock.volume)}
+                            {t('markets.volumeAbbr')} {formatInteger(stock.volume)}
                         </span>
                     )}
                 </div>
@@ -91,6 +94,6 @@ export function MarketInstrumentRow({ stock, sparkline, className }: MarketInstr
             >
                 <StockPageActions stockCode={stock.code} stockData={stock} variant="icon" />
             </div>
-        </Link>
+        </LocaleLink>
     )
 }
