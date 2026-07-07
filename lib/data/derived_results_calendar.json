@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-07-06T06:43:07.620Z",
-  "lastIssuerScan": "2026-07-06",
+  "generatedAt": "2026-07-07T06:15:35.321Z",
+  "lastIssuerScan": "2026-07-07",
   "issuerCount": 170,
   "recent": [
+    {
+      "stockCode": "LOZP",
+      "stockName": "Pelisterka AD Skopje",
+      "reportKind": "q1_pl",
+      "periodStart": null,
+      "periodEnd": null,
+      "periodLabel": null,
+      "filedAt": "2026-07-06",
+      "headline": "LOZP files profit and loss report",
+      "url": "https://seinet.com.mk/en/document/77895",
+      "source": "SECNet"
+    },
     {
       "stockCode": "KPSS",
       "stockName": "Fabrika Karposh AD Skopje",
@@ -2297,6 +2309,18 @@
     }
   ],
   "all": [
+    {
+      "stockCode": "LOZP",
+      "stockName": "Pelisterka AD Skopje",
+      "reportKind": "q1_pl",
+      "periodStart": null,
+      "periodEnd": null,
+      "periodLabel": null,
+      "filedAt": "2026-07-06",
+      "headline": "LOZP files profit and loss report",
+      "url": "https://seinet.com.mk/en/document/77895",
+      "source": "SECNet"
+    },
     {
       "stockCode": "KPSS",
       "stockName": "Fabrika Karposh AD Skopje",
@@ -10795,6 +10819,92 @@
     }
   ],
   "byIssuer": {
+    "LOZP": [
+      {
+        "stockCode": "LOZP",
+        "stockName": "Pelisterka AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-07-06",
+        "headline": "LOZP files profit and loss report",
+        "url": "https://seinet.com.mk/en/document/77895",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "LOZP",
+        "stockName": "Pelisterka AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-30",
+        "headline": "LOZP reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/77000",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "LOZP",
+        "stockName": "Pelisterka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-04-01",
+        "headline": "LOZP files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76137",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "LOZP",
+        "stockName": "Pelisterka AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-11-17",
+        "headline": "LOZP reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74875",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "LOZP",
+        "stockName": "Pelisterka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-08-15",
+        "headline": "LOZP files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/74186",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "LOZP",
+        "stockName": "Pelisterka AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-05-15",
+        "headline": "LOZP reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72849",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "LOZP",
+        "stockName": "Pelisterka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-04-01",
+        "headline": "LOZP files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/71729",
+        "source": "SECNet"
+      }
+    ],
     "KPSS": [
       {
         "stockCode": "KPSS",
@@ -17604,80 +17714,6 @@
         "filedAt": "2024-03-01",
         "headline": "KOMU files audited financial statements",
         "url": "https://seinet.com.mk/en/document/66856",
-        "source": "SECNet"
-      }
-    ],
-    "LOZP": [
-      {
-        "stockCode": "LOZP",
-        "stockName": "Pelisterka AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-30",
-        "headline": "LOZP reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/77000",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "LOZP",
-        "stockName": "Pelisterka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-04-01",
-        "headline": "LOZP files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76137",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "LOZP",
-        "stockName": "Pelisterka AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-11-17",
-        "headline": "LOZP reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74875",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "LOZP",
-        "stockName": "Pelisterka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-08-15",
-        "headline": "LOZP files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74186",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "LOZP",
-        "stockName": "Pelisterka AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-05-15",
-        "headline": "LOZP reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72849",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "LOZP",
-        "stockName": "Pelisterka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-04-01",
-        "headline": "LOZP files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71729",
         "source": "SECNet"
       }
     ],

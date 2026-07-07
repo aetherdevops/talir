@@ -1,10 +1,62 @@
 {
-  "generatedAt": "2026-07-06T06:43:07.135Z",
-  "lastIssuerScan": "2026-07-06",
-  "count": 1531,
-  "datedCount": 1531,
+  "generatedAt": "2026-07-07T06:15:34.807Z",
+  "lastIssuerScan": "2026-07-07",
+  "count": 1533,
+  "datedCount": 1533,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "KJUBI-https-seinet-com-mk-en-document-77898",
+      "rawTitle": "7/6/2026 - Makedonija osiguruvanje  AD Skopje - Viena Insurance Grup - Changes in management and supervisory bodies",
+      "title": "KJUBI: Viena Insurance Grup - Changes in management and supervisory bodies",
+      "source": "SECNet",
+      "stockCode": "KJUBI",
+      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-06",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77898"
+    },
+    {
+      "id": "LOZP-https-seinet-com-mk-en-document-77896",
+      "rawTitle": "7/6/2026 - Pelisterka AD Skopje - Other decisions of the shareholders meeting",
+      "title": "LOZP: Other decisions of the shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "LOZP",
+      "stockName": "Pelisterka AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-06",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77896"
+    },
+    {
+      "id": "LOZP-https-seinet-com-mk-en-document-77895",
+      "rawTitle": "7/6/2026 - Pelisterka AD Skopje - Distribution of profit",
+      "title": "LOZP files profit and loss report",
+      "source": "SECNet",
+      "stockCode": "LOZP",
+      "stockName": "Pelisterka AD Skopje",
+      "category": "dividend",
+      "filingTier": "dividend",
+      "publishedAt": "2026-07-06",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77895"
+    },
+    {
+      "id": "REPL-https-seinet-com-mk-en-document-77894",
+      "rawTitle": "7/6/2026 - Replek AD Skopje - Other price sensitive information",
+      "title": "REPL: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-06",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77894"
+    },
     {
       "id": "GRNT-https-seinet-com-mk-en-document-77889",
       "rawTitle": "7/2/2026 - Granit AD Skopje - Transactions with shares by persons in management and supervisory bodies",
@@ -5479,19 +5531,6 @@
       "url": "https://seinet.com.mk/en/document/76956"
     },
     {
-      "id": "KJUBI-https-seinet-com-mk-en-document-76957",
-      "rawTitle": "4/30/2026 - Makedonija osiguruvanje  AD Skopje - Viena Insurance Grup - Other price sensitive information",
-      "title": "KJUBI: Viena Insurance Grup - Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "KJUBI",
-      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-30",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76957"
-    },
-    {
       "id": "KOMU-https-seinet-com-mk-en-document-76939",
       "rawTitle": "4/30/2026 - DS Smith AD Skopje - Non-audited profit&loss account 01.01. - 31.03.",
       "title": "KOMU reports profit and loss for 01.01.–31.03",
@@ -8207,19 +8246,6 @@
       "publishedAt": "2026-04-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76372"
-    },
-    {
-      "id": "REPL-https-seinet-com-mk-en-document-76403",
-      "rawTitle": "4/23/2026 - Replek AD Skopje - Changes in shareholders with a significant stake",
-      "title": "REPL: Changes in shareholders with a significant stake",
-      "source": "SECNet",
-      "stockCode": "REPL",
-      "stockName": "Replek AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-23",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76403"
     },
     {
       "id": "RZTK-https-seinet-com-mk-en-document-76394",
