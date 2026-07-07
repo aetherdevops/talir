@@ -8,8 +8,11 @@ import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { AddAlertModal } from '@/components/stock/AddAlertModal'
+import { useAuth } from '@/components/auth/AuthProvider'
+import { LoggedOutGrowthPanel } from '@/components/auth/LoggedOutGrowthPanel'
 
 export function AlertsClient() {
+    const { user } = useAuth()
     const { alerts, removeAlert, toggleAlert } = useAlertsStore()
     const [mounted, setMounted] = useState(false)
     const [editingAlert, setEditingAlert] = useState<Alert | null>(null)
@@ -22,6 +25,7 @@ export function AlertsClient() {
 
     return (
         <div className="max-w-5xl mx-auto p-6 space-y-8">
+            {!user ? <LoggedOutGrowthPanel pageLabel="alerts" /> : null}
             <header>
                 <h1 className="text-3xl font-bold text-text-primary mb-2">My Alerts</h1>
                 <p className="text-text-secondary">

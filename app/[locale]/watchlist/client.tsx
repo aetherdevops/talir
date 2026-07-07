@@ -15,6 +15,8 @@ import Link from 'next/link'
 import { RenameListModal } from "@/components/watchlist/RenameListModal"
 import { NewsSection } from "@/components/common/NewsSection"
 import { useRequireAuth } from '@/lib/auth/use-require-auth'
+import { useAuth } from '@/components/auth/AuthProvider'
+import { LoggedOutGrowthPanel } from '@/components/auth/LoggedOutGrowthPanel'
 // Import data fetching - in a client component we might need to pass data as props or use SWR/React Query.
 // For this hybrid approach, we'll fetch in page wrapper and pass down, OR use a useEffect to load essential data.
 // Since getAllStocks is async and reads file, it's server-only usually. 
@@ -34,6 +36,7 @@ interface WatchlistPageProps {
 }
 
 export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
+    const { user } = useAuth()
     const { watchlists, activeListId, setActiveList, deleteList, removeFromList } = useWatchlistStore()
     const { requireAuth } = useRequireAuth()
 
@@ -80,6 +83,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
 
     return (
         <div className="max-w-7xl mx-auto min-w-0 space-y-8">
+            {!user ? <LoggedOutGrowthPanel pageLabel="watchlists" /> : null}
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <h1 className="text-3xl font-normal tracking-tight text-text-primary">Your Lists</h1>

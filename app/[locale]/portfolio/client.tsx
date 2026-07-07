@@ -19,6 +19,8 @@ import { SortMenu, SortField, SortDirection } from "@/components/portfolio/SortM
 import { NewsSection } from "@/components/common/NewsSection"
 import { useRequireAuth } from '@/lib/auth/use-require-auth'
 import { ScrollTable, SCROLL_TABLE_STICKY_CELL } from '@/components/ui/ScrollTable'
+import { useAuth } from '@/components/auth/AuthProvider'
+import { LoggedOutGrowthPanel } from '@/components/auth/LoggedOutGrowthPanel'
 
 const PortfolioTreemap = dynamic(
     () => import('@/components/portfolio/PortfolioTreemap').then((mod) => mod.PortfolioTreemap),
@@ -39,6 +41,7 @@ interface PortfolioPageProps {
 }
 
 export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
+    const { user } = useAuth()
     const { portfolios, activePortfolioId, setActivePortfolio, removeHolding, createPortfolio, deletePortfolio, renamePortfolio, copyPortfolio } = usePortfolioStore()
     const { requireAuth } = useRequireAuth()
 
@@ -200,6 +203,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
 
     return (
         <div className="max-w-7xl mx-auto min-w-0 space-y-8">
+            {!user ? <LoggedOutGrowthPanel pageLabel="portfolios" /> : null}
             {/* Header & Tabs */}
             <div className="flex flex-col gap-6">
                 <div className="flex flex-wrap items-center gap-2">

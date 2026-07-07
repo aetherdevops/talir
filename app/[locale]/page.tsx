@@ -21,7 +21,6 @@ import {
     getNewsFeedMeta,
 } from '@/lib/data'
 import { HomeMarketOverview } from '@/components/home/HomeMarketOverview'
-import { HomePersonalRail } from '@/components/home/HomePersonalRail'
 import { HomeDividendsPanel } from '@/components/dividends/HomeDividendsPanel'
 
 export const revalidate = 86400
@@ -70,11 +69,8 @@ export default async function HomePage() {
 
     return (
         <div className="pb-10 min-w-0">
-            <div className="grid grid-cols-1 lg:grid-cols-12 xl:grid-cols-[220px_minmax(0,1fr)_300px] gap-4 lg:gap-6 min-w-0">
-                <HomePersonalRail variant="rail" className="hidden xl:block" />
-
+            <div className="grid grid-cols-1 lg:grid-cols-12 xl:grid-cols-[minmax(0,1fr)_300px] gap-4 lg:gap-6 min-w-0">
                 <div className="lg:col-span-8 xl:col-span-1 min-w-0 space-y-4">
-                    <HomePersonalRail variant="compact" className="hidden lg:block xl:hidden" />
                     <HomeMarketOverview
                         indices={indices}
                         gainers={gainers}
