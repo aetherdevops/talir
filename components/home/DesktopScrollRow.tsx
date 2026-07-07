@@ -7,6 +7,13 @@ import { Button } from '@/components/ui/Button'
 
 const DRAG_THRESHOLD_PX = 5
 
+function isInteractiveTarget(target: EventTarget | null): boolean {
+    return Boolean(
+        target instanceof Element &&
+            target.closest('a, button, input, textarea, select, [role="link"], [data-no-drag]')
+    )
+}
+
 interface DesktopScrollRowProps {
     children: ReactNode
     className?: string
@@ -93,6 +100,7 @@ export function DesktopScrollRow({
         (event: React.PointerEvent<HTMLDivElement>) => {
             if (event.pointerType === 'touch') return
             if (event.button !== 0) return
+            if (isInteractiveTarget(event.target)) return
 
             stopMomentum()
             const el = scrollRef.current
@@ -160,6 +168,7 @@ export function DesktopScrollRow({
     )
 
     const onClickCapture = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
+        if (isInteractiveTarget(event.target)) return
         if (dragState.current.didDrag) {
             event.preventDefault()
             event.stopPropagation()

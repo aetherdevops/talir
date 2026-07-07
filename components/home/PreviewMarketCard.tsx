@@ -1,7 +1,9 @@
+'use client'
+
 import type { ReactNode } from 'react'
-import Link from 'next/link'
 import { IndexSparkline } from '@/components/home/IndexSparkline'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
+import { LocaleLink } from '@/components/layout/LocaleLink'
 import { formatIndexLevelCompact, formatPriceCompact, cn, sparklineWindowChangePercent } from '@/lib/utils'
 
 const SPARKLINE_HEIGHT = 40
@@ -33,7 +35,7 @@ export function PreviewMarketCard({
         valueKind === 'index' ? formatIndexLevelCompact(latestPrice) : formatPriceCompact(latestPrice)
 
     return (
-        <Link
+        <LocaleLink
             href={href}
             className={cn(
                 'block min-w-0 rounded-xl bg-surface-secondary hover:bg-surface-elevated transition-colors',
@@ -53,7 +55,7 @@ export function PreviewMarketCard({
             </div>
 
             <div
-                className="w-full shrink-0"
+                className="w-full shrink-0 pointer-events-none"
                 style={{ height: SPARKLINE_HEIGHT }}
             >
                 <IndexSparkline
@@ -70,6 +72,6 @@ export function PreviewMarketCard({
                 </span>
                 <ChangeLabel change={changePercent} className="text-[11px] shrink-0" />
             </div>
-        </Link>
+        </LocaleLink>
     )
 }
