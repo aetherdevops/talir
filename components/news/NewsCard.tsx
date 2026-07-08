@@ -1,15 +1,28 @@
-import type { NewsItem } from '@/lib/types'
-import { NEWS_CATEGORY_LABELS, resolveFilingTier } from '@/lib/news'
+'use client'
+
+import type { NewsCategory, NewsItem } from '@/lib/types'
+import { resolveFilingTier } from '@/lib/news'
 import { formatNewsDate } from '@/lib/utils'
 import { FilingIndicatorDot } from '@/components/news/FilingIndicatorLegend'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface NewsCardProps {
     item: NewsItem
 }
 
+const CATEGORY_KEYS: Record<NewsCategory, string> = {
+    earnings: 'filings.categoryEarnings',
+    financials: 'filings.categoryFinancials',
+    dividend: 'filings.categoryDividend',
+    corporate: 'filings.categoryCorporate',
+    other: 'filings.categoryOther',
+}
+
 export function NewsCard({ item }: NewsCardProps) {
-    const categoryLabel = NEWS_CATEGORY_LABELS[item.category]
+    const { t } = useLocale()
+    const categoryLabel = t(CATEGORY_KEYS[item.category])
     const tier = resolveFilingTier(item)
+    const dateUnknownLabel = t('filings.dateUnknown')
 
     const dateLabel =
         item.dateKnown && item.publishedAt ? (
@@ -17,11 +30,11 @@ export function NewsCard({ item }: NewsCardProps) {
                 {formatNewsDate(item.publishedAt)}
             </time>
         ) : (
-            <span className="font-data font-semibold text-text-tertiary">Date unknown</span>
+            <span className="font-data font-semibold text-text-tertiary">{dateUnknownLabel}</span>
         )
 
     const ariaLabel = [
-        item.dateKnown && item.publishedAt ? formatNewsDate(item.publishedAt) : 'Date unknown',
+        item.dateKnown && item.publishedAt ? formatNewsDate(item.publishedAt) : dateUnknownLabel,
         item.stockCode,
         categoryLabel,
         item.title,

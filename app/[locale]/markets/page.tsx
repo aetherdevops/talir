@@ -1,4 +1,5 @@
-
+import { Suspense } from 'react'
+import type { Metadata } from 'next'
 import { MarketsClient } from './client'
 import {
     getAllInstruments,
@@ -13,13 +14,23 @@ import {
     getNewsFeedMeta,
     getMarketBreadth,
 } from '@/lib/data'
-import { Suspense } from 'react'
 import { MarketsLoadingSkeleton } from './loading-skeleton'
-import { Metadata } from 'next'
+import { isLocale } from '@/lib/i18n/config'
+import { getDictionary, translate } from '@/lib/i18n/get-dictionary'
 
-export const metadata: Metadata = {
-    title: 'Markets | Talir',
-    description: 'Explore all stocks on the Macedonian Stock Exchange',
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+    const { locale: raw } = await params
+    const locale = isLocale(raw) ? raw : 'mk'
+    const messages = getDictionary(locale)
+
+    return {
+        title: `${translate(messages, 'markets.title')} | ${translate(messages, 'brand.wordmark')}`,
+        description: translate(messages, 'markets.subtitle'),
+    }
 }
 
 export const revalidate = 86400

@@ -18,41 +18,7 @@
   --talir-mono: var(--font-mono), ui-monospace, 'Courier New', monospace;
   --talir-sans: var(--font-sans), system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-  /* Semantic — light */
-  --bg: var(--talir-ivory);
-  --bg-secondary: var(--talir-ivory-card);
-  --surface: var(--talir-ivory-card);
-  --surface-secondary: #ffffff;
-  --surface-tertiary: #eeebe3;
-  --surface-elevated: #ffffff;
-  --surface-2: #ffffff;
-
-  --text: var(--talir-navy);
-  --text-muted: var(--talir-muted);
-  --text-subtle: #7a8494;
-
-  --accent: var(--talir-gold);
-  --accent-muted: rgba(198, 162, 74, 0.12);
-
-  --border: rgba(15, 31, 56, 0.12);
-  --border-active: rgba(15, 31, 56, 0.22);
-
-  --up: #1a7a47;
-  --down: #c2362f;
-  --neutral: var(--talir-muted);
-
-  /* Tailwind bridge aliases */
-  --background: var(--bg-secondary);
-  --foreground: var(--text);
-  --text-primary: var(--text);
-  --text-secondary: var(--text-muted);
-  --text-tertiary: var(--text-subtle);
-  --brand-active: var(--accent-muted);
-  --brand-text: var(--talir-navy);
-}
-
-.dark,
-:root[data-theme='dark'] {
+  /* Semantic — dark (default) */
   color-scheme: dark;
 
   --bg: var(--talir-navy-deep);
@@ -77,6 +43,7 @@
   --down: #f0726a;
   --neutral: #9fb0c9;
 
+  /* Tailwind bridge aliases */
   --background: var(--bg-secondary);
   --foreground: var(--text);
   --text-primary: var(--text);
@@ -86,42 +53,77 @@
   --brand-text: var(--talir-gold-bright);
 }
 
-/* ---- Talir mark contexts ----
-   Light theme: full-colour coin (navy disc, gold acorn).
-   Dark theme: reversed — transparent disc, soft-gold ink,
-   so the coin never sits navy-on-navy. */
-.talir-logo-mark {
-  --disc: var(--talir-navy);
-  --ink: var(--talir-gold);
+.light,
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: var(--talir-ivory);
+  --bg-secondary: var(--talir-ivory-card);
+  --surface: var(--talir-ivory-card);
+  --surface-secondary: #ffffff;
+  --surface-tertiary: #eeebe3;
+  --surface-elevated: #ffffff;
+  --surface-2: #ffffff;
+
+  --text: var(--talir-navy);
+  --text-muted: var(--talir-muted);
+  --text-subtle: #7a8494;
+
+  --accent: var(--talir-gold);
+  --accent-muted: rgba(198, 162, 74, 0.12);
+
+  --border: rgba(15, 31, 56, 0.12);
+  --border-active: rgba(15, 31, 56, 0.22);
+
+  --up: #1a7a47;
+  --down: #c2362f;
+  --neutral: var(--talir-muted);
+
+  --background: var(--bg-secondary);
+  --foreground: var(--text);
+  --text-primary: var(--text);
+  --text-secondary: var(--text-muted);
+  --text-tertiary: var(--text-subtle);
+  --brand-active: var(--accent-muted);
+  --brand-text: var(--talir-navy);
 }
 
-.dark .talir-logo-mark,
-:root[data-theme='dark'] .talir-logo-mark {
+/* ---- Talir mark contexts ----
+   Dark theme (default): reversed — transparent disc, soft-gold ink,
+   so the coin never sits navy-on-navy.
+   Light theme: full-colour coin (navy disc, gold acorn). */
+.talir-logo-mark {
   --disc: transparent;
   --ink: var(--talir-gold-soft);
+}
+
+.light .talir-logo-mark,
+:root[data-theme='light'] .talir-logo-mark {
+  --disc: var(--talir-navy);
+  --ink: var(--talir-gold);
 }
 
 /* Session ambient accent — informational only; does not alter price data tokens (--up/--down). */
 :root[data-market='open'] {
   --accent: var(--talir-gold-bright);
-  --accent-muted: rgba(220, 192, 121, 0.18);
-  --border-active: rgba(231, 217, 168, 0.32);
-}
-
-:root[data-market='closed'] {
-  --accent: var(--talir-gold);
-  --accent-muted: rgba(198, 162, 74, 0.12);
-}
-
-.dark[data-market='open'],
-:root[data-theme='dark'][data-market='open'] {
-  --accent: var(--talir-gold-bright);
   --accent-muted: rgba(220, 192, 121, 0.2);
   --border-active: rgba(231, 217, 168, 0.34);
 }
 
-.dark[data-market='closed'],
-:root[data-theme='dark'][data-market='closed'] {
+:root[data-market='closed'] {
   --accent: var(--talir-gold-bright);
   --accent-muted: rgba(220, 192, 121, 0.14);
+}
+
+.light[data-market='open'],
+:root[data-theme='light'][data-market='open'] {
+  --accent: var(--talir-gold-bright);
+  --accent-muted: rgba(220, 192, 121, 0.18);
+  --border-active: rgba(231, 217, 168, 0.32);
+}
+
+.light[data-market='closed'],
+:root[data-theme='light'][data-market='closed'] {
+  --accent: var(--talir-gold);
+  --accent-muted: rgba(198, 162, 74, 0.12);
 }

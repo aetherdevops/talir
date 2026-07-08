@@ -2,9 +2,9 @@
 
 import { useMemo, useState } from 'react'
 import type { NewsCategory, NewsItem } from '@/lib/types'
-import { NEWS_CATEGORY_LABELS } from '@/lib/news'
 import { NewsCard } from '@/components/news/NewsCard'
 import { FilingIndicatorLegend } from '@/components/news/FilingIndicatorLegend'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn, formatAsOfDate } from '@/lib/utils'
 
 type ScopeTab = 'all' | 'companies'
@@ -15,18 +15,23 @@ interface NewsFeedPageProps {
     lastIssuerScan: string | null
 }
 
-const CATEGORY_FILTERS: { id: CategoryFilter; label: string }[] = [
-    { id: 'all', label: 'All categories' },
-    { id: 'earnings', label: NEWS_CATEGORY_LABELS.earnings },
-    { id: 'financials', label: NEWS_CATEGORY_LABELS.financials },
-    { id: 'dividend', label: NEWS_CATEGORY_LABELS.dividend },
-    { id: 'corporate', label: NEWS_CATEGORY_LABELS.corporate },
-    { id: 'other', label: NEWS_CATEGORY_LABELS.other },
-]
-
 export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
+    const { t } = useLocale()
     const [scope, setScope] = useState<ScopeTab>('all')
     const [category, setCategory] = useState<CategoryFilter>('all')
+
+    const categoryFilters = useMemo(
+        () =>
+            [
+                { id: 'all' as const, label: t('filings.allCategories') },
+                { id: 'earnings' as const, label: t('filings.categoryEarnings') },
+                { id: 'financials' as const, label: t('filings.categoryFinancials') },
+                { id: 'dividend' as const, label: t('filings.categoryDividend') },
+                { id: 'corporate' as const, label: t('filings.categoryCorporate') },
+                { id: 'other' as const, label: t('filings.categoryOther') },
+            ] satisfies { id: CategoryFilter; label: string }[],
+        [t]
+    )
 
     const filtered = useMemo(() => {
         return items.filter((item) => {
@@ -39,10 +44,10 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
     if (!items.length) {
         return (
             <div className="rounded-xl border border-dashed border-border bg-surface-secondary/30 px-6 py-12 text-center">
-                <p className="text-sm text-text-secondary">No dated updates in the feed yet.</p>
+                <p className="text-sm text-text-secondary">{t('filings.noDatedFeed')}</p>
                 {lastIssuerScan && (
                     <p className="mt-2 text-xs text-text-tertiary font-data">
-                        Last issuer scan: {formatAsOfDate(lastIssuerScan)}
+                        {t('filings.lastIssuerScan', { date: formatAsOfDate(lastIssuerScan) })}
                     </p>
                 )}
             </div>
@@ -53,8 +58,8 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
         <div className="space-y-5">
             <div className="flex flex-wrap items-center gap-2">
                 {([
-                    { id: 'all' as const, label: 'All' },
-                    { id: 'companies' as const, label: 'Companies' },
+                    { id: 'all' as const, label: t('filings.scopeAll') },
+                    { id: 'companies' as const, label: t('filings.scopeCompanies') },
                 ]).map((tab) => (
                     <button
                         key={tab.id}
@@ -73,7 +78,7 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
             </div>
 
             <div className="flex flex-wrap gap-2">
-                {CATEGORY_FILTERS.map((chip) => (
+                {categoryFilters.map((chip) => (
                     <button
                         key={chip.id}
                         type="button"
@@ -91,7 +96,7 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
             </div>
 
             {filtered.length === 0 ? (
-                <p className="text-sm text-text-tertiary py-8 text-center">No updates match these filters.</p>
+                <p className="text-sm text-text-tertiary py-8 text-center">{t('filings.noFilterMatch')}</p>
             ) : (
                 <div className="space-y-2 min-w-0">
                     {filtered.map((item) => (
@@ -104,7 +109,7 @@ export function NewsFeedPage({ items, lastIssuerScan }: NewsFeedPageProps) {
 
             {lastIssuerScan && (
                 <p className="text-xs text-text-tertiary font-data">
-                    Last issuer scan: {formatAsOfDate(lastIssuerScan)}
+                    {t('filings.lastIssuerScan', { date: formatAsOfDate(lastIssuerScan) })}
                 </p>
             )}
         </div>

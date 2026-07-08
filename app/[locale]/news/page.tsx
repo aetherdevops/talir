@@ -1,16 +1,35 @@
 import { getLatestNews, getNewsFeedMeta } from '@/lib/data'
 import { NewsFeedPage } from '@/components/news/NewsFeedPage'
-import { UPDATES_SECTION_SUBTITLE, UPDATES_SECTION_TITLE } from '@/lib/news-style'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import { isLocale } from '@/lib/i18n/config'
+import { getDictionary, translate } from '@/lib/i18n/get-dictionary'
 
-export const metadata: Metadata = {
-    title: 'Updates | Talir',
-    description: UPDATES_SECTION_SUBTITLE,
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+    const { locale: raw } = await params
+    const locale = isLocale(raw) ? raw : 'mk'
+    const messages = getDictionary(locale)
+
+    return {
+        title: `${translate(messages, 'filings.updates')} | ${translate(messages, 'brand.wordmark')}`,
+        description: translate(messages, 'filings.hubDescription'),
+    }
 }
 
 export const revalidate = 86400
 
-export default async function NewsPage() {
+export default async function NewsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>
+}) {
+    const { locale: raw } = await params
+    const locale = isLocale(raw) ? raw : 'mk'
+    const messages = getDictionary(locale)
+
     const [news, meta] = await Promise.all([
         getLatestNews(100),
         Promise.resolve(getNewsFeedMeta()),
@@ -21,10 +40,10 @@ export default async function NewsPage() {
             <div className="flex flex-col gap-6">
                 <header className="flex flex-col gap-2">
                     <h1 className="text-2xl sm:text-3xl font-semibold font-heading text-text-primary tracking-tight">
-                        {UPDATES_SECTION_TITLE}
+                        {translate(messages, 'filings.updates')}
                     </h1>
                     <p className="text-text-secondary text-sm">
-                        {UPDATES_SECTION_SUBTITLE}
+                        {translate(messages, 'filings.hubDescription')}
                     </p>
                 </header>
 

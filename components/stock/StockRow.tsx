@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { IssuerDisplayName } from '@/components/common/IssuerDisplayName'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { formatPrice, formatPriceCompact, formatInteger } from '@/lib/utils'
 import { StockSummary } from '@/lib/types'
 import { cn } from '@/lib/utils'
@@ -16,6 +17,7 @@ interface StockRowProps {
 }
 
 export function StockRow({ stock, showVolume = false, variant = 'default', className }: StockRowProps) {
+    const { t } = useLocale()
     const isCompact = variant === 'compact'
     const priceLabel = isCompact ? formatPriceCompact(stock.price) : formatPrice(stock.price)
 
@@ -43,7 +45,7 @@ export function StockRow({ stock, showVolume = false, variant = 'default', class
                     />
                     {showVolume && (
                         <span className="text-[10px] text-text-tertiary tabular-nums">
-                            Vol: {formatInteger(stock.volume)}
+                            {t('markets.volumeAbbr')} {formatInteger(stock.volume)}
                         </span>
                     )}
                 </div>

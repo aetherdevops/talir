@@ -54,10 +54,7 @@ export function PreviewMarketCard({
                 ) : null}
             </div>
 
-            <div
-                className="w-full shrink-0 pointer-events-none"
-                style={{ height: SPARKLINE_HEIGHT }}
-            >
+            <div className="w-full shrink-0" style={{ height: SPARKLINE_HEIGHT }}>
                 <IndexSparkline
                     series={series}
                     changePercent={windowChange}

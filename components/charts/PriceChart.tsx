@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, memo, useCallback } from 'react'
 import { createChart, ColorType, IChartApi, ISeriesApi, Time } from 'lightweight-charts'
 import { cn, formatPrice, formatInteger } from '@/lib/utils'
 import { isDarkTheme } from '@/lib/theme'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface ChartData {
     time: string
@@ -38,6 +39,7 @@ function readCssVar(name: string, fallback: string): string {
 }
 
 function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, excludePeriods = [] }: PriceChartProps) {
+    const { t } = useLocale()
     const chartContainerRef = useRef<HTMLDivElement>(null)
     const chartRef = useRef<IChartApi | null>(null)
     const seriesRef = useRef<ISeriesApi<'Area'> | null>(null)
@@ -197,7 +199,9 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, ex
             setTooltip({
                 price: formatPrice(dataPoint.value),
                 date: dateStr,
-                volume: fullData?.volume ? `Vol: ${formatInteger(fullData.volume)}` : undefined,
+                volume: fullData?.volume
+                    ? `${t('markets.volumeAbbr')} ${formatInteger(fullData.volume)}`
+                    : undefined,
                 left,
                 top,
             })
@@ -215,7 +219,7 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, ex
             chartRef.current = null
             hideTooltip()
         }
-    }, [data, isDarkMode, chartColor, gridColor, textColor, crosshairColor, markerBorder, hideTooltip])
+    }, [data, isDarkMode, chartColor, gridColor, textColor, crosshairColor, markerBorder, hideTooltip, t])
 
     return (
         <div className="flex flex-col gap-4 w-full min-w-0">

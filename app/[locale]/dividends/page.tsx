@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import {
     getAllInstruments,
     getDividendsCalendar,
@@ -7,10 +7,22 @@ import {
     getMarketDataAsOf,
 } from '@/lib/data'
 import { DividendsPageClient } from './client'
+import { isLocale } from '@/lib/i18n/config'
+import { getDictionary, translate } from '@/lib/i18n/get-dictionary'
 
-export const metadata: Metadata = {
-    title: 'Dividends | Talir',
-    description: 'SECNet dividend calendars, payout history, and market leaderboards for the Macedonian Stock Exchange',
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+    const { locale: raw } = await params
+    const locale = isLocale(raw) ? raw : 'mk'
+    const messages = getDictionary(locale)
+
+    return {
+        title: `${translate(messages, 'dividends.title')} | ${translate(messages, 'brand.wordmark')}`,
+        description: translate(messages, 'dividends.subtitle'),
+    }
 }
 
 export const revalidate = 86400

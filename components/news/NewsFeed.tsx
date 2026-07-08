@@ -1,10 +1,12 @@
-import Link from 'next/link'
+'use client'
+
 import { ArrowRight } from 'lucide-react'
 import type { NewsItem } from '@/lib/types'
 import { NewsCard } from '@/components/news/NewsCard'
 import { FilingIndicatorLegend } from '@/components/news/FilingIndicatorLegend'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { Button } from '@/components/ui/Button'
-import { UPDATES_SECTION_SUBTITLE, UPDATES_SECTION_TITLE } from '@/lib/news-style'
 import { cn } from '@/lib/utils'
 
 interface NewsFeedProps {
@@ -19,11 +21,15 @@ interface NewsFeedProps {
 export function NewsFeed({
     items,
     layout = 'home',
-    title = UPDATES_SECTION_TITLE,
-    subtitle = UPDATES_SECTION_SUBTITLE,
+    title,
+    subtitle,
     showHeader = true,
     showLegend = true,
 }: NewsFeedProps) {
+    const { t } = useLocale()
+    const resolvedTitle = title ?? t('filings.updates')
+    const resolvedSubtitle = subtitle ?? t('filings.hubDescription')
+
     if (!items.length) return null
 
     if (layout === 'page') {
@@ -31,7 +37,7 @@ export function NewsFeed({
             <section className="space-y-3 min-w-0" aria-labelledby={showHeader ? 'updates-section-heading' : undefined}>
                 {showHeader && (
                     <h2 id="updates-section-heading" className="font-heading text-lg font-semibold text-text-primary">
-                        {title}
+                        {resolvedTitle}
                     </h2>
                 )}
                 <div className="space-y-2 min-w-0">
@@ -62,10 +68,10 @@ export function NewsFeed({
                                     isRail ? 'text-lg' : 'text-2xl'
                                 )}
                             >
-                                {title}
+                                {resolvedTitle}
                             </h2>
                             {!isRail && (
-                                <p className="text-sm text-text-secondary mt-1">{subtitle}</p>
+                                <p className="text-sm text-text-secondary mt-1">{resolvedSubtitle}</p>
                             )}
                         </div>
                         <Button
@@ -74,20 +80,20 @@ export function NewsFeed({
                             asChild
                             className={cn('flex-shrink-0', isRail ? 'h-8 px-2' : undefined)}
                         >
-                            <Link
+                            <LocaleLink
                                 href="/news"
                                 className={cn(
                                     'text-accent font-semibold flex items-center gap-0.5',
                                     isRail ? 'text-xs gap-0.5' : 'gap-1'
                                 )}
                             >
-                                {isRail ? 'All' : 'View all'}
+                                {isRail ? t('filings.viewAll') : t('common.viewAll')}
                                 <ArrowRight className={isRail ? 'h-3.5 w-3.5' : 'h-4 w-4'} />
-                            </Link>
+                            </LocaleLink>
                         </Button>
                     </div>
                     {isRail && (
-                        <p className="text-xs text-text-secondary leading-snug">{subtitle}</p>
+                        <p className="text-xs text-text-secondary leading-snug">{resolvedSubtitle}</p>
                     )}
                 </div>
             )}

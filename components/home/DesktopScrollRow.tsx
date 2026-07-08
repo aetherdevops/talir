@@ -168,7 +168,8 @@ export function DesktopScrollRow({
     )
 
     const onClickCapture = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
-        if (isInteractiveTarget(event.target)) return
+        const hitTarget = document.elementFromPoint(event.clientX, event.clientY)
+        if (isInteractiveTarget(event.target) || isInteractiveTarget(hitTarget)) return
         if (dragState.current.didDrag) {
             event.preventDefault()
             event.stopPropagation()

@@ -40,7 +40,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     const lang = await resolveHtmlLang()
 
     return (
-        <html lang={lang} suppressHydrationWarning>
+        <html lang={lang} className="dark" data-theme="dark" suppressHydrationWarning>
             <head>
                 <script
                     dangerouslySetInnerHTML={{
