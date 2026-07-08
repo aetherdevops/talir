@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-07T06:30:55.361Z",
-  "lastIssuerScan": "2026-07-07",
+  "generatedAt": "2026-07-08T05:38:54.834Z",
+  "lastIssuerScan": "2026-07-08",
   "issuerCount": 170,
   "recent": [
     {
@@ -5082,26 +5082,7 @@
       "source": "SECNet"
     }
   ],
-  "upcomingExDates": [
-    {
-      "stockCode": "RADE",
-      "stockName": "Rade Konchar- Aparatna tehnika AD Skopje",
-      "filedAt": "2026-06-25",
-      "url": "https://seinet.com.mk/en/document/77820",
-      "grossPerShare": 130,
-      "cumDate": "2026-07-07",
-      "exDate": "2026-07-07",
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": null,
-      "payoutRatioPct": null,
-      "source": "SECNet"
-    }
-  ],
+  "upcomingExDates": [],
   "byIssuer": {
     "RADE": [
       {

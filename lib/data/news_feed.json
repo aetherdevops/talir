@@ -1,10 +1,36 @@
 {
-  "generatedAt": "2026-07-07T06:15:34.807Z",
-  "lastIssuerScan": "2026-07-07",
-  "count": 1533,
-  "datedCount": 1533,
+  "generatedAt": "2026-07-08T05:27:59.464Z",
+  "lastIssuerScan": "2026-07-08",
+  "count": 1534,
+  "datedCount": 1534,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-77903",
+      "rawTitle": "7/7/2026 - ZK Pelagonija AD Bitola - Draft decisions for the shareholders meeting",
+      "title": "ZPKO: Draft decisions for the shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77903"
+    },
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-77902",
+      "rawTitle": "7/7/2026 - ZK Pelagonija AD Bitola - Public call for shareholders meeting",
+      "title": "ZPKO: Public call for shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77902"
+    },
     {
       "id": "KJUBI-https-seinet-com-mk-en-document-77898",
       "rawTitle": "7/6/2026 - Makedonija osiguruvanje  AD Skopje - Viena Insurance Grup - Changes in management and supervisory bodies",
@@ -11756,19 +11782,6 @@
       "publishedAt": "2026-02-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75308"
-    },
-    {
-      "id": "ZPKO-https-seinet-com-mk-en-document-75315",
-      "rawTitle": "2/2/2026 - ZK Pelagonija AD Bitola - Other price sensitive information",
-      "title": "ZPKO: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-02-02",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75315"
     },
     {
       "id": "BGOR-https-seinet-com-mk-en-document-75252",
