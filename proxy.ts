@@ -1,8 +1,8 @@
-import { middleware as runMiddleware } from '@/lib/supabase/middleware'
+import { proxy as runProxy } from '@/lib/supabase/proxy'
 import type { NextRequest } from 'next/server'
 
-export async function middleware(request: NextRequest) {
-    return runMiddleware(request)
+export async function proxy(request: NextRequest) {
+    return runProxy(request)
 }
 
 export const config = {
