@@ -33,6 +33,17 @@ export function formatPriceCompact(price: number) {
     return `${formatDecimalParts(price, 0)} ден.`
 }
 
+export function formatCompactThousands(value: number) {
+    const abs = Math.abs(value)
+    if (abs >= 1_000_000) {
+        return `${formatDecimal(abs / 1_000_000, 1)}M`
+    }
+    if (abs >= 1_000) {
+        return `${formatDecimal(abs / 1_000, 1)}K`
+    }
+    return formatInteger(abs)
+}
+
 /** Index levels are points, not currency — no ден. suffix. */
 export function formatIndexLevel(value: number) {
     return formatDecimalParts(value, 2)

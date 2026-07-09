@@ -82,6 +82,7 @@ export async function getAllStocks(): Promise<StockSummary[]> {
                 date: string
                 sector?: string | null
                 marketCapThousandsMkd?: number
+                yoyPricePercent?: number
             }>
         }
 
@@ -101,6 +102,7 @@ export async function getAllStocks(): Promise<StockSummary[]> {
                     chartSeries: sparklines[item.code],
                     sector: item.sector || undefined,
                     marketCapThousandsMkd: item.marketCapThousandsMkd,
+                    yoyPricePercent: item.yoyPricePercent,
                 }))
                 .filter((s) => s.price > 0 || s.volume > 0)
         }

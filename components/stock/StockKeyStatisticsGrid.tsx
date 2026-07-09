@@ -25,6 +25,7 @@ export interface StockEodStats {
     yearLow: number | null
     yearHigh: number | null
     firstTradeDate: string | null
+    marketCapThousandsMkd: number | null
 }
 
 interface StatCell {
@@ -85,6 +86,13 @@ export function StockKeyStatisticsGrid({ eod, snapshot, dividends }: StockKeySta
     }
     if (eod.yearHigh != null && eod.yearHigh > 0) {
         cells.push({ label: t('stock.weekHigh52'), value: formatPrice(eod.yearHigh), helpKey: 'weekHigh52' })
+    }
+    if (eod.marketCapThousandsMkd != null && eod.marketCapThousandsMkd > 0) {
+        cells.push({
+            label: t('stock.marketCap'),
+            value: `${formatInteger(eod.marketCapThousandsMkd)} 000 ${t('common.den')}`,
+            helpKey: 'marketCap',
+        })
     }
     if (snapshot.peRatio != null) {
         cells.push({ label: t('stock.pe'), value: formatPeRatio(snapshot.peRatio), helpKey: 'pe' })

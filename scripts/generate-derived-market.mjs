@@ -182,6 +182,18 @@ function computeConsistentGainerStreak(closes, asOfDate) {
     return true
 }
 
+function computePriceYoyPercent(closes, asOfDate) {
+    const asOfIndex = closes.findIndex(([d]) => d === asOfDate)
+    if (asOfIndex < 2) return null
+
+    const baseIndex = Math.max(0, asOfIndex - TRADING_DAYS_52W)
+    const baseClose = closes[baseIndex]?.[1]
+    const latestClose = closes[asOfIndex]?.[1]
+    if (!baseClose || baseClose === 0 || latestClose == null) return null
+
+    return ((latestClose - baseClose) / baseClose) * 100
+}
+
 const sectorMap = loadSectorMap()
 const marketCapMap = loadIssuerMetaMap()
 const summary = loadSummary()
@@ -216,6 +228,7 @@ for (const item of summary) {
 
     const sector = sectorMap.get(code) || null
     const marketCapThousandsMkd = marketCapMap.get(code)
+    const yoyPricePercent = closes.length > 0 ? computePriceYoyPercent(closes, date) : null
 
     instruments.push({
         code,
@@ -229,6 +242,7 @@ for (const item of summary) {
         unchanged,
         sector,
         ...(marketCapThousandsMkd != null ? { marketCapThousandsMkd } : {}),
+        ...(yoyPricePercent != null ? { yoyPricePercent } : {}),
     })
 }
 

@@ -106,8 +106,17 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, ex
             width: container.clientWidth,
             height: 400,
             autoSize: true,
-            handleScale: { axisPressedMouseMove: true, pinch: true },
-            handleScroll: { horzTouchDrag: true, vertTouchDrag: false },
+            handleScale: {
+                axisPressedMouseMove: { time: true, price: true },
+                mouseWheel: true,
+                pinch: true,
+            },
+            handleScroll: {
+                pressedMouseMove: true,
+                horzTouchDrag: true,
+                vertTouchDrag: true,
+                mouseWheel: true,
+            },
             crosshair: {
                 mode: 1,
                 vertLine: {
@@ -245,28 +254,30 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, ex
 
             {prevClose != null && prevClose > 0 ? (
                 <p className="text-xs font-data text-text-muted tabular-nums pl-2 md:pl-0">
-                    Prev. close {formatPrice(prevClose)}
+                    {t('stock.prevClose')} {formatPrice(prevClose)}
                 </p>
             ) : null}
 
-            <div className="flex justify-start gap-1 flex-wrap pl-2 md:pl-0">
-                {(['1D', '5D', '1M', '3M', '6M', 'YTD', '1Y', '5Y', 'MAX'] as const)
-                    .filter((tf) => !excludePeriods.includes(tf))
-                    .map((tf) => (
-                        <button
-                            key={tf}
-                            type="button"
-                            onClick={() => handleTimeframeChange(tf)}
-                            className={cn(
-                                'px-3 py-1.5 text-xs font-bold rounded-lg transition-colors min-h-[44px] min-w-[44px]',
-                                effectiveTimeframe === tf
-                                    ? 'bg-accent-muted text-accent border border-accent/20'
-                                    : 'text-text-tertiary hover:bg-surface-secondary hover:text-text-secondary'
-                            )}
-                        >
-                            {tf}
-                        </button>
-                    ))}
+            <div className="pl-2 md:pl-0 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-hide">
+                <div className="flex justify-start gap-1 flex-nowrap min-w-max">
+                    {(['1D', '5D', '1M', '3M', '6M', 'YTD', '1Y', '5Y', 'MAX'] as const)
+                        .filter((tf) => !excludePeriods.includes(tf))
+                        .map((tf) => (
+                            <button
+                                key={tf}
+                                type="button"
+                                onClick={() => handleTimeframeChange(tf)}
+                                className={cn(
+                                    'shrink-0 px-2 md:px-2.5 py-1.5 text-[11px] md:text-xs font-bold rounded-lg transition-colors min-h-[36px] min-w-[36px]',
+                                    effectiveTimeframe === tf
+                                        ? 'bg-accent-muted text-accent border border-accent/20'
+                                        : 'text-text-tertiary hover:bg-surface-secondary hover:text-text-secondary'
+                                )}
+                            >
+                                {tf}
+                            </button>
+                        ))}
+                </div>
             </div>
         </div>
     )

@@ -47,6 +47,7 @@ export interface StockSummary {
     chartSeries?: { date: string; value: number }[]
     sector?: string
     marketCapThousandsMkd?: number
+    yoyPricePercent?: number
 }
 
 export interface MarketIndex {

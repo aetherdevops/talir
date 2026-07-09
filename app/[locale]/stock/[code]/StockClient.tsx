@@ -18,6 +18,7 @@ import type { FundamentalEntry } from '@/lib/fundamentals'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { buildStockValuationSnapshot } from '@/lib/stock-valuation'
 import { computeAvgVolume, computePrevClose, computeYearRange } from '@/lib/stock-stats'
+import { getIssuerMarketCapThousands } from '@/lib/issuer-display-name'
 import { StockPageHero } from '@/components/stock/StockPageHero'
 import { StockKeyStatisticsGrid } from '@/components/stock/StockKeyStatisticsGrid'
 import { StockPageTabList, useStockPageTab } from '@/components/stock/StockPageTabs'
@@ -186,6 +187,7 @@ export function StockClient({
         yearLow: yearLow && yearLow > 0 ? yearLow : null,
         yearHigh: yearHigh && yearHigh > 0 ? yearHigh : null,
         firstTradeDate: stock.first_trade_date || null,
+        marketCapThousandsMkd: getIssuerMarketCapThousands(stock.company_code) ?? null,
     }
 
     return (

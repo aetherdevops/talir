@@ -35,7 +35,7 @@ export function StockPageTabList({ activeTab, onTabChange, className }: StockPag
     return (
         <div
             className={cn(
-                'flex p-1 bg-surface-secondary/50 rounded-xl overflow-x-auto scrollbar-hide min-w-0 border border-border',
+                'flex p-1 bg-surface-secondary/50 rounded-xl overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-hide min-w-0 border border-border',
                 className
             )}
             role="tablist"
@@ -49,7 +49,7 @@ export function StockPageTabList({ activeTab, onTabChange, className }: StockPag
                     aria-selected={activeTab === tab}
                     onClick={() => onTabChange(tab)}
                     className={cn(
-                        'px-4 py-2.5 text-sm font-medium rounded-lg transition-colors whitespace-nowrap min-h-[44px] min-w-[44px]',
+                        'shrink-0 max-w-[40vw] sm:max-w-none px-2.5 sm:px-3 md:px-4 py-2.5 text-xs sm:text-sm font-medium rounded-lg transition-colors whitespace-nowrap truncate min-h-[44px] min-w-[44px]',
                         activeTab === tab
                             ? 'bg-surface text-text-primary shadow-sm border border-border'
                             : 'text-text-secondary hover:text-text-primary hover:bg-surface/80'
@@ -77,7 +77,7 @@ export function useStockPageTab(): [StockPageTab, (tab: StockPageTab) => void] {
                 params.set('tab', tab)
             }
             const qs = params.toString()
-            router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false })
+            router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: true })
         },
         [pathname, router, searchParams]
     )
