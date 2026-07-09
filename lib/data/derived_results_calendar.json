@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-08T05:28:00.026Z",
-  "lastIssuerScan": "2026-07-08",
+  "generatedAt": "2026-07-09T06:12:14.685Z",
+  "lastIssuerScan": "2026-07-09",
   "issuerCount": 170,
   "recent": [
     {
@@ -937,18 +937,6 @@
       "filedAt": "2026-05-18",
       "headline": "GRNT reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/77209",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-18",
-      "headline": "GRNT files profit and loss report",
-      "url": "https://seinet.com.mk/en/document/77217",
       "source": "SECNet"
     },
     {
@@ -3243,18 +3231,6 @@
       "filedAt": "2026-05-18",
       "headline": "GRNT reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/77209",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-18",
-      "headline": "GRNT files profit and loss report",
-      "url": "https://seinet.com.mk/en/document/77217",
       "source": "SECNet"
     },
     {
@@ -15914,18 +15890,6 @@
         "filedAt": "2026-05-18",
         "headline": "GRNT reports profit and loss for 01.01.–31.03",
         "url": "https://seinet.com.mk/en/document/77209",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "GRNT",
-        "stockName": "Granit AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-18",
-        "headline": "GRNT files profit and loss report",
-        "url": "https://seinet.com.mk/en/document/77217",
         "source": "SECNet"
       },
       {

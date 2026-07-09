@@ -1,10 +1,23 @@
 {
-  "generatedAt": "2026-07-08T05:27:59.464Z",
-  "lastIssuerScan": "2026-07-08",
+  "generatedAt": "2026-07-09T06:12:14.287Z",
+  "lastIssuerScan": "2026-07-09",
   "count": 1534,
   "datedCount": 1534,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "GRNT-https-seinet-com-mk-en-document-77905",
+      "rawTitle": "7/8/2026 - Granit AD Skopje - Other price sensitive information",
+      "title": "GRNT: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-08",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77905"
+    },
     {
       "id": "ZPKO-https-seinet-com-mk-en-document-77903",
       "rawTitle": "7/7/2026 - ZK Pelagonija AD Bitola - Draft decisions for the shareholders meeting",
@@ -4060,19 +4073,6 @@
       "publishedAt": "2026-05-18",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77219"
-    },
-    {
-      "id": "GRNT-https-seinet-com-mk-en-document-77217",
-      "rawTitle": "5/18/2026 - Granit AD Skopje - Distribution of profit",
-      "title": "GRNT files profit and loss report",
-      "source": "SECNet",
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "category": "dividend",
-      "filingTier": "dividend",
-      "publishedAt": "2026-05-18",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77217"
     },
     {
       "id": "TRPS-https-seinet-com-mk-en-document-77206",
