@@ -1,11 +1,13 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
-import { Bookmark, Briefcase, Bell, ChevronRight, Eye, X } from 'lucide-react'
+import { Bookmark, Briefcase, Bell, ChevronRight, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useAuth } from '@/components/auth/AuthProvider'
-import { useCreateFlows, CREATE_ACTIONS } from '@/components/layout/useCreateFlows'
+import { useCreateFlows } from '@/components/layout/useCreateFlows'
+import { useCreateActions, type CreateActionId } from '@/components/layout/useCreateActions'
+import { useLocale } from '@/components/providers/LocaleProvider'
+import { LocaleLink } from '@/components/layout/LocaleLink'
 import { Button } from '@/components/ui/Button'
 
 interface MyStuffSheetProps {
@@ -14,16 +16,18 @@ interface MyStuffSheetProps {
 }
 
 const NAV_LINKS = [
-    { href: '/watchlist', icon: Bookmark, label: 'Watchlists', description: 'Instruments you track' },
-    { href: '/portfolio', icon: Briefcase, label: 'Portfolios', description: 'Holdings and performance' },
-    { href: '/alerts', icon: Bell, label: 'Alerts', description: 'Price notifications' },
+    { href: '/watchlist', icon: Bookmark, labelKey: 'nav.watchlists', descKey: 'menu.watchlistsDesc' },
+    { href: '/portfolio', icon: Briefcase, labelKey: 'nav.portfolios', descKey: 'menu.portfoliosDesc' },
+    { href: '/alerts', icon: Bell, labelKey: 'nav.alerts', descKey: 'menu.alertsDesc' },
 ] as const
 
 const SWIPE_CLOSE_THRESHOLD = 72
 
 export function MyStuffSheet({ open, onClose }: MyStuffSheetProps) {
+    const { t } = useLocale()
     const { user, loading } = useAuth()
-    const { startWatchlistCreate, startPortfolioCreate, modals } = useCreateFlows()
+    const createActions = useCreateActions()
+    const { handleCreateAction, modals } = useCreateFlows()
     const [dragOffset, setDragOffset] = useState(0)
     const dragStartY = useRef<number | null>(null)
     const dialogRef = useRef<HTMLDivElement>(null)
@@ -82,10 +86,9 @@ export function MyStuffSheet({ open, onClose }: MyStuffSheetProps) {
         }
     }, [open, onClose])
 
-    const handleCreate = (id: (typeof CREATE_ACTIONS)[number]['id']) => {
+    const handleCreate = (id: CreateActionId) => {
         onClose()
-        if (id === 'watchlist') startWatchlistCreate()
-        else startPortfolioCreate()
+        handleCreateAction(id)
     }
 
     const handleTouchStart = (event: React.TouchEvent) => {
@@ -114,7 +117,7 @@ export function MyStuffSheet({ open, onClose }: MyStuffSheetProps) {
                     ref={dialogRef}
                     role="dialog"
                     aria-modal="true"
-                    aria-label="My stuff"
+                    aria-label={t('menu.myStuffTitle')}
                     className="absolute inset-x-0 bottom-0 bg-surface border-t border-border rounded-t-2xl shadow-2xl transition-transform"
                     style={{
                         paddingBottom: 'max(1rem, env(safe-area-inset-bottom))',
@@ -128,12 +131,12 @@ export function MyStuffSheet({ open, onClose }: MyStuffSheetProps) {
                         <span className="h-1 w-10 rounded-full bg-border-active/80" />
                     </div>
                     <div className="flex items-center justify-between px-4 pt-1 pb-2">
-                        <h2 className="text-base font-semibold text-text-primary font-heading">My stuff</h2>
+                        <h2 className="text-base font-semibold text-text-primary font-heading">{t('menu.myStuffTitle')}</h2>
                         <button
                             type="button"
                             onClick={onClose}
                             className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-text-secondary hover:bg-surface-secondary"
-                            aria-label="Close"
+                            aria-label={t('nav.close')}
                         >
                             <X className="h-5 w-5" />
                         </button>
@@ -142,23 +145,21 @@ export function MyStuffSheet({ open, onClose }: MyStuffSheetProps) {
                     <div className="px-4 pb-4 space-y-4">
                         {!loading && !user && (
                             <div className="rounded-xl border border-border bg-surface-secondary/50 p-4 space-y-3">
-                                <p className="text-sm text-text-secondary">
-                                    Sign in to sync watchlists, portfolios, and alerts across devices.
-                                </p>
+                                <p className="text-sm text-text-secondary">{t('menu.signedOutHint')}</p>
                                 <div className="flex gap-2">
                                     <Button size="sm" asChild>
-                                        <Link href="/login" onClick={onClose}>Sign in</Link>
+                                        <LocaleLink href="/login" onClick={onClose}>{t('auth.signIn')}</LocaleLink>
                                     </Button>
                                     <Button size="sm" variant="secondary" asChild>
-                                        <Link href="/register" onClick={onClose}>Register</Link>
+                                        <LocaleLink href="/register" onClick={onClose}>{t('auth.register')}</LocaleLink>
                                     </Button>
                                 </div>
                             </div>
                         )}
 
                         <div className="space-y-2">
-                            {NAV_LINKS.map(({ href, icon: Icon, label, description }) => (
-                                <Link
+                            {NAV_LINKS.map(({ href, icon: Icon, labelKey, descKey }) => (
+                                <LocaleLink
                                     key={href}
                                     href={href}
                                     onClick={onClose}
@@ -172,19 +173,19 @@ export function MyStuffSheet({ open, onClose }: MyStuffSheetProps) {
                                         <Icon className="h-5 w-5" aria-hidden />
                                     </span>
                                     <span className="flex flex-col gap-0.5 min-w-0 flex-1">
-                                        <span className="text-sm font-semibold text-text-primary">{label}</span>
-                                        <span className="text-xs text-text-secondary">{description}</span>
+                                        <span className="text-sm font-semibold text-text-primary">{t(labelKey)}</span>
+                                        <span className="text-xs text-text-secondary">{t(descKey)}</span>
                                     </span>
                                     <ChevronRight className="h-4 w-4 text-text-tertiary group-hover:text-accent shrink-0" aria-hidden />
-                                </Link>
+                                </LocaleLink>
                             ))}
                         </div>
 
                         <div className="pt-2 border-t border-border space-y-2">
                             <p className="text-[11px] font-medium uppercase tracking-wider text-text-tertiary px-1">
-                                Create new…
+                                {t('menu.createNew')}
                             </p>
-                            {CREATE_ACTIONS.map(({ id, icon: Icon, title, description }) => (
+                            {createActions.map(({ id, icon: Icon, title, description }) => (
                                 <button
                                     key={id}
                                     type="button"

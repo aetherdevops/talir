@@ -1,9 +1,11 @@
-// ... imports
+"use client"
+
 import { useMemo } from 'react'
 import { Treemap, ResponsiveContainer, Tooltip } from 'recharts'
 import { formatPrice, formatPriceChange, getChangeTreemapFill } from '@/lib/utils'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { Modal } from "@/components/ui/Modal"
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface PortfolioTreemapProps {
     isOpen: boolean
@@ -17,7 +19,7 @@ interface PortfolioTreemapProps {
 }
 
 const CustomContent = (props: any) => {
-    const { root, depth, x, y, width, height, index, payload, colors, name, value, changePercent } = props;
+    const { depth, x, y, width, height, name, changePercent } = props;
     const safeChangePercent = typeof changePercent === 'number' ? changePercent : 0;
     const fill = getChangeTreemapFill(safeChangePercent)
 
@@ -48,6 +50,8 @@ const CustomContent = (props: any) => {
 }
 
 export function PortfolioTreemap({ isOpen, onClose, holdings }: PortfolioTreemapProps) {
+    const { t } = useLocale()
+
     const data = useMemo(() => {
         return holdings.map(h => ({
             name: h.code,
@@ -58,7 +62,7 @@ export function PortfolioTreemap({ isOpen, onClose, holdings }: PortfolioTreemap
     }, [holdings])
 
     const treeMapData = [{
-        name: 'Portfolio',
+        name: t('portfolio.treemapRoot'),
         children: data
     }]
 
@@ -66,15 +70,15 @@ export function PortfolioTreemap({ isOpen, onClose, holdings }: PortfolioTreemap
         <Modal
             isOpen={isOpen}
             onClose={onClose}
-            title="Your investments visualized"
+            title={t('portfolio.treemapTitle')}
             className="max-w-5xl h-[80vh] flex flex-col"
         >
             <div className="flex items-center gap-4 text-xs mb-2 font-data text-text-secondary">
-                <span>Day change (%):</span>
+                <span>{t('portfolio.dayChangePct')}</span>
                 <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-down" /> down</span>
-                    <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-neutral" /> flat</span>
-                    <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-up" /> up</span>
+                    <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-down" /> {t('portfolio.directionDown')}</span>
+                    <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-neutral" /> {t('portfolio.directionFlat')}</span>
+                    <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-up" /> {t('portfolio.directionUp')}</span>
                 </div>
             </div>
 
@@ -96,7 +100,7 @@ export function PortfolioTreemap({ isOpen, onClose, holdings }: PortfolioTreemap
                                     return (
                                         <div className="bg-surface text-text-primary px-3 py-2 rounded-lg shadow-md border border-border text-xs">
                                             <div className="font-bold">{node.name}</div>
-                                            <div>Value: {formatPrice(node.size)}</div>
+                                            <div>{t('portfolio.treemapValue', { price: formatPrice(node.size) })}</div>
                                             <ChangeLabel change={node.changePercent} className="text-xs" />
                                         </div>
                                     )

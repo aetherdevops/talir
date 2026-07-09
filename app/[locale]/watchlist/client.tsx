@@ -17,6 +17,7 @@ import { NewsSection } from "@/components/common/NewsSection"
 import { useRequireAuth } from '@/lib/auth/use-require-auth'
 import { useAuth } from '@/components/auth/AuthProvider'
 import { LoggedOutGrowthPanel } from '@/components/auth/LoggedOutGrowthPanel'
+import { useLocale } from '@/components/providers/LocaleProvider'
 // Import data fetching - in a client component we might need to pass data as props or use SWR/React Query.
 // For this hybrid approach, we'll fetch in page wrapper and pass down, OR use a useEffect to load essential data.
 // Since getAllStocks is async and reads file, it's server-only usually. 
@@ -36,6 +37,7 @@ interface WatchlistPageProps {
 }
 
 export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
+    const { t } = useLocale()
     const { user } = useAuth()
     const { watchlists, activeListId, setActiveList, deleteList, removeFromList } = useWatchlistStore()
     const { requireAuth } = useRequireAuth()
@@ -86,7 +88,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
             {!user ? <LoggedOutGrowthPanel pageLabel="watchlists" /> : null}
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <h1 className="text-3xl font-normal tracking-tight text-text-primary">Your Lists</h1>
+                <h1 className="text-3xl font-normal tracking-tight text-text-primary">{t('watchlist.yourLists')}</h1>
             </div>
 
             {/* Usage of Tabs */}
@@ -109,7 +111,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                     type="button"
                     onClick={() => { if (requireAuth()) setIsCreateModalOpen(true) }}
                     className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface-secondary/50 text-text-secondary hover:text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors"
-                    aria-label="Create new watchlist"
+                    aria-label={t('watchlist.createNewAria')}
                 >
                     <Plus className="h-4 w-4" />
                 </button>
@@ -124,7 +126,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                         <div className="relative">
                             <Button variant="ghost" size="sm" onClick={() => setIsSortOpen(!isSortOpen)} className="gap-2 text-text-secondary">
                                 <ArrowUpDown className="w-4 h-4" />
-                                <span className="hidden sm:inline">Sort</span>
+                                <span className="hidden sm:inline">{t('watchlist.sort')}</span>
                             </Button>
 
                             {isSortOpen && (
@@ -132,12 +134,12 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                                     <div className="fixed inset-0 z-10" onClick={() => setIsSortOpen(false)} />
                                     <div className="absolute right-0 top-full mt-2 w-48 bg-surface border border-border rounded-xl shadow-xl z-20 py-2 animate-in fade-in zoom-in-95 duration-200">
                                         {[
-                                            { label: 'Name (A-Z)', value: 'name', order: 'asc' },
-                                            { label: 'Name (Z-A)', value: 'name', order: 'desc' },
-                                            { label: 'Price (High-Low)', value: 'price', order: 'desc' },
-                                            { label: 'Price (Low-High)', value: 'price', order: 'asc' },
-                                            { label: 'Change (High-Low)', value: 'change', order: 'desc' },
-                                            { label: 'Change (Low-High)', value: 'change', order: 'asc' },
+                                            { label: t('watchlist.sortNameAsc'), value: 'name', order: 'asc' },
+                                            { label: t('watchlist.sortNameDesc'), value: 'name', order: 'desc' },
+                                            { label: t('watchlist.sortPriceDesc'), value: 'price', order: 'desc' },
+                                            { label: t('watchlist.sortPriceAsc'), value: 'price', order: 'asc' },
+                                            { label: t('watchlist.sortChangeDesc'), value: 'change', order: 'desc' },
+                                            { label: t('watchlist.sortChangeAsc'), value: 'change', order: 'asc' },
                                         ].map((option) => (
                                             <button
                                                 key={`${option.value}-${option.order}`}
@@ -169,14 +171,14 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                                             className="w-full text-left px-4 py-2 text-sm text-text-primary hover:bg-surface-secondary transition-colors flex items-center justify-between"
                                             onClick={() => { setIsRenameModalOpen(true); setIsMenuOpen(false); }}
                                         >
-                                            Rename list
+                                            {t('watchlist.renameList')}
                                             <ChevronRight className="w-4 h-4 text-text-tertiary" />
                                         </button>
                                         <button
                                             className="w-full text-left px-4 py-2 text-sm text-danger hover:bg-surface-secondary transition-colors flex items-center justify-between"
                                             onClick={() => { deleteList(activeList.id); setIsMenuOpen(false); }}
                                         >
-                                            Delete list
+                                            {t('watchlist.deleteList')}
                                             <ChevronRight className="w-4 h-4 text-text-tertiary" />
                                         </button>
                                     </div>
@@ -186,7 +188,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                     </div>
                     {activeList.items.length > 0 && (
                         <Button onClick={() => { if (requireAuth()) setIsAddModalOpen(true) }}>
-                            <Plus className="w-4 h-4 mr-2" /> Add investments
+                            <Plus className="w-4 h-4 mr-2" /> {t('watchlist.addInvestments')}
                         </Button>
                     )}
                 </div>
@@ -202,9 +204,9 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                                 <button
                                     onClick={() => removeFromList(activeList.id, stock.code)}
                                     className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 p-2 text-text-tertiary hover:text-danger hover:bg-surface-secondary rounded transition-all"
-                                    title="Remove from list"
+                                    title={t('watchlist.removeFromList')}
                                 >
-                                    <span className="sr-only">Remove</span>
+                                    <span className="sr-only">{t('watchlist.remove')}</span>
                                     ×
                                 </button>
                             </div>
@@ -217,7 +219,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
 
             {/* Watchlist News */}
             <div className="mt-8">
-                <NewsSection items={news} title="Watchlist updates" />
+                <NewsSection items={news} title={t('watchlist.updatesTitle')} />
             </div>
 
             <CreateListModal

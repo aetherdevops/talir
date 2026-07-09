@@ -21,6 +21,7 @@ import { useRequireAuth } from '@/lib/auth/use-require-auth'
 import { ScrollTable, SCROLL_TABLE_STICKY_CELL } from '@/components/ui/ScrollTable'
 import { useAuth } from '@/components/auth/AuthProvider'
 import { LoggedOutGrowthPanel } from '@/components/auth/LoggedOutGrowthPanel'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 const PortfolioTreemap = dynamic(
     () => import('@/components/portfolio/PortfolioTreemap').then((mod) => mod.PortfolioTreemap),
@@ -41,6 +42,7 @@ interface PortfolioPageProps {
 }
 
 export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
+    const { t } = useLocale()
     const { user } = useAuth()
     const { portfolios, activePortfolioId, setActivePortfolio, removeHolding, createPortfolio, deletePortfolio, renamePortfolio, copyPortfolio } = usePortfolioStore()
     const { requireAuth } = useRequireAuth()
@@ -225,7 +227,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                         type="button"
                         onClick={() => { if (requireAuth()) setIsCreateModalOpen(true) }}
                         className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface-secondary/50 text-text-secondary hover:text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors shrink-0"
-                        aria-label="Create new portfolio"
+                        aria-label={t('portfolio.createNewAria')}
                     >
                         <Plus className="h-4 w-4" />
                     </button>
@@ -242,7 +244,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                             <ChangeLabel change={totals.dailyGainPercent ?? 0} variant="pill" className="text-sm" />
 
                             <div className={cn("font-medium font-data", totals.dailyGain >= 0 ? "text-up" : totals.dailyGain <= 0 ? "text-down" : "text-neutral")}>
-                                {totals.dailyGain > 0 ? '+' : ''}{formatPrice(totals.dailyGain)} Today
+                                {totals.dailyGain > 0 ? '+' : ''}{formatPrice(totals.dailyGain)} {t('portfolio.todaySuffix')}
                             </div>
                         </div>
                     </div>
@@ -261,7 +263,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                             setIsMenuOpen(false)
                                         }}
                                     >
-                                        <Edit2 className="w-4 h-4" /> Rename portfolio
+                                        <Edit2 className="w-4 h-4" /> {t('portfolio.renamePortfolio')}
                                     </button>
                                     <button
                                         className="w-full text-left px-4 py-2 text-sm text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors flex items-center gap-2"
@@ -270,7 +272,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                             setIsMenuOpen(false)
                                         }}
                                     >
-                                        <Copy className="w-4 h-4" /> Copy portfolio
+                                        <Copy className="w-4 h-4" /> {t('portfolio.copyPortfolio')}
                                     </button>
 
                                     <div className="h-px bg-border my-1" />
@@ -283,7 +285,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                         }}
                                         disabled={portfolios.length <= 1}
                                     >
-                                        <Trash2 className="w-4 h-4" /> Delete portfolio
+                                        <Trash2 className="w-4 h-4" /> {t('portfolio.deletePortfolio')}
                                     </button>
                                 </div>
                             </>
@@ -327,7 +329,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                                 : "border-transparent text-text-secondary hover:text-text-primary"
                                         )}
                                     >
-                                        {tab === 'news' ? 'Updates' : tab}
+                                        {tab === 'news' ? t('portfolio.tabUpdates') : t('portfolio.tabInvestments')}
                                     </button>
                                 ))}
                             </div>
@@ -336,7 +338,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                         {/* News Tab */}
                         {activeTab === 'news' && (
                             <div className="pt-6">
-                                <NewsSection items={news} title="Portfolio updates" />
+                                <NewsSection items={news} title={t('portfolio.updatesTitle')} />
                             </div>
                         )}
 
@@ -349,10 +351,10 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                         setSortDirection(d)
                                     }} />
                                     <Button variant="outline" size="sm" className="text-brand-500" onClick={() => setIsTreemapOpen(true)}>
-                                        <BarChart2 className="w-4 h-4 mr-1" /> Visualize
+                                        <BarChart2 className="w-4 h-4 mr-1" /> {t('portfolio.visualize')}
                                     </Button>
                                     <Button size="sm" onClick={() => handleAddInvestment()}>
-                                        <Plus className="w-4 h-4 mr-1" /> Investment
+                                        <Plus className="w-4 h-4 mr-1" /> {t('portfolio.addInvestment')}
                                     </Button>
                                 </div>
 
@@ -362,12 +364,12 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                         <thead>
                                             <tr className="border-b border-border bg-surface-secondary/30">
                                                 <th className={cn('p-4 text-xs font-bold text-text-secondary uppercase tracking-wider', SCROLL_TABLE_STICKY_CELL)}>
-                                                    Symbol
+                                                    {t('portfolio.symbol')}
                                                 </th>
-                                                <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">Price</th>
-                                                <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">Quantity</th>
-                                                <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">Day Gain</th>
-                                                <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">Value</th>
+                                                <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">{t('portfolio.price')}</th>
+                                                <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">{t('portfolio.quantity')}</th>
+                                                <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">{t('portfolio.dayGain')}</th>
+                                                <th className="p-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">{t('portfolio.value')}</th>
                                                 <th className="p-4 w-10"></th>
                                             </tr>
                                         </thead>
@@ -413,11 +415,11 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                                             <td colSpan={6} className="p-0">
                                                                 <div className="py-2 px-4 space-y-2 border-b border-border">
                                                                     <div className="grid grid-cols-12 gap-4 text-xs font-bold text-text-tertiary px-4 py-2 uppercase">
-                                                                        <div className="col-span-3">Purchase Date</div>
-                                                                        <div className="text-right col-span-2">Purchase Price</div>
-                                                                        <div className="text-right col-span-1">Quantity</div>
-                                                                        <div className="text-right col-span-3">Total Gain</div>
-                                                                        <div className="text-right col-span-3">Value</div>
+                                                                        <div className="col-span-3">{t('portfolio.purchaseDate')}</div>
+                                                                        <div className="text-right col-span-2">{t('portfolio.purchasePrice')}</div>
+                                                                        <div className="text-right col-span-1">{t('portfolio.quantity')}</div>
+                                                                        <div className="text-right col-span-3">{t('portfolio.totalGain')}</div>
+                                                                        <div className="text-right col-span-3">{t('portfolio.value')}</div>
                                                                     </div>
                                                                     {group.holdings.map(holding => (
                                                                         <div key={holding.id} className="grid grid-cols-12 gap-4 text-sm px-4 py-2 hover:bg-surface-secondary/50 rounded-lg group/item items-center">
@@ -438,7 +440,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                                                                         removeHolding(activePortfolio.id, holding.id)
                                                                                     }}
                                                                                     className="opacity-0 group-hover/item:opacity-100 p-1.5 text-text-tertiary hover:text-danger hover:bg-surface-tertiary rounded transition-all flex-shrink-0"
-                                                                                    title="Delete purchase"
+                                                                                    title={t('portfolio.deletePurchase')}
                                                                                 >
                                                                                     <Trash2 className="w-3.5 h-3.5" />
                                                                                 </button>
@@ -452,7 +454,7 @@ export function PortfolioClient({ stockData, news }: PortfolioPageProps) {
                                                                             className="text-brand-500 hover:text-brand-600 -ml-2"
                                                                             onClick={() => handleAddInvestment(group.code)}
                                                                         >
-                                                                            <Plus className="w-4 h-4 mr-1" /> Record another purchase
+                                                                            <Plus className="w-4 h-4 mr-1" /> {t('portfolio.recordAnotherPurchase')}
                                                                         </Button>
                                                                     </div>
                                                                 </div>

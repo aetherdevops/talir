@@ -80,7 +80,10 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, ex
 
         const handleResize = () => {
             if (chartRef.current) {
-                chartRef.current.applyOptions({ width: container.clientWidth })
+                chartRef.current.applyOptions({
+                    width: container.clientWidth,
+                    height: container.clientHeight,
+                })
             }
         }
 
@@ -104,8 +107,8 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, ex
                 fixRightEdge: true,
             },
             width: container.clientWidth,
-            height: 400,
-            autoSize: true,
+            height: container.clientHeight,
+            autoSize: false,
             handleScale: {
                 axisPressedMouseMove: { time: true, price: true },
                 mouseWheel: true,
@@ -232,8 +235,8 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, ex
 
     return (
         <div className="flex flex-col gap-4 w-full min-w-0">
-            <div className="relative w-full min-w-0" style={{ height: 400 }}>
-                <div className="h-[400px] w-full touch-pan-x" ref={chartContainerRef} />
+            <div className="relative w-full min-w-0 aspect-[1.45/1] md:aspect-auto md:h-[400px]">
+                <div className="absolute inset-0 w-full h-full touch-pan-x" ref={chartContainerRef} />
                 {tooltip && (
                     <div
                         className="absolute p-3 bg-surface border border-border rounded-lg shadow-xl pointer-events-none z-50"

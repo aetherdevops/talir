@@ -135,7 +135,10 @@ export function DividendsPageClient({ calendar, asOfDate, priceByCode, firstTrad
                             {t('dividends.deepDive')}
                         </h2>
                         <p className="text-xs font-data text-text-tertiary">
-                            {calendar.all.length} calendars · {Object.keys(calendar.byIssuer).length} issuers in dataset
+                            {t('dividends.datasetSummary', {
+                                calendars: calendar.all.length,
+                                issuers: Object.keys(calendar.byIssuer).length,
+                            })}
                         </p>
                     </div>
                     {issuerOptions.length > 0 ? (

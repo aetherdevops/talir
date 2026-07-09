@@ -1,10 +1,13 @@
 
+"use client"
+
 import { useState, useMemo } from 'react'
 import { Modal } from "@/components/ui/Modal"
 import { Search, Plus } from "lucide-react"
 import { useWatchlistStore } from "@/lib/stores/watchlist"
 import { StockSummary } from "@/lib/types"
 import { formatPrice } from "@/lib/utils"
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface AddToWatchlistModalProps {
     isOpen: boolean
@@ -14,6 +17,7 @@ interface AddToWatchlistModalProps {
 }
 
 export function AddToWatchlistModal({ isOpen, onClose, listId, allStocks }: AddToWatchlistModalProps) {
+    const { t } = useLocale()
     const { addToList } = useWatchlistStore()
     const [query, setQuery] = useState('')
 
@@ -40,7 +44,7 @@ export function AddToWatchlistModal({ isOpen, onClose, listId, allStocks }: AddT
     }
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title="Add to Watchlist">
+        <Modal isOpen={isOpen} onClose={onClose} title={t('watchlist.addToWatchlist')}>
             <div className="pt-2 space-y-4">
                 <div className="relative">
                     <Search className="absolute left-3 top-3 h-5 w-5 text-text-tertiary" />
@@ -48,7 +52,7 @@ export function AddToWatchlistModal({ isOpen, onClose, listId, allStocks }: AddT
                         type="text"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
-                        placeholder="Search by ticker or name to add..."
+                        placeholder={t('watchlist.searchPlaceholder')}
                         autoFocus
                         className="w-full rounded-xl border border-border bg-surface-secondary/50 pl-10 pr-4 py-3 text-text-primary focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
                     />
@@ -76,7 +80,7 @@ export function AddToWatchlistModal({ isOpen, onClose, listId, allStocks }: AddT
                         ))
                     ) : (
                         <div className="text-center py-12 text-text-tertiary">
-                            {query ? 'No stocks found' : 'Start typing to search...'}
+                            {query ? t('watchlist.noStocksFound') : t('watchlist.startTyping')}
                         </div>
                     )}
                 </div>

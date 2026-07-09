@@ -1,11 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { getMarketSession, MARKET_SESSION_REFRESH_MS, type MarketSession } from '@/lib/market-session'
+import { getMarketSession, MARKET_SESSION_REFRESH_MS } from '@/lib/market-session'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn } from '@/lib/utils'
 
 export function SessionIndicator() {
-    const [session, setSession] = useState<MarketSession>(() => getMarketSession())
+    const { t } = useLocale()
+    const [session, setSession] = useState(() => getMarketSession())
 
     useEffect(() => {
         const refresh = () => setSession(getMarketSession())
@@ -13,6 +15,8 @@ export function SessionIndicator() {
         const timer = window.setInterval(refresh, MARKET_SESSION_REFRESH_MS)
         return () => window.clearInterval(timer)
     }, [])
+
+    const label = session.isOpen ? t('session.open') : t('session.closed')
 
     return (
         <>
@@ -27,13 +31,13 @@ export function SessionIndicator() {
                     )}
                     aria-hidden
                 />
-                <span>{session.label}</span>
+                <span>{label}</span>
             </div>
             <div
                 className="flex lg:hidden items-center shrink-0"
                 aria-live="polite"
-                aria-label={session.label}
-                title={session.label}
+                aria-label={label}
+                title={label}
             >
                 <span
                     className={cn(

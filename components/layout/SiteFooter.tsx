@@ -23,7 +23,7 @@ export function SiteFooter() {
                 'border-t border-border bg-surface-secondary/50 text-text-secondary',
                 'dark:border-[rgba(231,217,168,0.14)] dark:bg-[var(--talir-navy-deep)] dark:text-[var(--talir-ivory)]'
             )}
-            aria-label="Site footer"
+            aria-label={t('footer.siteFooterAria')}
         >
             <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)] md:gap-8">
                 <div className="space-y-2 min-w-0">
@@ -82,7 +82,7 @@ export function SiteFooter() {
                 </div>
 
                 <div className="space-y-3 min-w-0">
-                    <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-medium">
+                    <nav aria-label={t('footer.legalAria')} className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-medium">
                         {legalLinks.map((link) => (
                             <LocaleLink
                                 key={link.href}

@@ -2,6 +2,7 @@
 
 import { Modal } from '@/components/ui/Modal'
 import { Button } from '@/components/ui/Button'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface ImportLocalDataModalProps {
     isOpen: boolean
@@ -10,18 +11,20 @@ interface ImportLocalDataModalProps {
 }
 
 export function ImportLocalDataModal({ isOpen, onImport, onSkip }: ImportLocalDataModalProps) {
+    const { t } = useLocale()
+
     return (
-        <Modal isOpen={isOpen} onClose={onSkip} title="Import saved data?">
+        <Modal isOpen={isOpen} onClose={onSkip} title={t('auth.importTitle')}>
             <div className="space-y-4 pt-2">
                 <p className="text-sm text-text-secondary">
-                    We found alerts, portfolios, or watchlists saved on this device. Import them into your account?
+                    {t('auth.importBody')}
                 </p>
                 <div className="flex justify-end gap-3">
                     <Button variant="ghost" onClick={onSkip}>
-                        Skip
+                        {t('auth.skip')}
                     </Button>
                     <Button onClick={onImport}>
-                        Import data
+                        {t('auth.importData')}
                     </Button>
                 </div>
             </div>

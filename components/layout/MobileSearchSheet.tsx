@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { SearchBar } from '@/components/layout/SearchBar'
 import { useInstruments, useSearchIndex } from '@/components/providers/InstrumentsProvider'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { X } from 'lucide-react'
 
 interface MobileSearchSheetProps {
@@ -11,6 +12,7 @@ interface MobileSearchSheetProps {
 }
 
 export function MobileSearchSheet({ open, onClose }: MobileSearchSheetProps) {
+    const { t } = useLocale()
     const instruments = useInstruments()
     const { ensureLoaded } = useSearchIndex()
     const dialogRef = useRef<HTMLDivElement>(null)
@@ -81,19 +83,19 @@ export function MobileSearchSheet({ open, onClose }: MobileSearchSheetProps) {
                 ref={dialogRef}
                 role="dialog"
                 aria-modal="true"
-                aria-label="Search"
+                aria-label={t('nav.search')}
                 className="absolute inset-x-0 top-0 bg-surface border-b border-border p-4 pb-safe max-h-[85vh] overflow-y-auto"
             >
                 <div className="flex items-center justify-between mb-4">
                     <h2 id="mobile-search-title" className="text-lg font-semibold text-text-primary font-heading">
-                        Search
+                        {t('nav.search')}
                     </h2>
                     <button
                         ref={closeButtonRef}
                         type="button"
                         onClick={onClose}
                         className="h-11 w-11 flex items-center justify-center rounded-lg hover:bg-surface-secondary"
-                        aria-label="Close search"
+                        aria-label={t('nav.closeSearch')}
                     >
                         <X className="h-5 w-5" />
                     </button>

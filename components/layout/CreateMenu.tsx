@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Eye, Briefcase, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { useCreateFlows, CREATE_ACTIONS } from '@/components/layout/useCreateFlows'
+import { useCreateFlows } from '@/components/layout/useCreateFlows'
+import { useCreateActions, type CreateActionId } from '@/components/layout/useCreateActions'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { Modal } from '@/components/ui/Modal'
 
 interface CreateMenuProps {
@@ -15,7 +17,9 @@ interface CreateMenuProps {
 const SWIPE_CLOSE_THRESHOLD = 72
 
 export function CreateMenu({ open, onClose, variant }: CreateMenuProps) {
-    const { startWatchlistCreate, startPortfolioCreate, modals } = useCreateFlows()
+    const { t } = useLocale()
+    const createActions = useCreateActions()
+    const { handleCreateAction, modals } = useCreateFlows()
     const [dragOffset, setDragOffset] = useState(0)
     const dragStartY = useRef<number | null>(null)
 
@@ -31,10 +35,9 @@ export function CreateMenu({ open, onClose, variant }: CreateMenuProps) {
         if (!open) setDragOffset(0)
     }, [open])
 
-    const handleAction = (id: (typeof CREATE_ACTIONS)[number]['id']) => {
+    const handleAction = (id: CreateActionId) => {
         onClose()
-        if (id === 'watchlist') startWatchlistCreate()
-        else startPortfolioCreate()
+        handleCreateAction(id)
     }
 
     const handleTouchStart = (event: React.TouchEvent) => {
@@ -53,7 +56,7 @@ export function CreateMenu({ open, onClose, variant }: CreateMenuProps) {
         setDragOffset(0)
     }
 
-    const actionButtons = CREATE_ACTIONS.map(({ id, icon: Icon, title, description }) => (
+    const actionButtons = createActions.map(({ id, icon: Icon, title, description }) => (
         <button
             key={id}
             type="button"
@@ -82,7 +85,7 @@ export function CreateMenu({ open, onClose, variant }: CreateMenuProps) {
                     <div
                         role="dialog"
                         aria-modal="true"
-                        aria-label="Create"
+                        aria-label={t('nav.create')}
                         className="absolute inset-x-0 bottom-0 bg-surface border-t border-border rounded-t-2xl shadow-2xl transition-transform"
                         style={{
                             paddingBottom: 'max(1rem, env(safe-area-inset-bottom))',
@@ -96,12 +99,12 @@ export function CreateMenu({ open, onClose, variant }: CreateMenuProps) {
                             <span className="h-1 w-10 rounded-full bg-border-active/80" />
                         </div>
                         <div className="flex items-center justify-between px-4 pt-1 pb-2">
-                            <h2 className="text-base font-semibold text-text-primary">Create</h2>
+                            <h2 className="text-base font-semibold text-text-primary">{t('nav.create')}</h2>
                             <button
                                 type="button"
                                 onClick={onClose}
                                 className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-text-secondary hover:bg-surface-secondary"
-                                aria-label="Close"
+                                aria-label={t('nav.close')}
                             >
                                 <X className="h-5 w-5" />
                             </button>
@@ -112,7 +115,7 @@ export function CreateMenu({ open, onClose, variant }: CreateMenuProps) {
             )}
 
             {variant === 'modal' && (
-                <Modal isOpen={open} onClose={onClose} title="Create">
+                <Modal isOpen={open} onClose={onClose} title={t('nav.create')}>
                     <div className="space-y-2 pt-2">{actionButtons}</div>
                 </Modal>
             )}

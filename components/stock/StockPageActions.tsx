@@ -12,6 +12,7 @@ import { AddAlertModal } from './AddAlertModal'
 import { cn } from '@/lib/utils'
 import { StockSummary } from '@/lib/types'
 import { useRequireAuth } from '@/lib/auth/use-require-auth'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface StockPageActionsProps {
     stockCode: string
@@ -24,6 +25,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
     const { watchlists, addToList, removeFromList, isInList, createList } = useWatchlistStore()
     const { portfolios, createPortfolio } = usePortfolioStore()
     const { requireAuth } = useRequireAuth()
+    const { t } = useLocale()
 
     const [isWatchlistDropdownOpen, setIsWatchlistDropdownOpen] = useState(false)
     const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false)
@@ -57,7 +59,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
         const url = window.location.origin + (stockData?.type === 'Index' ? `/market/${stockCode}` : `/stock/${stockCode}`)
         navigator.clipboard.writeText(url)
         // Ideally show toast here
-        alert('Link copied to clipboard')
+        alert(t('stock.linkCopied'))
     }
 
     // Prepare mock data for AddHoldingModal and AlertModal if stockData is missing (fallback)
@@ -89,12 +91,12 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                         e.stopPropagation()
                         setIsWatchlistDropdownOpen(!isWatchlistDropdownOpen)
                     }}
-                    title="Add to Watchlist"
+                    title={t('stock.addWatchlist')}
                 >
                     <Eye className="h-4 w-4" />
                     {variant === 'default' && (
                         <>
-                            <span className="hidden sm:inline">Add to Watchlist</span>
+                            <span className="hidden sm:inline">{t('stock.addWatchlist')}</span>
                             <ChevronDown className="h-3 w-3" />
                         </>
                     )}
@@ -107,7 +109,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                             className="absolute right-0 top-full mt-2 w-64 bg-surface border border-border rounded-xl shadow-xl z-20 py-2 animate-in fade-in zoom-in-95 duration-200"
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
                         >
-                            <div className="px-4 py-2 text-xs font-bold text-text-tertiary uppercase tracking-wider">Add to Watchlist</div>
+                            <div className="px-4 py-2 text-xs font-bold text-text-tertiary uppercase tracking-wider">{t('stock.addWatchlist')}</div>
                             {watchlists.map(list => {
                                 const isAdded = isInList(list.id, stockCode)
                                 return (
@@ -142,7 +144,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                                     setIsWatchlistDropdownOpen(false)
                                 }}
                             >
-                                <Plus className="h-4 w-4" /> New watchlist
+                                <Plus className="h-4 w-4" /> {t('stock.newWatchlist')}
                             </button>
                         </div>
                     </>
@@ -163,12 +165,12 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                         e.stopPropagation()
                         setIsPortfolioDropdownOpen(!isPortfolioDropdownOpen)
                     }}
-                    title="Add to Portfolio"
+                    title={t('stock.addPortfolio')}
                 >
                     <Briefcase className="h-4 w-4" />
                     {variant === 'default' && (
                         <>
-                            <span className="hidden sm:inline">Add to Portfolio</span>
+                            <span className="hidden sm:inline">{t('stock.addPortfolio')}</span>
                             <ChevronDown className="h-3 w-3" />
                         </>
                     )}
@@ -181,7 +183,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                             className="absolute right-0 top-full mt-2 w-64 bg-surface border border-border rounded-xl shadow-xl z-20 py-2 animate-in fade-in zoom-in-95 duration-200"
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
                         >
-                            <div className="px-4 py-2 text-xs font-bold text-text-tertiary uppercase tracking-wider">Add to Portfolio</div>
+                            <div className="px-4 py-2 text-xs font-bold text-text-tertiary uppercase tracking-wider">{t('stock.addPortfolio')}</div>
                             {portfolios.length > 0 ? (
                                 portfolios.map(p => (
                                     <button
@@ -199,7 +201,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                                     </button>
                                 ))
                             ) : (
-                                <div className="px-4 py-2 text-sm text-text-tertiary italic">No portfolios created</div>
+                                <div className="px-4 py-2 text-sm text-text-tertiary italic">{t('stock.noPortfoliosCreated')}</div>
                             )}
                             <div className="h-px bg-border my-1" />
                             <button
@@ -211,7 +213,7 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                                     setIsPortfolioDropdownOpen(false)
                                 }}
                             >
-                                <Plus className="h-4 w-4" /> New portfolio
+                                <Plus className="h-4 w-4" /> {t('stock.newPortfolio')}
                             </button>
                         </div>
                     </>
@@ -232,10 +234,10 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                     if (!requireAuth()) return
                     setIsAddAlertModalOpen(true)
                 }}
-                title="Set Alert"
+                title={t('stock.setAlert')}
             >
                 <Bell className="h-4 w-4" />
-                {variant === 'default' && <span className="hidden sm:inline">Add Alert</span>}
+                {variant === 'default' && <span className="hidden sm:inline">{t('stock.addAlert')}</span>}
             </Button>
 
             {/* Share Action */}
@@ -247,10 +249,10 @@ export function StockPageActions({ stockCode, stockData, variant = 'default', cl
                     variant === 'icon' && "p-2 h-8 w-8 hover:bg-surface-tertiary"
                 )}
                 onClick={handleShare}
-                title="Share"
+                title={t('stock.share')}
             >
                 <Share2 className="h-4 w-4" />
-                {variant === 'default' && <span className="hidden sm:inline">Share</span>}
+                {variant === 'default' && <span className="hidden sm:inline">{t('stock.share')}</span>}
             </Button>
 
             <CreateListModal

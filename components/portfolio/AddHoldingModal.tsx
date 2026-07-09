@@ -1,4 +1,6 @@
 
+"use client"
+
 import { useState, useMemo } from 'react'
 import { Modal } from "@/components/ui/Modal"
 import { Button } from "@/components/ui/Button"
@@ -6,6 +8,7 @@ import { Search } from "lucide-react"
 import { usePortfolioStore } from "@/lib/stores/portfolio"
 import { StockSummary } from "@/lib/types"
 import { formatPrice } from "@/lib/utils"
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface AddHoldingModalProps {
     isOpen: boolean
@@ -16,6 +19,7 @@ interface AddHoldingModalProps {
 }
 
 export function AddHoldingModal({ isOpen, onClose, allStocks, portfolioId, initialStockCode }: AddHoldingModalProps) {
+    const { t } = useLocale()
     const { addHolding } = usePortfolioStore()
     const [step, setStep] = useState<'search' | 'details'>('search')
     const [selectedStock, setSelectedStock] = useState<StockSummary | null>(null)
@@ -90,7 +94,7 @@ export function AddHoldingModal({ isOpen, onClose, allStocks, portfolioId, initi
     }
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title={step === 'search' ? "Select Investment" : "Add Holding Details"}>
+        <Modal isOpen={isOpen} onClose={onClose} title={step === 'search' ? t('portfolio.selectInvestment') : t('portfolio.addHoldingDetails')}>
             <div className="pt-2">
                 {step === 'search' ? (
                     <div className="space-y-4">
@@ -100,7 +104,7 @@ export function AddHoldingModal({ isOpen, onClose, allStocks, portfolioId, initi
                                 type="text"
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
-                                placeholder="Search by ticker or name"
+                                placeholder={t('portfolio.searchPlaceholder')}
                                 autoFocus
                                 className="w-full rounded-xl border border-border bg-surface-secondary/50 pl-10 pr-4 py-3 text-text-primary focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
                             />
@@ -120,7 +124,7 @@ export function AddHoldingModal({ isOpen, onClose, allStocks, portfolioId, initi
                                 </div>
                             ))}
                             {query && filteredStocks.length === 0 && (
-                                <div className="text-center py-8 text-text-tertiary">No stocks found</div>
+                                <div className="text-center py-8 text-text-tertiary">{t('watchlist.noStocksFound')}</div>
                             )}
                         </div>
                     </div>
@@ -131,12 +135,12 @@ export function AddHoldingModal({ isOpen, onClose, allStocks, portfolioId, initi
                                 <div className="font-bold text-lg text-text-primary">{selectedStock?.code}</div>
                                 <div className="text-xs text-text-secondary">{selectedStock?.name}</div>
                             </div>
-                            <Button type="button" variant="ghost" size="sm" onClick={handleBack}>Change</Button>
+                            <Button type="button" variant="ghost" size="sm" onClick={handleBack}>{t('portfolio.change')}</Button>
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">Quantity</label>
+                                <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">{t('portfolio.quantity')}</label>
                                 <input
                                     type="number"
                                     min="0"
@@ -145,13 +149,13 @@ export function AddHoldingModal({ isOpen, onClose, allStocks, portfolioId, initi
                                     value={quantity}
                                     onChange={(e) => setQuantity(e.target.value)}
                                     className="w-full rounded-xl border border-border bg-surface-secondary/50 p-3 text-text-primary outline-none focus:border-brand-500"
-                                    placeholder="0"
+                                    placeholder={t('portfolio.qtyPlaceholder')}
                                     autoFocus
                                     onFocus={(e) => e.target.select()}
                                 />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">Buy Price (MKD)</label>
+                                <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">{t('portfolio.buyPrice')}</label>
                                 <input
                                     type="number"
                                     min="0"
@@ -160,14 +164,14 @@ export function AddHoldingModal({ isOpen, onClose, allStocks, portfolioId, initi
                                     value={buyPrice}
                                     onChange={(e) => setBuyPrice(e.target.value)}
                                     className="w-full rounded-xl border border-border bg-surface-secondary/50 p-3 text-text-primary outline-none focus:border-brand-500"
-                                    placeholder="0.00"
+                                    placeholder={t('portfolio.pricePlaceholder')}
                                     onFocus={(e) => e.target.select()}
                                 />
                             </div>
                         </div>
 
                         <div>
-                            <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">Date Bought</label>
+                            <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">{t('portfolio.dateBought')}</label>
                             <input
                                 type="date"
                                 required
@@ -178,8 +182,8 @@ export function AddHoldingModal({ isOpen, onClose, allStocks, portfolioId, initi
                         </div>
 
                         <div className="flex justify-end gap-3 pt-4 border-t border-border">
-                            <Button type="button" variant="ghost" onClick={onClose}>Cancel</Button>
-                            <Button type="submit">Add Holding</Button>
+                            <Button type="button" variant="ghost" onClick={onClose}>{t('common.cancel')}</Button>
+                            <Button type="submit">{t('portfolio.addHolding')}</Button>
                         </div>
                     </form>
                 )}

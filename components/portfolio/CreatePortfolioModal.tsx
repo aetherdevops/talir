@@ -1,7 +1,10 @@
 
+"use client"
+
 import { useState } from 'react'
 import { Modal } from "@/components/ui/Modal"
 import { Button } from "@/components/ui/Button"
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface CreatePortfolioModalProps {
     isOpen: boolean
@@ -10,6 +13,7 @@ interface CreatePortfolioModalProps {
 }
 
 export function CreatePortfolioModal({ isOpen, onClose, onCreate }: CreatePortfolioModalProps) {
+    const { t } = useLocale()
     const [name, setName] = useState('')
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -22,23 +26,23 @@ export function CreatePortfolioModal({ isOpen, onClose, onCreate }: CreatePortfo
     }
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title="Create new portfolio">
+        <Modal isOpen={isOpen} onClose={onClose} title={t('portfolio.createNewPortfolio')}>
             <form onSubmit={handleSubmit} className="pt-4 space-y-4">
                 <div>
-                    <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">Portfolio Name</label>
+                    <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">{t('portfolio.portfolioName')}</label>
                     <input
                         type="text"
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         className="w-full rounded-xl border border-border bg-surface-secondary/50 p-3 text-text-primary outline-none focus:border-brand-500"
-                        placeholder="e.g. Retirement, Tech Stocks"
+                        placeholder={t('portfolio.portfolioNamePlaceholder')}
                         autoFocus
                     />
                 </div>
                 <div className="flex justify-end gap-3 pt-2">
-                    <Button type="button" variant="ghost" onClick={onClose}>Cancel</Button>
-                    <Button type="submit">Create</Button>
+                    <Button type="button" variant="ghost" onClick={onClose}>{t('common.cancel')}</Button>
+                    <Button type="submit">{t('common.create')}</Button>
                 </div>
             </form>
         </Modal>

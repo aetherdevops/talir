@@ -10,8 +10,10 @@ import { useEffect, useState } from 'react'
 import { AddAlertModal } from '@/components/stock/AddAlertModal'
 import { useAuth } from '@/components/auth/AuthProvider'
 import { LoggedOutGrowthPanel } from '@/components/auth/LoggedOutGrowthPanel'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 export function AlertsClient() {
+    const { t } = useLocale()
     const { user } = useAuth()
     const { alerts, removeAlert, toggleAlert } = useAlertsStore()
     const [mounted, setMounted] = useState(false)
@@ -27,9 +29,9 @@ export function AlertsClient() {
         <div className="max-w-5xl mx-auto p-6 space-y-8">
             {!user ? <LoggedOutGrowthPanel pageLabel="alerts" /> : null}
             <header>
-                <h1 className="text-3xl font-bold text-text-primary mb-2">My Alerts</h1>
+                <h1 className="text-3xl font-bold text-text-primary mb-2">{t('alerts.title')}</h1>
                 <p className="text-text-secondary">
-                    In-app price notifications. You will see triggered alerts here — email delivery comes later.
+                    {t('alerts.subtitle')}
                 </p>
             </header>
 
@@ -38,12 +40,12 @@ export function AlertsClient() {
                     <div className="w-16 h-16 bg-surface-secondary rounded-full flex items-center justify-center text-text-tertiary mb-4">
                         <Bell className="h-8 w-8" />
                     </div>
-                    <h3 className="text-lg font-bold text-text-primary mb-2">No active alerts</h3>
+                    <h3 className="text-lg font-bold text-text-primary mb-2">{t('alerts.emptyTitle')}</h3>
                     <p className="text-text-secondary max-w-sm text-center mb-6">
-                        Create a price alert from any stock page. Sign in to save alerts across devices.
+                        {t('alerts.emptyBody')}
                     </p>
                     <Link href="/markets">
-                        <Button>Browse Markets</Button>
+                        <Button>{t('alerts.browseMarkets')}</Button>
                     </Link>
                 </div>
             ) : (
@@ -73,20 +75,23 @@ export function AlertsClient() {
                                             </Link>
                                             {triggered && (
                                                 <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600">
-                                                    Triggered
+                                                    {t('alerts.triggered')}
                                                 </span>
                                             )}
                                             {expired && !triggered && (
                                                 <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-surface-tertiary text-text-tertiary">
-                                                    Expired
+                                                    {t('alerts.expired')}
                                                 </span>
                                             )}
                                         </div>
                                         <div className="flex items-center gap-2 text-xs text-text-tertiary mt-1">
                                             <Clock className="h-3 w-3" />
                                             {alert.expiration.isOpenEnded
-                                                ? 'Open-ended'
-                                                : `Expires ${alert.expiration.date} ${alert.expiration.time}`}
+                                                ? t('alerts.openEnded')
+                                                : t('alerts.expiresAt', {
+                                                    date: alert.expiration.date ?? '',
+                                                    time: alert.expiration.time ?? '',
+                                                })}
                                         </div>
                                     </div>
 

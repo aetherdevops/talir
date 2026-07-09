@@ -39,7 +39,7 @@ export function StockPageTabList({ activeTab, onTabChange, className }: StockPag
                 className
             )}
             role="tablist"
-            aria-label="Stock page sections"
+            aria-label={t('stock.tabListAria')}
         >
             {STOCK_TABS.map((tab) => (
                 <button
@@ -77,7 +77,7 @@ export function useStockPageTab(): [StockPageTab, (tab: StockPageTab) => void] {
                 params.set('tab', tab)
             }
             const qs = params.toString()
-            router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: true })
+            router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false })
         },
         [pathname, router, searchParams]
     )

@@ -4,28 +4,28 @@
 import { useState, useMemo } from 'react'
 import { IndexDetails, NewsItem } from '@/lib/data'
 import { PriceChart } from '@/components/charts/PriceChart'
-import { cn, formatIndexLevel } from '@/lib/utils'
+import { formatIndexLevel } from '@/lib/utils'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
-import { Share2, Plus } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
 import { StockPageActions } from '@/components/stock/StockPageActions'
 import { NewsPreview } from '@/components/home/NewsPreview'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface IndexClientProps {
     index: IndexDetails
     news: NewsItem[]
 }
 
-const INDEX_DESCRIPTIONS: Record<string, string> = {
-    'MBI10': 'The MBI10 is the main index of the Macedonian Stock Exchange. It consists of the 10 most liquid ordinary shares listed on the MSE. The index is a price index weighted by market capitalization.',
-    'OMB': 'The OMB is the bond index of the Macedonian Stock Exchange. It tracks the performance of government and corporate bonds listed on the exchange.'
-}
-
 type Timeframe = '1D' | '5D' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '5Y' | 'MAX'
 
+function getIndexDescription(code: string, name: string, t: (key: string) => string): string {
+    if (code === 'MBI10' || name === 'MBI10') return t('index.mbi10Description')
+    if (code === 'OMB' || name === 'OMB') return t('index.ombDescription')
+    return t('index.noDescription')
+}
+
 export function IndexClient({ index, news }: IndexClientProps) {
+    const { t } = useLocale()
     const [timeframe, setTimeframe] = useState<Timeframe>('1Y')
-    const isPositive = index.changePercent >= 0
 
     // Filter chart data based on timeframe
     const chartData = useMemo(() => {
@@ -54,6 +54,9 @@ export function IndexClient({ index, news }: IndexClientProps) {
         return fullHistory.filter(d => new Date(d.time) >= cutoff)
     }, [index.history, timeframe])
 
+    const freshnessDate = new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+    const indexDescription = getIndexDescription(index.code, index.name, t)
+
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
             {/* Header Section */}
@@ -67,7 +70,7 @@ export function IndexClient({ index, news }: IndexClientProps) {
                         <ChangeLabel change={index.changePercent} variant="pill" className="text-sm" />
                     </div>
                     <div className="text-sm text-text-tertiary mt-2">
-                        {new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })} · MSE · Disclaimer
+                        {freshnessDate}{t('index.mseDisclaimer')}
                     </div>
                 </div>
 
@@ -102,24 +105,24 @@ export function IndexClient({ index, news }: IndexClientProps) {
 
                     {/* Key Stats Card */}
                     <div className="bg-surface border border-border rounded-xl p-6 shadow-sm">
-                        <h3 className="text-lg font-semibold mb-4 text-text-primary">Key Statistics</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-text-primary">{t('index.keyStatistics')}</h3>
                         <div className="space-y-4">
                             <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                <span className="text-sm text-text-secondary">Previous Close</span>
+                                <span className="text-sm text-text-secondary">{t('index.previousClose')}</span>
                                 <span className="font-medium text-text-primary">
                                     {formatIndexLevel(index.currentValue - index.change)}
                                 </span>
                             </div>
                             <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                <span className="text-sm text-text-secondary">Day Range</span>
+                                <span className="text-sm text-text-secondary">{t('index.dayRange')}</span>
                                 <span className="font-medium text-text-primary">
-                                    {index.dayRange ? `${formatIndexLevel(index.dayRange.min)} - ${formatIndexLevel(index.dayRange.max)}` : 'N/A'}
+                                    {index.dayRange ? `${formatIndexLevel(index.dayRange.min)} - ${formatIndexLevel(index.dayRange.max)}` : t('index.notAvailable')}
                                 </span>
                             </div>
                             <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                <span className="text-sm text-text-secondary">Year Range</span>
+                                <span className="text-sm text-text-secondary">{t('index.yearRange')}</span>
                                 <span className="font-medium text-text-primary">
-                                    {index.yearRange ? `${formatIndexLevel(index.yearRange.min)} - ${formatIndexLevel(index.yearRange.max)}` : 'N/A'}
+                                    {index.yearRange ? `${formatIndexLevel(index.yearRange.min)} - ${formatIndexLevel(index.yearRange.max)}` : t('index.notAvailable')}
                                 </span>
                             </div>
                         </div>
@@ -128,13 +131,13 @@ export function IndexClient({ index, news }: IndexClientProps) {
                     {/* About Card */}
                     <div className="bg-surface border border-border rounded-xl p-6 shadow-sm">
                         <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-lg font-semibold text-text-primary">About</h3>
+                            <h3 className="text-lg font-semibold text-text-primary">{t('index.about')}</h3>
                         </div>
                         <p className="text-sm text-text-secondary leading-relaxed">
-                            {INDEX_DESCRIPTIONS[index.name] || 'No description available.'}
+                            {indexDescription}
                         </p>
                         <div className="mt-4 pt-4 border-t border-border/50">
-                            <span className="text-xs text-brand-500 font-medium cursor-pointer hover:underline">Wikipedia</span>
+                            <span className="text-xs text-brand-500 font-medium cursor-pointer hover:underline">{t('index.wikipedia')}</span>
                         </div>
                     </div>
 
@@ -143,7 +146,7 @@ export function IndexClient({ index, news }: IndexClientProps) {
 
             {/* Bottom: News */}
             <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                <h2 className="text-xl font-semibold mb-6 text-text-primary">Updates</h2>
+                <h2 className="text-xl font-semibold mb-6 text-text-primary">{t('filings.updates')}</h2>
                 <NewsPreview news={news} />
             </div>
         </div>

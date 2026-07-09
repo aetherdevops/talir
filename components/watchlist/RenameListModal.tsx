@@ -1,8 +1,11 @@
 
+"use client"
+
 import { useState, useEffect } from 'react'
 import { Modal } from "@/components/ui/Modal"
 import { Button } from "@/components/ui/Button"
 import { useWatchlistStore } from "@/lib/stores/watchlist"
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface RenameListModalProps {
     isOpen: boolean
@@ -12,6 +15,7 @@ interface RenameListModalProps {
 }
 
 export function RenameListModal({ isOpen, onClose, listId, currentName }: RenameListModalProps) {
+    const { t } = useLocale()
     const { renameList } = useWatchlistStore()
     const [name, setName] = useState(currentName)
 
@@ -28,24 +32,24 @@ export function RenameListModal({ isOpen, onClose, listId, currentName }: Rename
     }
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title="Rename list">
+        <Modal isOpen={isOpen} onClose={onClose} title={t('watchlist.renameListTitle')}>
             <form onSubmit={handleSubmit} className="pt-4 space-y-4">
                 <div>
-                    <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">List Name</label>
+                    <label className="block text-xs font-bold text-text-secondary mb-1 uppercase tracking-wide">{t('watchlist.listName')}</label>
                     <input
                         type="text"
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         className="w-full rounded-xl border border-border bg-surface-secondary/50 p-3 text-text-primary outline-none focus:border-brand-500"
-                        placeholder="My Watchlist"
+                        placeholder={t('watchlist.listNameDefault')}
                         autoFocus
                         onFocus={(e) => e.target.select()}
                     />
                 </div>
                 <div className="flex justify-end gap-3 pt-2">
-                    <Button type="button" variant="ghost" onClick={onClose}>Cancel</Button>
-                    <Button type="submit">Save</Button>
+                    <Button type="button" variant="ghost" onClick={onClose}>{t('common.cancel')}</Button>
+                    <Button type="submit">{t('common.save')}</Button>
                 </div>
             </form>
         </Modal>

@@ -4,11 +4,12 @@
 import { useState } from 'react'
 import { Modal } from '@/components/ui/Modal'
 import { Button } from '@/components/ui/Button'
-import { Bell, ChevronDown, Calendar as CalendarIcon, Clock, Plus, Trash2, X } from 'lucide-react'
+import { Bell, ChevronDown, Calendar as CalendarIcon, Clock, Plus, X } from 'lucide-react'
 import { formatPrice } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 import { useAlertsStore, Alert } from '@/lib/stores/alerts'
 import { useRequireAuth } from '@/lib/auth/use-require-auth'
+import { useLocale } from '@/components/providers/LocaleProvider'
 
 interface AddAlertModalProps {
     isOpen: boolean
@@ -19,17 +20,16 @@ interface AddAlertModalProps {
 }
 
 export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialData }: AddAlertModalProps) {
+    const { t } = useLocale()
     const { addAlert, updateAlert } = useAlertsStore()
     const { requireAuth } = useRequireAuth()
     const isEditing = !!initialData
 
-    // State
     const [conditions, setConditions] = useState<{ type: 'above' | 'below', value: string }[]>(
         initialData?.conditions.map(c => ({ type: c.type, value: c.value.toString() })) ||
         [{ type: 'above', value: currentPrice.toString() }]
     )
 
-    // Expiration
     const defaultDate = new Date()
     defaultDate.setFullYear(defaultDate.getFullYear() + 1)
 
@@ -39,7 +39,6 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
 
     const [isSubmitting, setIsSubmitting] = useState(false)
 
-    // Handlers
     const addCondition = () => {
         if (conditions.length >= 2) return
         setConditions([...conditions, { type: 'above', value: currentPrice.toString() }])
@@ -53,8 +52,7 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
 
     const updateCondition = (index: number, field: 'type' | 'value', val: string) => {
         const newConditions = [...conditions]
-        // @ts-ignore
-        newConditions[index][field] = val
+        newConditions[index] = { ...newConditions[index], [field]: val }
         setConditions(newConditions)
     }
 
@@ -87,31 +85,35 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
         onClose()
     }
 
+    const title = isEditing
+        ? t('alerts.editTitle', { symbol })
+        : t('alerts.createTitle', { symbol })
+
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title={isEditing ? `Edit alert on ${symbol}` : `Create alert on ${symbol}`}>
+        <Modal isOpen={isOpen} onClose={onClose} title={title}>
             <form onSubmit={handleSubmit} className="flex flex-col h-full space-y-6 pt-2">
-                {/* Symbol Header */}
                 <div className="bg-surface-secondary/50 px-4 py-3 rounded-lg flex items-center gap-3 border border-border">
                     <div className="w-8 h-8 rounded-full bg-brand-500/10 text-brand-500 flex items-center justify-center">
                         <Bell className="h-4 w-4" />
                     </div>
                     <div>
                         <div className="font-bold text-text-primary text-sm">{symbol}</div>
-                        <div className="text-xs text-text-secondary">Current price: {formatPrice(currentPrice)}</div>
+                        <div className="text-xs text-text-secondary">
+                            {t('alerts.currentPrice', { price: formatPrice(currentPrice) })}
+                        </div>
                     </div>
                 </div>
 
-                {/* Conditions Section */}
                 <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                        <label className="text-sm font-medium text-text-secondary">Price</label>
+                        <label className="text-sm font-medium text-text-secondary">{t('alerts.priceLabel')}</label>
                         {conditions.length < 2 && (
                             <button
                                 type="button"
                                 onClick={addCondition}
                                 className="text-xs text-brand-500 hover:text-brand-400 font-medium flex items-center gap-1"
                             >
-                                <Plus className="h-3 w-3" /> Add condition
+                                <Plus className="h-3 w-3" /> {t('alerts.addCondition')}
                             </button>
                         )}
                     </div>
@@ -126,8 +128,8 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
                                             onChange={(e) => updateCondition(idx, 'type', e.target.value)}
                                             className="w-full appearance-none bg-surface border border-border rounded-lg pl-3 pr-8 py-2 text-sm text-text-primary focus:ring-1 focus:ring-brand-500 outline-none"
                                         >
-                                            <option value="above">Greater Than</option>
-                                            <option value="below">Less Than</option>
+                                            <option value="above">{t('alerts.greaterThan')}</option>
+                                            <option value="below">{t('alerts.lessThan')}</option>
                                         </select>
                                         <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-text-tertiary pointer-events-none" />
                                     </div>
@@ -137,7 +139,7 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
                                             value={condition.value}
                                             onChange={(e) => updateCondition(idx, 'value', e.target.value)}
                                             className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-sm text-text-primary focus:ring-1 focus:ring-brand-500 outline-none"
-                                            placeholder="Price"
+                                            placeholder={t('alerts.pricePlaceholder')}
                                         />
                                     </div>
                                 </div>
@@ -155,12 +157,11 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
                     </div>
                 </div>
 
-                {/* Expiration Section */}
                 <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                        <label className="text-sm font-medium text-text-secondary">Expiration</label>
+                        <label className="text-sm font-medium text-text-secondary">{t('alerts.expiration')}</label>
                         <div className="flex items-center gap-2">
-                            <span className="text-xs text-text-secondary">Open-ended</span>
+                            <span className="text-xs text-text-secondary">{t('alerts.openEnded')}</span>
                             <button
                                 type="button"
                                 onClick={() => setIsOpenEnded(!isOpenEnded)}
@@ -202,21 +203,22 @@ export function AddAlertModal({ isOpen, onClose, symbol, currentPrice, initialDa
                 </div>
 
                 <p className="text-xs text-text-tertiary border-t border-border pt-4">
-                    You will be notified in the app when this alert triggers. Email delivery is coming later.
+                    {t('alerts.notifyHint')}
                 </p>
 
-                {/* Actions */}
                 <div className="flex gap-3 pt-2">
                     <Button variant="ghost" className="flex-1" onClick={onClose} type="button">
-                        Cancel
+                        {t('common.cancel')}
                     </Button>
                     <Button className="flex-1" type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? 'Saving...' : (isEditing ? 'Update Alert' : 'Create Alert')}
+                        {isSubmitting
+                            ? t('alerts.saving')
+                            : isEditing
+                              ? t('alerts.updateAlert')
+                              : t('alerts.createAlert')}
                     </Button>
                 </div>
             </form>
         </Modal>
     )
 }
-
-
