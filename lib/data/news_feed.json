@@ -1,10 +1,23 @@
 {
-  "generatedAt": "2026-07-09T06:12:14.287Z",
-  "lastIssuerScan": "2026-07-09",
+  "generatedAt": "2026-07-10T06:11:02.160Z",
+  "lastIssuerScan": "2026-07-10",
   "count": 1534,
   "datedCount": 1534,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "TEL-https-seinet-com-mk-en-document-77907",
+      "rawTitle": "7/9/2026 - Makedonski Telekom AD Skopje - Interested party transaction",
+      "title": "TEL: Interested party transaction",
+      "source": "SECNet",
+      "stockCode": "TEL",
+      "stockName": "Makedonski Telekom AD – Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-09",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77907"
+    },
     {
       "id": "GRNT-https-seinet-com-mk-en-document-77905",
       "rawTitle": "7/8/2026 - Granit AD Skopje - Other price sensitive information",
@@ -6114,19 +6127,6 @@
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76821"
-    },
-    {
-      "id": "TEL-https-seinet-com-mk-en-document-76822",
-      "rawTitle": "4/30/2026 - Makedonski Telekom AD Skopje - Other price sensitive information",
-      "title": "TEL: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "TEL",
-      "stockName": "Makedonski Telekom AD – Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-30",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76822"
     },
     {
       "id": "TKPR-https-seinet-com-mk-en-document-76971",
