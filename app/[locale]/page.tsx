@@ -69,8 +69,8 @@ export default async function HomePage() {
 
     return (
         <div className="pb-10 min-w-0">
-            <div className="grid grid-cols-1 lg:grid-cols-12 xl:grid-cols-[minmax(0,1fr)_300px] gap-4 lg:gap-6 min-w-0">
-                <div className="lg:col-span-8 xl:col-span-1 min-w-0 space-y-4">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-4 lg:gap-6 min-w-0">
+                <div className="min-w-0 space-y-4">
                     <HomeMarketOverview
                         indices={indices}
                         gainers={gainers}
@@ -92,7 +92,7 @@ export default async function HomePage() {
                     />
                 </div>
 
-                <aside className="hidden lg:block lg:col-span-4 xl:col-span-1 min-w-0 pl-6">
+                <aside className="hidden lg:block min-w-0">
                     <HomeDividendsPanel
                         recent={recentDividends}
                         upcoming={upcomingExDates}

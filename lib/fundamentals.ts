@@ -2,6 +2,8 @@ import { parseAmountMk } from './dividends'
 import { inferPeriodYear, parseReportPeriod } from './results-calendar'
 
 export const FUNDAMENTAL_PARSER_VERSION = '1.0.0'
+/** Same field extractors as annual FY; versioned separately for quarterly/H1 ingest. */
+export const RESULTS_PARSER_VERSION = '1.0.0'
 
 export type FundamentalParseStatus = 'parsed' | 'partial' | 'link_only'
 

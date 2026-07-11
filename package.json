@@ -27,6 +27,8 @@
     "ingest:dividends:local": "node scripts/run-dividend-ingest-local.mjs",
     "gh:secrets": "node scripts/set-github-secrets.mjs",
     "ingest:fundamentals": "tsx scripts/ingest-fundamental-documents.ts",
+    "ingest:results": "tsx scripts/ingest-results-documents.ts",
+    "ingest:filings:local": "node scripts/run-mbi10-filings-ingest-local.mjs",
     "generate:dividends": "tsx scripts/generate-dividends.ts",
     "generate:fundamentals": "tsx scripts/generate-fundamentals.ts",
     "generate:search-index": "node scripts/generate-search-index.mjs",

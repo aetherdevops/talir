@@ -5,10 +5,12 @@ import {
     buildSlotKey,
     documentsToSupersede,
     pickCurrentDocumentId,
+    type ReportPeriod,
     type SlotKey,
 } from './document-store-slot'
 
 export type DocumentKind = 'dividend_calendar' | 'audited_financial' | 'quarterly_pl'
+export type { ReportPeriod }
 
 export function isDocumentStoreEnabled(): boolean {
     return process.env.TALIR_DOCUMENT_STORE === 'supabase' && isSupabaseAdminConfigured()
@@ -28,6 +30,7 @@ export interface SeinetDocumentInput {
     url: string
     profit_year?: number | null
     fiscal_year?: number | null
+    report_period?: ReportPeriod | null
     attachment_ids: number[]
 }
 
@@ -55,6 +58,7 @@ export async function upsertSeinetDocument(input: SeinetDocumentInput): Promise<
             url: input.url,
             profit_year: input.profit_year ?? null,
             fiscal_year: input.fiscal_year ?? null,
+            report_period: input.report_period ?? null,
             attachment_ids: input.attachment_ids,
             updated_at: new Date().toISOString(),
         },
@@ -127,6 +131,12 @@ export async function applySlotSupersession(
         query = query.is('fiscal_year', null)
     }
 
+    if (slot.report_period !== null) {
+        query = query.eq('report_period', slot.report_period)
+    } else {
+        query = query.is('report_period', null)
+    }
+
     const { data: rows, error } = await query
     if (error) throw new Error(`applySlotSupersession: ${error.message}`)
 
@@ -153,7 +163,8 @@ export async function applySlotSupersession(
 export async function updateDocumentSlotYears(
     documentId: number,
     profitYear: number | null,
-    fiscalYear: number | null
+    fiscalYear: number | null,
+    reportPeriod: ReportPeriod | null = null
 ): Promise<void> {
     if (!isDocumentStoreEnabled()) return
     const db = getSupabaseAdminOrNull()
@@ -164,6 +175,7 @@ export async function updateDocumentSlotYears(
         .update({
             profit_year: profitYear,
             fiscal_year: fiscalYear,
+            report_period: reportPeriod,
             updated_at: new Date().toISOString(),
         })
         .eq('document_id', documentId)

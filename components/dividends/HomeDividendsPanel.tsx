@@ -20,8 +20,8 @@ export function HomeDividendsPanel({
     className,
 }: HomeDividendsPanelProps) {
     const { t } = useLocale()
-    const recentItems = recent.slice(0, 5)
-    const upcomingItems = upcoming.slice(0, 5)
+    const recentItems = recent.slice(0, 4)
+    const upcomingItems = upcoming.slice(0, 4)
     const isAside = variant === 'aside'
 
     return (

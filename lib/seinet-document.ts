@@ -12,6 +12,8 @@ import {
 const SEINET_API = 'https://api.seinet.com.mk/public/documents'
 export const DIVIDEND_CALENDAR_LAYOUT_CODE = 'DOC_10688'
 export const AUDITED_FINANCIAL_LAYOUT_CODE = 'DOC_10682'
+/** Issuer-page report links that are not on a global layoutLink chain. */
+export const ISSUER_REPORT_LINK_LAYOUT_CODE = 'ISSUER_REPORT_LINK'
 
 export interface SeinetAttachment {
     attachmentId: number

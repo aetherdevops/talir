@@ -1,8 +1,10 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
 import {
+    buildSlotKey,
     documentsToSupersede,
     pickCurrentDocumentId,
+    slotKeyEquals,
 } from './document-store-slot.ts'
 
 describe('pickCurrentDocumentId', () => {
@@ -36,5 +38,24 @@ describe('documentsToSupersede', () => {
             200
         )
         assert.deepEqual(ids, [100])
+    })
+})
+
+describe('buildSlotKey', () => {
+    it('includes report_period for quarterly slots', () => {
+        const q1 = buildSlotKey({
+            stock_code: 'ALK',
+            document_kind: 'quarterly_pl',
+            fiscal_year: 2025,
+            report_period: 'q1_pl',
+        })
+        const q3 = buildSlotKey({
+            stock_code: 'ALK',
+            document_kind: 'quarterly_pl',
+            fiscal_year: 2025,
+            report_period: 'q3_pl',
+        })
+        assert.equal(slotKeyEquals(q1, q3), false)
+        assert.equal(q1.report_period, 'q1_pl')
     })
 })

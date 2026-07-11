@@ -6,9 +6,13 @@
  * Set TALIR_PARSE_FUNDAMENTAL_YEARS=6 to limit attachment fetches (default 6 fiscal years).
  * Set TALIR_PARSE_ALL_FUNDAMENTALS=1 to parse every row (slow; manual backfill only).
  * Set TALIR_PARSE_FORCE=1 to re-fetch attachments even when prior parse exists.
+ * Set TALIR_DOCUMENT_STORE=supabase to merge parsed fields from Supabase ingest.
  */
 import fs from 'fs'
 import path from 'path'
+import { loadEnvLocal } from '../lib/load-env-local'
+
+loadEnvLocal()
 import { parseReportDate } from '../lib/news-dates'
 import {
     buildFundamentalsFile,
@@ -21,6 +25,7 @@ import {
 import {
     isDocumentStoreEnabled,
     loadFundamentalExtractionsFromStore,
+    type StoredFundamentalExtraction,
 } from '../lib/document-store'
 import {
     fetchDividendDocumentText,
@@ -180,13 +185,25 @@ async function mergeFromDocumentStore(entries: FundamentalEntry[]): Promise<numb
     const stored = await loadFundamentalExtractionsFromStore(FUNDAMENTAL_PARSER_VERSION)
     let merged = 0
 
+    const byStockFy = new Map<string, StoredFundamentalExtraction>()
+    for (const row of stored.values()) {
+        const key = `${row.stock_code}:${row.fiscal_year}`
+        const existing = byStockFy.get(key)
+        if (!existing || row.filed_at > existing.filed_at) {
+            byStockFy.set(key, row)
+        }
+    }
+
     for (const entry of entries) {
         const docId = parseDocumentIdFromUrl(entry.url)
-        if (!docId) continue
-        const row = stored.get(docId)
+        const row =
+            (docId ? stored.get(docId) : undefined) ??
+            byStockFy.get(`${entry.stockCode}:${entry.fiscalYear}`)
         if (!row) continue
-        entry.eps = (row.fields.eps as number | null) ?? null
-        entry.netProfit = (row.fields.netProfit as number | null) ?? null
+        if (row.parse_status === 'link_only' && entry.parseStatus !== 'link_only') continue
+
+        entry.eps = (row.fields.eps as number | null) ?? entry.eps
+        entry.netProfit = (row.fields.netProfit as number | null) ?? entry.netProfit
         entry.parseStatus = row.parse_status as FundamentalEntry['parseStatus']
         merged++
     }

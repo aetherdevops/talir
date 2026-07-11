@@ -146,6 +146,16 @@ async function ingestEntry(entry: FundamentalEntry, title: string | null): Promi
 
     const force = process.env.TALIR_PARSE_FORCE === '1'
     if (!force && (await hasFieldExtraction(documentId, FUNDAMENTAL_PARSER_VERSION))) {
+        await updateDocumentSlotYears(documentId, null, entry.fiscalYear, 'fy_audited')
+        await applySlotSupersession(
+            buildSlotKey({
+                stock_code: entry.stockCode,
+                document_kind: 'audited_financial',
+                fiscal_year: entry.fiscalYear,
+                report_period: 'fy_audited',
+            }),
+            { document_id: documentId, filed_at: entry.filedAt }
+        )
         return 'skipped'
     }
 
@@ -167,6 +177,7 @@ async function ingestEntry(entry: FundamentalEntry, title: string | null): Promi
             title,
             url: entry.url,
             fiscal_year: entry.fiscalYear,
+            report_period: 'fy_audited',
             attachment_ids: attachmentIds,
         })
         return 'failed'
@@ -183,6 +194,7 @@ async function ingestEntry(entry: FundamentalEntry, title: string | null): Promi
         title,
         url: entry.url,
         fiscal_year: entry.fiscalYear,
+        report_period: 'fy_audited',
         attachment_ids: attachmentIds,
     })
 
@@ -197,12 +209,13 @@ async function ingestEntry(entry: FundamentalEntry, title: string | null): Promi
         },
     })
 
-    await updateDocumentSlotYears(documentId, null, entry.fiscalYear)
+    await updateDocumentSlotYears(documentId, null, entry.fiscalYear, 'fy_audited')
     await applySlotSupersession(
         buildSlotKey({
             stock_code: entry.stockCode,
             document_kind: 'audited_financial',
             fiscal_year: entry.fiscalYear,
+            report_period: 'fy_audited',
         }),
         { document_id: documentId, filed_at: entry.filedAt }
     )

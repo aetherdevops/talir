@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T05:29:06.806Z",
+  "generatedAt": "2026-07-11T18:00:28.870Z",
   "all": [
     {
       "stockCode": "KPSS",
@@ -40,9 +40,9 @@
       "fiscalYear": 2025,
       "filedAt": "2026-06-30",
       "url": "https://seinet.com.mk/en/document/77870",
-      "netProfit": 31,
+      "netProfit": null,
       "eps": null,
-      "parseStatus": "partial",
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -502,7 +502,7 @@
       "fiscalYear": 2025,
       "filedAt": "2026-05-27",
       "url": "https://seinet.com.mk/en/document/77464",
-      "netProfit": 2494932,
+      "netProfit": 2535016,
       "eps": 36,
       "parseStatus": "parsed",
       "source": "SECNet"
@@ -612,7 +612,7 @@
       "fiscalYear": 2025,
       "filedAt": "2026-05-27",
       "url": "https://seinet.com.mk/en/document/77464",
-      "netProfit": 2494932,
+      "netProfit": 2535016,
       "eps": 36,
       "parseStatus": "parsed",
       "source": "SECNet"
@@ -766,9 +766,9 @@
       "fiscalYear": 2025,
       "filedAt": "2026-05-18",
       "url": "https://seinet.com.mk/en/document/77225",
-      "netProfit": 205072692,
+      "netProfit": null,
       "eps": null,
-      "parseStatus": "partial",
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -997,7 +997,7 @@
       "fiscalYear": 2025,
       "filedAt": "2026-04-30",
       "url": "https://seinet.com.mk/en/document/76979",
-      "netProfit": 18071624,
+      "netProfit": 18135038,
       "eps": null,
       "parseStatus": "partial",
       "source": "SECNet"
@@ -1679,9 +1679,9 @@
       "fiscalYear": 2025,
       "filedAt": "2025-08-26",
       "url": "https://seinet.com.mk/en/document/74228",
-      "netProfit": 69974,
+      "netProfit": null,
       "eps": null,
-      "parseStatus": "partial",
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -1921,8 +1921,8 @@
       "fiscalYear": 2024,
       "filedAt": "2025-05-30",
       "url": "https://seinet.com.mk/en/document/73318",
-      "netProfit": 2238814,
-      "eps": 36,
+      "netProfit": 2382421,
+      "eps": 34,
       "parseStatus": "parsed",
       "source": "SECNet"
     },
@@ -2207,7 +2207,7 @@
       "fiscalYear": 2024,
       "filedAt": "2025-05-26",
       "url": "https://seinet.com.mk/en/document/73091",
-      "netProfit": 18315867,
+      "netProfit": 18380075,
       "eps": null,
       "parseStatus": "partial",
       "source": "SECNet"
@@ -2768,7 +2768,7 @@
       "fiscalYear": 2024,
       "filedAt": "2025-04-29",
       "url": "https://seinet.com.mk/en/document/72347",
-      "netProfit": 276124471,
+      "netProfit": 255088358,
       "eps": null,
       "parseStatus": "partial",
       "source": "SECNet"
@@ -2955,9 +2955,9 @@
       "fiscalYear": 2024,
       "filedAt": "2025-04-17",
       "url": "https://seinet.com.mk/en/document/71955",
-      "netProfit": 565,
-      "eps": 0.39,
-      "parseStatus": "parsed",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -3285,9 +3285,9 @@
       "fiscalYear": 2024,
       "filedAt": "2024-10-31",
       "url": "https://seinet.com.mk/en/document/70352",
-      "netProfit": 4878,
+      "netProfit": null,
       "eps": null,
-      "parseStatus": "partial",
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -3340,9 +3340,9 @@
       "fiscalYear": 2024,
       "filedAt": "2024-07-30",
       "url": "https://seinet.com.mk/en/document/69403",
-      "netProfit": 4878,
+      "netProfit": null,
       "eps": null,
-      "parseStatus": "partial",
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -3725,8 +3725,8 @@
       "fiscalYear": 2023,
       "filedAt": "2024-05-30",
       "url": "https://seinet.com.mk/en/document/68674",
-      "netProfit": 2080351,
-      "eps": 36,
+      "netProfit": 2212068,
+      "eps": 34,
       "parseStatus": "parsed",
       "source": "SECNet"
     },
@@ -3769,9 +3769,9 @@
       "fiscalYear": 2023,
       "filedAt": "2024-05-29",
       "url": "https://seinet.com.mk/en/document/68653",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "netProfit": 3216860,
+      "eps": 3767,
+      "parseStatus": "parsed",
       "source": "SECNet"
     },
     {
@@ -4089,8 +4089,8 @@
       "filedAt": "2024-05-02",
       "url": "https://seinet.com.mk/en/document/68193",
       "netProfit": null,
-      "eps": 34.73,
-      "parseStatus": "parsed",
+      "eps": null,
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -4143,7 +4143,7 @@
       "fiscalYear": 2023,
       "filedAt": "2024-04-30",
       "url": "https://seinet.com.mk/en/document/68127",
-      "netProfit": 236116632,
+      "netProfit": 269251453,
       "eps": null,
       "parseStatus": "partial",
       "source": "SECNet"
@@ -4231,7 +4231,7 @@
       "fiscalYear": 2023,
       "filedAt": "2024-04-26",
       "url": "https://seinet.com.mk/en/document/67780",
-      "netProfit": 6604306,
+      "netProfit": 6835185,
       "eps": null,
       "parseStatus": "partial",
       "source": "SECNet"
@@ -4605,9 +4605,9 @@
       "fiscalYear": 2023,
       "filedAt": "2023-07-12",
       "url": "https://seinet.com.mk/en/document/64714",
-      "netProfit": 1943580,
+      "netProfit": null,
       "eps": null,
-      "parseStatus": "partial",
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -4616,7 +4616,7 @@
       "fiscalYear": 2023,
       "filedAt": "2023-07-06",
       "url": "https://seinet.com.mk/en/document/64691",
-      "netProfit": 192727371,
+      "netProfit": 269251453,
       "eps": null,
       "parseStatus": "partial",
       "source": "SECNet"
@@ -5089,9 +5089,9 @@
       "fiscalYear": 2022,
       "filedAt": "2023-05-29",
       "url": "https://seinet.com.mk/en/document/64124",
-      "netProfit": null,
+      "netProfit": 31,
       "eps": null,
-      "parseStatus": "link_only",
+      "parseStatus": "partial",
       "source": "SECNet"
     },
     {
@@ -5331,7 +5331,7 @@
       "fiscalYear": 2022,
       "filedAt": "2023-05-05",
       "url": "https://seinet.com.mk/en/document/63773",
-      "netProfit": 795994,
+      "netProfit": 1365619,
       "eps": null,
       "parseStatus": "partial",
       "source": "SECNet"
@@ -5837,9 +5837,9 @@
       "fiscalYear": 2022,
       "filedAt": "2022-07-04",
       "url": "https://seinet.com.mk/en/document/60191",
-      "netProfit": null,
+      "netProfit": 249402,
       "eps": null,
-      "parseStatus": "link_only",
+      "parseStatus": "partial",
       "source": "SECNet"
     },
     {
@@ -5882,8 +5882,8 @@
       "filedAt": "2022-06-23",
       "url": "https://seinet.com.mk/en/document/60067",
       "netProfit": null,
-      "eps": 6,
-      "parseStatus": "parsed",
+      "eps": null,
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -6464,9 +6464,9 @@
       "fiscalYear": 2021,
       "filedAt": "2022-05-23",
       "url": "https://seinet.com.mk/en/document/59555",
-      "netProfit": 31,
+      "netProfit": null,
       "eps": null,
-      "parseStatus": "partial",
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -6795,8 +6795,8 @@
       "filedAt": "2022-04-29",
       "url": "https://seinet.com.mk/en/document/58982",
       "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "eps": 3,
+      "parseStatus": "parsed",
       "source": "SECNet"
     },
     {
@@ -6893,9 +6893,9 @@
       "fiscalYear": 2021,
       "filedAt": "2022-04-20",
       "url": "https://seinet.com.mk/en/document/58571",
-      "netProfit": 31.12,
+      "netProfit": null,
       "eps": null,
-      "parseStatus": "partial",
+      "parseStatus": "link_only",
       "source": "SECNet"
     },
     {
@@ -7124,9 +7124,9 @@
       "fiscalYear": 2021,
       "filedAt": "2021-07-01",
       "url": "https://seinet.com.mk/en/document/55905",
-      "netProfit": null,
+      "netProfit": 31,
       "eps": null,
-      "parseStatus": "link_only",
+      "parseStatus": "partial",
       "source": "SECNet"
     },
     {
@@ -7234,9 +7234,9 @@
       "fiscalYear": 2020,
       "filedAt": "2021-06-17",
       "url": "https://seinet.com.mk/en/document/55796",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "netProfit": 1727373,
+      "eps": 30,
+      "parseStatus": "parsed",
       "source": "SECNet"
     },
     {
@@ -7960,9 +7960,9 @@
       "fiscalYear": 2020,
       "filedAt": "2021-04-29",
       "url": "https://seinet.com.mk/en/document/54979",
-      "netProfit": null,
+      "netProfit": 1185216,
       "eps": null,
-      "parseStatus": "link_only",
+      "parseStatus": "partial",
       "source": "SECNet"
     },
     {
@@ -8004,9 +8004,9 @@
       "fiscalYear": 2020,
       "filedAt": "2021-04-26",
       "url": "https://seinet.com.mk/en/document/54633",
-      "netProfit": null,
+      "netProfit": 1533690,
       "eps": null,
-      "parseStatus": "link_only",
+      "parseStatus": "partial",
       "source": "SECNet"
     },
     {
@@ -8235,9 +8235,9 @@
       "fiscalYear": 2020,
       "filedAt": "2021-02-26",
       "url": "https://seinet.com.mk/en/document/53723",
-      "netProfit": null,
+      "netProfit": 10292,
       "eps": null,
-      "parseStatus": "link_only",
+      "parseStatus": "partial",
       "source": "SECNet"
     },
     {
@@ -8411,9 +8411,9 @@
       "fiscalYear": 2020,
       "filedAt": "2020-07-03",
       "url": "https://seinet.com.mk/en/document/51321",
-      "netProfit": null,
+      "netProfit": 8291583,
       "eps": null,
-      "parseStatus": "link_only",
+      "parseStatus": "partial",
       "source": "SECNet"
     },
     {
@@ -8466,9 +8466,9 @@
       "fiscalYear": 2020,
       "filedAt": "2020-07-01",
       "url": "https://seinet.com.mk/en/document/51417",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "netProfit": 1727373,
+      "eps": 30,
+      "parseStatus": "parsed",
       "source": "SECNet"
     },
     {
@@ -8477,9 +8477,9 @@
       "fiscalYear": 2020,
       "filedAt": "2020-07-01",
       "url": "https://seinet.com.mk/en/document/51416",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "netProfit": 1727373,
+      "eps": 30,
+      "parseStatus": "parsed",
       "source": "SECNet"
     },
     {
@@ -9049,9 +9049,9 @@
       "fiscalYear": 2019,
       "filedAt": "2020-05-22",
       "url": "https://seinet.com.mk/en/document/50690",
-      "netProfit": null,
+      "netProfit": 38960818,
       "eps": null,
-      "parseStatus": "link_only",
+      "parseStatus": "partial",
       "source": "SECNet"
     },
     {
@@ -10072,9 +10072,9 @@
       "fiscalYear": 2018,
       "filedAt": "2019-05-10",
       "url": "https://seinet.com.mk/en/document/45875",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "netProfit": 1421564,
+      "eps": 31,
+      "parseStatus": "parsed",
       "source": "SECNet"
     },
     {
@@ -10479,9 +10479,9 @@
       "fiscalYear": 2017,
       "filedAt": "2018-04-16",
       "url": "https://seinet.com.mk/en/document/43028",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "netProfit": 1584851,
+      "eps": 18.37,
+      "parseStatus": "parsed",
       "source": "SECNet"
     },
     {
@@ -10545,9 +10545,9 @@
       "fiscalYear": 2016,
       "filedAt": "2017-04-25",
       "url": "https://seinet.com.mk/en/document/40854",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "netProfit": 1035942,
+      "eps": 12.01,
+      "parseStatus": "parsed",
       "source": "SECNet"
     },
     {
@@ -10567,9 +10567,9 @@
       "fiscalYear": 2016,
       "filedAt": "2017-04-25",
       "url": "https://seinet.com.mk/en/document/40854",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "netProfit": 1035942,
+      "eps": 12.01,
+      "parseStatus": "parsed",
       "source": "SECNet"
     },
     {
@@ -11349,8 +11349,8 @@
       "filedAt": "2007-02-28",
       "url": "https://seinet.com.mk/en/document/13646",
       "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
+      "eps": 375190,
+      "parseStatus": "parsed",
       "source": "SECNet"
     }
   ],
@@ -12975,9 +12975,9 @@
         "fiscalYear": 2025,
         "filedAt": "2025-08-26",
         "url": "https://seinet.com.mk/en/document/74228",
-        "netProfit": 69974,
+        "netProfit": null,
         "eps": null,
-        "parseStatus": "partial",
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -13041,9 +13041,9 @@
         "fiscalYear": 2022,
         "filedAt": "2022-07-04",
         "url": "https://seinet.com.mk/en/document/60191",
-        "netProfit": null,
+        "netProfit": 249402,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {
@@ -13096,9 +13096,9 @@
         "fiscalYear": 2020,
         "filedAt": "2021-04-26",
         "url": "https://seinet.com.mk/en/document/54633",
-        "netProfit": null,
+        "netProfit": 1533690,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {
@@ -13340,9 +13340,9 @@
         "fiscalYear": 2019,
         "filedAt": "2020-05-22",
         "url": "https://seinet.com.mk/en/document/50690",
-        "netProfit": null,
+        "netProfit": 38960818,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {
@@ -14418,8 +14418,8 @@
         "filedAt": "2007-02-28",
         "url": "https://seinet.com.mk/en/document/13646",
         "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "eps": 375190,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -14988,9 +14988,9 @@
         "fiscalYear": 2024,
         "filedAt": "2024-10-31",
         "url": "https://seinet.com.mk/en/document/70352",
-        "netProfit": 4878,
+        "netProfit": null,
         "eps": null,
-        "parseStatus": "partial",
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -15010,9 +15010,9 @@
         "fiscalYear": 2024,
         "filedAt": "2024-07-30",
         "url": "https://seinet.com.mk/en/document/69403",
-        "netProfit": 4878,
+        "netProfit": null,
         "eps": null,
-        "parseStatus": "partial",
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -15044,8 +15044,8 @@
         "filedAt": "2022-06-23",
         "url": "https://seinet.com.mk/en/document/60067",
         "netProfit": null,
-        "eps": 6,
-        "parseStatus": "parsed",
+        "eps": null,
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -15665,9 +15665,9 @@
         "fiscalYear": 2020,
         "filedAt": "2020-07-03",
         "url": "https://seinet.com.mk/en/document/51321",
-        "netProfit": null,
+        "netProfit": 8291583,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {
@@ -15799,9 +15799,9 @@
         "fiscalYear": 2024,
         "filedAt": "2025-04-17",
         "url": "https://seinet.com.mk/en/document/71955",
-        "netProfit": 565,
-        "eps": 0.39,
-        "parseStatus": "parsed",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -15876,9 +15876,9 @@
         "fiscalYear": 2021,
         "filedAt": "2022-04-20",
         "url": "https://seinet.com.mk/en/document/58571",
-        "netProfit": 31.12,
+        "netProfit": null,
         "eps": null,
-        "parseStatus": "partial",
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -16344,9 +16344,9 @@
         "fiscalYear": 2021,
         "filedAt": "2022-05-23",
         "url": "https://seinet.com.mk/en/document/59555",
-        "netProfit": 31,
+        "netProfit": null,
         "eps": null,
-        "parseStatus": "partial",
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -16911,9 +16911,9 @@
         "fiscalYear": 2021,
         "filedAt": "2021-07-01",
         "url": "https://seinet.com.mk/en/document/55905",
-        "netProfit": null,
+        "netProfit": 31,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {
@@ -17335,9 +17335,9 @@
         "fiscalYear": 2023,
         "filedAt": "2023-07-12",
         "url": "https://seinet.com.mk/en/document/64714",
-        "netProfit": 1943580,
+        "netProfit": null,
         "eps": null,
-        "parseStatus": "partial",
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -17957,9 +17957,9 @@
         "fiscalYear": 2025,
         "filedAt": "2026-06-30",
         "url": "https://seinet.com.mk/en/document/77870",
-        "netProfit": 31,
+        "netProfit": null,
         "eps": null,
-        "parseStatus": "partial",
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -18012,9 +18012,9 @@
         "fiscalYear": 2022,
         "filedAt": "2023-05-29",
         "url": "https://seinet.com.mk/en/document/64124",
-        "netProfit": null,
+        "netProfit": 31,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {
@@ -19372,7 +19372,7 @@
         "fiscalYear": 2025,
         "filedAt": "2026-05-27",
         "url": "https://seinet.com.mk/en/document/77464",
-        "netProfit": 2494932,
+        "netProfit": 2535016,
         "eps": 36,
         "parseStatus": "parsed",
         "source": "SECNet"
@@ -19394,7 +19394,7 @@
         "fiscalYear": 2025,
         "filedAt": "2026-05-27",
         "url": "https://seinet.com.mk/en/document/77464",
-        "netProfit": 2494932,
+        "netProfit": 2535016,
         "eps": 36,
         "parseStatus": "parsed",
         "source": "SECNet"
@@ -19416,8 +19416,8 @@
         "fiscalYear": 2024,
         "filedAt": "2025-05-30",
         "url": "https://seinet.com.mk/en/document/73318",
-        "netProfit": 2238814,
-        "eps": 36,
+        "netProfit": 2382421,
+        "eps": 34,
         "parseStatus": "parsed",
         "source": "SECNet"
       },
@@ -19449,8 +19449,8 @@
         "fiscalYear": 2023,
         "filedAt": "2024-05-30",
         "url": "https://seinet.com.mk/en/document/68674",
-        "netProfit": 2080351,
-        "eps": 36,
+        "netProfit": 2212068,
+        "eps": 34,
         "parseStatus": "parsed",
         "source": "SECNet"
       },
@@ -19504,9 +19504,9 @@
         "fiscalYear": 2020,
         "filedAt": "2021-06-17",
         "url": "https://seinet.com.mk/en/document/55796",
-        "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "netProfit": 1727373,
+        "eps": 30,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -19515,9 +19515,9 @@
         "fiscalYear": 2020,
         "filedAt": "2020-07-01",
         "url": "https://seinet.com.mk/en/document/51417",
-        "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "netProfit": 1727373,
+        "eps": 30,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -19526,9 +19526,9 @@
         "fiscalYear": 2020,
         "filedAt": "2020-07-01",
         "url": "https://seinet.com.mk/en/document/51416",
-        "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "netProfit": 1727373,
+        "eps": 30,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -19559,9 +19559,9 @@
         "fiscalYear": 2018,
         "filedAt": "2019-05-10",
         "url": "https://seinet.com.mk/en/document/45875",
-        "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "netProfit": 1421564,
+        "eps": 31,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -19592,9 +19592,9 @@
         "fiscalYear": 2017,
         "filedAt": "2018-04-16",
         "url": "https://seinet.com.mk/en/document/43028",
-        "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "netProfit": 1584851,
+        "eps": 18.37,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -19614,9 +19614,9 @@
         "fiscalYear": 2016,
         "filedAt": "2017-04-25",
         "url": "https://seinet.com.mk/en/document/40854",
-        "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "netProfit": 1035942,
+        "eps": 12.01,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -19636,9 +19636,9 @@
         "fiscalYear": 2016,
         "filedAt": "2017-04-25",
         "url": "https://seinet.com.mk/en/document/40854",
-        "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "netProfit": 1035942,
+        "eps": 12.01,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -19993,8 +19993,8 @@
         "filedAt": "2024-05-02",
         "url": "https://seinet.com.mk/en/document/68193",
         "netProfit": null,
-        "eps": 34.73,
-        "parseStatus": "parsed",
+        "eps": null,
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -20059,8 +20059,8 @@
         "filedAt": "2022-04-29",
         "url": "https://seinet.com.mk/en/document/58982",
         "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "eps": 3,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -20214,7 +20214,7 @@
         "fiscalYear": 2024,
         "filedAt": "2025-04-29",
         "url": "https://seinet.com.mk/en/document/72347",
-        "netProfit": 276124471,
+        "netProfit": 255088358,
         "eps": null,
         "parseStatus": "partial",
         "source": "SECNet"
@@ -20247,7 +20247,7 @@
         "fiscalYear": 2023,
         "filedAt": "2024-04-30",
         "url": "https://seinet.com.mk/en/document/68127",
-        "netProfit": 236116632,
+        "netProfit": 269251453,
         "eps": null,
         "parseStatus": "partial",
         "source": "SECNet"
@@ -20258,7 +20258,7 @@
         "fiscalYear": 2023,
         "filedAt": "2023-07-06",
         "url": "https://seinet.com.mk/en/document/64691",
-        "netProfit": 192727371,
+        "netProfit": 269251453,
         "eps": null,
         "parseStatus": "partial",
         "source": "SECNet"
@@ -20480,9 +20480,9 @@
         "fiscalYear": 2023,
         "filedAt": "2024-05-29",
         "url": "https://seinet.com.mk/en/document/68653",
-        "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
+        "netProfit": 3216860,
+        "eps": 3767,
+        "parseStatus": "parsed",
         "source": "SECNet"
       },
       {
@@ -20568,9 +20568,9 @@
         "fiscalYear": 2020,
         "filedAt": "2021-04-29",
         "url": "https://seinet.com.mk/en/document/54979",
-        "netProfit": null,
+        "netProfit": 1185216,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {
@@ -21181,9 +21181,9 @@
         "fiscalYear": 2020,
         "filedAt": "2021-02-26",
         "url": "https://seinet.com.mk/en/document/53723",
-        "netProfit": null,
+        "netProfit": 10292,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {
@@ -21438,7 +21438,7 @@
         "fiscalYear": 2025,
         "filedAt": "2026-04-30",
         "url": "https://seinet.com.mk/en/document/76979",
-        "netProfit": 18071624,
+        "netProfit": 18135038,
         "eps": null,
         "parseStatus": "partial",
         "source": "SECNet"
@@ -21471,7 +21471,7 @@
         "fiscalYear": 2024,
         "filedAt": "2025-05-26",
         "url": "https://seinet.com.mk/en/document/73091",
-        "netProfit": 18315867,
+        "netProfit": 18380075,
         "eps": null,
         "parseStatus": "partial",
         "source": "SECNet"
@@ -21504,7 +21504,7 @@
         "fiscalYear": 2023,
         "filedAt": "2024-04-26",
         "url": "https://seinet.com.mk/en/document/67780",
-        "netProfit": 6604306,
+        "netProfit": 6835185,
         "eps": null,
         "parseStatus": "partial",
         "source": "SECNet"
@@ -21537,7 +21537,7 @@
         "fiscalYear": 2022,
         "filedAt": "2023-05-05",
         "url": "https://seinet.com.mk/en/document/63773",
-        "netProfit": 795994,
+        "netProfit": 1365619,
         "eps": null,
         "parseStatus": "partial",
         "source": "SECNet"
@@ -22386,9 +22386,9 @@
         "fiscalYear": 2025,
         "filedAt": "2026-05-18",
         "url": "https://seinet.com.mk/en/document/77225",
-        "netProfit": 205072692,
+        "netProfit": null,
         "eps": null,
-        "parseStatus": "partial",
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
