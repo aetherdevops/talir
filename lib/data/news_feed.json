@@ -1,10 +1,36 @@
 {
-  "generatedAt": "2026-07-10T06:11:02.160Z",
-  "lastIssuerScan": "2026-07-10",
+  "generatedAt": "2026-07-11T05:19:17.097Z",
+  "lastIssuerScan": "2026-07-11",
   "count": 1534,
   "datedCount": 1534,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "RZIT-https-seinet-com-mk-en-document-77911",
+      "rawTitle": "7/10/2026 - RZ Inter-Transsped AD Skopje - Other decisions of the shareholders meeting",
+      "title": "RZIT: Transsped AD Skopje - Other decisions of the shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "RZIT",
+      "stockName": "RZh Inter-Transshped AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-10",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77911"
+    },
+    {
+      "id": "STB-https-seinet-com-mk-en-document-77914",
+      "rawTitle": "7/10/2026 - Stopanska banka AD Skopje - Changes in management and supervisory bodies",
+      "title": "STB: Changes in management and supervisory bodies",
+      "source": "SECNet",
+      "stockCode": "STB",
+      "stockName": "Stopanska banka AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-10",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77914"
+    },
     {
       "id": "TEL-https-seinet-com-mk-en-document-77907",
       "rawTitle": "7/9/2026 - Makedonski Telekom AD Skopje - Interested party transaction",
@@ -4879,19 +4905,6 @@
       "publishedAt": "2026-05-07",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77069"
-    },
-    {
-      "id": "STB-https-seinet-com-mk-en-document-77068",
-      "rawTitle": "5/7/2026 - Stopanska banka AD Skopje - Public call for shareholders meeting",
-      "title": "STB: Public call for shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "STB",
-      "stockName": "Stopanska banka AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-05-07",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77068"
     },
     {
       "id": "MZPU-https-seinet-com-mk-en-document-77062",
@@ -10677,19 +10690,6 @@
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75713"
-    },
-    {
-      "id": "RZIT-https-seinet-com-mk-en-document-75737",
-      "rawTitle": "3/2/2026 - RZ Inter-Transsped AD Skopje - Other price sensitive information",
-      "title": "RZIT: Transsped AD Skopje - Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "RZIT",
-      "stockName": "RZh Inter-Transshped AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-03-02",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75737"
     },
     {
       "id": "RZLV-https-seinet-com-mk-en-document-75728",
