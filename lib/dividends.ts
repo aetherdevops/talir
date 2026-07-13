@@ -1,6 +1,6 @@
 import { formatNewsDate } from './utils'
 
-export const DIVIDEND_PARSER_VERSION = '1.1.0'
+export const DIVIDEND_PARSER_VERSION = '1.4.2'
 
 /** Max plausible gross DPS for MSE ordinary shares (den.). Totals often exceed this. */
 const MAX_PLAUSIBLE_GROSS_PER_SHARE = 50_000
@@ -19,7 +19,7 @@ export interface DividendCalendarEntry {
     paymentStart: string | null
     paymentEnd: string | null
     parseStatus: DividendParseStatus
-    source: 'SECNet'
+    source: 'SECNet' | 'MSE' | 'manual'
     /** Gross per share ÷ EOD close on ex-date (%). Parsed entries only. */
     trailingYieldAtEx: number | null
     /** YoY change vs prior parsed calendar for same issuer (%). Parsed entries only. */
@@ -55,6 +55,45 @@ export function isDividendDisclosureTitle(rawTitle: string): boolean {
     return lower.includes('dividend') || lower.includes('distribution of profit')
 }
 
+/**
+ * Normalize noisy MK OCR before dividend regexes (Latin lookalikes, broken words).
+ * Safe for native PDF/HTML text — only expands synonyms / collapses whitespace.
+ */
+export function normalizeOcrDividendText(text: string): string {
+    let out = text.replace(/\s+/g, ' ').trim()
+
+    const replacements: Array<[RegExp, string]> = [
+        [/\bDEN\b/gi, 'ден'],
+        [/\bDEH\b/gi, 'ден'],
+        [/\bMKD\b/gi, 'mkd'],
+        [/дeн/gi, 'ден'],
+        [/дeнари/gi, 'денари'],
+        [/дeнар/gi, 'денар'],
+        [/бpyто/gi, 'бруто'],
+        [/бpуто/gi, 'бруто'],
+        [/бругo/gi, 'бруто'],
+        [/бруто-/gi, 'бруто-'],
+        [/дuвиденд/gi, 'дивиденд'],
+        [/дuвиденда/gi, 'дивиденда'],
+        [/дивuденда/gi, 'дивиденда'],
+        [/дивидeнда/gi, 'дивиденда'],
+        [/акциja/gi, 'акција'],
+        [/акциja/gi, 'акција'],
+        [/тргувaње/gi, 'тргување'],
+        [/тргувaнje/gi, 'тргување'],
+        [/пpаво/gi, 'право'],
+        [/пpaво/gi, 'право'],
+        [/KOHUAP|KOHYAP|КОНЦАР/gi, 'кончар'],
+        [/изнeсува/gi, 'изнесува'],
+        [/изнecува/gi, 'изнесува'],
+    ]
+    for (const [pattern, replacement] of replacements) {
+        out = out.replace(pattern, replacement)
+    }
+
+    return out.replace(/\s+/g, ' ').trim()
+}
+
 function parseEuDateToIso(value: string): string | null {
     const eu = value.match(/(\d{1,2})\.(\d{1,2})\.(\d{4})/)
     if (!eu) return null
@@ -68,19 +107,28 @@ function parseEuDateToIso(value: string): string | null {
 /** Parse MKD amounts: 2,571 · 1,350.00 · 1.350,00 · 150 denars · 150 денари */
 export function parseAmountMk(value: string): number | null {
     const normalized = value.replace(/\s+/g, ' ').trim()
-    const match = normalized.match(/(\d{1,3}(?:[.,\s]\d{3})*(?:[.,]\d+)?|\d+(?:[.,]\d+)?)/)
+    // Prefer dotted/comma decimals before thousand-group parsing so TEL DPS
+    // like 28.9250940552 is not truncated into fake European thousands.
+    const match = normalized.match(/(\d+(?:[.,]\d+)+|\d{1,3}(?:[.,\s]\d{3})+(?:[.,]\d+)?|\d+)/)
     if (!match) return null
 
     let raw = match[1].replace(/\s/g, '')
 
-    if (/^\d{1,3}(\.\d{3})+(,\d+)?$/.test(raw)) {
-        // European thousands: 1.350,00
+    if (/^\d{1,3}(\.\d{3}){2,}(,\d+)?$/.test(raw) || /^\d{1,3}(\.\d{3})+,\d+$/.test(raw)) {
+        // European thousands: 1.234.567 or 1.350,00
         raw = raw.replace(/\./g, '').replace(',', '.')
     } else if (/^\d{1,3}(,\d{3})+(\.\d+)?$/.test(raw)) {
         // US thousands: 2,571 or 1,350.00
         raw = raw.replace(/,/g, '')
     } else if (/^\d+,\d+$/.test(raw)) {
         raw = raw.replace(',', '.')
+    } else if (/^\d+\.\d{4,}$/.test(raw)) {
+        // Long English decimal DPS (TEL SA Resolution: 28.9250940552)
+    } else if (/^\d{1,3}(\.\d{3})+$/.test(raw)) {
+        // MK thousands without decimal comma: 4.620 → 4620 (Makpetrol)
+        raw = raw.replace(/\./g, '')
+    } else if (/^\d+\.\d+$/.test(raw)) {
+        // Short plain decimal (28.93, 4.62)
     } else {
         raw = raw.replace(/\.(?=\d{3})/g, '').replace(',', '.')
     }
@@ -115,7 +163,22 @@ function isPlausibleIsoDate(value: string | null): boolean {
     return year >= 2000 && year <= 2036
 }
 
-/** OCR text is never promoted to parsed; weak partial rows downgrade to link_only. */
+function hasPlausibleCoreDate(fields: {
+    cumDate: string | null
+    exDate: string | null
+    recordDate: string | null
+}): boolean {
+    return (
+        isPlausibleIsoDate(fields.exDate) ||
+        isPlausibleIsoDate(fields.cumDate) ||
+        isPlausibleIsoDate(fields.recordDate)
+    )
+}
+
+/**
+ * OCR text is never promoted to parsed.
+ * Partial requires gross DPS plus at least one of ex / cum / record.
+ */
 export function applyOcrParseCap(
     fields: {
         grossPerShare: number | null
@@ -133,8 +196,8 @@ export function applyOcrParseCap(
     if (status === 'parsed') status = 'partial'
 
     if (status === 'partial') {
-        if (fields.grossPerShare === null || fields.exDate === null) return 'link_only'
-        if (!isPlausibleIsoDate(fields.exDate)) return 'link_only'
+        if (fields.grossPerShare === null) return 'link_only'
+        if (!hasPlausibleCoreDate(fields)) return 'link_only'
         if (fields.grossPerShare < 1 || fields.grossPerShare > 1_000_000) return 'link_only'
     }
 
@@ -173,72 +236,150 @@ export interface ParseDividendCalendarOptions {
     fromOcr?: boolean
 }
 
-/** Parse dividend calendar fields from document body text — never invent missing values. */
-export function parseDividendCalendarText(
-    text: string,
-    options?: ParseDividendCalendarOptions
-): Omit<DividendCalendarEntry, 'stockCode' | 'stockName' | 'filedAt' | 'url' | 'source'> {
-    const normalized = text.replace(/\s+/g, ' ').trim()
+function matchLooksLikePerShare(match: RegExpMatchArray, text: string): boolean {
+    const start = Math.max(0, (match.index ?? 0) - 48)
+    const end = Math.min(text.length, (match.index ?? 0) + match[0].length + 48)
+    return /per\s+share|по\s*акци|по\s+една\s+акци|за\s+една\s+акци/i.test(text.slice(start, end))
+}
 
-    let grossPerShare: number | null = null
-    const grossPatterns = [
+function matchLooksLikeNominalValue(match: RegExpMatchArray, text: string): boolean {
+    const start = Math.max(0, (match.index ?? 0) - 64)
+    return /номинал/i.test(text.slice(start, (match.index ?? 0) + match[0].length))
+}
+
+/**
+ * Pick gross DPS from candidate regexes.
+ * Prefer matches whose context says "per share" / "по акција" so TEL's
+ * "total gross amount of MKD 2,494,931,182" never wins over per-share DPS.
+ */
+function extractGrossPerShare(normalized: string): number | null {
+    // TEL / Makedonski Telekom English SA Resolution template (DOC_10688 scans):
+    // "The gross amount of the dividend per share shall be MKD 28.925…"
+    // Keep these ahead of bare "gross amount of MKD <total>" patterns.
+    const perShareFirst: RegExp[] = [
+        /gross amount of (?:the )?dividend per share(?:\s+shall)?(?:\s+be|\s+is|\s+amounts?\s+to)?\s*(?:MKD|ден\.?|den\.?)?\s*(\d[\d\s.,]*)/i,
+        /(?:gross\s+)?dividend per share(?:\s+shall)?(?:\s+be|\s+is|\s+amounts?\s+to)?\s*(?:MKD|ден\.?|den\.?)?\s*(\d[\d\s.,]*)/i,
         /gross dividend per share is\s*(\d[\d\s.,]*)\s*(?:mkd|den|ден)?/i,
         /gross dividend per share[^0-9]{0,20}(\d[\d\s.,]*)\s*(?:mkd|den|ден|mkd)?/i,
         /gross amount of MKD\s*(\d[\d\s.,]*)\s*per/i,
         /gross amount of mkd\s*(\d[\d\s.,]*)\s*per\s*1?\s*ordinary share/i,
         /gross amount of\s*(\d[\d\s.,]*)\s*(?:mkd|den|ден)\s*per/i,
         /(\d[\d\s.,]*)\s*(?:mkd|den|ден|mkd)\s*per\s*(?:1\s*)?ordinary share/i,
+        // ALK English resolution: "720,00 Denars per share gross"
+        /(\d[\d\s.,]*)\s*Denars?\s+per\s+share\s+gross/i,
+        /per\s+share\s+net\s+or\s+(\d[\d\s.,]*)\s*Denars?\s+per\s+share\s+gross/i,
+        // TTK: "Висината на бруто-дивиденда по акција ќе изнесува 87,00 денари"
+        // (must beat later "43 денари бруто" cash/share split legs)
+        /висината на бруто[- ]?дивиденда по акција.{0,40}?(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
+        /бруто[- ]?дивиденда по акција.{0,40}?(?:изнесува|е)\s*(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
+        // STB preferred-share calendars: "бруто износ од денари 6,00 по акција"
+        /бруто\s+износ\s+од\s+(?:денари|ден\.?|mkd|MEA|МЕД)?\s*(\d[\d\s.,]*)\s*по\s*акци/i,
+        /(?:денари|ден\.?|mkd)\s*(\d[\d\s.,]*)\s*по\s*акци/i,
+        // ALK / MPT: "320,00 денари бруто, за една акција" / "4.620 денари бруто за една акција"
+        /(\d[\d\s.,]*)\s*(?:денари|ден\.?|mkd)\s*бруто(?:\s*,)?\s*за\s+една\s+акци/i,
+        /(\d[\d\s.,]*)\s*(?:денари|ден\.?|mkd)\s*бруто(?!\s*[-–]?\s*дивиденда\s+во)/i,
         /бруто-дивиденда по акција[^0-9]{0,40}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
-        /висината на бруто-дивиденда по акција[^0-9]{0,60}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
+        /бруто[- ]?дивиденда[^0-9]{0,50}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
+        /(\d[\d\s.,]*)\s*денари?\s*по\s*акци/i,
+        /по\s*акци[аја][^0-9]{0,40}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
+    ]
+    const fallback: RegExp[] = [
         /(\d[\d\s.,]*)\s*(?:ден|mkd|денари)\s*бруто/i,
         /бруто[^0-9]{0,30}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
-        /(\d[\d\s.,]*)\s*денари?\s*по\s*акци/i,
+        /изнесува[^0-9]{0,20}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
         /износ[^0-9]{0,40}(\d[\d\s.,]*)\s*(?:ден|mkd|денари)/i,
+        // OCR noise: "320,00 den бруто" / "130 ден. бруто"
+        /(\d[\d\s.,]*)\s*(?:ден\.?|den\.?|mkd)\s*(?:бруто|bruto)/i,
     ]
-    for (const pattern of grossPatterns) {
+
+    for (const pattern of perShareFirst) {
         const grossMatch = normalized.match(pattern)
         if (!grossMatch) continue
-        const candidate = sanitizeGrossPerShare(normalized, parseAmountMk(grossMatch[1]))
-        if (candidate !== null) {
-            grossPerShare = candidate
-            break
+        if (matchLooksLikeNominalValue(grossMatch, normalized)) continue
+        if (!matchLooksLikePerShare(grossMatch, normalized) && /gross amount of\s*(?:MKD|mkd)/i.test(grossMatch[0])) {
+            // Bare "gross amount of MKD <n> per …" still OK when "per" is in the match.
+            if (!/\bper\b/i.test(grossMatch[0])) continue
         }
+        const candidate = sanitizeGrossPerShare(normalized, parseAmountMk(grossMatch[1]))
+        if (candidate !== null) return candidate
     }
+
+    for (const pattern of fallback) {
+        const grossMatch = normalized.match(pattern)
+        if (!grossMatch) continue
+        if (matchLooksLikeNominalValue(grossMatch, normalized)) continue
+        const candidate = sanitizeGrossPerShare(normalized, parseAmountMk(grossMatch[1]))
+        if (candidate !== null) return candidate
+    }
+
+    return null
+}
+
+/** Parse dividend calendar fields from document body text — never invent missing values. */
+export function parseDividendCalendarText(
+    text: string,
+    options?: ParseDividendCalendarOptions
+): Omit<DividendCalendarEntry, 'stockCode' | 'stockName' | 'filedAt' | 'url' | 'source'> {
+    const normalized = normalizeOcrDividendText(text)
+
+    const grossPerShare = extractGrossPerShare(normalized)
 
     let cumDate: string | null = null
     const cumMatch = firstMatch(normalized, [
+        // TEL EN SA Resolution: "… with the right to dividend for the Year 2025 shall be 01.07.2026"
+        // Allow digits in the gap — "Year 2025" sits between the phrase and the date.
+        /last day of trading with the right to dividend.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /last date of trading with the right to dividend.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /Last day of trading with the right to dividend.{0,100}?shall be\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /last date of trading with right for dividends is\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /last date for trading with dividend right.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /last trading day cum[- ]dividend.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /cum[- ]dividend.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /последен датум на тргување со право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /последен ден на тргување со право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /последен датум[^0-9]{0,80}со право[^0-9]{0,40}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /последен ден.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /со право на дивиденда.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /со право[^0-9]{0,60}(\d{1,2}\.\d{1,2}\.\d{4})/i,
     ])
     if (cumMatch) cumDate = parseEuDateToIso(cumMatch[1])
 
     let exDate: string | null = null
     const exMatch = firstMatch(normalized, [
+        // TEL EN SA Resolution: "… without the right to dividend for the Year 2025 shall be 02.07.2026"
+        /first day of trading without the right to dividend.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /first date of trading without the right to dividend.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /first date for trading without dividend right.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /first date of trading without right for dividends is\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /first trading day ex[- ]dividend[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /ex[- ]dividend[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /прв датум на тргување без право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /без право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /без право[^0-9]{0,60}(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /прв датум[^0-9]{0,80}без право[^0-9]{0,40}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /прв ден[^0-9]{0,40}(\d{1,2}\.\d{1,2}\.\d{4})/i,
     ])
     if (exMatch) exDate = parseEuDateToIso(exMatch[1])
 
     let recordDate: string | null = null
     const recordMatch = firstMatch(normalized, [
+        // TEL EN SA Resolution: "recording date … for the Year 2025 is determined, shall be 03.07.2026"
+        // ALK EN: "The day of acquiring the right to dividend for 2025 shall be 16.04.2026"
+        /day of acquiring the right to dividend.{0,80}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /recording date.{0,160}?shall be\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /recording date.{0,160}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /list of the shareholders with right for dividends is determined is\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /recording date for determining the list of shareholders.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /record date[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /datum na evidencija[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /ден на евиденција[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        // STB: "Датум на евиденција … е 15.06.2022 година"
+        /датум на евиденција.{0,120}?е\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        // MPT: "датум на пресек … се утврдува 16.6.2026"
+        /датум на пресек.{0,200}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /датум на стекнување на право на дивиденда.{0,100}?(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /датум на евиденција[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /стекнување[^0-9]{0,60}(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /popis na akcioneri[^0-9]{0,40}(\d{1,2}\.\d{1,2}\.\d{4})/i,
     ])
     if (recordMatch) recordDate = parseEuDateToIso(recordMatch[1])
@@ -248,14 +389,28 @@ export function parseDividendCalendarText(
     const payStartMatch = firstMatch(normalized, [
         /dividend payout will start at\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /commencement date for dividend payout.*?(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        // ALK EN: "Payment of the dividend for 2025 shall commence on 13.05.2026"
+        /payment of the dividend.{0,80}?shall commence on\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /shall commence on\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /payment period[^0-9]{0,20}(\d{1,2}\.\d{1,2}\.\d{4})\s*[-–]\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
-        /исплата на дивидендата[^0-9]{0,40}(\d{1,2}\.\d{1,2}\.\d{4})/i,
-        /исплата[^0-9]{0,30}(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /исплата на дивидендата.{0,40}?започне\s+од\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /ќе започне од\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /започне[^0-9]{0,20}(\d{1,2}\.\d{1,2}\.\d{4})/i,
     ])
     if (payStartMatch) {
         paymentStart = parseEuDateToIso(payStartMatch[1])
         if (payStartMatch[2]) paymentEnd = parseEuDateToIso(payStartMatch[2])
+    }
+    // TEL EN SA Resolution: "payment of the dividend for the Year 2025 shall be effectuated up to 30.09.2026"
+    if (!paymentEnd) {
+        const payByMatch = firstMatch(normalized, [
+            /payment of the dividend.{0,100}?effectuated\s+(?:up\s+to|by)\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+            /(?:shall be )?effectuated\s+(?:up\s+to|by)\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+            // MPT: "Исплатата на дивиденда ќе се изврши до 30.9.2026"
+            /исплатата на дивиденда.{0,40}?изврши\s+до\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+            /изврши\s+до\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        ])
+        if (payByMatch) paymentEnd = parseEuDateToIso(payByMatch[1])
     }
 
     let profitYear: number | null = null
@@ -264,6 +419,7 @@ export function parseDividendCalendarText(
         /for the year (\d{4})/i,
         /за годината (\d{4})/i,
         /за (\d{4}) година/i,
+        /дивиденда за (\d{4})/i,
         /dividend right for the year (\d{4})/i,
         /without dividend right for the year (\d{4})/i,
     ])

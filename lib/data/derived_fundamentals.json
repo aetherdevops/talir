@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T05:58:48.538Z",
+  "generatedAt": "2026-07-13T13:16:20.385Z",
   "all": [
     {
       "stockCode": "KPSS",
@@ -569,9 +569,9 @@
       "filedAt": "2026-05-27",
       "url": "https://seinet.com.mk/en/document/77421",
       "netProfit": 1190654,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 10782.59,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "SBT",
@@ -756,9 +756,9 @@
       "filedAt": "2026-05-19",
       "url": "https://seinet.com.mk/en/document/77249",
       "netProfit": 55825,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 902.06,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "GRNT",
@@ -767,9 +767,9 @@
       "filedAt": "2026-05-18",
       "url": "https://seinet.com.mk/en/document/77225",
       "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
+      "eps": 63.44,
+      "parseStatus": "partial",
+      "source": "MSE"
     },
     {
       "stockCode": "VTKS",
@@ -1306,9 +1306,9 @@
       "filedAt": "2026-04-02",
       "url": "https://seinet.com.mk/en/document/76165",
       "netProfit": 12631,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 87.11,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "REPL",
@@ -1317,9 +1317,9 @@
       "filedAt": "2026-04-02",
       "url": "https://seinet.com.mk/en/document/76149",
       "netProfit": 2.211231661812211e+23,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 1177.13,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "TTK",
@@ -1405,9 +1405,9 @@
       "filedAt": "2026-03-30",
       "url": "https://seinet.com.mk/en/document/76025",
       "netProfit": 1984231,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 1254.61,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "ALK",
@@ -1658,9 +1658,9 @@
       "filedAt": "2026-01-30",
       "url": "https://seinet.com.mk/en/document/75255",
       "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
+      "eps": 191.12,
+      "parseStatus": "partial",
+      "source": "MSE"
     },
     {
       "stockCode": "FAKM",
@@ -1823,9 +1823,9 @@
       "filedAt": "2025-06-02",
       "url": "https://seinet.com.mk/en/document/73359",
       "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
+      "eps": 203.55,
+      "parseStatus": "partial",
+      "source": "MSE"
     },
     {
       "stockCode": "GRZD",
@@ -2087,9 +2087,9 @@
       "filedAt": "2025-05-29",
       "url": "https://seinet.com.mk/en/document/73190",
       "netProfit": 3294993,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 3858.03,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "APTK",
@@ -2219,9 +2219,9 @@
       "filedAt": "2025-05-26",
       "url": "https://seinet.com.mk/en/document/73101",
       "netProfit": 109565536,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 11.97,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "KONZ",
@@ -2417,9 +2417,9 @@
       "filedAt": "2025-05-21",
       "url": "https://seinet.com.mk/en/document/72952",
       "netProfit": 1061814770716,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 9829.83,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "SBT",
@@ -2824,9 +2824,9 @@
       "filedAt": "2025-04-29",
       "url": "https://seinet.com.mk/en/document/72371",
       "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
+      "eps": 889.7,
+      "parseStatus": "partial",
+      "source": "MSE"
     },
     {
       "stockCode": "MAKP",
@@ -3033,9 +3033,9 @@
       "filedAt": "2025-04-02",
       "url": "https://seinet.com.mk/en/document/71752",
       "netProfit": 13536,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 104.78,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "TTK",
@@ -3066,9 +3066,9 @@
       "filedAt": "2025-04-01",
       "url": "https://seinet.com.mk/en/document/71701",
       "netProfit": 1702570,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 1176.54,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "LOZP",
@@ -3088,185 +3088,196 @@
       "filedAt": "2025-04-01",
       "url": "https://seinet.com.mk/en/document/71701",
       "netProfit": 1702570,
+      "eps": 1176.54,
+      "parseStatus": "parsed",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "RZIT",
+      "stockName": "RZh Inter-Transshped AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-28",
+      "url": "https://seinet.com.mk/en/document/71631",
+      "netProfit": null,
       "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "RZIT",
+      "stockName": "RZh Inter-Transshped AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-28",
+      "url": "https://seinet.com.mk/en/document/71631",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MZHE",
+      "stockName": "Vabtek MZT AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-14",
+      "url": "https://seinet.com.mk/en/document/71517",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MZHE",
+      "stockName": "Vabtek MZT AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-14",
+      "url": "https://seinet.com.mk/en/document/71517",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "BANA",
+      "stockName": "Rudnici Banjani AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-11",
+      "url": "https://seinet.com.mk/en/document/71493",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "BANA",
+      "stockName": "Rudnici Banjani AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-11",
+      "url": "https://seinet.com.mk/en/document/71493",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "GTC",
+      "stockName": "GTC AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-03",
+      "url": "https://seinet.com.mk/en/document/71415",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "KJUBI",
+      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-03",
+      "url": "https://seinet.com.mk/en/document/71404",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TRPS",
+      "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-03",
+      "url": "https://seinet.com.mk/en/document/71429",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "GTC",
+      "stockName": "GTC AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-03",
+      "url": "https://seinet.com.mk/en/document/71415",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "KJUBI",
+      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-03",
+      "url": "https://seinet.com.mk/en/document/71404",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TRPS",
+      "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
+      "fiscalYear": 2024,
+      "filedAt": "2025-03-03",
+      "url": "https://seinet.com.mk/en/document/71429",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "KOMU",
+      "stockName": "DS Smith AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-02-28",
+      "url": "https://seinet.com.mk/en/document/71317",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "KOMU",
+      "stockName": "DS Smith AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2025-02-28",
+      "url": "https://seinet.com.mk/en/document/71317",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TETE",
+      "stockName": "Teteks AD Tetovo",
+      "fiscalYear": 2024,
+      "filedAt": "2025-02-27",
+      "url": "https://seinet.com.mk/en/document/71179",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TETE",
+      "stockName": "Teteks AD Tetovo",
+      "fiscalYear": 2024,
+      "filedAt": "2025-02-27",
+      "url": "https://seinet.com.mk/en/document/71179",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2024-12-31",
+      "url": "https://www.mse.mk/en/symbol/REPL",
+      "netProfit": null,
+      "eps": 864.95,
       "parseStatus": "partial",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "RZIT",
-      "stockName": "RZh Inter-Transshped AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-28",
-      "url": "https://seinet.com.mk/en/document/71631",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "RZIT",
-      "stockName": "RZh Inter-Transshped AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-28",
-      "url": "https://seinet.com.mk/en/document/71631",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MZHE",
-      "stockName": "Vabtek MZT AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-14",
-      "url": "https://seinet.com.mk/en/document/71517",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MZHE",
-      "stockName": "Vabtek MZT AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-14",
-      "url": "https://seinet.com.mk/en/document/71517",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "BANA",
-      "stockName": "Rudnici Banjani AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-11",
-      "url": "https://seinet.com.mk/en/document/71493",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "BANA",
-      "stockName": "Rudnici Banjani AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-11",
-      "url": "https://seinet.com.mk/en/document/71493",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "GTC",
-      "stockName": "GTC AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-03",
-      "url": "https://seinet.com.mk/en/document/71415",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "KJUBI",
-      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-03",
-      "url": "https://seinet.com.mk/en/document/71404",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TRPS",
-      "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-03",
-      "url": "https://seinet.com.mk/en/document/71429",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "GTC",
-      "stockName": "GTC AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-03",
-      "url": "https://seinet.com.mk/en/document/71415",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "KJUBI",
-      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-03",
-      "url": "https://seinet.com.mk/en/document/71404",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TRPS",
-      "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
-      "fiscalYear": 2024,
-      "filedAt": "2025-03-03",
-      "url": "https://seinet.com.mk/en/document/71429",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "KOMU",
-      "stockName": "DS Smith AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-02-28",
-      "url": "https://seinet.com.mk/en/document/71317",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "KOMU",
-      "stockName": "DS Smith AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-02-28",
-      "url": "https://seinet.com.mk/en/document/71317",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TETE",
-      "stockName": "Teteks AD Tetovo",
-      "fiscalYear": 2024,
-      "filedAt": "2025-02-27",
-      "url": "https://seinet.com.mk/en/document/71179",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TETE",
-      "stockName": "Teteks AD Tetovo",
-      "fiscalYear": 2024,
-      "filedAt": "2025-02-27",
-      "url": "https://seinet.com.mk/en/document/71179",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "LOZP",
@@ -3495,9 +3506,9 @@
       "filedAt": "2024-05-31",
       "url": "https://seinet.com.mk/en/document/68839",
       "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
+      "eps": 198.78,
+      "parseStatus": "partial",
+      "source": "MSE"
     },
     {
       "stockCode": "TEAL",
@@ -3605,9 +3616,9 @@
       "filedAt": "2024-05-31",
       "url": "https://seinet.com.mk/en/document/68839",
       "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
+      "eps": 198.78,
+      "parseStatus": "partial",
+      "source": "MSE"
     },
     {
       "stockCode": "TEAL",
@@ -4408,9 +4419,9 @@
       "filedAt": "2024-04-01",
       "url": "https://seinet.com.mk/en/document/67259",
       "netProfit": 1520547,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 1101.69,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "BANA",
@@ -4430,9 +4441,9 @@
       "filedAt": "2024-04-01",
       "url": "https://seinet.com.mk/en/document/67259",
       "netProfit": 1520547,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 1101.69,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "BANA",
@@ -4452,9 +4463,9 @@
       "filedAt": "2024-03-29",
       "url": "https://seinet.com.mk/en/document/67207",
       "netProfit": 12236,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 108.95,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "TTK",
@@ -4463,9 +4474,9 @@
       "filedAt": "2024-03-29",
       "url": "https://seinet.com.mk/en/document/67207",
       "netProfit": 12236,
-      "eps": null,
-      "parseStatus": "partial",
-      "source": "SECNet"
+      "eps": 108.95,
+      "parseStatus": "parsed",
+      "source": "MSE"
     },
     {
       "stockCode": "KMB",
@@ -4576,6 +4587,50 @@
       "eps": null,
       "parseStatus": "link_only",
       "source": "SECNet"
+    },
+    {
+      "stockCode": "MPT",
+      "stockName": "Makpetrol AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/MPT",
+      "netProfit": null,
+      "eps": 6987.26,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/REPL",
+      "netProfit": null,
+      "eps": 1082.67,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/GRNT",
+      "netProfit": null,
+      "eps": 41.39,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "UNI",
+      "stockName": "UNI Banka AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/UNI",
+      "netProfit": null,
+      "eps": 872.75,
+      "parseStatus": "partial",
+      "source": "MSE"
     },
     {
       "stockCode": "GTC",
@@ -11363,9 +11418,9 @@
         "filedAt": "2026-03-30",
         "url": "https://seinet.com.mk/en/document/76025",
         "netProfit": 1984231,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 1254.61,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "ALK",
@@ -11385,9 +11440,9 @@
         "filedAt": "2025-04-01",
         "url": "https://seinet.com.mk/en/document/71701",
         "netProfit": 1702570,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 1176.54,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "ALK",
@@ -11396,9 +11451,9 @@
         "filedAt": "2025-04-01",
         "url": "https://seinet.com.mk/en/document/71701",
         "netProfit": 1702570,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 1176.54,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "ALK",
@@ -11407,9 +11462,9 @@
         "filedAt": "2024-04-01",
         "url": "https://seinet.com.mk/en/document/67259",
         "netProfit": 1520547,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 1101.69,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "ALK",
@@ -11418,9 +11473,9 @@
         "filedAt": "2024-04-01",
         "url": "https://seinet.com.mk/en/document/67259",
         "netProfit": 1520547,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 1101.69,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "ALK",
@@ -18571,9 +18626,9 @@
         "filedAt": "2026-01-30",
         "url": "https://seinet.com.mk/en/document/75255",
         "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
-        "source": "SECNet"
+        "eps": 191.12,
+        "parseStatus": "partial",
+        "source": "MSE"
       },
       {
         "stockCode": "STB",
@@ -18582,9 +18637,9 @@
         "filedAt": "2025-06-02",
         "url": "https://seinet.com.mk/en/document/73359",
         "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
-        "source": "SECNet"
+        "eps": 203.55,
+        "parseStatus": "partial",
+        "source": "MSE"
       },
       {
         "stockCode": "STB",
@@ -18604,9 +18659,9 @@
         "filedAt": "2024-05-31",
         "url": "https://seinet.com.mk/en/document/68839",
         "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
-        "source": "SECNet"
+        "eps": 198.78,
+        "parseStatus": "partial",
+        "source": "MSE"
       },
       {
         "stockCode": "STB",
@@ -18615,9 +18670,9 @@
         "filedAt": "2024-05-31",
         "url": "https://seinet.com.mk/en/document/68839",
         "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
-        "source": "SECNet"
+        "eps": 198.78,
+        "parseStatus": "partial",
+        "source": "MSE"
       },
       {
         "stockCode": "STB",
@@ -20448,9 +20503,9 @@
         "filedAt": "2025-05-29",
         "url": "https://seinet.com.mk/en/document/73190",
         "netProfit": 3294993,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 3858.03,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "TNB",
@@ -21061,9 +21116,9 @@
         "filedAt": "2026-04-02",
         "url": "https://seinet.com.mk/en/document/76165",
         "netProfit": 12631,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 87.11,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "TTK",
@@ -21083,9 +21138,9 @@
         "filedAt": "2025-04-02",
         "url": "https://seinet.com.mk/en/document/71752",
         "netProfit": 13536,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 104.78,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "TTK",
@@ -21105,9 +21160,9 @@
         "filedAt": "2024-03-29",
         "url": "https://seinet.com.mk/en/document/67207",
         "netProfit": 12236,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 108.95,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "TTK",
@@ -21116,9 +21171,9 @@
         "filedAt": "2024-03-29",
         "url": "https://seinet.com.mk/en/document/67207",
         "netProfit": 12236,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 108.95,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "TTK",
@@ -22387,9 +22442,9 @@
         "filedAt": "2026-05-18",
         "url": "https://seinet.com.mk/en/document/77225",
         "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
-        "source": "SECNet"
+        "eps": 63.44,
+        "parseStatus": "partial",
+        "source": "MSE"
       },
       {
         "stockCode": "GRNT",
@@ -22398,9 +22453,20 @@
         "filedAt": "2025-05-26",
         "url": "https://seinet.com.mk/en/document/73101",
         "netProfit": 109565536,
-        "eps": null,
+        "eps": 11.97,
+        "parseStatus": "parsed",
+        "source": "MSE"
+      },
+      {
+        "stockCode": "GRNT",
+        "stockName": "Granit AD Skopje",
+        "fiscalYear": 2023,
+        "filedAt": "2023-12-31",
+        "url": "https://www.mse.mk/en/symbol/GRNT",
+        "netProfit": null,
+        "eps": 41.39,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       }
     ],
     "INHO": [
@@ -22459,9 +22525,9 @@
         "filedAt": "2026-05-27",
         "url": "https://seinet.com.mk/en/document/77421",
         "netProfit": 1190654,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 10782.59,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "MPT",
@@ -22470,9 +22536,20 @@
         "filedAt": "2025-05-21",
         "url": "https://seinet.com.mk/en/document/72952",
         "netProfit": 1061814770716,
-        "eps": null,
+        "eps": 9829.83,
+        "parseStatus": "parsed",
+        "source": "MSE"
+      },
+      {
+        "stockCode": "MPT",
+        "stockName": "Makpetrol AD Skopje",
+        "fiscalYear": 2023,
+        "filedAt": "2023-12-31",
+        "url": "https://www.mse.mk/en/symbol/MPT",
+        "netProfit": null,
+        "eps": 6987.26,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       }
     ],
     "MTUR": [
@@ -22581,9 +22658,31 @@
         "filedAt": "2026-04-02",
         "url": "https://seinet.com.mk/en/document/76149",
         "netProfit": 2.211231661812211e+23,
-        "eps": null,
+        "eps": 1177.13,
+        "parseStatus": "parsed",
+        "source": "MSE"
+      },
+      {
+        "stockCode": "REPL",
+        "stockName": "Replek AD Skopje",
+        "fiscalYear": 2024,
+        "filedAt": "2024-12-31",
+        "url": "https://www.mse.mk/en/symbol/REPL",
+        "netProfit": null,
+        "eps": 864.95,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
+      },
+      {
+        "stockCode": "REPL",
+        "stockName": "Replek AD Skopje",
+        "fiscalYear": 2023,
+        "filedAt": "2023-12-31",
+        "url": "https://www.mse.mk/en/symbol/REPL",
+        "netProfit": null,
+        "eps": 1082.67,
+        "parseStatus": "partial",
+        "source": "MSE"
       }
     ],
     "RZEK": [
@@ -22799,9 +22898,9 @@
         "filedAt": "2026-05-19",
         "url": "https://seinet.com.mk/en/document/77249",
         "netProfit": 55825,
-        "eps": null,
-        "parseStatus": "partial",
-        "source": "SECNet"
+        "eps": 902.06,
+        "parseStatus": "parsed",
+        "source": "MSE"
       },
       {
         "stockCode": "UNI",
@@ -22810,9 +22909,20 @@
         "filedAt": "2025-04-29",
         "url": "https://seinet.com.mk/en/document/72371",
         "netProfit": null,
-        "eps": null,
-        "parseStatus": "link_only",
-        "source": "SECNet"
+        "eps": 889.7,
+        "parseStatus": "partial",
+        "source": "MSE"
+      },
+      {
+        "stockCode": "UNI",
+        "stockName": "UNI Banka AD Skopje",
+        "fiscalYear": 2023,
+        "filedAt": "2023-12-31",
+        "url": "https://www.mse.mk/en/symbol/UNI",
+        "netProfit": null,
+        "eps": 872.75,
+        "parseStatus": "partial",
+        "source": "MSE"
       }
     ],
     "USJE": [

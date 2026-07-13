@@ -16,7 +16,7 @@ export interface FundamentalEntry {
     netProfit: number | null
     eps: number | null
     parseStatus: FundamentalParseStatus
-    source: 'SECNet'
+    source: 'SECNet' | 'MSE' | 'manual'
 }
 
 export interface FundamentalsFile {

@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 /**
- * One-shot: apply migrations → ingest MBI10 dividends (OCR) → regenerate derived_dividends.json
+ * One-shot: apply migrations → force-OCR ingest ALL dividend calendars → regenerate derived_dividends.json
  * Requires .env.local:
  *   NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_ACCESS_TOKEN
  *   TALIR_DOCUMENT_STORE=supabase
+ *
+ * Always uses TALIR_SCOPE=ALL (ignores ambient shell / .env TALIR_SCOPE).
+ * For MBI10-only: npm run ingest:dividends with TALIR_SCOPE=MBI10.
  */
 import { spawnSync } from 'child_process'
 import fs from 'fs'
@@ -64,17 +67,18 @@ requireKeys(env)
 
 run('Apply Supabase migrations', 'npm', ['run', 'db:apply'])
 
-run('Ingest dividend documents (MBI10 + OCR)', 'npm', ['run', 'ingest:dividends'], {
+run('Ingest dividend documents (ALL + OCR + force)', 'npm', ['run', 'ingest:dividends'], {
     TALIR_DOCUMENT_STORE: 'supabase',
-    TALIR_SCOPE: 'MBI10',
+    TALIR_SCOPE: 'ALL',
     TALIR_OCR_DIVIDENDS: '1',
+    TALIR_PARSE_FORCE: '1',
 })
 
 run('Generate dividends calendar (merge from Supabase)', 'npm', ['run', 'generate:dividends'], {
     TALIR_DOCUMENT_STORE: 'supabase',
     TALIR_PARSE_DIVIDENDS: '1',
     TALIR_OCR_DIVIDENDS: '1',
-    TALIR_OCR_DIVIDEND_CODES: 'ALK,GRNT,KMB,MPT,STB,TEL,TNB,TTK',
+    TALIR_SCOPE: 'ALL',
 })
 
 console.log('\nDone. Check lib/data/derived_dividends.json and test /stock/KMB, /dividends.')

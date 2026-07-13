@@ -14,9 +14,19 @@ import {
     isDividendCalendarTitle,
     latestDisclosedDividend,
     latestParsedDividend,
+    normalizeOcrDividendText,
     parseAmountMk,
     parseDividendCalendarText,
 } from './dividends.ts'
+
+describe('normalizeOcrDividendText', () => {
+    it('fixes common Latin lookalikes in MK OCR', () => {
+        const out = normalizeOcrDividendText('бpуто дuвиденда 45 дeнари')
+        assert.match(out, /бруто/)
+        assert.match(out, /дивиденда/)
+        assert.match(out, /денари/)
+    })
+})
 
 describe('isDividendCalendarTitle', () => {
     it('matches dividend calendar titles', () => {
@@ -30,6 +40,11 @@ describe('parseAmountMk', () => {
         assert.equal(parseAmountMk('2,571 MKD'), 2571)
         assert.equal(parseAmountMk('1,350.00'), 1350)
         assert.equal(parseAmountMk('150 денари по акција'), 150)
+        assert.equal(parseAmountMk('28.9250940552'), 28.9250940552)
+        assert.equal(parseAmountMk('1.350,00'), 1350)
+        assert.equal(parseAmountMk('1.234.567'), 1234567)
+        assert.equal(parseAmountMk('4.620'), 4620)
+        assert.equal(parseAmountMk('6,00'), 6)
     })
 })
 
@@ -124,6 +139,114 @@ describe('parseDividendCalendarText', () => {
         assert.equal(parsed.grossPerShare, null)
     })
 
+    it('parses TEL English SA Resolution OCR (attachment 83381)', () => {
+        // Real OCR text from Makedonski Telekom DOC_10688 scan (FY 2025 calendar).
+        const telOcr = `
+            Pursuant to the Law on Trade Companies, the Statute of Makedonski Telekom AD - Skopje
+            (the Company), the Proposal of the Board of Directors on the payment of the dividend of the
+            Company for the Year 2025 and determination of the dividend calendar
+            Article 1 The Shareholders' Assembly of the Company hereby approves the dividend payment
+            for the year 2025 in a total gross amount of MKD 2,494,931,182.00 (two billion four hundred
+            and ninety-four million nine hundred and thirty-one thousand one hundred and eighty-two denars),
+            which in accordance with the Resolution on the distribution of the net profit of the Company
+            for the Year 2025 is the net profit generated. The gross amount of the dividend per share
+            shall be MKD 28.9250940552 (twenty-eight denars and ninety-three deni, rounded up to two decimals).
+            Article 2 The recording date in accordance with which the list of shareholders who are entitled
+            to a dividend for the Year 2025 is determined, shall be 03.07.2026.
+            Article 3 The last day of trading with the right to dividend for the Year 2025 shall be 01.07.2026.
+            Article 4 The first day of trading without the right to dividend for the Year 2025 shall be 02.07.2026.
+            Article 5 The payment of the dividend for the Year 2025 shall be effectuated up to 30.09.2026.
+        `
+        const parsed = parseDividendCalendarText(telOcr, { fromOcr: true })
+
+        assert.ok(parsed.grossPerShare !== null)
+        assert.ok(Math.abs(parsed.grossPerShare! - 28.9250940552) < 1e-6)
+        assert.equal(parsed.cumDate, '2026-07-01')
+        assert.equal(parsed.exDate, '2026-07-02')
+        assert.equal(parsed.recordDate, '2026-07-03')
+        assert.equal(parsed.paymentEnd, '2026-09-30')
+        assert.equal(parsed.parseStatus, 'partial')
+    })
+
+    it('parses STB preferred-share бруто износ OCR without taking nominal 400', () => {
+        const stbOcr = `
+            ОДЛУКА за начинот на пресметување и исплата на дивидендата на приоритетните акции
+            на Стопанска банка АД - Скопје за 2024 година
+            1. Стопанска банка АД - Скопје (СБ) ќе изврши исплата на дивиденда на приоритетните акции
+            за 2024 година во вкупен износ од денари 1.364.664,00 или бруто износ од денари 6,00 по акција.
+            2. Основицата за пресметка на дивидендата изнесува денари 90.977.600,00
+            (227.444 приоритетни акции по номинална вредност од денари 400,00 по акција).
+            3. Датум на евиденција според кој се определува листата на акционери кои имаат право на дивиденда,
+            односно датум на пресек на Акционерската книга, е 16.06.2025 година.
+            4. Последен ден на тргување со право на дивиденда е 12.06.2025 година.
+            5. Прв ден на тргување без право на дивиденда е 13.06.2025 година.
+        `
+        const parsed = parseDividendCalendarText(stbOcr, { fromOcr: true })
+        assert.equal(parsed.grossPerShare, 6)
+        assert.equal(parsed.cumDate, '2025-06-12')
+        assert.equal(parsed.exDate, '2025-06-13')
+        assert.equal(parsed.recordDate, '2025-06-16')
+        assert.equal(parsed.parseStatus, 'partial')
+    })
+
+    it('parses MPT MK thousands DPS 4.620 as 4620', () => {
+        const mptOcr = `
+            ОДЛУКА за плаќање на дивиденда по Годишната сметка на Друштвото за 2025 година
+            Член 1 На акционерите на Макпетрол АД Скопје се одобрува плаќање на дивиденда во висина од
+            467.285.280 денари бруто, односно 4.620 денари бруто за една акција.
+            Член 2 За датум на пресек на акционерската книга според која се определува листата на акционери
+            кои имаат право на исплата на дивиденда се утврдува 16.6.2026 година.
+            Член 3 За последен ден на тргување со право на дивиденда се утврдува 12.6.2026 година.
+            Член 4 За прв ден на тргување без право на дивиденда се утврдува 15.6.2026 година.
+            Член 5 Исплатата на дивиденда ќе се изврши до 30.9.2026 година.
+        `
+        const parsed = parseDividendCalendarText(mptOcr, { fromOcr: true })
+        assert.equal(parsed.grossPerShare, 4620)
+        assert.equal(parsed.cumDate, '2026-06-12')
+        assert.equal(parsed.exDate, '2026-06-15')
+        assert.equal(parsed.recordDate, '2026-06-16')
+        assert.equal(parsed.paymentStart, null)
+        assert.equal(parsed.paymentEnd, '2026-09-30')
+        assert.equal(parsed.parseStatus, 'partial')
+    })
+
+    it('parses TTK total бруто-дивиденда not cash/share split leg', () => {
+        const ttkOcr = `
+            ОДЛУКА за определување на износот на дивиденда и датуми на исплата на дивиденда за 2025 година
+            Член 1 Да се исплати дивидендата во бруто-износ од 89.886.051 денари.
+            Член 2 Висината на бруто-дивиденда по акција ќе изнесува 87,00 денари, односно 8,7% од номиналната
+            вредност на акциите којашто изнесува 1.000 денари и тоа 43 денари бруто - дивиденда во акции
+            и 44 денари бруто -дивиденда во пари.
+            Член 4 Последен ден на тргување со право на дивиденда за 2025 година е 27.3.2026 година.
+            Член 5 Прв ден на тргување без право на дивиденда за 2025 година е 30.3.2026 година.
+        `
+        const parsed = parseDividendCalendarText(ttkOcr, { fromOcr: true })
+        assert.equal(parsed.grossPerShare, 87)
+        assert.equal(parsed.cumDate, '2026-03-27')
+        assert.equal(parsed.exDate, '2026-03-30')
+        assert.equal(parsed.parseStatus, 'partial')
+    })
+
+    it('parses ALK English Denars per share gross resolution', () => {
+        const alkEn = `
+            RESOLUTION on the dates for payment of the 2025 dividend (dividend calendar)
+            Article 1 Pursuant to the Resolution on use and distribution of the net profit earned under
+            the 2025 annual account, shareholders shall be paid 648,00 Denars per share net or
+            720,00 Denars per share gross as dividend for 2025.
+            Article 2 Last day of trading with the right to dividend for 2025 shall be 14.04.2026.
+            Article 3 First day of trading without the right to dividend for 2025 shall be 15.04.2026.
+            Article 4 The day of acquiring the right to dividend for 2025 shall be 16.04.2026.
+            Article 5 Payment of the dividend for 2025 shall commence on 13.05.2026.
+        `
+        const parsed = parseDividendCalendarText(alkEn)
+        assert.equal(parsed.grossPerShare, 720)
+        assert.equal(parsed.cumDate, '2026-04-14')
+        assert.equal(parsed.exDate, '2026-04-15')
+        assert.equal(parsed.recordDate, '2026-04-16')
+        assert.equal(parsed.paymentStart, '2026-05-13')
+        assert.equal(parsed.parseStatus, 'parsed')
+    })
+
     it('caps OCR-sourced full parse at partial', () => {
         const parsed = parseDividendCalendarText(
             `
@@ -140,21 +263,62 @@ describe('parseDividendCalendarText', () => {
         assert.equal(parsed.parseStatus, 'partial')
     })
 
-    it('downgrades OCR partial without ex-date to link_only', () => {
+    it('downgrades OCR without gross or any core date to link_only', () => {
         const parsed = parseDividendCalendarText('gross dividend per share is 150 denars', { fromOcr: true })
         assert.equal(parsed.grossPerShare, 150)
         assert.equal(parsed.parseStatus, 'link_only')
     })
+
+    it('keeps OCR partial when gross + cum date (no ex)', () => {
+        const parsed = parseDividendCalendarText(
+            'gross dividend per share is 130 denars. последен ден со право на дивиденда 06.07.2024',
+            { fromOcr: true }
+        )
+        assert.equal(parsed.grossPerShare, 130)
+        assert.equal(parsed.cumDate, '2024-07-06')
+        assert.equal(parsed.parseStatus, 'partial')
+    })
+
+    it('parses noisy OCR TEHN-style Cyrillic text', () => {
+        const noisy = `
+            бpуто-дuвиденда по акција изнeсува 45,00 дeнари.
+            Последен датум на тргувaње со пpаво на дивиденда 10.06.2025.
+            Прв датум на тргување без право на дивиденда 11.06.2025.
+            Исплата ќе започне од 01.07.2025.
+            дивиденда за 2024 година
+        `
+        const parsed = parseDividendCalendarText(noisy, { fromOcr: true })
+        assert.equal(parsed.grossPerShare, 45)
+        assert.equal(parsed.exDate, '2025-06-11')
+        assert.equal(parsed.cumDate, '2025-06-10')
+        assert.equal(parsed.paymentStart, '2025-07-01')
+        assert.equal(parsed.profitYear, 2024)
+        assert.equal(parsed.parseStatus, 'partial')
+    })
 })
 
 describe('applyOcrParseCap', () => {
-    it('requires gross and ex-date for OCR partial', () => {
+    it('accepts OCR partial with gross and cum/record when ex missing', () => {
         assert.equal(
             applyOcrParseCap(
                 {
                     grossPerShare: 100,
                     cumDate: null,
                     exDate: '2026-06-10',
+                    recordDate: null,
+                    paymentStart: null,
+                    paymentEnd: null,
+                },
+                true
+            ),
+            'partial'
+        )
+        assert.equal(
+            applyOcrParseCap(
+                {
+                    grossPerShare: 100,
+                    cumDate: '2026-06-09',
+                    exDate: null,
                     recordDate: null,
                     paymentStart: null,
                     paymentEnd: null,

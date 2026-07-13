@@ -18,6 +18,7 @@ const MIGRATIONS = [
     '004_seinet_documents.sql',
     '005_drop_document_text_extractions.sql',
     '006_seinet_report_period.sql',
+    '007_dividend_overrides.sql',
 ]
 
 function loadEnvFile(filePath) {

@@ -33,10 +33,12 @@ import {
     walkAuditedFinancialChain,
     type SeinetFundamentalMeta,
 } from '../lib/seinet-document'
+import { applyMseFundamentalsEps, loadMseSymbolRatiosFile } from '../lib/mse-symbol-ratios'
 
 const dataDir = path.join(process.cwd(), 'lib', 'data')
 const issuersPath = path.join(dataDir, 'issuers.json')
 const outPath = path.join(dataDir, 'derived_fundamentals.json')
+const mseRatiosPath = path.join(dataDir, 'mse_symbol_ratios.json')
 
 const AUDITED_TITLE = 'Audited financial statements'
 
@@ -324,6 +326,16 @@ async function main(): Promise<void> {
     }
 
     await enrichWithDocumentParse(entries)
+
+    const mseRatios = loadMseSymbolRatiosFile(dataDir)
+    if (mseRatios) {
+        const { filled, created } = applyMseFundamentalsEps(entries, mseRatios, { dataDir })
+        console.log(
+            `Fundamentals MSE ratios: filled ${filled} EPS gaps, created ${created} synthetic rows from ${mseRatiosPath}`
+        )
+    } else {
+        console.log(`Fundamentals MSE ratios: skipped (missing ${mseRatiosPath})`)
+    }
 
     const payload = buildFundamentalsFile(entries)
     fs.writeFileSync(outPath, JSON.stringify(payload, null, 2))

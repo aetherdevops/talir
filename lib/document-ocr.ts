@@ -7,6 +7,7 @@ import path from 'path'
 import { createHash } from 'crypto'
 
 const CACHE_PATH = path.join(process.cwd(), 'lib', 'data', 'dividend_ocr_cache.json')
+const DEFAULT_RENDER_SCALE = 2.5
 
 export type OcrCacheEntry = { text: string; cachedAt: string; text_sha256?: string }
 export type OcrCache = Record<string, OcrCacheEntry>
@@ -32,6 +33,19 @@ export function saveOcrCache(cache: OcrCache): void {
     fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2))
 }
 
+/** Prefer repo-root traineddata when present so MK OCR does not depend on CDN downloads. */
+function resolveOcrLangPath(): string | undefined {
+    const root = process.cwd()
+    const mkd = path.join(root, 'mkd.traineddata')
+    const eng = path.join(root, 'eng.traineddata')
+    if (fs.existsSync(mkd) && fs.existsSync(eng)) return root
+    return undefined
+}
+
+function shouldBustOcrCache(): boolean {
+    return process.env.TALIR_PARSE_FORCE === '1' || process.env.TALIR_OCR_FORCE === '1'
+}
+
 async function renderPdfPagesToBuffers(buffer: Buffer, maxPages = DEFAULT_OCR_MAX_PAGES): Promise<Buffer[]> {
     const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs')
     const { createCanvas } = await import('@napi-rs/canvas')
@@ -49,7 +63,7 @@ async function renderPdfPagesToBuffers(buffer: Buffer, maxPages = DEFAULT_OCR_MA
 
     for (let pageNum = 1; pageNum <= pageCount; pageNum++) {
         const page = await pdf.getPage(pageNum)
-        const viewport = page.getViewport({ scale: 2 })
+        const viewport = page.getViewport({ scale: DEFAULT_RENDER_SCALE })
         const canvas = createCanvas(viewport.width, viewport.height)
         const context = canvas.getContext('2d')
 
@@ -69,6 +83,7 @@ export async function loadCachedText(
     attachmentId: number,
     bufferSha256?: string
 ): Promise<string | null> {
+    if (shouldBustOcrCache()) return null
     const key = String(attachmentId)
     const cached = loadOcrCache()[key]
     if (cached?.text && cached.text.length > 20) {
@@ -109,7 +124,10 @@ export async function ocrPdfBuffer(
         if (!images.length) return null
 
         const { createWorker } = await import('tesseract.js')
-        const worker = await createWorker('mkd+eng')
+        const langPath = resolveOcrLangPath()
+        const worker = langPath
+            ? await createWorker('mkd+eng', undefined, { langPath })
+            : await createWorker('mkd+eng')
         const parts: string[] = []
 
         for (const image of images) {

@@ -297,6 +297,26 @@ async function extractPdfText(buffer: Buffer): Promise<string | null> {
     }
 }
 
+/**
+ * Thin or non-calendar PDF text layers should yield to OCR when enabled
+ * (common for scans that still embed a few garbage characters).
+ */
+export function shouldPreferOcrOverPdfText(text: string): boolean {
+    const normalized = text.replace(/\s+/g, ' ').trim()
+    if (normalized.length < 80) return true
+
+    const hasDate = /\d{1,2}[./]\d{1,2}[./]\d{4}/.test(normalized)
+    const hasDividendCue =
+        /dividend|дивиденд|бруто|bruto|gross|акци|денар|денари|mkd/i.test(normalized)
+    const hasAmount = /\d[\d\s.,]{0,12}\s*(?:ден|mkd|денари|den)/i.test(normalized)
+
+    if (!hasDate && !hasDividendCue) return true
+    if (hasDividendCue && !hasDate && !hasAmount) return true
+    // Thin text layer often has calendar dates but no DPS — force OCR (ALK scans).
+    if (hasDate && !hasAmount) return true
+    return false
+}
+
 function isPdfAttachment(att: SeinetAttachment): boolean {
     return /\.pdf$/i.test(att.fileName) || att.mimeType === 'application/pdf'
 }
@@ -304,7 +324,7 @@ function isPdfAttachment(att: SeinetAttachment): boolean {
 /**
  * Extract parseable text from a dividend calendar document: PDF attachments first,
  * then substantive HTML content (excluding auto-generated link-only wrappers).
- * Optional OCR when TALIR_OCR_DIVIDENDS=1 and PDF text layer is empty.
+ * Optional OCR when TALIR_OCR_DIVIDENDS=1 and PDF text layer is empty/thin.
  */
 export async function fetchDividendDocumentText(
     documentUrl: string,
@@ -343,7 +363,7 @@ export async function fetchDividendDocumentText(
             }
 
             const pdfText = await extractPdfText(buffer)
-            if (pdfText) {
+            if (pdfText && !(allowOcr && shouldPreferOcrOverPdfText(pdfText))) {
                 return {
                     text: pdfText,
                     source: 'pdf_text',
@@ -363,6 +383,15 @@ export async function fetchDividendDocumentText(
                         attachmentId: att.attachmentId,
                         textSha256: hash,
                     }
+                }
+            }
+
+            if (pdfText) {
+                return {
+                    text: pdfText,
+                    source: 'pdf_text',
+                    attachmentId: att.attachmentId,
+                    textSha256: hash,
                 }
             }
             continue

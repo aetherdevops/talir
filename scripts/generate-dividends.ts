@@ -31,11 +31,19 @@ import {
     loadDividendExtractionsFromStore,
 } from '../lib/document-store'
 import { fetchDividendDocumentText, parseDocumentIdFromUrl } from '../lib/seinet-document'
+import {
+    applyDividendOverrides,
+    applyMseDividendRatios,
+    loadMseSymbolRatiosFile,
+    type DividendOverrideRow,
+} from '../lib/mse-symbol-ratios'
+import { getSupabaseAdminOrNull } from '../lib/supabase/admin'
 
 const { dataDir, issuersPath } = defaultDataPaths()
 const stocksDir = path.join(dataDir, 'stocks')
 const outPath = path.join(dataDir, 'derived_dividends.json')
 const fundamentalsPath = path.join(dataDir, 'derived_fundamentals.json')
+const mseRatiosPath = path.join(dataDir, 'mse_symbol_ratios.json')
 
 const historyCache = new Map<string, EodPriceRow[] | null>()
 
@@ -102,6 +110,15 @@ function loadExistingParsedFields(): Map<string, ParsedFieldSnapshot> {
     }
 }
 
+function parseQualityScore(fields: {
+    parseStatus: DividendCalendarEntry['parseStatus']
+    grossPerShare: number | null
+}): number {
+    let score = fields.parseStatus === 'parsed' ? 3 : fields.parseStatus === 'partial' ? 2 : 0
+    if (fields.grossPerShare !== null) score += 1
+    return score
+}
+
 function restoreParsedFields(
     entries: DividendCalendarEntry[],
     preserved: Map<string, ParsedFieldSnapshot>
@@ -110,6 +127,8 @@ function restoreParsedFields(
     for (const entry of entries) {
         const snapshot = preserved.get(entryDocKey(entry.url))
         if (!snapshot) continue
+        // Never clobber a better store/OCR parse with a stale derived row.
+        if (parseQualityScore(snapshot) <= parseQualityScore(entry)) continue
         Object.assign(entry, snapshot)
         restored++
     }
@@ -222,6 +241,22 @@ async function main(): Promise<void> {
         console.log(`Dividend preserve: restored parsed fields for ${restored} entries from existing ${outPath}`)
     }
 
+    const mseRatios = loadMseSymbolRatiosFile(dataDir)
+    if (mseRatios) {
+        const { filled, created } = applyMseDividendRatios(entries, mseRatios, { dataDir })
+        console.log(
+            `Dividend MSE ratios: filled ${filled} gaps, created ${created} synthetic rows from ${mseRatiosPath}`
+        )
+    } else {
+        console.log(`Dividend MSE ratios: skipped (missing ${mseRatiosPath} — run npm run scrape:mse-ratios)`)
+    }
+
+    const overrides = await loadDividendOverrides()
+    if (overrides.length > 0) {
+        const applied = applyDividendOverrides(entries, overrides, { dataDir })
+        console.log(`Dividend overrides: applied ${applied} manual rows`)
+    }
+
     enrichDividendDerivedMetrics(entries, loadStockHistory)
     const withYield = entries.filter((e) => e.trailingYieldAtEx !== null).length
 
@@ -254,6 +289,26 @@ function loadEpsIndex(): Map<string, number> {
         return buildEpsIndex(raw.all ?? [])
     } catch {
         return new Map()
+    }
+}
+
+async function loadDividendOverrides(): Promise<DividendOverrideRow[]> {
+    const db = getSupabaseAdminOrNull()
+    if (!db) return []
+    try {
+        const { data, error } = await db
+            .from('dividend_overrides')
+            .select('stock_code, profit_year, fields')
+        if (error) {
+            // Table may not exist yet — non-fatal
+            if (!/dividend_overrides|schema cache|does not exist/i.test(error.message)) {
+                console.warn('Dividend overrides load failed:', error.message)
+            }
+            return []
+        }
+        return (data ?? []) as DividendOverrideRow[]
+    } catch {
+        return []
     }
 }
 
