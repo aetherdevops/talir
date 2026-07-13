@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-12T05:34:56.086Z",
-  "lastIssuerScan": "2026-07-12",
+  "generatedAt": "2026-07-13T05:43:57.214Z",
+  "lastIssuerScan": "2026-07-13",
   "issuerCount": 170,
   "recent": [
     {
@@ -2281,18 +2281,6 @@
       "filedAt": "2026-04-20",
       "headline": "BANA reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/76293",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "ORAN",
-      "stockName": "Oranzherii Hamzali Strumica",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-14",
-      "headline": "ORAN reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76238",
       "source": "SECNet"
     }
   ],
