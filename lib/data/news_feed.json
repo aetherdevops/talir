@@ -1,10 +1,36 @@
 {
-  "generatedAt": "2026-07-13T05:43:56.713Z",
-  "lastIssuerScan": "2026-07-13",
+  "generatedAt": "2026-07-14T04:56:56.082Z",
+  "lastIssuerScan": "2026-07-14",
   "count": 1534,
   "datedCount": 1534,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "BGOR-https-seinet-com-mk-en-document-77917",
+      "rawTitle": "7/13/2026 - Kristal 1923 AD Veles - Changes in shareholders with a significant stake",
+      "title": "BGOR: Changes in shareholders with a significant stake",
+      "source": "SECNet",
+      "stockCode": "BGOR",
+      "stockName": "Kristal 1923 AD Veles",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-13",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77917"
+    },
+    {
+      "id": "PPIV-https-seinet-com-mk-en-document-77918",
+      "rawTitle": "7/13/2026 - Prilepska pivarnica AD Prilep - Buy back/Sale of treasury shares",
+      "title": "PPIV: Buy back/Sale of treasury shares",
+      "source": "SECNet",
+      "stockCode": "PPIV",
+      "stockName": "Prilepska pivarnica AD Prilep",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-13",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77918"
+    },
     {
       "id": "RZIT-https-seinet-com-mk-en-document-77911",
       "rawTitle": "7/10/2026 - RZ Inter-Transsped AD Skopje - Other decisions of the shareholders meeting",
@@ -8144,19 +8170,6 @@
       "url": "https://seinet.com.mk/en/document/76449"
     },
     {
-      "id": "PPIV-https-seinet-com-mk-en-document-76477",
-      "rawTitle": "4/24/2026 - Prilepska pivarnica AD Prilep - Draft decisions for the shareholders meeting",
-      "title": "PPIV: Draft decisions for the shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "PPIV",
-      "stockName": "Prilepska pivarnica AD Prilep",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-24",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76477"
-    },
-    {
       "id": "RZEK-https-seinet-com-mk-en-document-76455",
       "rawTitle": "4/24/2026 - RZ Ekonomika AD Skopje - Other price sensitive information",
       "title": "RZEK: Other price sensitive information",
@@ -11782,19 +11795,6 @@
       "publishedAt": "2026-02-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75308"
-    },
-    {
-      "id": "BGOR-https-seinet-com-mk-en-document-75252",
-      "rawTitle": "1/30/2026 - Kristal 1923 AD Veles - Other price sensitive information",
-      "title": "BGOR: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "BGOR",
-      "stockName": "Kristal 1923 AD Veles",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-01-30",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75252"
     },
     {
       "id": "CKB-https-seinet-com-mk-en-document-75292",
