@@ -1,10 +1,23 @@
 {
-  "generatedAt": "2026-07-14T04:56:56.082Z",
-  "lastIssuerScan": "2026-07-14",
-  "count": 1534,
-  "datedCount": 1534,
+  "generatedAt": "2026-07-15T04:57:26.034Z",
+  "lastIssuerScan": "2026-07-15",
+  "count": 1535,
+  "datedCount": 1535,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "REPL-https-seinet-com-mk-en-document-77920",
+      "rawTitle": "7/14/2026 - Replek AD Skopje - Transactions with shares by persons in management and supervisory bodies",
+      "title": "REPL: Transactions with shares by persons in management and supervisory bodies",
+      "source": "SECNet",
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-14",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77920"
+    },
     {
       "id": "BGOR-https-seinet-com-mk-en-document-77917",
       "rawTitle": "7/13/2026 - Kristal 1923 AD Veles - Changes in shareholders with a significant stake",

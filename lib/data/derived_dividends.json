@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-14T05:17:39.272Z",
-  "lastIssuerScan": "2026-07-14",
+  "generatedAt": "2026-07-15T05:16:56.358Z",
+  "lastIssuerScan": "2026-07-15",
   "issuerCount": 170,
   "recent": [
     {
@@ -55,7 +55,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "KJUBI",
@@ -73,7 +73,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "STBP",
@@ -109,7 +109,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "OILK",
@@ -597,7 +597,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "KJUBI",
@@ -615,7 +615,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "STBP",
@@ -651,7 +651,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "OILK",
@@ -1209,7 +1209,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "TEHN",
@@ -2091,7 +2091,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "TEHN",
@@ -2109,7 +2109,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "TEL",
@@ -2271,7 +2271,7 @@
       "yoyGrowthPct": null,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "MSE"
+      "source": "SECNet"
     },
     {
       "stockCode": "BIM",
@@ -6095,7 +6095,7 @@
         "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": null,
-        "source": "MSE"
+        "source": "SECNet"
       },
       {
         "stockCode": "TEHN",
@@ -6149,7 +6149,7 @@
         "yoyGrowthPct": null,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "MSE"
+        "source": "SECNet"
       },
       {
         "stockCode": "TEHN",
@@ -6205,7 +6205,7 @@
         "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": null,
-        "source": "MSE"
+        "source": "SECNet"
       },
       {
         "stockCode": "KJUBI",
@@ -6299,7 +6299,7 @@
         "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": null,
-        "source": "MSE"
+        "source": "SECNet"
       },
       {
         "stockCode": "MERM",
@@ -6317,7 +6317,7 @@
         "yoyGrowthPct": null,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "MSE"
+        "source": "SECNet"
       },
       {
         "stockCode": "MERM",
@@ -6335,7 +6335,7 @@
         "yoyGrowthPct": null,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "MSE"
+        "source": "SECNet"
       },
       {
         "stockCode": "MERM",
@@ -10791,7 +10791,7 @@
         "yoyGrowthPct": null,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "MSE"
+        "source": "SECNet"
       },
       {
         "stockCode": "DEBA",
