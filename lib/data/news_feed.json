@@ -1,10 +1,36 @@
 {
-  "generatedAt": "2026-07-15T04:57:26.034Z",
-  "lastIssuerScan": "2026-07-15",
-  "count": 1535,
-  "datedCount": 1535,
+  "generatedAt": "2026-07-16T05:16:50.809Z",
+  "lastIssuerScan": "2026-07-16",
+  "count": 1536,
+  "datedCount": 1536,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-77924",
+      "rawTitle": "7/15/2026 - ZK Pelagonija AD Bitola - CCG Questionnaires",
+      "title": "ZPKO: CCG Questionnaires",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-15",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77924"
+    },
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-77923",
+      "rawTitle": "7/15/2026 - ZK Pelagonija AD Bitola - Draft decisions for the shareholders meeting",
+      "title": "ZPKO: Draft decisions for the shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-15",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77923"
+    },
     {
       "id": "REPL-https-seinet-com-mk-en-document-77920",
       "rawTitle": "7/14/2026 - Replek AD Skopje - Transactions with shares by persons in management and supervisory bodies",
@@ -10976,19 +11002,6 @@
       "publishedAt": "2026-03-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75810"
-    },
-    {
-      "id": "ZPKO-https-seinet-com-mk-en-document-75811",
-      "rawTitle": "3/2/2026 - ZK Pelagonija AD Bitola - Other price sensitive information",
-      "title": "ZPKO: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-03-02",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75811"
     },
     {
       "id": "ADIN-https-seinet-com-mk-en-document-75584",
