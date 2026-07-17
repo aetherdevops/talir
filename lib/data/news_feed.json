@@ -1,10 +1,23 @@
 {
-  "generatedAt": "2026-07-16T05:16:50.809Z",
-  "lastIssuerScan": "2026-07-16",
+  "generatedAt": "2026-07-17T05:19:51.811Z",
+  "lastIssuerScan": "2026-07-17",
   "count": 1536,
   "datedCount": 1536,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "SIL-https-seinet-com-mk-en-document-77926",
+      "rawTitle": "7/16/2026 - Sileks AD Kratovo - Other decisions of the shareholders meeting",
+      "title": "SIL: Other decisions of the shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "SIL",
+      "stockName": "Sileks AD Kratovo",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-16",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77926"
+    },
     {
       "id": "ZPKO-https-seinet-com-mk-en-document-77924",
       "rawTitle": "7/15/2026 - ZK Pelagonija AD Bitola - CCG Questionnaires",
@@ -11379,19 +11392,6 @@
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75529"
-    },
-    {
-      "id": "SIL-https-seinet-com-mk-en-document-75530",
-      "rawTitle": "2/27/2026 - Sileks AD Kratovo - Other price sensitive information",
-      "title": "SIL: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "SIL",
-      "stockName": "Sileks AD Kratovo",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-02-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75530"
     },
     {
       "id": "TSMP-https-seinet-com-mk-en-document-75630",
