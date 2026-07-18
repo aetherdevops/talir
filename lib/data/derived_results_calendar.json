@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-07-17T05:19:52.319Z",
-  "lastIssuerScan": "2026-07-17",
+  "generatedAt": "2026-07-18T04:54:25.268Z",
+  "lastIssuerScan": "2026-07-18",
   "issuerCount": 170,
   "recent": [
+    {
+      "stockCode": "VTKS",
+      "stockName": "Veteks AD Veles",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-17",
+      "headline": "VTKS files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77936",
+      "source": "SECNet"
+    },
     {
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
@@ -2285,6 +2297,18 @@
     }
   ],
   "all": [
+    {
+      "stockCode": "VTKS",
+      "stockName": "Veteks AD Veles",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-17",
+      "headline": "VTKS files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77936",
+      "source": "SECNet"
+    },
     {
       "stockCode": "LOZP",
       "stockName": "Pelisterka AD Skopje",
@@ -8538,18 +8562,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "VTKS",
-      "stockName": "Veteks AD Veles",
-      "reportKind": "q1_pl",
-      "periodStart": "2025-01-01",
-      "periodEnd": "2025-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2025-04-24",
-      "headline": "VTKS reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/72047",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "reportKind": "q1_pl",
@@ -10783,6 +10795,92 @@
     }
   ],
   "byIssuer": {
+    "VTKS": [
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-17",
+        "headline": "VTKS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77936",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "reportKind": "q1_pl",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-28",
+        "headline": "VTKS files profit and loss report",
+        "url": "https://seinet.com.mk/en/document/77594",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-15",
+        "headline": "VTKS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77191",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-28",
+        "headline": "VTKS reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76687",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-03-19",
+        "headline": "VTKS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75924",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-29",
+        "headline": "VTKS reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74520",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-18",
+        "headline": "VTKS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73625",
+        "source": "SECNet"
+      }
+    ],
     "LOZP": [
       {
         "stockCode": "LOZP",
@@ -13830,92 +13928,6 @@
         "filedAt": "2024-07-30",
         "headline": "VROS files audited financial statements",
         "url": "https://seinet.com.mk/en/document/69420",
-        "source": "SECNet"
-      }
-    ],
-    "VTKS": [
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "reportKind": "q1_pl",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-28",
-        "headline": "VTKS files profit and loss report",
-        "url": "https://seinet.com.mk/en/document/77594",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-15",
-        "headline": "VTKS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77191",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-28",
-        "headline": "VTKS reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76687",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-03-19",
-        "headline": "VTKS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75924",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-29",
-        "headline": "VTKS reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74520",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-18",
-        "headline": "VTKS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73625",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-24",
-        "headline": "VTKS reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72047",
         "source": "SECNet"
       }
     ],
@@ -20315,7 +20327,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-May",
+      "expectedLabel": "expected mid-June",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },

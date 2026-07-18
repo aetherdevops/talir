@@ -1575,6 +1575,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "7/17/2026 - Fakom AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77939",
+        "date": "2026-07-17"
+      },
+      {
         "title": "3/5/2026 - Fakom AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/75837",
         "date": "2026-03-05"
@@ -9810,6 +9815,11 @@
     "website": "https://www.veteks.mk/",
     "reportLinks": [
       {
+        "title": "7/17/2026 - Veteks AD Veles - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77936",
+        "date": "2026-07-17"
+      },
+      {
         "title": "5/15/2026 - Veteks AD Veles - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77191",
         "date": "2026-05-15"
@@ -9853,14 +9863,14 @@
         "title": "5/26/2025 - Veteks AD Veles - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/73091",
         "date": "2025-05-26"
-      },
-      {
-        "title": "4/24/2025 - Veteks AD Veles - Non-audited profit&loss account 01.01. - 31.03.",
-        "url": "https://seinet.com.mk/en/document/72047",
-        "date": "2025-04-24"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/17/2026 - Veteks AD Veles - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77937",
+        "date": "2026-07-17"
+      },
       {
         "title": "5/28/2026 - Veteks AD Veles - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77595",
@@ -9890,11 +9900,6 @@
         "title": "4/28/2026 - Veteks AD Veles - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/76688",
         "date": "2026-04-28"
-      },
-      {
-        "title": "3/19/2026 - Veteks AD Veles - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75925",
-        "date": "2026-03-19"
       }
     ]
   },

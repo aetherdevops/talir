@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-07-17T05:41:21.964Z",
+  "generatedAt": "2026-07-18T05:09:48.917Z",
   "all": [
+    {
+      "stockCode": "VTKS",
+      "stockName": "Veteks AD Veles",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-17",
+      "url": "https://seinet.com.mk/en/document/77936",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "VTKS",
+      "stockName": "Veteks AD Veles",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-17",
+      "url": "https://seinet.com.mk/en/document/77936",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
     {
       "stockCode": "KPSS",
       "stockName": "Fabrika Karposh AD Skopje",
@@ -22345,6 +22367,28 @@
       }
     ],
     "VTKS": [
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-17",
+        "url": "https://seinet.com.mk/en/document/77936",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-17",
+        "url": "https://seinet.com.mk/en/document/77936",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "VTKS",
         "stockName": "Veteks AD Veles",

@@ -1,10 +1,49 @@
 {
-  "generatedAt": "2026-07-17T05:19:51.811Z",
-  "lastIssuerScan": "2026-07-17",
-  "count": 1536,
-  "datedCount": 1536,
+  "generatedAt": "2026-07-18T04:54:24.749Z",
+  "lastIssuerScan": "2026-07-18",
+  "count": 1537,
+  "datedCount": 1537,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "FAKM-https-seinet-com-mk-en-document-77939",
+      "rawTitle": "7/17/2026 - Fakom AD Skopje - Other price sensitive information",
+      "title": "FAKM: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "FAKM",
+      "stockName": "FAKOM AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-17",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77939"
+    },
+    {
+      "id": "VTKS-https-seinet-com-mk-en-document-77936",
+      "rawTitle": "7/17/2026 - Veteks AD Veles - Non-audited financial statements 01.01. - 30.06.",
+      "title": "VTKS files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "VTKS",
+      "stockName": "Veteks AD Veles",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-17",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77936"
+    },
+    {
+      "id": "VTKS-https-seinet-com-mk-en-document-77937",
+      "rawTitle": "7/17/2026 - Veteks AD Veles - Other price sensitive information",
+      "title": "VTKS: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "VTKS",
+      "stockName": "Veteks AD Veles",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-17",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77937"
+    },
     {
       "id": "SIL-https-seinet-com-mk-en-document-77926",
       "rawTitle": "7/16/2026 - Sileks AD Kratovo - Other decisions of the shareholders meeting",
@@ -10133,19 +10172,6 @@
       "url": "https://seinet.com.mk/en/document/75924"
     },
     {
-      "id": "VTKS-https-seinet-com-mk-en-document-75925",
-      "rawTitle": "3/19/2026 - Veteks AD Veles - Other price sensitive information",
-      "title": "VTKS: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "VTKS",
-      "stockName": "Veteks AD Veles",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-03-19",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75925"
-    },
-    {
       "id": "ADIN-https-seinet-com-mk-en-document-75914",
       "rawTitle": "3/18/2026 - Ading AD Skopje - Non-audited financial statements 01.01. - 31.12.",
       "title": "ADIN files audited financial statements",
@@ -16891,19 +16917,6 @@
       "publishedAt": "2025-04-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/72097"
-    },
-    {
-      "id": "VTKS-https-seinet-com-mk-en-document-72047",
-      "rawTitle": "4/24/2025 - Veteks AD Veles - Non-audited profit&loss account 01.01. - 31.03.",
-      "title": "VTKS reports profit and loss for 01.01.–31.03",
-      "source": "SECNet",
-      "stockCode": "VTKS",
-      "stockName": "Veteks AD Veles",
-      "category": "earnings",
-      "filingTier": "routine",
-      "publishedAt": "2025-04-24",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/72047"
     },
     {
       "id": "INPR-https-seinet-com-mk-en-document-72025",
