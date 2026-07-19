@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-18T04:54:25.268Z",
-  "lastIssuerScan": "2026-07-18",
+  "generatedAt": "2026-07-19T05:28:38.703Z",
+  "lastIssuerScan": "2026-07-19",
   "issuerCount": 170,
   "recent": [
     {
@@ -2281,18 +2281,6 @@
       "filedAt": "2026-04-21",
       "headline": "TKPR files audited financial statements",
       "url": "https://seinet.com.mk/en/document/76313",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "BANA",
-      "stockName": "Rudnici Banjani AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-20",
-      "headline": "BANA reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76293",
       "source": "SECNet"
     }
   ],
