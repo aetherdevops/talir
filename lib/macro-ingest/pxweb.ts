@@ -87,6 +87,9 @@ function resolveSelection(
         const n = Number(sel.slice(5))
         return variable.values.slice(0, n)
     }
+    if (!Array.isArray(sel)) {
+        throw new Error(`Unsupported PxWeb selection for ${code}: ${String(sel)}`)
+    }
     return sel
 }
 
