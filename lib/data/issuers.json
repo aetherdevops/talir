@@ -4912,6 +4912,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "7/20/2026 - Oranzerii Hamzali AD Strumica - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77941",
+        "date": "2026-07-20"
+      },
+      {
         "title": "6/1/2026 - Oranzerii Hamzali AD Strumica - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77694",
         "date": "2026-06-01"
@@ -4955,11 +4960,6 @@
         "title": "10/16/2024 - Oranzerii Hamzali AD Strumica - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/69950",
         "date": "2024-10-16"
-      },
-      {
-        "title": "7/22/2024 - Oranzerii Hamzali AD Strumica - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69199",
-        "date": "2024-07-22"
       }
     ],
     "disclosureLinks": [
@@ -4987,11 +4987,6 @@
         "title": "1/8/2026 - Oranzerii Hamzali AD Strumica - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/75036",
         "date": "2026-01-08"
-      },
-      {
-        "title": "7/21/2025 - Oranzerii Hamzali AD Strumica - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/73636",
-        "date": "2025-07-21"
       }
     ]
   },

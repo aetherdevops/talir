@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-07-20T05:49:37.329Z",
-  "lastIssuerScan": "2026-07-20",
+  "generatedAt": "2026-07-21T05:27:06.399Z",
+  "lastIssuerScan": "2026-07-21",
   "issuerCount": 170,
   "recent": [
+    {
+      "stockCode": "ORAN",
+      "stockName": "Oranzherii Hamzali Strumica",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-20",
+      "headline": "ORAN files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77941",
+      "source": "SECNet"
+    },
     {
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
@@ -2210,33 +2222,21 @@
       "headline": "ZAS reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/76397",
       "source": "SECNet"
-    },
-    {
-      "stockCode": "FUBT",
-      "stockName": "Fustelarko Borec AD Bitola",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-22",
-      "headline": "FUBT files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76354",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TRPS",
-      "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-22",
-      "headline": "TRPS files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76369",
-      "source": "SECNet"
     }
   ],
   "all": [
+    {
+      "stockCode": "ORAN",
+      "stockName": "Oranzherii Hamzali Strumica",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-20",
+      "headline": "ORAN files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77941",
+      "source": "SECNet"
+    },
     {
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
@@ -10242,18 +10242,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "ORAN",
-      "stockName": "Oranzherii Hamzali Strumica",
-      "reportKind": "fy_audited",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-06-30",
-      "periodLabel": "01.01–30.06",
-      "filedAt": "2024-07-22",
-      "headline": "ORAN files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/69199",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "CKB",
       "stockName": "Centralna kooperativna banka AD Skopje",
       "reportKind": "fy_audited",
@@ -10735,6 +10723,116 @@
     }
   ],
   "byIssuer": {
+    "ORAN": [
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-20",
+        "headline": "ORAN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77941",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-06-01",
+        "headline": "ORAN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77694",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-14",
+        "headline": "ORAN reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76238",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-02-27",
+        "headline": "ORAN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75585",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-08",
+        "headline": "ORAN reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74338",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-07",
+        "headline": "ORAN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73580",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-07",
+        "headline": "ORAN reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/71802",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-02-28",
+        "headline": "ORAN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/71328",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "reportKind": "q3_pl",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2024-10-16",
+        "headline": "ORAN reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/69950",
+        "source": "SECNet"
+      }
+    ],
     "VTKS": [
       {
         "stockCode": "VTKS",
@@ -12032,116 +12130,6 @@
         "filedAt": "2025-03-03",
         "headline": "NOSK files audited financial statements",
         "url": "https://seinet.com.mk/en/document/71413",
-        "source": "SECNet"
-      }
-    ],
-    "ORAN": [
-      {
-        "stockCode": "ORAN",
-        "stockName": "Oranzherii Hamzali Strumica",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-06-01",
-        "headline": "ORAN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77694",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ORAN",
-        "stockName": "Oranzherii Hamzali Strumica",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-14",
-        "headline": "ORAN reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76238",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ORAN",
-        "stockName": "Oranzherii Hamzali Strumica",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-02-27",
-        "headline": "ORAN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75585",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ORAN",
-        "stockName": "Oranzherii Hamzali Strumica",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-08",
-        "headline": "ORAN reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74338",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ORAN",
-        "stockName": "Oranzherii Hamzali Strumica",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-07",
-        "headline": "ORAN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73580",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ORAN",
-        "stockName": "Oranzherii Hamzali Strumica",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-07",
-        "headline": "ORAN reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/71802",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ORAN",
-        "stockName": "Oranzherii Hamzali Strumica",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-02-28",
-        "headline": "ORAN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71328",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ORAN",
-        "stockName": "Oranzherii Hamzali Strumica",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-10-16",
-        "headline": "ORAN reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/69950",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ORAN",
-        "stockName": "Oranzherii Hamzali Strumica",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2024-07-22",
-        "headline": "ORAN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/69199",
         "source": "SECNet"
       }
     ],

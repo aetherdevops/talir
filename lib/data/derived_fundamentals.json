@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-07-20T06:05:16.066Z",
+  "generatedAt": "2026-07-21T05:48:35.366Z",
   "all": [
+    {
+      "stockCode": "ORAN",
+      "stockName": "Oranzherii Hamzali Strumica",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-20",
+      "url": "https://seinet.com.mk/en/document/77941",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ORAN",
+      "stockName": "Oranzherii Hamzali Strumica",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-20",
+      "url": "https://seinet.com.mk/en/document/77941",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
     {
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
@@ -17686,6 +17708,28 @@
       }
     ],
     "ORAN": [
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-20",
+        "url": "https://seinet.com.mk/en/document/77941",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ORAN",
+        "stockName": "Oranzherii Hamzali Strumica",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-20",
+        "url": "https://seinet.com.mk/en/document/77941",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "ORAN",
         "stockName": "Oranzherii Hamzali Strumica",
