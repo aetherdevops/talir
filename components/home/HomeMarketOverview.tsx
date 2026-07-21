@@ -1,10 +1,11 @@
 import type { MarketIndex, StockSummary, NewsItem } from '@/lib/types'
-import type { DerivedBreadth, DerivedSectorRollup, MarketSentiment } from '@/lib/data'
+import type { DerivedBreadth, DerivedSectorRollup, IndexDetails, MarketSentiment } from '@/lib/data'
 import type { DividendCalendarEntry } from '@/lib/dividends'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { HomeIndexStrip } from '@/components/home/HomeIndexStrip'
 import { HomeLeaderboardTabs } from '@/components/home/HomeLeaderboardTabs'
+import { HomeMbi10Chart } from '@/components/home/HomeMbi10Chart'
 import { HomeMarketBreadth } from '@/components/home/HomeMarketBreadth'
 import { HomeSectorStrip } from '@/components/home/HomeSectorStrip'
 import { HomeFilingsHub } from '@/components/home/HomeFilingsHub'
@@ -12,6 +13,7 @@ import { HomeDividendsPanel } from '@/components/dividends/HomeDividendsPanel'
 
 interface HomeMarketOverviewProps {
     indices: MarketIndex[]
+    mbi10: IndexDetails | null
     gainers: StockSummary[]
     losers: StockSummary[]
     mostActive: StockSummary[]
@@ -32,6 +34,7 @@ interface HomeMarketOverviewProps {
 
 export function HomeMarketOverview({
     indices,
+    mbi10,
     gainers,
     losers,
     mostActive,
@@ -60,6 +63,8 @@ export function HomeMarketOverview({
                 consistentGainers={consistentGainers}
                 asOfDate={asOfDate}
             />
+
+            {mbi10 ? <HomeMbi10Chart index={mbi10} asOfDate={asOfDate} /> : null}
 
             <HomeSectorStrip sectors={sectors} />
 

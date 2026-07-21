@@ -12,6 +12,7 @@
     "home": "Home",
     "markets": "Markets",
     "dividends": "Dividends",
+    "macro": "Macro",
     "updates": "Updates",
     "create": "Create",
     "portfolios": "Portfolios",
@@ -97,6 +98,8 @@
     "stocks": "Stocks",
     "active": "Active",
     "noIndexData": "No index data available",
+    "mbi10ChartTitle": "MBI10",
+    "mbi10ChartLink": "Full index page →",
     "allMarkets": "All markets",
     "personalRailSignedOutHint": "Track watchlists, portfolio P&L, and price alerts — synced when you register.",
     "watchlistGhostDesc": "Pin MSE tickers and follow end-of-day moves.",
@@ -277,6 +280,51 @@
     "dataSourcePopover": "Dividend data source",
     "teaserLatest": "Latest gross {amount} {den}{fy}",
     "teaserTabHint": "full scorecard on Dividends tab"
+  },
+  "macro": {
+    "title": "Macro",
+    "subtitle": "Big-picture economy indicators from official Macedonian statistics · not live.",
+    "asOf": "Data as of {date} · official statistics, not live",
+    "lastGathered": "Last gathered {date}",
+    "vsPriorMonth": "vs prior month",
+    "vsPriorQuarter": "vs prior quarter",
+    "vsPriorYear": "vs prior year",
+    "vsYearAgo": "vs year ago",
+    "rangeLabel": "Chart range",
+    "range": {
+      "1Y": "1Y",
+      "5Y": "5Y",
+      "10Y": "10Y",
+      "max": "Max"
+    },
+    "showYoy": "Show YoY Δ",
+    "yoyOverlay": "YoY change",
+    "chartEmpty": "Not enough points for this range.",
+    "indicators": "Indicators",
+    "indicatorsSubtitle": "Select a row to focus the chart above.",
+    "marketSectors": "Market sectors",
+    "marketSectorsSubtitle": "MSE listing sectors — end-of-day average change.",
+    "marketSectorsSource": "Source: Macedonian Stock Exchange · listing sectors",
+    "sectorBreadth": "{adv} ▲ · {dec} ▼ · {n} names",
+    "economyIndustries": "Economy by industry",
+    "economyIndustriesSubtitle": "Select a row to focus the chart — GDP / industrial production by industry.",
+    "economyIndustriesSource": "Source: State Statistical Office (MakStat) · NKD / MIG",
+    "sourceLink": "Official table",
+    "newsTitle": "Economy pulse",
+    "newsSubtitle": "Selected release notes — not a live news wire.",
+    "frequency": {
+      "monthly": "Monthly",
+      "quarterly": "Quarterly",
+      "annual": "Annual"
+    },
+    "col": {
+      "indicator": "Indicator",
+      "latest": "Latest",
+      "prior": "Prior",
+      "delta": "Δ prior",
+      "yoy": "YoY",
+      "trend": "Trend"
+    }
   },
   "stock": {
     "overview": "Overview",

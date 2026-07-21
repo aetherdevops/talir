@@ -15,6 +15,7 @@ import newsFeedData from '@/lib/data/news_feed.json'
 import resultsCalendarData from '@/lib/data/derived_results_calendar.json'
 import dividendsCalendarData from '@/lib/data/derived_dividends.json'
 import fundamentalsData from '@/lib/data/derived_fundamentals.json'
+import macroDashboardData from '@/lib/data/derived_macro.json'
 import type {
     ExpectedResultsEntry,
     ResultsCalendarEntry,
@@ -22,6 +23,7 @@ import type {
 } from './results-calendar'
 import type { DividendCalendarEntry, DividendsCalendarFile } from './dividends'
 import type { FundamentalEntry, FundamentalsFile } from './fundamentals'
+import type { MacroFile } from './macro'
 import type {
     BreadthHistoryPoint,
     DerivedBreadth,
@@ -41,6 +43,7 @@ export type {
 export type { ExpectedResultsEntry, ResultsCalendarEntry, ResultsCalendarFile }
 export type { DividendCalendarEntry, DividendsCalendarFile }
 export type { FundamentalEntry, FundamentalsFile }
+export type { MacroFile }
 
 // Unified fetcher for both stocks and indices
 export async function getAllInstruments(): Promise<StockSummary[]> {
@@ -521,6 +524,11 @@ export function getFundamentalsCalendar(): FundamentalsFile {
 
 export function getFundamentalsForIssuer(stockCode: string): FundamentalEntry[] {
     return getFundamentalsCalendar().byIssuer[stockCode] ?? []
+}
+
+/** Macro dashboard — dummy series until MakStat / NBRM are wired. */
+export function getMacroDashboard(): MacroFile {
+    return macroDashboardData as MacroFile
 }
 
 export async function getLatestNews(limit: number = 6, stockCode?: string): Promise<NewsItem[]> {

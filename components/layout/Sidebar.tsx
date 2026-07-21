@@ -3,7 +3,7 @@
 import { LocaleLink } from '@/components/layout/LocaleLink'
 import { useBarePathname } from '@/lib/i18n/use-bare-pathname'
 import { useLocale } from '@/components/providers/LocaleProvider'
-import { Home, Newspaper, PieChart, Bookmark, Settings, Plus, BarChart2, ChevronLeft, ChevronRight, Bell, Coins } from 'lucide-react'
+import { Home, Newspaper, PieChart, Bookmark, Settings, Plus, BarChart2, ChevronLeft, ChevronRight, Bell, Coins, Landmark } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { useThemeStore } from '@/lib/store'
@@ -109,6 +109,7 @@ export function Sidebar({ className }: { className?: string }) {
                     <SidebarItem icon={Home} label={t('nav.home')} href="/" isActive={pathname === '/'} isCollapsed={!isOpen} onClick={handleNavClick()} />
                     <SidebarItem icon={BarChart2} label={t('nav.markets')} href="/markets" isActive={pathname === '/markets'} isCollapsed={!isOpen} onClick={handleNavClick()} />
                     <SidebarItem icon={Coins} label={t('nav.dividends')} href="/dividends" isActive={pathname === '/dividends'} isCollapsed={!isOpen} onClick={handleNavClick()} />
+                    <SidebarItem icon={Landmark} label={t('nav.macro')} href="/macro" isActive={pathname === '/macro'} isCollapsed={!isOpen} onClick={handleNavClick()} />
                     <SidebarItem icon={Newspaper} label={t('nav.updates')} href="/news" isActive={pathname === '/news'} isCollapsed={!isOpen} onClick={handleNavClick()} />
 
                     <SectionHeader

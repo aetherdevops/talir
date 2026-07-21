@@ -65,6 +65,19 @@ jobs:
       run: npm run ingest:fundamentals
       continue-on-error: true
 
+    - name: Ingest macro statistics (MakStat / NBRM / MoF → Supabase)
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      run: npm run ingest:macro
+      continue-on-error: true
+
+    - name: Generate macro dashboard
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      run: npm run generate:macro
+
     - name: Generate fundamentals
       env:
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
@@ -93,10 +106,12 @@ jobs:
         test -s lib/data/derived_results_calendar.json
         test -s lib/data/derived_fundamentals.json
         test -s lib/data/derived_dividends.json
+        test -s lib/data/derived_macro.json
         node -e "const j=require('./lib/data/news_feed.json'); console.log('news_feed:', j.count, 'items, dated', j.datedCount, ', lastIssuerScan', j.lastIssuerScan)"
         node -e "const r=require('./lib/data/derived_results_calendar.json'); console.log('results_calendar:', r.all.length, 'filed,', r.expected.length, 'expected')"
         node -e "const f=require('./lib/data/derived_fundamentals.json'); const eps=f.all.filter(e=>e.parseStatus==='parsed').length; console.log('fundamentals:', f.all.length, 'annual filings,', eps, 'parsed EPS')"
         node -e "const dv=require('./lib/data/derived_dividends.json'); console.log('dividends:', dv.all.length, 'calendars,', dv.upcomingExDates.length, 'upcoming ex-dates')"
+        node -e "const m=require('./lib/data/derived_macro.json'); console.log('macro:', m.series.length, 'series, asOf', m.asOfDate, 'lastIngested', m.lastIngestedAt)"
         node -e "const d=require('./lib/data/derived_market.json'); const n=d.breadth?.history?.length ?? 0; console.log('derived breadth.history:', n, 'sessions (expected 10)'); if(n!==10) console.log('::warning:: breadth history length is', n, 'not 10');"
 
     - name: Commit Changes

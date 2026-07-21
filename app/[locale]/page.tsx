@@ -4,6 +4,7 @@ import {
     getTopLosers,
     getMostActive,
     getMarketIndices,
+    getIndexDetails,
     getLatestNews,
     getMarketDataAsOf,
     getMarketSentiment,
@@ -34,6 +35,7 @@ export default async function HomePage() {
         weekLows,
         consistentGainers,
         indices,
+        mbi10,
         news,
         allInstruments,
         recentResults,
@@ -49,6 +51,7 @@ export default async function HomePage() {
         getWeekLowStocks(5),
         getConsistentGainerStocks(5),
         getMarketIndices(),
+        getIndexDetails('MBI10'),
         getLatestNews(8),
         getAllInstruments(),
         Promise.resolve(getRecentResults(5)),
@@ -73,6 +76,7 @@ export default async function HomePage() {
                 <div className="min-w-0 space-y-4">
                     <HomeMarketOverview
                         indices={indices}
+                        mbi10={mbi10}
                         gainers={gainers}
                         losers={losers}
                         mostActive={mostActive}
