@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-21T05:27:06.399Z",
-  "lastIssuerScan": "2026-07-21",
+  "generatedAt": "2026-07-22T05:25:49.662Z",
+  "lastIssuerScan": "2026-07-22",
   "issuerCount": 170,
   "recent": [
     {
@@ -2185,42 +2185,6 @@
       "filedAt": "2026-04-24",
       "headline": "MAKS files audited financial statements",
       "url": "https://seinet.com.mk/en/document/76458",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TETE",
-      "stockName": "Teteks AD Tetovo",
-      "reportKind": "q1_pl",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-23",
-      "headline": "TETE files profit and loss report",
-      "url": "https://seinet.com.mk/en/document/76379",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "VROS",
-      "stockName": "Triglav Osiguruvanje AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-23",
-      "headline": "VROS reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76395",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "ZAS",
-      "stockName": "ZhAS AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-23",
-      "headline": "ZAS reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76397",
       "source": "SECNet"
     }
   ],
