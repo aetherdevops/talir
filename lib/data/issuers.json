@@ -969,6 +969,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "7/22/2026 - Centralna kooperativna banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77946",
+        "date": "2026-07-22"
+      },
+      {
         "title": "4/30/2026 - Centralna kooperativna banka AD Skopje - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/76944",
         "date": "2026-04-30"
@@ -1012,14 +1017,14 @@
         "title": "10/30/2024 - Centralna kooperativna banka AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/70157",
         "date": "2024-10-30"
-      },
-      {
-        "title": "7/18/2024 - Centralna kooperativna banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69190",
-        "date": "2024-07-18"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/22/2026 - Centralna kooperativna banka AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77947",
+        "date": "2026-07-22"
+      },
       {
         "title": "5/27/2026 - Centralna kooperativna banka AD Skopje - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77491",
@@ -1054,11 +1059,6 @@
         "title": "2/13/2026 - Centralna kooperativna banka AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/75389",
         "date": "2026-02-13"
-      },
-      {
-        "title": "1/30/2026 - Centralna kooperativna banka AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75293",
-        "date": "2026-01-30"
       }
     ]
   },
@@ -1072,6 +1072,11 @@
     "website": "http://www.ccbank.mk/",
     "reportLinks": [
       {
+        "title": "7/22/2026 - Centralna kooperativna banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77946",
+        "date": "2026-07-22"
+      },
+      {
         "title": "4/30/2026 - Centralna kooperativna banka AD Skopje - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/76944",
         "date": "2026-04-30"
@@ -1115,14 +1120,14 @@
         "title": "10/30/2024 - Centralna kooperativna banka AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/70157",
         "date": "2024-10-30"
-      },
-      {
-        "title": "7/18/2024 - Centralna kooperativna banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69190",
-        "date": "2024-07-18"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/22/2026 - Centralna kooperativna banka AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77947",
+        "date": "2026-07-22"
+      },
       {
         "title": "5/27/2026 - Centralna kooperativna banka AD Skopje - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77491",
@@ -1157,11 +1162,6 @@
         "title": "2/13/2026 - Centralna kooperativna banka AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/75389",
         "date": "2026-02-13"
-      },
-      {
-        "title": "1/30/2026 - Centralna kooperativna banka AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75293",
-        "date": "2026-01-30"
       }
     ]
   },

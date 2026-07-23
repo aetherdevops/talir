@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-07-22T05:25:49.662Z",
-  "lastIssuerScan": "2026-07-22",
+  "generatedAt": "2026-07-23T05:31:50.311Z",
+  "lastIssuerScan": "2026-07-23",
   "issuerCount": 170,
   "recent": [
+    {
+      "stockCode": "CKB",
+      "stockName": "Centralna kooperativna banka AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-22",
+      "headline": "CKB files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77946",
+      "source": "SECNet"
+    },
     {
       "stockCode": "ORAN",
       "stockName": "Oranzherii Hamzali Strumica",
@@ -2174,21 +2186,21 @@
       "headline": "TNB reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/76611",
       "source": "SECNet"
-    },
-    {
-      "stockCode": "MAKS",
-      "stockName": "Makoteks AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-24",
-      "headline": "MAKS files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76458",
-      "source": "SECNet"
     }
   ],
   "all": [
+    {
+      "stockCode": "CKB",
+      "stockName": "Centralna kooperativna banka AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-22",
+      "headline": "CKB files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77946",
+      "source": "SECNet"
+    },
     {
       "stockCode": "ORAN",
       "stockName": "Oranzherii Hamzali Strumica",
@@ -10206,18 +10218,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "CKB",
-      "stockName": "Centralna kooperativna banka AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-06-30",
-      "periodLabel": "01.01–30.06",
-      "filedAt": "2024-07-18",
-      "headline": "CKB files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/69190",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "SBT",
       "stockName": "Stopanska banka AD Bitola",
       "reportKind": "fy_audited",
@@ -10687,6 +10687,116 @@
     }
   ],
   "byIssuer": {
+    "CKB": [
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-22",
+        "headline": "CKB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77946",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-30",
+        "headline": "CKB reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76944",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-01-30",
+        "headline": "CKB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75292",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-30",
+        "headline": "CKB reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74567",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-28",
+        "headline": "CKB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73726",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2025-05-30",
+        "headline": "CKB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73276",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-29",
+        "headline": "CKB reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72373",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-01-31",
+        "headline": "CKB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/70991",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2024-10-30",
+        "headline": "CKB reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/70157",
+        "source": "SECNet"
+      }
+    ],
     "ORAN": [
       {
         "stockCode": "ORAN",
@@ -17264,116 +17374,6 @@
         "filedAt": "2024-07-30",
         "headline": "BGOR files audited financial statements",
         "url": "https://seinet.com.mk/en/document/69418",
-        "source": "SECNet"
-      }
-    ],
-    "CKB": [
-      {
-        "stockCode": "CKB",
-        "stockName": "Centralna kooperativna banka AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-30",
-        "headline": "CKB reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76944",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "CKB",
-        "stockName": "Centralna kooperativna banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-01-30",
-        "headline": "CKB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75292",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "CKB",
-        "stockName": "Centralna kooperativna banka AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-30",
-        "headline": "CKB reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74567",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "CKB",
-        "stockName": "Centralna kooperativna banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-28",
-        "headline": "CKB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73726",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "CKB",
-        "stockName": "Centralna kooperativna banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2025-05-30",
-        "headline": "CKB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73276",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "CKB",
-        "stockName": "Centralna kooperativna banka AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-29",
-        "headline": "CKB reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72373",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "CKB",
-        "stockName": "Centralna kooperativna banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-01-31",
-        "headline": "CKB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/70991",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "CKB",
-        "stockName": "Centralna kooperativna banka AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-10-30",
-        "headline": "CKB reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/70157",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "CKB",
-        "stockName": "Centralna kooperativna banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2024-07-18",
-        "headline": "CKB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/69190",
         "source": "SECNet"
       }
     ],

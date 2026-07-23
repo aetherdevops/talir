@@ -1,10 +1,36 @@
 {
-  "generatedAt": "2026-07-22T05:25:49.249Z",
-  "lastIssuerScan": "2026-07-22",
+  "generatedAt": "2026-07-23T05:31:49.896Z",
+  "lastIssuerScan": "2026-07-23",
   "count": 1536,
   "datedCount": 1536,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "CKB-https-seinet-com-mk-en-document-77946",
+      "rawTitle": "7/22/2026 - Centralna kooperativna banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+      "title": "CKB files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "CKB",
+      "stockName": "Centralna kooperativna banka AD Skopje",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-22",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77946"
+    },
+    {
+      "id": "CKB-https-seinet-com-mk-en-document-77947",
+      "rawTitle": "7/22/2026 - Centralna kooperativna banka AD Skopje - Other price sensitive information",
+      "title": "CKB: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "CKB",
+      "stockName": "Centralna kooperativna banka AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-22",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77947"
+    },
     {
       "id": "ORAN-https-seinet-com-mk-en-document-77941",
       "rawTitle": "7/20/2026 - Oranzerii Hamzali AD Strumica - Non-audited financial statements 01.01. - 30.06.",
@@ -11875,19 +11901,6 @@
       "url": "https://seinet.com.mk/en/document/75292"
     },
     {
-      "id": "CKB-https-seinet-com-mk-en-document-75293",
-      "rawTitle": "1/30/2026 - Centralna kooperativna banka AD Skopje - Other price sensitive information",
-      "title": "CKB: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "CKB",
-      "stockName": "Centralna kooperativna banka AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-01-30",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75293"
-    },
-    {
       "id": "FAKM-https-seinet-com-mk-en-document-75245",
       "rawTitle": "1/30/2026 - Fakom AD Skopje - Other price sensitive information",
       "title": "FAKM: Other price sensitive information",
@@ -19140,19 +19153,6 @@
       "publishedAt": "2024-07-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69242"
-    },
-    {
-      "id": "CKB-https-seinet-com-mk-en-document-69190",
-      "rawTitle": "7/18/2024 - Centralna kooperativna banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-      "title": "CKB files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "CKB",
-      "stockName": "Centralna kooperativna banka AD Skopje",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2024-07-18",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/69190"
     },
     {
       "id": "SBT-https-seinet-com-mk-en-document-69178",

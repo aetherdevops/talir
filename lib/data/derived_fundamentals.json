@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-07-22T05:48:02.626Z",
+  "generatedAt": "2026-07-23T05:53:59.466Z",
   "all": [
+    {
+      "stockCode": "CKBKO2",
+      "stockName": "Centralna kooperativna banka AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-22",
+      "url": "https://seinet.com.mk/en/document/77946",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "CKB",
+      "stockName": "Centralna kooperativna banka AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-22",
+      "url": "https://seinet.com.mk/en/document/77946",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
     {
       "stockCode": "ORAN",
       "stockName": "Oranzherii Hamzali Strumica",
@@ -13384,6 +13406,17 @@
       {
         "stockCode": "CKBKO2",
         "stockName": "Centralna kooperativna banka AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-22",
+        "url": "https://seinet.com.mk/en/document/77946",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CKBKO2",
+        "stockName": "Centralna kooperativna banka AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-01-30",
         "url": "https://seinet.com.mk/en/document/75292",
@@ -23351,6 +23384,17 @@
       }
     ],
     "CKB": [
+      {
+        "stockCode": "CKB",
+        "stockName": "Centralna kooperativna banka AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-22",
+        "url": "https://seinet.com.mk/en/document/77946",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "CKB",
         "stockName": "Centralna kooperativna banka AD Skopje",
