@@ -1,8 +1,32 @@
 {
-  "generatedAt": "2026-07-23T05:31:50.311Z",
-  "lastIssuerScan": "2026-07-23",
+  "generatedAt": "2026-07-24T05:26:42.890Z",
+  "lastIssuerScan": "2026-07-24",
   "issuerCount": 170,
   "recent": [
+    {
+      "stockCode": "APTK",
+      "stockName": "Angropromet Tikveshanka AD Kavadarci",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-23",
+      "headline": "APTK files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77951",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "POPK",
+      "stockName": "Popova Kula AD Demir Kapija",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-23",
+      "headline": "POPK files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77955",
+      "source": "SECNet"
+    },
     {
       "stockCode": "CKB",
       "stockName": "Centralna kooperativna banka AD Skopje",
@@ -2189,6 +2213,30 @@
     }
   ],
   "all": [
+    {
+      "stockCode": "APTK",
+      "stockName": "Angropromet Tikveshanka AD Kavadarci",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-23",
+      "headline": "APTK files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77951",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "POPK",
+      "stockName": "Popova Kula AD Demir Kapija",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-23",
+      "headline": "POPK files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77955",
+      "source": "SECNet"
+    },
     {
       "stockCode": "CKB",
       "stockName": "Centralna kooperativna banka AD Skopje",
@@ -8778,18 +8826,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "APTK",
-      "stockName": "Angropromet Tikveshanka AD Kavadarci",
-      "reportKind": "fy_audited",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-12-31",
-      "periodLabel": "01.01–31.12",
-      "filedAt": "2025-02-28",
-      "headline": "APTK files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/71229",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "reportKind": "fy_audited",
@@ -10687,6 +10723,190 @@
     }
   ],
   "byIssuer": {
+    "APTK": [
+      {
+        "stockCode": "APTK",
+        "stockName": "Angropromet Tikveshanka AD Kavadarci",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-23",
+        "headline": "APTK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77951",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "APTK",
+        "stockName": "Angropromet Tikveshanka AD Kavadarci",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-27",
+        "headline": "APTK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77481",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "APTK",
+        "stockName": "Angropromet Tikveshanka AD Kavadarci",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-28",
+        "headline": "APTK reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76681",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "APTK",
+        "stockName": "Angropromet Tikveshanka AD Kavadarci",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-02-27",
+        "headline": "APTK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75523",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "APTK",
+        "stockName": "Angropromet Tikveshanka AD Kavadarci",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-28",
+        "headline": "APTK reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74475",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "APTK",
+        "stockName": "Angropromet Tikveshanka AD Kavadarci",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-25",
+        "headline": "APTK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73696",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "APTK",
+        "stockName": "Angropromet Tikveshanka AD Kavadarci",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-29",
+        "headline": "APTK reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72312",
+        "source": "SECNet"
+      }
+    ],
+    "POPK": [
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-23",
+        "headline": "POPK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77955",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-22",
+        "headline": "POPK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77308",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-30",
+        "headline": "POPK reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76962",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-03-31",
+        "headline": "POPK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76031",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-31",
+        "headline": "POPK reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74631",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-22",
+        "headline": "POPK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73647",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-30",
+        "headline": "POPK reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72586",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-03-28",
+        "headline": "POPK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/71640",
+        "source": "SECNet"
+      }
+    ],
     "CKB": [
       {
         "stockCode": "CKB",
@@ -14019,92 +14239,6 @@
         "source": "SECNet"
       }
     ],
-    "APTK": [
-      {
-        "stockCode": "APTK",
-        "stockName": "Angropromet Tikveshanka AD Kavadarci",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-27",
-        "headline": "APTK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77481",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "APTK",
-        "stockName": "Angropromet Tikveshanka AD Kavadarci",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-28",
-        "headline": "APTK reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76681",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "APTK",
-        "stockName": "Angropromet Tikveshanka AD Kavadarci",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-02-27",
-        "headline": "APTK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75523",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "APTK",
-        "stockName": "Angropromet Tikveshanka AD Kavadarci",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-28",
-        "headline": "APTK reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74475",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "APTK",
-        "stockName": "Angropromet Tikveshanka AD Kavadarci",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-25",
-        "headline": "APTK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73696",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "APTK",
-        "stockName": "Angropromet Tikveshanka AD Kavadarci",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-29",
-        "headline": "APTK reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72312",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "APTK",
-        "stockName": "Angropromet Tikveshanka AD Kavadarci",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-02-28",
-        "headline": "APTK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71229",
-        "source": "SECNet"
-      }
-    ],
     "BIM": [
       {
         "stockCode": "BIM",
@@ -15376,92 +15510,6 @@
         "filedAt": "2024-10-31",
         "headline": "TKPR reports profit and loss for 01.01.–30.09",
         "url": "https://seinet.com.mk/en/document/70361",
-        "source": "SECNet"
-      }
-    ],
-    "POPK": [
-      {
-        "stockCode": "POPK",
-        "stockName": "Popova Kula AD Demir Kapija",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-22",
-        "headline": "POPK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77308",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "POPK",
-        "stockName": "Popova Kula AD Demir Kapija",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-30",
-        "headline": "POPK reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76962",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "POPK",
-        "stockName": "Popova Kula AD Demir Kapija",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-03-31",
-        "headline": "POPK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76031",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "POPK",
-        "stockName": "Popova Kula AD Demir Kapija",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-31",
-        "headline": "POPK reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74631",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "POPK",
-        "stockName": "Popova Kula AD Demir Kapija",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-22",
-        "headline": "POPK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73647",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "POPK",
-        "stockName": "Popova Kula AD Demir Kapija",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-30",
-        "headline": "POPK reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72586",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "POPK",
-        "stockName": "Popova Kula AD Demir Kapija",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-03-28",
-        "headline": "POPK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71640",
         "source": "SECNet"
       }
     ],
@@ -19429,7 +19477,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-April",
+      "expectedLabel": "expected late June",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },
@@ -19849,7 +19897,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected late April",
+      "expectedLabel": "expected mid-May",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },

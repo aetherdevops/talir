@@ -332,6 +332,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "7/23/2026 - Angropromet Tikvesanka AD Kavadarci - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77951",
+        "date": "2026-07-23"
+      },
+      {
         "title": "5/27/2026 - Angropromet Tikvesanka AD Kavadarci - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77481",
         "date": "2026-05-27"
@@ -375,14 +380,14 @@
         "title": "4/25/2025 - Angropromet Tikvesanka AD Kavadarci - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/72123",
         "date": "2025-04-25"
-      },
-      {
-        "title": "2/28/2025 - Angropromet Tikvesanka AD Kavadarci - Non-audited financial statements 01.01. - 31.12.",
-        "url": "https://seinet.com.mk/en/document/71229",
-        "date": "2025-02-28"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/23/2026 - Angropromet Tikvesanka AD Kavadarci - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77952",
+        "date": "2026-07-23"
+      },
       {
         "title": "5/27/2026 - Angropromet Tikvesanka AD Kavadarci - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77482",
@@ -407,11 +412,6 @@
         "title": "4/27/2026 - Angropromet Tikvesanka AD Kavadarci - Public call for shareholders meeting",
         "url": "https://seinet.com.mk/en/document/76590",
         "date": "2026-04-27"
-      },
-      {
-        "title": "2/27/2026 - Angropromet Tikvesanka AD Kavadarci - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75524",
-        "date": "2026-02-27"
       }
     ]
   },
@@ -5131,6 +5131,11 @@
     "website": "http://www.popovakula.com.mk",
     "reportLinks": [
       {
+        "title": "7/23/2026 - Popova kula AD Demir Kapija - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77955",
+        "date": "2026-07-23"
+      },
+      {
         "title": "5/22/2026 - Popova kula AD Demir Kapija - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77308",
         "date": "2026-05-22"
@@ -5174,14 +5179,14 @@
         "title": "3/28/2025 - Popova kula AD Demir Kapija - Non-audited financial statements 01.01. - 31.12.",
         "url": "https://seinet.com.mk/en/document/71640",
         "date": "2025-03-28"
-      },
-      {
-        "title": "2/28/2025 - Popova kula AD Demir Kapija - Non-audited financial statements 01.01. - 31.12.",
-        "url": "https://seinet.com.mk/en/document/71220",
-        "date": "2025-02-28"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/23/2026 - Popova kula AD Demir Kapija - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77956",
+        "date": "2026-07-23"
+      },
       {
         "title": "6/23/2026 - Popova kula AD Demir Kapija - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77795",
@@ -5206,11 +5211,6 @@
         "title": "2/27/2026 - Popova kula AD Demir Kapija - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/75534",
         "date": "2026-02-27"
-      },
-      {
-        "title": "1/12/2026 - Popova kula AD Demir Kapija - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75043",
-        "date": "2026-01-12"
       }
     ]
   },

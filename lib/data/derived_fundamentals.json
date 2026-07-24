@@ -1,6 +1,50 @@
 {
-  "generatedAt": "2026-07-23T05:53:59.466Z",
+  "generatedAt": "2026-07-24T05:47:26.167Z",
   "all": [
+    {
+      "stockCode": "APTK",
+      "stockName": "Angropromet Tikveshanka AD Kavadarci",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-23",
+      "url": "https://seinet.com.mk/en/document/77951",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "POPK",
+      "stockName": "Popova Kula AD Demir Kapija",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-23",
+      "url": "https://seinet.com.mk/en/document/77955",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "APTK",
+      "stockName": "Angropromet Tikveshanka AD Kavadarci",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-23",
+      "url": "https://seinet.com.mk/en/document/77951",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "POPK",
+      "stockName": "Popova Kula AD Demir Kapija",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-23",
+      "url": "https://seinet.com.mk/en/document/77955",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
     {
       "stockCode": "CKBKO2",
       "stockName": "Centralna kooperativna banka AD Skopje",
@@ -12595,6 +12639,28 @@
       {
         "stockCode": "APTK",
         "stockName": "Angropromet Tikveshanka AD Kavadarci",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-23",
+        "url": "https://seinet.com.mk/en/document/77951",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "APTK",
+        "stockName": "Angropromet Tikveshanka AD Kavadarci",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-23",
+        "url": "https://seinet.com.mk/en/document/77951",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "APTK",
+        "stockName": "Angropromet Tikveshanka AD Kavadarci",
         "fiscalYear": 2025,
         "filedAt": "2026-05-27",
         "url": "https://seinet.com.mk/en/document/77481",
@@ -18075,6 +18141,28 @@
       }
     ],
     "POPK": [
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-23",
+        "url": "https://seinet.com.mk/en/document/77955",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "POPK",
+        "stockName": "Popova Kula AD Demir Kapija",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-23",
+        "url": "https://seinet.com.mk/en/document/77955",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "POPK",
         "stockName": "Popova Kula AD Demir Kapija",

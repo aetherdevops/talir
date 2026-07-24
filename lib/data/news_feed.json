@@ -1,10 +1,62 @@
 {
-  "generatedAt": "2026-07-23T05:31:49.896Z",
-  "lastIssuerScan": "2026-07-23",
+  "generatedAt": "2026-07-24T05:26:42.350Z",
+  "lastIssuerScan": "2026-07-24",
   "count": 1536,
   "datedCount": 1536,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "APTK-https-seinet-com-mk-en-document-77951",
+      "rawTitle": "7/23/2026 - Angropromet Tikvesanka AD Kavadarci - Non-audited financial statements 01.01. - 30.06.",
+      "title": "APTK files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "APTK",
+      "stockName": "Angropromet Tikveshanka AD Kavadarci",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-23",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77951"
+    },
+    {
+      "id": "APTK-https-seinet-com-mk-en-document-77952",
+      "rawTitle": "7/23/2026 - Angropromet Tikvesanka AD Kavadarci - Other price sensitive information",
+      "title": "APTK: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "APTK",
+      "stockName": "Angropromet Tikveshanka AD Kavadarci",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-23",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77952"
+    },
+    {
+      "id": "POPK-https-seinet-com-mk-en-document-77955",
+      "rawTitle": "7/23/2026 - Popova kula AD Demir Kapija - Non-audited financial statements 01.01. - 30.06.",
+      "title": "POPK files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "POPK",
+      "stockName": "Popova Kula AD Demir Kapija",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-23",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77955"
+    },
+    {
+      "id": "POPK-https-seinet-com-mk-en-document-77956",
+      "rawTitle": "7/23/2026 - Popova kula AD Demir Kapija - Other price sensitive information",
+      "title": "POPK: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "POPK",
+      "stockName": "Popova Kula AD Demir Kapija",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-23",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77956"
+    },
     {
       "id": "CKB-https-seinet-com-mk-en-document-77946",
       "rawTitle": "7/22/2026 - Centralna kooperativna banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
@@ -11108,19 +11160,6 @@
       "url": "https://seinet.com.mk/en/document/75523"
     },
     {
-      "id": "APTK-https-seinet-com-mk-en-document-75524",
-      "rawTitle": "2/27/2026 - Angropromet Tikvesanka AD Kavadarci - Other price sensitive information",
-      "title": "APTK: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "APTK",
-      "stockName": "Angropromet Tikveshanka AD Kavadarci",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-02-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75524"
-    },
-    {
       "id": "BANA-https-seinet-com-mk-en-document-75591",
       "rawTitle": "2/27/2026 - Rudnici Banani AD Skopje - Non-audited financial statements 01.01. - 31.12.",
       "title": "BANA files audited financial statements",
@@ -12094,19 +12133,6 @@
       "publishedAt": "2026-01-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75076"
-    },
-    {
-      "id": "POPK-https-seinet-com-mk-en-document-75043",
-      "rawTitle": "1/12/2026 - Popova kula AD Demir Kapija - Other price sensitive information",
-      "title": "POPK: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "POPK",
-      "stockName": "Popova Kula AD Demir Kapija",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-01-12",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75043"
     },
     {
       "id": "TEAL-https-seinet-com-mk-en-document-75049",
@@ -17413,19 +17439,6 @@
       "url": "https://seinet.com.mk/en/document/71431"
     },
     {
-      "id": "APTK-https-seinet-com-mk-en-document-71229",
-      "rawTitle": "2/28/2025 - Angropromet Tikvesanka AD Kavadarci - Non-audited financial statements 01.01. - 31.12.",
-      "title": "APTK files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "APTK",
-      "stockName": "Angropromet Tikveshanka AD Kavadarci",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-02-28",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/71229"
-    },
-    {
       "id": "CEVI-https-seinet-com-mk-en-document-71251",
       "rawTitle": "2/28/2025 - FZC 11 Oktomvri AD Kumanovo - Non-audited financial statements 01.01. - 31.12.",
       "title": "CEVI files audited financial statements",
@@ -17567,19 +17580,6 @@
       "publishedAt": "2025-02-28",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71328"
-    },
-    {
-      "id": "POPK-https-seinet-com-mk-en-document-71220",
-      "rawTitle": "2/28/2025 - Popova kula AD Demir Kapija - Non-audited financial statements 01.01. - 31.12.",
-      "title": "POPK files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "POPK",
-      "stockName": "Popova Kula AD Demir Kapija",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-02-28",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/71220"
     },
     {
       "id": "PPIV-https-seinet-com-mk-en-document-71364",
