@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-24T05:49:03.572Z",
-  "lastIssuerScan": "2026-07-24",
+  "generatedAt": "2026-07-25T05:32:02.014Z",
+  "lastIssuerScan": "2026-07-25",
   "issuerCount": 170,
   "recent": [
     {
@@ -1568,7 +1568,7 @@
       "trailingYieldAtEx": 2.359638937787932,
       "yoyGrowthPct": 16.666666666666664,
       "profitYear": null,
-      "payoutRatioPct": 53.54684073639655,
+      "payoutRatioPct": null,
       "source": "SECNet"
     },
     {
@@ -2468,7 +2468,7 @@
       "trailingYieldAtEx": 2.621359223300971,
       "yoyGrowthPct": 10.204081632653061,
       "profitYear": null,
-      "payoutRatioPct": 49.01560330038395,
+      "payoutRatioPct": null,
       "source": "SECNet"
     },
     {
@@ -2522,7 +2522,7 @@
       "trailingYieldAtEx": 5.257076834199884,
       "yoyGrowthPct": 82,
       "profitYear": 2023,
-      "payoutRatioPct": 57779.758798079434,
+      "payoutRatioPct": null,
       "source": "SECNet"
     },
     {
@@ -3404,7 +3404,7 @@
       "trailingYieldAtEx": 4.184100418410042,
       "yoyGrowthPct": null,
       "profitYear": 2022,
-      "payoutRatioPct": 52.85412262156448,
+      "payoutRatioPct": null,
       "source": "SECNet"
     },
     {
@@ -8366,7 +8366,7 @@
         "trailingYieldAtEx": 2.359638937787932,
         "yoyGrowthPct": 16.666666666666664,
         "profitYear": null,
-        "payoutRatioPct": 53.54684073639655,
+        "payoutRatioPct": null,
         "source": "SECNet"
       },
       {
@@ -8384,7 +8384,7 @@
         "trailingYieldAtEx": 2.621359223300971,
         "yoyGrowthPct": 10.204081632653061,
         "profitYear": null,
-        "payoutRatioPct": 49.01560330038395,
+        "payoutRatioPct": null,
         "source": "SECNet"
       },
       {
@@ -8584,7 +8584,7 @@
         "trailingYieldAtEx": 5.257076834199884,
         "yoyGrowthPct": 82,
         "profitYear": 2023,
-        "payoutRatioPct": 57779.758798079434,
+        "payoutRatioPct": null,
         "source": "SECNet"
       },
       {
@@ -8602,7 +8602,7 @@
         "trailingYieldAtEx": 4.184100418410042,
         "yoyGrowthPct": null,
         "profitYear": 2022,
-        "payoutRatioPct": 52.85412262156448,
+        "payoutRatioPct": null,
         "source": "SECNet"
       },
       {

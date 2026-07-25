@@ -1,8 +1,80 @@
 {
-  "generatedAt": "2026-07-24T05:26:42.890Z",
-  "lastIssuerScan": "2026-07-24",
+  "generatedAt": "2026-07-25T05:20:21.271Z",
+  "lastIssuerScan": "2026-07-25",
   "issuerCount": 170,
   "recent": [
+    {
+      "stockCode": "ADIN",
+      "stockName": "Ading AD  Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "ADIN files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77974",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "AUMK",
+      "stockName": "Automakedonija AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "AUMK files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77982",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TEHN",
+      "stockName": "Tehnokomerc AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "TEHN files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77985",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TETE",
+      "stockName": "Teteks AD Tetovo",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "TETE files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77976",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TKPR",
+      "stockName": "Tutunski kombinat AD Prilep",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "TKPR files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77989",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZAS",
+      "stockName": "ZhAS AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "ZAS files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77959",
+      "source": "SECNet"
+    },
     {
       "stockCode": "APTK",
       "stockName": "Angropromet Tikveshanka AD Kavadarci",
@@ -2213,6 +2285,78 @@
     }
   ],
   "all": [
+    {
+      "stockCode": "ADIN",
+      "stockName": "Ading AD  Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "ADIN files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77974",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "AUMK",
+      "stockName": "Automakedonija AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "AUMK files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77982",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TEHN",
+      "stockName": "Tehnokomerc AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "TEHN files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77985",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TETE",
+      "stockName": "Teteks AD Tetovo",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "TETE files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77976",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TKPR",
+      "stockName": "Tutunski kombinat AD Prilep",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "TKPR files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77989",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZAS",
+      "stockName": "ZhAS AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-24",
+      "headline": "ZAS files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77959",
+      "source": "SECNet"
+    },
     {
       "stockCode": "APTK",
       "stockName": "Angropromet Tikveshanka AD Kavadarci",
@@ -8994,18 +9138,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "ZAS",
-      "stockName": "ZhAS AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-12-31",
-      "periodLabel": "01.01–31.12",
-      "filedAt": "2025-02-28",
-      "headline": "ZAS files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/71233",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "BANA",
       "stockName": "Rudnici Banjani AD Skopje",
       "reportKind": "fy_audited",
@@ -9447,18 +9579,6 @@
       "filedAt": "2024-10-31",
       "headline": "TEAL reports profit and loss for 01.01.–30.09",
       "url": "https://seinet.com.mk/en/document/70316",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TKPR",
-      "stockName": "Tutunski kombinat AD Prilep",
-      "reportKind": "q3_pl",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-09-30",
-      "periodLabel": "01.01–30.09",
-      "filedAt": "2024-10-31",
-      "headline": "TKPR reports profit and loss for 01.01.–30.09",
-      "url": "https://seinet.com.mk/en/document/70361",
       "source": "SECNet"
     },
     {
@@ -10723,6 +10843,558 @@
     }
   ],
   "byIssuer": {
+    "ADIN": [
+      {
+        "stockCode": "ADIN",
+        "stockName": "Ading AD  Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-24",
+        "headline": "ADIN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77974",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ADIN",
+        "stockName": "Ading AD  Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-06-11",
+        "headline": "ADIN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77772",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ADIN",
+        "stockName": "Ading AD  Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-05-14",
+        "headline": "ADIN reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/77161",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ADIN",
+        "stockName": "Ading AD  Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-03-18",
+        "headline": "ADIN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75914",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ADIN",
+        "stockName": "Ading AD  Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-31",
+        "headline": "ADIN reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74635",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ADIN",
+        "stockName": "Ading AD  Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-08-07",
+        "headline": "ADIN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/74094",
+        "source": "SECNet"
+      }
+    ],
+    "AUMK": [
+      {
+        "stockCode": "AUMK",
+        "stockName": "Automakedonija AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-24",
+        "headline": "AUMK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77982",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "AUMK",
+        "stockName": "Automakedonija AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-28",
+        "headline": "AUMK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77653",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "AUMK",
+        "stockName": "Automakedonija AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-28",
+        "headline": "AUMK files profit and loss report",
+        "url": "https://seinet.com.mk/en/document/77650",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "AUMK",
+        "stockName": "Automakedonija AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-05-15",
+        "headline": "AUMK reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/77198",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "AUMK",
+        "stockName": "Automakedonija AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-04-01",
+        "headline": "AUMK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76132",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "AUMK",
+        "stockName": "Automakedonija AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-11-14",
+        "headline": "AUMK reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74857",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "AUMK",
+        "stockName": "Automakedonija AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-08-14",
+        "headline": "AUMK files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/74143",
+        "source": "SECNet"
+      }
+    ],
+    "TEHN": [
+      {
+        "stockCode": "TEHN",
+        "stockName": "Tehnokomerc AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-24",
+        "headline": "TEHN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77985",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TEHN",
+        "stockName": "Tehnokomerc AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-06-09",
+        "headline": "TEHN files profit and loss report",
+        "url": "https://seinet.com.mk/en/document/77754",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TEHN",
+        "stockName": "Tehnokomerc AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-05-14",
+        "headline": "TEHN reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/77159",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TEHN",
+        "stockName": "Tehnokomerc AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-13",
+        "headline": "TEHN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77129",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TEHN",
+        "stockName": "Tehnokomerc AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-04-01",
+        "headline": "TEHN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76105",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TEHN",
+        "stockName": "Tehnokomerc AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-17",
+        "headline": "TEHN reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74373",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TEHN",
+        "stockName": "Tehnokomerc AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-08-14",
+        "headline": "TEHN files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/74147",
+        "source": "SECNet"
+      }
+    ],
+    "TETE": [
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-24",
+        "headline": "TETE files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77976",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-29",
+        "headline": "TETE reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76757",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "q1_pl",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-04-23",
+        "headline": "TETE files profit and loss report",
+        "url": "https://seinet.com.mk/en/document/76379",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-02-23",
+        "headline": "TETE files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75416",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-22",
+        "headline": "TETE reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74398",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-25",
+        "headline": "TETE files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73694",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-28",
+        "headline": "TETE reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72192",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-02-27",
+        "headline": "TETE files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/71179",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "q3_pl",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2024-11-07",
+        "headline": "TETE reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/70435",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TETE",
+        "stockName": "Teteks AD Tetovo",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2024-08-08",
+        "headline": "TETE files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/69675",
+        "source": "SECNet"
+      }
+    ],
+    "TKPR": [
+      {
+        "stockCode": "TKPR",
+        "stockName": "Tutunski kombinat AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-24",
+        "headline": "TKPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77989",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TKPR",
+        "stockName": "Tutunski kombinat AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-26",
+        "headline": "TKPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77374",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TKPR",
+        "stockName": "Tutunski kombinat AD Prilep",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-30",
+        "headline": "TKPR reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76971",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TKPR",
+        "stockName": "Tutunski kombinat AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-04-21",
+        "headline": "TKPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76313",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TKPR",
+        "stockName": "Tutunski kombinat AD Prilep",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-31",
+        "headline": "TKPR reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74749",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TKPR",
+        "stockName": "Tutunski kombinat AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-25",
+        "headline": "TKPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73713",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TKPR",
+        "stockName": "Tutunski kombinat AD Prilep",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-30",
+        "headline": "TKPR reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72631",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TKPR",
+        "stockName": "Tutunski kombinat AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-04-23",
+        "headline": "TKPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/72029",
+        "source": "SECNet"
+      }
+    ],
+    "ZAS": [
+      {
+        "stockCode": "ZAS",
+        "stockName": "ZhAS AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-24",
+        "headline": "ZAS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77959",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZAS",
+        "stockName": "ZhAS AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-28",
+        "headline": "ZAS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77608",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZAS",
+        "stockName": "ZhAS AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-23",
+        "headline": "ZAS reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76397",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZAS",
+        "stockName": "ZhAS AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-03-04",
+        "headline": "ZAS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75833",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZAS",
+        "stockName": "ZhAS AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-29",
+        "headline": "ZAS reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74518",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZAS",
+        "stockName": "ZhAS AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-25",
+        "headline": "ZAS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73676",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZAS",
+        "stockName": "ZhAS AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-22",
+        "headline": "ZAS reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72007",
+        "source": "SECNet"
+      }
+    ],
     "APTK": [
       {
         "stockCode": "APTK",
@@ -11961,142 +12633,6 @@
         "source": "SECNet"
       }
     ],
-    "ADIN": [
-      {
-        "stockCode": "ADIN",
-        "stockName": "Ading AD  Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-06-11",
-        "headline": "ADIN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77772",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ADIN",
-        "stockName": "Ading AD  Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-05-14",
-        "headline": "ADIN reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/77161",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ADIN",
-        "stockName": "Ading AD  Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-03-18",
-        "headline": "ADIN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75914",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ADIN",
-        "stockName": "Ading AD  Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-31",
-        "headline": "ADIN reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74635",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ADIN",
-        "stockName": "Ading AD  Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-08-07",
-        "headline": "ADIN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74094",
-        "source": "SECNet"
-      }
-    ],
-    "TEHN": [
-      {
-        "stockCode": "TEHN",
-        "stockName": "Tehnokomerc AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-06-09",
-        "headline": "TEHN files profit and loss report",
-        "url": "https://seinet.com.mk/en/document/77754",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TEHN",
-        "stockName": "Tehnokomerc AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-05-14",
-        "headline": "TEHN reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/77159",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TEHN",
-        "stockName": "Tehnokomerc AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-13",
-        "headline": "TEHN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77129",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TEHN",
-        "stockName": "Tehnokomerc AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-04-01",
-        "headline": "TEHN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76105",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TEHN",
-        "stockName": "Tehnokomerc AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-17",
-        "headline": "TEHN reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74373",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TEHN",
-        "stockName": "Tehnokomerc AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-08-14",
-        "headline": "TEHN files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74147",
-        "source": "SECNet"
-      }
-    ],
     "KJUBI": [
       {
         "stockCode": "KJUBI",
@@ -12988,80 +13524,6 @@
         "filedAt": "2025-04-01",
         "headline": "VITA files audited financial statements",
         "url": "https://seinet.com.mk/en/document/71688",
-        "source": "SECNet"
-      }
-    ],
-    "AUMK": [
-      {
-        "stockCode": "AUMK",
-        "stockName": "Automakedonija AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-28",
-        "headline": "AUMK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77653",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "AUMK",
-        "stockName": "Automakedonija AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-28",
-        "headline": "AUMK files profit and loss report",
-        "url": "https://seinet.com.mk/en/document/77650",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "AUMK",
-        "stockName": "Automakedonija AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-05-15",
-        "headline": "AUMK reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/77198",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "AUMK",
-        "stockName": "Automakedonija AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-04-01",
-        "headline": "AUMK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76132",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "AUMK",
-        "stockName": "Automakedonija AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-11-14",
-        "headline": "AUMK reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74857",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "AUMK",
-        "stockName": "Automakedonija AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-08-14",
-        "headline": "AUMK files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74143",
         "source": "SECNet"
       }
     ],
@@ -14150,92 +14612,6 @@
         "filedAt": "2024-07-30",
         "headline": "VROS files audited financial statements",
         "url": "https://seinet.com.mk/en/document/69420",
-        "source": "SECNet"
-      }
-    ],
-    "ZAS": [
-      {
-        "stockCode": "ZAS",
-        "stockName": "ZhAS AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-28",
-        "headline": "ZAS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77608",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZAS",
-        "stockName": "ZhAS AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-23",
-        "headline": "ZAS reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76397",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZAS",
-        "stockName": "ZhAS AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-03-04",
-        "headline": "ZAS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75833",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZAS",
-        "stockName": "ZhAS AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-29",
-        "headline": "ZAS reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74518",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZAS",
-        "stockName": "ZhAS AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-25",
-        "headline": "ZAS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73676",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZAS",
-        "stockName": "ZhAS AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-22",
-        "headline": "ZAS reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72007",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZAS",
-        "stockName": "ZhAS AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-02-28",
-        "headline": "ZAS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71233",
         "source": "SECNet"
       }
     ],
@@ -15412,104 +15788,6 @@
         "filedAt": "2024-07-31",
         "headline": "MTUR files audited financial statements",
         "url": "https://seinet.com.mk/en/document/69606",
-        "source": "SECNet"
-      }
-    ],
-    "TKPR": [
-      {
-        "stockCode": "TKPR",
-        "stockName": "Tutunski kombinat AD Prilep",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-26",
-        "headline": "TKPR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77374",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TKPR",
-        "stockName": "Tutunski kombinat AD Prilep",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-30",
-        "headline": "TKPR reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76971",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TKPR",
-        "stockName": "Tutunski kombinat AD Prilep",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-04-21",
-        "headline": "TKPR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76313",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TKPR",
-        "stockName": "Tutunski kombinat AD Prilep",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-31",
-        "headline": "TKPR reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74749",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TKPR",
-        "stockName": "Tutunski kombinat AD Prilep",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-25",
-        "headline": "TKPR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73713",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TKPR",
-        "stockName": "Tutunski kombinat AD Prilep",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-30",
-        "headline": "TKPR reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72631",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TKPR",
-        "stockName": "Tutunski kombinat AD Prilep",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-04-23",
-        "headline": "TKPR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/72029",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TKPR",
-        "stockName": "Tutunski kombinat AD Prilep",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-10-31",
-        "headline": "TKPR reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/70361",
         "source": "SECNet"
       }
     ],
@@ -18575,116 +18853,6 @@
         "source": "SECNet"
       }
     ],
-    "TETE": [
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-29",
-        "headline": "TETE reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76757",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
-        "reportKind": "q1_pl",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-04-23",
-        "headline": "TETE files profit and loss report",
-        "url": "https://seinet.com.mk/en/document/76379",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-02-23",
-        "headline": "TETE files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75416",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-22",
-        "headline": "TETE reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74398",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-25",
-        "headline": "TETE files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73694",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-28",
-        "headline": "TETE reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72192",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-02-27",
-        "headline": "TETE files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71179",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-11-07",
-        "headline": "TETE reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/70435",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2024-08-08",
-        "headline": "TETE files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/69675",
-        "source": "SECNet"
-      }
-    ],
     "TIKV": [
       {
         "stockCode": "TIKV",
@@ -19447,7 +19615,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-June",
+      "expectedLabel": "expected early July",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },
@@ -19487,7 +19655,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected late May",
+      "expectedLabel": "expected late June",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },
@@ -20117,7 +20285,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-May",
+      "expectedLabel": "expected mid-June",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },
@@ -20137,7 +20305,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-May",
+      "expectedLabel": "expected mid-July",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },
@@ -20157,7 +20325,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-May",
+      "expectedLabel": "expected late May",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },
@@ -20277,7 +20445,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-April",
+      "expectedLabel": "expected late June",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },

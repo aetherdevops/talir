@@ -20,6 +20,11 @@
     "website": "http://www.ading.com.mk",
     "reportLinks": [
       {
+        "title": "7/24/2026 - Ading AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77974",
+        "date": "2026-07-24"
+      },
+      {
         "title": "6/11/2026 - Ading AD Skopje - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77772",
         "date": "2026-06-11"
@@ -63,14 +68,14 @@
         "title": "7/23/2025 - Ading AD Skopje - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/73658",
         "date": "2025-07-23"
-      },
-      {
-        "title": "5/30/2025 - Ading AD Skopje - Audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73196",
-        "date": "2025-05-30"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/24/2026 - Ading AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77975",
+        "date": "2026-07-24"
+      },
       {
         "title": "6/11/2026 - Ading AD Skopje - Dividend Calendar",
         "url": "https://seinet.com.mk/en/document/77771",
@@ -100,16 +105,6 @@
         "title": "5/13/2026 - Ading AD Skopje - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77133",
         "date": "2026-05-13"
-      },
-      {
-        "title": "5/13/2026 - Ading AD Skopje - CCG Questionnaires",
-        "url": "https://seinet.com.mk/en/document/77131",
-        "date": "2026-05-13"
-      },
-      {
-        "title": "5/11/2026 - Ading AD Skopje - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/77107",
-        "date": "2026-05-11"
       }
     ]
   },
@@ -436,6 +431,16 @@
     "website": "http://www.automakedonija.com.mk/",
     "reportLinks": [
       {
+        "title": "7/24/2026 - Automakedonija AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77982",
+        "date": "2026-07-24"
+      },
+      {
+        "title": "7/24/2026 - Automakedonija AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77981",
+        "date": "2026-07-24"
+      },
+      {
         "title": "5/28/2026 - Automakedonija AD Skopje - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77653",
         "date": "2026-05-28"
@@ -474,19 +479,19 @@
         "title": "8/14/2025 - Automakedonija AD Skopje - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/74143",
         "date": "2025-08-14"
-      },
-      {
-        "title": "7/31/2025 - Automakedonija AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/74048",
-        "date": "2025-07-31"
-      },
-      {
-        "title": "5/29/2025 - Automakedonija AD Skopje - Audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73176",
-        "date": "2025-05-29"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/24/2026 - Automakedonija AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77983",
+        "date": "2026-07-24"
+      },
+      {
+        "title": "7/24/2026 - Automakedonija AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77980",
+        "date": "2026-07-24"
+      },
       {
         "title": "5/28/2026 - Automakedonija AD Skopje - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77652",
@@ -506,21 +511,6 @@
         "title": "5/18/2026 - Automakedonija AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77214",
         "date": "2026-05-18"
-      },
-      {
-        "title": "5/4/2026 - Automakedonija AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/77035",
-        "date": "2026-05-04"
-      },
-      {
-        "title": "4/30/2026 - Automakedonija AD Skopje - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76940",
-        "date": "2026-04-30"
-      },
-      {
-        "title": "4/28/2026 - Automakedonija AD Skopje - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76699",
-        "date": "2026-04-28"
       }
     ]
   },
@@ -7708,6 +7698,11 @@
     "website": "http://www.tehnokomerc.com.mk/",
     "reportLinks": [
       {
+        "title": "7/24/2026 - Tehnokomerc AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77985",
+        "date": "2026-07-24"
+      },
+      {
         "title": "5/14/2026 - Tehnokomerc AD Skopje - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/77159",
         "date": "2026-05-14"
@@ -7751,14 +7746,14 @@
         "title": "8/14/2025 - Tehnokomerc AD Skopje - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/74147",
         "date": "2025-08-14"
-      },
-      {
-        "title": "8/1/2025 - Tehnokomerc AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/74072",
-        "date": "2025-08-01"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/24/2026 - Tehnokomerc AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77986",
+        "date": "2026-07-24"
+      },
       {
         "title": "6/9/2026 - Tehnokomerc AD Skopje - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77756",
@@ -7783,16 +7778,6 @@
         "title": "5/13/2026 - Tehnokomerc AD Skopje - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77130",
         "date": "2026-05-13"
-      },
-      {
-        "title": "5/8/2026 - Tehnokomerc AD Skopje - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/77090",
-        "date": "2026-05-08"
-      },
-      {
-        "title": "5/8/2026 - Tehnokomerc AD Skopje - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/77089",
-        "date": "2026-05-08"
       }
     ]
   },
@@ -7909,6 +7894,11 @@
     "website": "http://www.teteks.com.mk",
     "reportLinks": [
       {
+        "title": "7/24/2026 - Teteks AD Tetovo - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77976",
+        "date": "2026-07-24"
+      },
+      {
         "title": "4/29/2026 - Teteks AD Tetovo - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/76757",
         "date": "2026-04-29"
@@ -7952,14 +7942,14 @@
         "title": "8/8/2024 - Teteks AD Tetovo - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/69675",
         "date": "2024-08-08"
-      },
-      {
-        "title": "7/24/2024 - Teteks AD Tetovo - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69234",
-        "date": "2024-07-24"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/24/2026 - Teteks AD Tetovo - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77977",
+        "date": "2026-07-24"
+      },
       {
         "title": "5/15/2026 - Teteks AD Tetovo - Changes in shareholders with a significant stake",
         "url": "https://seinet.com.mk/en/document/77181",
@@ -7994,16 +7984,6 @@
         "title": "3/19/2026 - Teteks AD Tetovo - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/75922",
         "date": "2026-03-19"
-      },
-      {
-        "title": "3/19/2026 - Teteks AD Tetovo - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/75921",
-        "date": "2026-03-19"
-      },
-      {
-        "title": "2/23/2026 - Teteks AD Tetovo - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75417",
-        "date": "2026-02-23"
       }
     ]
   },
@@ -8126,6 +8106,11 @@
     "website": "http://www.tkprilep.com.mk",
     "reportLinks": [
       {
+        "title": "7/24/2026 - Tutunski kombinat AD Prilep - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77989",
+        "date": "2026-07-24"
+      },
+      {
         "title": "5/26/2026 - Tutunski kombinat AD Prilep - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77374",
         "date": "2026-05-26"
@@ -8169,14 +8154,14 @@
         "title": "4/23/2025 - Tutunski kombinat AD Prilep - Non-audited financial statements 01.01. - 31.12.",
         "url": "https://seinet.com.mk/en/document/72029",
         "date": "2025-04-23"
-      },
-      {
-        "title": "10/31/2024 - Tutunski kombinat AD Prilep - Non-audited profit&loss account 01.01. - 30.09.",
-        "url": "https://seinet.com.mk/en/document/70361",
-        "date": "2024-10-31"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/24/2026 - Tutunski kombinat AD Prilep - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77990",
+        "date": "2026-07-24"
+      },
       {
         "title": "5/26/2026 - Tutunski kombinat AD Prilep - CCG Questionnaires",
         "url": "https://seinet.com.mk/en/document/77375",
@@ -8205,16 +8190,6 @@
       {
         "title": "4/22/2026 - Tutunski kombinat AD Prilep - CCG Questionnaires",
         "url": "https://seinet.com.mk/en/document/76338",
-        "date": "2026-04-22"
-      },
-      {
-        "title": "4/22/2026 - Tutunski kombinat AD Prilep - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76337",
-        "date": "2026-04-22"
-      },
-      {
-        "title": "4/22/2026 - Tutunski kombinat AD Prilep - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76336",
         "date": "2026-04-22"
       }
     ]
@@ -9908,6 +9883,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "7/24/2026 - ZAS AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77959",
+        "date": "2026-07-24"
+      },
+      {
         "title": "5/28/2026 - ZAS AD Skopje - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77608",
         "date": "2026-05-28"
@@ -9951,14 +9931,14 @@
         "title": "4/22/2025 - ZAS AD Skopje - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/72007",
         "date": "2025-04-22"
-      },
-      {
-        "title": "2/28/2025 - ZAS AD Skopje - Non-audited financial statements 01.01. - 31.12.",
-        "url": "https://seinet.com.mk/en/document/71233",
-        "date": "2025-02-28"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/24/2026 - ZAS AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77960",
+        "date": "2026-07-24"
+      },
       {
         "title": "5/28/2026 - ZAS AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77610",
@@ -9988,16 +9968,6 @@
         "title": "5/5/2026 - ZAS AD Skopje - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77045",
         "date": "2026-05-05"
-      },
-      {
-        "title": "5/5/2026 - ZAS AD Skopje - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/77044",
-        "date": "2026-05-05"
-      },
-      {
-        "title": "4/23/2026 - ZAS AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/76398",
-        "date": "2026-04-23"
       }
     ]
   },
