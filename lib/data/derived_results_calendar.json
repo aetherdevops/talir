@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-25T05:20:21.271Z",
-  "lastIssuerScan": "2026-07-25",
+  "generatedAt": "2026-07-26T05:38:35.903Z",
+  "lastIssuerScan": "2026-07-26",
   "issuerCount": 170,
   "recent": [
     {
@@ -2197,90 +2197,6 @@
       "filedAt": "2026-04-28",
       "headline": "VTKS reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/76687",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "INPR",
-      "stockName": "Interpromet AD Tetovo",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-27",
-      "headline": "INPR files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76579",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "KONZ",
-      "stockName": "Fruktal Mak AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-27",
-      "headline": "KONZ reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76573",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MODA",
-      "stockName": "Moda AD Sveti Nikole",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-27",
-      "headline": "MODA reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76554",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MZPU",
-      "stockName": "MZT Pumpi AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-27",
-      "headline": "MZPU reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76508",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "PKB",
-      "stockName": "Pekabesko AD Kadino Ilinden",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-27",
-      "headline": "PKB files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76506",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "RZEK",
-      "stockName": "RZh Ekonomika AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-27",
-      "headline": "RZEK reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76498",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-27",
-      "headline": "TNB reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76611",
       "source": "SECNet"
     }
   ],
