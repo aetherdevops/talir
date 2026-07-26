@@ -2,7 +2,6 @@ import type { MarketIndex, StockSummary, NewsItem } from '@/lib/types'
 import type { DerivedBreadth, IndexDetails, MarketSentiment } from '@/lib/data'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
 import type { Mbi10DividendHighlight } from '@/lib/dividend-home-banner'
-import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { HomeIndexStrip } from '@/components/home/HomeIndexStrip'
 import { HomeLeaderboardTabs } from '@/components/home/HomeLeaderboardTabs'
 import { HomeMbi10Chart } from '@/components/home/HomeMbi10Chart'
@@ -60,9 +59,6 @@ export function HomeMarketOverview({
             />
 
             {mbi10 ? <HomeMbi10Chart index={mbi10} asOfDate={asOfDate} /> : null}
-
-            <SponsorSlot placement="mobile-banner" />
-            <SponsorSlot placement="rectangle" className="hidden md:flex" />
 
             <HomeMarketBreadth sentiment={sentiment} breadth={breadth} asOfDate={asOfDate} />
 

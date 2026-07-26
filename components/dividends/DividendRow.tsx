@@ -11,6 +11,9 @@ interface DividendRowProps {
     className?: string
     /** Compact dense row for leaderboards (default). */
     dense?: boolean
+    /** When set, ticker selects this issuer instead of navigating to the stock page. */
+    onSelectCode?: (code: string) => void
+    selected?: boolean
 }
 
 function formatShortDate(iso: string): string {
@@ -42,7 +45,13 @@ function formatDateCell(entry: DividendCalendarEntry): string {
     return `filed ${formatShortDate(entry.filedAt)}`
 }
 
-export function DividendRow({ entry, className, dense = true }: DividendRowProps) {
+export function DividendRow({
+    entry,
+    className,
+    dense = true,
+    onSelectCode,
+    selected = false,
+}: DividendRowProps) {
     const { t } = useLocale()
     const yieldPct = entry.trailingYieldAtEx
     const hasSeinetDates = Boolean(entry.exDate || entry.cumDate || entry.recordDate)
@@ -53,23 +62,35 @@ export function DividendRow({ entry, className, dense = true }: DividendRowProps
         isMseOnly ||
         (entry.sourceFields?.grossPerShare === 'MSE' && !hasSeinetDates)
 
+    const tickerClass =
+        'font-data text-xs font-semibold text-text-primary tabular-nums hover:text-accent'
+
     return (
         <div
             className={cn(
-                'grid items-center gap-x-2 gap-y-0.5 min-w-0 min-h-9 py-1.5 px-1.5 border-b border-border/60 last:border-b-0',
+                'grid items-center gap-x-2 gap-y-0.5 min-w-0 min-h-9 py-1.5 px-1.5 border-b border-border/60 last:border-b-0 rounded-md',
                 dense
                     ? 'grid-cols-[3.25rem_minmax(0,1fr)_auto_1.75rem] sm:grid-cols-[3.5rem_5.5rem_minmax(0,1fr)_auto_1.75rem]'
                     : 'grid-cols-[4rem_minmax(0,1fr)_auto_1.75rem]',
+                selected && 'bg-surface-secondary/70 ring-1 ring-accent/25',
                 className
             )}
         >
             <div className="min-w-0">
-                <Link
-                    href={`/stock/${entry.stockCode}`}
-                    className="font-data text-xs font-semibold text-text-primary tabular-nums hover:text-accent"
-                >
-                    {entry.stockCode}
-                </Link>
+                {onSelectCode ? (
+                    <button
+                        type="button"
+                        onClick={() => onSelectCode(entry.stockCode)}
+                        className={cn(tickerClass, 'text-left')}
+                        aria-pressed={selected}
+                    >
+                        {entry.stockCode}
+                    </button>
+                ) : (
+                    <Link href={`/stock/${entry.stockCode}`} className={tickerClass}>
+                        {entry.stockCode}
+                    </Link>
+                )}
                 {yieldPct !== null && Number.isFinite(yieldPct) ? (
                     <div className="font-data text-[10px] leading-tight text-text-tertiary tabular-nums sm:hidden">
                         {yieldPct.toFixed(2)}%

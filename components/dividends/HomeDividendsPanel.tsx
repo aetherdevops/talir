@@ -3,6 +3,7 @@
 import { ArrowRight } from 'lucide-react'
 import type { Mbi10DividendHighlight } from '@/lib/dividend-home-banner'
 import { LocaleLink } from '@/components/layout/LocaleLink'
+import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn, formatInteger, formatNewsDate, formatPrice } from '@/lib/utils'
 
@@ -17,6 +18,14 @@ function formatDps(value: number): string {
         return `${formatInteger(Math.round(value))} ден.`
     }
     return formatPrice(value)
+}
+
+function pickYoyChange(scorecard: Mbi10DividendHighlight['scorecard']): number | null {
+    const yieldYoy = scorecard.yieldGrowthPct
+    if (yieldYoy != null && Number.isFinite(yieldYoy)) return yieldYoy
+    const dpsYoy = scorecard.yoyDpsGrowthPct
+    if (dpsYoy != null && Number.isFinite(dpsYoy)) return dpsYoy
+    return null
 }
 
 export function HomeDividendsPanel({
@@ -67,6 +76,7 @@ export function HomeDividendsPanel({
                 ) : (
                     highlights.map((row) => {
                         const yieldPct = row.scorecard.trailingYieldPct
+                        const yoyChange = pickYoyChange(row.scorecard)
                         const streak = row.scorecard.dividendStreakYears
                         const dps = row.scorecard.latestGrossPerShare
                         const fy = row.scorecard.latestProfitYear
@@ -78,20 +88,30 @@ export function HomeDividendsPanel({
                                     href={`/dividends?code=${encodeURIComponent(row.stockCode)}`}
                                     className="flex flex-col gap-1.5 px-4 py-3 hover:bg-surface-secondary/40 transition-colors min-w-0"
                                 >
-                                    <div className="flex items-baseline justify-between gap-2 min-w-0">
+                                    <div className="flex items-start justify-between gap-2 min-w-0">
                                         <span className="font-data text-sm font-semibold text-text-primary tabular-nums">
                                             {row.stockCode}
                                         </span>
                                         {yieldPct != null && Number.isFinite(yieldPct) ? (
-                                            <span className="font-data text-sm font-semibold text-accent tabular-nums shrink-0">
-                                                {yieldPct.toFixed(2)}%
-                                            </span>
+                                            <div className="flex flex-col items-end gap-0.5 shrink-0">
+                                                <span
+                                                    className={cn(
+                                                        'font-data text-sm font-semibold tabular-nums',
+                                                        yoyChange != null ? 'text-text-primary' : 'text-accent'
+                                                    )}
+                                                >
+                                                    {yieldPct.toFixed(2)}%
+                                                </span>
+                                                {yoyChange != null ? (
+                                                    <ChangeLabel change={yoyChange} className="text-[11px]" />
+                                                ) : null}
+                                            </div>
                                         ) : null}
                                     </div>
-                                    <p className="text-[11px] text-text-tertiary truncate leading-snug">
+                                    <p className="text-xs text-text-tertiary truncate leading-snug">
                                         {row.stockName}
                                     </p>
-                                    <div className="flex flex-wrap gap-x-3 gap-y-0.5 font-data text-[10px] text-text-secondary tabular-nums">
+                                    <div className="flex flex-wrap gap-x-3 gap-y-0.5 font-data text-xs text-text-secondary tabular-nums">
                                         {dps != null ? (
                                             <span>
                                                 {formatDps(dps)}

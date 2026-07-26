@@ -68,7 +68,12 @@ export function DividendsPageClient({ calendar, asOfDate, priceByCode, firstTrad
                 return calendar.upcomingExDates.length ? (
                     <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
                         {calendar.upcomingExDates.map((entry) => (
-                            <DividendRow key={`up-${entry.stockCode}-${entry.exDate}`} entry={entry} />
+                            <DividendRow
+                                key={`up-${entry.stockCode}-${entry.exDate}`}
+                                entry={entry}
+                                onSelectCode={setSelectedCode}
+                                selected={entry.stockCode === selectedCode}
+                            />
                         ))}
                     </div>
                 ) : (
@@ -78,7 +83,12 @@ export function DividendsPageClient({ calendar, asOfDate, priceByCode, firstTrad
                 return (
                     <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
                         {highestDisclosedGross(calendar.all, 12).map((entry) => (
-                            <DividendRow key={`hi-${entry.url}`} entry={entry} />
+                            <DividendRow
+                                key={`hi-${entry.url}`}
+                                entry={entry}
+                                onSelectCode={setSelectedCode}
+                                selected={entry.stockCode === selectedCode}
+                            />
                         ))}
                     </div>
                 )
@@ -108,12 +118,17 @@ export function DividendsPageClient({ calendar, asOfDate, priceByCode, firstTrad
                 return (
                     <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
                         {calendar.recent.slice(0, 15).map((entry) => (
-                            <DividendRow key={`${entry.stockCode}-${entry.filedAt}-${entry.url}`} entry={entry} />
+                            <DividendRow
+                                key={`${entry.stockCode}-${entry.filedAt}-${entry.url}`}
+                                entry={entry}
+                                onSelectCode={setSelectedCode}
+                                selected={entry.stockCode === selectedCode}
+                            />
                         ))}
                     </div>
                 )
         }
-    }, [calendar, leaderboardTab, setSelectedCode, t])
+    }, [calendar, leaderboardTab, selectedCode, setSelectedCode, t])
 
     const selectedPrice = selectedCode ? priceByCode[selectedCode] ?? null : null
     const selectedFirstTrade = selectedCode ? firstTradeByCode[selectedCode] ?? null : null
