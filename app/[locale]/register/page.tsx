@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Label } from '@/components/ui/Label'
 import { useLocale } from '@/components/providers/LocaleProvider'
+import { localizedPath } from '@/lib/i18n/routing'
 
 const RESEND_COOLDOWN_SEC = 60
 
@@ -18,9 +19,12 @@ function RegisterForm() {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const [pendingEmail, setPendingEmail] = useState<string | null>(null)
+    const [existingEmail, setExistingEmail] = useState<string | null>(null)
+    const [loginLinkSent, setLoginLinkSent] = useState(false)
     const [resendMsg, setResendMsg] = useState<string | null>(null)
     const [cooldown, setCooldown] = useState(0)
     const [resending, setResending] = useState(false)
+    const [sendingLink, setSendingLink] = useState(false)
 
     useEffect(() => {
         if (cooldown <= 0) return
@@ -58,10 +62,44 @@ function RegisterForm() {
         setCooldown(RESEND_COOLDOWN_SEC)
     }, [pendingEmail, cooldown, resending, t])
 
+    const handleSendLoginLink = useCallback(async () => {
+        if (!existingEmail || cooldown > 0 || sendingLink) return
+        setSendingLink(true)
+        setError('')
+        setResendMsg(null)
+
+        const supabase = createClientIfConfigured()
+        if (!supabase) {
+            setSendingLink(false)
+            setError(t('auth.authNotConfigured'))
+            return
+        }
+
+        const redirectTo = `${window.location.origin}/auth/confirm?next=${encodeURIComponent(
+            localizedPath('/set-password', locale)
+        )}`
+
+        const { error: resetError } = await supabase.auth.resetPasswordForEmail(existingEmail, {
+            redirectTo,
+        })
+        setSendingLink(false)
+
+        if (resetError) {
+            setError(resetError.message)
+            return
+        }
+
+        setLoginLinkSent(true)
+        setResendMsg(t('auth.loginLinkSent'))
+        setCooldown(RESEND_COOLDOWN_SEC)
+    }, [existingEmail, cooldown, sendingLink, locale, t])
+
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault()
         setError('')
         setResendMsg(null)
+        setExistingEmail(null)
+        setLoginLinkSent(false)
 
         if (password.length < 8) {
             setError(t('auth.passwordMin'))
@@ -95,8 +133,16 @@ function RegisterForm() {
             return
         }
 
-        // Always show "check your email" when confirmation is required (no session),
-        // including the masked response for an already-registered email.
+        const identitiesLen = data.user?.identities?.length ?? null
+        const likelyExistingUser = Boolean(data.user) && identitiesLen === 0 && !data.session
+
+        // Supabase returns a user with empty identities when the email is already registered
+        // (anti-enumeration). Do not claim a confirmation email was sent.
+        if (likelyExistingUser) {
+            setExistingEmail(email.trim())
+            return
+        }
+
         if (!data.session) {
             setPendingEmail(email.trim())
             setCooldown(RESEND_COOLDOWN_SEC)
@@ -105,6 +151,44 @@ function RegisterForm() {
 
         // Confirmation disabled in project settings — treat as signed in.
         window.location.assign('/alerts')
+    }
+
+    if (existingEmail) {
+        return (
+            <div className="max-w-md mx-auto mt-12">
+                <div className="bg-surface border border-border rounded-2xl p-8 shadow-sm space-y-4">
+                    <h1 className="text-2xl font-bold text-text-primary">{t('auth.alreadyRegisteredTitle')}</h1>
+                    <p className="text-sm text-text-secondary">{t('auth.alreadyRegistered')}</p>
+                    <p className="text-sm text-text-secondary">
+                        {t('auth.loginLinkHint', { email: existingEmail })}
+                    </p>
+
+                    {error && <p className="text-sm text-down">{error}</p>}
+                    {resendMsg && <p className="text-sm text-text-secondary">{resendMsg}</p>}
+
+                    <Button
+                        type="button"
+                        className="w-full"
+                        disabled={sendingLink || cooldown > 0}
+                        onClick={handleSendLoginLink}
+                    >
+                        {cooldown > 0 && loginLinkSent
+                            ? t('auth.verifyCooldown', { seconds: cooldown })
+                            : sendingLink
+                              ? t('auth.submitting')
+                              : loginLinkSent
+                                ? t('auth.loginLinkResend')
+                                : t('auth.loginLinkSend')}
+                    </Button>
+
+                    <Link href="/login" className="inline-flex w-full">
+                        <Button type="button" variant="secondary" className="w-full">
+                            {t('auth.goToSignIn')}
+                        </Button>
+                    </Link>
+                </div>
+            </div>
+        )
     }
 
     if (pendingEmail) {

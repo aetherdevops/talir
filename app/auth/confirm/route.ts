@@ -43,5 +43,13 @@ export async function GET(request: Request) {
         return NextResponse.redirect(`${origin}/login?error=verify_failed`)
     }
 
+    // Recovery links always land on set-password so a new password is required.
+    if (typeRaw === 'recovery') {
+        const recoveryNext = next.startsWith('/set-password') || next.startsWith('/en/set-password')
+            ? next
+            : '/set-password'
+        return NextResponse.redirect(`${origin}${recoveryNext}`)
+    }
+
     return NextResponse.redirect(`${origin}${next}`)
 }

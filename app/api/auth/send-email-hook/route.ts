@@ -99,7 +99,10 @@ export async function POST(request: Request) {
     const locale = resolveLocale(user)
     const actionType = resolveActionType(email_data.email_action_type)
     const siteUrl = getSiteUrl()
-    const nextPath = localizedPath('/welcome', locale)
+    const nextPath =
+        actionType === 'recovery'
+            ? localizedPath('/set-password', locale)
+            : localizedPath('/welcome', locale)
     const confirmUrl = new URL('/auth/confirm', siteUrl)
     confirmUrl.searchParams.set('token_hash', tokenHash)
     confirmUrl.searchParams.set('type', actionType)
