@@ -7,6 +7,7 @@ import { internalPath, parsePathname } from '@/lib/i18n/routing'
 function shouldSkipLocale(pathname: string): boolean {
     return (
         pathname.startsWith('/_next') ||
+        pathname.startsWith('/api') ||
         pathname.startsWith('/auth') ||
         pathname === '/favicon.ico' ||
         pathname === '/manifest.json' ||

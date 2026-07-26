@@ -77,7 +77,13 @@ Production runs on Vercel. In **Vercel → Project → Settings → Environment 
 
 - `NEXT_PUBLIC_SUPABASE_URL` — from Supabase → Project Settings → API
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` — anon public key from the same page
+- `NEXT_PUBLIC_SITE_URL` — `https://www.talir.mk` (no trailing slash)
+- `RESEND_API_KEY` — from Resend → API Keys
+- `RESEND_FROM` — e.g. `Talir <no-reply@talir.mk>` (verified domain)
+- `SEND_EMAIL_HOOK_SECRET` — from Supabase → Authentication → Hooks → Send Email (`v1,whsec_…`)
 
 Apply to **Production** (and Preview if you test PR deploys). Redeploy after adding variables.
 
-In Supabase **Authentication → URL configuration**, use your production domain (e.g. `https://www.talir.mk`) as Site URL and add `https://www.talir.mk/auth/callback` to Redirect URLs.
+In Supabase **Authentication → URL configuration**, use your production domain (e.g. `https://www.talir.mk`) as Site URL and add `https://www.talir.mk/**` and `http://localhost:3000/**` to Redirect URLs.
+
+Enable **Confirm email** under Authentication → Providers → Email. Create an HTTPS **Send Email** hook pointing at `https://www.talir.mk/api/auth/send-email-hook`.
