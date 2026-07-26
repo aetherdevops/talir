@@ -8,6 +8,7 @@ import { listDividendOverridesAction } from '@/lib/admin-dividends-actions'
 import { DividendOverridesEditor } from '@/components/admin/DividendOverridesEditor'
 import type { DividendCalendarEntry } from '@/lib/dividends'
 import { resolveProfitYear } from '@/lib/dividends'
+import type { DividendCoverageReport } from '@/lib/dividend-coverage'
 
 export const dynamic = 'force-dynamic'
 
@@ -32,6 +33,16 @@ function loadDerivedRows() {
         }))
     } catch {
         return []
+    }
+}
+
+function loadCoverageReport(): DividendCoverageReport | null {
+    const filePath = path.join(process.cwd(), 'lib', 'data', 'derived_dividend_coverage.json')
+    if (!fs.existsSync(filePath)) return null
+    try {
+        return JSON.parse(fs.readFileSync(filePath, 'utf8')) as DividendCoverageReport
+    } catch {
+        return null
     }
 }
 
@@ -75,6 +86,7 @@ export default async function AdminDividendsPage() {
     const derivedRows = loadDerivedRows().filter((r) =>
         codes.includes(r.stockCode.toUpperCase())
     )
+    const coverageReport = loadCoverageReport()
 
     return (
         <div className="mx-auto max-w-4xl space-y-6 px-4 py-8">
@@ -90,8 +102,9 @@ export default async function AdminDividendsPage() {
                 </h1>
                 <p className="max-w-2xl text-sm text-[var(--text-muted)]">
                     Correct DPS and calendar dates when SECnet/MSE parses are wrong. Overrides win
-                    on the next <code className="font-[family-name:var(--talir-mono)]">generate:dividends</code>{' '}
-                    run.
+                    on the next{' '}
+                    <code className="font-[family-name:var(--talir-mono)]">generate:dividends</code>{' '}
+                    run. Use the coverage matrix below to find gaps.
                 </p>
                 {error && (
                     <p className="text-sm text-[var(--down)]" role="alert">
@@ -105,6 +118,7 @@ export default async function AdminDividendsPage() {
                 codes={codes}
                 derivedRows={derivedRows}
                 initialOverrides={overrides}
+                coverageReport={coverageReport}
             />
         </div>
     )

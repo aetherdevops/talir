@@ -4,8 +4,9 @@
 import * as cheerio from 'cheerio'
 import { PDFParse } from 'pdf-parse'
 import {
-    loadCachedText,
+    loadCachedEntry,
     ocrPdfBuffer,
+    persistCachedText,
     sha256Buffer,
 } from './document-ocr'
 
@@ -352,18 +353,52 @@ export async function fetchDividendDocumentText(
         const hash = sha256Buffer(buffer)
 
         if (isPdfAttachment(att)) {
-            const cached = await loadCachedText(att.attachmentId, hash)
-            if (cached) {
-                return {
-                    text: cached,
-                    source: 'ocr',
-                    attachmentId: att.attachmentId,
-                    textSha256: hash,
+            const cached = await loadCachedEntry(att.attachmentId, hash)
+            const pdfText = await extractPdfText(buffer)
+
+            // Prefer native PDF text when it is stronger than a stale OCR cache hit
+            if (pdfText && !shouldPreferOcrOverPdfText(pdfText)) {
+                const cacheIsOcr = cached && (cached.source ?? 'ocr') === 'ocr'
+                const nativeBetter =
+                    !cached ||
+                    cacheIsOcr ||
+                    pdfText.length >= (cached.text?.length ?? 0)
+                if (nativeBetter) {
+                    await persistCachedText({
+                        attachmentId: att.attachmentId,
+                        text: pdfText,
+                        bufferSha256: hash,
+                        source: 'pdf_text',
+                    })
+                    return {
+                        text: pdfText,
+                        source: 'pdf_text',
+                        attachmentId: att.attachmentId,
+                        textSha256: hash,
+                    }
                 }
             }
 
-            const pdfText = await extractPdfText(buffer)
+            if (cached?.text) {
+                const source = cached.source === 'pdf_text' ? 'pdf_text' : 'ocr'
+                // Skip weak OCR cache when allowOcr and native text might improve via OCR
+                if (source === 'pdf_text' || !allowOcr || !shouldPreferOcrOverPdfText(cached.text)) {
+                    return {
+                        text: cached.text,
+                        source,
+                        attachmentId: att.attachmentId,
+                        textSha256: hash,
+                    }
+                }
+            }
+
             if (pdfText && !(allowOcr && shouldPreferOcrOverPdfText(pdfText))) {
+                await persistCachedText({
+                    attachmentId: att.attachmentId,
+                    text: pdfText,
+                    bufferSha256: hash,
+                    source: 'pdf_text',
+                })
                 return {
                     text: pdfText,
                     source: 'pdf_text',

@@ -1,11 +1,18 @@
 import { formatNewsDate } from './utils'
+import { skopjeTodayIso } from './market-session'
 
-export const DIVIDEND_PARSER_VERSION = '1.4.2'
+export const DIVIDEND_PARSER_VERSION = '1.5.0'
 
 /** Max plausible gross DPS for MSE ordinary shares (den.). Totals often exceed this. */
 const MAX_PLAUSIBLE_GROSS_PER_SHARE = 50_000
 
 export type DividendParseStatus = 'parsed' | 'partial' | 'link_only'
+
+export type DividendFieldSource = 'SECNet' | 'MSE' | 'manual'
+
+export interface DividendSourceFields {
+    grossPerShare?: DividendFieldSource
+}
 
 export interface DividendCalendarEntry {
     stockCode: string
@@ -19,15 +26,24 @@ export interface DividendCalendarEntry {
     paymentStart: string | null
     paymentEnd: string | null
     parseStatus: DividendParseStatus
-    source: 'SECNet' | 'MSE' | 'manual'
-    /** Gross per share ÷ EOD close on ex-date (%). Parsed entries only. */
+    source: DividendFieldSource
+    /** Field-level provenance; dates default to entry.source when absent. */
+    sourceFields?: DividendSourceFields
+    /** Synthetic MSE/manual row with no real SECNet filing. */
+    isSynthetic?: boolean
+    /** Gross per share ÷ EOD close on ex-date (%). Requires analytics core (gross + ex). */
     trailingYieldAtEx: number | null
-    /** YoY change vs prior parsed calendar for same issuer (%). Parsed entries only. */
+    /** YoY change vs prior analytics-core calendar for same issuer (%). */
     yoyGrowthPct: number | null
     /** Profit year the dividend relates to (e.g. 2025 dividend approved in 2026). */
     profitYear: number | null
-    /** DPS ÷ EPS for matching fiscal year (%). Both must be parsed from SECNet. */
+    /** DPS ÷ EPS for matching fiscal year (%). */
     payoutRatioPct: number | null
+}
+
+/** Gross DPS + ex-date — enough for yield / upcoming / streak analytics. */
+export function hasAnalyticsCore(entry: DividendCalendarEntry): boolean {
+    return entry.grossPerShare !== null && entry.exDate !== null
 }
 
 export interface DividendsCalendarFile {
@@ -73,12 +89,14 @@ export function normalizeOcrDividendText(text: string): string {
         [/бpуто/gi, 'бруто'],
         [/бругo/gi, 'бруто'],
         [/бруто-/gi, 'бруто-'],
+        [/бруто\s*[-–]?\s*дивиденда/gi, 'бруто-дивиденда'],
         [/дuвиденд/gi, 'дивиденд'],
         [/дuвиденда/gi, 'дивиденда'],
         [/дивuденда/gi, 'дивиденда'],
         [/дивидeнда/gi, 'дивиденда'],
+        [/дивидендa/gi, 'дивиденда'],
         [/акциja/gi, 'акција'],
-        [/акциja/gi, 'акција'],
+        [/акциjа/gi, 'акција'],
         [/тргувaње/gi, 'тргување'],
         [/тргувaнje/gi, 'тргување'],
         [/пpаво/gi, 'право'],
@@ -86,12 +104,30 @@ export function normalizeOcrDividendText(text: string): string {
         [/KOHUAP|KOHYAP|КОНЦАР/gi, 'кончар'],
         [/изнeсува/gi, 'изнесува'],
         [/изнecува/gi, 'изнесува'],
+        [/исплaта/gi, 'исплата'],
+        [/исплaтата/gi, 'исплатата'],
+        [/запoчне/gi, 'започне'],
+        [/извршu/gi, 'изврши'],
+        [/гoдина/gi, 'година'],
+        [/дeловн/gi, 'деловн'],
+        // Cyrillic/Latin digit lookalikes adjacent to amounts
+        [/([^\d])О(\d)/g, '$10$2'],
+        [/(\d)О([^\d])/g, '$10$2'],
+        [/([^\d])З(\d)/g, '$13$2'],
+        [/(\d)З([^\d])/g, '$13$2'],
     ]
     for (const [pattern, replacement] of replacements) {
         out = out.replace(pattern, replacement)
     }
 
     return out.replace(/\s+/g, ' ').trim()
+}
+
+/** True when OCR DPS matches MSE Fin.Ratios DPS within ±1% (or ±0.01 abs for tiny DPS). */
+export function matchesMseDps(grossPerShare: number | null, mseDps: number | null | undefined): boolean {
+    if (grossPerShare == null || mseDps == null || mseDps <= 0) return false
+    const tol = Math.max(Math.abs(mseDps) * 0.01, 0.01)
+    return Math.abs(grossPerShare - mseDps) <= tol
 }
 
 function parseEuDateToIso(value: string): string | null {
@@ -125,8 +161,13 @@ export function parseAmountMk(value: string): number | null {
     } else if (/^\d+\.\d{4,}$/.test(raw)) {
         // Long English decimal DPS (TEL SA Resolution: 28.9250940552)
     } else if (/^\d{1,3}(\.\d{3})+$/.test(raw)) {
-        // MK thousands without decimal comma: 4.620 → 4620 (Makpetrol)
-        raw = raw.replace(/\./g, '')
+        // Multi-group MK thousands: 1.234.567 → already handled above when {2,}
+        // Single group X.YYY: 1-digit int → thousands (4.620 → 4620 Makpetrol);
+        // 2+ digit int → decimal DPS (12.500 → 12.5) — avoid inventing 12500.
+        if (/^\d\.\d{3}$/.test(raw)) {
+            raw = raw.replace(/\./g, '')
+        }
+        // else leave as decimal string for Number()
     } else if (/^\d+\.\d+$/.test(raw)) {
         // Short plain decimal (28.93, 4.62)
     } else {
@@ -175,8 +216,16 @@ function hasPlausibleCoreDate(fields: {
     )
 }
 
+export interface OcrParseCapOptions {
+    /** MSE Fin.Ratios DPS for the profit year — enables controlled OCR → parsed promotion. */
+    mseDps?: number | null
+    /** Admin override / manual confirmation — allows OCR → parsed without MSE match. */
+    adminConfirmed?: boolean
+}
+
 /**
- * OCR text is never promoted to parsed.
+ * OCR text is capped at partial unless full calendar fields are present AND
+ * DPS matches MSE Fin.Ratios (±1%) or adminConfirmed is set.
  * Partial requires gross DPS plus at least one of ex / cum / record.
  */
 export function applyOcrParseCap(
@@ -188,12 +237,17 @@ export function applyOcrParseCap(
         paymentStart: string | null
         paymentEnd: string | null
     },
-    fromOcr?: boolean
+    fromOcr?: boolean,
+    options?: OcrParseCapOptions
 ): DividendParseStatus {
     let status = deriveDividendParseStatus(fields)
     if (!fromOcr) return status
 
-    if (status === 'parsed') status = 'partial'
+    if (status === 'parsed') {
+        const allowParsed =
+            matchesMseDps(fields.grossPerShare, options?.mseDps) || Boolean(options?.adminConfirmed)
+        if (!allowParsed) status = 'partial'
+    }
 
     if (status === 'partial') {
         if (fields.grossPerShare === null) return 'link_only'
@@ -232,8 +286,15 @@ export function deriveDividendParseStatus(fields: {
 }
 
 export interface ParseDividendCalendarOptions {
-    /** OCR-derived text is never promoted to parsed — capped at partial. */
+    /**
+     * OCR-derived text is capped at partial unless mseDps matches or adminConfirmed.
+     * See applyOcrParseCap.
+     */
     fromOcr?: boolean
+    mseDps?: number | null
+    adminConfirmed?: boolean
+    /** Filing date — used as profitYear fallback (filedAt year − 1) when text lacks year. */
+    filedAt?: string | null
 }
 
 function matchLooksLikePerShare(match: RegExpMatchArray, text: string): boolean {
@@ -393,8 +454,13 @@ export function parseDividendCalendarText(
         /payment of the dividend.{0,80}?shall commence on\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /shall commence on\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /payment period[^0-9]{0,20}(\d{1,2}\.\d{1,2}\.\d{4})\s*[-–]\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /payment of dividends?.{0,60}?(\d{1,2}\.\d{1,2}\.\d{4})\s*[-–]\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /dividend will be paid (?:from|starting)\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /исплата на дивидендата.{0,40}?започне\s+од\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /исплатата на дивидендата?.{0,60}?започне\s+од\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /ќе започне од\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /започн[еа]\s+(?:од|на)\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+        /период на исплата[^0-9]{0,20}(\d{1,2}\.\d{1,2}\.\d{4})\s*[-–]\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         /започне[^0-9]{0,20}(\d{1,2}\.\d{1,2}\.\d{4})/i,
     ])
     if (payStartMatch) {
@@ -406,8 +472,10 @@ export function parseDividendCalendarText(
         const payByMatch = firstMatch(normalized, [
             /payment of the dividend.{0,100}?effectuated\s+(?:up\s+to|by)\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
             /(?:shall be )?effectuated\s+(?:up\s+to|by)\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+            /payment.{0,40}?(?:up to|until|by)\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
             // MPT: "Исплатата на дивиденда ќе се изврши до 30.9.2026"
             /исплатата на дивиденда.{0,40}?изврши\s+до\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
+            /исплата.{0,40}?до\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
             /изврши\s+до\s*(\d{1,2}\.\d{1,2}\.\d{4})/i,
         ])
         if (payByMatch) paymentEnd = parseEuDateToIso(payByMatch[1])
@@ -416,14 +484,36 @@ export function parseDividendCalendarText(
     let profitYear: number | null = null
     const profitYearMatch = firstMatch(normalized, [
         /dividend for the year (\d{4})/i,
-        /for the year (\d{4})/i,
+        /for the [Yy]ear (\d{4})/i,
+        /profit for the year (\d{4})/i,
+        /financial year (\d{4})/i,
         /за годината (\d{4})/i,
         /за (\d{4}) година/i,
         /дивиденда за (\d{4})/i,
+        /дивиденда од добивката за (\d{4})/i,
+        /добивка(?:та)? за (\d{4})/i,
+        /деловн(?:ата)? година (\d{4})/i,
+        /за деловната година (\d{4})/i,
         /dividend right for the year (\d{4})/i,
         /without dividend right for the year (\d{4})/i,
+        /Year (\d{4})/i,
     ])
-    if (profitYearMatch) profitYear = Number(profitYearMatch[1])
+    if (profitYearMatch) {
+        const y = Number(profitYearMatch[1])
+        if (y >= 2000 && y <= 2036) profitYear = y
+    }
+
+    // Fallback: explicit "деловна година" / "business year" without digits → filedAt − 1
+    if (
+        profitYear == null &&
+        options?.filedAt &&
+        /деловн(?:ата)?\s+година|business\s+year|financial\s+year|добивка(?:та)?\s+за\s+година/i.test(
+            normalized
+        )
+    ) {
+        const filedYear = Number(String(options.filedAt).slice(0, 4))
+        if (filedYear >= 2001 && filedYear <= 2036) profitYear = filedYear - 1
+    }
 
     let parseStatus = applyOcrParseCap(
         {
@@ -434,7 +524,11 @@ export function parseDividendCalendarText(
             paymentStart,
             paymentEnd,
         },
-        options?.fromOcr
+        options?.fromOcr,
+        {
+            mseDps: options?.mseDps,
+            adminConfirmed: options?.adminConfirmed,
+        }
     )
 
     return {
@@ -480,18 +574,20 @@ export function nextUpcomingExDividend(
     entries: DividendCalendarEntry[],
     referenceDate = new Date()
 ): DividendCalendarEntry | null {
-    const today = referenceDate.toISOString().split('T')[0]
+    const today = skopjeTodayIso(referenceDate)
     return (
         entries
-            .filter(
-                (e) =>
-                    e.exDate &&
-                    e.exDate >= today &&
-                    e.parseStatus === 'parsed' &&
-                    e.grossPerShare !== null
-            )
+            .filter((e) => hasAnalyticsCore(e) && e.exDate! >= today)
             .sort((a, b) => (a.exDate ?? '').localeCompare(b.exDate ?? ''))[0] ?? null
     )
+}
+
+function isSyntheticLike(entry: DividendCalendarEntry): boolean {
+    if (entry.isSynthetic) return true
+    if ((entry.source === 'MSE' || entry.source === 'manual') && /mse\.mk\/en\/symbol/i.test(entry.url)) {
+        return true
+    }
+    return false
 }
 
 export function buildDividendsCalendarFile(
@@ -499,8 +595,9 @@ export function buildDividendsCalendarFile(
     meta: { lastIssuerScan: string | null; issuerCount: number },
     referenceDate = new Date()
 ): DividendsCalendarFile {
-    const today = referenceDate.toISOString().split('T')[0]
+    const today = skopjeTodayIso(referenceDate)
     const sorted = [...entries].sort((a, b) => b.filedAt.localeCompare(a.filedAt))
+    const realFilings = sorted.filter((e) => !isSyntheticLike(e))
 
     const upcomingExDates = sorted.filter(
         (entry) =>
@@ -526,7 +623,7 @@ export function buildDividendsCalendarFile(
         generatedAt: new Date().toISOString(),
         lastIssuerScan: meta.lastIssuerScan,
         issuerCount: meta.issuerCount,
-        recent: sorted.slice(0, 30),
+        recent: realFilings.slice(0, 30),
         all: sorted,
         upcomingExDates,
         byIssuer,
@@ -568,6 +665,7 @@ export function countCalendarsInLastYears(
 ): number {
     const cutoffYear = referenceDate.getFullYear() - years + 1
     return entries.filter((entry) => {
+        if (isSyntheticLike(entry)) return false
         const year = Number((entry.exDate ?? entry.filedAt).slice(0, 4))
         return year >= cutoffYear
     }).length
@@ -636,7 +734,7 @@ export function computeYoyGrowthPct(
     return ((currentGross - priorGross) / priorGross) * 100
 }
 
-/** Attach trailing yield and YoY growth to parsed entries (mutates in place). */
+/** Attach trailing yield and YoY growth to analytics-core entries (mutates in place). */
 export function enrichDividendDerivedMetrics(
     entries: DividendCalendarEntry[],
     getHistory: (stockCode: string) => EodPriceRow[] | null
@@ -655,12 +753,12 @@ export function enrichDividendDerivedMetrics(
 
     for (const [code, issuerEntries] of byCode) {
         const history = getHistory(code)
-        const parsed = issuerEntries
-            .filter((e) => e.parseStatus === 'parsed' && e.grossPerShare !== null && e.exDate)
+        const eligible = issuerEntries
+            .filter((e) => hasAnalyticsCore(e))
             .sort((a, b) => (a.exDate ?? '').localeCompare(b.exDate ?? ''))
 
-        for (let i = 0; i < parsed.length; i++) {
-            const entry = parsed[i]
+        for (let i = 0; i < eligible.length; i++) {
+            const entry = eligible[i]
             const close = history ? findCloseOnOrBefore(history, entry.exDate!) : null
             entry.trailingYieldAtEx = computeTrailingYieldAtEx(
                 entry.grossPerShare,
@@ -670,7 +768,7 @@ export function enrichDividendDerivedMetrics(
             if (i > 0) {
                 entry.yoyGrowthPct = computeYoyGrowthPct(
                     entry.grossPerShare,
-                    parsed[i - 1].grossPerShare
+                    eligible[i - 1].grossPerShare
                 )
             }
         }
@@ -679,7 +777,11 @@ export function enrichDividendDerivedMetrics(
 
 export function highestDisclosedGross(entries: DividendCalendarEntry[], limit = 10): DividendCalendarEntry[] {
     return entries
-        .filter((e) => e.parseStatus === 'parsed' && e.grossPerShare !== null)
+        .filter(
+            (e) =>
+                (e.parseStatus === 'parsed' || e.parseStatus === 'partial') &&
+                e.grossPerShare !== null
+        )
         .sort((a, b) => (b.grossPerShare ?? 0) - (a.grossPerShare ?? 0))
         .slice(0, limit)
 }
@@ -692,14 +794,14 @@ export function computePayoutRatioPct(
     return (grossPerShare / eps) * 100
 }
 
-/** Join parsed EPS from fundamentals onto dividend entries by stock + profit year. */
+/** Join EPS from fundamentals onto dividend entries by stock + profit year. */
 export function enrichDividendPayoutRatios(
     entries: DividendCalendarEntry[],
     epsByIssuerYear: Map<string, number>
 ): void {
     for (const entry of entries) {
         entry.payoutRatioPct = null
-        if (entry.parseStatus !== 'parsed' || entry.grossPerShare === null) continue
+        if (entry.grossPerShare === null) continue
         const year = resolveProfitYear(entry)
         if (!year) continue
         const eps = epsByIssuerYear.get(`${entry.stockCode}:${year}`)
@@ -708,7 +810,7 @@ export function enrichDividendPayoutRatios(
     }
 }
 
-/** Issuers with the most calendar filings in the last N years (filing count proxy). */
+/** Issuers with the most real calendar filings in the last N years (excludes synthetic). */
 export function mostCalendarFilings(
     entries: DividendCalendarEntry[],
     years = 5,
@@ -718,6 +820,7 @@ export function mostCalendarFilings(
     const counts = new Map<string, { stockName: string; count: number }>()
 
     for (const entry of entries) {
+        if (isSyntheticLike(entry)) continue
         const year = Number((entry.exDate ?? entry.filedAt).slice(0, 4))
         if (year < cutoffYear) continue
         const row = counts.get(entry.stockCode) ?? { stockName: entry.stockName, count: 0 }

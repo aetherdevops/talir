@@ -14,13 +14,13 @@ interface DividendHistoryChartProps {
 
 export function DividendHistoryChart({ entries }: DividendHistoryChartProps) {
     const { t } = useLocale()
-    const parsed = entries
-        .filter((entry) => entry.parseStatus === 'parsed' && entry.grossPerShare !== null)
+    const disclosed = entries
+        .filter((entry) => entry.grossPerShare !== null)
         .sort((a, b) => (resolveProfitYear(a) ?? 0) - (resolveProfitYear(b) ?? 0))
 
-    if (parsed.length < 2) return null
+    if (disclosed.length < 2) return null
 
-    const data = parsed.map((entry) => {
+    const data = disclosed.map((entry) => {
         const fy = resolveProfitYear(entry)
         return {
             label: fy ? String(fy) : formatNewsDate(entry.exDate ?? entry.filedAt),

@@ -112,10 +112,8 @@ export function DividendScorecardPanel({
     })
     const upcoming = nextUpcomingExDividend(sorted)
     const latestDisclosed = latestDisclosedDividend(sorted)
-    const parsedForChart = sorted.filter(
-        (entry) => entry.parseStatus === 'parsed' && entry.grossPerShare !== null
-    )
-    const showChart = parsedForChart.length >= 2
+    const disclosedForChart = sorted.filter((entry) => entry.grossPerShare !== null)
+    const showChart = disclosedForChart.length >= 2
     const sinceYear = earliestCalendarYear(sorted)
     const payoutFrequency = t('common.annual')
 

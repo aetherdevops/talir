@@ -130,4 +130,9 @@ export function getMarketSession(now: Date = new Date()): MarketSession {
     return { state: 'closed', isOpen: false, label: CLOSED_LABEL }
 }
 
+/** Calendar date in Europe/Skopje (YYYY-MM-DD). */
+export function skopjeTodayIso(now: Date = new Date()): string {
+    return getSkopjeParts(now).dateKey
+}
+
 export const MARKET_SESSION_REFRESH_MS = 60_000

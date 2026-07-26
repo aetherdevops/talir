@@ -1,5 +1,7 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
+import fs from 'fs'
+import path from 'path'
 import {
     applyOcrParseCap,
     computePayoutRatioPct,
@@ -11,13 +13,62 @@ import {
     enrichDividendDerivedMetrics,
     findCloseOnOrBefore,
     formatDividendRowDetail,
+    hasAnalyticsCore,
     isDividendCalendarTitle,
     latestDisclosedDividend,
     latestParsedDividend,
+    matchesMseDps,
     normalizeOcrDividendText,
     parseAmountMk,
     parseDividendCalendarText,
 } from './dividends.ts'
+
+describe('hasAnalyticsCore', () => {
+    it('requires gross and ex-date only', () => {
+        assert.equal(
+            hasAnalyticsCore({
+                stockCode: 'X',
+                stockName: 'X',
+                filedAt: '2026-01-01',
+                url: 'https://example.com',
+                grossPerShare: 10,
+                cumDate: null,
+                exDate: '2026-06-01',
+                recordDate: null,
+                paymentStart: null,
+                paymentEnd: null,
+                parseStatus: 'partial',
+                source: 'SECNet',
+                trailingYieldAtEx: null,
+                yoyGrowthPct: null,
+                profitYear: 2025,
+                payoutRatioPct: null,
+            }),
+            true
+        )
+        assert.equal(
+            hasAnalyticsCore({
+                stockCode: 'X',
+                stockName: 'X',
+                filedAt: '2026-01-01',
+                url: 'https://example.com',
+                grossPerShare: 10,
+                cumDate: null,
+                exDate: null,
+                recordDate: null,
+                paymentStart: null,
+                paymentEnd: null,
+                parseStatus: 'partial',
+                source: 'SECNet',
+                trailingYieldAtEx: null,
+                yoyGrowthPct: null,
+                profitYear: 2025,
+                payoutRatioPct: null,
+            }),
+            false
+        )
+    })
+})
 
 describe('normalizeOcrDividendText', () => {
     it('fixes common Latin lookalikes in MK OCR', () => {
@@ -44,6 +95,7 @@ describe('parseAmountMk', () => {
         assert.equal(parseAmountMk('1.350,00'), 1350)
         assert.equal(parseAmountMk('1.234.567'), 1234567)
         assert.equal(parseAmountMk('4.620'), 4620)
+        assert.equal(parseAmountMk('12.500'), 12.5)
         assert.equal(parseAmountMk('6,00'), 6)
     })
 })
@@ -118,6 +170,12 @@ describe('parseDividendCalendarText', () => {
         assert.equal(parsed.paymentStart, '2019-05-22')
         assert.equal(parsed.profitYear, 2018)
         assert.equal(parsed.parseStatus, 'partial')
+
+        const promoted = parseDividendCalendarText(alkOcrSnippet, {
+            fromOcr: true,
+            mseDps: 320,
+        })
+        assert.equal(promoted.parseStatus, 'parsed')
     })
 
     it('rejects total dividend amount mistaken for per-share', () => {
@@ -342,6 +400,59 @@ describe('applyOcrParseCap', () => {
             'link_only'
         )
     })
+
+    it('promotes OCR to parsed only when MSE DPS matches or adminConfirmed', () => {
+        const full = {
+            grossPerShare: 320,
+            cumDate: '2019-04-23',
+            exDate: '2019-04-24',
+            recordDate: '2019-04-25',
+            paymentStart: '2019-05-22',
+            paymentEnd: null,
+        }
+        assert.equal(applyOcrParseCap(full, true), 'partial')
+        assert.equal(applyOcrParseCap(full, true, { mseDps: 320 }), 'parsed')
+        assert.equal(applyOcrParseCap(full, true, { mseDps: 400 }), 'partial')
+        assert.equal(applyOcrParseCap(full, true, { adminConfirmed: true }), 'parsed')
+    })
+})
+
+describe('matchesMseDps', () => {
+    it('allows ±1% tolerance', () => {
+        assert.equal(matchesMseDps(28.93, 28.925), true)
+        assert.equal(matchesMseDps(28.93, 30), false)
+        assert.equal(matchesMseDps(null, 28), false)
+    })
+})
+
+describe('golden OCR fixtures', () => {
+    const fixturesDir = path.join(process.cwd(), 'lib', '__fixtures__', 'dividends')
+    const manifestPath = path.join(fixturesDir, 'manifest.json')
+
+    it('reparses committed fixtures without throwing and keeps status bounds', () => {
+        if (!fs.existsSync(manifestPath)) {
+            // Fixtures optional in shallow checkouts
+            return
+        }
+        const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8')) as Array<{
+            file: string
+            parseStatus: string
+        }>
+        assert.ok(manifest.length >= 5)
+        for (const row of manifest) {
+            const text = fs.readFileSync(path.join(fixturesDir, row.file), 'utf8')
+            const parsed = parseDividendCalendarText(text, { fromOcr: true })
+            assert.ok(
+                parsed.parseStatus === 'parsed' ||
+                    parsed.parseStatus === 'partial' ||
+                    parsed.parseStatus === 'link_only'
+            )
+            // Without MSE cross-check, OCR must not silently become parsed
+            if (!row.file.startsWith('full-partial')) {
+                assert.notEqual(parsed.parseStatus, 'parsed')
+            }
+        }
+    })
 })
 
 describe('countCalendarsInLastYears', () => {
@@ -470,7 +581,7 @@ describe('computeYoyGrowthPct', () => {
 })
 
 describe('enrichDividendDerivedMetrics', () => {
-    it('fills yield and yoy on parsed entries', () => {
+    it('fills yield and yoy on analytics-core entries including partial', () => {
         const entries = [
             {
                 stockCode: 'KMB',
@@ -481,13 +592,13 @@ describe('enrichDividendDerivedMetrics', () => {
                 cumDate: '2025-04-07',
                 exDate: '2025-04-08',
                 recordDate: '2025-04-14',
-                paymentStart: '2025-05-01',
+                paymentStart: null,
                 paymentEnd: null,
-                parseStatus: 'parsed' as const,
+                parseStatus: 'partial' as const,
                 source: 'SECNet' as const,
                 trailingYieldAtEx: null,
                 yoyGrowthPct: null,
-                profitYear: 2025,
+                profitYear: 2024,
                 payoutRatioPct: null,
             },
             {
@@ -499,9 +610,9 @@ describe('enrichDividendDerivedMetrics', () => {
                 cumDate: '2026-04-08',
                 exDate: '2026-04-09',
                 recordDate: '2026-04-14',
-                paymentStart: '2026-05-04',
+                paymentStart: null,
                 paymentEnd: null,
-                parseStatus: 'parsed' as const,
+                parseStatus: 'partial' as const,
                 source: 'SECNet' as const,
                 trailingYieldAtEx: null,
                 yoyGrowthPct: null,
@@ -511,6 +622,7 @@ describe('enrichDividendDerivedMetrics', () => {
         ]
 
         enrichDividendDerivedMetrics(entries, () => [
+            { date: '2025-04-08', last_transaction_price: 24000 },
             { date: '2026-04-08', last_transaction_price: 27000 },
             { date: '2026-04-09', last_transaction_price: 27000 },
         ])
@@ -518,6 +630,7 @@ describe('enrichDividendDerivedMetrics', () => {
         assert.equal(entries[1].trailingYieldAtEx, 5)
         assert.equal(entries[1].yoyGrowthPct, 12.5)
         assert.equal(entries[0].yoyGrowthPct, null)
+        assert.ok(entries[0].trailingYieldAtEx !== null)
     })
 })
 

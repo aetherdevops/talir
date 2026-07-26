@@ -1,4 +1,3 @@
-
 name: Daily Stock Update v2
 
 on:
@@ -43,7 +42,12 @@ jobs:
     - name: Scrape MBI10 constituents
       run: npm run script:mbi10
 
-    - name: Ingest dividend documents (MBI10, OCR + Supabase)
+    - name: Scrape MSE Fin.Ratios
+      run: npm run scrape:mse-ratios
+      continue-on-error: true
+
+    - name: Ingest dividend documents (ALL, OCR + Supabase)
+      id: ingest_dividends
       env:
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
         SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
@@ -54,7 +58,11 @@ jobs:
       run: npm run ingest:dividends
       continue-on-error: true
 
-    - name: Ingest fundamental documents (MBI10, OCR + Supabase)
+    - name: Warn if dividend ingest failed
+      if: steps.ingest_dividends.outcome == 'failure'
+      run: echo "::warning::Dividend ingest failed — generate will use prior store/JSON. Check SECnet/OCR/Supabase."
+
+    - name: Ingest fundamental documents (ALL, OCR + Supabase)
       env:
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
         SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
@@ -96,6 +104,14 @@ jobs:
         TALIR_OCR_DIVIDENDS: '1'
       run: npm run generate:dividends
 
+    - name: Report dividend coverage
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        TALIR_DOCUMENT_STORE: supabase
+      run: npm run report:dividends
+      continue-on-error: true
+
     - name: Regenerate derived assets
       run: npm run generate:sparklines && npm run generate:derived && npm run generate:search-index
 
@@ -113,6 +129,26 @@ jobs:
         node -e "const dv=require('./lib/data/derived_dividends.json'); console.log('dividends:', dv.all.length, 'calendars,', dv.upcomingExDates.length, 'upcoming ex-dates')"
         node -e "const m=require('./lib/data/derived_macro.json'); console.log('macro:', m.series.length, 'series, asOf', m.asOfDate, 'lastIngested', m.lastIngestedAt)"
         node -e "const d=require('./lib/data/derived_market.json'); const n=d.breadth?.history?.length ?? 0; console.log('derived breadth.history:', n, 'sessions (expected 10)'); if(n!==10) console.log('::warning:: breadth history length is', n, 'not 10');"
+        if [ -f lib/data/derived_dividend_coverage.json ]; then
+          node -e "
+            const c=require('./lib/data/derived_dividend_coverage.json');
+            const s=c.summary;
+            const n=Math.max(s.totalCells,1);
+            console.log('coverage: cells', s.totalCells, 'parsed', s.parsed, 'partial', s.partial, 'withGross', s.withGross, 'withEx', s.withEx, 'withPayment', s.withPayment, 'gaps', c.gaps.length);
+            if (s.withGross/n < 0.6 || s.withEx/n < 0.6) console.log('::warning:: Dividend analytics core (gross+ex) below 60%:', 'gross', (s.withGross/n*100).toFixed(1)+'%', 'ex', (s.withEx/n*100).toFixed(1)+'%');
+            if (s.withPayment/n < 0.4) console.log('::warning:: Dividend payment dates low:', (s.withPayment/n*100).toFixed(1)+'%');
+          "
+        fi
+        if [ -f lib/data/mse_symbol_ratios.json ]; then
+          node -e "
+            const r=require('./lib/data/mse_symbol_ratios.json');
+            const age=(Date.now()-new Date(r.generatedAt).getTime())/(864e5);
+            console.log('mse_symbol_ratios ageDays', age.toFixed(1));
+            if (age>14) console.log('::warning:: mse_symbol_ratios.json is', age.toFixed(1), 'days old (max 14)');
+          "
+        else
+          echo '::warning:: mse_symbol_ratios.json missing'
+        fi
 
     - name: Commit Changes
       run: |

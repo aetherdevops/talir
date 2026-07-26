@@ -147,17 +147,20 @@ function issuerNameMap(
 }
 
 /**
- * Fill missing gross DPS from MSE Fin.Ratios; never overwrite non-null SECnet gross.
+ * Fill missing gross DPS from MSE Fin.Ratios; never overwrite non-null SECnet gross
+ * unless it is OCR-derived and mismatches MSE (caller can pass allowOcrOverwrite).
  * Creates synthetic partial rows when no calendar exists for that profit year.
+ * Does not re-label SECNet document rows as source=MSE — uses sourceFields instead.
  */
 export function applyMseDividendRatios(
     entries: DividendCalendarEntry[],
     ratios: MseSymbolRatiosFile,
-    options?: { dataDir?: string }
-): { filled: number; created: number } {
+    options?: { dataDir?: string; allowOcrOverwrite?: boolean }
+): { filled: number; created: number; overwritten: number } {
     const names = issuerNameMap(options?.dataDir)
     let filled = 0
     let created = 0
+    let overwritten = 0
 
     for (const [code, issuer] of Object.entries(ratios.byCode)) {
         const stockCode = code.toUpperCase()
@@ -172,13 +175,46 @@ export function applyMseDividendRatios(
             )
 
             const withGross = matches.filter((e) => e.grossPerShare !== null)
-            if (withGross.length > 0) continue
+            if (withGross.length > 0) {
+                if (options?.allowOcrOverwrite) {
+                    for (const target of withGross) {
+                        if (target.source === 'manual') continue
+                        if (target.sourceFields?.grossPerShare === 'MSE') continue
+                        // Only overwrite when gross clearly mismatches MSE (OCR noise)
+                        const tol = Math.max(Math.abs(yearRatios.dps) * 0.01, 0.01)
+                        if (Math.abs((target.grossPerShare ?? 0) - yearRatios.dps) <= tol) continue
+                        // Heuristic: OCR-ish = no payment dates and partial, or already MSE-filled field
+                        const looksOcrPartial =
+                            target.parseStatus === 'partial' &&
+                            !target.paymentStart &&
+                            !target.paymentEnd
+                        if (!looksOcrPartial) continue
+                        console.log(
+                            `Dividend MSE overwrite: ${stockCode} FY${profitYear} gross ${target.grossPerShare} → ${yearRatios.dps}`
+                        )
+                        target.grossPerShare = yearRatios.dps
+                        target.sourceFields = {
+                            ...target.sourceFields,
+                            grossPerShare: 'MSE',
+                        }
+                        overwritten++
+                    }
+                }
+                continue
+            }
 
             if (matches.length > 0) {
                 const target = [...matches].sort((a, b) => b.filedAt.localeCompare(a.filedAt))[0]
                 target.grossPerShare = yearRatios.dps
                 if (target.parseStatus === 'link_only') target.parseStatus = 'partial'
-                if (target.source !== 'manual') target.source = 'MSE'
+                target.sourceFields = {
+                    ...target.sourceFields,
+                    grossPerShare: 'MSE',
+                }
+                // Keep entry.source as SECNet when this is a real SECNet document URL
+                if (target.source !== 'manual' && !/seinet\.com\.mk/i.test(target.url)) {
+                    target.source = 'MSE'
+                }
                 if (target.profitYear === null) target.profitYear = profitYear
                 filled++
                 continue
@@ -197,6 +233,8 @@ export function applyMseDividendRatios(
                 paymentEnd: null,
                 parseStatus: 'partial',
                 source: 'MSE',
+                sourceFields: { grossPerShare: 'MSE' },
+                isSynthetic: true,
                 trailingYieldAtEx: null,
                 yoyGrowthPct: null,
                 profitYear,
@@ -206,7 +244,7 @@ export function applyMseDividendRatios(
         }
     }
 
-    return { filled, created }
+    return { filled, created, overwritten }
 }
 
 /**
@@ -317,6 +355,8 @@ export function applyDividendOverrides(
                 paymentEnd: null,
                 parseStatus: 'partial',
                 source: 'manual',
+                sourceFields: {},
+                isSynthetic: true,
                 trailingYieldAtEx: null,
                 yoyGrowthPct: null,
                 profitYear,
@@ -325,7 +365,10 @@ export function applyDividendOverrides(
             entries.push(target)
         }
 
-        if ('grossPerShare' in fields) target.grossPerShare = fields.grossPerShare ?? null
+        if ('grossPerShare' in fields) {
+            target.grossPerShare = fields.grossPerShare ?? null
+            target.sourceFields = { ...target.sourceFields, grossPerShare: 'manual' }
+        }
         if ('cumDate' in fields) target.cumDate = fields.cumDate ?? null
         if ('exDate' in fields) target.exDate = fields.exDate ?? null
         if ('recordDate' in fields) target.recordDate = fields.recordDate ?? null
@@ -341,4 +384,12 @@ export function applyDividendOverrides(
     }
 
     return applied
+}
+
+/** True when entry is a synthetic MSE/manual row (no real SECNet filing). */
+export function isSyntheticDividendEntry(entry: DividendCalendarEntry): boolean {
+    if (entry.isSynthetic) return true
+    if (entry.source === 'MSE' && /mse\.mk\/en\/symbol/i.test(entry.url)) return true
+    if (entry.source === 'manual' && /mse\.mk\/en\/symbol/i.test(entry.url)) return true
+    return false
 }

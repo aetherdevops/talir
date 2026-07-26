@@ -9,6 +9,7 @@ import {
     computeYieldGrowthPct,
     countDisclosedDividends,
     issuerSeinetDisclosuresUrl,
+    uniqueDisclosedByProfitYear,
     uniqueParsedByProfitYear,
 } from './dividend-scorecard.ts'
 
@@ -121,13 +122,32 @@ describe('countDisclosedDividends', () => {
     })
 })
 
-describe('uniqueParsedByProfitYear', () => {
+describe('uniqueDisclosedByProfitYear', () => {
     it('keeps newest filing per profit year', () => {
-        const rows = uniqueParsedByProfitYear([
+        const rows = uniqueDisclosedByProfitYear([
             entry({ profitYear: 2025, filedAt: '2026-03-01', grossPerShare: 1000 }),
             entry({ profitYear: 2025, filedAt: '2026-04-01', grossPerShare: 1350 }),
         ])
         assert.equal(rows.length, 1)
         assert.equal(rows[0]!.grossPerShare, 1350)
+    })
+
+    it('includes partial entries with analytics core', () => {
+        const rows = uniqueDisclosedByProfitYear([
+            entry({
+                profitYear: 2025,
+                parseStatus: 'partial',
+                paymentStart: null,
+                paymentEnd: null,
+            }),
+        ])
+        assert.equal(rows.length, 1)
+    })
+
+    it('uniqueParsedByProfitYear aliases uniqueDisclosedByProfitYear', () => {
+        const a = uniqueDisclosedByProfitYear([entry({ profitYear: 2025 })])
+        const b = uniqueParsedByProfitYear([entry({ profitYear: 2025 })])
+        assert.equal(a.length, b.length)
+        assert.equal(a[0]!.grossPerShare, b[0]!.grossPerShare)
     })
 })

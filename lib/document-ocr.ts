@@ -7,13 +7,22 @@ import path from 'path'
 import { createHash } from 'crypto'
 
 const CACHE_PATH = path.join(process.cwd(), 'lib', 'data', 'dividend_ocr_cache.json')
-const DEFAULT_RENDER_SCALE = 2.5
+const DEFAULT_RENDER_SCALE = 3.0
 
-export type OcrCacheEntry = { text: string; cachedAt: string; text_sha256?: string }
+export type DividendTextCacheSource = 'pdf_text' | 'ocr' | 'html'
+
+export type OcrCacheEntry = {
+    text: string
+    cachedAt: string
+    text_sha256?: string
+    /** Origin of cached text — legacy entries without source are treated as ocr. */
+    source?: DividendTextCacheSource
+}
+
 export type OcrCache = Record<string, OcrCacheEntry>
 
 export const OCR_ENGINE = 'tesseract-mkd+eng'
-export const DEFAULT_OCR_MAX_PAGES = Number(process.env.TALIR_OCR_MAX_PAGES ?? 4)
+export const DEFAULT_OCR_MAX_PAGES = Number(process.env.TALIR_OCR_MAX_PAGES ?? 8)
 
 export function sha256Buffer(buffer: Buffer): string {
     return createHash('sha256').update(buffer).digest('hex')
@@ -42,8 +51,9 @@ function resolveOcrLangPath(): string | undefined {
     return undefined
 }
 
+/** Only TALIR_OCR_FORCE busts OCR cache — PARSE_FORCE reuses cached text. */
 function shouldBustOcrCache(): boolean {
-    return process.env.TALIR_PARSE_FORCE === '1' || process.env.TALIR_OCR_FORCE === '1'
+    return process.env.TALIR_OCR_FORCE === '1'
 }
 
 async function renderPdfPagesToBuffers(buffer: Buffer, maxPages = DEFAULT_OCR_MAX_PAGES): Promise<Buffer[]> {
@@ -79,33 +89,52 @@ async function renderPdfPagesToBuffers(buffer: Buffer, maxPages = DEFAULT_OCR_MA
     return images
 }
 
-export async function loadCachedText(
+export async function loadCachedEntry(
     attachmentId: number,
     bufferSha256?: string
-): Promise<string | null> {
+): Promise<OcrCacheEntry | null> {
     if (shouldBustOcrCache()) return null
     const key = String(attachmentId)
     const cached = loadOcrCache()[key]
     if (cached?.text && cached.text.length > 20) {
         if (!bufferSha256 || !cached.text_sha256 || cached.text_sha256 === bufferSha256) {
-            return cached.text
+            return cached
         }
     }
     return null
 }
 
-export async function persistOcrText(input: {
+export async function loadCachedText(
+    attachmentId: number,
+    bufferSha256?: string
+): Promise<string | null> {
+    const entry = await loadCachedEntry(attachmentId, bufferSha256)
+    return entry?.text ?? null
+}
+
+export async function persistCachedText(input: {
     attachmentId: number
     text: string
     bufferSha256: string
+    source: DividendTextCacheSource
 }): Promise<void> {
     const cache = loadOcrCache()
     cache[String(input.attachmentId)] = {
         text: input.text,
         cachedAt: new Date().toISOString(),
         text_sha256: input.bufferSha256,
+        source: input.source,
     }
     saveOcrCache(cache)
+}
+
+/** @deprecated Use persistCachedText with source. */
+export async function persistOcrText(input: {
+    attachmentId: number
+    text: string
+    bufferSha256: string
+}): Promise<void> {
+    await persistCachedText({ ...input, source: 'ocr' })
 }
 
 /** OCR a scanned PDF attachment; returns concatenated text or null. */
@@ -115,8 +144,10 @@ export async function ocrPdfBuffer(
     options?: { maxPages?: number }
 ): Promise<string | null> {
     const hash = sha256Buffer(buffer)
-    const cached = await loadCachedText(attachmentId, hash)
-    if (cached && cached.length > 20) return cached
+    const cached = await loadCachedEntry(attachmentId, hash)
+    if (cached?.text && cached.text.length > 20 && (cached.source ?? 'ocr') === 'ocr') {
+        return cached.text
+    }
 
     try {
         const maxPages = options?.maxPages ?? DEFAULT_OCR_MAX_PAGES
@@ -139,7 +170,12 @@ export async function ocrPdfBuffer(
 
         const text = parts.join(' ').replace(/\s+/g, ' ').trim()
         if (text.length > 20) {
-            await persistOcrText({ attachmentId, text, bufferSha256: hash })
+            await persistCachedText({
+                attachmentId,
+                text,
+                bufferSha256: hash,
+                source: 'ocr',
+            })
             return text
         }
         return null
@@ -147,4 +183,19 @@ export async function ocrPdfBuffer(
         console.warn(`OCR failed for attachment ${attachmentId}:`, err)
         return null
     }
+}
+
+/** Keep only attachment IDs still referenced by current docs (OCR cache rotation). */
+export function trimOcrCacheToAttachmentIds(keepIds: Iterable<number | string>): number {
+    const keep = new Set([...keepIds].map(String))
+    const cache = loadOcrCache()
+    let removed = 0
+    for (const key of Object.keys(cache)) {
+        if (!keep.has(key)) {
+            delete cache[key]
+            removed++
+        }
+    }
+    if (removed > 0) saveOcrCache(cache)
+    return removed
 }

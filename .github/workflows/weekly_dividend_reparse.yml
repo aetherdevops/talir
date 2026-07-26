@@ -1,0 +1,84 @@
+name: Weekly Dividend Reparse
+
+on:
+  schedule:
+    # Monday 03:00 UTC — force reparse OCR cache + weak docs after weekend
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      force_ocr:
+        description: 'Bust OCR cache and re-OCR (TALIR_OCR_FORCE=1)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+permissions:
+  contents: write
+
+jobs:
+  reparse:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
+        cache-dependency-path: package-lock.json
+
+    - name: Install Deps
+      run: npm install
+
+    - name: Scrape MSE Fin.Ratios
+      run: npm run scrape:mse-ratios
+      continue-on-error: true
+
+    - name: Force reparse OCR cache into Supabase
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        TALIR_DOCUMENT_STORE: supabase
+        TALIR_SCOPE: ALL
+        TALIR_PARSE_FORCE: '1'
+      run: npm run reparse:dividends -- --write
+
+    - name: Force re-ingest dividend documents
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        TALIR_DOCUMENT_STORE: supabase
+        TALIR_SCOPE: ALL
+        TALIR_OCR_DIVIDENDS: '1'
+        TALIR_PARSE_FORCE: '1'
+        TALIR_OCR_FORCE: ${{ github.event.inputs.force_ocr == 'true' && '1' || '0' }}
+      run: npm run ingest:dividends
+      continue-on-error: true
+
+    - name: Regenerate dividends + coverage
+      env:
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        TALIR_DOCUMENT_STORE: supabase
+        TALIR_PARSE_DIVIDENDS: '1'
+        TALIR_OCR_DIVIDENDS: '1'
+      run: |
+        npm run generate:dividends
+        npm run report:dividends
+
+    - name: Commit coverage refresh
+      run: |
+        git config --global user.name "Scraper Bot"
+        git config --global user.email "bot@example.com"
+        if [[ -n $(git status --porcelain lib/data) ]]; then
+          git add lib/data
+          git commit -m "chore: weekly dividend reparse [skip ci]"
+          git push
+        else
+          echo "No dividend data changes."
+        fi

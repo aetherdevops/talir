@@ -10,6 +10,8 @@ import {
     type DividendOverrideView,
 } from '@/lib/admin-dividends-actions'
 import type { DividendParseStatus } from '@/lib/dividends'
+import type { CoverageCell, DividendCoverageReport } from '@/lib/dividend-coverage'
+import { DividendCoveragePanel } from '@/components/admin/DividendCoveragePanel'
 
 type DerivedRow = {
     stockCode: string
@@ -28,10 +30,12 @@ export function DividendOverridesEditor({
     codes,
     derivedRows,
     initialOverrides,
+    coverageReport = null,
 }: {
     codes: string[]
     derivedRows: DerivedRow[]
     initialOverrides: DividendOverrideView[]
+    coverageReport?: DividendCoverageReport | null
 }) {
     const [stockCode, setStockCode] = useState(codes[0] ?? 'TEL')
     const [profitYear, setProfitYear] = useState(String(new Date().getFullYear() - 1))
@@ -64,6 +68,25 @@ export function DividendOverridesEditor({
         setPaymentEnd(row.paymentEnd ?? '')
         setParseStatus(row.parseStatus)
         setMessage(null)
+    }
+
+    const loadFromCoverageGap = (cell: CoverageCell) => {
+        setStockCode(cell.stockCode)
+        setProfitYear(String(cell.profitYear))
+        setGrossPerShare(
+            cell.grossPerShare != null
+                ? String(cell.grossPerShare)
+                : cell.mseDps != null
+                  ? String(cell.mseDps)
+                  : ''
+        )
+        setCumDate('')
+        setExDate(cell.exDate ?? '')
+        setRecordDate('')
+        setPaymentStart(cell.paymentStart ?? '')
+        setPaymentEnd(cell.paymentEnd ?? '')
+        setParseStatus(cell.parseStatus ?? 'partial')
+        setMessage(`Loaded gap ${cell.stockCode} ${cell.profitYear} (${cell.kind}) — edit and save.`)
     }
 
     const onSave = () => {
@@ -138,6 +161,8 @@ export function DividendOverridesEditor({
 
     return (
         <div className="space-y-8">
+            <DividendCoveragePanel report={coverageReport} onLoadGap={loadFromCoverageGap} />
+
             <section className="space-y-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
                 <h2
                     className="text-xl font-bold text-[var(--text)]"

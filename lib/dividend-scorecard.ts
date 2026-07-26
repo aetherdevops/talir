@@ -1,6 +1,7 @@
 import type { DividendCalendarEntry } from './dividends'
 import {
     earliestCalendarYear,
+    hasAnalyticsCore,
     latestDisclosedDividend,
     latestParsedDividend,
     resolveProfitYear,
@@ -43,12 +44,15 @@ export function classifyPayoutHealth(payoutRatioPct: number | null): PayoutHealt
     return 'stretched'
 }
 
-/** One parsed calendar per profit year — newest filing wins. */
-export function uniqueParsedByProfitYear(entries: DividendCalendarEntry[]): DividendCalendarEntry[] {
+/**
+ * One disclosed calendar per profit year with analytics core (gross + ex).
+ * Newest filing wins.
+ */
+export function uniqueDisclosedByProfitYear(entries: DividendCalendarEntry[]): DividendCalendarEntry[] {
     const byYear = new Map<number, DividendCalendarEntry>()
 
     for (const entry of entries) {
-        if (entry.parseStatus !== 'parsed' || entry.grossPerShare === null) continue
+        if (!hasAnalyticsCore(entry)) continue
         const year = resolveProfitYear(entry)
         if (!year) continue
         const existing = byYear.get(year)
@@ -60,8 +64,13 @@ export function uniqueParsedByProfitYear(entries: DividendCalendarEntry[]): Divi
     return [...byYear.values()].sort((a, b) => resolveProfitYear(a)! - resolveProfitYear(b)!)
 }
 
+/** @deprecated Use uniqueDisclosedByProfitYear — kept as alias for callers. */
+export function uniqueParsedByProfitYear(entries: DividendCalendarEntry[]): DividendCalendarEntry[] {
+    return uniqueDisclosedByProfitYear(entries)
+}
+
 export function computeDividendStreakYears(entries: DividendCalendarEntry[]): number {
-    const years = uniqueParsedByProfitYear(entries)
+    const years = uniqueDisclosedByProfitYear(entries)
         .filter((entry) => (entry.grossPerShare ?? 0) > 0)
         .map((entry) => resolveProfitYear(entry)!)
         .sort((a, b) => b - a)
@@ -96,7 +105,7 @@ export function countDisclosedDividends(
 }
 
 export function buildYieldAtExSeries(entries: DividendCalendarEntry[], maxPoints = 8): YieldAtExPoint[] {
-    return uniqueParsedByProfitYear(entries)
+    return uniqueDisclosedByProfitYear(entries)
         .filter((entry) => entry.trailingYieldAtEx !== null)
         .map((entry) => ({
             year: resolveProfitYear(entry)!,
@@ -127,16 +136,16 @@ export function buildDividendScorecard(input: {
     const trailingYieldPct =
         currentPrice && latestDisclosed?.grossPerShare
             ? computeTrailingDividendYieldPct(currentPrice, latestDisclosed.grossPerShare)
-            : latestParsed?.trailingYieldAtEx ?? null
+            : latestDisclosed?.trailingYieldAtEx ?? latestParsed?.trailingYieldAtEx ?? null
 
     const payoutRatioPct =
-        latestParsed?.payoutRatioPct ?? latestDisclosed?.payoutRatioPct ?? null
+        latestDisclosed?.payoutRatioPct ?? latestParsed?.payoutRatioPct ?? null
 
     return {
         trailingYieldPct,
         yieldAtExSeries,
         yieldGrowthPct: computeYieldGrowthPct(yieldAtExSeries),
-        yoyDpsGrowthPct: latestParsed?.yoyGrowthPct ?? null,
+        yoyDpsGrowthPct: latestDisclosed?.yoyGrowthPct ?? latestParsed?.yoyGrowthPct ?? null,
         payoutRatioPct,
         payoutHealth: classifyPayoutHealth(payoutRatioPct),
         dividendStreakYears: computeDividendStreakYears(entries),

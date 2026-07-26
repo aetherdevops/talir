@@ -32,6 +32,21 @@ import {
     fetchSeinetDocumentAttachmentIds,
     parseDocumentIdFromUrl,
 } from '../lib/seinet-document'
+import { loadMseSymbolRatiosFile } from '../lib/mse-symbol-ratios'
+import {
+    clearFetchFailure,
+    recordFetchFailure,
+    shouldSkipFailedFetch,
+} from '../lib/dividend-fetch-failures'
+import { entryDocKey } from '../lib/dividend-discovery'
+import path from 'path'
+
+const mseRatios = loadMseSymbolRatiosFile(path.join(process.cwd(), 'lib', 'data'))
+
+function mseDpsFor(stockCode: string, profitYear: number | null): number | null {
+    if (profitYear == null || !mseRatios) return null
+    return mseRatios.byCode[stockCode.toUpperCase()]?.years[String(profitYear)]?.dps ?? null
+}
 
 async function ingestEntry(
     entry: DividendCalendarEntry,
@@ -39,6 +54,11 @@ async function ingestEntry(
 ): Promise<'skipped' | 'ingested' | 'failed'> {
     const documentId = parseDocumentIdFromUrl(entry.url)
     if (!documentId) return 'failed'
+
+    const docKey = entryDocKey(entry.url)
+    if (shouldSkipFailedFetch(docKey)) {
+        return 'skipped'
+    }
 
     const force = process.env.TALIR_PARSE_FORCE === '1'
     const attachmentIds = await fetchSeinetDocumentAttachmentIds(entry.url)
@@ -53,6 +73,7 @@ async function ingestEntry(
     })
 
     if (!result) {
+        recordFetchFailure(docKey, 'fetch_or_extract_failed')
         await upsertSeinetDocument({
             document_id: documentId,
             stock_code: entry.stockCode,
@@ -66,9 +87,21 @@ async function ingestEntry(
         return 'failed'
     }
 
-    const fields = parseDividendCalendarText(result.text, {
+    clearFetchFailure(docKey)
+
+    // First pass without MSE (profit year unknown); second pass if year found
+    let fields = parseDividendCalendarText(result.text, {
         fromOcr: result.source === 'ocr',
+        filedAt: entry.filedAt,
     })
+    const mseDps = mseDpsFor(entry.stockCode, fields.profitYear)
+    if (mseDps != null && result.source === 'ocr') {
+        fields = parseDividendCalendarText(result.text, {
+            fromOcr: true,
+            filedAt: entry.filedAt,
+            mseDps,
+        })
+    }
 
     await upsertSeinetDocument({
         document_id: documentId,

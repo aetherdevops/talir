@@ -5,6 +5,8 @@
  * Set TALIR_PARSE_DIVIDENDS=1 to fetch SEInet attachments (PDF/HTML) and parse fields.
  * Set TALIR_OCR_DIVIDENDS=1 to OCR scanned PDF attachments (partial parseStatus only).
  * Set TALIR_DOCUMENT_STORE=supabase to merge parsed fields from Supabase ingest.
+ * Set TALIR_DIVIDENDS_OFFLINE=1 (or omit TALIR_PARSE_DIVIDENDS outside CI) to skip
+ * SEInet discovery and re-enrich the committed derived_dividends.json.
  */
 import fs from 'fs'
 import path from 'path'
@@ -37,6 +39,12 @@ import {
     loadMseSymbolRatiosFile,
     type DividendOverrideRow,
 } from '../lib/mse-symbol-ratios'
+import { validateDividendEntries } from '../lib/dividend-validate'
+import {
+    clearFetchFailure,
+    recordFetchFailure,
+    shouldSkipFailedFetch,
+} from '../lib/dividend-fetch-failures'
 import { getSupabaseAdminOrNull } from '../lib/supabase/admin'
 
 const { dataDir, issuersPath } = defaultDataPaths()
@@ -121,13 +129,17 @@ function parseQualityScore(fields: {
 
 function restoreParsedFields(
     entries: DividendCalendarEntry[],
-    preserved: Map<string, ParsedFieldSnapshot>
+    preserved: Map<string, ParsedFieldSnapshot>,
+    storeMergedKeys: Set<string>
 ): number {
     let restored = 0
     for (const entry of entries) {
-        const snapshot = preserved.get(entryDocKey(entry.url))
+        const key = entryDocKey(entry.url)
+        // Store extraction always wins — including downgrade parsed → partial
+        if (storeMergedKeys.has(key)) continue
+        const snapshot = preserved.get(key)
         if (!snapshot) continue
-        // Never clobber a better store/OCR parse with a stale derived row.
+        // Never clobber a better live parse with a stale derived row.
         if (parseQualityScore(snapshot) <= parseQualityScore(entry)) continue
         Object.assign(entry, snapshot)
         restored++
@@ -148,10 +160,16 @@ function applyStoredExtraction(
     entry.paymentEnd = (fields.paymentEnd as string | null) ?? null
     entry.profitYear = (fields.profitYear as number | null) ?? null
     entry.parseStatus = parseStatus
+    if (entry.grossPerShare != null) {
+        entry.sourceFields = { ...entry.sourceFields, grossPerShare: 'SECNet' }
+    }
 }
 
-async function mergeFromDocumentStore(entries: DividendCalendarEntry[]): Promise<number> {
+async function mergeFromDocumentStore(
+    entries: DividendCalendarEntry[]
+): Promise<{ merged: number; keys: Set<string> }> {
     const stored = await loadDividendExtractionsFromStore(DIVIDEND_PARSER_VERSION)
+    const keys = new Set<string>()
     let merged = 0
 
     for (const entry of entries) {
@@ -160,10 +178,11 @@ async function mergeFromDocumentStore(entries: DividendCalendarEntry[]): Promise
         const row = stored.get(docId)
         if (!row) continue
         applyStoredExtraction(entry, row.fields, row.parse_status)
+        keys.add(entryDocKey(entry.url))
         merged++
     }
 
-    return merged
+    return { merged, keys }
 }
 
 async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promise<void> {
@@ -173,6 +192,7 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
     const ocrCodes = process.env.TALIR_OCR_DIVIDEND_CODES?.split(',')
         .map((code) => code.trim().toUpperCase())
         .filter(Boolean)
+    const mseRatios = loadMseSymbolRatiosFile(dataDir)
 
     let parsed = 0
     let partial = 0
@@ -181,6 +201,12 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
 
     for (const entry of entries) {
         if (entry.parseStatus !== 'link_only') continue
+
+        const docKey = entryDocKey(entry.url)
+        if (shouldSkipFailedFetch(docKey)) {
+            linkOnly++
+            continue
+        }
 
         const shouldOcr =
             allowOcr && (!ocrCodes?.length || ocrCodes.includes(entry.stockCode.toUpperCase()))
@@ -193,13 +219,30 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
         if (result?.source === 'ocr') ocrAttempted++
 
         if (!result) {
+            recordFetchFailure(docKey, 'fetch_or_extract_failed')
             linkOnly++
             continue
         }
 
-        const fields = parseDividendCalendarText(result.text, {
+        clearFetchFailure(docKey)
+
+        let fields = parseDividendCalendarText(result.text, {
             fromOcr: result.source === 'ocr',
+            filedAt: entry.filedAt,
         })
+        const year = fields.profitYear
+        const mseDps =
+            year != null
+                ? (mseRatios?.byCode[entry.stockCode.toUpperCase()]?.years[String(year)]?.dps ??
+                  null)
+                : null
+        if (mseDps != null && result.source === 'ocr') {
+            fields = parseDividendCalendarText(result.text, {
+                fromOcr: true,
+                filedAt: entry.filedAt,
+                mseDps,
+            })
+        }
         Object.assign(entry, fields)
 
         if (fields.parseStatus === 'parsed') parsed++
@@ -217,6 +260,58 @@ async function enrichWithDocumentParse(entries: DividendCalendarEntry[]): Promis
 }
 
 async function main(): Promise<void> {
+    const offline =
+        process.env.TALIR_DIVIDENDS_OFFLINE === '1' ||
+        (process.env.TALIR_PARSE_DIVIDENDS !== '1' &&
+            process.env.TALIR_FORCE_DIVIDEND_DISCOVERY !== '1' &&
+            fs.existsSync(outPath))
+
+    if (offline && fs.existsSync(outPath)) {
+        console.log(
+            `Dividend offline mode: re-enriching committed ${outPath} (skip SEInet discovery walk)`
+        )
+        const existing = JSON.parse(fs.readFileSync(outPath, 'utf8')) as {
+            all: DividendCalendarEntry[]
+            lastIssuerScan: string | null
+            issuerCount: number
+        }
+        const entries = existing.all ?? []
+
+        const mseRatios = loadMseSymbolRatiosFile(dataDir)
+        if (mseRatios) {
+            applyMseDividendRatios(entries, mseRatios, { dataDir, allowOcrOverwrite: true })
+        }
+
+        const overrides = await loadDividendOverrides()
+        if (overrides.length > 0) {
+            applyDividendOverrides(entries, overrides, { dataDir })
+        }
+
+        enrichDividendDerivedMetrics(entries, loadStockHistory)
+        enrichDividendPayoutRatios(entries, loadEpsIndex())
+
+        const validation = validateDividendEntries(entries, { mseRatios })
+        fs.writeFileSync(
+            path.join(dataDir, 'derived_dividend_validation.json'),
+            JSON.stringify(validation, null, 2)
+        )
+        if (validation.issueCount > 0) {
+            enrichDividendDerivedMetrics(entries, loadStockHistory)
+            enrichDividendPayoutRatios(entries, loadEpsIndex())
+        }
+
+        entries.sort((a, b) => b.filedAt.localeCompare(a.filedAt))
+        const payload = buildDividendsCalendarFile(entries, {
+            lastIssuerScan: existing.lastIssuerScan,
+            issuerCount: existing.issuerCount,
+        })
+        fs.writeFileSync(outPath, JSON.stringify(payload, null, 2))
+        console.log(
+            `Wrote dividends calendar (offline): ${payload.all.length} total, ${payload.upcomingExDates.length} upcoming → ${outPath}`
+        )
+        return
+    }
+
     if (!fs.existsSync(issuersPath)) {
         console.error(`Missing ${issuersPath}. Run npm run script:issuers first.`)
         process.exit(1)
@@ -229,23 +324,28 @@ async function main(): Promise<void> {
             ? new Map<string, ParsedFieldSnapshot>()
             : loadExistingParsedFields()
 
+    let storeMergedKeys = new Set<string>()
     if (isDocumentStoreEnabled()) {
-        const merged = await mergeFromDocumentStore(entries)
+        const { merged, keys } = await mergeFromDocumentStore(entries)
+        storeMergedKeys = keys
         console.log(`Dividend store: merged ${merged} extractions from Supabase`)
     }
 
     await enrichWithDocumentParse(entries)
 
     if (preservedParsed.size > 0) {
-        const restored = restoreParsedFields(entries, preservedParsed)
+        const restored = restoreParsedFields(entries, preservedParsed, storeMergedKeys)
         console.log(`Dividend preserve: restored parsed fields for ${restored} entries from existing ${outPath}`)
     }
 
     const mseRatios = loadMseSymbolRatiosFile(dataDir)
     if (mseRatios) {
-        const { filled, created } = applyMseDividendRatios(entries, mseRatios, { dataDir })
+        const { filled, created, overwritten } = applyMseDividendRatios(entries, mseRatios, {
+            dataDir,
+            allowOcrOverwrite: true,
+        })
         console.log(
-            `Dividend MSE ratios: filled ${filled} gaps, created ${created} synthetic rows from ${mseRatiosPath}`
+            `Dividend MSE ratios: filled ${filled} gaps, created ${created} synthetic, overwritten ${overwritten} OCR mismatches from ${mseRatiosPath}`
         )
     } else {
         console.log(`Dividend MSE ratios: skipped (missing ${mseRatiosPath} — run npm run scrape:mse-ratios)`)
@@ -265,6 +365,19 @@ async function main(): Promise<void> {
 
     console.log(`Dividend derived metrics: ${withYield} entries with trailing yield at ex`)
     console.log(`Dividend payout ratios: ${withPayout} entries with EPS-matched payout ratio`)
+
+    const validation = validateDividendEntries(entries, { mseRatios })
+    const validationPath = path.join(dataDir, 'derived_dividend_validation.json')
+    fs.writeFileSync(validationPath, JSON.stringify(validation, null, 2))
+    console.log(
+        `Dividend validation: ${validation.issueCount} issues → ${validationPath}`
+    )
+
+    // Re-enrich after validation may have cleared ex/cum fields
+    if (validation.issueCount > 0) {
+        enrichDividendDerivedMetrics(entries, loadStockHistory)
+        enrichDividendPayoutRatios(entries, loadEpsIndex())
+    }
 
     entries.sort((a, b) => b.filedAt.localeCompare(a.filedAt))
 

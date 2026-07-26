@@ -42,6 +42,13 @@ function formatDateCell(entry: DividendCalendarEntry): string {
 export function DividendRow({ entry, className }: DividendRowProps) {
     const { t } = useLocale()
     const yieldPct = entry.trailingYieldAtEx
+    const hasSeinetDates = Boolean(entry.exDate || entry.cumDate || entry.recordDate)
+    const isMseOnly =
+        (entry.source === 'MSE' || entry.isSynthetic === true) &&
+        !/seinet\.com\.mk/i.test(entry.url)
+    const showMseBadge =
+        isMseOnly ||
+        (entry.sourceFields?.grossPerShare === 'MSE' && !hasSeinetDates)
 
     return (
         <div
@@ -68,6 +75,14 @@ export function DividendRow({ entry, className }: DividendRowProps) {
             </span>
             <span className="flex-1 min-w-0 truncate text-right font-data text-xs text-text-secondary tabular-nums">
                 {formatDateCell(entry)}
+                {showMseBadge ? (
+                    <span
+                        className="ml-1 inline-block rounded px-1 py-0.5 text-[9px] uppercase tracking-wider text-text-tertiary border border-border"
+                        title={t('dividends.sourceMseHint')}
+                    >
+                        {t('dividends.sourceMse')}
+                    </span>
+                ) : null}
             </span>
             <a
                 href={entry.url}
