@@ -96,6 +96,9 @@ describe('parseAmountMk', () => {
         assert.equal(parseAmountMk('1.234.567'), 1234567)
         assert.equal(parseAmountMk('4.620'), 4620)
         assert.equal(parseAmountMk('12.500'), 12.5)
+        assert.equal(parseAmountMk('55,56'), 55.56)
+        assert.equal(parseAmountMk('55,556'), 55.56) // OCR slip of European 55,56
+        assert.equal(parseAmountMk('36,667'), 36.67) // OCR slip of European 36,67
         assert.equal(parseAmountMk('6,00'), 6)
     })
 })

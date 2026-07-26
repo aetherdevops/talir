@@ -1,0 +1,30 @@
+{
+  "note": "Committed manual fills for known parse gaps / OCR slips. Applied after MSE ratios and Supabase overrides in generate-dividends. Use match_url when multiple filings share a profit year.",
+  "overrides": [
+    {
+      "stock_code": "TEL",
+      "profit_year": 2018,
+      "match_url": "document/45874",
+      "fields": {
+        "grossPerShare": 18.5,
+        "paymentStart": "2019-09-26",
+        "paymentEnd": "2019-09-30",
+        "parseStatus": "partial"
+      },
+      "source_note": "Issuer dividend calendar (telekom.mk) + Magyar Telekom IR 9 May 2019; SEInet document/45874 was link_only. User-linked FileServer 49427 is the FY2017 announcement (already covered by document/43027)."
+    },
+    {
+      "stock_code": "TETE",
+      "profit_year": 2019,
+      "match_url": "document/49772",
+      "fields": {
+        "grossPerShare": 36.6,
+        "cumDate": "2020-04-21",
+        "exDate": "2020-04-22",
+        "recordDate": "2020-04-23",
+        "parseStatus": "partial"
+      },
+      "source_note": "COVID reduction from 72.2 → 36.6 ден.; OCR misread as 36667"
+    }
+  ]
+}

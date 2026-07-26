@@ -128,6 +128,7 @@ export function DividendsPageClient({ calendar, asOfDate, priceByCode, firstTrad
                 <DataFreshnessLabel asOfDate={asOfDate} />
             </header>
 
+            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(18rem,24rem)] gap-8 min-w-0 items-start">
             <section className="space-y-4 min-w-0" aria-labelledby="dividends-deep-dive">
                 <div className="flex flex-col sm:flex-row sm:items-end gap-3 justify-between">
                     <div className="space-y-1">
@@ -196,7 +197,7 @@ export function DividendsPageClient({ calendar, asOfDate, priceByCode, firstTrad
                 )}
             </section>
 
-            <section className="space-y-3 min-w-0" aria-labelledby="dividends-leaderboards">
+            <section className="space-y-3 min-w-0 xl:sticky xl:top-4" aria-labelledby="dividends-leaderboards">
                 <div className="flex items-center gap-2">
                     <h2 id="dividends-leaderboards" className="text-lg font-semibold font-heading text-text-primary">
                         {t('dividends.leaderboards')}
@@ -229,15 +230,18 @@ export function DividendsPageClient({ calendar, asOfDate, priceByCode, firstTrad
                     ))}
                 </div>
 
-                {leaderboardContent}
+                <div className="rounded-xl border border-border bg-surface overflow-hidden">
+                    {leaderboardContent}
+                </div>
 
-                <p className="text-[11px] font-data text-text-tertiary pt-2">
+                <p className="text-[11px] font-data text-text-tertiary pt-1">
                     <LocaleLink href="/markets?view=dividends" className="text-accent hover:underline">
                         {t('dividends.marketsLink')}
                     </LocaleLink>
                     . {t('dividends.regulatoryNote')}
                 </p>
             </section>
+            </div>
         </div>
     )
 }

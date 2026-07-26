@@ -181,4 +181,40 @@ describe('applyDividendOverrides', () => {
         assert.equal(entries[0].cumDate, '2025-06-12')
         assert.equal(entries[0].source, 'manual')
     })
+
+    it('targets a specific filing when match_url is set', () => {
+        const entries = [
+            blankDividend({
+                stockCode: 'TETE',
+                filedAt: '2020-08-04',
+                url: 'https://seinet.com.mk/en/document/51654',
+                grossPerShare: 60,
+                exDate: '2020-08-19',
+                profitYear: 2019,
+                parseStatus: 'partial',
+            }),
+            blankDividend({
+                stockCode: 'TETE',
+                filedAt: '2020-04-07',
+                url: 'https://seinet.com.mk/en/document/49772',
+                grossPerShare: 36667,
+                exDate: '2020-04-22',
+                profitYear: 2019,
+                parseStatus: 'partial',
+            }),
+        ]
+        const applied = applyDividendOverrides(entries, [
+            {
+                stock_code: 'TETE',
+                profit_year: 2019,
+                match_url: 'document/49772',
+                fields: { grossPerShare: 36.6 },
+            },
+        ])
+        assert.equal(applied, 1)
+        assert.equal(entries[0].grossPerShare, 60)
+        assert.equal(entries[0].source, 'SECNet')
+        assert.equal(entries[1].grossPerShare, 36.6)
+        assert.equal(entries[1].source, 'manual')
+    })
 })

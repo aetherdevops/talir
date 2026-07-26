@@ -284,7 +284,8 @@ async function main(): Promise<void> {
 
         const overrides = await loadDividendOverrides()
         if (overrides.length > 0) {
-            applyDividendOverrides(entries, overrides, { dataDir })
+            const applied = applyDividendOverrides(entries, overrides, { dataDir })
+            console.log(`Dividend overrides: applied ${applied} manual rows`)
         }
 
         enrichDividendDerivedMetrics(entries, loadStockHistory)
@@ -405,9 +406,27 @@ function loadEpsIndex(): Map<string, number> {
     }
 }
 
+function loadCommittedManualCorrections(): DividendOverrideRow[] {
+    const correctionsPath = path.join(dataDir, 'dividend_manual_corrections.json')
+    if (!fs.existsSync(correctionsPath)) return []
+    try {
+        const raw = JSON.parse(fs.readFileSync(correctionsPath, 'utf8')) as {
+            overrides?: DividendOverrideRow[]
+        }
+        return Array.isArray(raw.overrides) ? raw.overrides : []
+    } catch (err) {
+        console.warn(
+            'Dividend manual corrections load failed:',
+            err instanceof Error ? err.message : err
+        )
+        return []
+    }
+}
+
 async function loadDividendOverrides(): Promise<DividendOverrideRow[]> {
+    const committed = loadCommittedManualCorrections()
     const db = getSupabaseAdminOrNull()
-    if (!db) return []
+    if (!db) return committed
     try {
         const { data, error } = await db
             .from('dividend_overrides')
@@ -417,11 +436,21 @@ async function loadDividendOverrides(): Promise<DividendOverrideRow[]> {
             if (!/dividend_overrides|schema cache|does not exist/i.test(error.message)) {
                 console.warn('Dividend overrides load failed:', error.message)
             }
-            return []
+            return committed
         }
-        return (data ?? []) as DividendOverrideRow[]
+        // Supabase rows win over committed corrections for the same stock+year(+url).
+        const byKey = new Map<string, DividendOverrideRow>()
+        const overrideKey = (row: DividendOverrideRow) =>
+            `${row.stock_code.toUpperCase()}:${row.profit_year}:${row.match_url ?? '*'}`
+        for (const row of committed) {
+            byKey.set(overrideKey(row), row)
+        }
+        for (const row of (data ?? []) as DividendOverrideRow[]) {
+            byKey.set(overrideKey(row), row)
+        }
+        return [...byKey.values()]
     } catch {
-        return []
+        return committed
     }
 }
 

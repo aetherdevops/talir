@@ -1,4 +1,3 @@
-
 import {
     getTopGainers,
     getTopLosers,
@@ -11,16 +10,15 @@ import {
     attachSparklines,
     getAllInstruments,
     getMarketBreadth,
-    getSectorRollups,
     getWeekHighStocks,
     getWeekLowStocks,
     getConsistentGainerStocks,
     getRecentResults,
     getExpectedResults,
-    getRecentDividends,
-    getUpcomingExDates,
+    getDividendsCalendar,
     getNewsFeedMeta,
 } from '@/lib/data'
+import { buildMbi10DividendHighlights } from '@/lib/dividend-home-banner'
 import { HomeMarketOverview } from '@/components/home/HomeMarketOverview'
 import { HomeDividendsPanel } from '@/components/dividends/HomeDividendsPanel'
 
@@ -40,8 +38,6 @@ export default async function HomePage() {
         allInstruments,
         recentResults,
         expectedResults,
-        recentDividends,
-        upcomingExDates,
         newsMeta,
     ] = await Promise.all([
         getTopGainers(5),
@@ -56,23 +52,33 @@ export default async function HomePage() {
         getAllInstruments(),
         Promise.resolve(getRecentResults(5)),
         Promise.resolve(getExpectedResults(5)),
-        Promise.resolve(getRecentDividends(5)),
-        Promise.resolve(getUpcomingExDates(5)),
         Promise.resolve(getNewsFeedMeta()),
     ])
 
     const asOfDate = getMarketDataAsOf(allInstruments)
     const sentiment = getMarketSentiment(allInstruments)
     const breadth = getMarketBreadth()
-    const sectors = getSectorRollups()
 
     const gainers = attachSparklines(gainersRaw)
     const losers = attachSparklines(losersRaw)
     const mostActive = attachSparklines(mostActiveRaw)
 
+    const priceByCode: Record<string, number> = {}
+    for (const stock of allInstruments) {
+        if (stock.type !== 'Index' && stock.price > 0) {
+            priceByCode[stock.code] = stock.price
+        }
+    }
+
+    const dividendHighlights = buildMbi10DividendHighlights({
+        byIssuer: getDividendsCalendar().byIssuer,
+        priceByCode,
+        limit: 5,
+    })
+
     return (
         <div className="pb-10 min-w-0">
-            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-4 lg:gap-6 min-w-0">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_min(100%,22rem)] gap-4 lg:gap-6 min-w-0">
                 <div className="min-w-0 space-y-4">
                     <HomeMarketOverview
                         indices={indices}
@@ -84,24 +90,18 @@ export default async function HomePage() {
                         weekLows={weekLows}
                         consistentGainers={consistentGainers}
                         breadth={breadth}
-                        sectors={sectors}
                         sentiment={sentiment}
                         asOfDate={asOfDate}
                         news={news}
                         recentResults={recentResults}
                         expectedResults={expectedResults}
-                        recentDividends={recentDividends}
-                        upcomingExDates={upcomingExDates}
+                        dividendHighlights={dividendHighlights}
                         lastIssuerScan={newsMeta.lastIssuerScan}
                     />
                 </div>
 
                 <aside className="hidden lg:block min-w-0">
-                    <HomeDividendsPanel
-                        recent={recentDividends}
-                        upcoming={upcomingExDates}
-                        variant="aside"
-                    />
+                    <HomeDividendsPanel highlights={dividendHighlights} variant="aside" />
                 </aside>
             </div>
         </div>

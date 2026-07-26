@@ -306,6 +306,8 @@ export function applyMseFundamentalsEps(
 export interface DividendOverrideRow {
     stock_code: string
     profit_year: number
+    /** When set, only the entry whose URL contains this substring is updated. */
+    match_url?: string
     fields: {
         grossPerShare?: number | null
         cumDate?: string | null
@@ -330,11 +332,13 @@ export function applyDividendOverrides(
         const stockCode = row.stock_code.toUpperCase()
         const profitYear = row.profit_year
         const fields = row.fields ?? {}
+        const matchUrl = row.match_url?.trim()
 
-        const matches = entries.filter(
-            (e) =>
-                e.stockCode.toUpperCase() === stockCode && resolveProfitYear(e) === profitYear
-        )
+        const matches = entries.filter((e) => {
+            if (e.stockCode.toUpperCase() !== stockCode) return false
+            if (matchUrl) return e.url.includes(matchUrl)
+            return resolveProfitYear(e) === profitYear
+        })
 
         let target =
             matches.length > 0
@@ -342,6 +346,10 @@ export function applyDividendOverrides(
                 : null
 
         if (!target) {
+            if (matchUrl) {
+                // URL-targeted correction with no matching entry — skip rather than invent.
+                continue
+            }
             target = {
                 stockCode,
                 stockName: names.get(stockCode) ?? stockCode,

@@ -4,7 +4,8 @@ import { skopjeTodayIso } from './market-session'
 export const DIVIDEND_PARSER_VERSION = '1.5.0'
 
 /** Max plausible gross DPS for MSE ordinary shares (den.). Totals often exceed this. */
-const MAX_PLAUSIBLE_GROSS_PER_SHARE = 50_000
+/** MSE DPS rarely exceeds ~5k (e.g. MPT); 5-digit OCR slips (36667) must not pass. */
+const MAX_PLAUSIBLE_GROSS_PER_SHARE = 10_000
 
 export type DividendParseStatus = 'parsed' | 'partial' | 'link_only'
 
@@ -153,6 +154,11 @@ export function parseAmountMk(value: string): number | null {
     if (/^\d{1,3}(\.\d{3}){2,}(,\d+)?$/.test(raw) || /^\d{1,3}(\.\d{3})+,\d+$/.test(raw)) {
         // European thousands: 1.234.567 or 1.350,00
         raw = raw.replace(/\./g, '').replace(',', '.')
+    } else if (/^\d{2},\d{3}$/.test(raw)) {
+        // OCR often turns EU decimal "55,56" into "55,556". Prefer XX.YY for DPS —
+        // not US thousands (would invent 55,556 ден.). Round the 3-digit frac form.
+        const n = Number(raw.replace(',', '.'))
+        raw = String(Math.round(n * 100) / 100)
     } else if (/^\d{1,3}(,\d{3})+(\.\d+)?$/.test(raw)) {
         // US thousands: 2,571 or 1,350.00
         raw = raw.replace(/,/g, '')
@@ -185,7 +191,7 @@ function looksLikeTotalDividendAmount(text: string, amount: number): boolean {
 
 function sanitizeGrossPerShare(text: string, value: number | null): number | null {
     if (value === null) return null
-    if (value < 1 || value > 1_000_000) return null
+    if (value < 1 || value > MAX_PLAUSIBLE_GROSS_PER_SHARE) return null
     if (looksLikeTotalDividendAmount(text, value)) return null
     return value
 }

@@ -1,13 +1,12 @@
 import type { MarketIndex, StockSummary, NewsItem } from '@/lib/types'
-import type { DerivedBreadth, DerivedSectorRollup, IndexDetails, MarketSentiment } from '@/lib/data'
-import type { DividendCalendarEntry } from '@/lib/dividends'
+import type { DerivedBreadth, IndexDetails, MarketSentiment } from '@/lib/data'
 import type { ExpectedResultsEntry, ResultsCalendarEntry } from '@/lib/results-calendar'
+import type { Mbi10DividendHighlight } from '@/lib/dividend-home-banner'
 import { SponsorSlot } from '@/components/sponsors/SponsorSlot'
 import { HomeIndexStrip } from '@/components/home/HomeIndexStrip'
 import { HomeLeaderboardTabs } from '@/components/home/HomeLeaderboardTabs'
 import { HomeMbi10Chart } from '@/components/home/HomeMbi10Chart'
 import { HomeMarketBreadth } from '@/components/home/HomeMarketBreadth'
-import { HomeSectorStrip } from '@/components/home/HomeSectorStrip'
 import { HomeFilingsHub } from '@/components/home/HomeFilingsHub'
 import { HomeDividendsPanel } from '@/components/dividends/HomeDividendsPanel'
 
@@ -21,14 +20,12 @@ interface HomeMarketOverviewProps {
     weekLows: StockSummary[]
     consistentGainers: StockSummary[]
     breadth: DerivedBreadth | null
-    sectors: DerivedSectorRollup[]
     sentiment: MarketSentiment
     asOfDate: string
     news: NewsItem[]
     recentResults: ResultsCalendarEntry[]
     expectedResults: ExpectedResultsEntry[]
-    recentDividends: DividendCalendarEntry[]
-    upcomingExDates: DividendCalendarEntry[]
+    dividendHighlights: Mbi10DividendHighlight[]
     lastIssuerScan: string | null
 }
 
@@ -42,14 +39,12 @@ export function HomeMarketOverview({
     weekLows,
     consistentGainers,
     breadth,
-    sectors,
     sentiment,
     asOfDate,
     news,
     recentResults,
     expectedResults,
-    recentDividends,
-    upcomingExDates,
+    dividendHighlights,
     lastIssuerScan,
 }: HomeMarketOverviewProps) {
     return (
@@ -66,8 +61,6 @@ export function HomeMarketOverview({
 
             {mbi10 ? <HomeMbi10Chart index={mbi10} asOfDate={asOfDate} /> : null}
 
-            <HomeSectorStrip sectors={sectors} />
-
             <SponsorSlot placement="mobile-banner" />
             <SponsorSlot placement="rectangle" className="hidden md:flex" />
 
@@ -83,8 +76,7 @@ export function HomeMarketOverview({
             />
 
             <HomeDividendsPanel
-                recent={recentDividends}
-                upcoming={upcomingExDates}
+                highlights={dividendHighlights}
                 variant="mobile"
                 className="lg:hidden"
             />

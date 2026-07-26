@@ -4,11 +4,13 @@ import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import type { DividendCalendarEntry } from '@/lib/dividends'
 import { useLocale } from '@/components/providers/LocaleProvider'
-import { cn } from '@/lib/utils'
+import { cn, formatInteger, formatPrice } from '@/lib/utils'
 
 interface DividendRowProps {
     entry: DividendCalendarEntry
     className?: string
+    /** Compact dense row for leaderboards (default). */
+    dense?: boolean
 }
 
 function formatShortDate(iso: string): string {
@@ -26,10 +28,11 @@ function formatShortDate(iso: string): string {
 
 function formatDps(entry: DividendCalendarEntry): string {
     if (entry.grossPerShare === null) return '—'
-    return `${entry.grossPerShare.toLocaleString('en-US', {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2,
-    })} ден.`
+    const v = entry.grossPerShare
+    if (Number.isInteger(v) || Math.abs(v - Math.round(v)) < 1e-9) {
+        return `${formatInteger(Math.round(v))} ден.`
+    }
+    return formatPrice(v)
 }
 
 function formatDateCell(entry: DividendCalendarEntry): string {
@@ -39,7 +42,7 @@ function formatDateCell(entry: DividendCalendarEntry): string {
     return `filed ${formatShortDate(entry.filedAt)}`
 }
 
-export function DividendRow({ entry, className }: DividendRowProps) {
+export function DividendRow({ entry, className, dense = true }: DividendRowProps) {
     const { t } = useLocale()
     const yieldPct = entry.trailingYieldAtEx
     const hasSeinetDates = Boolean(entry.exDate || entry.cumDate || entry.recordDate)
@@ -53,11 +56,14 @@ export function DividendRow({ entry, className }: DividendRowProps) {
     return (
         <div
             className={cn(
-                'flex items-center gap-2 min-w-0 min-h-9 py-1 px-1 border-b border-border/60 last:border-b-0',
+                'grid items-center gap-x-2 gap-y-0.5 min-w-0 min-h-9 py-1.5 px-1.5 border-b border-border/60 last:border-b-0',
+                dense
+                    ? 'grid-cols-[3.25rem_minmax(0,1fr)_auto_1.75rem] sm:grid-cols-[3.5rem_5.5rem_minmax(0,1fr)_auto_1.75rem]'
+                    : 'grid-cols-[4rem_minmax(0,1fr)_auto_1.75rem]',
                 className
             )}
         >
-            <div className="shrink-0 w-[52px] min-w-0">
+            <div className="min-w-0">
                 <Link
                     href={`/stock/${entry.stockCode}`}
                     className="font-data text-xs font-semibold text-text-primary tabular-nums hover:text-accent"
@@ -65,15 +71,23 @@ export function DividendRow({ entry, className }: DividendRowProps) {
                     {entry.stockCode}
                 </Link>
                 {yieldPct !== null && Number.isFinite(yieldPct) ? (
-                    <div className="font-data text-[10px] leading-tight text-text-tertiary tabular-nums">
+                    <div className="font-data text-[10px] leading-tight text-text-tertiary tabular-nums sm:hidden">
                         {yieldPct.toFixed(2)}%
                     </div>
                 ) : null}
             </div>
-            <span className="shrink-0 w-[72px] text-right font-data text-xs text-text-secondary tabular-nums">
+
+            {dense ? (
+                <span className="hidden sm:block font-data text-[10px] text-text-tertiary tabular-nums">
+                    {yieldPct !== null && Number.isFinite(yieldPct) ? `${yieldPct.toFixed(2)}%` : '—'}
+                </span>
+            ) : null}
+
+            <span className="text-right font-data text-xs text-text-secondary tabular-nums whitespace-nowrap">
                 {formatDps(entry)}
             </span>
-            <span className="flex-1 min-w-0 truncate text-right font-data text-xs text-text-secondary tabular-nums">
+
+            <span className="text-right font-data text-[11px] sm:text-xs text-text-secondary tabular-nums whitespace-nowrap">
                 {formatDateCell(entry)}
                 {showMseBadge ? (
                     <span
@@ -84,11 +98,12 @@ export function DividendRow({ entry, className }: DividendRowProps) {
                     </span>
                 ) : null}
             </span>
+
             <a
                 href={entry.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center justify-center h-7 w-7 text-text-tertiary hover:text-accent transition-colors"
+                className="inline-flex items-center justify-center h-7 w-7 text-text-tertiary hover:text-accent transition-colors justify-self-end"
                 aria-label={t('results.openDividend', { code: entry.stockCode })}
             >
                 <ExternalLink className="h-3.5 w-3.5" aria-hidden />

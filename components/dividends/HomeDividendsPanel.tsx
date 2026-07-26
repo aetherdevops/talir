@@ -1,93 +1,135 @@
 'use client'
 
-import type { DividendCalendarEntry } from '@/lib/dividends'
-import { DividendRow } from '@/components/dividends/DividendRow'
+import { ArrowRight } from 'lucide-react'
+import type { Mbi10DividendHighlight } from '@/lib/dividend-home-banner'
 import { LocaleLink } from '@/components/layout/LocaleLink'
 import { useLocale } from '@/components/providers/LocaleProvider'
-import { cn } from '@/lib/utils'
+import { cn, formatInteger, formatNewsDate, formatPrice } from '@/lib/utils'
 
 interface HomeDividendsPanelProps {
-    recent: DividendCalendarEntry[]
-    upcoming: DividendCalendarEntry[]
+    highlights: Mbi10DividendHighlight[]
     variant?: 'aside' | 'mobile'
     className?: string
 }
 
+function formatDps(value: number): string {
+    if (Number.isInteger(value) || Math.abs(value - Math.round(value)) < 1e-9) {
+        return `${formatInteger(Math.round(value))} ден.`
+    }
+    return formatPrice(value)
+}
+
 export function HomeDividendsPanel({
-    recent,
-    upcoming,
+    highlights,
     variant = 'aside',
     className,
 }: HomeDividendsPanelProps) {
     const { t } = useLocale()
-    const recentItems = recent.slice(0, 4)
-    const upcomingItems = upcoming.slice(0, 4)
     const isAside = variant === 'aside'
 
     return (
         <section
             className={cn(
-                'space-y-3 min-w-0',
+                'min-w-0 rounded-xl border border-border overflow-hidden',
+                'bg-gradient-to-br from-[var(--surface-2)] via-[var(--surface)] to-[var(--surface)]',
                 isAside && 'sticky top-4',
                 className
             )}
-            aria-labelledby="home-dividends-heading"
+            aria-labelledby="home-dividends-banner"
         >
-            <header className="space-y-1 min-w-0">
-                <div className="flex items-center justify-between gap-2 min-w-0">
-                    <h2
-                        id="home-dividends-heading"
-                        className={cn(
-                            'font-heading font-semibold text-text-primary tracking-tight',
-                            isAside ? 'text-lg' : 'text-base font-bold'
-                        )}
-                    >
-                        {t('dividends.title')}
-                    </h2>
-                    <LocaleLink href="/dividends" className="text-xs font-medium text-accent hover:underline shrink-0">
-                        {t('filings.viewAll')}
-                    </LocaleLink>
-                </div>
-                <p className="text-xs text-text-tertiary font-data leading-snug">
-                    {t('dividends.panelSubtitle')}
+            <div className="relative px-4 pt-4 pb-3 space-y-1 border-b border-border/80">
+                <div
+                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-70"
+                    aria-hidden
+                />
+                <p className="font-data text-[10px] uppercase tracking-[0.2em] text-accent">
+                    {t('dividends.bannerEyebrow')}
                 </p>
-            </header>
+                <h2
+                    id="home-dividends-banner"
+                    className={cn(
+                        'font-heading font-semibold text-text-primary tracking-tight',
+                        isAside ? 'text-xl' : 'text-lg'
+                    )}
+                >
+                    {t('dividends.bannerTitle')}
+                </h2>
+                <p className="text-xs text-text-tertiary font-data leading-snug">
+                    {t('dividends.bannerSubtitle')}
+                </p>
+            </div>
 
-            <DividendSubBlock title={t('dividends.recentCalendars')}>
-                {recentItems.length ? (
-                    <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
-                        {recentItems.map((entry) => (
-                            <DividendRow key={`${entry.stockCode}-${entry.filedAt}-${entry.url}`} entry={entry} />
-                        ))}
-                    </div>
+            <ul className="divide-y divide-border/60">
+                {highlights.length === 0 ? (
+                    <li className="px-4 py-6 text-xs text-text-tertiary font-data">
+                        {t('dividends.bannerEmpty')}
+                    </li>
                 ) : (
-                    <p className="text-xs text-text-tertiary px-1">
-                        {t('dividends.noInFeed')}
-                    </p>
+                    highlights.map((row) => {
+                        const yieldPct = row.scorecard.trailingYieldPct
+                        const streak = row.scorecard.dividendStreakYears
+                        const dps = row.scorecard.latestGrossPerShare
+                        const fy = row.scorecard.latestProfitYear
+                        const nextEx = row.upcoming?.exDate
+
+                        return (
+                            <li key={row.stockCode}>
+                                <LocaleLink
+                                    href={`/dividends?code=${encodeURIComponent(row.stockCode)}`}
+                                    className="flex flex-col gap-1.5 px-4 py-3 hover:bg-surface-secondary/40 transition-colors min-w-0"
+                                >
+                                    <div className="flex items-baseline justify-between gap-2 min-w-0">
+                                        <span className="font-data text-sm font-semibold text-text-primary tabular-nums">
+                                            {row.stockCode}
+                                        </span>
+                                        {yieldPct != null && Number.isFinite(yieldPct) ? (
+                                            <span className="font-data text-sm font-semibold text-accent tabular-nums shrink-0">
+                                                {yieldPct.toFixed(2)}%
+                                            </span>
+                                        ) : null}
+                                    </div>
+                                    <p className="text-[11px] text-text-tertiary truncate leading-snug">
+                                        {row.stockName}
+                                    </p>
+                                    <div className="flex flex-wrap gap-x-3 gap-y-0.5 font-data text-[10px] text-text-secondary tabular-nums">
+                                        {dps != null ? (
+                                            <span>
+                                                {formatDps(dps)}
+                                                {fy != null ? ` · FY ${fy}` : ''}
+                                            </span>
+                                        ) : null}
+                                        {streak > 0 ? (
+                                            <span>
+                                                {t('dividends.bannerStreak', { count: streak })}
+                                            </span>
+                                        ) : null}
+                                        {nextEx ? (
+                                            <span className="text-accent/90">
+                                                {t('dividends.bannerNextEx', {
+                                                    date: formatNewsDate(nextEx),
+                                                })}
+                                            </span>
+                                        ) : null}
+                                    </div>
+                                </LocaleLink>
+                            </li>
+                        )
+                    })
                 )}
-            </DividendSubBlock>
+            </ul>
 
-            {upcomingItems.length > 0 && (
-                <DividendSubBlock title={t('dividends.upcomingExDates')}>
-                    <p className="text-xs text-text-tertiary font-data mb-1.5">
-                        {t('dividends.upcomingExHint')}
-                    </p>
-                    <div className="min-w-0 rounded-lg bg-surface-secondary/30 px-1">
-                        {upcomingItems.map((entry) => (
-                            <DividendRow key={`up-${entry.stockCode}-${entry.exDate}`} entry={entry} />
-                        ))}
-                    </div>
-                </DividendSubBlock>
-            )}
+            <div className="px-4 py-3 border-t border-border/80 bg-surface-secondary/20">
+                <LocaleLink
+                    href="/dividends"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+                >
+                    {t('dividends.bannerCta')}
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                </LocaleLink>
+                <p className="mt-1 text-[10px] font-data text-text-tertiary leading-snug">
+                    {t('dividends.bannerFootnote')}
+                </p>
+            </div>
         </section>
-    )
-}
-
-function DividendSubBlock({ title, children }: { title: string; children: React.ReactNode }) {
-    return (
-        <div className="space-y-1 min-w-0">
-            <h3 className="text-sm font-semibold font-heading text-text-primary">{title}</h3>
-            {children}
-        </div>
     )
 }
