@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-26T16:37:08.477Z",
-  "lastIssuerScan": "2026-07-26",
+  "generatedAt": "2026-07-27T06:09:49.810Z",
+  "lastIssuerScan": "2026-07-27",
   "issuerCount": 170,
   "recent": [
     {
@@ -18,8 +18,11 @@
       "trailingYieldAtEx": 5.338809034907597,
       "yoyGrowthPct": null,
       "profitYear": null,
-      "payoutRatioPct": 77.876954412029,
-      "source": "SECNet"
+      "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ADIN",
@@ -36,23 +39,26 @@
       "trailingYieldAtEx": 1.6988059701492537,
       "yoyGrowthPct": null,
       "profitYear": 2025,
-      "payoutRatioPct": 8.747670909329484,
-      "source": "SECNet"
+      "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "filedAt": "2026-06-09",
       "url": "https://seinet.com.mk/en/document/77755",
-      "grossPerShare": 50,
+      "grossPerShare": null,
       "cumDate": "2026-06-19",
       "exDate": "2026-06-22",
       "recordDate": "2026-06-23",
       "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 5,
-      "yoyGrowthPct": 0,
+      "paymentEnd": "2026-09-30",
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -62,14 +68,14 @@
       "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
       "filedAt": "2026-06-05",
       "url": "https://seinet.com.mk/en/document/77741",
-      "grossPerShare": 101,
+      "grossPerShare": null,
       "cumDate": "2026-06-24",
       "exDate": "2026-06-25",
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 8.278688524590164,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
@@ -80,20 +86,20 @@
       "stockName": "Stopanska banka AD Skopje",
       "filedAt": "2026-06-01",
       "url": "https://seinet.com.mk/en/document/77665",
-      "grossPerShare": 59,
+      "grossPerShare": 6,
       "cumDate": "2026-06-11",
       "exDate": "2026-06-12",
       "recordDate": "2026-06-15",
       "paymentStart": null,
       "paymentEnd": null,
       "parseStatus": "partial",
-      "trailingYieldAtEx": 7.866666666666666,
+      "trailingYieldAtEx": 0.8,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
       "source": "SECNet",
       "sourceFields": {
-        "grossPerShare": "MSE"
+        "grossPerShare": "SECNet"
       }
     },
     {
@@ -101,17 +107,17 @@
       "stockName": "Mermeren kombinat AD Prilep",
       "filedAt": "2026-05-28",
       "url": "https://seinet.com.mk/en/document/77557",
-      "grossPerShare": 98.4,
+      "grossPerShare": null,
       "cumDate": "2026-06-09",
       "exDate": "2026-06-10",
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 2.811428571428572,
-      "yoyGrowthPct": -33.33333333333333,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": 2025,
-      "payoutRatioPct": 59.582198001816536,
+      "payoutRatioPct": null,
       "source": "SECNet"
     },
     {
@@ -125,12 +131,15 @@
       "recordDate": "2026-06-16",
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 10,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OKTA",
@@ -148,7 +157,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "RZTK",
@@ -165,8 +177,11 @@
       "trailingYieldAtEx": 6.578947368421052,
       "yoyGrowthPct": null,
       "profitYear": 2025,
-      "payoutRatioPct": 141.20304998587972,
-      "source": "SECNet"
+      "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TNB",
@@ -184,7 +199,10 @@
       "yoyGrowthPct": -0.9630200308166409,
       "profitYear": null,
       "payoutRatioPct": 45.00262559075792,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "VTKS",
@@ -201,8 +219,11 @@
       "trailingYieldAtEx": 37.78842315369261,
       "yoyGrowthPct": 0,
       "profitYear": null,
-      "payoutRatioPct": 62.7375606846387,
-      "source": "SECNet"
+      "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BIM",
@@ -215,12 +236,15 @@
       "recordDate": null,
       "paymentStart": "2026-06-15",
       "paymentEnd": null,
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 12.344991944891952,
       "yoyGrowthPct": 0,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FERS",
@@ -238,7 +262,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "MPT",
@@ -251,12 +278,15 @@
       "recordDate": "2026-06-16",
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 4.052631578947368,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": 42.84684848445504,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEL",
@@ -269,19 +299,22 @@
       "recordDate": "2026-07-03",
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 5.78501881104,
       "yoyGrowthPct": 4.72251215305076,
       "profitYear": 2025,
       "payoutRatioPct": 80.34748348666666,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "filedAt": "2026-05-27",
       "url": "https://seinet.com.mk/en/document/77451",
-      "grossPerShare": 3435,
+      "grossPerShare": 3.435,
       "cumDate": "2026-06-12",
       "exDate": null,
       "recordDate": null,
@@ -294,7 +327,7 @@
       "payoutRatioPct": null,
       "source": "SECNet",
       "sourceFields": {
-        "grossPerShare": "MSE"
+        "grossPerShare": "SECNet"
       }
     },
     {
@@ -307,13 +340,16 @@
       "exDate": "2026-05-28",
       "recordDate": null,
       "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
+      "paymentEnd": "2026-09-30",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 3.262316910785619,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "EVRO",
@@ -331,7 +367,10 @@
       "yoyGrowthPct": 66.66666666666666,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BANA",
@@ -343,28 +382,31 @@
       "exDate": "2026-05-14",
       "recordDate": "2026-05-15",
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2026-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": 4.975124378109453,
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "filedAt": "2026-04-23",
       "url": "https://seinet.com.mk/en/document/76378",
-      "grossPerShare": 55.56,
+      "grossPerShare": null,
       "cumDate": "2026-05-08",
       "exDate": "2026-05-11",
       "recordDate": "2026-05-12",
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 2.8787564766839377,
-      "yoyGrowthPct": -49.49090909090909,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -385,7 +427,10 @@
       "yoyGrowthPct": 42.62295081967213,
       "profitYear": 2025,
       "payoutRatioPct": 99.87372287911836,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "REP",
@@ -403,7 +448,10 @@
       "yoyGrowthPct": 25,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ALK",
@@ -421,7 +469,10 @@
       "yoyGrowthPct": 14.285714285714285,
       "profitYear": null,
       "payoutRatioPct": 57.38835175871386,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -439,7 +490,10 @@
       "yoyGrowthPct": 8,
       "profitYear": 2025,
       "payoutRatioPct": 60.13363028953229,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TKVS",
@@ -457,7 +511,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2017,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BANA",
@@ -475,7 +532,10 @@
       "yoyGrowthPct": -25,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "AMK",
@@ -491,9 +551,12 @@
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 188.23529411764704,
-      "profitYear": null,
+      "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "STB",
@@ -532,7 +595,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEL",
@@ -545,12 +611,15 @@
       "recordDate": "2025-07-11",
       "paymentStart": null,
       "paymentEnd": "2025-09-30",
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 6.137933999844444,
       "yoyGrowthPct": 7.701088498344006,
       "profitYear": 2024,
       "payoutRatioPct": 81.23736176264707,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     }
   ],
   "all": [
@@ -569,8 +638,11 @@
       "trailingYieldAtEx": 5.338809034907597,
       "yoyGrowthPct": null,
       "profitYear": null,
-      "payoutRatioPct": 77.876954412029,
-      "source": "SECNet"
+      "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ADIN",
@@ -587,23 +659,26 @@
       "trailingYieldAtEx": 1.6988059701492537,
       "yoyGrowthPct": null,
       "profitYear": 2025,
-      "payoutRatioPct": 8.747670909329484,
-      "source": "SECNet"
+      "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEHN",
       "stockName": "Tehnokomerc AD Skopje",
       "filedAt": "2026-06-09",
       "url": "https://seinet.com.mk/en/document/77755",
-      "grossPerShare": 50,
+      "grossPerShare": null,
       "cumDate": "2026-06-19",
       "exDate": "2026-06-22",
       "recordDate": "2026-06-23",
       "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 5,
-      "yoyGrowthPct": 0,
+      "paymentEnd": "2026-09-30",
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -613,14 +688,14 @@
       "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
       "filedAt": "2026-06-05",
       "url": "https://seinet.com.mk/en/document/77741",
-      "grossPerShare": 101,
+      "grossPerShare": null,
       "cumDate": "2026-06-24",
       "exDate": "2026-06-25",
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 8.278688524590164,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
@@ -631,20 +706,20 @@
       "stockName": "Stopanska banka AD Skopje",
       "filedAt": "2026-06-01",
       "url": "https://seinet.com.mk/en/document/77665",
-      "grossPerShare": 59,
+      "grossPerShare": 6,
       "cumDate": "2026-06-11",
       "exDate": "2026-06-12",
       "recordDate": "2026-06-15",
       "paymentStart": null,
       "paymentEnd": null,
       "parseStatus": "partial",
-      "trailingYieldAtEx": 7.866666666666666,
+      "trailingYieldAtEx": 0.8,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
       "source": "SECNet",
       "sourceFields": {
-        "grossPerShare": "MSE"
+        "grossPerShare": "SECNet"
       }
     },
     {
@@ -652,17 +727,17 @@
       "stockName": "Mermeren kombinat AD Prilep",
       "filedAt": "2026-05-28",
       "url": "https://seinet.com.mk/en/document/77557",
-      "grossPerShare": 98.4,
+      "grossPerShare": null,
       "cumDate": "2026-06-09",
       "exDate": "2026-06-10",
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 2.811428571428572,
-      "yoyGrowthPct": -33.33333333333333,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": 2025,
-      "payoutRatioPct": 59.582198001816536,
+      "payoutRatioPct": null,
       "source": "SECNet"
     },
     {
@@ -676,12 +751,15 @@
       "recordDate": "2026-06-16",
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 10,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OKTA",
@@ -699,7 +777,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "RZTK",
@@ -716,8 +797,11 @@
       "trailingYieldAtEx": 6.578947368421052,
       "yoyGrowthPct": null,
       "profitYear": 2025,
-      "payoutRatioPct": 141.20304998587972,
-      "source": "SECNet"
+      "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TNB",
@@ -735,7 +819,10 @@
       "yoyGrowthPct": -0.9630200308166409,
       "profitYear": null,
       "payoutRatioPct": 45.00262559075792,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "VTKS",
@@ -752,8 +839,11 @@
       "trailingYieldAtEx": 37.78842315369261,
       "yoyGrowthPct": 0,
       "profitYear": null,
-      "payoutRatioPct": 62.7375606846387,
-      "source": "SECNet"
+      "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BIM",
@@ -766,12 +856,15 @@
       "recordDate": null,
       "paymentStart": "2026-06-15",
       "paymentEnd": null,
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 12.344991944891952,
       "yoyGrowthPct": 0,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FERS",
@@ -789,7 +882,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "MPT",
@@ -802,12 +898,15 @@
       "recordDate": "2026-06-16",
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 4.052631578947368,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": 42.84684848445504,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEL",
@@ -820,19 +919,22 @@
       "recordDate": "2026-07-03",
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 5.78501881104,
       "yoyGrowthPct": 4.72251215305076,
       "profitYear": 2025,
       "payoutRatioPct": 80.34748348666666,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "USJE",
       "stockName": "TITAN USJE AD Skopje",
       "filedAt": "2026-05-27",
       "url": "https://seinet.com.mk/en/document/77451",
-      "grossPerShare": 3435,
+      "grossPerShare": 3.435,
       "cumDate": "2026-06-12",
       "exDate": null,
       "recordDate": null,
@@ -845,7 +947,7 @@
       "payoutRatioPct": null,
       "source": "SECNet",
       "sourceFields": {
-        "grossPerShare": "MSE"
+        "grossPerShare": "SECNet"
       }
     },
     {
@@ -858,13 +960,16 @@
       "exDate": "2026-05-28",
       "recordDate": null,
       "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
+      "paymentEnd": "2026-09-30",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 3.262316910785619,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "EVRO",
@@ -882,7 +987,10 @@
       "yoyGrowthPct": 66.66666666666666,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BANA",
@@ -894,28 +1002,31 @@
       "exDate": "2026-05-14",
       "recordDate": "2026-05-15",
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2026-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": 4.975124378109453,
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "filedAt": "2026-04-23",
       "url": "https://seinet.com.mk/en/document/76378",
-      "grossPerShare": 55.56,
+      "grossPerShare": null,
       "cumDate": "2026-05-08",
       "exDate": "2026-05-11",
       "recordDate": "2026-05-12",
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 2.8787564766839377,
-      "yoyGrowthPct": -49.49090909090909,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -936,7 +1047,10 @@
       "yoyGrowthPct": 42.62295081967213,
       "profitYear": 2025,
       "payoutRatioPct": 99.87372287911836,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "REP",
@@ -954,7 +1068,10 @@
       "yoyGrowthPct": 25,
       "profitYear": 2025,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ALK",
@@ -972,7 +1089,10 @@
       "yoyGrowthPct": 14.285714285714285,
       "profitYear": null,
       "payoutRatioPct": 57.38835175871386,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -990,25 +1110,10 @@
       "yoyGrowthPct": 8,
       "profitYear": 2025,
       "payoutRatioPct": 60.13363028953229,
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "OKTA",
-      "stockName": "OKTA AD Skopje",
-      "filedAt": "2025-12-31",
-      "url": "https://www.mse.mk/en/symbol/OKTA#fy-2025",
-      "grossPerShare": 240,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2025,
-      "payoutRatioPct": 4000
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "REPL",
@@ -1023,6 +1128,10 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2025,
@@ -1041,46 +1150,14 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TTKO2",
-      "stockName": "TTK Banka AD Skopje",
-      "filedAt": "2025-12-31",
-      "url": "https://www.mse.mk/en/symbol/TTKO2#fy-2025",
-      "grossPerShare": 87,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2025,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TTKO3",
-      "stockName": "TTK Banka AD Skopje",
-      "filedAt": "2025-12-31",
-      "url": "https://www.mse.mk/en/symbol/TTKO3#fy-2025",
-      "grossPerShare": 87,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2025,
-      "payoutRatioPct": 99.87372287911836
     },
     {
       "stockCode": "TKVS",
@@ -1098,7 +1175,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2017,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BANA",
@@ -1116,7 +1196,10 @@
       "yoyGrowthPct": -25,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "AMK",
@@ -1132,9 +1215,12 @@
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 188.23529411764704,
-      "profitYear": null,
+      "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "STB",
@@ -1173,7 +1259,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEL",
@@ -1186,12 +1275,15 @@
       "recordDate": "2025-07-11",
       "paymentStart": null,
       "paymentEnd": "2025-09-30",
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 6.137933999844444,
       "yoyGrowthPct": 7.701088498344006,
       "profitYear": 2024,
       "payoutRatioPct": 81.23736176264707,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "USJ",
@@ -1216,17 +1308,17 @@
       "stockName": "Mermeren kombinat AD Prilep",
       "filedAt": "2025-05-30",
       "url": "https://seinet.com.mk/en/document/73253",
-      "grossPerShare": 147.6,
+      "grossPerShare": null,
       "cumDate": "2025-06-11",
       "exDate": "2025-06-12",
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 4.427114577084583,
-      "yoyGrowthPct": -14.285714285714283,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": 2024,
-      "payoutRatioPct": 75.70395445453147,
+      "payoutRatioPct": null,
       "source": "SECNet"
     },
     {
@@ -1263,7 +1355,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ADI",
@@ -1281,7 +1376,10 @@
       "yoyGrowthPct": 11.105263157894733,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TNB",
@@ -1299,7 +1397,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": 67.28822741139908,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "VTKS",
@@ -1316,8 +1417,11 @@
       "trailingYieldAtEx": 37.78842315369261,
       "yoyGrowthPct": 10.64227689790192,
       "profitYear": null,
-      "payoutRatioPct": 61.900635943043035,
-      "source": "SECNet"
+      "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "VIT",
@@ -1335,7 +1439,10 @@
       "yoyGrowthPct": 0,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "INPR",
@@ -1348,12 +1455,15 @@
       "recordDate": null,
       "paymentStart": "2025-06-20",
       "paymentEnd": null,
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 3.911111111111111,
       "yoyGrowthPct": null,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "GRT",
@@ -1365,13 +1475,16 @@
       "exDate": "2025-06-05",
       "recordDate": null,
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2025-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": -9.523809523809524,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FER",
@@ -1389,7 +1502,10 @@
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BIM",
@@ -1402,12 +1518,15 @@
       "recordDate": null,
       "paymentStart": "2025-06-12",
       "paymentEnd": null,
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 12.344991944891952,
       "yoyGrowthPct": 11.11110000000001,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OILKO",
@@ -1425,7 +1544,10 @@
       "yoyGrowthPct": 0,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "MAK",
@@ -1443,7 +1565,10 @@
       "yoyGrowthPct": 13.513513513513514,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "RZK",
@@ -1461,7 +1586,10 @@
       "yoyGrowthPct": -8.333333333333332,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "EVRO",
@@ -1479,7 +1607,10 @@
       "yoyGrowthPct": -40,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BAB",
@@ -1512,7 +1643,7 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "trailingYieldAtEx": 5,
-      "yoyGrowthPct": 0,
+      "yoyGrowthPct": null,
       "profitYear": 2024,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -1533,7 +1664,10 @@
       "yoyGrowthPct": -86.66666666666667,
       "profitYear": 2024,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -1551,7 +1685,10 @@
       "yoyGrowthPct": 37.362637362637365,
       "profitYear": 2024,
       "payoutRatioPct": 57.57715338553662,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TTK",
@@ -1564,12 +1701,15 @@
       "recordDate": null,
       "paymentStart": "2025-05-05",
       "paymentEnd": null,
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 3.297297297297298,
       "yoyGrowthPct": -43.51851851851852,
       "profitYear": 2024,
       "payoutRatioPct": 58.217217026150024,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ALK",
@@ -1587,14 +1727,17 @@
       "yoyGrowthPct": 16.666666666666664,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
-      "stockCode": "ADIN",
-      "stockName": "Ading AD  Skopje",
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
       "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/ADIN#fy-2024",
-      "grossPerShare": 42.22,
+      "url": "https://www.mse.mk/en/symbol/REPL#fy-2024",
+      "grossPerShare": 400,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -1602,78 +1745,10 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "BANA",
-      "stockName": "Rudnici Banjani AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/BANA#fy-2024",
-      "grossPerShare": 30,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "FERS",
-      "stockName": "Fershped AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/FERS#fy-2024",
-      "grossPerShare": 720,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
-      "grossPerShare": 38,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": 317.46031746031747
-    },
-    {
-      "stockCode": "KJUBI",
-      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/KJUBI#fy-2024",
-      "grossPerShare": 98,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2024,
@@ -1692,17 +1767,21 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2024,
       "payoutRatioPct": 42.72708683670013
     },
     {
-      "stockCode": "OILK",
-      "stockName": "OILKO KDA Skopje",
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
       "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/OILK#fy-2024",
-      "grossPerShare": 600,
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
+      "grossPerShare": 38,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -1710,172 +1789,14 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "OKTA",
-      "stockName": "OKTA AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/OKTA#fy-2024",
-      "grossPerShare": 240,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": 93.4215648112106
-    },
-    {
-      "stockCode": "RADE",
-      "stockName": "Rade Konchar- Aparatna tehnika AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/RADE#fy-2024",
-      "grossPerShare": 130,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "REPL",
-      "stockName": "Replek AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/REPL#fy-2024",
-      "grossPerShare": 400,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "RZTK",
-      "stockName": "RZh Tehnichka Kontrola AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/RZTK#fy-2024",
-      "grossPerShare": 55,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": 97.50044318383266
-    },
-    {
-      "stockCode": "STBP",
-      "stockName": "Stopanska banka AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/STBP#fy-2024",
-      "grossPerShare": 229,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TETE",
-      "stockName": "Teteks AD Tetovo",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/TETE#fy-2024",
-      "grossPerShare": 55.56,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TKVS",
-      "stockName": "VV Tikvesh AD Kavadarci",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/TKVS#fy-2024",
-      "grossPerShare": 1198,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TTKO2",
-      "stockName": "TTK Banka AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/TTKO2#fy-2024",
-      "grossPerShare": 61,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TTKO3",
-      "stockName": "TTK Banka AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/TTKO3#fy-2024",
-      "grossPerShare": 61,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": 58.217217026150024
+      "payoutRatioPct": 317.46031746031747
     },
     {
       "stockCode": "UNI",
@@ -1890,100 +1811,14 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2024,
       "payoutRatioPct": null
-    },
-    {
-      "stockCode": "USJE",
-      "stockName": "TITAN USJE AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/USJE#fy-2024",
-      "grossPerShare": 3863,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "UNIPO2",
-      "stockName": "UNI Banka AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNIPO2#fy-2024",
-      "grossPerShare": 387,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "UNIPO3",
-      "stockName": "UNI Banka AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNIPO3#fy-2024",
-      "grossPerShare": 387,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "UNIPO4",
-      "stockName": "UNI Banka AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNIPO4#fy-2024",
-      "grossPerShare": 387,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "VITA",
-      "stockName": "Vitaminka AD Prilep",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/VITA#fy-2024",
-      "grossPerShare": 400,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": 34.09710856519367
     },
     {
       "stockCode": "RDK",
@@ -2001,7 +1836,10 @@
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "EVRO",
@@ -2019,7 +1857,10 @@
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "STB",
@@ -2037,7 +1878,10 @@
       "yoyGrowthPct": 20,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FER",
@@ -2055,7 +1899,10 @@
       "yoyGrowthPct": 30.909090909090907,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "VIT",
@@ -2073,7 +1920,10 @@
       "yoyGrowthPct": 29.03225806451613,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "AMK",
@@ -2091,21 +1941,24 @@
       "yoyGrowthPct": -45.16129032258064,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "MERM",
       "stockName": "Mermeren kombinat AD Prilep",
       "filedAt": "2024-05-30",
       "url": "https://seinet.com.mk/en/document/68714",
-      "grossPerShare": 172.2,
+      "grossPerShare": null,
       "cumDate": "2024-06-12",
       "exDate": "2024-06-13",
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 5.38125,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2023,
       "payoutRatioPct": null,
@@ -2116,16 +1969,16 @@
       "stockName": "Tehnokomerc AD Skopje",
       "filedAt": "2024-05-30",
       "url": "https://seinet.com.mk/en/document/68697",
-      "grossPerShare": 50,
+      "grossPerShare": null,
       "cumDate": "2024-06-13",
       "exDate": "2024-06-14",
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 5,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
-      "profitYear": 2023,
+      "profitYear": null,
       "payoutRatioPct": null,
       "source": "SECNet"
     },
@@ -2140,12 +1993,15 @@
       "recordDate": "2024-07-12",
       "paymentStart": null,
       "paymentEnd": "2024-09-30",
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 6.120693220190931,
       "yoyGrowthPct": 32.63437260120472,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ADI",
@@ -2163,7 +2019,10 @@
       "yoyGrowthPct": 18.75,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TNB",
@@ -2199,7 +2058,10 @@
       "yoyGrowthPct": 12.121212121212121,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "RDK",
@@ -2217,7 +2079,10 @@
       "yoyGrowthPct": 204.8780487804878,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "VTKS",
@@ -2235,7 +2100,10 @@
       "yoyGrowthPct": -9.618635115148944,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "GRT",
@@ -2247,13 +2115,16 @@
       "exDate": "2024-06-06",
       "recordDate": null,
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2024-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 16.666666666666664,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "USJ",
@@ -2278,14 +2149,14 @@
       "stockName": "Debarski Banji –Capa AD  Debar",
       "filedAt": "2024-05-21",
       "url": "https://seinet.com.mk/en/document/68466",
-      "grossPerShare": 143,
+      "grossPerShare": null,
       "cumDate": "2024-05-31",
       "exDate": "2024-06-03",
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 9.225806451612902,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2023,
       "payoutRatioPct": null,
@@ -2302,12 +2173,15 @@
       "recordDate": null,
       "paymentStart": "2024-06-07",
       "paymentEnd": null,
-      "parseStatus": "partial",
+      "parseStatus": "parsed",
       "trailingYieldAtEx": 12.861736334405144,
       "yoyGrowthPct": 9.090928925623436,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OILKO",
@@ -2325,7 +2199,10 @@
       "yoyGrowthPct": 0,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "EVRO",
@@ -2343,7 +2220,10 @@
       "yoyGrowthPct": -16.666666666666664,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "RZK",
@@ -2361,7 +2241,10 @@
       "yoyGrowthPct": 20,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FUS",
@@ -2373,13 +2256,16 @@
       "exDate": "2024-05-30",
       "recordDate": "2024-05-30",
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2024-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 33.33333333333333,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BAB",
@@ -2415,22 +2301,25 @@
       "yoyGrowthPct": 50,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "filedAt": "2024-04-19",
       "url": "https://seinet.com.mk/en/document/67501",
-      "grossPerShare": 110,
+      "grossPerShare": null,
       "cumDate": "2024-05-07",
       "exDate": "2024-05-09",
       "recordDate": "2024-05-10",
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 3.7300779925398437,
-      "yoyGrowthPct": 0,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -2451,7 +2340,10 @@
       "yoyGrowthPct": 53.976441604434534,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TUM",
@@ -2487,7 +2379,10 @@
       "yoyGrowthPct": 10.204081632653061,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BANA",
@@ -2505,7 +2400,10 @@
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TTK",
@@ -2523,7 +2421,10 @@
       "yoyGrowthPct": 61.19402985074627,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -2541,14 +2442,17 @@
       "yoyGrowthPct": 82,
       "profitYear": 2023,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
-      "stockCode": "ADIN",
-      "stockName": "Ading AD  Skopje",
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/ADIN#fy-2023",
-      "grossPerShare": 38,
+      "url": "https://www.mse.mk/en/symbol/REPL#fy-2023",
+      "grossPerShare": 300,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -2556,96 +2460,10 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "FERS",
-      "stockName": "Fershped AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/FERS#fy-2023",
-      "grossPerShare": 720,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "FUBT",
-      "stockName": "Fustelarko Borec AD Bitola",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/FUBT#fy-2023",
-      "grossPerShare": 200,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
-      "grossPerShare": 42,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "KJUBI",
-      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/KJUBI#fy-2023",
-      "grossPerShare": 34,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": 109.6774193548387
-    },
-    {
-      "stockCode": "MODA",
-      "stockName": "Moda AD Sveti Nikole",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/MODA#fy-2023",
-      "grossPerShare": 6.45,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2023,
@@ -2664,17 +2482,21 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2023,
       "payoutRatioPct": null
     },
     {
-      "stockCode": "MTUR",
-      "stockName": "Makedonijaturist AD Skopje",
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/MTUR#fy-2023",
-      "grossPerShare": 200,
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
+      "grossPerShare": 42,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -2682,150 +2504,10 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "OILK",
-      "stockName": "OILKO KDA Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/OILK#fy-2023",
-      "grossPerShare": 600,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "RADE",
-      "stockName": "Rade Konchar- Aparatna tehnika AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/RADE#fy-2023",
-      "grossPerShare": 125,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "PPIV",
-      "stockName": "Prilepska pivarnica AD Prilep",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/PPIV#fy-2023",
-      "grossPerShare": 1111,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "REPL",
-      "stockName": "Replek AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/REPL#fy-2023",
-      "grossPerShare": 300,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "RZTK",
-      "stockName": "RZh Tehnichka Kontrola AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/RZTK#fy-2023",
-      "grossPerShare": 60,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
-      "grossPerShare": 2636,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TTKO2",
-      "stockName": "TTK Banka AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TTKO2#fy-2023",
-      "grossPerShare": 108,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TTKO3",
-      "stockName": "TTK Banka AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TTKO3#fy-2023",
-      "grossPerShare": 108,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2023,
@@ -2844,17 +2526,21 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2023,
       "payoutRatioPct": null
     },
     {
-      "stockCode": "USJE",
-      "stockName": "TITAN USJE AD Skopje",
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/USJE#fy-2023",
-      "grossPerShare": 2415,
+      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
+      "grossPerShare": 2636,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -2862,78 +2548,10 @@
       "paymentEnd": null,
       "parseStatus": "partial",
       "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "UNIPO2",
-      "stockName": "UNI Banka AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNIPO2#fy-2023",
-      "grossPerShare": 368,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "UNIPO3",
-      "stockName": "UNI Banka AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNIPO3#fy-2023",
-      "grossPerShare": 368,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "UNIPO4",
-      "stockName": "UNI Banka AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNIPO4#fy-2023",
-      "grossPerShare": 368,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "VITA",
-      "stockName": "Vitaminka AD Prilep",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/VITA#fy-2023",
-      "grossPerShare": 400,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2023,
@@ -2991,7 +2609,10 @@
       "yoyGrowthPct": -70.71428571428572,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TNB",
@@ -3007,9 +2628,12 @@
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
-      "profitYear": null,
+      "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "DMK",
@@ -3027,7 +2651,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "PPP",
@@ -3045,7 +2672,10 @@
       "yoyGrowthPct": -20,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEL",
@@ -3063,7 +2693,10 @@
       "yoyGrowthPct": -3.1467640418280007,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OKTA",
@@ -3081,7 +2714,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "DMK",
@@ -3117,7 +2753,10 @@
       "yoyGrowthPct": 10,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "GRT",
@@ -3129,13 +2768,16 @@
       "exDate": "2023-06-15",
       "recordDate": null,
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2023-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 0,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OILKO",
@@ -3153,7 +2795,10 @@
       "yoyGrowthPct": 81.81818181818183,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ADI",
@@ -3171,7 +2816,10 @@
       "yoyGrowthPct": 6.666666666666667,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "RZK",
@@ -3189,7 +2837,10 @@
       "yoyGrowthPct": 0,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "USJ",
@@ -3261,7 +2912,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BANA",
@@ -3279,7 +2933,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FUS",
@@ -3291,13 +2948,16 @@
       "exDate": "2023-05-26",
       "recordDate": "2023-05-29",
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2023-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 0,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BAB",
@@ -3333,22 +2993,25 @@
       "yoyGrowthPct": -46.68088509730738,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "filedAt": "2023-04-26",
       "url": "https://seinet.com.mk/en/document/63089",
-      "grossPerShare": 110,
+      "grossPerShare": null,
       "cumDate": "2023-05-10",
       "exDate": "2023-05-11",
       "recordDate": "2023-05-12",
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 3.942652329749104,
-      "yoyGrowthPct": 0,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -3369,7 +3032,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TTK",
@@ -3387,7 +3053,10 @@
       "yoyGrowthPct": 45.65217391304348,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ALK",
@@ -3405,7 +3074,10 @@
       "yoyGrowthPct": 11.363636363636363,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -3423,7 +3095,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2022,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BAB",
@@ -3459,7 +3134,10 @@
       "yoyGrowthPct": 16.666666666666664,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "VTKS",
@@ -3477,7 +3155,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "STB",
@@ -3495,7 +3176,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OKTA",
@@ -3513,7 +3197,10 @@
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FER",
@@ -3531,7 +3218,10 @@
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "RZK",
@@ -3549,7 +3239,10 @@
       "yoyGrowthPct": 25,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEL",
@@ -3567,7 +3260,10 @@
       "yoyGrowthPct": 24.609782701379636,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "MAK",
@@ -3585,7 +3281,10 @@
       "yoyGrowthPct": 50,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEHN",
@@ -3621,7 +3320,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BIM",
@@ -3639,7 +3341,10 @@
       "yoyGrowthPct": 0,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OILKO",
@@ -3657,7 +3362,10 @@
       "yoyGrowthPct": 26.923076923076923,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "PPP",
@@ -3675,7 +3383,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "AMK",
@@ -3693,7 +3404,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "GRT",
@@ -3711,7 +3425,10 @@
       "yoyGrowthPct": 8.010801080108017,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "USJ",
@@ -3747,7 +3464,10 @@
       "yoyGrowthPct": 43.01531647905518,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FUS",
@@ -3759,13 +3479,16 @@
       "exDate": "2022-06-01",
       "recordDate": "2022-06-02",
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2022-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 25,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "EVRO",
@@ -3801,7 +3524,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TUM",
@@ -3855,7 +3581,10 @@
       "yoyGrowthPct": -48.888888888888886,
       "profitYear": 2021,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ALK",
@@ -3873,7 +3602,10 @@
       "yoyGrowthPct": 10,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -3898,15 +3630,15 @@
       "stockName": "Teteks AD Tetovo",
       "filedAt": "2022-03-30",
       "url": "https://seinet.com.mk/en/document/58279",
-      "grossPerShare": 110,
+      "grossPerShare": null,
       "cumDate": "2022-04-14",
       "exDate": "2022-04-15",
       "recordDate": "2022-04-18",
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 4.583333333333333,
-      "yoyGrowthPct": 0,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -3927,20 +3659,23 @@
       "yoyGrowthPct": null,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "filedAt": "2021-10-28",
       "url": "https://seinet.com.mk/en/document/56968",
-      "grossPerShare": 110,
+      "grossPerShare": null,
       "cumDate": "2021-11-12",
       "exDate": null,
       "recordDate": null,
       "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
+      "paymentEnd": "2021-12-31",
+      "parseStatus": "link_only",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": null,
@@ -3999,7 +3734,10 @@
       "yoyGrowthPct": -18.181818181818183,
       "profitYear": 2020,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -4035,7 +3773,10 @@
       "yoyGrowthPct": -20,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "STB",
@@ -4065,7 +3806,7 @@
       "exDate": "2021-07-15",
       "recordDate": null,
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2021-09-30",
       "parseStatus": "link_only",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
@@ -4089,7 +3830,10 @@
       "yoyGrowthPct": 4.028256288554919,
       "profitYear": 2020,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "RDK",
@@ -4107,7 +3851,10 @@
       "yoyGrowthPct": 9.090909090909092,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OKTA",
@@ -4125,7 +3872,10 @@
       "yoyGrowthPct": -50,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FER",
@@ -4143,7 +3893,10 @@
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BIM",
@@ -4161,7 +3914,10 @@
       "yoyGrowthPct": 50.000000000000014,
       "profitYear": 2020,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "MAK",
@@ -4179,7 +3935,10 @@
       "yoyGrowthPct": 0,
       "profitYear": 2020,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "USJ",
@@ -4209,13 +3968,16 @@
       "exDate": null,
       "recordDate": null,
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2021-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2020,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OILKO",
@@ -4233,7 +3995,10 @@
       "yoyGrowthPct": 0,
       "profitYear": 2020,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "EVRO",
@@ -4251,7 +4016,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FUS",
@@ -4263,13 +4031,16 @@
       "exDate": "2021-05-26",
       "recordDate": "2021-05-27",
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2021-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 33.33333333333333,
       "profitYear": 2020,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TTK",
@@ -4305,22 +4076,25 @@
       "yoyGrowthPct": 11.11111111111111,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "filedAt": "2021-03-30",
       "url": "https://seinet.com.mk/en/document/54153",
-      "grossPerShare": 110,
+      "grossPerShare": null,
       "cumDate": "2021-04-14",
       "exDate": "2021-04-15",
       "recordDate": "2021-04-16",
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 5.392156862745098,
-      "yoyGrowthPct": 97.98416126709863,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -4341,22 +4115,25 @@
       "yoyGrowthPct": null,
       "profitYear": 2020,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TETE",
       "stockName": "Teteks AD Tetovo",
       "filedAt": "2020-10-07",
       "url": "https://seinet.com.mk/en/document/52385",
-      "grossPerShare": 55.56,
+      "grossPerShare": null,
       "cumDate": "2020-10-20",
       "exDate": "2020-10-21",
       "recordDate": "2020-10-22",
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 2.7724550898203595,
-      "yoyGrowthPct": -7.399999999999997,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
       "source": "SECNet"
@@ -4366,16 +4143,16 @@
       "stockName": "Teteks AD Tetovo",
       "filedAt": "2020-08-04",
       "url": "https://seinet.com.mk/en/document/51654",
-      "grossPerShare": 60,
+      "grossPerShare": null,
       "cumDate": "2020-08-18",
       "exDate": "2020-08-19",
       "recordDate": "2020-08-20",
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
-      "trailingYieldAtEx": 3.64963503649635,
-      "yoyGrowthPct": 63.93442622950819,
-      "profitYear": 2019,
+      "parseStatus": "link_only",
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
+      "profitYear": null,
       "payoutRatioPct": null,
       "source": "SECNet"
     },
@@ -4395,7 +4172,10 @@
       "yoyGrowthPct": -30.740718703692682,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEL",
@@ -4413,20 +4193,23 @@
       "yoyGrowthPct": -16.182175175631908,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "STB",
       "stockName": "Stopanska banka AD Skopje",
       "filedAt": "2020-07-01",
       "url": "https://seinet.com.mk/en/document/51408",
-      "grossPerShare": 400,
+      "grossPerShare": null,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": null,
-      "parseStatus": "partial",
+      "parseStatus": "link_only",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2019,
@@ -4449,7 +4232,10 @@
       "yoyGrowthPct": -5.660377358490567,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FER",
@@ -4467,7 +4253,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "MAK",
@@ -4485,7 +4274,10 @@
       "yoyGrowthPct": 53.84615384615385,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "RDK",
@@ -4503,7 +4295,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OILKO",
@@ -4521,7 +4316,10 @@
       "yoyGrowthPct": 100,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FAKM",
@@ -4533,13 +4331,16 @@
       "exDate": "2020-06-19",
       "recordDate": null,
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2020-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": 1.0365277777777777,
       "yoyGrowthPct": null,
       "profitYear": 2009,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "OKTA",
@@ -4557,7 +4358,10 @@
       "yoyGrowthPct": 100,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FUS",
@@ -4569,13 +4373,16 @@
       "exDate": "2020-06-16",
       "recordDate": "2020-06-17",
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2020-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": -40,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "EVRO",
@@ -4611,7 +4418,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "USJ",
@@ -4683,7 +4493,10 @@
       "yoyGrowthPct": 4.761904761904762,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "REP",
@@ -4701,7 +4514,10 @@
       "yoyGrowthPct": -6.178089044522261,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TETE",
@@ -4740,7 +4556,10 @@
       "yoyGrowthPct": 12.5,
       "profitYear": 2019,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -4770,13 +4589,16 @@
       "exDate": "2020-01-09",
       "recordDate": "2020-01-10",
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2020-02-28",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 36.36363636363637,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "GRT",
@@ -4794,7 +4616,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2018,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "VIT",
@@ -4812,7 +4637,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2018,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "MAK",
@@ -4830,7 +4658,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "DEBA",
@@ -4866,7 +4697,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2018,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TNB",
@@ -4884,7 +4718,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "STB",
@@ -4920,7 +4757,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2018,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "USJ",
@@ -4956,7 +4796,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2018,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FER",
@@ -5010,7 +4853,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "FUS",
@@ -5022,13 +4868,16 @@
       "exDate": "2019-05-28",
       "recordDate": "2019-05-29",
       "paymentStart": null,
-      "paymentEnd": null,
+      "paymentEnd": "2019-09-30",
       "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2018,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEL",
@@ -5067,7 +4916,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TUM",
@@ -5121,7 +4973,10 @@
       "yoyGrowthPct": null,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "BANA",
@@ -5157,7 +5012,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2018,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "ALK",
@@ -5175,7 +5033,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2018,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TTK",
@@ -5193,7 +5054,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2018,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TETE",
@@ -5240,14 +5104,17 @@
       "cumDate": "2018-05-15",
       "exDate": "2018-05-16",
       "recordDate": "2018-05-17",
-      "paymentStart": "2018-09-26",
+      "paymentStart": null,
       "paymentEnd": "2018-09-30",
-      "parseStatus": "parsed",
+      "parseStatus": "partial",
       "trailingYieldAtEx": 6.515615689716311,
       "yoyGrowthPct": 26.626155758953228,
       "profitYear": 2017,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -5301,7 +5168,10 @@
       "yoyGrowthPct": -15.127649222318828,
       "profitYear": 2016,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -5337,7 +5207,10 @@
       "yoyGrowthPct": 18.862770116734055,
       "profitYear": 2015,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "KMB",
@@ -5373,7 +5246,10 @@
       "yoyGrowthPct": -45.17284429317247,
       "profitYear": null,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TEL",
@@ -5391,7 +5267,10 @@
       "yoyGrowthPct": -16.691956867422004,
       "profitYear": 2014,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "AMK",
@@ -5407,7 +5286,7 @@
       "parseStatus": "link_only",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
-      "profitYear": null,
+      "profitYear": 2013,
       "payoutRatioPct": null,
       "source": "SECNet"
     },
@@ -5427,7 +5306,10 @@
       "yoyGrowthPct": null,
       "profitYear": 2013,
       "payoutRatioPct": null,
-      "source": "SECNet"
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
     },
     {
       "stockCode": "TPLF",
@@ -6006,44 +5888,11 @@
         "trailingYieldAtEx": 5.338809034907597,
         "yoyGrowthPct": null,
         "profitYear": null,
-        "payoutRatioPct": 77.876954412029,
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "RADE",
-        "stockName": "Rade Konchar- Aparatna tehnika AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/RADE#fy-2024",
-        "grossPerShare": 130,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "RADE",
-        "stockName": "Rade Konchar- Aparatna tehnika AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/RADE#fy-2023",
-        "grossPerShare": 125,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "ADIN": [
@@ -6062,44 +5911,11 @@
         "trailingYieldAtEx": 1.6988059701492537,
         "yoyGrowthPct": null,
         "profitYear": 2025,
-        "payoutRatioPct": 8.747670909329484,
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ADIN",
-        "stockName": "Ading AD  Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/ADIN#fy-2024",
-        "grossPerShare": 42.22,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "ADIN",
-        "stockName": "Ading AD  Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/ADIN#fy-2023",
-        "grossPerShare": 38,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "TEHN": [
@@ -6108,15 +5924,15 @@
         "stockName": "Tehnokomerc AD Skopje",
         "filedAt": "2026-06-09",
         "url": "https://seinet.com.mk/en/document/77755",
-        "grossPerShare": 50,
+        "grossPerShare": null,
         "cumDate": "2026-06-19",
         "exDate": "2026-06-22",
         "recordDate": "2026-06-23",
         "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 5,
-        "yoyGrowthPct": 0,
+        "paymentEnd": "2026-09-30",
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": null,
         "source": "SECNet"
@@ -6152,7 +5968,7 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "trailingYieldAtEx": 5,
-        "yoyGrowthPct": 0,
+        "yoyGrowthPct": null,
         "profitYear": 2024,
         "payoutRatioPct": null,
         "source": "SECNet"
@@ -6162,16 +5978,16 @@
         "stockName": "Tehnokomerc AD Skopje",
         "filedAt": "2024-05-30",
         "url": "https://seinet.com.mk/en/document/68697",
-        "grossPerShare": 50,
+        "grossPerShare": null,
         "cumDate": "2024-06-13",
         "exDate": "2024-06-14",
         "recordDate": null,
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 5,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
-        "profitYear": 2023,
+        "profitYear": null,
         "payoutRatioPct": null,
         "source": "SECNet"
       },
@@ -6218,54 +6034,18 @@
         "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
         "filedAt": "2026-06-05",
         "url": "https://seinet.com.mk/en/document/77741",
-        "grossPerShare": 101,
+        "grossPerShare": null,
         "cumDate": "2026-06-24",
         "exDate": "2026-06-25",
         "recordDate": null,
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 8.278688524590164,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": null,
         "source": "SECNet"
-      },
-      {
-        "stockCode": "KJUBI",
-        "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/KJUBI#fy-2024",
-        "grossPerShare": 98,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "KJUBI",
-        "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/KJUBI#fy-2023",
-        "grossPerShare": 34,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": 109.6774193548387
       }
     ],
     "STBP": [
@@ -6274,39 +6054,21 @@
         "stockName": "Stopanska banka AD Skopje",
         "filedAt": "2026-06-01",
         "url": "https://seinet.com.mk/en/document/77665",
-        "grossPerShare": 59,
+        "grossPerShare": 6,
         "cumDate": "2026-06-11",
         "exDate": "2026-06-12",
         "recordDate": "2026-06-15",
         "paymentStart": null,
         "paymentEnd": null,
         "parseStatus": "partial",
-        "trailingYieldAtEx": 7.866666666666666,
+        "trailingYieldAtEx": 0.8,
         "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": null,
         "source": "SECNet",
         "sourceFields": {
-          "grossPerShare": "MSE"
+          "grossPerShare": "SECNet"
         }
-      },
-      {
-        "stockCode": "STBP",
-        "stockName": "Stopanska banka AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/STBP#fy-2024",
-        "grossPerShare": 229,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
       }
     ],
     "MERM": [
@@ -6315,17 +6077,17 @@
         "stockName": "Mermeren kombinat AD Prilep",
         "filedAt": "2026-05-28",
         "url": "https://seinet.com.mk/en/document/77557",
-        "grossPerShare": 98.4,
+        "grossPerShare": null,
         "cumDate": "2026-06-09",
         "exDate": "2026-06-10",
         "recordDate": null,
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 2.811428571428572,
-        "yoyGrowthPct": -33.33333333333333,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
         "profitYear": 2025,
-        "payoutRatioPct": 59.582198001816536,
+        "payoutRatioPct": null,
         "source": "SECNet"
       },
       {
@@ -6333,17 +6095,17 @@
         "stockName": "Mermeren kombinat AD Prilep",
         "filedAt": "2025-05-30",
         "url": "https://seinet.com.mk/en/document/73253",
-        "grossPerShare": 147.6,
+        "grossPerShare": null,
         "cumDate": "2025-06-11",
         "exDate": "2025-06-12",
         "recordDate": null,
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 4.427114577084583,
-        "yoyGrowthPct": -14.285714285714283,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
         "profitYear": 2024,
-        "payoutRatioPct": 75.70395445453147,
+        "payoutRatioPct": null,
         "source": "SECNet"
       },
       {
@@ -6351,14 +6113,14 @@
         "stockName": "Mermeren kombinat AD Prilep",
         "filedAt": "2024-05-30",
         "url": "https://seinet.com.mk/en/document/68714",
-        "grossPerShare": 172.2,
+        "grossPerShare": null,
         "cumDate": "2024-06-12",
         "exDate": "2024-06-13",
         "recordDate": null,
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 5.38125,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2023,
         "payoutRatioPct": null,
@@ -6413,48 +6175,15 @@
         "recordDate": "2026-06-16",
         "paymentStart": null,
         "paymentEnd": "2026-09-30",
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 10,
         "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": null,
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "OILK",
-        "stockName": "OILKO KDA Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/OILK#fy-2024",
-        "grossPerShare": 600,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "OILK",
-        "stockName": "OILKO KDA Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/OILK#fy-2023",
-        "grossPerShare": 600,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "OKTA": [
@@ -6474,25 +6203,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "OKTA",
-        "stockName": "OKTA AD Skopje",
-        "filedAt": "2025-12-31",
-        "url": "https://www.mse.mk/en/symbol/OKTA#fy-2025",
-        "grossPerShare": 240,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2025,
-        "payoutRatioPct": 4000
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OKTA",
@@ -6510,25 +6224,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "OKTA",
-        "stockName": "OKTA AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/OKTA#fy-2024",
-        "grossPerShare": 240,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": 93.4215648112106
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OKTA",
@@ -6546,7 +6245,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OKTA",
@@ -6564,7 +6266,10 @@
         "yoyGrowthPct": 0,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OKTA",
@@ -6582,7 +6287,10 @@
         "yoyGrowthPct": -50,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OKTA",
@@ -6600,7 +6308,10 @@
         "yoyGrowthPct": 100,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OKTA",
@@ -6618,7 +6329,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "RZTK": [
@@ -6637,44 +6351,11 @@
         "trailingYieldAtEx": 6.578947368421052,
         "yoyGrowthPct": null,
         "profitYear": 2025,
-        "payoutRatioPct": 141.20304998587972,
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "RZTK",
-        "stockName": "RZh Tehnichka Kontrola AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/RZTK#fy-2024",
-        "grossPerShare": 55,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": 97.50044318383266
-      },
-      {
-        "stockCode": "RZTK",
-        "stockName": "RZh Tehnichka Kontrola AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/RZTK#fy-2023",
-        "grossPerShare": 60,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "TNB": [
@@ -6694,7 +6375,10 @@
         "yoyGrowthPct": -0.9630200308166409,
         "profitYear": null,
         "payoutRatioPct": 45.00262559075792,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TNB",
@@ -6712,7 +6396,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": 67.28822741139908,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TNB",
@@ -6745,6 +6432,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2023,
@@ -6764,9 +6455,12 @@
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
-        "profitYear": null,
+        "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TNB",
@@ -6784,7 +6478,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TNB",
@@ -6802,7 +6499,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TNB",
@@ -6820,7 +6520,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "VTKS": [
@@ -6839,8 +6542,11 @@
         "trailingYieldAtEx": 37.78842315369261,
         "yoyGrowthPct": 0,
         "profitYear": null,
-        "payoutRatioPct": 62.7375606846387,
-        "source": "SECNet"
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "VTKS",
@@ -6857,8 +6563,11 @@
         "trailingYieldAtEx": 37.78842315369261,
         "yoyGrowthPct": 10.64227689790192,
         "profitYear": null,
-        "payoutRatioPct": 61.900635943043035,
-        "source": "SECNet"
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "VTKS",
@@ -6876,7 +6585,10 @@
         "yoyGrowthPct": -9.618635115148944,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "VTKS",
@@ -6894,7 +6606,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "BIM": [
@@ -6909,12 +6624,15 @@
         "recordDate": null,
         "paymentStart": "2026-06-15",
         "paymentEnd": null,
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 12.344991944891952,
         "yoyGrowthPct": 0,
         "profitYear": 2025,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BIM",
@@ -6927,12 +6645,15 @@
         "recordDate": null,
         "paymentStart": "2025-06-12",
         "paymentEnd": null,
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 12.344991944891952,
         "yoyGrowthPct": 11.11110000000001,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BIM",
@@ -6945,12 +6666,15 @@
         "recordDate": null,
         "paymentStart": "2024-06-07",
         "paymentEnd": null,
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 12.861736334405144,
         "yoyGrowthPct": 9.090928925623436,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BIM",
@@ -6986,7 +6710,10 @@
         "yoyGrowthPct": 0,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BIM",
@@ -7004,7 +6731,10 @@
         "yoyGrowthPct": 50.000000000000014,
         "profitYear": 2020,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BIM",
@@ -7022,7 +6752,10 @@
         "yoyGrowthPct": -30.740718703692682,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BIM",
@@ -7040,7 +6773,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2018,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "FERS": [
@@ -7060,43 +6796,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "FERS",
-        "stockName": "Fershped AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/FERS#fy-2024",
-        "grossPerShare": 720,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "FERS",
-        "stockName": "Fershped AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/FERS#fy-2023",
-        "grossPerShare": 720,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "MPT": [
@@ -7111,12 +6814,15 @@
         "recordDate": "2026-06-16",
         "paymentStart": null,
         "paymentEnd": "2026-09-30",
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 4.052631578947368,
         "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": 42.84684848445504,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "MPT",
@@ -7131,6 +6837,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2024,
@@ -7149,6 +6859,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2023,
@@ -7167,12 +6881,15 @@
         "recordDate": "2026-07-03",
         "paymentStart": null,
         "paymentEnd": "2026-09-30",
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 5.78501881104,
         "yoyGrowthPct": 4.72251215305076,
         "profitYear": 2025,
         "payoutRatioPct": 80.34748348666666,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7185,12 +6902,15 @@
         "recordDate": "2025-07-11",
         "paymentStart": null,
         "paymentEnd": "2025-09-30",
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 6.137933999844444,
         "yoyGrowthPct": 7.701088498344006,
         "profitYear": 2024,
         "payoutRatioPct": 81.23736176264707,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7203,12 +6923,15 @@
         "recordDate": "2024-07-12",
         "paymentStart": null,
         "paymentEnd": "2024-09-30",
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 6.120693220190931,
         "yoyGrowthPct": 32.63437260120472,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7226,7 +6949,10 @@
         "yoyGrowthPct": -3.1467640418280007,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7244,7 +6970,10 @@
         "yoyGrowthPct": 24.609782701379636,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7262,7 +6991,10 @@
         "yoyGrowthPct": 4.028256288554919,
         "profitYear": 2020,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7280,7 +7012,10 @@
         "yoyGrowthPct": -16.182175175631908,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7312,14 +7047,17 @@
         "cumDate": "2018-05-15",
         "exDate": "2018-05-16",
         "recordDate": "2018-05-17",
-        "paymentStart": "2018-09-26",
+        "paymentStart": null,
         "paymentEnd": "2018-09-30",
-        "parseStatus": "parsed",
+        "parseStatus": "partial",
         "trailingYieldAtEx": 6.515615689716311,
         "yoyGrowthPct": 26.626155758953228,
         "profitYear": 2017,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7337,7 +7075,10 @@
         "yoyGrowthPct": -15.127649222318828,
         "profitYear": 2016,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7355,7 +7096,10 @@
         "yoyGrowthPct": 18.862770116734055,
         "profitYear": 2015,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7373,7 +7117,10 @@
         "yoyGrowthPct": -45.17284429317247,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7391,7 +7138,10 @@
         "yoyGrowthPct": -16.691956867422004,
         "profitYear": 2014,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TEL",
@@ -7409,7 +7159,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2013,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "USJE": [
@@ -7418,7 +7171,7 @@
         "stockName": "TITAN USJE AD Skopje",
         "filedAt": "2026-05-27",
         "url": "https://seinet.com.mk/en/document/77451",
-        "grossPerShare": 3435,
+        "grossPerShare": 3.435,
         "cumDate": "2026-06-12",
         "exDate": null,
         "recordDate": null,
@@ -7431,44 +7184,8 @@
         "payoutRatioPct": null,
         "source": "SECNet",
         "sourceFields": {
-          "grossPerShare": "MSE"
+          "grossPerShare": "SECNet"
         }
-      },
-      {
-        "stockCode": "USJE",
-        "stockName": "TITAN USJE AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/USJE#fy-2024",
-        "grossPerShare": 3863,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "USJE",
-        "stockName": "TITAN USJE AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/USJE#fy-2023",
-        "grossPerShare": 2415,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
       }
     ],
     "GRNT": [
@@ -7482,13 +7199,16 @@
         "exDate": "2026-05-28",
         "recordDate": null,
         "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
+        "paymentEnd": "2026-09-30",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 3.262316910785619,
         "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "GRNT",
@@ -7503,6 +7223,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2024,
@@ -7521,6 +7245,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2023,
@@ -7544,7 +7272,10 @@
         "yoyGrowthPct": 66.66666666666666,
         "profitYear": 2025,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "EVRO",
@@ -7562,7 +7293,10 @@
         "yoyGrowthPct": -40,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "EVRO",
@@ -7580,7 +7314,10 @@
         "yoyGrowthPct": 0,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "EVRO",
@@ -7598,7 +7335,10 @@
         "yoyGrowthPct": -16.666666666666664,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "EVRO",
@@ -7652,7 +7392,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "EVRO",
@@ -7702,13 +7445,16 @@
         "exDate": "2026-05-14",
         "recordDate": "2026-05-15",
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2026-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": 4.975124378109453,
         "yoyGrowthPct": 0,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BANA",
@@ -7726,25 +7472,10 @@
         "yoyGrowthPct": -25,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "BANA",
-        "stockName": "Rudnici Banjani AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/BANA#fy-2024",
-        "grossPerShare": 30,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BANA",
@@ -7762,7 +7493,10 @@
         "yoyGrowthPct": 0,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BANA",
@@ -7780,7 +7514,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "BANA",
@@ -7861,15 +7598,15 @@
         "stockName": "Teteks AD Tetovo",
         "filedAt": "2026-04-23",
         "url": "https://seinet.com.mk/en/document/76378",
-        "grossPerShare": 55.56,
+        "grossPerShare": null,
         "cumDate": "2026-05-08",
         "exDate": "2026-05-11",
         "recordDate": "2026-05-12",
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 2.8787564766839377,
-        "yoyGrowthPct": -49.49090909090909,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
         "profitYear": 2025,
         "payoutRatioPct": null,
         "source": "SECNet"
@@ -7877,35 +7614,17 @@
       {
         "stockCode": "TETE",
         "stockName": "Teteks AD Tetovo",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/TETE#fy-2024",
-        "grossPerShare": 55.56,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "TETE",
-        "stockName": "Teteks AD Tetovo",
         "filedAt": "2024-04-19",
         "url": "https://seinet.com.mk/en/document/67501",
-        "grossPerShare": 110,
+        "grossPerShare": null,
         "cumDate": "2024-05-07",
         "exDate": "2024-05-09",
         "recordDate": "2024-05-10",
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 3.7300779925398437,
-        "yoyGrowthPct": 0,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
         "source": "SECNet"
@@ -7915,15 +7634,15 @@
         "stockName": "Teteks AD Tetovo",
         "filedAt": "2023-04-26",
         "url": "https://seinet.com.mk/en/document/63089",
-        "grossPerShare": 110,
+        "grossPerShare": null,
         "cumDate": "2023-05-10",
         "exDate": "2023-05-11",
         "recordDate": "2023-05-12",
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 3.942652329749104,
-        "yoyGrowthPct": 0,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
         "source": "SECNet"
@@ -7933,15 +7652,15 @@
         "stockName": "Teteks AD Tetovo",
         "filedAt": "2022-03-30",
         "url": "https://seinet.com.mk/en/document/58279",
-        "grossPerShare": 110,
+        "grossPerShare": null,
         "cumDate": "2022-04-14",
         "exDate": "2022-04-15",
         "recordDate": "2022-04-18",
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 4.583333333333333,
-        "yoyGrowthPct": 0,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
         "source": "SECNet"
@@ -7951,13 +7670,13 @@
         "stockName": "Teteks AD Tetovo",
         "filedAt": "2021-10-28",
         "url": "https://seinet.com.mk/en/document/56968",
-        "grossPerShare": 110,
+        "grossPerShare": null,
         "cumDate": "2021-11-12",
         "exDate": null,
         "recordDate": null,
         "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
+        "paymentEnd": "2021-12-31",
+        "parseStatus": "link_only",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": null,
@@ -7969,15 +7688,15 @@
         "stockName": "Teteks AD Tetovo",
         "filedAt": "2021-03-30",
         "url": "https://seinet.com.mk/en/document/54153",
-        "grossPerShare": 110,
+        "grossPerShare": null,
         "cumDate": "2021-04-14",
         "exDate": "2021-04-15",
         "recordDate": "2021-04-16",
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 5.392156862745098,
-        "yoyGrowthPct": 97.98416126709863,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
         "source": "SECNet"
@@ -7987,15 +7706,15 @@
         "stockName": "Teteks AD Tetovo",
         "filedAt": "2020-10-07",
         "url": "https://seinet.com.mk/en/document/52385",
-        "grossPerShare": 55.56,
+        "grossPerShare": null,
         "cumDate": "2020-10-20",
         "exDate": "2020-10-21",
         "recordDate": "2020-10-22",
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 2.7724550898203595,
-        "yoyGrowthPct": -7.399999999999997,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
         "source": "SECNet"
@@ -8005,16 +7724,16 @@
         "stockName": "Teteks AD Tetovo",
         "filedAt": "2020-08-04",
         "url": "https://seinet.com.mk/en/document/51654",
-        "grossPerShare": 60,
+        "grossPerShare": null,
         "cumDate": "2020-08-18",
         "exDate": "2020-08-19",
         "recordDate": "2020-08-20",
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 3.64963503649635,
-        "yoyGrowthPct": 63.93442622950819,
-        "profitYear": 2019,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": null,
         "payoutRatioPct": null,
         "source": "SECNet"
       },
@@ -8075,7 +7794,10 @@
         "yoyGrowthPct": 42.62295081967213,
         "profitYear": 2025,
         "payoutRatioPct": 99.87372287911836,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TTK",
@@ -8088,12 +7810,15 @@
         "recordDate": null,
         "paymentStart": "2025-05-05",
         "paymentEnd": null,
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 3.297297297297298,
         "yoyGrowthPct": -43.51851851851852,
         "profitYear": 2024,
         "payoutRatioPct": 58.217217026150024,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TTK",
@@ -8111,7 +7836,10 @@
         "yoyGrowthPct": 61.19402985074627,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TTK",
@@ -8129,7 +7857,10 @@
         "yoyGrowthPct": 45.65217391304348,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TTK",
@@ -8147,7 +7878,10 @@
         "yoyGrowthPct": -48.888888888888886,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TTK",
@@ -8165,7 +7899,10 @@
         "yoyGrowthPct": -18.181818181818183,
         "profitYear": 2020,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TTK",
@@ -8201,7 +7938,10 @@
         "yoyGrowthPct": 4.761904761904762,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TTK",
@@ -8219,7 +7959,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2018,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "REP": [
@@ -8239,7 +7982,10 @@
         "yoyGrowthPct": 25,
         "profitYear": 2025,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "REP",
@@ -8257,7 +8003,10 @@
         "yoyGrowthPct": -86.66666666666667,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "REP",
@@ -8275,7 +8024,10 @@
         "yoyGrowthPct": 50,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "REP",
@@ -8293,7 +8045,10 @@
         "yoyGrowthPct": -46.68088509730738,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "REP",
@@ -8311,7 +8066,10 @@
         "yoyGrowthPct": -6.178089044522261,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "REP",
@@ -8329,7 +8087,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2018,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "REP",
@@ -8385,7 +8146,10 @@
         "yoyGrowthPct": 14.285714285714285,
         "profitYear": null,
         "payoutRatioPct": 57.38835175871386,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ALK",
@@ -8403,7 +8167,10 @@
         "yoyGrowthPct": 16.666666666666664,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ALK",
@@ -8421,7 +8188,10 @@
         "yoyGrowthPct": 10.204081632653061,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ALK",
@@ -8439,7 +8209,10 @@
         "yoyGrowthPct": 11.363636363636363,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ALK",
@@ -8457,7 +8230,10 @@
         "yoyGrowthPct": 10,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ALK",
@@ -8475,7 +8251,10 @@
         "yoyGrowthPct": 11.11111111111111,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ALK",
@@ -8493,7 +8272,10 @@
         "yoyGrowthPct": 12.5,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ALK",
@@ -8511,7 +8293,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2018,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ALK",
@@ -8585,7 +8370,10 @@
         "yoyGrowthPct": 8,
         "profitYear": 2025,
         "payoutRatioPct": 60.13363028953229,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "KMB",
@@ -8603,7 +8391,10 @@
         "yoyGrowthPct": 37.362637362637365,
         "profitYear": 2024,
         "payoutRatioPct": 57.57715338553662,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "KMB",
@@ -8621,7 +8412,10 @@
         "yoyGrowthPct": 82,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "KMB",
@@ -8639,7 +8433,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "KMB",
@@ -8693,7 +8490,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2020,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "KMB",
@@ -8926,6 +8726,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2025,
@@ -8944,6 +8748,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2024,
@@ -8962,6 +8770,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2023,
@@ -8982,6 +8794,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2025,
@@ -9024,7 +8840,10 @@
         "yoyGrowthPct": 20,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "STB",
@@ -9042,7 +8861,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "STB",
@@ -9067,13 +8889,13 @@
         "stockName": "Stopanska banka AD Skopje",
         "filedAt": "2020-07-01",
         "url": "https://seinet.com.mk/en/document/51408",
-        "grossPerShare": 400,
+        "grossPerShare": null,
         "cumDate": null,
         "exDate": null,
         "recordDate": null,
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
+        "parseStatus": "link_only",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2019,
@@ -9099,118 +8921,6 @@
         "source": "SECNet"
       }
     ],
-    "TTKO2": [
-      {
-        "stockCode": "TTKO2",
-        "stockName": "TTK Banka AD Skopje",
-        "filedAt": "2025-12-31",
-        "url": "https://www.mse.mk/en/symbol/TTKO2#fy-2025",
-        "grossPerShare": 87,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2025,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "TTKO2",
-        "stockName": "TTK Banka AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/TTKO2#fy-2024",
-        "grossPerShare": 61,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "TTKO2",
-        "stockName": "TTK Banka AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/TTKO2#fy-2023",
-        "grossPerShare": 108,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
-    "TTKO3": [
-      {
-        "stockCode": "TTKO3",
-        "stockName": "TTK Banka AD Skopje",
-        "filedAt": "2025-12-31",
-        "url": "https://www.mse.mk/en/symbol/TTKO3#fy-2025",
-        "grossPerShare": 87,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2025,
-        "payoutRatioPct": 99.87372287911836
-      },
-      {
-        "stockCode": "TTKO3",
-        "stockName": "TTK Banka AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/TTKO3#fy-2024",
-        "grossPerShare": 61,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": 58.217217026150024
-      },
-      {
-        "stockCode": "TTKO3",
-        "stockName": "TTK Banka AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/TTKO3#fy-2023",
-        "grossPerShare": 108,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
     "TKVS": [
       {
         "stockCode": "TKVS",
@@ -9228,25 +8938,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2017,
         "payoutRatioPct": null,
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TKVS",
-        "stockName": "VV Tikvesh AD Kavadarci",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/TKVS#fy-2024",
-        "grossPerShare": 1198,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "AMK": [
@@ -9264,9 +8959,12 @@
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": 188.23529411764704,
-        "profitYear": null,
+        "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "AMK",
@@ -9284,7 +8982,10 @@
         "yoyGrowthPct": -45.16129032258064,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "AMK",
@@ -9302,7 +9003,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "AMK",
@@ -9320,7 +9024,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "AMK",
@@ -9338,7 +9045,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "AMK",
@@ -9354,7 +9064,7 @@
         "parseStatus": "link_only",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
-        "profitYear": null,
+        "profitYear": 2013,
         "payoutRatioPct": null,
         "source": "SECNet"
       }
@@ -9376,7 +9086,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RDK",
@@ -9394,7 +9107,10 @@
         "yoyGrowthPct": 0,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RDK",
@@ -9412,7 +9128,10 @@
         "yoyGrowthPct": 204.8780487804878,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RDK",
@@ -9430,7 +9149,10 @@
         "yoyGrowthPct": -70.71428571428572,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RDK",
@@ -9448,7 +9170,10 @@
         "yoyGrowthPct": 16.666666666666664,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RDK",
@@ -9466,7 +9191,10 @@
         "yoyGrowthPct": 9.090909090909092,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RDK",
@@ -9484,7 +9212,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RDK",
@@ -9650,7 +9381,10 @@
         "yoyGrowthPct": 11.105263157894733,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ADI",
@@ -9668,7 +9402,10 @@
         "yoyGrowthPct": 18.75,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ADI",
@@ -9686,7 +9423,10 @@
         "yoyGrowthPct": 6.666666666666667,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "ADI",
@@ -9704,7 +9444,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "VIT": [
@@ -9724,7 +9467,10 @@
         "yoyGrowthPct": 0,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "VIT",
@@ -9742,7 +9488,10 @@
         "yoyGrowthPct": 29.03225806451613,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "VIT",
@@ -9760,7 +9509,10 @@
         "yoyGrowthPct": 43.01531647905518,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "VIT",
@@ -9778,7 +9530,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2018,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "VIT",
@@ -9829,12 +9584,15 @@
         "recordDate": null,
         "paymentStart": "2025-06-20",
         "paymentEnd": null,
-        "parseStatus": "partial",
+        "parseStatus": "parsed",
         "trailingYieldAtEx": 3.911111111111111,
         "yoyGrowthPct": null,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "GRT": [
@@ -9848,13 +9606,16 @@
         "exDate": "2025-06-05",
         "recordDate": null,
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2025-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": -9.523809523809524,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "GRT",
@@ -9866,13 +9627,16 @@
         "exDate": "2024-06-06",
         "recordDate": null,
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2024-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": 16.666666666666664,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "GRT",
@@ -9884,13 +9648,16 @@
         "exDate": "2023-06-15",
         "recordDate": null,
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2023-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": 0,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "GRT",
@@ -9908,7 +9675,10 @@
         "yoyGrowthPct": 8.010801080108017,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "GRT",
@@ -9920,13 +9690,16 @@
         "exDate": null,
         "recordDate": null,
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2021-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2020,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "GRT",
@@ -9944,7 +9717,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "GRT",
@@ -9962,7 +9738,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2018,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "GRT",
@@ -10000,7 +9779,10 @@
         "yoyGrowthPct": 0,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FER",
@@ -10018,7 +9800,10 @@
         "yoyGrowthPct": 30.909090909090907,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FER",
@@ -10036,7 +9821,10 @@
         "yoyGrowthPct": 0,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FER",
@@ -10054,7 +9842,10 @@
         "yoyGrowthPct": 0,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FER",
@@ -10072,7 +9863,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FER",
@@ -10146,7 +9940,10 @@
         "yoyGrowthPct": 0,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OILKO",
@@ -10164,7 +9961,10 @@
         "yoyGrowthPct": 0,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OILKO",
@@ -10182,7 +9982,10 @@
         "yoyGrowthPct": 81.81818181818183,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OILKO",
@@ -10200,7 +10003,10 @@
         "yoyGrowthPct": 26.923076923076923,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OILKO",
@@ -10218,7 +10024,10 @@
         "yoyGrowthPct": 0,
         "profitYear": 2020,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OILKO",
@@ -10236,7 +10045,10 @@
         "yoyGrowthPct": 100,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "OILKO",
@@ -10254,7 +10066,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2018,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "MAK": [
@@ -10274,7 +10089,10 @@
         "yoyGrowthPct": 13.513513513513514,
         "profitYear": 2024,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "MAK",
@@ -10292,7 +10110,10 @@
         "yoyGrowthPct": 12.121212121212121,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "MAK",
@@ -10310,7 +10131,10 @@
         "yoyGrowthPct": 10,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "MAK",
@@ -10328,7 +10152,10 @@
         "yoyGrowthPct": 50,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "MAK",
@@ -10346,7 +10173,10 @@
         "yoyGrowthPct": 0,
         "profitYear": 2020,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "MAK",
@@ -10364,7 +10194,10 @@
         "yoyGrowthPct": 53.84615384615385,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "MAK",
@@ -10382,7 +10215,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2018,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "MAK",
@@ -10400,7 +10236,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "MAK",
@@ -10438,7 +10277,10 @@
         "yoyGrowthPct": -8.333333333333332,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RZK",
@@ -10456,7 +10298,10 @@
         "yoyGrowthPct": 20,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RZK",
@@ -10474,7 +10319,10 @@
         "yoyGrowthPct": 0,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RZK",
@@ -10492,7 +10340,10 @@
         "yoyGrowthPct": 25,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RZK",
@@ -10510,7 +10361,10 @@
         "yoyGrowthPct": -20,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RZK",
@@ -10528,7 +10382,10 @@
         "yoyGrowthPct": -5.660377358490567,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "RZK",
@@ -10546,7 +10403,10 @@
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "BAB": [
@@ -10637,6 +10497,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2024,
@@ -10655,158 +10519,10 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
-    "UNIPO2": [
-      {
-        "stockCode": "UNIPO2",
-        "stockName": "UNI Banka AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/UNIPO2#fy-2024",
-        "grossPerShare": 387,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "UNIPO2",
-        "stockName": "UNI Banka AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/UNIPO2#fy-2023",
-        "grossPerShare": 368,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
-    "UNIPO3": [
-      {
-        "stockCode": "UNIPO3",
-        "stockName": "UNI Banka AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/UNIPO3#fy-2024",
-        "grossPerShare": 387,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "UNIPO3",
-        "stockName": "UNI Banka AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/UNIPO3#fy-2023",
-        "grossPerShare": 368,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
-    "UNIPO4": [
-      {
-        "stockCode": "UNIPO4",
-        "stockName": "UNI Banka AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/UNIPO4#fy-2024",
-        "grossPerShare": 387,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "UNIPO4",
-        "stockName": "UNI Banka AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/UNIPO4#fy-2023",
-        "grossPerShare": 368,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
-    "VITA": [
-      {
-        "stockCode": "VITA",
-        "stockName": "Vitaminka AD Prilep",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/VITA#fy-2024",
-        "grossPerShare": 400,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": 34.09710856519367
-      },
-      {
-        "stockCode": "VITA",
-        "stockName": "Vitaminka AD Prilep",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/VITA#fy-2023",
-        "grossPerShare": 400,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2023,
@@ -10819,14 +10535,14 @@
         "stockName": "Debarski Banji –Capa AD  Debar",
         "filedAt": "2024-05-21",
         "url": "https://seinet.com.mk/en/document/68466",
-        "grossPerShare": 143,
+        "grossPerShare": null,
         "cumDate": "2024-05-31",
         "exDate": "2024-06-03",
         "recordDate": null,
         "paymentStart": null,
         "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 9.225806451612902,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2023,
         "payoutRatioPct": null,
@@ -10880,13 +10596,16 @@
         "exDate": "2024-05-30",
         "recordDate": "2024-05-30",
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2024-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": 33.33333333333333,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FUS",
@@ -10898,13 +10617,16 @@
         "exDate": "2023-05-26",
         "recordDate": "2023-05-29",
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2023-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": 0,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FUS",
@@ -10916,13 +10638,16 @@
         "exDate": "2022-06-01",
         "recordDate": "2022-06-02",
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2022-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": 25,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FUS",
@@ -10934,13 +10659,16 @@
         "exDate": "2021-05-26",
         "recordDate": "2021-05-27",
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2021-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": 33.33333333333333,
         "profitYear": 2020,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FUS",
@@ -10952,13 +10680,16 @@
         "exDate": "2020-06-16",
         "recordDate": "2020-06-17",
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2020-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": -40,
         "profitYear": 2019,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FUS",
@@ -10970,13 +10701,16 @@
         "exDate": "2020-01-09",
         "recordDate": "2020-01-10",
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2020-02-28",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": 36.36363636363637,
         "profitYear": null,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "FUS",
@@ -10988,13 +10722,16 @@
         "exDate": "2019-05-28",
         "recordDate": "2019-05-29",
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2019-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2018,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "TUM": [
@@ -11014,7 +10751,10 @@
         "yoyGrowthPct": 53.976441604434534,
         "profitYear": 2023,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TUM",
@@ -11050,7 +10790,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "TUM",
@@ -11143,86 +10886,6 @@
         "source": "SECNet"
       }
     ],
-    "FUBT": [
-      {
-        "stockCode": "FUBT",
-        "stockName": "Fustelarko Borec AD Bitola",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/FUBT#fy-2023",
-        "grossPerShare": 200,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
-    "MODA": [
-      {
-        "stockCode": "MODA",
-        "stockName": "Moda AD Sveti Nikole",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/MODA#fy-2023",
-        "grossPerShare": 6.45,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
-    "MTUR": [
-      {
-        "stockCode": "MTUR",
-        "stockName": "Makedonijaturist AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/MTUR#fy-2023",
-        "grossPerShare": 200,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
-    "PPIV": [
-      {
-        "stockCode": "PPIV",
-        "stockName": "Prilepska pivarnica AD Prilep",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/PPIV#fy-2023",
-        "grossPerShare": 1111,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
     "DMK": [
       {
         "stockCode": "DMK",
@@ -11240,7 +10903,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "DMK",
@@ -11278,7 +10944,10 @@
         "yoyGrowthPct": -20,
         "profitYear": 2022,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
         "stockCode": "PPP",
@@ -11296,7 +10965,10 @@
         "yoyGrowthPct": null,
         "profitYear": 2021,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "SLA": [
@@ -11310,7 +10982,7 @@
         "exDate": "2021-07-15",
         "recordDate": null,
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2021-09-30",
         "parseStatus": "link_only",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
@@ -11330,13 +11002,16 @@
         "exDate": "2020-06-19",
         "recordDate": null,
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2020-09-30",
         "parseStatus": "partial",
         "trailingYieldAtEx": 1.0365277777777777,
         "yoyGrowthPct": null,
         "profitYear": 2009,
         "payoutRatioPct": null,
-        "source": "SECNet"
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       }
     ],
     "TPLF": [

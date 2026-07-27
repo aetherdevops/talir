@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-26T05:38:35.903Z",
-  "lastIssuerScan": "2026-07-26",
+  "generatedAt": "2026-07-27T05:57:04.940Z",
+  "lastIssuerScan": "2026-07-27",
   "issuerCount": 170,
   "recent": [
     {
@@ -2089,114 +2089,6 @@
       "filedAt": "2026-04-29",
       "headline": "USJE reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/76720",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "APTK",
-      "stockName": "Angropromet Tikveshanka AD Kavadarci",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-28",
-      "headline": "APTK reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76681",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "DEBA",
-      "stockName": "Debarski Banji –Capa AD  Debar",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-28",
-      "headline": "DEBA files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76631",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "INPR",
-      "stockName": "Interpromet AD Tetovo",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-28",
-      "headline": "INPR reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76672",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "KLST",
-      "stockName": "Klanica so ladilnik AD Strumica",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-28",
-      "headline": "KLST reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76689",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MAKP",
-      "stockName": "Makpromet AD Shtip",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-28",
-      "headline": "MAKP files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76637",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "STIL",
-      "stockName": "Makstil AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-28",
-      "headline": "STIL files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76712",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TIKV",
-      "stockName": "GD-TIKVESh AD Kavadarci",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-28",
-      "headline": "TIKV files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76679",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TSMP",
-      "stockName": "Trgotekstil Maloprodazhba AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-28",
-      "headline": "TSMP files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76707",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "VTKS",
-      "stockName": "Veteks AD Veles",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-28",
-      "headline": "VTKS reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76687",
       "source": "SECNet"
     }
   ],
