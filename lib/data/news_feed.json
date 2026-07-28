@@ -1,10 +1,140 @@
 {
-  "generatedAt": "2026-07-27T05:57:04.424Z",
-  "lastIssuerScan": "2026-07-27",
-  "count": 1530,
-  "datedCount": 1530,
+  "generatedAt": "2026-07-28T05:21:03.639Z",
+  "lastIssuerScan": "2026-07-28",
+  "count": 1528,
+  "datedCount": 1528,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "MODA-https-seinet-com-mk-en-document-78004",
+      "rawTitle": "7/27/2026 - Moda AD Sveti Nikole - Non-audited financial statements 01.01. - 30.06.",
+      "title": "MODA files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "MODA",
+      "stockName": "Moda AD Sveti Nikole",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78004"
+    },
+    {
+      "id": "MODA-https-seinet-com-mk-en-document-78005",
+      "rawTitle": "7/27/2026 - Moda AD Sveti Nikole - Other price sensitive information",
+      "title": "MODA: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "MODA",
+      "stockName": "Moda AD Sveti Nikole",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78005"
+    },
+    {
+      "id": "RZLV-https-seinet-com-mk-en-document-78006",
+      "rawTitle": "7/27/2026 - Liberti AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+      "title": "RZLV files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "RZLV",
+      "stockName": "Liberti AD Skopje",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78006"
+    },
+    {
+      "id": "RZLV-https-seinet-com-mk-en-document-78007",
+      "rawTitle": "7/27/2026 - Liberti AD Skopje - Other price sensitive information",
+      "title": "RZLV: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "RZLV",
+      "stockName": "Liberti AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78007"
+    },
+    {
+      "id": "SBT-https-seinet-com-mk-en-document-78003",
+      "rawTitle": "7/27/2026 - ALTA banka AD Bitola - Draft decisions for the shareholders meeting",
+      "title": "SBT: Draft decisions for the shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "SBT",
+      "stockName": "Stopanska banka AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78003"
+    },
+    {
+      "id": "SBT-https-seinet-com-mk-en-document-78002",
+      "rawTitle": "7/27/2026 - ALTA banka AD Bitola - Public call for shareholders meeting",
+      "title": "SBT: Public call for shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "SBT",
+      "stockName": "Stopanska banka AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78002"
+    },
+    {
+      "id": "SSPR-https-seinet-com-mk-en-document-78017",
+      "rawTitle": "7/27/2026 - Sigurnosno staklo AD Prilep - Non-audited financial statements 01.01. - 30.06.",
+      "title": "SSPR files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "SSPR",
+      "stockName": "Sigurnosno staklo AD Prilep",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78017"
+    },
+    {
+      "id": "TNB-https-seinet-com-mk-en-document-77992",
+      "rawTitle": "7/27/2026 - NLB Banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+      "title": "TNB files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77992"
+    },
+    {
+      "id": "TNB-https-seinet-com-mk-en-document-77994",
+      "rawTitle": "7/27/2026 - NLB Banka AD Skopje - Other price sensitive information",
+      "title": "TNB: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/77994"
+    },
+    {
+      "id": "UNI-https-seinet-com-mk-en-document-78019",
+      "rawTitle": "7/27/2026 - UNI Banka AD Skopje - Changes in management and supervisory bodies",
+      "title": "UNI: Changes in management and supervisory bodies",
+      "source": "SECNet",
+      "stockCode": "UNI",
+      "stockName": "UNI Banka AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-27",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78019"
+    },
     {
       "id": "ADIN-https-seinet-com-mk-en-document-77974",
       "rawTitle": "7/24/2026 - Ading AD Skopje - Non-audited financial statements 01.01. - 30.06.",
@@ -4998,19 +5128,6 @@
       "url": "https://seinet.com.mk/en/document/77130"
     },
     {
-      "id": "SBT-https-seinet-com-mk-en-document-77115",
-      "rawTitle": "5/12/2026 - ALTA banka AD Bitola - Changes in management and supervisory bodies",
-      "title": "SBT: Changes in management and supervisory bodies",
-      "source": "SECNet",
-      "stockCode": "SBT",
-      "stockName": "Stopanska banka AD Bitola",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-05-12",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77115"
-    },
-    {
       "id": "SIL-https-seinet-com-mk-en-document-77111",
       "rawTitle": "5/12/2026 - Sileks AD Kratovo - Non-audited profit&loss account 01.01. - 31.03.",
       "title": "SIL reports profit and loss for 01.01.–31.03",
@@ -6296,19 +6413,6 @@
       "publishedAt": "2026-04-30",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76968"
-    },
-    {
-      "id": "SBT-https-seinet-com-mk-en-document-76969",
-      "rawTitle": "4/30/2026 - ALTA banka AD Bitola - Other price sensitive information",
-      "title": "SBT: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "SBT",
-      "stockName": "Stopanska banka AD Bitola",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-30",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76969"
     },
     {
       "id": "SDOM-https-seinet-com-mk-en-document-76864",
@@ -8222,32 +8326,6 @@
       "url": "https://seinet.com.mk/en/document/76620"
     },
     {
-      "id": "TNB-https-seinet-com-mk-en-document-76618",
-      "rawTitle": "4/27/2026 - NLB Banka AD Skopje - Draft decisions for the shareholders meeting",
-      "title": "TNB: Draft decisions for the shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76618"
-    },
-    {
-      "id": "TNB-https-seinet-com-mk-en-document-76608",
-      "rawTitle": "4/27/2026 - NLB Banka AD Skopje - Public call for shareholders meeting",
-      "title": "TNB: Public call for shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76608"
-    },
-    {
       "id": "TSMP-https-seinet-com-mk-en-document-76595",
       "rawTitle": "4/27/2026 - Trgotekstil maloprodazba AD Skopje - Draft decisions for the shareholders meeting",
       "title": "TSMP: Draft decisions for the shareholders meeting",
@@ -8493,19 +8571,6 @@
       "publishedAt": "2026-04-24",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76419"
-    },
-    {
-      "id": "UNI-https-seinet-com-mk-en-document-76478",
-      "rawTitle": "4/24/2026 - UNI Banka AD Skopje - Other price sensitive information",
-      "title": "UNI: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "UNI",
-      "stockName": "UNI Banka AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-24",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76478"
     },
     {
       "id": "VROS-https-seinet-com-mk-en-document-76426",
@@ -11823,19 +11888,6 @@
       "url": "https://seinet.com.mk/en/document/75429"
     },
     {
-      "id": "MODA-https-seinet-com-mk-en-document-75430",
-      "rawTitle": "2/24/2026 - Moda AD Sveti Nikole - Other price sensitive information",
-      "title": "MODA: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "MODA",
-      "stockName": "Moda AD Sveti Nikole",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-02-24",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75430"
-    },
-    {
       "id": "MTUR-https-seinet-com-mk-en-document-75412",
       "rawTitle": "2/23/2026 - Makedonijaturist AD Skopje - Non-audited financial statements 01.01. - 31.12.",
       "title": "MTUR files audited financial statements",
@@ -11925,19 +11977,6 @@
       "publishedAt": "2026-02-02",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75324"
-    },
-    {
-      "id": "RZLV-https-seinet-com-mk-en-document-75308",
-      "rawTitle": "2/2/2026 - Liberti AD Skopje - Other price sensitive information",
-      "title": "RZLV: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "RZLV",
-      "stockName": "Liberti AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-02-02",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75308"
     },
     {
       "id": "CKB-https-seinet-com-mk-en-document-75292",
@@ -12757,19 +12796,6 @@
       "publishedAt": "2025-10-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74705"
-    },
-    {
-      "id": "RZLV-https-seinet-com-mk-en-document-74706",
-      "rawTitle": "10/31/2025 - Liberti AD Skopje - Other price sensitive information",
-      "title": "RZLV: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "RZLV",
-      "stockName": "Liberti AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2025-10-31",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/74706"
     },
     {
       "id": "RZTK-https-seinet-com-mk-en-document-74608",
@@ -17790,19 +17816,6 @@
       "url": "https://seinet.com.mk/en/document/71115"
     },
     {
-      "id": "MODA-https-seinet-com-mk-en-document-71082",
-      "rawTitle": "2/19/2025 - Moda AD Sveti Nikole - Non-audited financial statements 01.01. - 31.12.",
-      "title": "MODA files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "MODA",
-      "stockName": "Moda AD Sveti Nikole",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-02-19",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/71082"
-    },
-    {
       "id": "INPR-https-seinet-com-mk-en-document-71066",
       "rawTitle": "2/17/2025 - Interpromet AD Tetovo - Non-audited financial statements 01.01. - 31.12.",
       "title": "INPR files audited financial statements",
@@ -18557,19 +18570,6 @@
       "url": "https://seinet.com.mk/en/document/69991"
     },
     {
-      "id": "RZLV-https-seinet-com-mk-en-document-69980",
-      "rawTitle": "10/18/2024 - Liberti AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
-      "title": "RZLV reports profit and loss for 01.01.–30.09",
-      "source": "SECNet",
-      "stockCode": "RZLV",
-      "stockName": "Liberti AD Skopje",
-      "category": "earnings",
-      "filingTier": "routine",
-      "publishedAt": "2024-10-18",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/69980"
-    },
-    {
       "id": "ORAN-https-seinet-com-mk-en-document-69950",
       "rawTitle": "10/16/2024 - Oranzerii Hamzali AD Strumica - Non-audited profit&loss account 01.01. - 30.09.",
       "title": "ORAN reports profit and loss for 01.01.–30.09",
@@ -18908,19 +18908,6 @@
       "url": "https://seinet.com.mk/en/document/69415"
     },
     {
-      "id": "SSPR-https-seinet-com-mk-en-document-69401",
-      "rawTitle": "7/30/2024 - Sigurnosno staklo AD Prilep - Non-audited financial statements 01.01. - 30.06.",
-      "title": "SSPR files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "SSPR",
-      "stockName": "Sigurnosno staklo AD Prilep",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2024-07-30",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/69401"
-    },
-    {
       "id": "STOK-https-seinet-com-mk-en-document-69406",
       "rawTitle": "7/30/2024 - Stokopromet AD Skopje - Non-audited financial statements 01.01. - 30.06.",
       "title": "STOK files audited financial statements",
@@ -19036,19 +19023,6 @@
       "publishedAt": "2024-07-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69296"
-    },
-    {
-      "id": "TNB-https-seinet-com-mk-en-document-69264",
-      "rawTitle": "7/25/2024 - NLB Banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-      "title": "TNB files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2024-07-25",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/69264"
     },
     {
       "id": "KLST-https-seinet-com-mk-en-document-69237",

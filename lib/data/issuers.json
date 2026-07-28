@@ -3805,6 +3805,11 @@
     "website": "http://www.ad-moda.com",
     "reportLinks": [
       {
+        "title": "7/27/2026 - Moda AD Sveti Nikole - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78004",
+        "date": "2026-07-27"
+      },
+      {
         "title": "5/27/2026 - Moda AD Sveti Nikole - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77478",
         "date": "2026-05-27"
@@ -3848,14 +3853,14 @@
         "title": "4/17/2025 - Moda AD Sveti Nikole - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/71955",
         "date": "2025-04-17"
-      },
-      {
-        "title": "2/19/2025 - Moda AD Sveti Nikole - Non-audited financial statements 01.01. - 31.12.",
-        "url": "https://seinet.com.mk/en/document/71082",
-        "date": "2025-02-19"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/27/2026 - Moda AD Sveti Nikole - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78005",
+        "date": "2026-07-27"
+      },
       {
         "title": "5/27/2026 - Moda AD Sveti Nikole - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77479",
@@ -3880,11 +3885,6 @@
         "title": "4/27/2026 - Moda AD Sveti Nikole - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/76555",
         "date": "2026-04-27"
-      },
-      {
-        "title": "2/24/2026 - Moda AD Sveti Nikole - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75430",
-        "date": "2026-02-24"
       }
     ]
   },
@@ -5831,6 +5831,11 @@
     "website": "https://www.libertyskopje.mk/",
     "reportLinks": [
       {
+        "title": "7/27/2026 - Liberti AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78006",
+        "date": "2026-07-27"
+      },
+      {
         "title": "6/1/2026 - Liberti AD Skopje - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77674",
         "date": "2026-06-01"
@@ -5874,14 +5879,14 @@
         "title": "10/18/2024 - Liberti AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/69991",
         "date": "2024-10-18"
-      },
-      {
-        "title": "10/18/2024 - Liberti AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
-        "url": "https://seinet.com.mk/en/document/69980",
-        "date": "2024-10-18"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/27/2026 - Liberti AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78007",
+        "date": "2026-07-27"
+      },
       {
         "title": "6/1/2026 - Liberti AD Skopje - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77673",
@@ -5906,16 +5911,6 @@
         "title": "3/2/2026 - Liberti AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/75729",
         "date": "2026-03-02"
-      },
-      {
-        "title": "2/2/2026 - Liberti AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75308",
-        "date": "2026-02-02"
-      },
-      {
-        "title": "10/31/2025 - Liberti AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/74706",
-        "date": "2025-10-31"
       }
     ]
   },
@@ -6308,6 +6303,16 @@
     ],
     "disclosureLinks": [
       {
+        "title": "7/27/2026 - ALTA banka AD Bitola - Draft decisions for the shareholders meeting",
+        "url": "https://seinet.com.mk/en/document/78003",
+        "date": "2026-07-27"
+      },
+      {
+        "title": "7/27/2026 - ALTA banka AD Bitola - Public call for shareholders meeting",
+        "url": "https://seinet.com.mk/en/document/78002",
+        "date": "2026-07-27"
+      },
+      {
         "title": "7/1/2026 - ALTA banka AD Bitola - Changes in shareholders with a significant stake",
         "url": "https://seinet.com.mk/en/document/77883",
         "date": "2026-07-01"
@@ -6341,16 +6346,6 @@
         "title": "5/22/2026 - ALTA banka AD Bitola - Changes in shareholders with a significant stake",
         "url": "https://seinet.com.mk/en/document/77318",
         "date": "2026-05-22"
-      },
-      {
-        "title": "5/12/2026 - ALTA banka AD Bitola - Changes in management and supervisory bodies",
-        "url": "https://seinet.com.mk/en/document/77115",
-        "date": "2026-05-12"
-      },
-      {
-        "title": "4/30/2026 - ALTA banka AD Bitola - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/76969",
-        "date": "2026-04-30"
       }
     ]
   },
@@ -6975,6 +6970,11 @@
     "website": "/",
     "reportLinks": [
       {
+        "title": "7/27/2026 - Sigurnosno staklo AD Prilep - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78017",
+        "date": "2026-07-27"
+      },
+      {
         "title": "4/21/2026 - Sigurnosno staklo AD Prilep - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/76320",
         "date": "2026-04-21"
@@ -7018,11 +7018,6 @@
         "title": "10/28/2024 - Sigurnosno staklo AD Prilep - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/70094",
         "date": "2024-10-28"
-      },
-      {
-        "title": "7/30/2024 - Sigurnosno staklo AD Prilep - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69401",
-        "date": "2024-07-30"
       }
     ],
     "disclosureLinks": [
@@ -8297,6 +8292,11 @@
     "website": "http://nlb.mk/",
     "reportLinks": [
       {
+        "title": "7/27/2026 - NLB Banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/77992",
+        "date": "2026-07-27"
+      },
+      {
         "title": "5/28/2026 - NLB Banka AD Skopje - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77602",
         "date": "2026-05-28"
@@ -8340,14 +8340,14 @@
         "title": "10/25/2024 - NLB Banka AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/70063",
         "date": "2024-10-25"
-      },
-      {
-        "title": "7/25/2024 - NLB Banka AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69264",
-        "date": "2024-07-25"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/27/2026 - NLB Banka AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/77994",
+        "date": "2026-07-27"
+      },
       {
         "title": "6/30/2026 - NLB Banka AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77879",
@@ -8381,16 +8381,6 @@
       {
         "title": "4/27/2026 - NLB Banka AD Skopje - CCG Questionnaires",
         "url": "https://seinet.com.mk/en/document/76620",
-        "date": "2026-04-27"
-      },
-      {
-        "title": "4/27/2026 - NLB Banka AD Skopje - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76618",
-        "date": "2026-04-27"
-      },
-      {
-        "title": "4/27/2026 - NLB Banka AD Skopje - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76608",
         "date": "2026-04-27"
       }
     ]
@@ -9083,6 +9073,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "7/27/2026 - UNI Banka AD Skopje - Changes in management and supervisory bodies",
+        "url": "https://seinet.com.mk/en/document/78019",
+        "date": "2026-07-27"
+      },
+      {
         "title": "5/20/2026 - UNI Banka AD Skopje - CCG Questionnaires",
         "url": "https://seinet.com.mk/en/document/77257",
         "date": "2026-05-20"
@@ -9116,11 +9111,6 @@
         "title": "4/27/2026 - UNI Banka AD Skopje - Transactions with shares by persons in management and supervisory bodies",
         "url": "https://seinet.com.mk/en/document/76499",
         "date": "2026-04-27"
-      },
-      {
-        "title": "4/24/2026 - UNI Banka AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/76478",
-        "date": "2026-04-24"
       }
     ]
   },
@@ -9186,6 +9176,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "7/27/2026 - UNI Banka AD Skopje - Changes in management and supervisory bodies",
+        "url": "https://seinet.com.mk/en/document/78019",
+        "date": "2026-07-27"
+      },
+      {
         "title": "5/20/2026 - UNI Banka AD Skopje - CCG Questionnaires",
         "url": "https://seinet.com.mk/en/document/77257",
         "date": "2026-05-20"
@@ -9219,11 +9214,6 @@
         "title": "4/27/2026 - UNI Banka AD Skopje - Transactions with shares by persons in management and supervisory bodies",
         "url": "https://seinet.com.mk/en/document/76499",
         "date": "2026-04-27"
-      },
-      {
-        "title": "4/24/2026 - UNI Banka AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/76478",
-        "date": "2026-04-24"
       }
     ]
   },
@@ -9289,6 +9279,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "7/27/2026 - UNI Banka AD Skopje - Changes in management and supervisory bodies",
+        "url": "https://seinet.com.mk/en/document/78019",
+        "date": "2026-07-27"
+      },
+      {
         "title": "5/20/2026 - UNI Banka AD Skopje - CCG Questionnaires",
         "url": "https://seinet.com.mk/en/document/77257",
         "date": "2026-05-20"
@@ -9322,11 +9317,6 @@
         "title": "4/27/2026 - UNI Banka AD Skopje - Transactions with shares by persons in management and supervisory bodies",
         "url": "https://seinet.com.mk/en/document/76499",
         "date": "2026-04-27"
-      },
-      {
-        "title": "4/24/2026 - UNI Banka AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/76478",
-        "date": "2026-04-24"
       }
     ]
   },
@@ -9392,6 +9382,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "7/27/2026 - UNI Banka AD Skopje - Changes in management and supervisory bodies",
+        "url": "https://seinet.com.mk/en/document/78019",
+        "date": "2026-07-27"
+      },
+      {
         "title": "5/20/2026 - UNI Banka AD Skopje - CCG Questionnaires",
         "url": "https://seinet.com.mk/en/document/77257",
         "date": "2026-05-20"
@@ -9425,11 +9420,6 @@
         "title": "4/27/2026 - UNI Banka AD Skopje - Transactions with shares by persons in management and supervisory bodies",
         "url": "https://seinet.com.mk/en/document/76499",
         "date": "2026-04-27"
-      },
-      {
-        "title": "4/24/2026 - UNI Banka AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/76478",
-        "date": "2026-04-24"
       }
     ]
   },

@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-07-27T05:57:04.940Z",
-  "lastIssuerScan": "2026-07-27",
+  "generatedAt": "2026-07-28T05:21:04.038Z",
+  "lastIssuerScan": "2026-07-28",
   "issuerCount": 170,
   "recent": [
+    {
+      "stockCode": "MODA",
+      "stockName": "Moda AD Sveti Nikole",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-27",
+      "headline": "MODA files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78004",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "RZLV",
+      "stockName": "Liberti AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-27",
+      "headline": "RZLV files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78006",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SSPR",
+      "stockName": "Sigurnosno staklo AD Prilep",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-27",
+      "headline": "SSPR files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78017",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-27",
+      "headline": "TNB files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77992",
+      "source": "SECNet"
+    },
     {
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
@@ -1862,237 +1910,57 @@
       "headline": "ZILU reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/77001",
       "source": "SECNet"
-    },
-    {
-      "stockCode": "BGOR",
-      "stockName": "Kristal 1923 AD Veles",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-29",
-      "headline": "BGOR files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76788",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "BIM",
-      "stockName": "BIM AD Sveti Nikole",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "BIM reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76726",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "DIMI",
-      "stockName": "Dimko Mitrev AD Veles",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "DIMI reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76761",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "EVRO",
-      "stockName": "Evropa AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "EVRO reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76805",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "FUBT",
-      "stockName": "Fustelarko Borec AD Bitola",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "FUBT reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76794",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "KLST",
-      "stockName": "Klanica so ladilnik AD Strumica",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-04-29",
-      "headline": "KLST files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/76775",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "KMB",
-      "stockName": "Komercijalna banka AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "KMB reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76798",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "LOTO",
-      "stockName": "Lotarija na Makedonija AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "LOTO reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76817",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MPOL",
-      "stockName": "Hoteli Metropol Ohrid",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "MPOL reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76810",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "NOSK",
-      "stockName": "Nova Stokovna kukja AD Strumica",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "NOSK reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76767",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "OILK",
-      "stockName": "OILKO KDA Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "OILK reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76766",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "RZIT",
-      "stockName": "RZh Inter-Transshped AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "RZIT reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76717",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "RZUG",
-      "stockName": "Ugotur AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "RZUG reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76755",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "SPOL",
-      "stockName": "Strumichko pole s. Vasilevo",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "SPOL reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76778",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "STB",
-      "stockName": "Stopanska banka AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "STB reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76782",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "STOK",
-      "stockName": "Stokopromet AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "STOK reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76765",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TETE",
-      "stockName": "Teteks AD Tetovo",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "TETE reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76757",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TIKV",
-      "stockName": "GD-TIKVESh AD Kavadarci",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "TIKV reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76780",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "USJE",
-      "stockName": "TITAN USJE AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-04-29",
-      "headline": "USJE reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/76720",
-      "source": "SECNet"
     }
   ],
   "all": [
+    {
+      "stockCode": "MODA",
+      "stockName": "Moda AD Sveti Nikole",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-27",
+      "headline": "MODA files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78004",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "RZLV",
+      "stockName": "Liberti AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-27",
+      "headline": "RZLV files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78006",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SSPR",
+      "stockName": "Sigurnosno staklo AD Prilep",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-27",
+      "headline": "SSPR files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78017",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-07-27",
+      "headline": "TNB files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/77992",
+      "source": "SECNet"
+    },
     {
       "stockCode": "ADIN",
       "stockName": "Ading AD  Skopje",
@@ -9114,18 +8982,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "MODA",
-      "stockName": "Moda AD Sveti Nikole",
-      "reportKind": "fy_audited",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-12-31",
-      "periodLabel": "01.01–31.12",
-      "filedAt": "2025-02-19",
-      "headline": "MODA files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/71082",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "INPR",
       "stockName": "Interpromet AD Tetovo",
       "reportKind": "fy_audited",
@@ -10038,18 +9894,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "SSPR",
-      "stockName": "Sigurnosno staklo AD Prilep",
-      "reportKind": "fy_audited",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-06-30",
-      "periodLabel": "01.01–30.06",
-      "filedAt": "2024-07-30",
-      "headline": "SSPR files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/69401",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "STOK",
       "stockName": "Stokopromet AD Skopje",
       "reportKind": "fy_audited",
@@ -10143,18 +9987,6 @@
       "filedAt": "2024-07-26",
       "headline": "RZEK files audited financial statements",
       "url": "https://seinet.com.mk/en/document/69296",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-06-30",
-      "periodLabel": "01.01–30.06",
-      "filedAt": "2024-07-25",
-      "headline": "TNB files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/69264",
       "source": "SECNet"
     },
     {
@@ -10651,6 +10483,434 @@
     }
   ],
   "byIssuer": {
+    "MODA": [
+      {
+        "stockCode": "MODA",
+        "stockName": "Moda AD Sveti Nikole",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-27",
+        "headline": "MODA files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78004",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MODA",
+        "stockName": "Moda AD Sveti Nikole",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-27",
+        "headline": "MODA files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77478",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MODA",
+        "stockName": "Moda AD Sveti Nikole",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-27",
+        "headline": "MODA reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76554",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MODA",
+        "stockName": "Moda AD Sveti Nikole",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-02-24",
+        "headline": "MODA files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75429",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MODA",
+        "stockName": "Moda AD Sveti Nikole",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-22",
+        "headline": "MODA reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74396",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MODA",
+        "stockName": "Moda AD Sveti Nikole",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-21",
+        "headline": "MODA files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73633",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MODA",
+        "stockName": "Moda AD Sveti Nikole",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-22",
+        "headline": "MODA reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72001",
+        "source": "SECNet"
+      }
+    ],
+    "RZLV": [
+      {
+        "stockCode": "RZLV",
+        "stockName": "Liberti AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-27",
+        "headline": "RZLV files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78006",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZLV",
+        "stockName": "Liberti AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-06-01",
+        "headline": "RZLV files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77674",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZLV",
+        "stockName": "Liberti AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-30",
+        "headline": "RZLV reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76888",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZLV",
+        "stockName": "Liberti AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-03-02",
+        "headline": "RZLV files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75728",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZLV",
+        "stockName": "Liberti AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-31",
+        "headline": "RZLV reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74705",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZLV",
+        "stockName": "Liberti AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-31",
+        "headline": "RZLV files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73957",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZLV",
+        "stockName": "Liberti AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-30",
+        "headline": "RZLV reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72466",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZLV",
+        "stockName": "Liberti AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-02-26",
+        "headline": "RZLV files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/71127",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZLV",
+        "stockName": "Liberti AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2024-10-18",
+        "headline": "RZLV reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/69991",
+        "source": "SECNet"
+      }
+    ],
+    "SSPR": [
+      {
+        "stockCode": "SSPR",
+        "stockName": "Sigurnosno staklo AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-27",
+        "headline": "SSPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78017",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SSPR",
+        "stockName": "Sigurnosno staklo AD Prilep",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-21",
+        "headline": "SSPR reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76320",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SSPR",
+        "stockName": "Sigurnosno staklo AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-04-21",
+        "headline": "SSPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76311",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SSPR",
+        "stockName": "Sigurnosno staklo AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-02-25",
+        "headline": "SSPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75452",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SSPR",
+        "stockName": "Sigurnosno staklo AD Prilep",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-28",
+        "headline": "SSPR reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74446",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SSPR",
+        "stockName": "Sigurnosno staklo AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-30",
+        "headline": "SSPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73795",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SSPR",
+        "stockName": "Sigurnosno staklo AD Prilep",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-29",
+        "headline": "SSPR reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72324",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SSPR",
+        "stockName": "Sigurnosno staklo AD Prilep",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-02-27",
+        "headline": "SSPR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/71188",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SSPR",
+        "stockName": "Sigurnosno staklo AD Prilep",
+        "reportKind": "q3_pl",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2024-10-28",
+        "headline": "SSPR reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/70094",
+        "source": "SECNet"
+      }
+    ],
+    "TNB": [
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-27",
+        "headline": "TNB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77992",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-28",
+        "headline": "TNB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77602",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-05-28",
+        "headline": "TNB files profit and loss report",
+        "url": "https://seinet.com.mk/en/document/77612",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-27",
+        "headline": "TNB reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76611",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-01-30",
+        "headline": "TNB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75287",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-24",
+        "headline": "TNB reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74414",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-25",
+        "headline": "TNB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73706",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-30",
+        "headline": "TNB reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72460",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-01-30",
+        "headline": "TNB files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/70930",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TNB",
+        "stockName": "NLB Banka AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2024-10-25",
+        "headline": "TNB reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/70063",
+        "source": "SECNet"
+      }
+    ],
     "ADIN": [
       {
         "stockCode": "ADIN",
@@ -12893,104 +13153,6 @@
         "source": "SECNet"
       }
     ],
-    "RZLV": [
-      {
-        "stockCode": "RZLV",
-        "stockName": "Liberti AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-06-01",
-        "headline": "RZLV files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77674",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "RZLV",
-        "stockName": "Liberti AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-30",
-        "headline": "RZLV reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76888",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "RZLV",
-        "stockName": "Liberti AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-03-02",
-        "headline": "RZLV files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75728",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "RZLV",
-        "stockName": "Liberti AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-31",
-        "headline": "RZLV reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74705",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "RZLV",
-        "stockName": "Liberti AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-31",
-        "headline": "RZLV files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73957",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "RZLV",
-        "stockName": "Liberti AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-30",
-        "headline": "RZLV reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72466",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "RZLV",
-        "stockName": "Liberti AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-02-26",
-        "headline": "RZLV files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71127",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "RZLV",
-        "stockName": "Liberti AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-10-18",
-        "headline": "RZLV reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/69991",
-        "source": "SECNet"
-      }
-    ],
     "SPOL": [
       {
         "stockCode": "SPOL",
@@ -14105,128 +14267,6 @@
         "source": "SECNet"
       }
     ],
-    "TNB": [
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-28",
-        "headline": "TNB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77602",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-28",
-        "headline": "TNB files profit and loss report",
-        "url": "https://seinet.com.mk/en/document/77612",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-27",
-        "headline": "TNB reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76611",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-01-30",
-        "headline": "TNB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75287",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-24",
-        "headline": "TNB reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74414",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-25",
-        "headline": "TNB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73706",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-30",
-        "headline": "TNB reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72460",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-01-30",
-        "headline": "TNB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/70930",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-10-25",
-        "headline": "TNB reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/70063",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "TNB",
-        "stockName": "NLB Banka AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2024-07-25",
-        "headline": "TNB files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/69264",
-        "source": "SECNet"
-      }
-    ],
     "TSMP": [
       {
         "stockCode": "TSMP",
@@ -14690,92 +14730,6 @@
         "filedAt": "2025-08-15",
         "headline": "FERS files audited financial statements",
         "url": "https://seinet.com.mk/en/document/74181",
-        "source": "SECNet"
-      }
-    ],
-    "MODA": [
-      {
-        "stockCode": "MODA",
-        "stockName": "Moda AD Sveti Nikole",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-27",
-        "headline": "MODA files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77478",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MODA",
-        "stockName": "Moda AD Sveti Nikole",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-27",
-        "headline": "MODA reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76554",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MODA",
-        "stockName": "Moda AD Sveti Nikole",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-02-24",
-        "headline": "MODA files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75429",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MODA",
-        "stockName": "Moda AD Sveti Nikole",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-22",
-        "headline": "MODA reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74396",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MODA",
-        "stockName": "Moda AD Sveti Nikole",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-21",
-        "headline": "MODA files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73633",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MODA",
-        "stockName": "Moda AD Sveti Nikole",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-22",
-        "headline": "MODA reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72001",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MODA",
-        "stockName": "Moda AD Sveti Nikole",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-02-19",
-        "headline": "MODA files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71082",
         "source": "SECNet"
       }
     ],
@@ -18833,116 +18787,6 @@
         "source": "SECNet"
       }
     ],
-    "SSPR": [
-      {
-        "stockCode": "SSPR",
-        "stockName": "Sigurnosno staklo AD Prilep",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-21",
-        "headline": "SSPR reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76320",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "SSPR",
-        "stockName": "Sigurnosno staklo AD Prilep",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-04-21",
-        "headline": "SSPR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76311",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "SSPR",
-        "stockName": "Sigurnosno staklo AD Prilep",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-02-25",
-        "headline": "SSPR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75452",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "SSPR",
-        "stockName": "Sigurnosno staklo AD Prilep",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-28",
-        "headline": "SSPR reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74446",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "SSPR",
-        "stockName": "Sigurnosno staklo AD Prilep",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-30",
-        "headline": "SSPR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73795",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "SSPR",
-        "stockName": "Sigurnosno staklo AD Prilep",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-29",
-        "headline": "SSPR reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72324",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "SSPR",
-        "stockName": "Sigurnosno staklo AD Prilep",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-02-27",
-        "headline": "SSPR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71188",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "SSPR",
-        "stockName": "Sigurnosno staklo AD Prilep",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-10-28",
-        "headline": "SSPR reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/70094",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "SSPR",
-        "stockName": "Sigurnosno staklo AD Prilep",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2024-07-30",
-        "headline": "SSPR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/69401",
-        "source": "SECNet"
-      }
-    ],
     "ZKAR": [
       {
         "stockCode": "ZKAR",
@@ -19753,7 +19597,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-April",
+      "expectedLabel": "expected mid-June",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },
@@ -19933,7 +19777,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-April",
+      "expectedLabel": "expected late May",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },
