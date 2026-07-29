@@ -20,6 +20,11 @@
     "website": "http://www.ading.com.mk",
     "reportLinks": [
       {
+        "title": "7/28/2026 - Ading AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78046",
+        "date": "2026-07-28"
+      },
+      {
         "title": "7/24/2026 - Ading AD Skopje - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/77974",
         "date": "2026-07-24"
@@ -63,14 +68,14 @@
         "title": "8/7/2025 - Ading AD Skopje - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/74094",
         "date": "2025-08-07"
-      },
-      {
-        "title": "7/23/2025 - Ading AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/73658",
-        "date": "2025-07-23"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/28/2026 - Ading AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78047",
+        "date": "2026-07-28"
+      },
       {
         "title": "7/24/2026 - Ading AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77975",
@@ -100,11 +105,6 @@
         "title": "5/14/2026 - Ading AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77162",
         "date": "2026-05-14"
-      },
-      {
-        "title": "5/13/2026 - Ading AD Skopje - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/77133",
-        "date": "2026-05-13"
       }
     ]
   },
@@ -524,6 +524,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "7/28/2026 - Rudnici Banani AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78056",
+        "date": "2026-07-28"
+      },
+      {
         "title": "4/20/2026 - Rudnici Banani AD Skopje - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/76293",
         "date": "2026-04-20"
@@ -567,14 +572,14 @@
         "title": "10/30/2024 - Rudnici Banani AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/70216",
         "date": "2024-10-30"
-      },
-      {
-        "title": "7/29/2024 - Rudnici Banani AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69319",
-        "date": "2024-07-29"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/28/2026 - Rudnici Banani AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78062",
+        "date": "2026-07-28"
+      },
       {
         "title": "4/30/2026 - Rudnici Banani AD Skopje - Dividend Calendar",
         "url": "https://seinet.com.mk/en/document/76936",
@@ -603,16 +608,6 @@
       {
         "title": "3/27/2026 - Rudnici Banani AD Skopje - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/75980",
-        "date": "2026-03-27"
-      },
-      {
-        "title": "3/27/2026 - Rudnici Banani AD Skopje - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/75979",
-        "date": "2026-03-27"
-      },
-      {
-        "title": "3/27/2026 - Rudnici Banani AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75978",
         "date": "2026-03-27"
       }
     ]
@@ -2353,6 +2348,11 @@
     "website": "http://www.interpromet.mk",
     "reportLinks": [
       {
+        "title": "7/28/2026 - Interpromet AD Tetovo - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78042",
+        "date": "2026-07-28"
+      },
+      {
         "title": "4/28/2026 - Interpromet AD Tetovo - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/76672",
         "date": "2026-04-28"
@@ -2396,14 +2396,14 @@
         "title": "10/18/2024 - Interpromet AD Tetovo - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/69987",
         "date": "2024-10-18"
-      },
-      {
-        "title": "10/18/2024 - Interpromet AD Tetovo - Non-audited profit&loss account 01.01. - 30.09.",
-        "url": "https://seinet.com.mk/en/document/69974",
-        "date": "2024-10-18"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/28/2026 - Interpromet AD Tetovo - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78043",
+        "date": "2026-07-28"
+      },
       {
         "title": "5/28/2026 - Interpromet AD Tetovo - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77597",
@@ -2433,16 +2433,6 @@
         "title": "4/27/2026 - Interpromet AD Tetovo - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/76578",
         "date": "2026-04-27"
-      },
-      {
-        "title": "4/27/2026 - Interpromet AD Tetovo - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76577",
-        "date": "2026-04-27"
-      },
-      {
-        "title": "3/27/2026 - Interpromet AD Tetovo - Buy back/Sale of treasury shares",
-        "url": "https://seinet.com.mk/en/document/75977",
-        "date": "2026-03-27"
       }
     ]
   },
@@ -2635,6 +2625,11 @@
     "website": "/",
     "reportLinks": [
       {
+        "title": "7/28/2026 - Klanica so ladilnik AD Strumica - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78054",
+        "date": "2026-07-28"
+      },
+      {
         "title": "4/29/2026 - Klanica so ladilnik AD Strumica - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/76775",
         "date": "2026-04-29"
@@ -2678,14 +2673,14 @@
         "title": "10/29/2024 - Klanica so ladilnik AD Strumica - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/70150",
         "date": "2024-10-29"
-      },
-      {
-        "title": "7/24/2024 - Klanica so ladilnik AD Strumica - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69237",
-        "date": "2024-07-24"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/28/2026 - Klanica so ladilnik AD Strumica - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78055",
+        "date": "2026-07-28"
+      },
       {
         "title": "5/19/2026 - Klanica so ladilnik AD Strumica - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77233",
@@ -2710,16 +2705,6 @@
         "title": "3/2/2026 - Klanica so ladilnik AD Strumica - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/75786",
         "date": "2026-03-02"
-      },
-      {
-        "title": "1/30/2026 - Klanica so ladilnik AD Strumica - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75263",
-        "date": "2026-01-30"
-      },
-      {
-        "title": "10/28/2025 - Klanica so ladilnik AD Strumica - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/74472",
-        "date": "2025-10-28"
       }
     ]
   },
@@ -6303,6 +6288,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "7/28/2026 - ALTA banka AD Bitola - Changes in shareholders with a significant stake",
+        "url": "https://seinet.com.mk/en/document/78050",
+        "date": "2026-07-28"
+      },
+      {
         "title": "7/27/2026 - ALTA banka AD Bitola - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/78003",
         "date": "2026-07-27"
@@ -6341,11 +6331,6 @@
         "title": "5/27/2026 - ALTA banka AD Bitola - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77487",
         "date": "2026-05-27"
-      },
-      {
-        "title": "5/22/2026 - ALTA banka AD Bitola - Changes in shareholders with a significant stake",
-        "url": "https://seinet.com.mk/en/document/77318",
-        "date": "2026-05-22"
       }
     ]
   },
@@ -6882,6 +6867,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "7/28/2026 - Strumicko pole AD s. Vasilevo - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78044",
+        "date": "2026-07-28"
+      },
+      {
         "title": "6/1/2026 - Strumicko pole AD s. Vasilevo - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77707",
         "date": "2026-06-01"
@@ -6925,14 +6915,14 @@
         "title": "4/17/2025 - Strumicko pole AD s. Vasilevo - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/71982",
         "date": "2025-04-17"
-      },
-      {
-        "title": "2/27/2025 - Strumicko pole AD s. Vasilevo - Non-audited financial statements 01.01. - 31.12.",
-        "url": "https://seinet.com.mk/en/document/71190",
-        "date": "2025-02-27"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/28/2026 - Strumicko pole AD s. Vasilevo - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78045",
+        "date": "2026-07-28"
+      },
       {
         "title": "6/1/2026 - Strumicko pole AD s. Vasilevo - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77706",
@@ -6952,11 +6942,6 @@
         "title": "2/25/2026 - Strumicko pole AD s. Vasilevo - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/75455",
         "date": "2026-02-25"
-      },
-      {
-        "title": "1/29/2026 - Strumicko pole AD s. Vasilevo - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75213",
-        "date": "2026-01-29"
       }
     ]
   },
@@ -7022,6 +7007,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "7/28/2026 - Sigurnosno staklo AD Prilep - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78021",
+        "date": "2026-07-28"
+      },
+      {
         "title": "5/22/2026 - Sigurnosno staklo AD Prilep - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77305",
         "date": "2026-05-22"
@@ -7045,11 +7035,6 @@
         "title": "2/25/2026 - Sigurnosno staklo AD Prilep - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/75453",
         "date": "2026-02-25"
-      },
-      {
-        "title": "1/27/2026 - Sigurnosno staklo AD Prilep - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75170",
-        "date": "2026-01-27"
       }
     ]
   },
@@ -7693,6 +7678,11 @@
     "website": "http://www.tehnokomerc.com.mk/",
     "reportLinks": [
       {
+        "title": "7/28/2026 - Tehnokomerc AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78048",
+        "date": "2026-07-28"
+      },
+      {
         "title": "7/24/2026 - Tehnokomerc AD Skopje - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/77985",
         "date": "2026-07-24"
@@ -7736,14 +7726,14 @@
         "title": "10/16/2025 - Tehnokomerc AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/74363",
         "date": "2025-10-16"
-      },
-      {
-        "title": "8/14/2025 - Tehnokomerc AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/74147",
-        "date": "2025-08-14"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/28/2026 - Tehnokomerc AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78049",
+        "date": "2026-07-28"
+      },
       {
         "title": "7/24/2026 - Tehnokomerc AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77986",
@@ -8003,6 +7993,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "7/28/2026 - GD Tikves AD Kavadarci - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78059",
+        "date": "2026-07-28"
+      },
+      {
         "title": "4/29/2026 - GD Tikves AD Kavadarci - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/76780",
         "date": "2026-04-29"
@@ -8046,14 +8041,14 @@
         "title": "4/28/2025 - GD Tikves AD Kavadarci - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/72213",
         "date": "2025-04-28"
-      },
-      {
-        "title": "4/28/2025 - GD Tikves AD Kavadarci - Audited financial statements",
-        "url": "https://seinet.com.mk/en/document/72212",
-        "date": "2025-04-28"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "7/28/2026 - GD Tikves AD Kavadarci - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78060",
+        "date": "2026-07-28"
+      },
       {
         "title": "5/28/2026 - GD Tikves AD Kavadarci - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77606",
@@ -8078,16 +8073,6 @@
         "title": "4/28/2026 - GD Tikves AD Kavadarci - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/76641",
         "date": "2026-04-28"
-      },
-      {
-        "title": "4/28/2026 - GD Tikves AD Kavadarci - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76640",
-        "date": "2026-04-28"
-      },
-      {
-        "title": "3/31/2026 - GD Tikves AD Kavadarci - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/76069",
-        "date": "2026-03-31"
       }
     ]
   },
@@ -8344,6 +8329,16 @@
     ],
     "disclosureLinks": [
       {
+        "title": "7/28/2026 - NLB Banka AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78053",
+        "date": "2026-07-28"
+      },
+      {
+        "title": "7/28/2026 - NLB Banka AD Skopje - Changes in management and supervisory bodies",
+        "url": "https://seinet.com.mk/en/document/78041",
+        "date": "2026-07-28"
+      },
+      {
         "title": "7/27/2026 - NLB Banka AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/77994",
         "date": "2026-07-27"
@@ -8377,11 +8372,6 @@
         "title": "5/28/2026 - NLB Banka AD Skopje - Dividend Calendar",
         "url": "https://seinet.com.mk/en/document/77603",
         "date": "2026-05-28"
-      },
-      {
-        "title": "4/27/2026 - NLB Banka AD Skopje - CCG Questionnaires",
-        "url": "https://seinet.com.mk/en/document/76620",
-        "date": "2026-04-27"
       }
     ]
   },

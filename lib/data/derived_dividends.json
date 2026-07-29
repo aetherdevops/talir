@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-28T05:35:37.987Z",
-  "lastIssuerScan": "2026-07-28",
+  "generatedAt": "2026-07-29T05:44:52.384Z",
+  "lastIssuerScan": "2026-07-29",
   "issuerCount": 170,
   "recent": [
     {
@@ -1733,28 +1733,6 @@
       }
     },
     {
-      "stockCode": "MPT",
-      "stockName": "Makpetrol AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/MPT#fy-2024",
-      "grossPerShare": 4200,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "sourceFields": {
-        "grossPerShare": "MSE"
-      },
-      "isSynthetic": true,
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": 42.72708683670013
-    },
-    {
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "filedAt": "2024-12-31",
@@ -1775,6 +1753,28 @@
       "yoyGrowthPct": null,
       "profitYear": 2024,
       "payoutRatioPct": 317.46031746031747
+    },
+    {
+      "stockCode": "MPT",
+      "stockName": "Makpetrol AD Skopje",
+      "filedAt": "2024-12-31",
+      "url": "https://www.mse.mk/en/symbol/MPT#fy-2024",
+      "grossPerShare": 4200,
+      "cumDate": null,
+      "exDate": null,
+      "recordDate": null,
+      "paymentStart": null,
+      "paymentEnd": null,
+      "parseStatus": "partial",
+      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
+      "profitYear": 2024,
+      "payoutRatioPct": 42.72708683670013
     },
     {
       "stockCode": "REPL",
@@ -2448,11 +2448,11 @@
       }
     },
     {
-      "stockCode": "MPT",
-      "stockName": "Makpetrol AD Skopje",
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/MPT#fy-2023",
-      "grossPerShare": 3700,
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
+      "grossPerShare": 42,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -2470,11 +2470,11 @@
       "payoutRatioPct": null
     },
     {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
+      "stockCode": "MPT",
+      "stockName": "Makpetrol AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
-      "grossPerShare": 42,
+      "url": "https://www.mse.mk/en/symbol/MPT#fy-2023",
+      "grossPerShare": 3700,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,

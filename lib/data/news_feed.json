@@ -1,10 +1,244 @@
 {
-  "generatedAt": "2026-07-28T05:21:03.639Z",
-  "lastIssuerScan": "2026-07-28",
-  "count": 1528,
-  "datedCount": 1528,
+  "generatedAt": "2026-07-29T05:28:53.577Z",
+  "lastIssuerScan": "2026-07-29",
+  "count": 1526,
+  "datedCount": 1526,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "ADIN-https-seinet-com-mk-en-document-78046",
+      "rawTitle": "7/28/2026 - Ading AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+      "title": "ADIN files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "ADIN",
+      "stockName": "Ading AD  Skopje",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78046"
+    },
+    {
+      "id": "ADIN-https-seinet-com-mk-en-document-78047",
+      "rawTitle": "7/28/2026 - Ading AD Skopje - Other price sensitive information",
+      "title": "ADIN: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "ADIN",
+      "stockName": "Ading AD  Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78047"
+    },
+    {
+      "id": "BANA-https-seinet-com-mk-en-document-78056",
+      "rawTitle": "7/28/2026 - Rudnici Banani AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+      "title": "BANA files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "BANA",
+      "stockName": "Rudnici Banjani AD Skopje",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78056"
+    },
+    {
+      "id": "BANA-https-seinet-com-mk-en-document-78062",
+      "rawTitle": "7/28/2026 - Rudnici Banani AD Skopje - Other price sensitive information",
+      "title": "BANA: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "BANA",
+      "stockName": "Rudnici Banjani AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78062"
+    },
+    {
+      "id": "INPR-https-seinet-com-mk-en-document-78042",
+      "rawTitle": "7/28/2026 - Interpromet AD Tetovo - Non-audited financial statements 01.01. - 30.06.",
+      "title": "INPR files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "INPR",
+      "stockName": "Interpromet AD Tetovo",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78042"
+    },
+    {
+      "id": "INPR-https-seinet-com-mk-en-document-78043",
+      "rawTitle": "7/28/2026 - Interpromet AD Tetovo - Other price sensitive information",
+      "title": "INPR: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "INPR",
+      "stockName": "Interpromet AD Tetovo",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78043"
+    },
+    {
+      "id": "KLST-https-seinet-com-mk-en-document-78054",
+      "rawTitle": "7/28/2026 - Klanica so ladilnik AD Strumica - Non-audited financial statements 01.01. - 30.06.",
+      "title": "KLST files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "KLST",
+      "stockName": "Klanica so ladilnik AD Strumica",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78054"
+    },
+    {
+      "id": "KLST-https-seinet-com-mk-en-document-78055",
+      "rawTitle": "7/28/2026 - Klanica so ladilnik AD Strumica - Other price sensitive information",
+      "title": "KLST: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "KLST",
+      "stockName": "Klanica so ladilnik AD Strumica",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78055"
+    },
+    {
+      "id": "SBT-https-seinet-com-mk-en-document-78050",
+      "rawTitle": "7/28/2026 - ALTA banka AD Bitola - Changes in shareholders with a significant stake",
+      "title": "SBT: Changes in shareholders with a significant stake",
+      "source": "SECNet",
+      "stockCode": "SBT",
+      "stockName": "Stopanska banka AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78050"
+    },
+    {
+      "id": "SPOL-https-seinet-com-mk-en-document-78044",
+      "rawTitle": "7/28/2026 - Strumicko pole AD s. Vasilevo - Non-audited financial statements 01.01. - 30.06.",
+      "title": "SPOL files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "SPOL",
+      "stockName": "Strumichko pole s. Vasilevo",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78044"
+    },
+    {
+      "id": "SPOL-https-seinet-com-mk-en-document-78045",
+      "rawTitle": "7/28/2026 - Strumicko pole AD s. Vasilevo - Other price sensitive information",
+      "title": "SPOL: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "SPOL",
+      "stockName": "Strumichko pole s. Vasilevo",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78045"
+    },
+    {
+      "id": "SSPR-https-seinet-com-mk-en-document-78021",
+      "rawTitle": "7/28/2026 - Sigurnosno staklo AD Prilep - Other price sensitive information",
+      "title": "SSPR: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "SSPR",
+      "stockName": "Sigurnosno staklo AD Prilep",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78021"
+    },
+    {
+      "id": "TEHN-https-seinet-com-mk-en-document-78048",
+      "rawTitle": "7/28/2026 - Tehnokomerc AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+      "title": "TEHN files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "TEHN",
+      "stockName": "Tehnokomerc AD Skopje",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78048"
+    },
+    {
+      "id": "TEHN-https-seinet-com-mk-en-document-78049",
+      "rawTitle": "7/28/2026 - Tehnokomerc AD Skopje - Other price sensitive information",
+      "title": "TEHN: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "TEHN",
+      "stockName": "Tehnokomerc AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78049"
+    },
+    {
+      "id": "TIKV-https-seinet-com-mk-en-document-78059",
+      "rawTitle": "7/28/2026 - GD Tikves AD Kavadarci - Non-audited financial statements 01.01. - 30.06.",
+      "title": "TIKV files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "TIKV",
+      "stockName": "GD-TIKVESh AD Kavadarci",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78059"
+    },
+    {
+      "id": "TIKV-https-seinet-com-mk-en-document-78060",
+      "rawTitle": "7/28/2026 - GD Tikves AD Kavadarci - Other price sensitive information",
+      "title": "TIKV: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "TIKV",
+      "stockName": "GD-TIKVESh AD Kavadarci",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78060"
+    },
+    {
+      "id": "TNB-https-seinet-com-mk-en-document-78053",
+      "rawTitle": "7/28/2026 - NLB Banka AD Skopje - Other price sensitive information",
+      "title": "TNB: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78053"
+    },
+    {
+      "id": "TNB-https-seinet-com-mk-en-document-78041",
+      "rawTitle": "7/28/2026 - NLB Banka AD Skopje - Changes in management and supervisory bodies",
+      "title": "TNB: Changes in management and supervisory bodies",
+      "source": "SECNet",
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-07-28",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78041"
+    },
     {
       "id": "MODA-https-seinet-com-mk-en-document-78004",
       "rawTitle": "7/27/2026 - Moda AD Sveti Nikole - Non-audited financial statements 01.01. - 30.06.",
@@ -4127,19 +4361,6 @@
       "url": "https://seinet.com.mk/en/document/77306"
     },
     {
-      "id": "SBT-https-seinet-com-mk-en-document-77318",
-      "rawTitle": "5/22/2026 - ALTA banka AD Bitola - Changes in shareholders with a significant stake",
-      "title": "SBT: Changes in shareholders with a significant stake",
-      "source": "SECNet",
-      "stockCode": "SBT",
-      "stockName": "Stopanska banka AD Bitola",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-05-22",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77318"
-    },
-    {
       "id": "SSPR-https-seinet-com-mk-en-document-77305",
       "rawTitle": "5/22/2026 - Sigurnosno staklo AD Prilep - Other decisions of the shareholders meeting",
       "title": "SSPR: Other decisions of the shareholders meeting",
@@ -5074,19 +5295,6 @@
       "publishedAt": "2026-05-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77137"
-    },
-    {
-      "id": "ADIN-https-seinet-com-mk-en-document-77133",
-      "rawTitle": "5/13/2026 - Ading AD Skopje - Draft decisions for the shareholders meeting",
-      "title": "ADIN: Draft decisions for the shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "ADIN",
-      "stockName": "Ading AD  Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-05-13",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77133"
     },
     {
       "id": "RADE-https-seinet-com-mk-en-document-77127",
@@ -7650,19 +7858,6 @@
       "url": "https://seinet.com.mk/en/document/76641"
     },
     {
-      "id": "TIKV-https-seinet-com-mk-en-document-76640",
-      "rawTitle": "4/28/2026 - GD Tikves AD Kavadarci - Public call for shareholders meeting",
-      "title": "TIKV: Public call for shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "TIKV",
-      "stockName": "GD-TIKVESh AD Kavadarci",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-28",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76640"
-    },
-    {
       "id": "TKVS-https-seinet-com-mk-en-document-76684",
       "rawTitle": "4/28/2026 - VV Tikves AD Kavadarci - CCG Questionnaires",
       "title": "TKVS: CCG Questionnaires",
@@ -7960,19 +8155,6 @@
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76578"
-    },
-    {
-      "id": "INPR-https-seinet-com-mk-en-document-76577",
-      "rawTitle": "4/27/2026 - Interpromet AD Tetovo - Public call for shareholders meeting",
-      "title": "INPR: Public call for shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "INPR",
-      "stockName": "Interpromet AD Tetovo",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76577"
     },
     {
       "id": "KMB-https-seinet-com-mk-en-document-76616",
@@ -8311,19 +8493,6 @@
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76611"
-    },
-    {
-      "id": "TNB-https-seinet-com-mk-en-document-76620",
-      "rawTitle": "4/27/2026 - NLB Banka AD Skopje - CCG Questionnaires",
-      "title": "TNB: CCG Questionnaires",
-      "source": "SECNet",
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76620"
     },
     {
       "id": "TSMP-https-seinet-com-mk-en-document-76595",
@@ -9912,19 +10081,6 @@
       "url": "https://seinet.com.mk/en/document/76067"
     },
     {
-      "id": "TIKV-https-seinet-com-mk-en-document-76069",
-      "rawTitle": "3/31/2026 - GD Tikves AD Kavadarci - Other price sensitive information",
-      "title": "TIKV: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "TIKV",
-      "stockName": "GD-TIKVESh AD Kavadarci",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-03-31",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76069"
-    },
-    {
       "id": "TSMP-https-seinet-com-mk-en-document-76037",
       "rawTitle": "3/31/2026 - Trgotekstil maloprodazba AD Skopje - Non-audited financial statements 01.01. - 31.12.",
       "title": "TSMP files audited financial statements",
@@ -10066,45 +10222,6 @@
       "publishedAt": "2026-03-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75980"
-    },
-    {
-      "id": "BANA-https-seinet-com-mk-en-document-75979",
-      "rawTitle": "3/27/2026 - Rudnici Banani AD Skopje - Public call for shareholders meeting",
-      "title": "BANA: Public call for shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "BANA",
-      "stockName": "Rudnici Banjani AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-03-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75979"
-    },
-    {
-      "id": "BANA-https-seinet-com-mk-en-document-75978",
-      "rawTitle": "3/27/2026 - Rudnici Banani AD Skopje - Other price sensitive information",
-      "title": "BANA: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "BANA",
-      "stockName": "Rudnici Banjani AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-03-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75978"
-    },
-    {
-      "id": "INPR-https-seinet-com-mk-en-document-75977",
-      "rawTitle": "3/27/2026 - Interpromet AD Tetovo - Buy back/Sale of treasury shares",
-      "title": "INPR: Buy back/Sale of treasury shares",
-      "source": "SECNet",
-      "stockCode": "INPR",
-      "stockName": "Interpromet AD Tetovo",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-03-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75977"
     },
     {
       "id": "KMB-https-seinet-com-mk-en-document-75996",
@@ -12005,19 +12122,6 @@
       "url": "https://seinet.com.mk/en/document/75245"
     },
     {
-      "id": "KLST-https-seinet-com-mk-en-document-75263",
-      "rawTitle": "1/30/2026 - Klanica so ladilnik AD Strumica - Other price sensitive information",
-      "title": "KLST: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "KLST",
-      "stockName": "Klanica so ladilnik AD Strumica",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-01-30",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75263"
-    },
-    {
       "id": "SBT-https-seinet-com-mk-en-document-75296",
       "rawTitle": "1/30/2026 - ALTA banka AD Bitola - Non-audited financial statements 01.01. - 31.12.",
       "title": "SBT files audited financial statements",
@@ -12109,19 +12213,6 @@
       "url": "https://seinet.com.mk/en/document/75229"
     },
     {
-      "id": "SPOL-https-seinet-com-mk-en-document-75213",
-      "rawTitle": "1/29/2026 - Strumicko pole AD s. Vasilevo - Other price sensitive information",
-      "title": "SPOL: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "SPOL",
-      "stockName": "Strumichko pole s. Vasilevo",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-01-29",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75213"
-    },
-    {
       "id": "TTK-https-seinet-com-mk-en-document-75236",
       "rawTitle": "1/29/2026 - TTK Banka AD Skopje - Non-audited financial statements 01.01. - 31.12.",
       "title": "TTK files audited financial statements",
@@ -12133,19 +12224,6 @@
       "publishedAt": "2026-01-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75236"
-    },
-    {
-      "id": "SSPR-https-seinet-com-mk-en-document-75170",
-      "rawTitle": "1/27/2026 - Sigurnosno staklo AD Prilep - Other price sensitive information",
-      "title": "SSPR: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "SSPR",
-      "stockName": "Sigurnosno staklo AD Prilep",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-01-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75170"
     },
     {
       "id": "KOMU-https-seinet-com-mk-en-document-75146",
@@ -13396,19 +13474,6 @@
       "url": "https://seinet.com.mk/en/document/74471"
     },
     {
-      "id": "KLST-https-seinet-com-mk-en-document-74472",
-      "rawTitle": "10/28/2025 - Klanica so ladilnik AD Strumica - Other price sensitive information",
-      "title": "KLST: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "KLST",
-      "stockName": "Klanica so ladilnik AD Strumica",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2025-10-28",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/74472"
-    },
-    {
       "id": "KOMU-https-seinet-com-mk-en-document-74481",
       "rawTitle": "10/28/2025 - DS Smith AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
       "title": "KOMU reports profit and loss for 01.01.–30.09",
@@ -13810,19 +13875,6 @@
       "publishedAt": "2025-08-14",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74141"
-    },
-    {
-      "id": "TEHN-https-seinet-com-mk-en-document-74147",
-      "rawTitle": "8/14/2025 - Tehnokomerc AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-      "title": "TEHN files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "TEHN",
-      "stockName": "Tehnokomerc AD Skopje",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-08-14",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/74147"
     },
     {
       "id": "TKVS-https-seinet-com-mk-en-document-74130",
@@ -15032,19 +15084,6 @@
       "publishedAt": "2025-07-25",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/73676"
-    },
-    {
-      "id": "ADIN-https-seinet-com-mk-en-document-73658",
-      "rawTitle": "7/23/2025 - Ading AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-      "title": "ADIN files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "ADIN",
-      "stockName": "Ading AD  Skopje",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-07-23",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/73658"
     },
     {
       "id": "KLST-https-seinet-com-mk-en-document-73662",
@@ -16893,19 +16932,6 @@
       "url": "https://seinet.com.mk/en/document/72213"
     },
     {
-      "id": "TIKV-https-seinet-com-mk-en-document-72212",
-      "rawTitle": "4/28/2025 - GD Tikves AD Kavadarci - Audited financial statements",
-      "title": "TIKV files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "TIKV",
-      "stockName": "GD-TIKVESh AD Kavadarci",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-04-28",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/72212"
-    },
-    {
       "id": "UNI-https-seinet-com-mk-en-document-72189",
       "rawTitle": "4/28/2025 - UNI Banka AD Skopje - Non-audited profit&loss account 01.01. - 31.03.",
       "title": "UNI reports profit and loss for 01.01.–31.03",
@@ -17697,19 +17723,6 @@
       "publishedAt": "2025-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/71175"
-    },
-    {
-      "id": "SPOL-https-seinet-com-mk-en-document-71190",
-      "rawTitle": "2/27/2025 - Strumicko pole AD s. Vasilevo - Non-audited financial statements 01.01. - 31.12.",
-      "title": "SPOL files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "SPOL",
-      "stockName": "Strumichko pole s. Vasilevo",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-02-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/71190"
     },
     {
       "id": "SSPR-https-seinet-com-mk-en-document-71188",
@@ -18544,19 +18557,6 @@
       "url": "https://seinet.com.mk/en/document/69987"
     },
     {
-      "id": "INPR-https-seinet-com-mk-en-document-69974",
-      "rawTitle": "10/18/2024 - Interpromet AD Tetovo - Non-audited profit&loss account 01.01. - 30.09.",
-      "title": "INPR reports profit and loss for 01.01.–30.09",
-      "source": "SECNet",
-      "stockCode": "INPR",
-      "stockName": "Interpromet AD Tetovo",
-      "category": "earnings",
-      "filingTier": "routine",
-      "publishedAt": "2024-10-18",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/69974"
-    },
-    {
       "id": "RZLV-https-seinet-com-mk-en-document-69991",
       "rawTitle": "10/18/2024 - Liberti AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
       "title": "RZLV reports profit and loss for 01.01.–30.09",
@@ -18973,19 +18973,6 @@
       "url": "https://seinet.com.mk/en/document/69394"
     },
     {
-      "id": "BANA-https-seinet-com-mk-en-document-69319",
-      "rawTitle": "7/29/2024 - Rudnici Banani AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-      "title": "BANA files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "BANA",
-      "stockName": "Rudnici Banjani AD Skopje",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2024-07-29",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/69319"
-    },
-    {
       "id": "RZIT-https-seinet-com-mk-en-document-69317",
       "rawTitle": "7/29/2024 - RZ Inter-Transsped AD Skopje - Non-audited financial statements 01.01. - 30.06.",
       "title": "RZIT files audited financial statements",
@@ -19023,19 +19010,6 @@
       "publishedAt": "2024-07-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69296"
-    },
-    {
-      "id": "KLST-https-seinet-com-mk-en-document-69237",
-      "rawTitle": "7/24/2024 - Klanica so ladilnik AD Strumica - Non-audited financial statements 01.01. - 30.06.",
-      "title": "KLST files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "KLST",
-      "stockName": "Klanica so ladilnik AD Strumica",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2024-07-24",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/69237"
     },
     {
       "id": "UNI-https-seinet-com-mk-en-document-69242",
