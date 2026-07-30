@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T05:29:01.394Z",
+  "generatedAt": "2026-07-30T05:15:21.880Z",
   "byCode": {
     "ALK": {
       "years": {
@@ -20,25 +20,6 @@
         }
       }
     },
-    "GRNT": {
-      "years": {
-        "2023": {
-          "dps": 42,
-          "eps": 41.39,
-          "dividendYieldPct": 3.56
-        },
-        "2024": {
-          "dps": 38,
-          "eps": 11.97,
-          "dividendYieldPct": 2.04
-        },
-        "2025": {
-          "dps": 49,
-          "eps": 63.44,
-          "dividendYieldPct": 3.12
-        }
-      }
-    },
     "KMB": {
       "years": {
         "2023": {
@@ -55,6 +36,25 @@
           "dps": 1350,
           "eps": 2253.26,
           "dividendYieldPct": 4.85
+        }
+      }
+    },
+    "GRNT": {
+      "years": {
+        "2023": {
+          "dps": 42,
+          "eps": 41.39,
+          "dividendYieldPct": 3.56
+        },
+        "2024": {
+          "dps": 38,
+          "eps": 11.97,
+          "dividendYieldPct": 2.04
+        },
+        "2025": {
+          "dps": 49,
+          "eps": 63.44,
+          "dividendYieldPct": 3.12
         }
       }
     },
@@ -93,6 +93,25 @@
           "dps": 500,
           "eps": 1177.13,
           "dividendYieldPct": 3.08
+        }
+      }
+    },
+    "TNB": {
+      "years": {
+        "2023": {
+          "dps": 2636,
+          "eps": 3766.55,
+          "dividendYieldPct": 8.92
+        },
+        "2024": {
+          "dps": 2596,
+          "eps": 3858.03,
+          "dividendYieldPct": 4.62
+        },
+        "2025": {
+          "dps": 2571,
+          "eps": 5713.22,
+          "dividendYieldPct": 4.56
         }
       }
     },
@@ -169,25 +188,6 @@
           "dps": null,
           "eps": 902.06,
           "dividendYieldPct": 0
-        }
-      }
-    },
-    "TNB": {
-      "years": {
-        "2023": {
-          "dps": 2636,
-          "eps": 3766.55,
-          "dividendYieldPct": 8.92
-        },
-        "2024": {
-          "dps": 2596,
-          "eps": 3858.03,
-          "dividendYieldPct": 4.62
-        },
-        "2025": {
-          "dps": 2571,
-          "eps": 5713.22,
-          "dividendYieldPct": 4.56
         }
       }
     }
