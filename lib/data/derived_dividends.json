@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T05:31:31.465Z",
-  "lastIssuerScan": "2026-07-30",
+  "generatedAt": "2026-07-31T05:56:08.581Z",
+  "lastIssuerScan": "2026-07-31",
   "issuerCount": 170,
   "recent": [
     {
@@ -184,27 +184,6 @@
       }
     },
     {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "filedAt": "2026-05-28",
-      "url": "https://seinet.com.mk/en/document/77603",
-      "grossPerShare": 2571,
-      "cumDate": "2026-06-09",
-      "exDate": "2026-06-10",
-      "recordDate": "2026-06-11",
-      "paymentStart": "2026-06-29",
-      "paymentEnd": null,
-      "parseStatus": "parsed",
-      "trailingYieldAtEx": 4.5303166464027065,
-      "yoyGrowthPct": -0.9630200308166409,
-      "profitYear": null,
-      "payoutRatioPct": 45.00262559075792,
-      "source": "SECNet",
-      "sourceFields": {
-        "grossPerShare": "SECNet"
-      }
-    },
-    {
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "filedAt": "2026-05-28",
@@ -220,6 +199,27 @@
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
+    },
+    {
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "filedAt": "2026-05-28",
+      "url": "https://seinet.com.mk/en/document/77603",
+      "grossPerShare": 2571,
+      "cumDate": "2026-06-09",
+      "exDate": "2026-06-10",
+      "recordDate": "2026-06-11",
+      "paymentStart": "2026-06-29",
+      "paymentEnd": null,
+      "parseStatus": "parsed",
+      "trailingYieldAtEx": 4.5303166464027065,
+      "yoyGrowthPct": -0.9630200308166409,
+      "profitYear": null,
+      "payoutRatioPct": 45.00262559075792,
       "source": "SECNet",
       "sourceFields": {
         "grossPerShare": "SECNet"
@@ -804,27 +804,6 @@
       }
     },
     {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "filedAt": "2026-05-28",
-      "url": "https://seinet.com.mk/en/document/77603",
-      "grossPerShare": 2571,
-      "cumDate": "2026-06-09",
-      "exDate": "2026-06-10",
-      "recordDate": "2026-06-11",
-      "paymentStart": "2026-06-29",
-      "paymentEnd": null,
-      "parseStatus": "parsed",
-      "trailingYieldAtEx": 4.5303166464027065,
-      "yoyGrowthPct": -0.9630200308166409,
-      "profitYear": null,
-      "payoutRatioPct": 45.00262559075792,
-      "source": "SECNet",
-      "sourceFields": {
-        "grossPerShare": "SECNet"
-      }
-    },
-    {
       "stockCode": "VTKS",
       "stockName": "Veteks AD Veles",
       "filedAt": "2026-05-28",
@@ -840,6 +819,27 @@
       "yoyGrowthPct": 0,
       "profitYear": null,
       "payoutRatioPct": null,
+      "source": "SECNet",
+      "sourceFields": {
+        "grossPerShare": "SECNet"
+      }
+    },
+    {
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "filedAt": "2026-05-28",
+      "url": "https://seinet.com.mk/en/document/77603",
+      "grossPerShare": 2571,
+      "cumDate": "2026-06-09",
+      "exDate": "2026-06-10",
+      "recordDate": "2026-06-11",
+      "paymentStart": "2026-06-29",
+      "paymentEnd": null,
+      "parseStatus": "parsed",
+      "trailingYieldAtEx": 4.5303166464027065,
+      "yoyGrowthPct": -0.9630200308166409,
+      "profitYear": null,
+      "payoutRatioPct": 45.00262559075792,
       "source": "SECNet",
       "sourceFields": {
         "grossPerShare": "SECNet"
@@ -1684,7 +1684,7 @@
       "trailingYieldAtEx": 4.509379509379509,
       "yoyGrowthPct": 37.362637362637365,
       "profitYear": 2024,
-      "payoutRatioPct": 57.57715338553662,
+      "payoutRatioPct": null,
       "source": "SECNet",
       "sourceFields": {
         "grossPerShare": "SECNet"
@@ -1774,7 +1774,7 @@
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2024,
-      "payoutRatioPct": 42.72708683670013
+      "payoutRatioPct": null
     },
     {
       "stockCode": "REPL",
@@ -6358,6 +6358,92 @@
         }
       }
     ],
+    "VTKS": [
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "filedAt": "2026-05-28",
+        "url": "https://seinet.com.mk/en/document/77593",
+        "grossPerShare": 378.64,
+        "cumDate": "2026-06-10",
+        "exDate": "2026-06-11",
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "trailingYieldAtEx": 37.78842315369261,
+        "yoyGrowthPct": 0,
+        "profitYear": null,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "filedAt": "2025-05-29",
+        "url": "https://seinet.com.mk/en/document/73170",
+        "grossPerShare": 378.64,
+        "cumDate": "2025-06-11",
+        "exDate": "2025-06-12",
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "trailingYieldAtEx": 37.78842315369261,
+        "yoyGrowthPct": 10.64227689790192,
+        "profitYear": null,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "filedAt": "2024-05-28",
+        "url": "https://seinet.com.mk/en/document/68582",
+        "grossPerShare": 342.22,
+        "cumDate": "2024-06-10",
+        "exDate": "2024-06-11",
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "trailingYieldAtEx": 34.15369261477046,
+        "yoyGrowthPct": -9.618635115148944,
+        "profitYear": null,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      },
+      {
+        "stockCode": "VTKS",
+        "stockName": "Veteks AD Veles",
+        "filedAt": "2022-06-02",
+        "url": "https://seinet.com.mk/en/document/59939",
+        "grossPerShare": 378.64,
+        "cumDate": "2022-06-13",
+        "exDate": "2022-06-14",
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "trailingYieldAtEx": 37.78842315369261,
+        "yoyGrowthPct": null,
+        "profitYear": null,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      }
+    ],
     "TNB": [
       {
         "stockCode": "TNB",
@@ -6517,92 +6603,6 @@
         "paymentEnd": null,
         "parseStatus": "partial",
         "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": null,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      }
-    ],
-    "VTKS": [
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "filedAt": "2026-05-28",
-        "url": "https://seinet.com.mk/en/document/77593",
-        "grossPerShare": 378.64,
-        "cumDate": "2026-06-10",
-        "exDate": "2026-06-11",
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 37.78842315369261,
-        "yoyGrowthPct": 0,
-        "profitYear": null,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "filedAt": "2025-05-29",
-        "url": "https://seinet.com.mk/en/document/73170",
-        "grossPerShare": 378.64,
-        "cumDate": "2025-06-11",
-        "exDate": "2025-06-12",
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 37.78842315369261,
-        "yoyGrowthPct": 10.64227689790192,
-        "profitYear": null,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "filedAt": "2024-05-28",
-        "url": "https://seinet.com.mk/en/document/68582",
-        "grossPerShare": 342.22,
-        "cumDate": "2024-06-10",
-        "exDate": "2024-06-11",
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 34.15369261477046,
-        "yoyGrowthPct": -9.618635115148944,
-        "profitYear": null,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "VTKS",
-        "stockName": "Veteks AD Veles",
-        "filedAt": "2022-06-02",
-        "url": "https://seinet.com.mk/en/document/59939",
-        "grossPerShare": 378.64,
-        "cumDate": "2022-06-13",
-        "exDate": "2022-06-14",
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": 37.78842315369261,
         "yoyGrowthPct": null,
         "profitYear": null,
         "payoutRatioPct": null,
@@ -6844,7 +6844,7 @@
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
         "profitYear": 2024,
-        "payoutRatioPct": 42.72708683670013
+        "payoutRatioPct": null
       },
       {
         "stockCode": "MPT",
@@ -8390,7 +8390,7 @@
         "trailingYieldAtEx": 4.509379509379509,
         "yoyGrowthPct": 37.362637362637365,
         "profitYear": 2024,
-        "payoutRatioPct": 57.57715338553662,
+        "payoutRatioPct": null,
         "source": "SECNet",
         "sourceFields": {
           "grossPerShare": "SECNet"
