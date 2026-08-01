@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-31T05:56:08.581Z",
-  "lastIssuerScan": "2026-07-31",
+  "generatedAt": "2026-08-01T05:49:52.646Z",
+  "lastIssuerScan": "2026-08-01",
   "issuerCount": 170,
   "recent": [
     {
@@ -331,7 +331,7 @@
       }
     },
     {
-      "stockCode": "GRNT",
+      "stockCode": "GRT",
       "stockName": "Granit AD Skopje",
       "filedAt": "2026-05-18",
       "url": "https://seinet.com.mk/en/document/77219",
@@ -342,8 +342,8 @@
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
       "parseStatus": "parsed",
-      "trailingYieldAtEx": 3.262316910785619,
-      "yoyGrowthPct": null,
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": 28.947368421052634,
       "profitYear": 2025,
       "payoutRatioPct": null,
       "source": "SECNet",
@@ -951,7 +951,7 @@
       }
     },
     {
-      "stockCode": "GRNT",
+      "stockCode": "GRT",
       "stockName": "Granit AD Skopje",
       "filedAt": "2026-05-18",
       "url": "https://seinet.com.mk/en/document/77219",
@@ -962,8 +962,8 @@
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
       "parseStatus": "parsed",
-      "trailingYieldAtEx": 3.262316910785619,
-      "yoyGrowthPct": null,
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": 28.947368421052634,
       "profitYear": 2025,
       "payoutRatioPct": null,
       "source": "SECNet",
@@ -1114,6 +1114,28 @@
       "sourceFields": {
         "grossPerShare": "SECNet"
       }
+    },
+    {
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
+      "filedAt": "2025-12-31",
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2025",
+      "grossPerShare": 49,
+      "cumDate": null,
+      "exDate": null,
+      "recordDate": null,
+      "paymentStart": null,
+      "paymentEnd": null,
+      "parseStatus": "partial",
+      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
+      "profitYear": 2025,
+      "payoutRatioPct": null
     },
     {
       "stockCode": "REPL",
@@ -1752,7 +1774,7 @@
       "trailingYieldAtEx": null,
       "yoyGrowthPct": null,
       "profitYear": 2024,
-      "payoutRatioPct": 317.46031746031747
+      "payoutRatioPct": null
     },
     {
       "stockCode": "MPT",
@@ -2514,11 +2536,11 @@
       "payoutRatioPct": null
     },
     {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
+      "stockCode": "UNI",
+      "stockName": "UNI Banka AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
-      "grossPerShare": 2636,
+      "url": "https://www.mse.mk/en/symbol/UNI#fy-2023",
+      "grossPerShare": 368,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -2536,11 +2558,11 @@
       "payoutRatioPct": null
     },
     {
-      "stockCode": "UNI",
-      "stockName": "UNI Banka AD Skopje",
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNI#fy-2023",
-      "grossPerShare": 368,
+      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
+      "grossPerShare": 2636,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -7188,9 +7210,9 @@
         }
       }
     ],
-    "GRNT": [
+    "GRT": [
       {
-        "stockCode": "GRNT",
+        "stockCode": "GRT",
         "stockName": "Granit AD Skopje",
         "filedAt": "2026-05-18",
         "url": "https://seinet.com.mk/en/document/77219",
@@ -7201,8 +7223,8 @@
         "paymentStart": null,
         "paymentEnd": "2026-09-30",
         "parseStatus": "parsed",
-        "trailingYieldAtEx": 3.262316910785619,
-        "yoyGrowthPct": null,
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": 28.947368421052634,
         "profitYear": 2025,
         "payoutRatioPct": null,
         "source": "SECNet",
@@ -7211,48 +7233,169 @@
         }
       },
       {
-        "stockCode": "GRNT",
+        "stockCode": "GRT",
         "stockName": "Granit AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
+        "filedAt": "2025-05-26",
+        "url": "https://seinet.com.mk/en/document/73099",
         "grossPerShare": 38,
-        "cumDate": null,
-        "exDate": null,
+        "cumDate": "2025-06-04",
+        "exDate": "2025-06-05",
         "recordDate": null,
         "paymentStart": null,
-        "paymentEnd": null,
+        "paymentEnd": "2025-09-30",
         "parseStatus": "partial",
-        "source": "MSE",
-        "sourceFields": {
-          "grossPerShare": "MSE"
-        },
-        "isSynthetic": true,
         "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
+        "yoyGrowthPct": -9.523809523809524,
         "profitYear": 2024,
-        "payoutRatioPct": 317.46031746031747
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
       },
       {
-        "stockCode": "GRNT",
+        "stockCode": "GRT",
         "stockName": "Granit AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
+        "filedAt": "2024-05-23",
+        "url": "https://seinet.com.mk/en/document/68531",
         "grossPerShare": 42,
-        "cumDate": null,
+        "cumDate": "2024-06-05",
+        "exDate": "2024-06-06",
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": "2024-09-30",
+        "parseStatus": "partial",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": 16.666666666666664,
+        "profitYear": 2023,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      },
+      {
+        "stockCode": "GRT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2023-05-30",
+        "url": "https://seinet.com.mk/en/document/64258",
+        "grossPerShare": 36,
+        "cumDate": "2023-06-14",
+        "exDate": "2023-06-15",
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": "2023-09-30",
+        "parseStatus": "partial",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": 0,
+        "profitYear": 2022,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      },
+      {
+        "stockCode": "GRT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2022-05-23",
+        "url": "https://seinet.com.mk/en/document/59556",
+        "grossPerShare": 36,
+        "cumDate": "2022-06-02",
+        "exDate": "2022-06-03",
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": 8.010801080108017,
+        "profitYear": 2021,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      },
+      {
+        "stockCode": "GRT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2021-05-21",
+        "url": "https://seinet.com.mk/en/document/55371",
+        "grossPerShare": 16.67,
+        "cumDate": "2021-06-02",
+        "exDate": null,
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": "2021-09-30",
+        "parseStatus": "partial",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": 2020,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      },
+      {
+        "stockCode": "GRT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2020-05-11",
+        "url": "https://seinet.com.mk/en/document/50241",
+        "grossPerShare": 33.33,
+        "cumDate": "2020-05-22",
+        "exDate": "2020-05-26",
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": 2019,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      },
+      {
+        "stockCode": "GRT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2019-06-19",
+        "url": "https://seinet.com.mk/en/document/46816",
+        "grossPerShare": 30,
+        "cumDate": "2019-07-01",
         "exDate": null,
         "recordDate": null,
         "paymentStart": null,
         "paymentEnd": null,
         "parseStatus": "partial",
-        "source": "MSE",
-        "sourceFields": {
-          "grossPerShare": "MSE"
-        },
-        "isSynthetic": true,
         "trailingYieldAtEx": null,
         "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
+        "profitYear": 2018,
+        "payoutRatioPct": null,
+        "source": "SECNet",
+        "sourceFields": {
+          "grossPerShare": "SECNet"
+        }
+      },
+      {
+        "stockCode": "GRT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2012-05-17",
+        "url": "https://seinet.com.mk/en/document/30661",
+        "grossPerShare": null,
+        "cumDate": null,
+        "exDate": null,
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "link_only",
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": null,
+        "payoutRatioPct": null,
+        "source": "SECNet"
       }
     ],
     "EVRO": [
@@ -8712,6 +8855,74 @@
         "source": "SECNet"
       }
     ],
+    "GRNT": [
+      {
+        "stockCode": "GRNT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2025-12-31",
+        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2025",
+        "grossPerShare": 49,
+        "cumDate": null,
+        "exDate": null,
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": 2025,
+        "payoutRatioPct": null
+      },
+      {
+        "stockCode": "GRNT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2024-12-31",
+        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
+        "grossPerShare": 38,
+        "cumDate": null,
+        "exDate": null,
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": 2024,
+        "payoutRatioPct": null
+      },
+      {
+        "stockCode": "GRNT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2023-12-31",
+        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
+        "grossPerShare": 42,
+        "cumDate": null,
+        "exDate": null,
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": 2023,
+        "payoutRatioPct": null
+      }
+    ],
     "REPL": [
       {
         "stockCode": "REPL",
@@ -9593,173 +9804,6 @@
         "sourceFields": {
           "grossPerShare": "SECNet"
         }
-      }
-    ],
-    "GRT": [
-      {
-        "stockCode": "GRT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2025-05-26",
-        "url": "https://seinet.com.mk/en/document/73099",
-        "grossPerShare": 38,
-        "cumDate": "2025-06-04",
-        "exDate": "2025-06-05",
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": "2025-09-30",
-        "parseStatus": "partial",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": -9.523809523809524,
-        "profitYear": 2024,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "GRT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2024-05-23",
-        "url": "https://seinet.com.mk/en/document/68531",
-        "grossPerShare": 42,
-        "cumDate": "2024-06-05",
-        "exDate": "2024-06-06",
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": "2024-09-30",
-        "parseStatus": "partial",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": 16.666666666666664,
-        "profitYear": 2023,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "GRT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2023-05-30",
-        "url": "https://seinet.com.mk/en/document/64258",
-        "grossPerShare": 36,
-        "cumDate": "2023-06-14",
-        "exDate": "2023-06-15",
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": "2023-09-30",
-        "parseStatus": "partial",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": 0,
-        "profitYear": 2022,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "GRT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2022-05-23",
-        "url": "https://seinet.com.mk/en/document/59556",
-        "grossPerShare": 36,
-        "cumDate": "2022-06-02",
-        "exDate": "2022-06-03",
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": 8.010801080108017,
-        "profitYear": 2021,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "GRT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2021-05-21",
-        "url": "https://seinet.com.mk/en/document/55371",
-        "grossPerShare": 16.67,
-        "cumDate": "2021-06-02",
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": "2021-09-30",
-        "parseStatus": "partial",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2020,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "GRT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2020-05-11",
-        "url": "https://seinet.com.mk/en/document/50241",
-        "grossPerShare": 33.33,
-        "cumDate": "2020-05-22",
-        "exDate": "2020-05-26",
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2019,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "GRT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2019-06-19",
-        "url": "https://seinet.com.mk/en/document/46816",
-        "grossPerShare": 30,
-        "cumDate": "2019-07-01",
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2018,
-        "payoutRatioPct": null,
-        "source": "SECNet",
-        "sourceFields": {
-          "grossPerShare": "SECNet"
-        }
-      },
-      {
-        "stockCode": "GRT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2012-05-17",
-        "url": "https://seinet.com.mk/en/document/30661",
-        "grossPerShare": null,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "link_only",
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": null,
-        "payoutRatioPct": null,
-        "source": "SECNet"
       }
     ],
     "FER": [

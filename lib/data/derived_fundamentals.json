@@ -1,6 +1,666 @@
 {
-  "generatedAt": "2026-07-31T05:54:36.111Z",
+  "generatedAt": "2026-08-01T05:48:19.122Z",
   "all": [
+    {
+      "stockCode": "CEVI",
+      "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78306",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "FERS",
+      "stockName": "Fershped AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78325",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78336",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "KJUBI",
+      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78321",
+      "netProfit": 200,
+      "eps": null,
+      "parseStatus": "partial",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "LOZP",
+      "stockName": "Pelisterka AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78301",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MAKP",
+      "stockName": "Makpromet AD Shtip",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78308",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MERM",
+      "stockName": "Mermeren kombinat AD Prilep",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78009",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MKSD",
+      "stockName": "Makoshped AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78343",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MTUR",
+      "stockName": "Makedonijaturist AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78313",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MZPU",
+      "stockName": "MZT Pumpi AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78356",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "NOSK",
+      "stockName": "Nova Stokovna kukja AD Strumica",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78329",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "OKTA",
+      "stockName": "OKTA AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78332",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "PPIV",
+      "stockName": "Prilepska pivarnica AD Prilep",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78354",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78245",
+      "netProfit": null,
+      "eps": 27,
+      "parseStatus": "parsed",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "RZEK",
+      "stockName": "RZh Ekonomika AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78247",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "RZTK",
+      "stockName": "RZh Tehnichka Kontrola AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78240",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "RZUS",
+      "stockName": "RZh Uslugi AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78358",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SBT",
+      "stockName": "Stopanska banka AD Bitola",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78303",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SDOM",
+      "stockName": "Sovremen dom AD Prilep",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78315",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SLAV",
+      "stockName": "Slavej  AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78327",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SPAZP",
+      "stockName": "Skopski Pazar AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78319",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "STIL",
+      "stockName": "Makstil AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78242",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TEL",
+      "stockName": "Makedonski Telekom AD – Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78228",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TKVS",
+      "stockName": "VV Tikvesh AD Kavadarci",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78323",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TRPS",
+      "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78350",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TSMP",
+      "stockName": "Trgotekstil Maloprodazhba AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78353",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TTKO3",
+      "stockName": "TTK Banka AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78311",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "VITA",
+      "stockName": "Vitaminka AD Prilep",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78342",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZILUP",
+      "stockName": "Zhito Luks AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78250",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78340",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "CEVI",
+      "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78306",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "FERS",
+      "stockName": "Fershped AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78325",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78336",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "KJUBI",
+      "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78321",
+      "netProfit": 200,
+      "eps": null,
+      "parseStatus": "partial",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "LOZP",
+      "stockName": "Pelisterka AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78301",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MAKP",
+      "stockName": "Makpromet AD Shtip",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78308",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MERM",
+      "stockName": "Mermeren kombinat AD Prilep",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78009",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MKSD",
+      "stockName": "Makoshped AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78343",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MTUR",
+      "stockName": "Makedonijaturist AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78313",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MZPU",
+      "stockName": "MZT Pumpi AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78356",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "NOSK",
+      "stockName": "Nova Stokovna kukja AD Strumica",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78329",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "OKTA",
+      "stockName": "OKTA AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78332",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "PPIV",
+      "stockName": "Prilepska pivarnica AD Prilep",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78354",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78245",
+      "netProfit": null,
+      "eps": 27,
+      "parseStatus": "parsed",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "RZEK",
+      "stockName": "RZh Ekonomika AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78247",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "RZTK",
+      "stockName": "RZh Tehnichka Kontrola AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78240",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "RZUS",
+      "stockName": "RZh Uslugi AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78358",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SBT",
+      "stockName": "Stopanska banka AD Bitola",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78303",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SDOM",
+      "stockName": "Sovremen dom AD Prilep",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78315",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SLAV",
+      "stockName": "Slavej  AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78327",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "SPAZ",
+      "stockName": "Skopski Pazar AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78319",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "STIL",
+      "stockName": "Makstil AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78242",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TEL",
+      "stockName": "Makedonski Telekom AD – Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78228",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TKVS",
+      "stockName": "VV Tikvesh AD Kavadarci",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78323",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TRPS",
+      "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78350",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TSMP",
+      "stockName": "Trgotekstil Maloprodazhba AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78353",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "TTK",
+      "stockName": "TTK Banka AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78311",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "VITA",
+      "stockName": "Vitaminka AD Prilep",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78342",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZILU",
+      "stockName": "Zhito Luks AD Skopje",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78250",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "fiscalYear": 2026,
+      "filedAt": "2026-07-31",
+      "url": "https://seinet.com.mk/en/document/78340",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
     {
       "stockCode": "ALK",
       "stockName": "Alkaloid AD Skopje",
@@ -3478,17 +4138,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-05-26",
-      "url": "https://seinet.com.mk/en/document/73101",
-      "netProfit": 109565536,
-      "eps": 11.97,
-      "parseStatus": "parsed",
-      "source": "MSE"
-    },
-    {
       "stockCode": "KONZ",
       "stockName": "Fruktal Mak AD Skopje",
       "fiscalYear": 2024,
@@ -3509,17 +4158,6 @@
       "eps": null,
       "parseStatus": "partial",
       "source": "SECNet"
-    },
-    {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-05-26",
-      "url": "https://seinet.com.mk/en/document/73101",
-      "netProfit": 109565536,
-      "eps": 11.97,
-      "parseStatus": "parsed",
-      "source": "MSE"
     },
     {
       "stockCode": "KONZ",
@@ -3595,17 +4233,6 @@
       "url": "https://seinet.com.mk/en/document/73020",
       "netProfit": null,
       "eps": 5465.68,
-      "parseStatus": "partial",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "FERS",
-      "stockName": "Fershped AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-05-22",
-      "url": "https://seinet.com.mk/en/document/73053",
-      "netProfit": null,
-      "eps": 8349.36,
       "parseStatus": "partial",
       "source": "SECNet"
     },
@@ -3650,17 +4277,6 @@
       "url": "https://seinet.com.mk/en/document/73020",
       "netProfit": null,
       "eps": 5465.68,
-      "parseStatus": "partial",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "FERS",
-      "stockName": "Fershped AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-05-22",
-      "url": "https://seinet.com.mk/en/document/73053",
-      "netProfit": null,
-      "eps": 8349.36,
       "parseStatus": "partial",
       "source": "SECNet"
     },
@@ -4248,28 +4864,6 @@
       "source": "MSE"
     },
     {
-      "stockCode": "LOZP",
-      "stockName": "Pelisterka AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-04-01",
-      "url": "https://seinet.com.mk/en/document/71729",
-      "netProfit": null,
-      "eps": 369.65,
-      "parseStatus": "partial",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "LOZP",
-      "stockName": "Pelisterka AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2025-04-01",
-      "url": "https://seinet.com.mk/en/document/71729",
-      "netProfit": null,
-      "eps": 369.65,
-      "parseStatus": "partial",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "RZIT",
       "stockName": "RZh Inter-Transshped AD Skopje",
       "fiscalYear": 2024,
@@ -4446,13 +5040,24 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "MPT",
-      "stockName": "Makpetrol AD Skopje",
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
       "fiscalYear": 2024,
       "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/MPT#fy-2024",
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
       "netProfit": null,
-      "eps": 9829.83,
+      "eps": 11.97,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "ALK",
+      "stockName": "Alkaloid AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2024-12-31",
+      "url": "https://www.mse.mk/en/symbol/ALK#fy-2024",
+      "netProfit": null,
+      "eps": 1176.54,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -4468,6 +5073,17 @@
       "source": "MSE"
     },
     {
+      "stockCode": "MPT",
+      "stockName": "Makpetrol AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2024-12-31",
+      "url": "https://www.mse.mk/en/symbol/MPT#fy-2024",
+      "netProfit": null,
+      "eps": 9829.83,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "fiscalYear": 2024,
@@ -4475,17 +5091,6 @@
       "url": "https://www.mse.mk/en/symbol/REPL#fy-2024",
       "netProfit": null,
       "eps": 864.95,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
-      "stockCode": "ALK",
-      "stockName": "Alkaloid AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/ALK#fy-2024",
-      "netProfit": null,
-      "eps": 1176.54,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -4611,13 +5216,13 @@
       "source": "MSE"
     },
     {
-      "stockCode": "MPT",
-      "stockName": "Makpetrol AD Skopje",
+      "stockCode": "ALK",
+      "stockName": "Alkaloid AD Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/MPT#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/ALK#fy-2023",
       "netProfit": null,
-      "eps": 6987.26,
+      "eps": 1101.69,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -4633,6 +5238,17 @@
       "source": "MSE"
     },
     {
+      "stockCode": "MPT",
+      "stockName": "Makpetrol AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/MPT#fy-2023",
+      "netProfit": null,
+      "eps": 6987.26,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "fiscalYear": 2023,
@@ -4644,13 +5260,13 @@
       "source": "MSE"
     },
     {
-      "stockCode": "ALK",
-      "stockName": "Alkaloid AD Skopje",
+      "stockCode": "UNI",
+      "stockName": "UNI Banka AD Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/ALK#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/UNI#fy-2023",
       "netProfit": null,
-      "eps": 1101.69,
+      "eps": 872.75,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -4662,6 +5278,17 @@
       "url": "https://www.mse.mk/en/symbol/TEL#fy-2023",
       "netProfit": null,
       "eps": 21.71,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "STB",
+      "stockName": "Stopanska banka AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/STB#fy-2023",
+      "netProfit": null,
+      "eps": 198.78,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -4684,28 +5311,6 @@
       "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
       "netProfit": null,
       "eps": 3766.55,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
-      "stockCode": "UNI",
-      "stockName": "UNI Banka AD Skopje",
-      "fiscalYear": 2023,
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNI#fy-2023",
-      "netProfit": null,
-      "eps": 872.75,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
-      "stockCode": "STB",
-      "stockName": "Stopanska banka AD Skopje",
-      "fiscalYear": 2023,
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/STB#fy-2023",
-      "netProfit": null,
-      "eps": 198.78,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5325,6 +5930,28 @@
       {
         "stockCode": "CEVI",
         "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78306",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CEVI",
+        "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78306",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "CEVI",
+        "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
         "fiscalYear": 2025,
         "filedAt": "2026-05-04",
         "url": "https://seinet.com.mk/en/document/77020",
@@ -5634,12 +6261,23 @@
       {
         "stockCode": "FERS",
         "stockName": "Fershped AD Skopje",
-        "fiscalYear": 2025,
-        "filedAt": "2026-05-27",
-        "url": "https://seinet.com.mk/en/document/77500",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78325",
         "netProfit": null,
-        "eps": 7000.83,
-        "parseStatus": "partial",
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "FERS",
+        "stockName": "Fershped AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78325",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -5656,22 +6294,11 @@
       {
         "stockCode": "FERS",
         "stockName": "Fershped AD Skopje",
-        "fiscalYear": 2024,
-        "filedAt": "2025-05-22",
-        "url": "https://seinet.com.mk/en/document/73053",
+        "fiscalYear": 2025,
+        "filedAt": "2026-05-27",
+        "url": "https://seinet.com.mk/en/document/77500",
         "netProfit": null,
-        "eps": 8349.36,
-        "parseStatus": "partial",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "FERS",
-        "stockName": "Fershped AD Skopje",
-        "fiscalYear": 2024,
-        "filedAt": "2025-05-22",
-        "url": "https://seinet.com.mk/en/document/73053",
-        "netProfit": null,
-        "eps": 8349.36,
+        "eps": 7000.83,
         "parseStatus": "partial",
         "source": "SECNet"
       }
@@ -5748,6 +6375,28 @@
       {
         "stockCode": "GRNT",
         "stockName": "Granit AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78336",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "GRNT",
+        "stockName": "Granit AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78336",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "GRNT",
+        "stockName": "Granit AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-05-18",
         "url": "https://seinet.com.mk/en/document/77225",
@@ -5771,22 +6420,11 @@
         "stockCode": "GRNT",
         "stockName": "Granit AD Skopje",
         "fiscalYear": 2024,
-        "filedAt": "2025-05-26",
-        "url": "https://seinet.com.mk/en/document/73101",
-        "netProfit": 109565536,
+        "filedAt": "2024-12-31",
+        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
+        "netProfit": null,
         "eps": 11.97,
-        "parseStatus": "parsed",
-        "source": "MSE"
-      },
-      {
-        "stockCode": "GRNT",
-        "stockName": "Granit AD Skopje",
-        "fiscalYear": 2024,
-        "filedAt": "2025-05-26",
-        "url": "https://seinet.com.mk/en/document/73101",
-        "netProfit": 109565536,
-        "eps": 11.97,
-        "parseStatus": "parsed",
+        "parseStatus": "partial",
         "source": "MSE"
       },
       {
@@ -6052,6 +6690,28 @@
       }
     ],
     "KJUBI": [
+      {
+        "stockCode": "KJUBI",
+        "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78321",
+        "netProfit": 200,
+        "eps": null,
+        "parseStatus": "partial",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KJUBI",
+        "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78321",
+        "netProfit": 200,
+        "eps": null,
+        "parseStatus": "partial",
+        "source": "SECNet"
+      },
       {
         "stockCode": "KJUBI",
         "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
@@ -6509,12 +7169,23 @@
       {
         "stockCode": "LOZP",
         "stockName": "Pelisterka AD Skopje",
-        "fiscalYear": 2025,
-        "filedAt": "2026-04-01",
-        "url": "https://seinet.com.mk/en/document/76137",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78301",
         "netProfit": null,
-        "eps": 673.77,
-        "parseStatus": "partial",
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "LOZP",
+        "stockName": "Pelisterka AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78301",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
         "source": "SECNet"
       },
       {
@@ -6531,27 +7202,38 @@
       {
         "stockCode": "LOZP",
         "stockName": "Pelisterka AD Skopje",
-        "fiscalYear": 2024,
-        "filedAt": "2025-04-01",
-        "url": "https://seinet.com.mk/en/document/71729",
+        "fiscalYear": 2025,
+        "filedAt": "2026-04-01",
+        "url": "https://seinet.com.mk/en/document/76137",
         "netProfit": null,
-        "eps": 369.65,
-        "parseStatus": "partial",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "LOZP",
-        "stockName": "Pelisterka AD Skopje",
-        "fiscalYear": 2024,
-        "filedAt": "2025-04-01",
-        "url": "https://seinet.com.mk/en/document/71729",
-        "netProfit": null,
-        "eps": 369.65,
+        "eps": 673.77,
         "parseStatus": "partial",
         "source": "SECNet"
       }
     ],
     "MAKP": [
+      {
+        "stockCode": "MAKP",
+        "stockName": "Makpromet AD Shtip",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78308",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MAKP",
+        "stockName": "Makpromet AD Shtip",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78308",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "MAKP",
         "stockName": "Makpromet AD Shtip",
@@ -6647,6 +7329,28 @@
       {
         "stockCode": "MERM",
         "stockName": "Mermeren kombinat AD Prilep",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78009",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MERM",
+        "stockName": "Mermeren kombinat AD Prilep",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78009",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MERM",
+        "stockName": "Mermeren kombinat AD Prilep",
         "fiscalYear": 2025,
         "filedAt": "2026-05-28",
         "url": "https://seinet.com.mk/en/document/77558",
@@ -6690,6 +7394,28 @@
       }
     ],
     "MKSD": [
+      {
+        "stockCode": "MKSD",
+        "stockName": "Makoshped AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78343",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MKSD",
+        "stockName": "Makoshped AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78343",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "MKSD",
         "stockName": "Makoshped AD Skopje",
@@ -6943,6 +7669,28 @@
       {
         "stockCode": "MTUR",
         "stockName": "Makedonijaturist AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78313",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MTUR",
+        "stockName": "Makedonijaturist AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78313",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MTUR",
+        "stockName": "Makedonijaturist AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-05-26",
         "url": "https://seinet.com.mk/en/document/77339",
@@ -7057,6 +7805,28 @@
       {
         "stockCode": "MZPU",
         "stockName": "MZT Pumpi AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78356",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MZPU",
+        "stockName": "MZT Pumpi AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78356",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MZPU",
+        "stockName": "MZT Pumpi AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-05-06",
         "url": "https://seinet.com.mk/en/document/77062",
@@ -7146,6 +7916,28 @@
       }
     ],
     "NOSK": [
+      {
+        "stockCode": "NOSK",
+        "stockName": "Nova Stokovna kukja AD Strumica",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78329",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "NOSK",
+        "stockName": "Nova Stokovna kukja AD Strumica",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78329",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "NOSK",
         "stockName": "Nova Stokovna kukja AD Strumica",
@@ -7260,6 +8052,28 @@
       }
     ],
     "OKTA": [
+      {
+        "stockCode": "OKTA",
+        "stockName": "OKTA AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78332",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "OKTA",
+        "stockName": "OKTA AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78332",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "OKTA",
         "stockName": "OKTA AD Skopje",
@@ -7491,6 +8305,28 @@
       {
         "stockCode": "PPIV",
         "stockName": "Prilepska pivarnica AD Prilep",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78354",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "PPIV",
+        "stockName": "Prilepska pivarnica AD Prilep",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78354",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "PPIV",
+        "stockName": "Prilepska pivarnica AD Prilep",
         "fiscalYear": 2025,
         "filedAt": "2026-05-28",
         "url": "https://seinet.com.mk/en/document/77550",
@@ -7583,6 +8419,28 @@
       {
         "stockCode": "REPL",
         "stockName": "Replek AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78245",
+        "netProfit": null,
+        "eps": 27,
+        "parseStatus": "parsed",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "REPL",
+        "stockName": "Replek AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78245",
+        "netProfit": null,
+        "eps": 27,
+        "parseStatus": "parsed",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "REPL",
+        "stockName": "Replek AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-04-02",
         "url": "https://seinet.com.mk/en/document/76149",
@@ -7626,6 +8484,28 @@
       }
     ],
     "RZEK": [
+      {
+        "stockCode": "RZEK",
+        "stockName": "RZh Ekonomika AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78247",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZEK",
+        "stockName": "RZh Ekonomika AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78247",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "RZEK",
         "stockName": "RZh Ekonomika AD Skopje",
@@ -7811,6 +8691,28 @@
       {
         "stockCode": "RZTK",
         "stockName": "RZh Tehnichka Kontrola AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78240",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZTK",
+        "stockName": "RZh Tehnichka Kontrola AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78240",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZTK",
+        "stockName": "RZh Tehnichka Kontrola AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-05-28",
         "url": "https://seinet.com.mk/en/document/77535",
@@ -7925,6 +8827,28 @@
       {
         "stockCode": "RZUS",
         "stockName": "RZh Uslugi AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78358",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZUS",
+        "stockName": "RZh Uslugi AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78358",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "RZUS",
+        "stockName": "RZh Uslugi AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-05-05",
         "url": "https://seinet.com.mk/en/document/77051",
@@ -7946,6 +8870,28 @@
       }
     ],
     "SBT": [
+      {
+        "stockCode": "SBT",
+        "stockName": "Stopanska banka AD Bitola",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78303",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SBT",
+        "stockName": "Stopanska banka AD Bitola",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78303",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "SBT",
         "stockName": "Stopanska banka AD Bitola",
@@ -7992,6 +8938,28 @@
       }
     ],
     "SDOM": [
+      {
+        "stockCode": "SDOM",
+        "stockName": "Sovremen dom AD Prilep",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78315",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SDOM",
+        "stockName": "Sovremen dom AD Prilep",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78315",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "SDOM",
         "stockName": "Sovremen dom AD Prilep",
@@ -8087,6 +9055,28 @@
       {
         "stockCode": "SLAV",
         "stockName": "Slavej  AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78327",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SLAV",
+        "stockName": "Slavej  AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78327",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SLAV",
+        "stockName": "Slavej  AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-05-21",
         "url": "https://seinet.com.mk/en/document/77293",
@@ -8130,6 +9120,17 @@
       }
     ],
     "SPAZP": [
+      {
+        "stockCode": "SPAZP",
+        "stockName": "Skopski Pazar AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78319",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "SPAZP",
         "stockName": "Skopski Pazar AD Skopje",
@@ -8325,6 +9326,28 @@
       }
     ],
     "STIL": [
+      {
+        "stockCode": "STIL",
+        "stockName": "Makstil AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78242",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "STIL",
+        "stockName": "Makstil AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78242",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "STIL",
         "stockName": "Makstil AD Skopje",
@@ -8624,6 +9647,28 @@
       {
         "stockCode": "TEL",
         "stockName": "Makedonski Telekom AD – Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78228",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TEL",
+        "stockName": "Makedonski Telekom AD – Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78228",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TEL",
+        "stockName": "Makedonski Telekom AD – Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-05-27",
         "url": "https://seinet.com.mk/en/document/77464",
@@ -8885,6 +9930,28 @@
       {
         "stockCode": "TKVS",
         "stockName": "VV Tikvesh AD Kavadarci",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78323",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TKVS",
+        "stockName": "VV Tikvesh AD Kavadarci",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78323",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TKVS",
+        "stockName": "VV Tikvesh AD Kavadarci",
         "fiscalYear": 2025,
         "filedAt": "2026-06-01",
         "url": "https://seinet.com.mk/en/document/77714",
@@ -9034,6 +10101,28 @@
       {
         "stockCode": "TRPS",
         "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78350",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TRPS",
+        "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78350",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TRPS",
+        "stockName": "Patnichki soobrakjaj Transkop AD Bitola",
         "fiscalYear": 2025,
         "filedAt": "2026-04-22",
         "url": "https://seinet.com.mk/en/document/76369",
@@ -9080,6 +10169,28 @@
       {
         "stockCode": "TSMP",
         "stockName": "Trgotekstil Maloprodazhba AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78353",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TSMP",
+        "stockName": "Trgotekstil Maloprodazhba AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78353",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "TSMP",
+        "stockName": "Trgotekstil Maloprodazhba AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-04-28",
         "url": "https://seinet.com.mk/en/document/76707",
@@ -9123,6 +10234,17 @@
       }
     ],
     "TTKO3": [
+      {
+        "stockCode": "TTKO3",
+        "stockName": "TTK Banka AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78311",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "TTKO3",
         "stockName": "TTK Banka AD Skopje",
@@ -9250,6 +10372,28 @@
       }
     ],
     "VITA": [
+      {
+        "stockCode": "VITA",
+        "stockName": "Vitaminka AD Prilep",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78342",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "VITA",
+        "stockName": "Vitaminka AD Prilep",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78342",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "VITA",
         "stockName": "Vitaminka AD Prilep",
@@ -9503,6 +10647,17 @@
       {
         "stockCode": "ZILUP",
         "stockName": "Zhito Luks AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78250",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZILUP",
+        "stockName": "Zhito Luks AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-05-08",
         "url": "https://seinet.com.mk/en/document/77097",
@@ -9592,6 +10747,28 @@
       }
     ],
     "ZPKO": [
+      {
+        "stockCode": "ZPKO",
+        "stockName": "ZK Pelagonija AD Bitola",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78340",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZPKO",
+        "stockName": "ZK Pelagonija AD Bitola",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78340",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "ZPKO",
         "stockName": "ZK Pelagonija AD Bitola",
@@ -9700,6 +10877,17 @@
       {
         "stockCode": "SPAZ",
         "stockName": "Skopski Pazar AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78319",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "SPAZ",
+        "stockName": "Skopski Pazar AD Skopje",
         "fiscalYear": 2025,
         "filedAt": "2026-05-27",
         "url": "https://seinet.com.mk/en/document/77394",
@@ -9767,6 +10955,17 @@
       }
     ],
     "TTK": [
+      {
+        "stockCode": "TTK",
+        "stockName": "TTK Banka AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78311",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "TTK",
         "stockName": "TTK Banka AD Skopje",
@@ -9848,6 +11047,17 @@
       }
     ],
     "ZILU": [
+      {
+        "stockCode": "ZILU",
+        "stockName": "Zhito Luks AD Skopje",
+        "fiscalYear": 2026,
+        "filedAt": "2026-07-31",
+        "url": "https://seinet.com.mk/en/document/78250",
+        "netProfit": null,
+        "eps": null,
+        "parseStatus": "link_only",
+        "source": "SECNet"
+      },
       {
         "stockCode": "ZILU",
         "stockName": "Zhito Luks AD Skopje",
