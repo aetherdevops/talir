@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-01T05:49:52.646Z",
-  "lastIssuerScan": "2026-08-01",
+  "generatedAt": "2026-08-02T05:45:48.929Z",
+  "lastIssuerScan": "2026-08-02",
   "issuerCount": 170,
   "recent": [
     {
@@ -2536,11 +2536,11 @@
       "payoutRatioPct": null
     },
     {
-      "stockCode": "UNI",
-      "stockName": "UNI Banka AD Skopje",
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNI#fy-2023",
-      "grossPerShare": 368,
+      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
+      "grossPerShare": 2636,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -2558,11 +2558,11 @@
       "payoutRatioPct": null
     },
     {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
+      "stockCode": "UNI",
+      "stockName": "UNI Banka AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
-      "grossPerShare": 2636,
+      "url": "https://www.mse.mk/en/symbol/UNI#fy-2023",
+      "grossPerShare": 368,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
