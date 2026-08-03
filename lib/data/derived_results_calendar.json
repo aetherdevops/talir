@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-02T05:33:43.278Z",
-  "lastIssuerScan": "2026-08-02",
+  "generatedAt": "2026-08-03T05:49:05.881Z",
+  "lastIssuerScan": "2026-08-03",
   "issuerCount": 170,
   "recent": [
     {
@@ -2209,18 +2209,6 @@
       "filedAt": "2026-05-06",
       "headline": "MZPU files audited financial statements",
       "url": "https://seinet.com.mk/en/document/77062",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "RZUS",
-      "stockName": "RZh Uslugi AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-05",
-      "headline": "RZUS files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/77051",
       "source": "SECNet"
     }
   ],
