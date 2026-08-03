@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-03T06:01:20.876Z",
+  "generatedAt": "2026-08-03T06:23:58.132Z",
   "parserVersion": "1.5.0",
   "summary": {
-    "parsed": 22,
+    "parsed": 21,
     "partial_dps_only": 2,
-    "partial": 133,
+    "partial": 134,
     "link_only": 33,
     "mse_only": 12,
     "no_document": 0,
@@ -816,7 +816,7 @@
       "hasMseDps": true,
       "mseDps": 49,
       "hasOverride": false,
-      "hasSeinetDocument": true
+      "hasSeinetDocument": false
     },
     {
       "stockCode": "GRNT",
@@ -853,9 +853,9 @@
     {
       "stockCode": "GRT",
       "profitYear": 2025,
-      "kind": "parsed",
+      "kind": "partial",
       "source": "SECNet",
-      "parseStatus": "parsed",
+      "parseStatus": "partial",
       "grossPerShare": 49,
       "exDate": "2026-05-28",
       "paymentStart": null,
@@ -3346,7 +3346,7 @@
       "hasMseDps": true,
       "mseDps": 49,
       "hasOverride": false,
-      "hasSeinetDocument": true
+      "hasSeinetDocument": false
     },
     {
       "stockCode": "GRNT",

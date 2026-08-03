@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T06:01:18.885Z",
+  "generatedAt": "2026-08-03T06:23:56.157Z",
   "lastIssuerScan": "2026-08-03",
   "issuerCount": 170,
   "recent": [
@@ -341,7 +341,7 @@
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
-      "parseStatus": "parsed",
+      "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 28.947368421052634,
       "profitYear": 2025,
@@ -961,7 +961,7 @@
       "recordDate": null,
       "paymentStart": null,
       "paymentEnd": "2026-09-30",
-      "parseStatus": "parsed",
+      "parseStatus": "partial",
       "trailingYieldAtEx": null,
       "yoyGrowthPct": 28.947368421052634,
       "profitYear": 2025,
@@ -1116,28 +1116,6 @@
       }
     },
     {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "filedAt": "2025-12-31",
-      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2025",
-      "grossPerShare": 49,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "sourceFields": {
-        "grossPerShare": "MSE"
-      },
-      "isSynthetic": true,
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2025,
-      "payoutRatioPct": null
-    },
-    {
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "filedAt": "2025-12-31",
@@ -1158,6 +1136,28 @@
       "yoyGrowthPct": null,
       "profitYear": 2025,
       "payoutRatioPct": 42.476192094331125
+    },
+    {
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
+      "filedAt": "2025-12-31",
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2025",
+      "grossPerShare": 49,
+      "cumDate": null,
+      "exDate": null,
+      "recordDate": null,
+      "paymentStart": null,
+      "paymentEnd": null,
+      "parseStatus": "partial",
+      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
+      "profitYear": 2025,
+      "payoutRatioPct": null
     },
     {
       "stockCode": "STB",
@@ -1755,6 +1755,28 @@
       }
     },
     {
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
+      "filedAt": "2024-12-31",
+      "url": "https://www.mse.mk/en/symbol/REPL#fy-2024",
+      "grossPerShare": 400,
+      "cumDate": null,
+      "exDate": null,
+      "recordDate": null,
+      "paymentStart": null,
+      "paymentEnd": null,
+      "parseStatus": "partial",
+      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
+      "profitYear": 2024,
+      "payoutRatioPct": null
+    },
+    {
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "filedAt": "2024-12-31",
@@ -1782,28 +1804,6 @@
       "filedAt": "2024-12-31",
       "url": "https://www.mse.mk/en/symbol/MPT#fy-2024",
       "grossPerShare": 4200,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "sourceFields": {
-        "grossPerShare": "MSE"
-      },
-      "isSynthetic": true,
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "REPL",
-      "stockName": "Replek AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/REPL#fy-2024",
-      "grossPerShare": 400,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -2470,6 +2470,28 @@
       }
     },
     {
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/REPL#fy-2023",
+      "grossPerShare": 300,
+      "cumDate": null,
+      "exDate": null,
+      "recordDate": null,
+      "paymentStart": null,
+      "paymentEnd": null,
+      "parseStatus": "partial",
+      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
+      "profitYear": 2023,
+      "payoutRatioPct": null
+    },
+    {
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "filedAt": "2023-12-31",
@@ -2497,28 +2519,6 @@
       "filedAt": "2023-12-31",
       "url": "https://www.mse.mk/en/symbol/MPT#fy-2023",
       "grossPerShare": 3700,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "sourceFields": {
-        "grossPerShare": "MSE"
-      },
-      "isSynthetic": true,
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "REPL",
-      "stockName": "Replek AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/REPL#fy-2023",
-      "grossPerShare": 300,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -7222,7 +7222,7 @@
         "recordDate": null,
         "paymentStart": null,
         "paymentEnd": "2026-09-30",
-        "parseStatus": "parsed",
+        "parseStatus": "partial",
         "trailingYieldAtEx": null,
         "yoyGrowthPct": 28.947368421052634,
         "profitYear": 2025,
@@ -8855,74 +8855,6 @@
         "source": "SECNet"
       }
     ],
-    "GRNT": [
-      {
-        "stockCode": "GRNT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2025-12-31",
-        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2025",
-        "grossPerShare": 49,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "sourceFields": {
-          "grossPerShare": "MSE"
-        },
-        "isSynthetic": true,
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2025,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "GRNT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2024-12-31",
-        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
-        "grossPerShare": 38,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "sourceFields": {
-          "grossPerShare": "MSE"
-        },
-        "isSynthetic": true,
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2024,
-        "payoutRatioPct": null
-      },
-      {
-        "stockCode": "GRNT",
-        "stockName": "Granit AD Skopje",
-        "filedAt": "2023-12-31",
-        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
-        "grossPerShare": 42,
-        "cumDate": null,
-        "exDate": null,
-        "recordDate": null,
-        "paymentStart": null,
-        "paymentEnd": null,
-        "parseStatus": "partial",
-        "source": "MSE",
-        "sourceFields": {
-          "grossPerShare": "MSE"
-        },
-        "isSynthetic": true,
-        "trailingYieldAtEx": null,
-        "yoyGrowthPct": null,
-        "profitYear": 2023,
-        "payoutRatioPct": null
-      }
-    ],
     "REPL": [
       {
         "stockCode": "REPL",
@@ -8974,6 +8906,74 @@
         "filedAt": "2023-12-31",
         "url": "https://www.mse.mk/en/symbol/REPL#fy-2023",
         "grossPerShare": 300,
+        "cumDate": null,
+        "exDate": null,
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": 2023,
+        "payoutRatioPct": null
+      }
+    ],
+    "GRNT": [
+      {
+        "stockCode": "GRNT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2025-12-31",
+        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2025",
+        "grossPerShare": 49,
+        "cumDate": null,
+        "exDate": null,
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": 2025,
+        "payoutRatioPct": null
+      },
+      {
+        "stockCode": "GRNT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2024-12-31",
+        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
+        "grossPerShare": 38,
+        "cumDate": null,
+        "exDate": null,
+        "recordDate": null,
+        "paymentStart": null,
+        "paymentEnd": null,
+        "parseStatus": "partial",
+        "source": "MSE",
+        "sourceFields": {
+          "grossPerShare": "MSE"
+        },
+        "isSynthetic": true,
+        "trailingYieldAtEx": null,
+        "yoyGrowthPct": null,
+        "profitYear": 2024,
+        "payoutRatioPct": null
+      },
+      {
+        "stockCode": "GRNT",
+        "stockName": "Granit AD Skopje",
+        "filedAt": "2023-12-31",
+        "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
+        "grossPerShare": 42,
         "cumDate": null,
         "exDate": null,
         "recordDate": null,
