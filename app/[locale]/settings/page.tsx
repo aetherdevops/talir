@@ -7,6 +7,7 @@ import { NotificationSettings } from '@/components/settings/NotificationSettings
 import { DataPrivacySettings } from '@/components/settings/DataPrivacySettings'
 import { AboutSection } from '@/components/settings/AboutSection'
 import { DisplaySettings, DefaultSettings } from '@/components/settings/DisplaySettings'
+import { SectionCard } from '@/components/ui/SectionCard'
 import { useLocale } from '@/components/providers/LocaleProvider'
 
 function SettingsSection({
@@ -19,13 +20,13 @@ function SettingsSection({
     children: React.ReactNode
 }) {
     return (
-        <section className="bg-surface border border-border rounded-xl p-4 sm:p-6 space-y-4">
+        <SectionCard className="p-4 sm:p-6 space-y-4">
             <div>
                 <h2 className="text-lg font-semibold text-text-primary">{title}</h2>
                 {description && <p className="text-sm text-text-secondary mt-1">{description}</p>}
             </div>
             {children}
-        </section>
+        </SectionCard>
     )
 }
 

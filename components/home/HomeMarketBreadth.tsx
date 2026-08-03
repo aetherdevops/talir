@@ -6,6 +6,7 @@ import { MarketSentimentStrip } from '@/components/markets/MarketSentimentStrip'
 import { BreadthAdvancersSparkline } from '@/components/home/BreadthAdvancersSparkline'
 import { BreadthStockPreview } from '@/components/markets/BreadthStockPreview'
 import { InfoPopover } from '@/components/ui/InfoPopover'
+import { SectionCard } from '@/components/ui/SectionCard'
 import { useInstruments } from '@/components/providers/InstrumentsProvider'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import { resolveStocksByCodes } from '@/lib/market-breadth-utils'
@@ -42,10 +43,7 @@ export function HomeMarketBreadth({ sentiment, breadth, asOfDate }: HomeMarketBr
     }
 
     return (
-        <section
-            className="rounded-xl bg-surface-secondary p-3 space-y-3 min-w-0"
-            aria-labelledby="market-breadth-sr-only"
-        >
+        <SectionCard className="p-3 space-y-3" aria-labelledby="market-breadth-sr-only">
             <h2 id="market-breadth-sr-only" className="sr-only">
                 {t('home.breadthSrOnly')}
             </h2>
@@ -135,6 +133,6 @@ export function HomeMarketBreadth({ sentiment, breadth, asOfDate }: HomeMarketBr
                     ) : null}
                 </div>
             ) : null}
-        </section>
+        </SectionCard>
     )
 }

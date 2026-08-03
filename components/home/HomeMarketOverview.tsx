@@ -60,7 +60,9 @@ export function HomeMarketOverview({
 
             {mbi10 ? <HomeMbi10Chart index={mbi10} asOfDate={asOfDate} /> : null}
 
-            <HomeMarketBreadth sentiment={sentiment} breadth={breadth} asOfDate={asOfDate} />
+            <div className="pt-4 sm:pt-2">
+                <HomeMarketBreadth sentiment={sentiment} breadth={breadth} asOfDate={asOfDate} />
+            </div>
 
             <HomeIndexStrip indices={indices} asOfDate={asOfDate} />
 

@@ -270,8 +270,13 @@ function PriceChartComponent({
     }, [data, isDarkMode, chartColor, gridColor, textColor, crosshairColor, markerBorder, hideTooltip, t])
 
     return (
-        <div className="flex flex-col gap-4 w-full min-w-0">
-            <div className={cn('relative w-full min-w-0', chartClassName ?? DEFAULT_CHART_CLASS)}>
+        <div className="flex flex-col gap-3 w-full min-w-0">
+            <div
+                className={cn(
+                    'relative w-full min-w-0 overflow-hidden rounded-lg',
+                    chartClassName ?? DEFAULT_CHART_CLASS
+                )}
+            >
                 <div className="absolute inset-0 w-full h-full touch-pan-x" ref={chartContainerRef} />
                 {tooltip && (
                     <div
@@ -297,7 +302,7 @@ function PriceChartComponent({
                 </p>
             ) : null}
 
-            <div className="pl-2 md:pl-0 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-hide">
+            <div className="pl-2 md:pl-0 mt-1 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-hide shrink-0">
                 <div className="flex justify-start gap-1 flex-nowrap min-w-max">
                     {(['1D', '5D', '1M', '3M', '6M', 'YTD', '1Y', '5Y', 'MAX'] as const)
                         .filter((tf) => !excludePeriods.includes(tf))

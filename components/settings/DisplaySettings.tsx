@@ -1,6 +1,7 @@
 'use client'
 
 import { usePreferencesStore, type ChartRange, type ListDensity, type PortfolioCurrency } from '@/lib/stores/preferences'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn } from '@/lib/utils'
 
 function OptionGrid<T extends string>({
@@ -35,6 +36,7 @@ function OptionGrid<T extends string>({
 
 export function DisplaySettings() {
     const { defaultChartRange, listDensity, setPreferences } = usePreferencesStore()
+    const { t } = useLocale()
 
     const chartOptions: { value: ChartRange; label: string }[] = [
         { value: '1M', label: '1M' },
@@ -47,14 +49,14 @@ export function DisplaySettings() {
     ]
 
     const densityOptions: { value: ListDensity; label: string }[] = [
-        { value: 'comfortable', label: 'Comfortable' },
-        { value: 'compact', label: 'Compact' },
+        { value: 'comfortable', label: t('settings.comfortable') },
+        { value: 'compact', label: t('settings.compact') },
     ]
 
     return (
         <div className="space-y-6">
             <div>
-                <p className="text-sm font-medium text-text-primary mb-2">Default chart range</p>
+                <p className="text-sm font-medium text-text-primary mb-2">{t('settings.chartRange')}</p>
                 <OptionGrid
                     options={chartOptions}
                     value={defaultChartRange}
@@ -62,7 +64,7 @@ export function DisplaySettings() {
                 />
             </div>
             <div>
-                <p className="text-sm font-medium text-text-primary mb-2">List density</p>
+                <p className="text-sm font-medium text-text-primary mb-2">{t('settings.listDensity')}</p>
                 <OptionGrid
                     options={densityOptions}
                     value={listDensity}
@@ -75,6 +77,7 @@ export function DisplaySettings() {
 
 export function DefaultSettings() {
     const { defaultPortfolioCurrency, setPreferences } = usePreferencesStore()
+    const { t } = useLocale()
 
     const currencyOptions: { value: PortfolioCurrency; label: string }[] = [
         { value: 'MKD', label: 'MKD' },
@@ -84,7 +87,7 @@ export function DefaultSettings() {
 
     return (
         <div>
-            <p className="text-sm font-medium text-text-primary mb-2">Default currency for new portfolios</p>
+            <p className="text-sm font-medium text-text-primary mb-2">{t('settings.defaultCurrency')}</p>
             <OptionGrid
                 options={currencyOptions}
                 value={defaultPortfolioCurrency}

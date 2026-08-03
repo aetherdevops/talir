@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import { ClientPriceChart } from '@/components/charts/ClientPriceChart'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
+import { SectionCard } from '@/components/ui/SectionCard'
 import { LocaleLink } from '@/components/layout/LocaleLink'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { useLocale } from '@/components/providers/LocaleProvider'
@@ -64,10 +65,7 @@ export function HomeMbi10Chart({ index, asOfDate }: HomeMbi10ChartProps) {
     }, [index.history, timeframe])
 
     return (
-        <section
-            className="rounded-xl border border-border bg-surface p-4 sm:p-5 space-y-3 min-w-0"
-            aria-labelledby="home-mbi10-heading"
-        >
+        <SectionCard className="p-4 sm:p-5 space-y-3" aria-labelledby="home-mbi10-heading">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
                 <div className="min-w-0 space-y-1">
                     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -97,7 +95,7 @@ export function HomeMbi10Chart({ index, asOfDate }: HomeMbi10ChartProps) {
                 </LocaleLink>
             </div>
 
-            <div className="w-full min-w-0">
+            <div className="w-full min-w-0 pb-1">
                 <ClientPriceChart
                     data={chartData}
                     timeframe={timeframe}
@@ -106,6 +104,6 @@ export function HomeMbi10Chart({ index, asOfDate }: HomeMbi10ChartProps) {
                     chartClassName={HOME_CHART_CLASS}
                 />
             </div>
-        </section>
+        </SectionCard>
     )
 }

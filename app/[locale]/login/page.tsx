@@ -7,7 +7,14 @@ import { createClientIfConfigured } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Label } from '@/components/ui/Label'
+import { PasswordInput } from '@/components/ui/PasswordInput'
+import { SectionCard } from '@/components/ui/SectionCard'
 import { useLocale } from '@/components/providers/LocaleProvider'
+import {
+    applyRequiredMessages,
+    clearCustomValidity,
+    setRequiredCustomValidity,
+} from '@/lib/auth/form-validity'
 
 const RESEND_COOLDOWN_SEC = 60
 
@@ -17,6 +24,7 @@ function LoginForm() {
     const { t } = useLocale()
     const redirect = searchParams.get('redirect') || '/'
     const initialError = searchParams.get('error')
+    const requiredMsg = t('auth.fieldRequired')
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -68,8 +76,12 @@ function LoginForm() {
         setCooldown(RESEND_COOLDOWN_SEC)
     }, [email, cooldown, resending, t])
 
-    const handleSubmit = async (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        const form = event.currentTarget
+        applyRequiredMessages(form, requiredMsg)
+        if (!form.reportValidity()) return
+
         setLoading(true)
         setError('')
         setResendMsg(null)
@@ -105,11 +117,11 @@ function LoginForm() {
 
     return (
         <div className="max-w-md mx-auto mt-12">
-            <div className="bg-surface border border-border rounded-2xl p-8 shadow-sm">
+            <SectionCard as="div" className="p-8 shadow-sm">
                 <h1 className="text-2xl font-bold text-text-primary mb-2">{t('auth.loginHeading')}</h1>
                 <p className="text-sm text-text-secondary mb-6">{t('auth.loginLead')}</p>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form noValidate onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <Label htmlFor="email">{t('auth.emailLabel')}</Label>
                         <Input
@@ -118,17 +130,20 @@ function LoginForm() {
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            onInput={clearCustomValidity}
+                            onInvalid={(e) => setRequiredCustomValidity(e, requiredMsg)}
                             placeholder={t('auth.emailPlaceholder')}
                         />
                     </div>
                     <div>
                         <Label htmlFor="password">{t('auth.passwordLabel')}</Label>
-                        <Input
+                        <PasswordInput
                             id="password"
-                            type="password"
                             required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            onInput={clearCustomValidity}
+                            onInvalid={(e) => setRequiredCustomValidity(e, requiredMsg)}
                             placeholder={t('auth.passwordLoginPlaceholder')}
                         />
                     </div>
@@ -165,7 +180,7 @@ function LoginForm() {
                         {t('auth.createOne')}
                     </Link>
                 </p>
-            </div>
+            </SectionCard>
         </div>
     )
 }
