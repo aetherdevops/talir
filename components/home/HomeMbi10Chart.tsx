@@ -11,7 +11,7 @@ import { formatIndexLevel } from '@/lib/utils'
 
 type Timeframe = '1D' | '5D' | '1M' | '3M' | '6M' | 'YTD' | '1Y' | '5Y' | 'MAX'
 
-const CHART_HEIGHT = 320
+const HOME_CHART_CLASS = 'h-[240px] sm:h-[280px] md:h-[360px]'
 
 interface HomeMbi10ChartProps {
     index: IndexDetails
@@ -97,12 +97,13 @@ export function HomeMbi10Chart({ index, asOfDate }: HomeMbi10ChartProps) {
                 </LocaleLink>
             </div>
 
-            <div style={{ height: CHART_HEIGHT }} className="w-full min-w-0">
+            <div className="w-full min-w-0">
                 <ClientPriceChart
                     data={chartData}
                     timeframe={timeframe}
                     onTimeframeChange={setTimeframe}
                     excludePeriods={['1D']}
+                    chartClassName={HOME_CHART_CLASS}
                 />
             </div>
         </section>

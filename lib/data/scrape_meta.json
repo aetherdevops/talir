@@ -1,1 +1,7 @@
-{"asOfDate":"2026-07-24","status":"ok","generatedAt":"2026-07-26T05:54:06.314Z","instrumentCount":386}
+{
+  "asOfDate": "2026-07-24",
+  "status": "ok",
+  "generatedAt": "2026-07-26T17:29:38.925Z",
+  "instrumentCount": 386,
+  "lastIssuerScan": "2026-07-26"
+}

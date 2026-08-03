@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T05:52:11.762Z",
+  "generatedAt": "2026-07-26T17:31:20.624Z",
   "all": [
     {
       "stockCode": "ADIN",
@@ -274,7 +274,7 @@
       "netProfit": null,
       "eps": 37.11,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZPOG",
@@ -285,7 +285,7 @@
       "netProfit": null,
       "eps": 1141.9,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "SIL",
@@ -296,7 +296,7 @@
       "netProfit": null,
       "eps": 37.11,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZPOG",
@@ -307,7 +307,7 @@
       "netProfit": null,
       "eps": 1141.9,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "INHO",
@@ -318,7 +318,7 @@
       "netProfit": null,
       "eps": 0.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "INHO",
@@ -329,7 +329,7 @@
       "netProfit": null,
       "eps": 0.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "GTC",
@@ -340,7 +340,7 @@
       "netProfit": null,
       "eps": 9.96,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "GTC",
@@ -351,7 +351,7 @@
       "netProfit": null,
       "eps": 9.96,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ADIN",
@@ -384,7 +384,7 @@
       "netProfit": null,
       "eps": 4.53,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "NOSK",
@@ -395,7 +395,7 @@
       "netProfit": null,
       "eps": 22579.66,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ORAN",
@@ -406,7 +406,7 @@
       "netProfit": null,
       "eps": 56.51,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZEK",
@@ -439,7 +439,7 @@
       "netProfit": null,
       "eps": 8.33,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TKVS",
@@ -450,7 +450,7 @@
       "netProfit": null,
       "eps": 1106.81,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "VITA",
@@ -461,7 +461,7 @@
       "netProfit": null,
       "eps": 129.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "DIMI",
@@ -472,7 +472,7 @@
       "netProfit": null,
       "eps": 4.53,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "NOSK",
@@ -483,7 +483,7 @@
       "netProfit": null,
       "eps": 22579.66,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ORAN",
@@ -494,7 +494,7 @@
       "netProfit": null,
       "eps": 56.51,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZEK",
@@ -527,7 +527,7 @@
       "netProfit": null,
       "eps": 8.33,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TKVS",
@@ -538,7 +538,7 @@
       "netProfit": null,
       "eps": 1106.81,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "VITA",
@@ -549,7 +549,7 @@
       "netProfit": null,
       "eps": 129.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "AUMK",
@@ -593,7 +593,7 @@
       "netProfit": null,
       "eps": 142.78,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "OILK",
@@ -604,7 +604,7 @@
       "netProfit": null,
       "eps": 920.95,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "OKTA",
@@ -626,7 +626,7 @@
       "netProfit": null,
       "eps": 3835.89,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZTK",
@@ -714,7 +714,7 @@
       "netProfit": null,
       "eps": 142.78,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "OILK",
@@ -725,7 +725,7 @@
       "netProfit": null,
       "eps": 920.95,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "OKTA",
@@ -747,7 +747,7 @@
       "netProfit": null,
       "eps": 3835.89,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZTK",
@@ -813,7 +813,7 @@
       "netProfit": null,
       "eps": 3318.27,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "FERS",
@@ -824,7 +824,7 @@
       "netProfit": null,
       "eps": 7000.83,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MODA",
@@ -868,7 +868,7 @@
       "netProfit": null,
       "eps": 23.14,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "SPAZP",
@@ -901,7 +901,7 @@
       "netProfit": null,
       "eps": 3194.12,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "APTK",
@@ -923,7 +923,7 @@
       "netProfit": null,
       "eps": 3318.27,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "FERS",
@@ -934,7 +934,7 @@
       "netProfit": null,
       "eps": 7000.83,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MODA",
@@ -978,7 +978,7 @@
       "netProfit": null,
       "eps": 23.14,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "SPAZ",
@@ -1011,7 +1011,7 @@
       "netProfit": null,
       "eps": 3194.12,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MTUR",
@@ -1066,7 +1066,7 @@
       "netProfit": null,
       "eps": 0.54,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "POPK",
@@ -1077,7 +1077,7 @@
       "netProfit": null,
       "eps": 0.54,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "LOTO",
@@ -1088,7 +1088,7 @@
       "netProfit": null,
       "eps": 41.15,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RADE",
@@ -1121,7 +1121,7 @@
       "netProfit": null,
       "eps": 41.15,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RADE",
@@ -1154,7 +1154,7 @@
       "netProfit": null,
       "eps": 4.51,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MKSD",
@@ -1165,7 +1165,7 @@
       "netProfit": null,
       "eps": 4.51,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MPOL",
@@ -1176,7 +1176,7 @@
       "netProfit": null,
       "eps": 11.06,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "UNIPO4",
@@ -1198,7 +1198,7 @@
       "netProfit": null,
       "eps": 11.06,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "UNI",
@@ -1220,7 +1220,7 @@
       "netProfit": null,
       "eps": 63.44,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "GRNT",
@@ -1231,7 +1231,7 @@
       "netProfit": null,
       "eps": 63.44,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "VTKS",
@@ -1264,7 +1264,7 @@
       "netProfit": null,
       "eps": 183.64,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TEAL",
@@ -1275,7 +1275,7 @@
       "netProfit": null,
       "eps": 294.75,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "EVRO",
@@ -1286,7 +1286,7 @@
       "netProfit": null,
       "eps": 183.64,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TEAL",
@@ -1297,7 +1297,7 @@
       "netProfit": null,
       "eps": 294.75,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TEHN",
@@ -1308,7 +1308,7 @@
       "netProfit": null,
       "eps": 294.41,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TEHN",
@@ -1319,7 +1319,7 @@
       "netProfit": null,
       "eps": 294.41,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZUG",
@@ -1330,7 +1330,7 @@
       "netProfit": null,
       "eps": 1.43,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZILUP",
@@ -1352,7 +1352,7 @@
       "netProfit": null,
       "eps": 1.43,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZILU",
@@ -1374,7 +1374,7 @@
       "netProfit": null,
       "eps": 4.2,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MZPU",
@@ -1385,7 +1385,7 @@
       "netProfit": null,
       "eps": 4.2,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZUS",
@@ -1418,7 +1418,7 @@
       "netProfit": null,
       "eps": 265.3,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "GRZD",
@@ -1429,7 +1429,7 @@
       "netProfit": null,
       "eps": 3326.56,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "CEVI",
@@ -1440,7 +1440,7 @@
       "netProfit": null,
       "eps": 265.3,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "GRZD",
@@ -1451,7 +1451,7 @@
       "netProfit": null,
       "eps": 3326.56,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "BGOR",
@@ -1462,7 +1462,7 @@
       "netProfit": null,
       "eps": 2.74,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KLST",
@@ -1484,7 +1484,7 @@
       "netProfit": null,
       "eps": 2.74,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KLST",
@@ -1528,7 +1528,7 @@
       "netProfit": null,
       "eps": 30.58,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TIKV",
@@ -1539,7 +1539,7 @@
       "netProfit": null,
       "eps": 136.63,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TSMP",
@@ -1550,7 +1550,7 @@
       "netProfit": null,
       "eps": 57.83,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "DEBA",
@@ -1583,7 +1583,7 @@
       "netProfit": null,
       "eps": 30.58,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TIKV",
@@ -1594,7 +1594,7 @@
       "netProfit": null,
       "eps": 136.63,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TSMP",
@@ -1605,7 +1605,7 @@
       "netProfit": null,
       "eps": 57.83,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "INPR",
@@ -1616,7 +1616,7 @@
       "netProfit": null,
       "eps": 275.93,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "PKB",
@@ -1627,7 +1627,7 @@
       "netProfit": null,
       "eps": 7795.53,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "INPR",
@@ -1638,7 +1638,7 @@
       "netProfit": null,
       "eps": 275.93,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "PKB",
@@ -1649,7 +1649,7 @@
       "netProfit": null,
       "eps": 7795.53,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MAKS",
@@ -1726,7 +1726,7 @@
       "netProfit": null,
       "eps": 282.87,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "SSPR",
@@ -1737,7 +1737,7 @@
       "netProfit": null,
       "eps": 282.87,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "REPL",
@@ -1792,7 +1792,7 @@
       "netProfit": null,
       "eps": 2777.49,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "LOZP",
@@ -1803,7 +1803,7 @@
       "netProfit": null,
       "eps": 673.77,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZPKO",
@@ -1814,7 +1814,7 @@
       "netProfit": null,
       "eps": 205.17,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "FAKM",
@@ -1825,7 +1825,7 @@
       "netProfit": null,
       "eps": 2777.49,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "LOZP",
@@ -1836,7 +1836,7 @@
       "netProfit": null,
       "eps": 673.77,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZPKO",
@@ -1847,7 +1847,7 @@
       "netProfit": null,
       "eps": 205.17,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ALK",
@@ -1880,7 +1880,7 @@
       "netProfit": null,
       "eps": 14.01,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KMB",
@@ -1902,7 +1902,7 @@
       "netProfit": null,
       "eps": 14.01,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KMB",
@@ -1924,7 +1924,7 @@
       "netProfit": null,
       "eps": 2839.92,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MZHE",
@@ -1935,7 +1935,7 @@
       "netProfit": null,
       "eps": 2839.92,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "STOK",
@@ -1946,7 +1946,7 @@
       "netProfit": null,
       "eps": 0.76,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "STOK",
@@ -1957,7 +1957,7 @@
       "netProfit": null,
       "eps": 0.76,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KPSS",
@@ -1968,7 +1968,7 @@
       "netProfit": null,
       "eps": 163.18,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KPSS",
@@ -1979,7 +1979,7 @@
       "netProfit": null,
       "eps": 163.18,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZIT",
@@ -1990,7 +1990,7 @@
       "netProfit": null,
       "eps": 0.53,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZIT",
@@ -2001,7 +2001,7 @@
       "netProfit": null,
       "eps": 0.53,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KJUBI",
@@ -2012,7 +2012,7 @@
       "netProfit": null,
       "eps": 47.13,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KJUBI",
@@ -2023,7 +2023,7 @@
       "netProfit": null,
       "eps": 47.13,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KOMU",
@@ -2034,7 +2034,7 @@
       "netProfit": null,
       "eps": 180.42,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KOMU",
@@ -2045,7 +2045,7 @@
       "netProfit": null,
       "eps": 180.42,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TETE",
@@ -2056,7 +2056,7 @@
       "netProfit": null,
       "eps": 159.97,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TETE",
@@ -2067,7 +2067,7 @@
       "netProfit": null,
       "eps": 159.97,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "CKBKO2",
@@ -2078,7 +2078,7 @@
       "netProfit": null,
       "eps": 19.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "STBP",
@@ -2089,7 +2089,7 @@
       "netProfit": null,
       "eps": 191.12,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "CKB",
@@ -2100,7 +2100,7 @@
       "netProfit": null,
       "eps": 19.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "STB",
@@ -2111,7 +2111,7 @@
       "netProfit": null,
       "eps": 191.12,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TTKO2",
@@ -2221,7 +2221,7 @@
       "netProfit": null,
       "eps": 42.35,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ORAN",
@@ -2232,7 +2232,7 @@
       "netProfit": null,
       "eps": 42.35,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "GRZD",
@@ -2243,7 +2243,7 @@
       "netProfit": null,
       "eps": 1605.57,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MERM",
@@ -2265,7 +2265,7 @@
       "netProfit": null,
       "eps": 59.93,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "STBP",
@@ -2276,7 +2276,7 @@
       "netProfit": null,
       "eps": 203.55,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "GRZD",
@@ -2287,7 +2287,7 @@
       "netProfit": null,
       "eps": 1605.57,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MERM",
@@ -2309,7 +2309,7 @@
       "netProfit": null,
       "eps": 59.93,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "STB",
@@ -2320,7 +2320,7 @@
       "netProfit": null,
       "eps": 203.55,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "CKBKO2",
@@ -2331,7 +2331,7 @@
       "netProfit": null,
       "eps": 79.32,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "OKTA",
@@ -2353,7 +2353,7 @@
       "netProfit": null,
       "eps": 3468.94,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZEK",
@@ -2375,7 +2375,7 @@
       "netProfit": null,
       "eps": 18.77,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TEL",
@@ -2408,7 +2408,7 @@
       "netProfit": null,
       "eps": 3357.97,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZAS",
@@ -2430,7 +2430,7 @@
       "netProfit": null,
       "eps": 189.1,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "CKB",
@@ -2441,7 +2441,7 @@
       "netProfit": null,
       "eps": 79.32,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "OKTA",
@@ -2463,7 +2463,7 @@
       "netProfit": null,
       "eps": 3468.94,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZEK",
@@ -2485,7 +2485,7 @@
       "netProfit": null,
       "eps": 18.77,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TEL",
@@ -2518,7 +2518,7 @@
       "netProfit": null,
       "eps": 3357.97,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZAS",
@@ -2540,7 +2540,7 @@
       "netProfit": null,
       "eps": 189.1,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "APTK",
@@ -2639,7 +2639,7 @@
       "netProfit": null,
       "eps": 0.39,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MTUR",
@@ -2661,7 +2661,7 @@
       "netProfit": null,
       "eps": 0.39,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MTUR",
@@ -2694,7 +2694,7 @@
       "netProfit": null,
       "eps": 0.9,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "VTKS",
@@ -2727,7 +2727,7 @@
       "netProfit": null,
       "eps": 0.9,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "VTKS",
@@ -2749,7 +2749,7 @@
       "netProfit": null,
       "eps": 62.1,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TEAL",
@@ -2760,7 +2760,7 @@
       "netProfit": null,
       "eps": 259.52,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MZPU",
@@ -2771,7 +2771,7 @@
       "netProfit": null,
       "eps": 62.1,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TEAL",
@@ -2782,7 +2782,7 @@
       "netProfit": null,
       "eps": 259.52,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "BIM",
@@ -2793,7 +2793,7 @@
       "netProfit": null,
       "eps": 5465.68,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "FERS",
@@ -2804,7 +2804,7 @@
       "netProfit": null,
       "eps": 8349.36,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MAKS",
@@ -2826,7 +2826,7 @@
       "netProfit": null,
       "eps": 808.09,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "POPK",
@@ -2837,7 +2837,7 @@
       "netProfit": null,
       "eps": 1.65,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "BIM",
@@ -2848,7 +2848,7 @@
       "netProfit": null,
       "eps": 5465.68,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "FERS",
@@ -2859,7 +2859,7 @@
       "netProfit": null,
       "eps": 8349.36,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MAKS",
@@ -2881,7 +2881,7 @@
       "netProfit": null,
       "eps": 808.09,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "POPK",
@@ -2892,7 +2892,7 @@
       "netProfit": null,
       "eps": 1.65,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KPSS",
@@ -2903,7 +2903,7 @@
       "netProfit": null,
       "eps": 159.92,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MPT",
@@ -2936,7 +2936,7 @@
       "netProfit": null,
       "eps": 159.92,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MPT",
@@ -2969,7 +2969,7 @@
       "netProfit": null,
       "eps": 27.19,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZTK",
@@ -2991,7 +2991,7 @@
       "netProfit": null,
       "eps": 27.19,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZTK",
@@ -3013,7 +3013,7 @@
       "netProfit": null,
       "eps": 33.39,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "FUBT",
@@ -3035,7 +3035,7 @@
       "netProfit": null,
       "eps": 33.39,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "FUBT",
@@ -3057,7 +3057,7 @@
       "netProfit": null,
       "eps": 13.74,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MKSD",
@@ -3068,7 +3068,7 @@
       "netProfit": null,
       "eps": 13.74,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "DIMI",
@@ -3079,7 +3079,7 @@
       "netProfit": null,
       "eps": 3.23,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "VROS",
@@ -3101,7 +3101,7 @@
       "netProfit": null,
       "eps": 3.23,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "VROS",
@@ -3123,7 +3123,7 @@
       "netProfit": null,
       "eps": 68.57,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "LOTO",
@@ -3134,7 +3134,7 @@
       "netProfit": null,
       "eps": 68.57,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "NOSK",
@@ -3145,7 +3145,7 @@
       "netProfit": null,
       "eps": 15056.04,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "NOSK",
@@ -3156,7 +3156,7 @@
       "netProfit": null,
       "eps": 15056.04,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "EVRO",
@@ -3167,7 +3167,7 @@
       "netProfit": null,
       "eps": 87.36,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZILUP",
@@ -3189,7 +3189,7 @@
       "netProfit": null,
       "eps": 87.36,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZILU",
@@ -3211,7 +3211,7 @@
       "netProfit": null,
       "eps": 0.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TSMP",
@@ -3222,7 +3222,7 @@
       "netProfit": null,
       "eps": 0.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "CEVI",
@@ -3233,7 +3233,7 @@
       "netProfit": null,
       "eps": 155.54,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "CEVI",
@@ -3244,7 +3244,7 @@
       "netProfit": null,
       "eps": 155.54,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KLST",
@@ -3266,7 +3266,7 @@
       "netProfit": null,
       "eps": 0.14,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "SDOM",
@@ -3277,7 +3277,7 @@
       "netProfit": null,
       "eps": 32.13,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "SPAZP",
@@ -3299,7 +3299,7 @@
       "netProfit": null,
       "eps": 889.7,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KLST",
@@ -3321,7 +3321,7 @@
       "netProfit": null,
       "eps": 0.14,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "SDOM",
@@ -3332,7 +3332,7 @@
       "netProfit": null,
       "eps": 32.13,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "SPAZ",
@@ -3354,7 +3354,7 @@
       "netProfit": null,
       "eps": 889.7,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TIKV",
@@ -3365,7 +3365,7 @@
       "netProfit": null,
       "eps": 40.96,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TIKV",
@@ -3376,7 +3376,7 @@
       "netProfit": null,
       "eps": 40.96,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "SSPR",
@@ -3409,7 +3409,7 @@
       "netProfit": null,
       "eps": 630.36,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "INPR",
@@ -3420,7 +3420,7 @@
       "netProfit": null,
       "eps": 630.36,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "DEBA",
@@ -3431,7 +3431,7 @@
       "netProfit": null,
       "eps": 93.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "DEBA",
@@ -3442,7 +3442,7 @@
       "netProfit": null,
       "eps": 93.48,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "STOK",
@@ -3453,7 +3453,7 @@
       "netProfit": null,
       "eps": 0.12,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "STOK",
@@ -3464,7 +3464,7 @@
       "netProfit": null,
       "eps": 0.12,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KMB",
@@ -3519,7 +3519,7 @@
       "netProfit": null,
       "eps": 369.65,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "LOZP",
@@ -3530,7 +3530,7 @@
       "netProfit": null,
       "eps": 369.65,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZIT",
@@ -3541,7 +3541,7 @@
       "netProfit": null,
       "eps": 3.23,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZIT",
@@ -3552,7 +3552,7 @@
       "netProfit": null,
       "eps": 3.23,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MZHE",
@@ -3563,7 +3563,7 @@
       "netProfit": null,
       "eps": 1934.32,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "MZHE",
@@ -3574,7 +3574,7 @@
       "netProfit": null,
       "eps": 1934.32,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "BANA",
@@ -3585,7 +3585,7 @@
       "netProfit": null,
       "eps": 56.23,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "BANA",
@@ -3596,7 +3596,7 @@
       "netProfit": null,
       "eps": 56.23,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "GTC",
@@ -3607,7 +3607,7 @@
       "netProfit": null,
       "eps": 13.2,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KJUBI",
@@ -3618,7 +3618,7 @@
       "netProfit": null,
       "eps": 13.25,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TRPS",
@@ -3629,7 +3629,7 @@
       "netProfit": null,
       "eps": 167.33,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "GTC",
@@ -3640,7 +3640,7 @@
       "netProfit": null,
       "eps": 13.2,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KJUBI",
@@ -3651,7 +3651,7 @@
       "netProfit": null,
       "eps": 13.25,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TRPS",
@@ -3662,7 +3662,7 @@
       "netProfit": null,
       "eps": 167.33,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KOMU",
@@ -3673,7 +3673,7 @@
       "netProfit": null,
       "eps": 56.06,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KOMU",
@@ -3684,7 +3684,7 @@
       "netProfit": null,
       "eps": 56.06,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TETE",
@@ -3695,7 +3695,7 @@
       "netProfit": null,
       "eps": 167.21,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TETE",
@@ -3706,7 +3706,7 @@
       "netProfit": null,
       "eps": 167.21,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ADIN",
@@ -3992,7 +3992,7 @@
       "netProfit": null,
       "eps": 3.4,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "RZIT",
@@ -4003,7 +4003,7 @@
       "netProfit": null,
       "eps": 3.4,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "AMEH",
@@ -4014,7 +4014,7 @@
       "netProfit": null,
       "eps": 4.45,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "AMEH",
@@ -4025,7 +4025,7 @@
       "netProfit": null,
       "eps": 4.45,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KOMU",
@@ -4036,7 +4036,7 @@
       "netProfit": null,
       "eps": 92.81,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "KOMU",
@@ -4047,7 +4047,7 @@
       "netProfit": null,
       "eps": 92.81,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ADIN",
@@ -5048,7 +5048,7 @@
       "netProfit": null,
       "eps": 16.2,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "AMEH",
@@ -5059,7 +5059,7 @@
       "netProfit": null,
       "eps": 16.2,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "ZKAR",
@@ -5103,7 +5103,7 @@
       "netProfit": null,
       "eps": 1153.6,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "TAJM",
@@ -5114,7 +5114,7 @@
       "netProfit": null,
       "eps": 1153.6,
       "parseStatus": "partial",
-      "source": "SECNet"
+      "source": "MSE"
     },
     {
       "stockCode": "AMEH",
@@ -5429,7 +5429,7 @@
         "netProfit": null,
         "eps": 4.45,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "AMEH",
@@ -5440,7 +5440,7 @@
         "netProfit": null,
         "eps": 4.45,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "AMEH",
@@ -5451,7 +5451,7 @@
         "netProfit": null,
         "eps": 16.2,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "AMEH",
@@ -5462,7 +5462,7 @@
         "netProfit": null,
         "eps": 16.2,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "AMEH",
@@ -5633,7 +5633,7 @@
         "netProfit": null,
         "eps": 14.01,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BANA",
@@ -5644,7 +5644,7 @@
         "netProfit": null,
         "eps": 14.01,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BANA",
@@ -5655,7 +5655,7 @@
         "netProfit": null,
         "eps": 56.23,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BANA",
@@ -5666,7 +5666,7 @@
         "netProfit": null,
         "eps": 56.23,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BANA",
@@ -5690,7 +5690,7 @@
         "netProfit": null,
         "eps": 2.74,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BGOR",
@@ -5701,7 +5701,7 @@
         "netProfit": null,
         "eps": 2.74,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BGOR",
@@ -5712,7 +5712,7 @@
         "netProfit": null,
         "eps": 33.39,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BGOR",
@@ -5723,7 +5723,7 @@
         "netProfit": null,
         "eps": 33.39,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BGOR",
@@ -5747,7 +5747,7 @@
         "netProfit": null,
         "eps": 3318.27,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BIM",
@@ -5758,7 +5758,7 @@
         "netProfit": null,
         "eps": 3318.27,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BIM",
@@ -5769,7 +5769,7 @@
         "netProfit": null,
         "eps": 5465.68,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BIM",
@@ -5780,7 +5780,7 @@
         "netProfit": null,
         "eps": 5465.68,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "BIM",
@@ -5804,7 +5804,7 @@
         "netProfit": null,
         "eps": 265.3,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "CEVI",
@@ -5815,7 +5815,7 @@
         "netProfit": null,
         "eps": 265.3,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "CEVI",
@@ -5826,7 +5826,7 @@
         "netProfit": null,
         "eps": 155.54,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "CEVI",
@@ -5837,7 +5837,7 @@
         "netProfit": null,
         "eps": 155.54,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "CEVI",
@@ -5872,7 +5872,7 @@
         "netProfit": null,
         "eps": 19.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "CKBKO2",
@@ -5883,7 +5883,7 @@
         "netProfit": null,
         "eps": 79.32,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "CKBKO2",
@@ -5929,7 +5929,7 @@
         "netProfit": null,
         "eps": 93.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "DEBA",
@@ -5940,7 +5940,7 @@
         "netProfit": null,
         "eps": 93.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "DEBA",
@@ -5964,7 +5964,7 @@
         "netProfit": null,
         "eps": 4.53,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "DIMI",
@@ -5975,7 +5975,7 @@
         "netProfit": null,
         "eps": 4.53,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "DIMI",
@@ -5986,7 +5986,7 @@
         "netProfit": null,
         "eps": 3.23,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "DIMI",
@@ -5997,7 +5997,7 @@
         "netProfit": null,
         "eps": 3.23,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "DIMI",
@@ -6021,7 +6021,7 @@
         "netProfit": null,
         "eps": 183.64,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "EVRO",
@@ -6032,7 +6032,7 @@
         "netProfit": null,
         "eps": 183.64,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "EVRO",
@@ -6043,7 +6043,7 @@
         "netProfit": null,
         "eps": 87.36,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "EVRO",
@@ -6054,7 +6054,7 @@
         "netProfit": null,
         "eps": 87.36,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "EVRO",
@@ -6078,7 +6078,7 @@
         "netProfit": null,
         "eps": 2777.49,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "FAKM",
@@ -6089,7 +6089,7 @@
         "netProfit": null,
         "eps": 2777.49,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "FAKM",
@@ -6124,7 +6124,7 @@
         "netProfit": null,
         "eps": 7000.83,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "FERS",
@@ -6135,7 +6135,7 @@
         "netProfit": null,
         "eps": 7000.83,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "FERS",
@@ -6146,7 +6146,7 @@
         "netProfit": null,
         "eps": 8349.36,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "FERS",
@@ -6157,7 +6157,7 @@
         "netProfit": null,
         "eps": 8349.36,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "FERS",
@@ -6238,7 +6238,7 @@
         "netProfit": null,
         "eps": 63.44,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GRNT",
@@ -6249,7 +6249,7 @@
         "netProfit": null,
         "eps": 63.44,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GRNT",
@@ -6295,7 +6295,7 @@
         "netProfit": null,
         "eps": 3326.56,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GRZD",
@@ -6306,7 +6306,7 @@
         "netProfit": null,
         "eps": 3326.56,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GRZD",
@@ -6317,7 +6317,7 @@
         "netProfit": null,
         "eps": 1605.57,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GRZD",
@@ -6328,7 +6328,7 @@
         "netProfit": null,
         "eps": 1605.57,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GRZD",
@@ -6352,7 +6352,7 @@
         "netProfit": null,
         "eps": 9.96,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GTC",
@@ -6363,7 +6363,7 @@
         "netProfit": null,
         "eps": 9.96,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GTC",
@@ -6374,7 +6374,7 @@
         "netProfit": null,
         "eps": 13.2,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GTC",
@@ -6385,7 +6385,7 @@
         "netProfit": null,
         "eps": 13.2,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "GTC",
@@ -6409,7 +6409,7 @@
         "netProfit": null,
         "eps": 0.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "INHO",
@@ -6420,7 +6420,7 @@
         "netProfit": null,
         "eps": 0.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "INHO",
@@ -6466,7 +6466,7 @@
         "netProfit": null,
         "eps": 275.93,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "INPR",
@@ -6477,7 +6477,7 @@
         "netProfit": null,
         "eps": 275.93,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "INPR",
@@ -6488,7 +6488,7 @@
         "netProfit": null,
         "eps": 630.36,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "INPR",
@@ -6499,7 +6499,7 @@
         "netProfit": null,
         "eps": 630.36,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "INPR",
@@ -6523,7 +6523,7 @@
         "netProfit": null,
         "eps": 47.13,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KJUBI",
@@ -6534,7 +6534,7 @@
         "netProfit": null,
         "eps": 47.13,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KJUBI",
@@ -6545,7 +6545,7 @@
         "netProfit": null,
         "eps": 13.25,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KJUBI",
@@ -6556,7 +6556,7 @@
         "netProfit": null,
         "eps": 13.25,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KJUBI",
@@ -6705,7 +6705,7 @@
         "netProfit": null,
         "eps": 180.42,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KOMU",
@@ -6716,7 +6716,7 @@
         "netProfit": null,
         "eps": 180.42,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KOMU",
@@ -6727,7 +6727,7 @@
         "netProfit": null,
         "eps": 56.06,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KOMU",
@@ -6738,7 +6738,7 @@
         "netProfit": null,
         "eps": 56.06,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KOMU",
@@ -6749,7 +6749,7 @@
         "netProfit": null,
         "eps": 92.81,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KOMU",
@@ -6760,7 +6760,7 @@
         "netProfit": null,
         "eps": 92.81,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       }
     ],
     "KONZ": [
@@ -6795,7 +6795,7 @@
         "netProfit": null,
         "eps": 0.9,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KONZ",
@@ -6806,7 +6806,7 @@
         "netProfit": null,
         "eps": 0.9,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KONZ",
@@ -6852,7 +6852,7 @@
         "netProfit": null,
         "eps": 163.18,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KPSS",
@@ -6863,7 +6863,7 @@
         "netProfit": null,
         "eps": 163.18,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KPSS",
@@ -6874,7 +6874,7 @@
         "netProfit": null,
         "eps": 159.92,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KPSS",
@@ -6885,7 +6885,7 @@
         "netProfit": null,
         "eps": 159.92,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "KPSS",
@@ -6909,7 +6909,7 @@
         "netProfit": null,
         "eps": 41.15,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "LOTO",
@@ -6920,7 +6920,7 @@
         "netProfit": null,
         "eps": 41.15,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "LOTO",
@@ -6931,7 +6931,7 @@
         "netProfit": null,
         "eps": 68.57,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "LOTO",
@@ -6942,7 +6942,7 @@
         "netProfit": null,
         "eps": 68.57,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "LOTO",
@@ -6966,7 +6966,7 @@
         "netProfit": null,
         "eps": 673.77,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "LOZP",
@@ -6977,7 +6977,7 @@
         "netProfit": null,
         "eps": 673.77,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "LOZP",
@@ -6988,7 +6988,7 @@
         "netProfit": null,
         "eps": 369.65,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "LOZP",
@@ -6999,7 +6999,7 @@
         "netProfit": null,
         "eps": 369.65,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "LOZP",
@@ -7183,7 +7183,7 @@
         "netProfit": null,
         "eps": 4.51,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MKSD",
@@ -7194,7 +7194,7 @@
         "netProfit": null,
         "eps": 4.51,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MKSD",
@@ -7205,7 +7205,7 @@
         "netProfit": null,
         "eps": 13.74,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MKSD",
@@ -7216,7 +7216,7 @@
         "netProfit": null,
         "eps": 13.74,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MKSD",
@@ -7262,7 +7262,7 @@
         "netProfit": null,
         "eps": 0.39,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MODA",
@@ -7273,7 +7273,7 @@
         "netProfit": null,
         "eps": 0.39,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MODA",
@@ -7297,7 +7297,7 @@
         "netProfit": null,
         "eps": 11.06,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MPOL",
@@ -7308,7 +7308,7 @@
         "netProfit": null,
         "eps": 11.06,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MPOL",
@@ -7319,7 +7319,7 @@
         "netProfit": null,
         "eps": 27.19,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MPOL",
@@ -7330,7 +7330,7 @@
         "netProfit": null,
         "eps": 27.19,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MPOL",
@@ -7468,7 +7468,7 @@
         "netProfit": null,
         "eps": 2839.92,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MZHE",
@@ -7479,7 +7479,7 @@
         "netProfit": null,
         "eps": 2839.92,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MZHE",
@@ -7490,7 +7490,7 @@
         "netProfit": null,
         "eps": 1934.32,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MZHE",
@@ -7501,7 +7501,7 @@
         "netProfit": null,
         "eps": 1934.32,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MZHE",
@@ -7525,7 +7525,7 @@
         "netProfit": null,
         "eps": 4.2,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MZPU",
@@ -7536,7 +7536,7 @@
         "netProfit": null,
         "eps": 4.2,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MZPU",
@@ -7547,7 +7547,7 @@
         "netProfit": null,
         "eps": 62.1,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MZPU",
@@ -7558,7 +7558,7 @@
         "netProfit": null,
         "eps": 62.1,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "MZPU",
@@ -7582,7 +7582,7 @@
         "netProfit": null,
         "eps": 142.78,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "NEME",
@@ -7593,7 +7593,7 @@
         "netProfit": null,
         "eps": 142.78,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "NEME",
@@ -7628,7 +7628,7 @@
         "netProfit": null,
         "eps": 22579.66,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "NOSK",
@@ -7639,7 +7639,7 @@
         "netProfit": null,
         "eps": 22579.66,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "NOSK",
@@ -7650,7 +7650,7 @@
         "netProfit": null,
         "eps": 15056.04,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "NOSK",
@@ -7661,7 +7661,7 @@
         "netProfit": null,
         "eps": 15056.04,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "NOSK",
@@ -7685,7 +7685,7 @@
         "netProfit": null,
         "eps": 920.95,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "OILK",
@@ -7696,7 +7696,7 @@
         "netProfit": null,
         "eps": 920.95,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "OILK",
@@ -7707,7 +7707,7 @@
         "netProfit": null,
         "eps": 808.09,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "OILK",
@@ -7718,7 +7718,7 @@
         "netProfit": null,
         "eps": 808.09,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "OILK",
@@ -7821,7 +7821,7 @@
         "netProfit": null,
         "eps": 56.51,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ORAN",
@@ -7832,7 +7832,7 @@
         "netProfit": null,
         "eps": 56.51,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ORAN",
@@ -7843,7 +7843,7 @@
         "netProfit": null,
         "eps": 42.35,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ORAN",
@@ -7854,7 +7854,7 @@
         "netProfit": null,
         "eps": 42.35,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ORAN",
@@ -7878,7 +7878,7 @@
         "netProfit": null,
         "eps": 7795.53,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "PKB",
@@ -7889,7 +7889,7 @@
         "netProfit": null,
         "eps": 7795.53,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "PKB",
@@ -7946,7 +7946,7 @@
         "netProfit": null,
         "eps": 0.54,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "POPK",
@@ -7957,7 +7957,7 @@
         "netProfit": null,
         "eps": 0.54,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "POPK",
@@ -7968,7 +7968,7 @@
         "netProfit": null,
         "eps": 1.65,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "POPK",
@@ -7979,7 +7979,7 @@
         "netProfit": null,
         "eps": 1.65,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "POPK",
@@ -8003,7 +8003,7 @@
         "netProfit": null,
         "eps": 3835.89,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "PPIV",
@@ -8014,7 +8014,7 @@
         "netProfit": null,
         "eps": 3835.89,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "PPIV",
@@ -8025,7 +8025,7 @@
         "netProfit": null,
         "eps": 3468.94,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "PPIV",
@@ -8036,7 +8036,7 @@
         "netProfit": null,
         "eps": 3468.94,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "PPIV",
@@ -8209,7 +8209,7 @@
         "netProfit": null,
         "eps": 0.53,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "RZIT",
@@ -8220,7 +8220,7 @@
         "netProfit": null,
         "eps": 0.53,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "RZIT",
@@ -8231,7 +8231,7 @@
         "netProfit": null,
         "eps": 3.23,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "RZIT",
@@ -8242,7 +8242,7 @@
         "netProfit": null,
         "eps": 3.23,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "RZIT",
@@ -8253,7 +8253,7 @@
         "netProfit": null,
         "eps": 3.4,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "RZIT",
@@ -8264,7 +8264,7 @@
         "netProfit": null,
         "eps": 3.4,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       }
     ],
     "RZLV": [
@@ -8391,7 +8391,7 @@
         "netProfit": null,
         "eps": 1.43,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "RZUG",
@@ -8402,7 +8402,7 @@
         "netProfit": null,
         "eps": 1.43,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "RZUG",
@@ -8413,7 +8413,7 @@
         "netProfit": null,
         "eps": 0.14,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "RZUG",
@@ -8424,7 +8424,7 @@
         "netProfit": null,
         "eps": 0.14,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "RZUG",
@@ -8551,7 +8551,7 @@
         "netProfit": null,
         "eps": 23.14,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SDOM",
@@ -8562,7 +8562,7 @@
         "netProfit": null,
         "eps": 23.14,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SDOM",
@@ -8573,7 +8573,7 @@
         "netProfit": null,
         "eps": 32.13,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SDOM",
@@ -8584,7 +8584,7 @@
         "netProfit": null,
         "eps": 32.13,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SDOM",
@@ -8608,7 +8608,7 @@
         "netProfit": null,
         "eps": 37.11,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SIL",
@@ -8619,7 +8619,7 @@
         "netProfit": null,
         "eps": 37.11,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SIL",
@@ -8746,7 +8746,7 @@
         "netProfit": null,
         "eps": 8.33,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SPOL",
@@ -8757,7 +8757,7 @@
         "netProfit": null,
         "eps": 8.33,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SPOL",
@@ -8768,7 +8768,7 @@
         "netProfit": null,
         "eps": 59.93,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SPOL",
@@ -8779,7 +8779,7 @@
         "netProfit": null,
         "eps": 59.93,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SPOL",
@@ -8803,7 +8803,7 @@
         "netProfit": null,
         "eps": 282.87,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SSPR",
@@ -8814,7 +8814,7 @@
         "netProfit": null,
         "eps": 282.87,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "SSPR",
@@ -8860,7 +8860,7 @@
         "netProfit": null,
         "eps": 191.12,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STBP",
@@ -8871,7 +8871,7 @@
         "netProfit": null,
         "eps": 203.55,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STBP",
@@ -8895,7 +8895,7 @@
         "netProfit": null,
         "eps": 30.58,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STIL",
@@ -8906,7 +8906,7 @@
         "netProfit": null,
         "eps": 30.58,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STIL",
@@ -8917,7 +8917,7 @@
         "netProfit": null,
         "eps": 18.77,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STIL",
@@ -8928,7 +8928,7 @@
         "netProfit": null,
         "eps": 18.77,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STIL",
@@ -8952,7 +8952,7 @@
         "netProfit": null,
         "eps": 0.76,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STOK",
@@ -8963,7 +8963,7 @@
         "netProfit": null,
         "eps": 0.76,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STOK",
@@ -8974,7 +8974,7 @@
         "netProfit": null,
         "eps": 0.12,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STOK",
@@ -8985,7 +8985,7 @@
         "netProfit": null,
         "eps": 0.12,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STOK",
@@ -9031,7 +9031,7 @@
         "netProfit": null,
         "eps": 1153.6,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TAJM",
@@ -9042,7 +9042,7 @@
         "netProfit": null,
         "eps": 1153.6,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TAJM",
@@ -9088,7 +9088,7 @@
         "netProfit": null,
         "eps": 294.75,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TEAL",
@@ -9099,7 +9099,7 @@
         "netProfit": null,
         "eps": 294.75,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TEAL",
@@ -9110,7 +9110,7 @@
         "netProfit": null,
         "eps": 259.52,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TEAL",
@@ -9121,7 +9121,7 @@
         "netProfit": null,
         "eps": 259.52,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TEAL",
@@ -9167,7 +9167,7 @@
         "netProfit": null,
         "eps": 294.41,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TEHN",
@@ -9178,7 +9178,7 @@
         "netProfit": null,
         "eps": 294.41,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TEHN",
@@ -9292,7 +9292,7 @@
         "netProfit": null,
         "eps": 159.97,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TETE",
@@ -9303,7 +9303,7 @@
         "netProfit": null,
         "eps": 159.97,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TETE",
@@ -9314,7 +9314,7 @@
         "netProfit": null,
         "eps": 167.21,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TETE",
@@ -9325,7 +9325,7 @@
         "netProfit": null,
         "eps": 167.21,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TETE",
@@ -9349,7 +9349,7 @@
         "netProfit": null,
         "eps": 136.63,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TIKV",
@@ -9360,7 +9360,7 @@
         "netProfit": null,
         "eps": 136.63,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TIKV",
@@ -9371,7 +9371,7 @@
         "netProfit": null,
         "eps": 40.96,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TIKV",
@@ -9382,7 +9382,7 @@
         "netProfit": null,
         "eps": 40.96,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TIKV",
@@ -9485,7 +9485,7 @@
         "netProfit": null,
         "eps": 1106.81,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TKVS",
@@ -9496,7 +9496,7 @@
         "netProfit": null,
         "eps": 1106.81,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TKVS",
@@ -9667,7 +9667,7 @@
         "netProfit": null,
         "eps": 167.33,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TRPS",
@@ -9678,7 +9678,7 @@
         "netProfit": null,
         "eps": 167.33,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TRPS",
@@ -9702,7 +9702,7 @@
         "netProfit": null,
         "eps": 57.83,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TSMP",
@@ -9713,7 +9713,7 @@
         "netProfit": null,
         "eps": 57.83,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TSMP",
@@ -9724,7 +9724,7 @@
         "netProfit": null,
         "eps": 0.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TSMP",
@@ -9735,7 +9735,7 @@
         "netProfit": null,
         "eps": 0.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "TSMP",
@@ -9805,7 +9805,7 @@
         "netProfit": null,
         "eps": 889.7,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "UNIPO4",
@@ -9829,7 +9829,7 @@
         "netProfit": null,
         "eps": 3194.12,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "USJE",
@@ -9840,7 +9840,7 @@
         "netProfit": null,
         "eps": 3194.12,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "USJE",
@@ -9851,7 +9851,7 @@
         "netProfit": null,
         "eps": 3357.97,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "USJE",
@@ -9862,7 +9862,7 @@
         "netProfit": null,
         "eps": 3357.97,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "USJE",
@@ -9886,7 +9886,7 @@
         "netProfit": null,
         "eps": 129.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "VITA",
@@ -9897,7 +9897,7 @@
         "netProfit": null,
         "eps": 129.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "VITA",
@@ -10283,7 +10283,7 @@
         "netProfit": null,
         "eps": 205.17,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ZPKO",
@@ -10294,7 +10294,7 @@
         "netProfit": null,
         "eps": 205.17,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ZPKO",
@@ -10329,7 +10329,7 @@
         "netProfit": null,
         "eps": 1141.9,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ZPOG",
@@ -10340,7 +10340,7 @@
         "netProfit": null,
         "eps": 1141.9,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ZPOG",
@@ -10351,7 +10351,7 @@
         "netProfit": null,
         "eps": 189.1,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ZPOG",
@@ -10362,7 +10362,7 @@
         "netProfit": null,
         "eps": 189.1,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "ZPOG",
@@ -10397,7 +10397,7 @@
         "netProfit": null,
         "eps": 19.48,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "CKB",
@@ -10408,7 +10408,7 @@
         "netProfit": null,
         "eps": 79.32,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "CKB",
@@ -10467,7 +10467,7 @@
         "netProfit": null,
         "eps": 191.12,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STB",
@@ -10478,7 +10478,7 @@
         "netProfit": null,
         "eps": 203.55,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "STB",
@@ -10548,7 +10548,7 @@
         "netProfit": null,
         "eps": 889.7,
         "parseStatus": "partial",
-        "source": "SECNet"
+        "source": "MSE"
       },
       {
         "stockCode": "UNI",

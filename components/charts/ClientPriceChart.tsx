@@ -13,7 +13,7 @@ function ChartLoadingSkeleton() {
     )
 }
 
-const PriceChart = dynamic(() => import('./PriceChart').then(mod => mod.PriceChart), {
+const PriceChart = dynamic(() => import('./PriceChart').then((mod) => mod.PriceChart), {
     ssr: false,
     loading: () => <ChartLoadingSkeleton />,
 })

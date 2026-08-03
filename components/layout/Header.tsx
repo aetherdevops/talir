@@ -2,6 +2,7 @@
 
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
 import { LocaleLink } from '@/components/layout/LocaleLink'
+import { MobileNavSheet } from '@/components/layout/MobileNavSheet'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
@@ -25,6 +26,7 @@ export function Header({ className, instruments = [] }: { className?: string; in
     const pathname = usePathname()
     const { t } = useLocale()
     const [searchOpen, setSearchOpen] = useState(false)
+    const [navOpen, setNavOpen] = useState(false)
     const { isSidebarOpen, toggleSidebar } = useThemeStore()
     const [mounted, setMounted] = useState(false)
 
@@ -46,6 +48,15 @@ export function Header({ className, instruments = [] }: { className?: string; in
                 )}
             >
                 <div className="flex items-center gap-2 min-w-0 overflow-hidden [&_.text-text-primary]:text-talir-ivory [&_.text-text-tertiary]:text-talir-gold-soft/70">
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => setNavOpen(true)}
+                        className="md:hidden h-11 w-11 shrink-0 text-talir-gold-soft/80 hover:text-talir-ivory hover:bg-white/5"
+                        aria-label={t('nav.openMenu')}
+                    >
+                        <Menu className="h-5 w-5" />
+                    </Button>
                     {showSidebarExpand ? (
                         <Button
                             variant="ghost"
@@ -93,6 +104,7 @@ export function Header({ className, instruments = [] }: { className?: string; in
             </header>
 
             <MobileSearchSheet open={searchOpen} onClose={() => setSearchOpen(false)} />
+            <MobileNavSheet open={navOpen} onClose={() => setNavOpen(false)} />
         </>
     )
 }
