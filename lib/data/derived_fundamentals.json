@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T05:59:59.577Z",
+  "generatedAt": "2026-08-04T05:31:30.245Z",
   "all": [
     {
       "stockCode": "CEVI",
@@ -5040,13 +5040,13 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
+      "stockCode": "ALK",
+      "stockName": "Alkaloid AD Skopje",
       "fiscalYear": 2024,
       "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
+      "url": "https://www.mse.mk/en/symbol/ALK#fy-2024",
       "netProfit": null,
-      "eps": 11.97,
+      "eps": 1176.54,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5062,13 +5062,24 @@
       "source": "MSE"
     },
     {
-      "stockCode": "ALK",
-      "stockName": "Alkaloid AD Skopje",
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
       "fiscalYear": 2024,
       "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/ALK#fy-2024",
+      "url": "https://www.mse.mk/en/symbol/REPL#fy-2024",
       "netProfit": null,
-      "eps": 1176.54,
+      "eps": 864.95,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2024-12-31",
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
+      "netProfit": null,
+      "eps": 11.97,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5084,17 +5095,6 @@
       "source": "MSE"
     },
     {
-      "stockCode": "REPL",
-      "stockName": "Replek AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/REPL#fy-2024",
-      "netProfit": null,
-      "eps": 864.95,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
       "stockCode": "AMEH",
       "stockName": "Agromehanika AD Skopje - dolgorochno suspendirano od kotacija",
       "fiscalYear": 2024,
@@ -5205,13 +5205,13 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
+      "stockCode": "ALK",
+      "stockName": "Alkaloid AD Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/ALK#fy-2023",
       "netProfit": null,
-      "eps": 41.39,
+      "eps": 1101.69,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5227,13 +5227,24 @@
       "source": "MSE"
     },
     {
-      "stockCode": "ALK",
-      "stockName": "Alkaloid AD Skopje",
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/ALK#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/REPL#fy-2023",
       "netProfit": null,
-      "eps": 1101.69,
+      "eps": 1082.67,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
+      "netProfit": null,
+      "eps": 41.39,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5249,24 +5260,13 @@
       "source": "MSE"
     },
     {
-      "stockCode": "REPL",
-      "stockName": "Replek AD Skopje",
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/REPL#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
       "netProfit": null,
-      "eps": 1082.67,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
-      "stockCode": "UNI",
-      "stockName": "UNI Banka AD Skopje",
-      "fiscalYear": 2023,
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/UNI#fy-2023",
-      "netProfit": null,
-      "eps": 872.75,
+      "eps": 3766.55,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5282,13 +5282,13 @@
       "source": "MSE"
     },
     {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
+      "stockCode": "STB",
+      "stockName": "Stopanska banka AD Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/STB#fy-2023",
       "netProfit": null,
-      "eps": 3766.55,
+      "eps": 198.78,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5304,13 +5304,13 @@
       "source": "MSE"
     },
     {
-      "stockCode": "STB",
-      "stockName": "Stopanska banka AD Skopje",
+      "stockCode": "UNI",
+      "stockName": "UNI Banka AD Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/STB#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/UNI#fy-2023",
       "netProfit": null,
-      "eps": 198.78,
+      "eps": 872.75,
       "parseStatus": "partial",
       "source": "MSE"
     },

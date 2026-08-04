@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-03T06:23:56.157Z",
-  "lastIssuerScan": "2026-08-03",
+  "generatedAt": "2026-08-04T05:32:57.017Z",
+  "lastIssuerScan": "2026-08-04",
   "issuerCount": 170,
   "recent": [
     {
@@ -1755,6 +1755,28 @@
       }
     },
     {
+      "stockCode": "MPT",
+      "stockName": "Makpetrol AD Skopje",
+      "filedAt": "2024-12-31",
+      "url": "https://www.mse.mk/en/symbol/MPT#fy-2024",
+      "grossPerShare": 4200,
+      "cumDate": null,
+      "exDate": null,
+      "recordDate": null,
+      "paymentStart": null,
+      "paymentEnd": null,
+      "parseStatus": "partial",
+      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
+      "profitYear": 2024,
+      "payoutRatioPct": null
+    },
+    {
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "filedAt": "2024-12-31",
@@ -1782,28 +1804,6 @@
       "filedAt": "2024-12-31",
       "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
       "grossPerShare": 38,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "sourceFields": {
-        "grossPerShare": "MSE"
-      },
-      "isSynthetic": true,
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2024,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "MPT",
-      "stockName": "Makpetrol AD Skopje",
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/MPT#fy-2024",
-      "grossPerShare": 4200,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -2470,6 +2470,28 @@
       }
     },
     {
+      "stockCode": "MPT",
+      "stockName": "Makpetrol AD Skopje",
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/MPT#fy-2023",
+      "grossPerShare": 3700,
+      "cumDate": null,
+      "exDate": null,
+      "recordDate": null,
+      "paymentStart": null,
+      "paymentEnd": null,
+      "parseStatus": "partial",
+      "source": "MSE",
+      "sourceFields": {
+        "grossPerShare": "MSE"
+      },
+      "isSynthetic": true,
+      "trailingYieldAtEx": null,
+      "yoyGrowthPct": null,
+      "profitYear": 2023,
+      "payoutRatioPct": null
+    },
+    {
       "stockCode": "REPL",
       "stockName": "Replek AD Skopje",
       "filedAt": "2023-12-31",
@@ -2514,11 +2536,11 @@
       "payoutRatioPct": null
     },
     {
-      "stockCode": "MPT",
-      "stockName": "Makpetrol AD Skopje",
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/MPT#fy-2023",
-      "grossPerShare": 3700,
+      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
+      "grossPerShare": 2636,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,
@@ -2541,28 +2563,6 @@
       "filedAt": "2023-12-31",
       "url": "https://www.mse.mk/en/symbol/UNI#fy-2023",
       "grossPerShare": 368,
-      "cumDate": null,
-      "exDate": null,
-      "recordDate": null,
-      "paymentStart": null,
-      "paymentEnd": null,
-      "parseStatus": "partial",
-      "source": "MSE",
-      "sourceFields": {
-        "grossPerShare": "MSE"
-      },
-      "isSynthetic": true,
-      "trailingYieldAtEx": null,
-      "yoyGrowthPct": null,
-      "profitYear": 2023,
-      "payoutRatioPct": null
-    },
-    {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
-      "grossPerShare": 2636,
       "cumDate": null,
       "exDate": null,
       "recordDate": null,

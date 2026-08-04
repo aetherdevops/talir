@@ -1,22 +1,41 @@
 {
-  "generatedAt": "2026-08-03T06:13:49.402Z",
+  "generatedAt": "2026-08-04T05:20:43.988Z",
   "byCode": {
-    "KMB": {
+    "ALK": {
       "years": {
         "2023": {
-          "dps": 910,
-          "eps": 1580.64,
-          "dividendYieldPct": 6.4
+          "dps": 540,
+          "eps": 1101.69,
+          "dividendYieldPct": 2.97
         },
         "2024": {
-          "dps": 1250,
-          "eps": 2176.38,
-          "dividendYieldPct": 4.4
+          "dps": 630,
+          "eps": 1176.54,
+          "dividendYieldPct": 2.23
         },
         "2025": {
-          "dps": 1350,
-          "eps": 2253.26,
-          "dividendYieldPct": 4.85
+          "dps": 720,
+          "eps": 1254.61,
+          "dividendYieldPct": 2.88
+        }
+      }
+    },
+    "MPT": {
+      "years": {
+        "2023": {
+          "dps": 3700,
+          "eps": 6987.26,
+          "dividendYieldPct": 5.75
+        },
+        "2024": {
+          "dps": 4200,
+          "eps": 9829.83,
+          "dividendYieldPct": 4.53
+        },
+        "2025": {
+          "dps": 4620,
+          "eps": 10782.59,
+          "dividendYieldPct": 4.16
         }
       }
     },
@@ -39,25 +58,6 @@
         }
       }
     },
-    "ALK": {
-      "years": {
-        "2023": {
-          "dps": 540,
-          "eps": 1101.69,
-          "dividendYieldPct": 2.97
-        },
-        "2024": {
-          "dps": 630,
-          "eps": 1176.54,
-          "dividendYieldPct": 2.23
-        },
-        "2025": {
-          "dps": 720,
-          "eps": 1254.61,
-          "dividendYieldPct": 2.88
-        }
-      }
-    },
     "GRNT": {
       "years": {
         "2023": {
@@ -77,22 +77,41 @@
         }
       }
     },
-    "MPT": {
+    "KMB": {
       "years": {
         "2023": {
-          "dps": 3700,
-          "eps": 6987.26,
-          "dividendYieldPct": 5.75
+          "dps": 910,
+          "eps": 1580.64,
+          "dividendYieldPct": 6.4
         },
         "2024": {
-          "dps": 4200,
-          "eps": 9829.83,
-          "dividendYieldPct": 4.53
+          "dps": 1250,
+          "eps": 2176.38,
+          "dividendYieldPct": 4.4
         },
         "2025": {
-          "dps": 4620,
-          "eps": 10782.59,
-          "dividendYieldPct": 4.16
+          "dps": 1350,
+          "eps": 2253.26,
+          "dividendYieldPct": 4.85
+        }
+      }
+    },
+    "TNB": {
+      "years": {
+        "2023": {
+          "dps": 2636,
+          "eps": 3766.55,
+          "dividendYieldPct": 8.92
+        },
+        "2024": {
+          "dps": 2596,
+          "eps": 3858.03,
+          "dividendYieldPct": 4.62
+        },
+        "2025": {
+          "dps": 2571,
+          "eps": 5713.22,
+          "dividendYieldPct": 4.56
         }
       }
     },
@@ -134,25 +153,6 @@
         }
       }
     },
-    "UNI": {
-      "years": {
-        "2023": {
-          "dps": 368,
-          "eps": 872.75,
-          "dividendYieldPct": 6.5
-        },
-        "2024": {
-          "dps": 387,
-          "eps": 889.7,
-          "dividendYieldPct": 5.46
-        },
-        "2025": {
-          "dps": null,
-          "eps": 902.06,
-          "dividendYieldPct": 0
-        }
-      }
-    },
     "TEL": {
       "years": {
         "2023": {
@@ -172,22 +172,22 @@
         }
       }
     },
-    "TNB": {
+    "UNI": {
       "years": {
         "2023": {
-          "dps": 2636,
-          "eps": 3766.55,
-          "dividendYieldPct": 8.92
+          "dps": 368,
+          "eps": 872.75,
+          "dividendYieldPct": 6.5
         },
         "2024": {
-          "dps": 2596,
-          "eps": 3858.03,
-          "dividendYieldPct": 4.62
+          "dps": 387,
+          "eps": 889.7,
+          "dividendYieldPct": 5.46
         },
         "2025": {
-          "dps": 2571,
-          "eps": 5713.22,
-          "dividendYieldPct": 4.56
+          "dps": null,
+          "eps": 902.06,
+          "dividendYieldPct": 0
         }
       }
     }

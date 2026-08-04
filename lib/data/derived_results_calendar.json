@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-03T05:49:05.881Z",
-  "lastIssuerScan": "2026-08-03",
+  "generatedAt": "2026-08-04T05:20:38.757Z",
+  "lastIssuerScan": "2026-08-04",
   "issuerCount": 170,
   "recent": [
     {
@@ -2197,18 +2197,6 @@
       "filedAt": "2026-05-08",
       "headline": "ZILU files profit and loss report",
       "url": "https://seinet.com.mk/en/document/77093",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MZPU",
-      "stockName": "MZT Pumpi AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-06",
-      "headline": "MZPU files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/77062",
       "source": "SECNet"
     }
   ],
