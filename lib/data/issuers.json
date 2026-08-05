@@ -617,6 +617,11 @@
     "website": "http://www.kristal.com.mk/",
     "reportLinks": [
       {
+        "title": "8/4/2026 - Kristal 1923 AD Veles - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78370",
+        "date": "2026-08-04"
+      },
+      {
         "title": "4/30/2026 - Kristal 1923 AD Veles - Non-audited profit&loss account 01.01. - 31.03.",
         "url": "https://seinet.com.mk/en/document/76952",
         "date": "2026-04-30"
@@ -660,14 +665,14 @@
         "title": "10/31/2024 - Kristal 1923 AD Veles - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/70337",
         "date": "2024-10-31"
-      },
-      {
-        "title": "7/30/2024 - Kristal 1923 AD Veles - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69418",
-        "date": "2024-07-30"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "8/4/2026 - Kristal 1923 AD Veles - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78371",
+        "date": "2026-08-04"
+      },
       {
         "title": "7/13/2026 - Kristal 1923 AD Veles - Changes in shareholders with a significant stake",
         "url": "https://seinet.com.mk/en/document/77917",
@@ -697,11 +702,6 @@
         "title": "4/27/2026 - Kristal 1923 AD Veles - Public call for shareholders meeting",
         "url": "https://seinet.com.mk/en/document/76574",
         "date": "2026-04-27"
-      },
-      {
-        "title": "3/2/2026 - Kristal 1923 AD Veles - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75664",
-        "date": "2026-03-02"
       }
     ]
   },
@@ -2209,6 +2209,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "8/4/2026 - Internesnel Hotels AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78369",
+        "date": "2026-08-04"
+      },
+      {
         "title": "6/26/2026 - Internesnel Hotels AD Skopje - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77832",
         "date": "2026-06-26"
@@ -2252,14 +2257,14 @@
         "title": "10/31/2024 - Internesnel Hotels AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/70284",
         "date": "2024-10-31"
-      },
-      {
-        "title": "7/31/2024 - Internesnel Hotels AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/69543",
-        "date": "2024-07-31"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "8/4/2026 - Internesnel Hotels AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78380",
+        "date": "2026-08-04"
+      },
       {
         "title": "7/1/2026 - Internesnel Hotels AD Skopje - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77885",
@@ -2289,16 +2294,6 @@
         "title": "5/28/2026 - Internesnel Hotels AD Skopje - Public call for shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77633",
         "date": "2026-05-28"
-      },
-      {
-        "title": "4/1/2026 - Internesnel Hotels AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/76111",
-        "date": "2026-04-01"
-      },
-      {
-        "title": "2/27/2026 - Internesnel Hotels AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/75635",
-        "date": "2026-02-27"
       }
     ]
   },
@@ -3005,6 +3000,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "8/4/2026 - Fabrika Karpos AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78372",
+        "date": "2026-08-04"
+      },
+      {
         "title": "7/2/2026 - Fabrika Karpos AD Skopje - Audited financial statements",
         "url": "https://seinet.com.mk/en/document/77887",
         "date": "2026-07-02"
@@ -3048,14 +3048,14 @@
         "title": "11/1/2024 - Fabrika Karpos AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
         "url": "https://seinet.com.mk/en/document/70407",
         "date": "2024-11-01"
-      },
-      {
-        "title": "11/1/2024 - Fabrika Karpos AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
-        "url": "https://seinet.com.mk/en/document/70386",
-        "date": "2024-11-01"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "8/4/2026 - Fabrika Karpos AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78373",
+        "date": "2026-08-04"
+      },
       {
         "title": "6/30/2026 - Fabrika Karpos AD Skopje - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77869",
@@ -3090,16 +3090,6 @@
         "title": "6/23/2026 - Fabrika Karpos AD Skopje - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77792",
         "date": "2026-06-23"
-      },
-      {
-        "title": "5/26/2026 - Fabrika Karpos AD Skopje - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/77363",
-        "date": "2026-05-26"
-      },
-      {
-        "title": "5/26/2026 - Fabrika Karpos AD Skopje - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/77353",
-        "date": "2026-05-26"
       }
     ]
   },
@@ -6183,6 +6173,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "8/4/2026 - ALTA banka AD Bitola - Changes in shareholders with a significant stake",
+        "url": "https://seinet.com.mk/en/document/78379",
+        "date": "2026-08-04"
+      },
+      {
         "title": "7/31/2026 - ALTA banka AD Bitola - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/78304",
         "date": "2026-07-31"
@@ -6220,11 +6215,6 @@
       {
         "title": "5/27/2026 - ALTA banka AD Bitola - Other decisions of the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77489",
-        "date": "2026-05-27"
-      },
-      {
-        "title": "5/27/2026 - ALTA banka AD Bitola - Distribution of profit",
-        "url": "https://seinet.com.mk/en/document/77488",
         "date": "2026-05-27"
       }
     ]
@@ -7900,6 +7890,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "8/4/2026 - GD Tikves AD Kavadarci - Changes in shareholders with a significant stake",
+        "url": "https://seinet.com.mk/en/document/78383",
+        "date": "2026-08-04"
+      },
+      {
         "title": "7/28/2026 - GD Tikves AD Kavadarci - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/78060",
         "date": "2026-07-28"
@@ -7922,11 +7917,6 @@
       {
         "title": "4/28/2026 - GD Tikves AD Kavadarci - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/76642",
-        "date": "2026-04-28"
-      },
-      {
-        "title": "4/28/2026 - GD Tikves AD Kavadarci - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76641",
         "date": "2026-04-28"
       }
     ]
@@ -8495,6 +8485,11 @@
     ],
     "disclosureLinks": [
       {
+        "title": "8/4/2026 - Trgotekstil maloprodazba AD Skopje - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78381",
+        "date": "2026-08-04"
+      },
+      {
         "title": "5/28/2026 - Trgotekstil maloprodazba AD Skopje - Major Bussines Transaction",
         "url": "https://seinet.com.mk/en/document/77600",
         "date": "2026-05-28"
@@ -8517,11 +8512,6 @@
       {
         "title": "4/27/2026 - Trgotekstil maloprodazba AD Skopje - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/76595",
-        "date": "2026-04-27"
-      },
-      {
-        "title": "4/27/2026 - Trgotekstil maloprodazba AD Skopje - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76594",
         "date": "2026-04-27"
       }
     ]

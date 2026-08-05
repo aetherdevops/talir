@@ -1,8 +1,44 @@
 {
-  "generatedAt": "2026-08-04T05:20:38.757Z",
-  "lastIssuerScan": "2026-08-04",
+  "generatedAt": "2026-08-05T05:20:52.145Z",
+  "lastIssuerScan": "2026-08-05",
   "issuerCount": 170,
   "recent": [
+    {
+      "stockCode": "BGOR",
+      "stockName": "Kristal 1923 AD Veles",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-08-04",
+      "headline": "BGOR files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78370",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "INHO",
+      "stockName": "Interneshnel Hotels AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-08-04",
+      "headline": "INHO files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78369",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "KPSS",
+      "stockName": "Fabrika Karposh AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-08-04",
+      "headline": "KPSS files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78372",
+      "source": "SECNet"
+    },
     {
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
@@ -1609,18 +1645,6 @@
       "filedAt": "2026-05-27",
       "headline": "SBT files audited financial statements",
       "url": "https://seinet.com.mk/en/document/77486",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "SBT",
-      "stockName": "Stopanska banka AD Bitola",
-      "reportKind": "q1_pl",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-27",
-      "headline": "SBT files profit and loss report",
-      "url": "https://seinet.com.mk/en/document/77488",
       "source": "SECNet"
     },
     {
@@ -2202,6 +2226,42 @@
   ],
   "all": [
     {
+      "stockCode": "BGOR",
+      "stockName": "Kristal 1923 AD Veles",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-08-04",
+      "headline": "BGOR files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78370",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "INHO",
+      "stockName": "Interneshnel Hotels AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-08-04",
+      "headline": "INHO files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78369",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "KPSS",
+      "stockName": "Fabrika Karposh AD Skopje",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-08-04",
+      "headline": "KPSS files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78372",
+      "source": "SECNet"
+    },
+    {
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "reportKind": "fy_audited",
@@ -3807,18 +3867,6 @@
       "filedAt": "2026-05-27",
       "headline": "SBT files audited financial statements",
       "url": "https://seinet.com.mk/en/document/77486",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "SBT",
-      "stockName": "Stopanska banka AD Bitola",
-      "reportKind": "q1_pl",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-27",
-      "headline": "SBT files profit and loss report",
-      "url": "https://seinet.com.mk/en/document/77488",
       "source": "SECNet"
     },
     {
@@ -10422,18 +10470,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "INHO",
-      "stockName": "Interneshnel Hotels AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-06-30",
-      "periodLabel": "01.01–30.06",
-      "filedAt": "2024-07-31",
-      "headline": "INHO files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/69543",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "KJUBI",
       "stockName": "Makedonija osiguruvanje AD Skopje - Viena Inshurens Grup",
       "reportKind": "fy_audited",
@@ -10467,18 +10503,6 @@
       "filedAt": "2024-07-31",
       "headline": "TRPS files audited financial statements",
       "url": "https://seinet.com.mk/en/document/69592",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "BGOR",
-      "stockName": "Kristal 1923 AD Veles",
-      "reportKind": "fy_audited",
-      "periodStart": "2024-01-01",
-      "periodEnd": "2024-06-30",
-      "periodLabel": "01.01–30.06",
-      "filedAt": "2024-07-30",
-      "headline": "BGOR files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/69418",
       "source": "SECNet"
     },
     {
@@ -10903,6 +10927,348 @@
     }
   ],
   "byIssuer": {
+    "BGOR": [
+      {
+        "stockCode": "BGOR",
+        "stockName": "Kristal 1923 AD Veles",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-08-04",
+        "headline": "BGOR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78370",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "BGOR",
+        "stockName": "Kristal 1923 AD Veles",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-30",
+        "headline": "BGOR reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76952",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "BGOR",
+        "stockName": "Kristal 1923 AD Veles",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-04-29",
+        "headline": "BGOR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76788",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "BGOR",
+        "stockName": "Kristal 1923 AD Veles",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-03-02",
+        "headline": "BGOR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75663",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "BGOR",
+        "stockName": "Kristal 1923 AD Veles",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-31",
+        "headline": "BGOR reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74691",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "BGOR",
+        "stockName": "Kristal 1923 AD Veles",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-31",
+        "headline": "BGOR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73961",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "BGOR",
+        "stockName": "Kristal 1923 AD Veles",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-30",
+        "headline": "BGOR reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72579",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "BGOR",
+        "stockName": "Kristal 1923 AD Veles",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-02-26",
+        "headline": "BGOR files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/71123",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "BGOR",
+        "stockName": "Kristal 1923 AD Veles",
+        "reportKind": "q3_pl",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2024-10-31",
+        "headline": "BGOR reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/70337",
+        "source": "SECNet"
+      }
+    ],
+    "INHO": [
+      {
+        "stockCode": "INHO",
+        "stockName": "Interneshnel Hotels AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-08-04",
+        "headline": "INHO files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78369",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "INHO",
+        "stockName": "Interneshnel Hotels AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-06-26",
+        "headline": "INHO files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77832",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "INHO",
+        "stockName": "Interneshnel Hotels AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-06-02",
+        "headline": "INHO reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/77718",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "INHO",
+        "stockName": "Interneshnel Hotels AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-02-27",
+        "headline": "INHO files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75634",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "INHO",
+        "stockName": "Interneshnel Hotels AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-31",
+        "headline": "INHO reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74687",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "INHO",
+        "stockName": "Interneshnel Hotels AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-31",
+        "headline": "INHO files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/73987",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "INHO",
+        "stockName": "Interneshnel Hotels AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-30",
+        "headline": "INHO reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72464",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "INHO",
+        "stockName": "Interneshnel Hotels AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-02-28",
+        "headline": "INHO files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/71309",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "INHO",
+        "stockName": "Interneshnel Hotels AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2024-10-31",
+        "headline": "INHO reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/70284",
+        "source": "SECNet"
+      }
+    ],
+    "KPSS": [
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-08-04",
+        "headline": "KPSS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78372",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-07-02",
+        "headline": "KPSS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/77887",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-06-30",
+        "headline": "KPSS files profit and loss report",
+        "url": "https://seinet.com.mk/en/document/77865",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-04-30",
+        "headline": "KPSS reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/76980",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-03-17",
+        "headline": "KPSS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/75907",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-10-31",
+        "headline": "KPSS reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74693",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-07-31",
+        "headline": "KPSS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/74064",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "q1_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2025-04-30",
+        "headline": "KPSS reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/72669",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "fy_audited",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2025-03-17",
+        "headline": "KPSS files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/71527",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "KPSS",
+        "stockName": "Fabrika Karposh AD Skopje",
+        "reportKind": "q3_pl",
+        "periodStart": "2024-01-01",
+        "periodEnd": "2024-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2024-11-01",
+        "headline": "KPSS reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/70407",
+        "source": "SECNet"
+      }
+    ],
     "CEVI": [
       {
         "stockCode": "CEVI",
@@ -12628,18 +12994,6 @@
         "filedAt": "2026-05-27",
         "headline": "SBT files audited financial statements",
         "url": "https://seinet.com.mk/en/document/77486",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "SBT",
-        "stockName": "Stopanska banka AD Bitola",
-        "reportKind": "q1_pl",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-05-27",
-        "headline": "SBT files profit and loss report",
-        "url": "https://seinet.com.mk/en/document/77488",
         "source": "SECNet"
       },
       {
@@ -18935,336 +19289,6 @@
         "source": "SECNet"
       }
     ],
-    "KPSS": [
-      {
-        "stockCode": "KPSS",
-        "stockName": "Fabrika Karposh AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-07-02",
-        "headline": "KPSS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77887",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "KPSS",
-        "stockName": "Fabrika Karposh AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-06-30",
-        "headline": "KPSS files profit and loss report",
-        "url": "https://seinet.com.mk/en/document/77865",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "KPSS",
-        "stockName": "Fabrika Karposh AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-30",
-        "headline": "KPSS reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76980",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "KPSS",
-        "stockName": "Fabrika Karposh AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-03-17",
-        "headline": "KPSS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75907",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "KPSS",
-        "stockName": "Fabrika Karposh AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-31",
-        "headline": "KPSS reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74693",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "KPSS",
-        "stockName": "Fabrika Karposh AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-31",
-        "headline": "KPSS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74064",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "KPSS",
-        "stockName": "Fabrika Karposh AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-30",
-        "headline": "KPSS reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72669",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "KPSS",
-        "stockName": "Fabrika Karposh AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-03-17",
-        "headline": "KPSS files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71527",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "KPSS",
-        "stockName": "Fabrika Karposh AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-11-01",
-        "headline": "KPSS reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/70407",
-        "source": "SECNet"
-      }
-    ],
-    "INHO": [
-      {
-        "stockCode": "INHO",
-        "stockName": "Interneshnel Hotels AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-06-26",
-        "headline": "INHO files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/77832",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "INHO",
-        "stockName": "Interneshnel Hotels AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-06-02",
-        "headline": "INHO reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/77718",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "INHO",
-        "stockName": "Interneshnel Hotels AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-02-27",
-        "headline": "INHO files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75634",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "INHO",
-        "stockName": "Interneshnel Hotels AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-31",
-        "headline": "INHO reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74687",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "INHO",
-        "stockName": "Interneshnel Hotels AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-31",
-        "headline": "INHO files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73987",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "INHO",
-        "stockName": "Interneshnel Hotels AD Skopje",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-30",
-        "headline": "INHO reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72464",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "INHO",
-        "stockName": "Interneshnel Hotels AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-02-28",
-        "headline": "INHO files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71309",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "INHO",
-        "stockName": "Interneshnel Hotels AD Skopje",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-10-31",
-        "headline": "INHO reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/70284",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "INHO",
-        "stockName": "Interneshnel Hotels AD Skopje",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2024-07-31",
-        "headline": "INHO files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/69543",
-        "source": "SECNet"
-      }
-    ],
-    "BGOR": [
-      {
-        "stockCode": "BGOR",
-        "stockName": "Kristal 1923 AD Veles",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-04-30",
-        "headline": "BGOR reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/76952",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "BGOR",
-        "stockName": "Kristal 1923 AD Veles",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-04-29",
-        "headline": "BGOR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76788",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "BGOR",
-        "stockName": "Kristal 1923 AD Veles",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-03-02",
-        "headline": "BGOR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/75663",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "BGOR",
-        "stockName": "Kristal 1923 AD Veles",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-10-31",
-        "headline": "BGOR reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74691",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "BGOR",
-        "stockName": "Kristal 1923 AD Veles",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-07-31",
-        "headline": "BGOR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/73961",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "BGOR",
-        "stockName": "Kristal 1923 AD Veles",
-        "reportKind": "q1_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2025-04-30",
-        "headline": "BGOR reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/72579",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "BGOR",
-        "stockName": "Kristal 1923 AD Veles",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2025-02-26",
-        "headline": "BGOR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/71123",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "BGOR",
-        "stockName": "Kristal 1923 AD Veles",
-        "reportKind": "q3_pl",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2024-10-31",
-        "headline": "BGOR reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/70337",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "BGOR",
-        "stockName": "Kristal 1923 AD Veles",
-        "reportKind": "fy_audited",
-        "periodStart": "2024-01-01",
-        "periodEnd": "2024-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2024-07-30",
-        "headline": "BGOR files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/69418",
-        "source": "SECNet"
-      }
-    ],
     "FAKM": [
       {
         "stockCode": "FAKM",
@@ -20079,7 +20103,7 @@
       "reportKind": "fy_audited",
       "periodEnd": "2026-12-31",
       "periodLabel": "FY 2026",
-      "expectedLabel": "expected mid-May",
+      "expectedLabel": "expected early July",
       "basis": "historical_median",
       "regulatoryLatest": "2026-05-31"
     },

@@ -1,10 +1,127 @@
 {
-  "generatedAt": "2026-08-04T05:20:38.244Z",
-  "lastIssuerScan": "2026-08-04",
-  "count": 1493,
-  "datedCount": 1493,
+  "generatedAt": "2026-08-05T05:20:51.630Z",
+  "lastIssuerScan": "2026-08-05",
+  "count": 1491,
+  "datedCount": 1491,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "BGOR-https-seinet-com-mk-en-document-78370",
+      "rawTitle": "8/4/2026 - Kristal 1923 AD Veles - Non-audited financial statements 01.01. - 30.06.",
+      "title": "BGOR files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "BGOR",
+      "stockName": "Kristal 1923 AD Veles",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-04",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78370"
+    },
+    {
+      "id": "BGOR-https-seinet-com-mk-en-document-78371",
+      "rawTitle": "8/4/2026 - Kristal 1923 AD Veles - Other price sensitive information",
+      "title": "BGOR: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "BGOR",
+      "stockName": "Kristal 1923 AD Veles",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-04",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78371"
+    },
+    {
+      "id": "INHO-https-seinet-com-mk-en-document-78369",
+      "rawTitle": "8/4/2026 - Internesnel Hotels AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+      "title": "INHO files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "INHO",
+      "stockName": "Interneshnel Hotels AD Skopje",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-04",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78369"
+    },
+    {
+      "id": "INHO-https-seinet-com-mk-en-document-78380",
+      "rawTitle": "8/4/2026 - Internesnel Hotels AD Skopje - Other price sensitive information",
+      "title": "INHO: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "INHO",
+      "stockName": "Interneshnel Hotels AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-04",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78380"
+    },
+    {
+      "id": "KPSS-https-seinet-com-mk-en-document-78372",
+      "rawTitle": "8/4/2026 - Fabrika Karpos AD Skopje - Non-audited financial statements 01.01. - 30.06.",
+      "title": "KPSS files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "KPSS",
+      "stockName": "Fabrika Karposh AD Skopje",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-04",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78372"
+    },
+    {
+      "id": "KPSS-https-seinet-com-mk-en-document-78373",
+      "rawTitle": "8/4/2026 - Fabrika Karpos AD Skopje - Other price sensitive information",
+      "title": "KPSS: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "KPSS",
+      "stockName": "Fabrika Karposh AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-04",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78373"
+    },
+    {
+      "id": "SBT-https-seinet-com-mk-en-document-78379",
+      "rawTitle": "8/4/2026 - ALTA banka AD Bitola - Changes in shareholders with a significant stake",
+      "title": "SBT: Changes in shareholders with a significant stake",
+      "source": "SECNet",
+      "stockCode": "SBT",
+      "stockName": "Stopanska banka AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-04",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78379"
+    },
+    {
+      "id": "TIKV-https-seinet-com-mk-en-document-78383",
+      "rawTitle": "8/4/2026 - GD Tikves AD Kavadarci - Changes in shareholders with a significant stake",
+      "title": "TIKV: Changes in shareholders with a significant stake",
+      "source": "SECNet",
+      "stockCode": "TIKV",
+      "stockName": "GD-TIKVESh AD Kavadarci",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-04",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78383"
+    },
+    {
+      "id": "TSMP-https-seinet-com-mk-en-document-78381",
+      "rawTitle": "8/4/2026 - Trgotekstil maloprodazba AD Skopje - Other price sensitive information",
+      "title": "TSMP: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "TSMP",
+      "stockName": "Trgotekstil Maloprodazhba AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-04",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78381"
+    },
     {
       "id": "CEVI-https-seinet-com-mk-en-document-78306",
       "rawTitle": "7/31/2026 - FZC 11 Oktomvri AD Kumanovo - Non-audited financial statements 01.01. - 30.06.",
@@ -5388,19 +5505,6 @@
       "url": "https://seinet.com.mk/en/document/77489"
     },
     {
-      "id": "SBT-https-seinet-com-mk-en-document-77488",
-      "rawTitle": "5/27/2026 - ALTA banka AD Bitola - Distribution of profit",
-      "title": "SBT files profit and loss report",
-      "source": "SECNet",
-      "stockCode": "SBT",
-      "stockName": "Stopanska banka AD Bitola",
-      "category": "dividend",
-      "filingTier": "dividend",
-      "publishedAt": "2026-05-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77488"
-    },
-    {
       "id": "SDOM-https-seinet-com-mk-en-document-77392",
       "rawTitle": "5/27/2026 - Sovremen dom AD Prilep - Audited financial statements",
       "title": "SDOM files audited financial statements",
@@ -5750,32 +5854,6 @@
       "publishedAt": "2026-05-26",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77372"
-    },
-    {
-      "id": "KPSS-https-seinet-com-mk-en-document-77363",
-      "rawTitle": "5/26/2026 - Fabrika Karpos AD Skopje - Draft decisions for the shareholders meeting",
-      "title": "KPSS: Draft decisions for the shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "KPSS",
-      "stockName": "Fabrika Karposh AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-05-26",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77363"
-    },
-    {
-      "id": "KPSS-https-seinet-com-mk-en-document-77353",
-      "rawTitle": "5/26/2026 - Fabrika Karpos AD Skopje - Draft decisions for the shareholders meeting",
-      "title": "KPSS: Draft decisions for the shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "KPSS",
-      "stockName": "Fabrika Karposh AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-05-26",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77353"
     },
     {
       "id": "MTUR-https-seinet-com-mk-en-document-77339",
@@ -9249,19 +9327,6 @@
       "url": "https://seinet.com.mk/en/document/76642"
     },
     {
-      "id": "TIKV-https-seinet-com-mk-en-document-76641",
-      "rawTitle": "4/28/2026 - GD Tikves AD Kavadarci - Draft decisions for the shareholders meeting",
-      "title": "TIKV: Draft decisions for the shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "TIKV",
-      "stockName": "GD-TIKVESh AD Kavadarci",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-28",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76641"
-    },
-    {
       "id": "TKVS-https-seinet-com-mk-en-document-76684",
       "rawTitle": "4/28/2026 - VV Tikves AD Kavadarci - CCG Questionnaires",
       "title": "TKVS: CCG Questionnaires",
@@ -9832,19 +9897,6 @@
       "publishedAt": "2026-04-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76595"
-    },
-    {
-      "id": "TSMP-https-seinet-com-mk-en-document-76594",
-      "rawTitle": "4/27/2026 - Trgotekstil maloprodazba AD Skopje - Public call for shareholders meeting",
-      "title": "TSMP: Public call for shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "TSMP",
-      "stockName": "Trgotekstil Maloprodazhba AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76594"
     },
     {
       "id": "USJE-https-seinet-com-mk-en-document-76526",
@@ -10679,19 +10731,6 @@
       "url": "https://seinet.com.mk/en/document/76087"
     },
     {
-      "id": "INHO-https-seinet-com-mk-en-document-76111",
-      "rawTitle": "4/1/2026 - Internesnel Hotels AD Skopje - Other price sensitive information",
-      "title": "INHO: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "INHO",
-      "stockName": "Interneshnel Hotels AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-01",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76111"
-    },
-    {
       "id": "LOZP-https-seinet-com-mk-en-document-76137",
       "rawTitle": "4/1/2026 - Pelisterka AD Skopje - Non-audited financial statements 01.01. - 31.12.",
       "title": "LOZP files audited financial statements",
@@ -11485,19 +11524,6 @@
       "url": "https://seinet.com.mk/en/document/75663"
     },
     {
-      "id": "BGOR-https-seinet-com-mk-en-document-75664",
-      "rawTitle": "3/2/2026 - Kristal 1923 AD Veles - Other price sensitive information",
-      "title": "BGOR: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "BGOR",
-      "stockName": "Kristal 1923 AD Veles",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-03-02",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75664"
-    },
-    {
       "id": "CEVI-https-seinet-com-mk-en-document-75730",
       "rawTitle": "3/2/2026 - FZC 11 Oktomvri AD Kumanovo - Non-audited financial statements 01.01. - 31.12.",
       "title": "CEVI files audited financial statements",
@@ -12094,19 +12120,6 @@
       "publishedAt": "2026-02-27",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/75634"
-    },
-    {
-      "id": "INHO-https-seinet-com-mk-en-document-75635",
-      "rawTitle": "2/27/2026 - Internesnel Hotels AD Skopje - Other price sensitive information",
-      "title": "INHO: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "INHO",
-      "stockName": "Interneshnel Hotels AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-02-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/75635"
     },
     {
       "id": "KJUBI-https-seinet-com-mk-en-document-75646",
@@ -17972,19 +17985,6 @@
       "url": "https://seinet.com.mk/en/document/70407"
     },
     {
-      "id": "KPSS-https-seinet-com-mk-en-document-70386",
-      "rawTitle": "11/1/2024 - Fabrika Karpos AD Skopje - Non-audited profit&loss account 01.01. - 30.09.",
-      "title": "KPSS reports profit and loss for 01.01.–30.09",
-      "source": "SECNet",
-      "stockCode": "KPSS",
-      "stockName": "Fabrika Karposh AD Skopje",
-      "category": "earnings",
-      "filingTier": "routine",
-      "publishedAt": "2024-11-01",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/70386"
-    },
-    {
       "id": "BGOR-https-seinet-com-mk-en-document-70337",
       "rawTitle": "10/31/2024 - Kristal 1923 AD Veles - Non-audited profit&loss account 01.01. - 30.09.",
       "title": "BGOR reports profit and loss for 01.01.–30.09",
@@ -18557,19 +18557,6 @@
       "url": "https://seinet.com.mk/en/document/69664"
     },
     {
-      "id": "INHO-https-seinet-com-mk-en-document-69543",
-      "rawTitle": "7/31/2024 - Internesnel Hotels AD Skopje - Non-audited financial statements 01.01. - 30.06.",
-      "title": "INHO files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "INHO",
-      "stockName": "Interneshnel Hotels AD Skopje",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2024-07-31",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/69543"
-    },
-    {
       "id": "KJUBI-https-seinet-com-mk-en-document-69617",
       "rawTitle": "7/31/2024 - Makedonija osiguruvanje  AD Skopje - Viena Insurance Grup - Non-audited financial statements 01.01. - 30.06.",
       "title": "KJUBI files audited financial statements",
@@ -18620,19 +18607,6 @@
       "publishedAt": "2024-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/69555"
-    },
-    {
-      "id": "BGOR-https-seinet-com-mk-en-document-69418",
-      "rawTitle": "7/30/2024 - Kristal 1923 AD Veles - Non-audited financial statements 01.01. - 30.06.",
-      "title": "BGOR files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "BGOR",
-      "stockName": "Kristal 1923 AD Veles",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2024-07-30",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/69418"
     },
     {
       "id": "ZKAR-https-seinet-com-mk-en-document-69393",
