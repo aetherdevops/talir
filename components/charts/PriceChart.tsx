@@ -22,7 +22,10 @@ interface PriceChartProps {
         downColor?: string
     }
     excludePeriods?: string[]
-    /** Overrides default chart canvas sizing (aspect / md height). */
+    /**
+     * Size the plot canvas only. Do not wrap this component in a fixed `h-*` parent —
+     * timeframe chips sit below the canvas in normal flow and will overflow/collide.
+     */
     chartClassName?: string
 }
 
