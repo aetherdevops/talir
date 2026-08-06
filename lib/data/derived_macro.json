@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-05T05:29:32.255Z",
+  "generatedAt": "2026-08-06T05:34:07.573Z",
   "asOfDate": "2026-06-01",
-  "lastIngestedAt": "2026-08-05T05:29:29.352+00:00",
+  "lastIngestedAt": "2026-08-06T05:34:04.032+00:00",
   "disclaimerEn": "Official statistics from SSO (MakStat), NBRM (NBStat), and MoF where available · not live · revisions possible.",
   "disclaimerMk": "Официјална статистика од ДЗС (MakStat), НБРМ (NBStat) и МФ каде е достапно · не во живо · можни ревизии.",
   "series": [
@@ -2186,10 +2186,6 @@
       "kpiOrder": null,
       "points": [
         {
-          "date": "2016-06-01",
-          "value": -13.2
-        },
-        {
           "date": "2016-07-01",
           "value": 12.6
         },
@@ -2664,6 +2660,10 @@
         {
           "date": "2026-05-01",
           "value": 0.9
+        },
+        {
+          "date": "2026-06-01",
+          "value": 19
         }
       ]
     },

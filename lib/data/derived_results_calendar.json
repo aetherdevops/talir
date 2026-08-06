@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-05T05:20:52.145Z",
-  "lastIssuerScan": "2026-08-05",
+  "generatedAt": "2026-08-06T05:23:11.821Z",
+  "lastIssuerScan": "2026-08-06",
   "issuerCount": 170,
   "recent": [
     {
@@ -2149,78 +2149,6 @@
       "filedAt": "2026-05-11",
       "headline": "PKB reports profit and loss for 01.01.–31.03",
       "url": "https://seinet.com.mk/en/document/77102",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "RZUG",
-      "stockName": "Ugotur AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-08",
-      "headline": "RZUG files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/77085",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "RZUG",
-      "stockName": "Ugotur AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-08",
-      "headline": "RZUG files profit and loss report",
-      "url": "https://seinet.com.mk/en/document/77083",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "RZUS",
-      "stockName": "RZh Uslugi AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-05-08",
-      "headline": "RZUS reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/77095",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "SPAZ",
-      "stockName": "Skopski Pazar AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-03-31",
-      "periodLabel": "01.01–31.03",
-      "filedAt": "2026-05-08",
-      "headline": "SPAZ reports profit and loss for 01.01.–31.03",
-      "url": "https://seinet.com.mk/en/document/77081",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "ZILU",
-      "stockName": "Zhito Luks AD Skopje",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-08",
-      "headline": "ZILU files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/77097",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "ZILU",
-      "stockName": "Zhito Luks AD Skopje",
-      "reportKind": "q1_pl",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2026-05-08",
-      "headline": "ZILU files profit and loss report",
-      "url": "https://seinet.com.mk/en/document/77093",
       "source": "SECNet"
     }
   ],
