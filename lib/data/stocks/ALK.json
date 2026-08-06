@@ -64461,6 +64461,83 @@
       "quantity": 32,
       "turnover_best_mkd": 740145,
       "total_turnover_mkd": 740145
+    },
+    {
+      "date": "2026-07-27",
+      "last_transaction_price": 23200,
+      "max_price": 23400,
+      "min_price": 23200,
+      "average_price": 23347.06,
+      "percent_change": 0.94,
+      "quantity": 34,
+      "turnover_best_mkd": 793800,
+      "total_turnover_mkd": 793800
+    },
+    {
+      "date": "2026-07-28",
+      "last_transaction_price": 23500,
+      "max_price": 23500,
+      "min_price": 23400,
+      "average_price": 23485.48,
+      "percent_change": 0.59,
+      "quantity": 107,
+      "turnover_best_mkd": 2512946,
+      "total_turnover_mkd": 2512946
+    },
+    {
+      "date": "2026-07-29",
+      "last_transaction_price": 23400,
+      "max_price": 23499,
+      "min_price": 23333,
+      "average_price": 23454.61,
+      "percent_change": -0.13,
+      "quantity": 62,
+      "turnover_best_mkd": 1454186,
+      "total_turnover_mkd": 1454186
+    },
+    {
+      "date": "2026-07-30",
+      "last_transaction_price": 22850,
+      "max_price": 23333,
+      "min_price": 22850,
+      "average_price": 23005.24,
+      "percent_change": -1.92,
+      "quantity": 96,
+      "turnover_best_mkd": 2208503,
+      "total_turnover_mkd": 2208503
+    },
+    {
+      "date": "2026-07-31",
+      "last_transaction_price": 22998,
+      "max_price": 22999,
+      "min_price": 22850,
+      "average_price": 22926.15,
+      "percent_change": -0.34,
+      "quantity": 247,
+      "turnover_best_mkd": 5662758,
+      "total_turnover_mkd": 5662758
+    },
+    {
+      "date": "2026-08-04",
+      "last_transaction_price": 23000,
+      "max_price": 23005,
+      "min_price": 22900,
+      "average_price": 22999.28,
+      "percent_change": 0.32,
+      "quantity": 83,
+      "turnover_best_mkd": 1908940,
+      "total_turnover_mkd": 1908940
+    },
+    {
+      "date": "2026-08-05",
+      "last_transaction_price": 22999,
+      "max_price": 23050,
+      "min_price": 22950,
+      "average_price": 23004.72,
+      "percent_change": 0.02,
+      "quantity": 167,
+      "turnover_best_mkd": 3841789,
+      "total_turnover_mkd": 8341789
     }
   ]
 }

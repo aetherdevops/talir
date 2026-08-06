@@ -64461,6 +64461,83 @@
       "quantity": 0,
       "turnover_best_mkd": 0,
       "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-27",
+      "last_transaction_price": 5100,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 5100,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-28",
+      "last_transaction_price": 5100,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 5100,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-29",
+      "last_transaction_price": 5100,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 5100,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-30",
+      "last_transaction_price": 5100,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 5100,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-31",
+      "last_transaction_price": 5056,
+      "max_price": 5056,
+      "min_price": 5056,
+      "average_price": 5056,
+      "percent_change": -0.86,
+      "quantity": 26,
+      "turnover_best_mkd": 131456,
+      "total_turnover_mkd": 131456
+    },
+    {
+      "date": "2026-08-04",
+      "last_transaction_price": 5056,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 5056,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-08-05",
+      "last_transaction_price": 5056,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 5056,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
     }
   ]
 }

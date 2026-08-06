@@ -1,5 +1,96 @@
 {
-  "generatedAt": "2026-07-26T17:31:23.192Z",
-  "issueCount": 0,
-  "issues": []
+  "generatedAt": "2026-08-06T05:39:21.482Z",
+  "issueCount": 9,
+  "issues": [
+    {
+      "stockCode": "RADE",
+      "url": "https://seinet.com.mk/en/document/77820",
+      "filedAt": "2026-06-25",
+      "kind": "ex_not_after_cum",
+      "detail": "ex 2026-07-07 not after cum 2026-07-07",
+      "clearedFields": [
+        "cumDate"
+      ]
+    },
+    {
+      "stockCode": "REP",
+      "url": "https://seinet.com.mk/en/document/76145",
+      "filedAt": "2026-04-02",
+      "kind": "payment_before_ex",
+      "detail": "paymentStart 2025-05-06 before ex 2026-04-16",
+      "clearedFields": [
+        "paymentStart"
+      ]
+    },
+    {
+      "stockCode": "VIT",
+      "url": "https://seinet.com.mk/en/document/68832",
+      "filedAt": "2024-05-31",
+      "kind": "payment_before_ex",
+      "detail": "paymentEnd 2023-09-30 before ex 2024-06-12",
+      "clearedFields": [
+        "paymentEnd"
+      ]
+    },
+    {
+      "stockCode": "TEHN",
+      "url": "https://seinet.com.mk/en/document/64549",
+      "filedAt": "2023-06-12",
+      "kind": "ex_not_after_cum",
+      "detail": "ex 2023-05-23 not after cum 2023-06-22",
+      "clearedFields": [
+        "cumDate"
+      ]
+    },
+    {
+      "stockCode": "VIT",
+      "url": "https://seinet.com.mk/en/document/59463",
+      "filedAt": "2022-05-19",
+      "kind": "record_before_ex",
+      "detail": "record 2022-05-31 before ex 2022-06-01",
+      "clearedFields": [
+        "recordDate"
+      ]
+    },
+    {
+      "stockCode": "RZK",
+      "url": "https://seinet.com.mk/en/document/55930",
+      "filedAt": "2021-07-07",
+      "kind": "payment_before_ex",
+      "detail": "paymentEnd 2008-12-31 before ex 2021-07-20",
+      "clearedFields": [
+        "paymentEnd"
+      ]
+    },
+    {
+      "stockCode": "RZK",
+      "url": "https://seinet.com.mk/en/document/51244",
+      "filedAt": "2020-06-24",
+      "kind": "payment_before_ex",
+      "detail": "paymentEnd 2008-12-31 before ex 2020-07-07",
+      "clearedFields": [
+        "paymentEnd"
+      ]
+    },
+    {
+      "stockCode": "ALK",
+      "url": "https://seinet.com.mk/en/document/49750",
+      "filedAt": "2020-04-06",
+      "kind": "ex_not_after_cum",
+      "detail": "ex 2020-04-22 not after cum 2020-04-22",
+      "clearedFields": [
+        "cumDate"
+      ]
+    },
+    {
+      "stockCode": "RZK",
+      "url": "https://seinet.com.mk/en/document/45826",
+      "filedAt": "2019-05-09",
+      "kind": "payment_before_ex",
+      "detail": "paymentEnd 2008-12-31 before ex 2019-05-22",
+      "clearedFields": [
+        "paymentEnd"
+      ]
+    }
+  ]
 }

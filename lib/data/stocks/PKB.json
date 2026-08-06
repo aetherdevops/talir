@@ -64461,6 +64461,83 @@
       "quantity": 0,
       "turnover_best_mkd": 0,
       "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-27",
+      "last_transaction_price": 18000,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 18000,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-28",
+      "last_transaction_price": 18000,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 18000,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-29",
+      "last_transaction_price": 18000,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 18000,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-30",
+      "last_transaction_price": 18000,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 18000,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-31",
+      "last_transaction_price": 18000,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 18000,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-08-04",
+      "last_transaction_price": 18000,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 18000,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-08-05",
+      "last_transaction_price": 18050,
+      "max_price": 18050,
+      "min_price": 18050,
+      "average_price": 18050,
+      "percent_change": 0.28,
+      "quantity": 100,
+      "turnover_best_mkd": 1805000,
+      "total_turnover_mkd": 1805000
     }
   ]
 }

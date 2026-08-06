@@ -63713,6 +63713,83 @@
       "quantity": 0,
       "turnover_best_mkd": 0,
       "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-27",
+      "last_transaction_price": 495,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 495,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-28",
+      "last_transaction_price": 495,
+      "max_price": 495,
+      "min_price": 495,
+      "average_price": 495,
+      "percent_change": 0,
+      "quantity": 608,
+      "turnover_best_mkd": 300960,
+      "total_turnover_mkd": 300960
+    },
+    {
+      "date": "2026-07-29",
+      "last_transaction_price": 495,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 495,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-30",
+      "last_transaction_price": 495,
+      "max_price": 495,
+      "min_price": 495,
+      "average_price": 495,
+      "percent_change": 0,
+      "quantity": 506,
+      "turnover_best_mkd": 250470,
+      "total_turnover_mkd": 250470
+    },
+    {
+      "date": "2026-07-31",
+      "last_transaction_price": 500,
+      "max_price": 500,
+      "min_price": 499,
+      "average_price": 499.55,
+      "percent_change": 0.92,
+      "quantity": 660,
+      "turnover_best_mkd": 329700,
+      "total_turnover_mkd": 329700
+    },
+    {
+      "date": "2026-08-04",
+      "last_transaction_price": 500,
+      "max_price": 500,
+      "min_price": 500,
+      "average_price": 500,
+      "percent_change": 0.09,
+      "quantity": 60,
+      "turnover_best_mkd": 30000,
+      "total_turnover_mkd": 30000
+    },
+    {
+      "date": "2026-08-05",
+      "last_transaction_price": 500,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 500,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
     }
   ]
 }

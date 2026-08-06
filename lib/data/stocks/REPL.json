@@ -64461,6 +64461,83 @@
       "quantity": 0,
       "turnover_best_mkd": 0,
       "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-27",
+      "last_transaction_price": 15100,
+      "max_price": 15100,
+      "min_price": 15100,
+      "average_price": 15100,
+      "percent_change": 0.3,
+      "quantity": 18,
+      "turnover_best_mkd": 271800,
+      "total_turnover_mkd": 271800
+    },
+    {
+      "date": "2026-07-28",
+      "last_transaction_price": 15100,
+      "max_price": 15100,
+      "min_price": 15050,
+      "average_price": 15062.5,
+      "percent_change": -0.25,
+      "quantity": 40,
+      "turnover_best_mkd": 602500,
+      "total_turnover_mkd": 602500
+    },
+    {
+      "date": "2026-07-29",
+      "last_transaction_price": 15050,
+      "max_price": 15050,
+      "min_price": 15050,
+      "average_price": 15050,
+      "percent_change": -0.08,
+      "quantity": 10,
+      "turnover_best_mkd": 150500,
+      "total_turnover_mkd": 150500
+    },
+    {
+      "date": "2026-07-30",
+      "last_transaction_price": 15050,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 15050,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-31",
+      "last_transaction_price": 15050,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 15050,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-08-04",
+      "last_transaction_price": 15050,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 15050,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-08-05",
+      "last_transaction_price": 15050,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 15050,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
     }
   ]
 }

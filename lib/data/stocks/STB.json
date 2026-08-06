@@ -64461,6 +64461,83 @@
       "quantity": 50,
       "turnover_best_mkd": 96500,
       "total_turnover_mkd": 96500
+    },
+    {
+      "date": "2026-07-27",
+      "last_transaction_price": 1930,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 1930,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-28",
+      "last_transaction_price": 1950,
+      "max_price": 1950,
+      "min_price": 1950,
+      "average_price": 1950,
+      "percent_change": 1.04,
+      "quantity": 60,
+      "turnover_best_mkd": 117000,
+      "total_turnover_mkd": 117000
+    },
+    {
+      "date": "2026-07-29",
+      "last_transaction_price": 1920,
+      "max_price": 1925,
+      "min_price": 1920,
+      "average_price": 1922.53,
+      "percent_change": -1.41,
+      "quantity": 99,
+      "turnover_best_mkd": 190330,
+      "total_turnover_mkd": 190330
+    },
+    {
+      "date": "2026-07-30",
+      "last_transaction_price": 1910,
+      "max_price": 1910,
+      "min_price": 1900,
+      "average_price": 1905.8,
+      "percent_change": -0.87,
+      "quantity": 50,
+      "turnover_best_mkd": 95290,
+      "total_turnover_mkd": 95290
+    },
+    {
+      "date": "2026-07-31",
+      "last_transaction_price": 1900,
+      "max_price": 1900,
+      "min_price": 1900,
+      "average_price": 1900,
+      "percent_change": -0.3,
+      "quantity": 10,
+      "turnover_best_mkd": 19000,
+      "total_turnover_mkd": 19000
+    },
+    {
+      "date": "2026-08-04",
+      "last_transaction_price": 1900,
+      "max_price": 1900,
+      "min_price": 1900,
+      "average_price": 1900,
+      "percent_change": 0,
+      "quantity": 60,
+      "turnover_best_mkd": 114000,
+      "total_turnover_mkd": 114000
+    },
+    {
+      "date": "2026-08-05",
+      "last_transaction_price": 1850,
+      "max_price": 1900,
+      "min_price": 1850,
+      "average_price": 1852.94,
+      "percent_change": -2.48,
+      "quantity": 170,
+      "turnover_best_mkd": 315000,
+      "total_turnover_mkd": 315000
     }
   ]
 }

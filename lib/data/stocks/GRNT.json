@@ -64461,6 +64461,83 @@
       "quantity": 0,
       "turnover_best_mkd": 0,
       "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-27",
+      "last_transaction_price": 1500,
+      "max_price": 1500,
+      "min_price": 1500,
+      "average_price": 1500,
+      "percent_change": 0,
+      "quantity": 120,
+      "turnover_best_mkd": 180000,
+      "total_turnover_mkd": 180000
+    },
+    {
+      "date": "2026-07-28",
+      "last_transaction_price": 1500,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 1500,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-29",
+      "last_transaction_price": 1500,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 1500,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-07-30",
+      "last_transaction_price": 1450,
+      "max_price": 1480,
+      "min_price": 1450,
+      "average_price": 1459.38,
+      "percent_change": -2.71,
+      "quantity": 320,
+      "turnover_best_mkd": 467000,
+      "total_turnover_mkd": 467000
+    },
+    {
+      "date": "2026-07-31",
+      "last_transaction_price": 1450,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 1459.38,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-08-04",
+      "last_transaction_price": 1450,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 1459.38,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
+    },
+    {
+      "date": "2026-08-05",
+      "last_transaction_price": 1450,
+      "max_price": 0,
+      "min_price": 0,
+      "average_price": 1459.38,
+      "percent_change": 0,
+      "quantity": 0,
+      "turnover_best_mkd": 0,
+      "total_turnover_mkd": 0
     }
   ]
 }
