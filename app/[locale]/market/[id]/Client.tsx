@@ -3,7 +3,7 @@
 
 import { useState, useMemo } from 'react'
 import { IndexDetails, NewsItem } from '@/lib/data'
-import { PriceChart } from '@/components/charts/PriceChart'
+import { ClientPriceChart } from '@/components/charts/ClientPriceChart'
 import { formatIndexLevel } from '@/lib/utils'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
 import { StockPageActions } from '@/components/stock/StockPageActions'
@@ -89,14 +89,14 @@ export function IndexClient({ index, news }: IndexClientProps) {
                 {/* Left Column: Chart */}
                 <div className="lg:col-span-2 space-y-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
                     <div className="bg-surface border border-border rounded-xl p-6 shadow-sm">
-                        <div className="h-[450px]">
-                            <PriceChart
-                                data={chartData}
-                                timeframe={timeframe}
-                                onTimeframeChange={setTimeframe}
-                                excludePeriods={['1D']}
-                            />
-                        </div>
+                        {/* Height only on the canvas (chartClassName) — never wrap canvas+timeframe chips in a fixed h-*. */}
+                        <ClientPriceChart
+                            data={chartData}
+                            timeframe={timeframe}
+                            onTimeframeChange={setTimeframe}
+                            excludePeriods={['1D']}
+                            chartClassName="h-[320px] md:h-[400px]"
+                        />
                     </div>
                 </div>
 

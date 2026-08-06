@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
 import { useThemeStore } from '@/lib/store'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn } from '@/lib/utils'
 
 export function ThemeSetting() {
     const { theme, setTheme } = useThemeStore()
+    const { t } = useLocale()
     const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
@@ -23,8 +25,8 @@ export function ThemeSetting() {
     }
 
     const options = [
-        { value: 'dark' as const, label: 'Dark', icon: Moon },
-        { value: 'light' as const, label: 'Light', icon: Sun },
+        { value: 'dark' as const, label: t('settings.themeDark'), icon: Moon },
+        { value: 'light' as const, label: t('settings.themeLight'), icon: Sun },
     ]
 
     return (

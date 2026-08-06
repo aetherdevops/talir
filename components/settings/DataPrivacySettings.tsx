@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useAuth } from '@/components/auth/AuthProvider'
 import { createClientIfConfigured } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
+import { LocaleLink } from '@/components/layout/LocaleLink'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import {
     clearLocalDataStorage,
     fetchUserData,
@@ -15,6 +17,7 @@ import { useWatchlistStore } from '@/lib/stores/watchlist'
 
 export function DataPrivacySettings() {
     const { user } = useAuth()
+    const { t } = useLocale()
     const [status, setStatus] = useState<string | null>(null)
 
     const handleExport = async () => {
@@ -25,13 +28,13 @@ export function DataPrivacySettings() {
         if (user) {
             const supabase = createClientIfConfigured()
             if (!supabase) {
-                setStatus('Cloud sync is not configured.')
+                setStatus(t('settings.exportCloudNotConfigured'))
                 return
             }
             try {
                 remote = await fetchUserData(supabase, user.id)
             } catch {
-                setStatus('Could not fetch cloud data.')
+                setStatus(t('settings.exportCloudFailed'))
                 return
             }
         }
@@ -45,32 +48,32 @@ export function DataPrivacySettings() {
         a.download = `talir-export-${new Date().toISOString().slice(0, 10)}.json`
         a.click()
         URL.revokeObjectURL(url)
-        setStatus('Download started.')
+        setStatus(t('settings.exportStarted'))
     }
 
     const handleClearLocal = () => {
-        if (!confirm('Clear alerts, portfolios, and watchlists stored on this device?')) return
+        if (!confirm(t('settings.clearLocalConfirm'))) return
         clearLocalDataStorage()
         useAlertsStore.getState().replaceAll([])
         usePortfolioStore.getState().replaceAll([], null)
         useWatchlistStore.getState().replaceAll([], null)
-        setStatus('Local data cleared.')
+        setStatus(t('settings.clearLocalDone'))
     }
 
     return (
         <div className="space-y-4">
             <Button variant="secondary" onClick={handleExport} className="w-full sm:w-auto">
-                Download my data
+                {t('settings.downloadData')}
             </Button>
             <Button variant="ghost" onClick={handleClearLocal} className="w-full sm:w-auto">
-                Clear data on this device
+                {t('settings.clearLocalData')}
             </Button>
             {status && <p className="text-sm text-text-secondary">{status}</p>}
             <p className="text-xs text-text-tertiary">
-                Cloud data remains if you are signed in.{' '}
-                <a href="/privacy" className="text-accent hover:underline">
-                    Privacy policy (pending)
-                </a>
+                {t('settings.cloudDataRemains')}{' '}
+                <LocaleLink href="/privacy" className="text-accent hover:underline">
+                    {t('settings.privacyPolicyLink')}
+                </LocaleLink>
                 .
             </p>
         </div>

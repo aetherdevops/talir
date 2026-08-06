@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import type { Mbi10DividendHighlight } from '@/lib/dividend-home-banner'
 import { LocaleLink } from '@/components/layout/LocaleLink'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
+import { SectionCard } from '@/components/ui/SectionCard'
 import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn, formatInteger, formatNewsDate, formatPrice } from '@/lib/utils'
 
@@ -37,37 +38,29 @@ export function HomeDividendsPanel({
     const isAside = variant === 'aside'
 
     return (
-        <section
-            className={cn(
-                'min-w-0 rounded-xl border border-border overflow-hidden',
-                'bg-gradient-to-br from-[var(--surface-2)] via-[var(--surface)] to-[var(--surface)]',
-                isAside && 'sticky top-4',
-                className
-            )}
+        <SectionCard
+            className={cn(isAside && 'sticky top-4', className)}
             aria-labelledby="home-dividends-banner"
+            header={
+                <>
+                    <p className="font-data text-[10px] uppercase tracking-[0.2em] text-accent">
+                        {t('dividends.bannerEyebrow')}
+                    </p>
+                    <h2
+                        id="home-dividends-banner"
+                        className={cn(
+                            'font-heading font-semibold text-text-primary tracking-tight',
+                            isAside ? 'text-xl' : 'text-lg'
+                        )}
+                    >
+                        {t('dividends.bannerTitle')}
+                    </h2>
+                    <p className="text-xs text-text-tertiary font-data leading-snug">
+                        {t('dividends.bannerSubtitle')}
+                    </p>
+                </>
+            }
         >
-            <div className="relative px-4 pt-4 pb-3 space-y-1 border-b border-border/80">
-                <div
-                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-70"
-                    aria-hidden
-                />
-                <p className="font-data text-[10px] uppercase tracking-[0.2em] text-accent">
-                    {t('dividends.bannerEyebrow')}
-                </p>
-                <h2
-                    id="home-dividends-banner"
-                    className={cn(
-                        'font-heading font-semibold text-text-primary tracking-tight',
-                        isAside ? 'text-xl' : 'text-lg'
-                    )}
-                >
-                    {t('dividends.bannerTitle')}
-                </h2>
-                <p className="text-xs text-text-tertiary font-data leading-snug">
-                    {t('dividends.bannerSubtitle')}
-                </p>
-            </div>
-
             <ul className="divide-y divide-border/60">
                 {highlights.length === 0 ? (
                     <li className="px-4 py-6 text-xs text-text-tertiary font-data">
@@ -150,6 +143,6 @@ export function HomeDividendsPanel({
                     {t('dividends.bannerFootnote')}
                 </p>
             </div>
-        </section>
+        </SectionCard>
     )
 }

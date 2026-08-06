@@ -3,7 +3,6 @@
 
 import { useState, useMemo, useEffect } from 'react'
 import { useWatchlistStore } from "@/lib/stores/watchlist"
-import { getAllStocks } from "@/lib/data"
 import { WatchlistEmptyState } from "@/components/watchlist/WatchlistEmptyState"
 import { CreateListModal } from "@/components/watchlist/CreateListModal"
 import { AddToWatchlistModal } from "@/components/watchlist/AddToWatchlistModal"
@@ -11,7 +10,6 @@ import { StockRow } from "@/components/stock/StockRow"
 import { Button } from "@/components/ui/Button"
 import { Plus, MoreHorizontal, ChevronRight, Check, ArrowUpDown } from "lucide-react"
 import { cn } from "@/lib/utils"
-import Link from 'next/link'
 import { RenameListModal } from "@/components/watchlist/RenameListModal"
 import { NewsSection } from "@/components/common/NewsSection"
 import { useRequireAuth } from '@/lib/auth/use-require-auth'
@@ -54,7 +52,13 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
 
     // Handle initial hydration (persist middleware might take a tick)
     const [hydrated, setHydrated] = useState(false)
-    useEffect(() => { setHydrated(true) }, [])
+    useEffect(() => {
+        setHydrated(true)
+        // New accounts sync an empty remote snapshot — never leave the page without a list.
+        if (useWatchlistStore.getState().watchlists.length === 0) {
+            useWatchlistStore.getState().replaceAll([], null)
+        }
+    }, [])
 
     const activeList = watchlists.find(w => w.id === activeListId) || watchlists[0]
 
@@ -176,7 +180,11 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                                         </button>
                                         <button
                                             className="w-full text-left px-4 py-2 text-sm text-danger hover:bg-surface-secondary transition-colors flex items-center justify-between"
-                                            onClick={() => { deleteList(activeList.id); setIsMenuOpen(false); }}
+                                            onClick={() => {
+                                                if (!activeList) return
+                                                deleteList(activeList.id)
+                                                setIsMenuOpen(false)
+                                            }}
                                         >
                                             {t('watchlist.deleteList')}
                                             <ChevronRight className="w-4 h-4 text-text-tertiary" />
@@ -186,7 +194,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                             )}
                         </div>
                     </div>
-                    {activeList.items.length > 0 && (
+                    {activeList && activeList.items.length > 0 && (
                         <Button onClick={() => { if (requireAuth()) setIsAddModalOpen(true) }}>
                             <Plus className="w-4 h-4 mr-2" /> {t('watchlist.addInvestments')}
                         </Button>
@@ -196,7 +204,7 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
 
             {/* Content */}
             <div className="bg-surface rounded-3xl border border-border overflow-hidden min-h-[400px]">
-                {displayStocks.length > 0 ? (
+                {displayStocks.length > 0 && activeList ? (
                     <div className="divide-y divide-border">
                         {displayStocks.map(stock => (
                             <div key={stock.code} className="group relative">
@@ -231,19 +239,23 @@ export function WatchlistClient({ stockData, news }: WatchlistPageProps) {
                 }}
             />
 
-            <RenameListModal
-                isOpen={isRenameModalOpen}
-                onClose={() => setIsRenameModalOpen(false)}
-                listId={activeList.id}
-                currentName={activeList.name}
-            />
+            {activeList ? (
+                <>
+                    <RenameListModal
+                        isOpen={isRenameModalOpen}
+                        onClose={() => setIsRenameModalOpen(false)}
+                        listId={activeList.id}
+                        currentName={activeList.name}
+                    />
 
-            <AddToWatchlistModal
-                isOpen={isAddModalOpen}
-                onClose={() => setIsAddModalOpen(false)}
-                listId={activeList.id}
-                allStocks={stockData}
-            />
+                    <AddToWatchlistModal
+                        isOpen={isAddModalOpen}
+                        onClose={() => setIsAddModalOpen(false)}
+                        listId={activeList.id}
+                        allStocks={stockData}
+                    />
+                </>
+            ) : null}
         </div>
     )
 }

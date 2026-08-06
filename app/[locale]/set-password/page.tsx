@@ -5,13 +5,20 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClientIfConfigured } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
-import { Input } from '@/components/ui/Input'
 import { Label } from '@/components/ui/Label'
+import { PasswordInput } from '@/components/ui/PasswordInput'
+import { SectionCard } from '@/components/ui/SectionCard'
 import { useLocale } from '@/components/providers/LocaleProvider'
+import {
+    applyRequiredMessages,
+    clearCustomValidity,
+    setRequiredCustomValidity,
+} from '@/lib/auth/form-validity'
 
 function SetPasswordForm() {
     const router = useRouter()
     const { t } = useLocale()
+    const requiredMsg = t('auth.fieldRequired')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [error, setError] = useState('')
@@ -46,8 +53,12 @@ function SetPasswordForm() {
         }
     }, [])
 
-    const handleSubmit = async (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        const form = event.currentTarget
+        applyRequiredMessages(form, requiredMsg)
+        if (!form.reportValidity()) return
+
         setError('')
 
         if (password.length < 8) {
@@ -90,7 +101,7 @@ function SetPasswordForm() {
     if (!hasSession) {
         return (
             <div className="max-w-md mx-auto mt-12">
-                <div className="bg-surface border border-border rounded-2xl p-8 shadow-sm space-y-4">
+                <SectionCard as="div" className="p-8 shadow-sm space-y-4">
                     <h1 className="text-2xl font-bold text-text-primary">{t('auth.setPasswordTitle')}</h1>
                     <p className="text-sm text-text-secondary">{t('auth.setPasswordNeedLink')}</p>
                     <Link href="/login" className="inline-flex w-full">
@@ -98,39 +109,41 @@ function SetPasswordForm() {
                             {t('auth.goToSignIn')}
                         </Button>
                     </Link>
-                </div>
+                </SectionCard>
             </div>
         )
     }
 
     return (
         <div className="max-w-md mx-auto mt-12">
-            <div className="bg-surface border border-border rounded-2xl p-8 shadow-sm">
+            <SectionCard as="div" className="p-8 shadow-sm">
                 <h1 className="text-2xl font-bold text-text-primary mb-2">{t('auth.setPasswordTitle')}</h1>
                 <p className="text-sm text-text-secondary mb-6">{t('auth.setPasswordLead')}</p>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form noValidate onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <Label htmlFor="password">{t('auth.passwordLabel')}</Label>
-                        <Input
+                        <PasswordInput
                             id="password"
-                            type="password"
                             required
                             autoComplete="new-password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            onInput={clearCustomValidity}
+                            onInvalid={(e) => setRequiredCustomValidity(e, requiredMsg)}
                             placeholder={t('auth.passwordPlaceholder')}
                         />
                     </div>
                     <div>
                         <Label htmlFor="confirmPassword">{t('auth.confirmPasswordLabel')}</Label>
-                        <Input
+                        <PasswordInput
                             id="confirmPassword"
-                            type="password"
                             required
                             autoComplete="new-password"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
+                            onInput={clearCustomValidity}
+                            onInvalid={(e) => setRequiredCustomValidity(e, requiredMsg)}
                             placeholder={t('auth.confirmPasswordPlaceholder')}
                         />
                     </div>
@@ -141,7 +154,7 @@ function SetPasswordForm() {
                         {loading ? t('auth.setPasswordSaving') : t('auth.setPasswordSubmit')}
                     </Button>
                 </form>
-            </div>
+            </SectionCard>
         </div>
     )
 }

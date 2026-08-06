@@ -1,6 +1,7 @@
 'use client'
 
 import { usePreferencesStore } from '@/lib/stores/preferences'
+import { useLocale } from '@/components/providers/LocaleProvider'
 import { cn } from '@/lib/utils'
 
 function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: boolean) => void; label: string }) {
@@ -30,20 +31,21 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: 
 
 export function NotificationSettings() {
     const { alertsEnabled, showAlertToasts, setPreferences } = usePreferencesStore()
+    const { t } = useLocale()
 
     return (
         <div className="space-y-1 divide-y divide-border">
             <Toggle
-                label="Enable price alerts"
+                label={t('settings.alertsEnabled')}
                 checked={alertsEnabled}
                 onChange={(alertsEnabled) => setPreferences({ alertsEnabled })}
             />
             <Toggle
-                label="Show in-app alert toasts"
+                label={t('settings.alertToasts')}
                 checked={showAlertToasts}
                 onChange={(showAlertToasts) => setPreferences({ showAlertToasts })}
             />
-            <p className="text-xs text-text-tertiary pt-3">Email alerts — coming soon</p>
+            <p className="text-xs text-text-tertiary pt-3">{t('settings.emailAlertsSoon')}</p>
         </div>
     )
 }

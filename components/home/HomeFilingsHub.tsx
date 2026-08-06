@@ -6,6 +6,7 @@ import { NewsCard } from '@/components/news/NewsCard'
 import { FilingIndicatorLegend } from '@/components/news/FilingIndicatorLegend'
 import { ResultsCalendarRow, ExpectedResultsRow } from '@/components/results/ResultsCalendarRow'
 import { InfoPopover } from '@/components/ui/InfoPopover'
+import { SectionCard } from '@/components/ui/SectionCard'
 import { LocaleLink } from '@/components/layout/LocaleLink'
 import { useLocale } from '@/components/providers/LocaleProvider'
 
@@ -29,7 +30,7 @@ export function HomeFilingsHub({
     const expectedItems = expectedResults.slice(0, 5)
 
     return (
-        <section className="space-y-4 min-w-0" aria-labelledby="home-filings-hub-heading">
+        <SectionCard className="p-4 space-y-4" aria-labelledby="home-filings-hub-heading">
             <header className="space-y-1 min-w-0">
                 <div className="flex items-center justify-between gap-3 min-w-0">
                     <h2
@@ -110,7 +111,7 @@ export function HomeFilingsHub({
             )}
 
             <FilingIndicatorLegend stacked className="pt-1" />
-        </section>
+        </SectionCard>
     )
 }
 

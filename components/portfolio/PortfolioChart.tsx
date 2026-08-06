@@ -54,8 +54,9 @@ export function PortfolioChart({ holdings }: PortfolioChartProps) {
     if (totalValue === 0) return null
 
     return (
-        <div className="w-full h-[350px] md:h-[400px]">
-            <PriceChart data={chartData} />
+        <div className="w-full min-w-0">
+            {/* Height only on the canvas — fixed h-* around PriceChart clips/spills timeframe chips. */}
+            <PriceChart data={chartData} chartClassName="h-[300px] md:h-[360px]" />
         </div>
     )
 }

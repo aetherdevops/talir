@@ -2,6 +2,7 @@
 
 import { MarketIndex } from '@/lib/types'
 import { ChangeLabel } from '@/components/ui/ChangeLabel'
+import { SectionCard } from '@/components/ui/SectionCard'
 import { DataFreshnessLabel } from '@/components/markets/DataFreshnessLabel'
 import { LocaleLink } from '@/components/layout/LocaleLink'
 import { useLocale } from '@/components/providers/LocaleProvider'
@@ -48,7 +49,7 @@ export function HomeIndexStrip({ indices, asOfDate, className }: HomeIndexStripP
                 {t('home.indices')}
             </h2>
             <DataFreshnessLabel asOfDate={asOfDate} className="mb-2" />
-            <div className="rounded-xl border border-border/60 bg-surface-secondary/30 divide-y divide-border/60 min-w-0">
+            <SectionCard as="div" className="divide-y divide-border/60 bg-surface-secondary/30">
                 {rows.map((idx) => (
                     <LocaleLink
                         key={idx.name}
@@ -66,7 +67,7 @@ export function HomeIndexStrip({ indices, asOfDate, className }: HomeIndexStripP
                         </div>
                     </LocaleLink>
                 ))}
-            </div>
+            </SectionCard>
             <LocaleLink
                 href="/markets"
                 className="flex items-center justify-center gap-1 min-h-[44px] text-xs font-semibold text-accent hover:text-accent/80 transition-colors mt-1"

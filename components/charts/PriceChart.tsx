@@ -22,7 +22,14 @@ interface PriceChartProps {
         downColor?: string
     }
     excludePeriods?: string[]
+    /**
+     * Size the plot canvas only. Do not wrap this component in a fixed `h-*` parent —
+     * timeframe chips sit below the canvas in normal flow and will overflow/collide.
+     */
+    chartClassName?: string
 }
+
+const DEFAULT_CHART_CLASS = 'aspect-[1.45/1] md:aspect-auto md:h-[400px]'
 
 type TooltipState = {
     price: string
@@ -38,7 +45,14 @@ function readCssVar(name: string, fallback: string): string {
     return value || fallback
 }
 
-function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, excludePeriods = [] }: PriceChartProps) {
+function PriceChartComponent({
+    data,
+    timeframe,
+    onTimeframeChange,
+    prevClose,
+    excludePeriods = [],
+    chartClassName,
+}: PriceChartProps) {
     const { t } = useLocale()
     const chartContainerRef = useRef<HTMLDivElement>(null)
     const chartRef = useRef<IChartApi | null>(null)
@@ -74,168 +88,198 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, ex
 
     useEffect(() => {
         if (!chartContainerRef.current) return
-        if (chartContainerRef.current.clientWidth === 0) return
 
         const container = chartContainerRef.current
+        let resizeObserver: ResizeObserver | null = null
+        let cancelled = false
 
-        const handleResize = () => {
+        const teardownChart = () => {
+            if (chartRef.current) {
+                chartRef.current.remove()
+                chartRef.current = null
+                seriesRef.current = null
+            }
+            hideTooltip()
+        }
+
+        const mountChart = () => {
+            if (cancelled || !container.clientWidth || !container.clientHeight) return
             if (chartRef.current) {
                 chartRef.current.applyOptions({
                     width: container.clientWidth,
                     height: container.clientHeight,
                 })
-            }
-        }
-
-        const chart = createChart(container, {
-            layout: {
-                background: { type: ColorType.Solid, color: 'transparent' },
-                textColor,
-                fontFamily: 'var(--font-sans), Inter, sans-serif',
-            },
-            grid: {
-                vertLines: { visible: false },
-                horzLines: { color: gridColor, visible: true, style: 1 },
-            },
-            rightPriceScale: {
-                borderVisible: false,
-                scaleMargins: { top: 0.1, bottom: 0.1 },
-            },
-            timeScale: {
-                borderVisible: false,
-                fixLeftEdge: true,
-                fixRightEdge: true,
-            },
-            width: container.clientWidth,
-            height: container.clientHeight,
-            autoSize: false,
-            handleScale: {
-                axisPressedMouseMove: { time: true, price: true },
-                mouseWheel: true,
-                pinch: true,
-            },
-            handleScroll: {
-                pressedMouseMove: true,
-                horzTouchDrag: true,
-                vertTouchDrag: true,
-                mouseWheel: true,
-            },
-            crosshair: {
-                mode: 1,
-                vertLine: {
-                    width: 1,
-                    color: crosshairColor,
-                    style: 3,
-                    labelVisible: false,
-                },
-                horzLine: {
-                    visible: false,
-                    labelVisible: true,
-                },
-            },
-        })
-
-        const newSeries = chart.addAreaSeries({
-            lineColor: chartColor,
-            topColor: `${chartColor}33`,
-            bottomColor: `${chartColor}00`,
-            lineWidth: 2,
-            crosshairMarkerVisible: true,
-            crosshairMarkerRadius: 4,
-            crosshairMarkerBorderColor: markerBorder,
-            crosshairMarkerBackgroundColor: chartColor,
-        })
-
-        newSeries.setData(
-            data.map((d) => ({
-                time: d.time as Time,
-                value: d.value,
-            }))
-        )
-
-        if (data.length > 0) {
-            const lastItem = data[data.length - 1]
-            newSeries.setMarkers([
-                {
-                    time: lastItem.time as Time,
-                    position: 'inBar',
-                    color: chartColor,
-                    shape: 'circle',
-                    size: 1,
-                },
-            ])
-        }
-
-        chart.timeScale().fitContent()
-
-        chart.subscribeCrosshairMove((param) => {
-            if (
-                param.point === undefined ||
-                !param.time ||
-                param.point.x < 0 ||
-                param.point.x > container.clientWidth ||
-                param.point.y < 0 ||
-                param.point.y > container.clientHeight
-            ) {
-                hideTooltip()
                 return
             }
 
-            const dataPoint = param.seriesData.get(newSeries) as { value: number; time: Time } | undefined
-            if (!dataPoint) {
-                hideTooltip()
+            const chart = createChart(container, {
+                layout: {
+                    background: { type: ColorType.Solid, color: 'transparent' },
+                    textColor,
+                    fontFamily: 'var(--font-sans), Inter, sans-serif',
+                },
+                grid: {
+                    vertLines: { visible: false },
+                    horzLines: { color: gridColor, visible: true, style: 1 },
+                },
+                rightPriceScale: {
+                    borderVisible: false,
+                    scaleMargins: { top: 0.1, bottom: 0.1 },
+                },
+                timeScale: {
+                    borderVisible: false,
+                    fixLeftEdge: true,
+                    fixRightEdge: true,
+                },
+                width: container.clientWidth,
+                height: container.clientHeight,
+                autoSize: false,
+                handleScale: {
+                    axisPressedMouseMove: { time: true, price: true },
+                    mouseWheel: true,
+                    pinch: true,
+                },
+                handleScroll: {
+                    pressedMouseMove: true,
+                    horzTouchDrag: true,
+                    vertTouchDrag: true,
+                    mouseWheel: true,
+                },
+                crosshair: {
+                    mode: 1,
+                    vertLine: {
+                        width: 1,
+                        color: crosshairColor,
+                        style: 3,
+                        labelVisible: false,
+                    },
+                    horzLine: {
+                        visible: false,
+                        labelVisible: true,
+                    },
+                },
+            })
+
+            const newSeries = chart.addAreaSeries({
+                lineColor: chartColor,
+                topColor: `${chartColor}33`,
+                bottomColor: `${chartColor}00`,
+                lineWidth: 2,
+                crosshairMarkerVisible: true,
+                crosshairMarkerRadius: 4,
+                crosshairMarkerBorderColor: markerBorder,
+                crosshairMarkerBackgroundColor: chartColor,
+            })
+
+            newSeries.setData(
+                data.map((d) => ({
+                    time: d.time as Time,
+                    value: d.value,
+                }))
+            )
+
+            if (data.length > 0) {
+                const lastItem = data[data.length - 1]
+                newSeries.setMarkers([
+                    {
+                        time: lastItem.time as Time,
+                        position: 'inBar',
+                        color: chartColor,
+                        shape: 'circle',
+                        size: 1,
+                    },
+                ])
+            }
+
+            chart.timeScale().fitContent()
+
+            chart.subscribeCrosshairMove((param) => {
+                if (
+                    param.point === undefined ||
+                    !param.time ||
+                    param.point.x < 0 ||
+                    param.point.x > container.clientWidth ||
+                    param.point.y < 0 ||
+                    param.point.y > container.clientHeight
+                ) {
+                    hideTooltip()
+                    return
+                }
+
+                const dataPoint = param.seriesData.get(newSeries) as { value: number; time: Time } | undefined
+                if (!dataPoint) {
+                    hideTooltip()
+                    return
+                }
+
+                const fullData = data.find((d) => d.time === (dataPoint.time as unknown as string))
+                const dateStr = new Date(dataPoint.time as unknown as string).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                })
+
+                const toolTipWidth = 120
+                const toolTipHeight = 80
+                const toolTipMargin = 15
+
+                let left = param.point.x + toolTipMargin
+                if (left + toolTipWidth > container.clientWidth) {
+                    left = param.point.x - toolTipWidth - toolTipMargin
+                }
+
+                let top = param.point.y - toolTipMargin
+                if (top + toolTipHeight > container.clientHeight) {
+                    top = param.point.y - toolTipHeight - toolTipMargin
+                }
+
+                setTooltip({
+                    price: formatPrice(dataPoint.value),
+                    date: dateStr,
+                    volume: fullData?.volume
+                        ? `${t('markets.volumeAbbr')} ${formatInteger(fullData.volume)}`
+                        : undefined,
+                    left,
+                    top,
+                })
+            })
+
+            chartRef.current = chart
+            seriesRef.current = newSeries
+        }
+
+        const handleResize = () => {
+            if (cancelled) return
+            if (!chartRef.current) {
+                mountChart()
                 return
             }
-
-            const fullData = data.find((d) => d.time === (dataPoint.time as unknown as string))
-            const dateStr = new Date(dataPoint.time as unknown as string).toLocaleDateString('en-US', {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric',
+            if (!container.clientWidth || !container.clientHeight) return
+            chartRef.current.applyOptions({
+                width: container.clientWidth,
+                height: container.clientHeight,
             })
+        }
 
-            const toolTipWidth = 120
-            const toolTipHeight = 80
-            const toolTipMargin = 15
-
-            let left = param.point.x + toolTipMargin
-            if (left + toolTipWidth > container.clientWidth) {
-                left = param.point.x - toolTipWidth - toolTipMargin
-            }
-
-            let top = param.point.y - toolTipMargin
-            if (top + toolTipHeight > container.clientHeight) {
-                top = param.point.y - toolTipHeight - toolTipMargin
-            }
-
-            setTooltip({
-                price: formatPrice(dataPoint.value),
-                date: dateStr,
-                volume: fullData?.volume
-                    ? `${t('markets.volumeAbbr')} ${formatInteger(fullData.volume)}`
-                    : undefined,
-                left,
-                top,
-            })
-        })
-
-        chartRef.current = chart
-        seriesRef.current = newSeries
-
-        const resizeObserver = new ResizeObserver(() => handleResize())
+        mountChart()
+        resizeObserver = new ResizeObserver(() => handleResize())
         resizeObserver.observe(container)
 
         return () => {
-            resizeObserver.disconnect()
-            chart.remove()
-            chartRef.current = null
-            hideTooltip()
+            cancelled = true
+            resizeObserver?.disconnect()
+            teardownChart()
         }
     }, [data, isDarkMode, chartColor, gridColor, textColor, crosshairColor, markerBorder, hideTooltip, t])
 
     return (
-        <div className="flex flex-col gap-4 w-full min-w-0">
-            <div className="relative w-full min-w-0 aspect-[1.45/1] md:aspect-auto md:h-[400px]">
+        <div className="flex flex-col gap-3 w-full min-w-0">
+            <div
+                className={cn(
+                    'relative w-full min-w-0 overflow-hidden rounded-lg',
+                    chartClassName ?? DEFAULT_CHART_CLASS
+                )}
+            >
                 <div className="absolute inset-0 w-full h-full touch-pan-x" ref={chartContainerRef} />
                 {tooltip && (
                     <div
@@ -261,7 +305,7 @@ function PriceChartComponent({ data, timeframe, onTimeframeChange, prevClose, ex
                 </p>
             ) : null}
 
-            <div className="pl-2 md:pl-0 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-hide">
+            <div className="pl-2 md:pl-0 mt-1 overflow-x-auto overscroll-x-contain touch-pan-x scrollbar-hide shrink-0">
                 <div className="flex justify-start gap-1 flex-nowrap min-w-max">
                     {(['1D', '5D', '1M', '3M', '6M', 'YTD', '1Y', '5Y', 'MAX'] as const)
                         .filter((tf) => !excludePeriods.includes(tf))
