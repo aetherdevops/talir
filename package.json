@@ -17,9 +17,10 @@
     "script:backfill": "tsx scripts/backfill.ts",
     "script:update": "tsx scripts/update.ts",
     "script:sync": "tsx scripts/sync_stock_data.ts",
-    "generate:sparklines": "node scripts/generate-sparklines.mjs",
+    "generate:sparklines": "tsx scripts/generate-sparklines.mjs",
     "generate:issuer-meta": "node scripts/generate-issuer-meta.mjs",
-    "generate:derived": "node scripts/generate-derived-market.mjs",
+    "generate:derived": "tsx scripts/generate-derived-market.mjs",
+    "detect:splits": "tsx scripts/detect-splits.ts",
     "generate:news-feed": "node scripts/generate-news-feed.mjs",
     "generate:results-calendar": "tsx scripts/generate-results-calendar.ts",
     "script:mbi10": "tsx scripts/scrape-mbi10-constituents.ts",
@@ -43,9 +44,9 @@
     "test:issuer-scrape": "node scripts/test-issuer-scrape.mjs",
     "email:test": "tsx scripts/send-test-email.ts",
     "email:probe-hook": "tsx scripts/probe-auth-email-hook.ts",
-    "test": "tsx --test lib/change.test.ts lib/news-tier.test.ts lib/results-calendar.test.ts lib/dividends.test.ts lib/dividend-scorecard.test.ts lib/dividend-coverage.test.ts lib/dividend-validate.test.ts lib/i18n/routing.test.ts lib/i18n/mk-terminology.test.ts lib/i18n/key-parity.test.ts lib/fundamentals.test.ts lib/stock-valuation.test.ts lib/stock-stats.test.ts lib/document-store-slot.test.ts lib/mse-symbol-ratios.test.ts lib/macro.test.ts lib/macro-ingest/pxweb.test.ts lib/macro-ingest/mof-budget.test.ts lib/stores/watchlist.test.ts",
+    "test": "tsx --test lib/change.test.ts lib/corporate-actions.test.ts lib/news-tier.test.ts lib/results-calendar.test.ts lib/dividends.test.ts lib/dividend-scorecard.test.ts lib/dividend-coverage.test.ts lib/dividend-validate.test.ts lib/i18n/routing.test.ts lib/i18n/mk-terminology.test.ts lib/i18n/key-parity.test.ts lib/fundamentals.test.ts lib/stock-valuation.test.ts lib/stock-stats.test.ts lib/document-store-slot.test.ts lib/mse-symbol-ratios.test.ts lib/macro.test.ts lib/macro-ingest/pxweb.test.ts lib/macro-ingest/mof-budget.test.ts lib/stores/watchlist.test.ts",
     "lighthouse:budget": "node scripts/lighthouse-budget.mjs",
-    "prebuild": "node scripts/generate-sparklines.mjs && node scripts/generate-derived-market.mjs && node scripts/generate-search-index.mjs && node scripts/generate-news-feed.mjs && tsx scripts/generate-results-calendar.ts && tsx scripts/generate-fundamentals.ts && tsx scripts/generate-dividends.ts"
+    "prebuild": "tsx scripts/generate-sparklines.mjs && tsx scripts/generate-derived-market.mjs && node scripts/generate-search-index.mjs && node scripts/generate-news-feed.mjs && tsx scripts/generate-results-calendar.ts && tsx scripts/generate-fundamentals.ts && tsx scripts/generate-dividends.ts"
   },
   "dependencies": {
     "@napi-rs/canvas": "^1.0.2",

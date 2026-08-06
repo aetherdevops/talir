@@ -3,6 +3,7 @@ export type { StockData, StockSummary, DailyPrice, MarketIndex, NewsItem, NewsFe
 import { getIssuerDisplayName, getIssuerMarketCapThousands } from './issuer-display-name'
 import { CHANGE_ZERO_THRESHOLD, classifyChangePercent } from './utils'
 import { isExcludedEquityCode, isMseEquityInstrument } from './market-universe'
+import { adjustStockHistory } from './corporate-actions'
 
 // Static Data Imports (Bundled) - Using @/lib/data guaranteed to be in the build
 import marketSummaryData from '@/lib/data/market_summary.json'
@@ -179,8 +180,10 @@ export async function getStock(code: string): Promise<StockData | null> {
 
         if (!stock) return null
 
-        // Process history to standard format
-        const history: DailyPrice[] = Array.isArray(stock.history) ? stock.history : []
+        // Raw MSE history is never rebased for splits — do it here so charts, ranges and
+        // multi-year returns stay comparable across a split.
+        const rawHistory: DailyPrice[] = Array.isArray(stock.history) ? stock.history : []
+        const history: DailyPrice[] = adjustStockHistory(code, rawHistory)
 
         // Find issuer data
         const issuerDetails = issuers.find((i: any) => i.code === code);

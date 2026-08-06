@@ -4,10 +4,16 @@
  *
  * Equity filter: exclude index codes, government bonds (M*, RMDEN*).
  * 52-week signals additionally require a trade on asOfDate (volume or turnover > 0).
+ *
+ * Closes are split-adjusted first, otherwise a split leaks into every window that spans it
+ * (52-week high/low, YoY, the 30-day average).
  */
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+
+// Dynamic import: tsx only transpiles the TS module when it is requested this way.
+const { adjustStockHistory } = await import('../lib/corporate-actions.ts')
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const stocksDir = path.join(__dirname, '../lib/data/stocks')
@@ -102,7 +108,7 @@ function loadStockCloses(code) {
     if (!fs.existsSync(stockPath)) return []
     try {
         const stock = JSON.parse(fs.readFileSync(stockPath, 'utf8'))
-        return buildDailyCloses(stock.history)
+        return buildDailyCloses(adjustStockHistory(code, stock.history ?? []))
     } catch {
         return []
     }

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-06",
+  "splits": [
+    {
+      "code": "KMB",
+      "effectiveDate": "2005-03-28",
+      "ratio": 5,
+      "kind": "split",
+      "confidence": "confirmed",
+      "note": "18th shareholders' meeting (23.03.2005) cut the nominal value from MKD 5,000 to MKD 1,000 and split the ordinary shares 5:1. MSE symbolhistory was never rebased, so the raw feed still shows -78.18% on the first ex-split session.",
+      "source": "https://www.mse.mk/en/news/24/3/2005/information-from-komercijalna-banka-ad-skopje"
+    },
+    {
+      "code": "REPL",
+      "effectiveDate": "2024-07-15",
+      "ratio": 10,
+      "kind": "split",
+      "confidence": "confirmed",
+      "note": "Annual meeting (25.04.2024) split each ordinary share into ten, cutting the nominal value from EUR 562.42 to EUR 56.242. Registered in the CSD on 12.07.2024 with trading halted that day; trading resumed on the new basis on 15.07.2024.",
+      "source": "https://www.mse.mk/en/issuer/replek-ad-skopje"
+    }
+  ]
+}

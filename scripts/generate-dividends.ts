@@ -55,6 +55,11 @@ const mseRatiosPath = path.join(dataDir, 'mse_symbol_ratios.json')
 
 const historyCache = new Map<string, EodPriceRow[] | null>()
 
+/**
+ * Deliberately raw, not split-adjusted: gross dividend per share is read off the filing in
+ * the share basis of its own year, so it has to be divided by the close from that same
+ * basis. Rebasing only the price would scale every pre-split yield by the split ratio.
+ */
 function loadStockHistory(stockCode: string): EodPriceRow[] | null {
     if (historyCache.has(stockCode)) return historyCache.get(stockCode) ?? null
     const filePath = path.join(stocksDir, `${stockCode}.json`)

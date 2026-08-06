@@ -6,6 +6,9 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+// Dynamic import: tsx only transpiles the TS module when it is requested this way.
+const { adjustStockHistory } = await import('../lib/corporate-actions.ts')
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const stocksDir = path.join(__dirname, '../lib/data/stocks')
 const outPath = path.join(__dirname, '../lib/data/sparklines.json')
@@ -39,7 +42,7 @@ for (const file of files) {
     try {
         const raw = fs.readFileSync(path.join(stocksDir, file), 'utf8')
         const data = JSON.parse(raw)
-        result[code] = getRecentDailyCloses(data.history, 30)
+        result[code] = getRecentDailyCloses(adjustStockHistory(code, data.history ?? []), 30)
     } catch (err) {
         console.warn(`Skipping ${code}:`, err.message)
         result[code] = []

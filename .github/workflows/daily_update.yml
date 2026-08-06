@@ -30,6 +30,12 @@ jobs:
     - name: Run Update Script
       run: npm run script:update
 
+    # Warn only: an unrecorded split has to be checked against the issuer filing before the
+    # registry is touched, but the rest of the refresh should still publish.
+    - name: Detect unrecorded stock splits
+      run: npm run detect:splits
+      continue-on-error: true
+
     - name: Refresh issuer filings
       run: npm run script:issuers
 
