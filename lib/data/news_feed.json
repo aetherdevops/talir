@@ -1,10 +1,49 @@
 {
-  "generatedAt": "2026-08-06T05:23:11.284Z",
-  "lastIssuerScan": "2026-08-06",
-  "count": 1491,
-  "datedCount": 1491,
+  "generatedAt": "2026-08-07T04:30:37.964Z",
+  "lastIssuerScan": "2026-08-07",
+  "count": 1492,
+  "datedCount": 1492,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "MZPU-https-seinet-com-mk-en-document-78387",
+      "rawTitle": "8/6/2026 - MZT Pumpi AD Skopje - Other price sensitive information",
+      "title": "MZPU: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "MZPU",
+      "stockName": "MZT Pumpi AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-06",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78387"
+    },
+    {
+      "id": "UNI-https-seinet-com-mk-en-document-78385",
+      "rawTitle": "8/6/2026 - UNI Banka AD Skopje - Other price sensitive information",
+      "title": "UNI: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "UNI",
+      "stockName": "UNI Banka AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-06",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78385"
+    },
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-78393",
+      "rawTitle": "8/6/2026 - ZK Pelagonija AD Bitola - Changes in shareholders with a significant stake",
+      "title": "ZPKO: Changes in shareholders with a significant stake",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-06",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78393"
+    },
     {
       "id": "BGOR-https-seinet-com-mk-en-document-78370",
       "rawTitle": "8/4/2026 - Kristal 1923 AD Veles - Non-audited financial statements 01.01. - 30.06.",
@@ -8430,19 +8469,6 @@
       "url": "https://seinet.com.mk/en/document/76861"
     },
     {
-      "id": "UNI-https-seinet-com-mk-en-document-76862",
-      "rawTitle": "4/30/2026 - UNI Banka AD Skopje - Other price sensitive information",
-      "title": "UNI: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "UNI",
-      "stockName": "UNI Banka AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-30",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76862"
-    },
-    {
       "id": "VITA-https-seinet-com-mk-en-document-76994",
       "rawTitle": "4/30/2026 - Vitaminka AD Prilep - Non-audited profit&loss account 01.01. - 31.03.",
       "title": "VITA reports profit and loss for 01.01.–31.03",
@@ -8779,19 +8805,6 @@
       "publishedAt": "2026-04-29",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76785"
-    },
-    {
-      "id": "MZPU-https-seinet-com-mk-en-document-76776",
-      "rawTitle": "4/29/2026 - MZT Pumpi AD Skopje - Draft decisions for the shareholders meeting",
-      "title": "MZPU: Draft decisions for the shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "MZPU",
-      "stockName": "MZT Pumpi AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-29",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76776"
     },
     {
       "id": "NOSK-https-seinet-com-mk-en-document-76767",

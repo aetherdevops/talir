@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T05:37:36.507Z",
+  "generatedAt": "2026-08-07T04:44:52.655Z",
   "all": [
     {
       "stockCode": "BGOR",
@@ -5084,6 +5084,17 @@
       "source": "SECNet"
     },
     {
+      "stockCode": "ALK",
+      "stockName": "Alkaloid AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2024-12-31",
+      "url": "https://www.mse.mk/en/symbol/ALK#fy-2024",
+      "netProfit": null,
+      "eps": 1176.54,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "fiscalYear": 2024,
@@ -5102,17 +5113,6 @@
       "url": "https://www.mse.mk/en/symbol/KMB#fy-2024",
       "netProfit": null,
       "eps": 2176.38,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
-      "stockCode": "ALK",
-      "stockName": "Alkaloid AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/ALK#fy-2024",
-      "netProfit": null,
-      "eps": 1176.54,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5249,6 +5249,17 @@
       "source": "SECNet"
     },
     {
+      "stockCode": "ALK",
+      "stockName": "Alkaloid AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/ALK#fy-2023",
+      "netProfit": null,
+      "eps": 1101.69,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
       "stockCode": "GRNT",
       "stockName": "Granit AD Skopje",
       "fiscalYear": 2023,
@@ -5267,17 +5278,6 @@
       "url": "https://www.mse.mk/en/symbol/KMB#fy-2023",
       "netProfit": null,
       "eps": 1580.64,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
-      "stockCode": "ALK",
-      "stockName": "Alkaloid AD Skopje",
-      "fiscalYear": 2023,
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/ALK#fy-2023",
-      "netProfit": null,
-      "eps": 1101.69,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5304,24 +5304,13 @@
       "source": "MSE"
     },
     {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
+      "stockCode": "TEL",
+      "stockName": "Makedonski Telekom AD – Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/TEL#fy-2023",
       "netProfit": null,
-      "eps": 3766.55,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
-      "stockCode": "TTK",
-      "stockName": "TTK Banka AD Skopje",
-      "fiscalYear": 2023,
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TTK#fy-2023",
-      "netProfit": null,
-      "eps": 108.95,
+      "eps": 21.71,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5337,17 +5326,6 @@
       "source": "MSE"
     },
     {
-      "stockCode": "TEL",
-      "stockName": "Makedonski Telekom AD – Skopje",
-      "fiscalYear": 2023,
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TEL#fy-2023",
-      "netProfit": null,
-      "eps": 21.71,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
       "stockCode": "STB",
       "stockName": "Stopanska banka AD Skopje",
       "fiscalYear": 2023,
@@ -5355,6 +5333,28 @@
       "url": "https://www.mse.mk/en/symbol/STB#fy-2023",
       "netProfit": null,
       "eps": 198.78,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "TTK",
+      "stockName": "TTK Banka AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/TTK#fy-2023",
+      "netProfit": null,
+      "eps": 108.95,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
+      "netProfit": null,
+      "eps": 3766.55,
       "parseStatus": "partial",
       "source": "MSE"
     },
