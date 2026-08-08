@@ -3311,6 +3311,11 @@
     "website": "",
     "reportLinks": [
       {
+        "title": "8/7/2026 - Makpromet AD Stip - Non-audited financial statements 01.01. - 30.06.",
+        "url": "https://seinet.com.mk/en/document/78402",
+        "date": "2026-08-07"
+      },
+      {
         "title": "7/31/2026 - Makpromet AD Stip - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/78308",
         "date": "2026-07-31"
@@ -3354,14 +3359,14 @@
         "title": "8/15/2025 - Makpromet AD Stip - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/74164",
         "date": "2025-08-15"
-      },
-      {
-        "title": "7/31/2025 - Makpromet AD Stip - Non-audited financial statements 01.01. - 30.06.",
-        "url": "https://seinet.com.mk/en/document/73975",
-        "date": "2025-07-31"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "8/7/2026 - Makpromet AD Stip - Other price sensitive information",
+        "url": "https://seinet.com.mk/en/document/78403",
+        "date": "2026-08-07"
+      },
       {
         "title": "7/31/2026 - Makpromet AD Stip - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/78309",
@@ -3381,16 +3386,6 @@
         "title": "4/30/2026 - Makpromet AD Stip - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/76961",
         "date": "2026-04-30"
-      },
-      {
-        "title": "4/27/2026 - Makpromet AD Stip - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76605",
-        "date": "2026-04-27"
-      },
-      {
-        "title": "4/27/2026 - Makpromet AD Stip - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/76604",
-        "date": "2026-04-27"
       }
     ]
   },
@@ -9528,6 +9523,16 @@
     ],
     "disclosureLinks": [
       {
+        "title": "8/7/2026 - Triglav osiguruvane AD Skopje - Draft decisions for the shareholders meeting",
+        "url": "https://seinet.com.mk/en/document/78401",
+        "date": "2026-08-07"
+      },
+      {
+        "title": "8/7/2026 - Triglav osiguruvane AD Skopje - Public call for shareholders meeting",
+        "url": "https://seinet.com.mk/en/document/78400",
+        "date": "2026-08-07"
+      },
+      {
         "title": "7/29/2026 - Triglav osiguruvane AD Skopje - Other price sensitive information",
         "url": "https://seinet.com.mk/en/document/78125",
         "date": "2026-07-29"
@@ -9556,11 +9561,6 @@
         "title": "4/24/2026 - Triglav osiguruvane AD Skopje - Public call for shareholders meeting",
         "url": "https://seinet.com.mk/en/document/76425",
         "date": "2026-04-24"
-      },
-      {
-        "title": "4/23/2026 - Triglav osiguruvane AD Skopje - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/76396",
-        "date": "2026-04-23"
       }
     ]
   },
@@ -10102,6 +10102,16 @@
     "website": "http://www.zkpelagonija.mk/",
     "reportLinks": [
       {
+        "title": "8/7/2026 - ZK Pelagonija AD Bitola - Audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78408",
+        "date": "2026-08-07"
+      },
+      {
+        "title": "8/7/2026 - ZK Pelagonija AD Bitola - Audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78407",
+        "date": "2026-08-07"
+      },
+      {
         "title": "7/31/2026 - ZK Pelagonija AD Bitola - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/78340",
         "date": "2026-07-31"
@@ -10140,19 +10150,24 @@
         "title": "8/15/2025 - ZK Pelagonija AD Bitola - Non-audited financial statements 01.01. - 30.06.",
         "url": "https://seinet.com.mk/en/document/74176",
         "date": "2025-08-15"
-      },
-      {
-        "title": "8/11/2025 - ZK Pelagonija AD Bitola - Audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74109",
-        "date": "2025-08-11"
-      },
-      {
-        "title": "8/11/2025 - ZK Pelagonija AD Bitola - Audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74108",
-        "date": "2025-08-11"
       }
     ],
     "disclosureLinks": [
+      {
+        "title": "8/7/2026 - ZK Pelagonija AD Bitola - Buy back/Sale of treasury shares",
+        "url": "https://seinet.com.mk/en/document/78413",
+        "date": "2026-08-07"
+      },
+      {
+        "title": "8/7/2026 - ZK Pelagonija AD Bitola - Distribution of profit",
+        "url": "https://seinet.com.mk/en/document/78412",
+        "date": "2026-08-07"
+      },
+      {
+        "title": "8/7/2026 - ZK Pelagonija AD Bitola - Other decisions of the shareholders meeting",
+        "url": "https://seinet.com.mk/en/document/78411",
+        "date": "2026-08-07"
+      },
       {
         "title": "8/6/2026 - ZK Pelagonija AD Bitola - Changes in shareholders with a significant stake",
         "url": "https://seinet.com.mk/en/document/78393",
@@ -10172,26 +10187,6 @@
         "title": "7/15/2026 - ZK Pelagonija AD Bitola - Draft decisions for the shareholders meeting",
         "url": "https://seinet.com.mk/en/document/77923",
         "date": "2026-07-15"
-      },
-      {
-        "title": "7/7/2026 - ZK Pelagonija AD Bitola - Draft decisions for the shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/77903",
-        "date": "2026-07-07"
-      },
-      {
-        "title": "7/7/2026 - ZK Pelagonija AD Bitola - Public call for shareholders meeting",
-        "url": "https://seinet.com.mk/en/document/77902",
-        "date": "2026-07-07"
-      },
-      {
-        "title": "5/14/2026 - ZK Pelagonija AD Bitola - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/77164",
-        "date": "2026-05-14"
-      },
-      {
-        "title": "5/4/2026 - ZK Pelagonija AD Bitola - Other price sensitive information",
-        "url": "https://seinet.com.mk/en/document/77022",
-        "date": "2026-05-04"
       }
     ]
   },

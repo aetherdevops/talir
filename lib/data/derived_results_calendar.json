@@ -1,8 +1,44 @@
 {
-  "generatedAt": "2026-08-07T04:30:38.477Z",
-  "lastIssuerScan": "2026-08-07",
+  "generatedAt": "2026-08-08T03:38:57.502Z",
+  "lastIssuerScan": "2026-08-08",
   "issuerCount": 170,
   "recent": [
+    {
+      "stockCode": "MAKP",
+      "stockName": "Makpromet AD Shtip",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-08-07",
+      "headline": "MAKP files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78402",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "reportKind": "fy_audited",
+      "periodStart": null,
+      "periodEnd": null,
+      "periodLabel": null,
+      "filedAt": "2026-08-07",
+      "headline": "ZPKO files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78408",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "reportKind": "q1_pl",
+      "periodStart": null,
+      "periodEnd": null,
+      "periodLabel": null,
+      "filedAt": "2026-08-07",
+      "headline": "ZPKO files profit and loss report",
+      "url": "https://seinet.com.mk/en/document/78412",
+      "source": "SECNet"
+    },
     {
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
@@ -97,18 +133,6 @@
       "filedAt": "2026-07-31",
       "headline": "LOZP files audited financial statements",
       "url": "https://seinet.com.mk/en/document/78301",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MAKP",
-      "stockName": "Makpromet AD Shtip",
-      "reportKind": "fy_audited",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-06-30",
-      "periodLabel": "01.01–30.06",
-      "filedAt": "2026-07-31",
-      "headline": "MAKP files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/78308",
       "source": "SECNet"
     },
     {
@@ -2154,6 +2178,42 @@
   ],
   "all": [
     {
+      "stockCode": "MAKP",
+      "stockName": "Makpromet AD Shtip",
+      "reportKind": "fy_audited",
+      "periodStart": "2026-01-01",
+      "periodEnd": "2026-06-30",
+      "periodLabel": "01.01–30.06",
+      "filedAt": "2026-08-07",
+      "headline": "MAKP files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78402",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "reportKind": "fy_audited",
+      "periodStart": null,
+      "periodEnd": null,
+      "periodLabel": null,
+      "filedAt": "2026-08-07",
+      "headline": "ZPKO files audited financial statements",
+      "url": "https://seinet.com.mk/en/document/78408",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "reportKind": "q1_pl",
+      "periodStart": null,
+      "periodEnd": null,
+      "periodLabel": null,
+      "filedAt": "2026-08-07",
+      "headline": "ZPKO files profit and loss report",
+      "url": "https://seinet.com.mk/en/document/78412",
+      "source": "SECNet"
+    },
+    {
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
       "reportKind": "fy_audited",
@@ -2247,18 +2307,6 @@
       "filedAt": "2026-07-31",
       "headline": "LOZP files audited financial statements",
       "url": "https://seinet.com.mk/en/document/78301",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MAKP",
-      "stockName": "Makpromet AD Shtip",
-      "reportKind": "fy_audited",
-      "periodStart": "2026-01-01",
-      "periodEnd": "2026-06-30",
-      "periodLabel": "01.01–30.06",
-      "filedAt": "2026-07-31",
-      "headline": "MAKP files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/78308",
       "source": "SECNet"
     },
     {
@@ -7710,18 +7758,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "reportKind": "fy_audited",
-      "periodStart": null,
-      "periodEnd": null,
-      "periodLabel": null,
-      "filedAt": "2025-08-11",
-      "headline": "ZPKO files audited financial statements",
-      "url": "https://seinet.com.mk/en/document/74109",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "RZIT",
       "stockName": "RZh Inter-Transshped AD Skopje",
       "reportKind": "fy_audited",
@@ -10855,6 +10891,166 @@
     }
   ],
   "byIssuer": {
+    "MAKP": [
+      {
+        "stockCode": "MAKP",
+        "stockName": "Makpromet AD Shtip",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-08-07",
+        "headline": "MAKP files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78402",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MAKP",
+        "stockName": "Makpromet AD Shtip",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-05-14",
+        "headline": "MAKP reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/77142",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MAKP",
+        "stockName": "Makpromet AD Shtip",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-04-28",
+        "headline": "MAKP files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76637",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MAKP",
+        "stockName": "Makpromet AD Shtip",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-04-01",
+        "headline": "MAKP files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76139",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MAKP",
+        "stockName": "Makpromet AD Shtip",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-11-13",
+        "headline": "MAKP reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74842",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "MAKP",
+        "stockName": "Makpromet AD Shtip",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-08-15",
+        "headline": "MAKP files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/74164",
+        "source": "SECNet"
+      }
+    ],
+    "ZPKO": [
+      {
+        "stockCode": "ZPKO",
+        "stockName": "ZK Pelagonija AD Bitola",
+        "reportKind": "fy_audited",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-08-07",
+        "headline": "ZPKO files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78408",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZPKO",
+        "stockName": "ZK Pelagonija AD Bitola",
+        "reportKind": "q1_pl",
+        "periodStart": null,
+        "periodEnd": null,
+        "periodLabel": null,
+        "filedAt": "2026-08-07",
+        "headline": "ZPKO files profit and loss report",
+        "url": "https://seinet.com.mk/en/document/78412",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZPKO",
+        "stockName": "ZK Pelagonija AD Bitola",
+        "reportKind": "fy_audited",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2026-07-31",
+        "headline": "ZPKO files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/78340",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZPKO",
+        "stockName": "ZK Pelagonija AD Bitola",
+        "reportKind": "q1_pl",
+        "periodStart": "2026-01-01",
+        "periodEnd": "2026-03-31",
+        "periodLabel": "01.01–31.03",
+        "filedAt": "2026-05-14",
+        "headline": "ZPKO reports profit and loss for 01.01.–31.03",
+        "url": "https://seinet.com.mk/en/document/77163",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZPKO",
+        "stockName": "ZK Pelagonija AD Bitola",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-12-31",
+        "periodLabel": "01.01–31.12",
+        "filedAt": "2026-04-01",
+        "headline": "ZPKO files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/76112",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZPKO",
+        "stockName": "ZK Pelagonija AD Bitola",
+        "reportKind": "q3_pl",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-09-30",
+        "periodLabel": "01.01–30.09",
+        "filedAt": "2025-11-14",
+        "headline": "ZPKO reports profit and loss for 01.01.–30.09",
+        "url": "https://seinet.com.mk/en/document/74859",
+        "source": "SECNet"
+      },
+      {
+        "stockCode": "ZPKO",
+        "stockName": "ZK Pelagonija AD Bitola",
+        "reportKind": "fy_audited",
+        "periodStart": "2025-01-01",
+        "periodEnd": "2025-06-30",
+        "periodLabel": "01.01–30.06",
+        "filedAt": "2025-08-15",
+        "headline": "ZPKO files audited financial statements",
+        "url": "https://seinet.com.mk/en/document/74176",
+        "source": "SECNet"
+      }
+    ],
     "BGOR": [
       {
         "stockCode": "BGOR",
@@ -11684,80 +11880,6 @@
         "filedAt": "2025-05-15",
         "headline": "LOZP reports profit and loss for 01.01.–31.03",
         "url": "https://seinet.com.mk/en/document/72849",
-        "source": "SECNet"
-      }
-    ],
-    "MAKP": [
-      {
-        "stockCode": "MAKP",
-        "stockName": "Makpromet AD Shtip",
-        "reportKind": "fy_audited",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2026-07-31",
-        "headline": "MAKP files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/78308",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MAKP",
-        "stockName": "Makpromet AD Shtip",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-05-14",
-        "headline": "MAKP reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/77142",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MAKP",
-        "stockName": "Makpromet AD Shtip",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2026-04-28",
-        "headline": "MAKP files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76637",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MAKP",
-        "stockName": "Makpromet AD Shtip",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-04-01",
-        "headline": "MAKP files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76139",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MAKP",
-        "stockName": "Makpromet AD Shtip",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-11-13",
-        "headline": "MAKP reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74842",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "MAKP",
-        "stockName": "Makpromet AD Shtip",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-08-15",
-        "headline": "MAKP files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74164",
         "source": "SECNet"
       }
     ],
@@ -14156,80 +14278,6 @@
         "filedAt": "2024-10-30",
         "headline": "ZILU reports profit and loss for 01.01.–30.09",
         "url": "https://seinet.com.mk/en/document/70206",
-        "source": "SECNet"
-      }
-    ],
-    "ZPKO": [
-      {
-        "stockCode": "ZPKO",
-        "stockName": "ZK Pelagonija AD Bitola",
-        "reportKind": "fy_audited",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2026-07-31",
-        "headline": "ZPKO files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/78340",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZPKO",
-        "stockName": "ZK Pelagonija AD Bitola",
-        "reportKind": "q1_pl",
-        "periodStart": "2026-01-01",
-        "periodEnd": "2026-03-31",
-        "periodLabel": "01.01–31.03",
-        "filedAt": "2026-05-14",
-        "headline": "ZPKO reports profit and loss for 01.01.–31.03",
-        "url": "https://seinet.com.mk/en/document/77163",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZPKO",
-        "stockName": "ZK Pelagonija AD Bitola",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-12-31",
-        "periodLabel": "01.01–31.12",
-        "filedAt": "2026-04-01",
-        "headline": "ZPKO files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/76112",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZPKO",
-        "stockName": "ZK Pelagonija AD Bitola",
-        "reportKind": "q3_pl",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-09-30",
-        "periodLabel": "01.01–30.09",
-        "filedAt": "2025-11-14",
-        "headline": "ZPKO reports profit and loss for 01.01.–30.09",
-        "url": "https://seinet.com.mk/en/document/74859",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZPKO",
-        "stockName": "ZK Pelagonija AD Bitola",
-        "reportKind": "fy_audited",
-        "periodStart": "2025-01-01",
-        "periodEnd": "2025-06-30",
-        "periodLabel": "01.01–30.06",
-        "filedAt": "2025-08-15",
-        "headline": "ZPKO files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74176",
-        "source": "SECNet"
-      },
-      {
-        "stockCode": "ZPKO",
-        "stockName": "ZK Pelagonija AD Bitola",
-        "reportKind": "fy_audited",
-        "periodStart": null,
-        "periodEnd": null,
-        "periodLabel": null,
-        "filedAt": "2025-08-11",
-        "headline": "ZPKO files audited financial statements",
-        "url": "https://seinet.com.mk/en/document/74109",
         "source": "SECNet"
       }
     ],

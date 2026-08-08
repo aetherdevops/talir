@@ -1,6 +1,50 @@
 {
-  "generatedAt": "2026-08-07T04:44:52.655Z",
+  "generatedAt": "2026-08-08T03:53:31.295Z",
   "all": [
+    {
+      "stockCode": "MAKP",
+      "stockName": "Makpromet AD Shtip",
+      "fiscalYear": 2026,
+      "filedAt": "2026-08-07",
+      "url": "https://seinet.com.mk/en/document/78402",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "fiscalYear": 2026,
+      "filedAt": "2026-08-07",
+      "url": "https://seinet.com.mk/en/document/78408",
+      "netProfit": 28.19,
+      "eps": null,
+      "parseStatus": "partial",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "MAKP",
+      "stockName": "Makpromet AD Shtip",
+      "fiscalYear": 2026,
+      "filedAt": "2026-08-07",
+      "url": "https://seinet.com.mk/en/document/78402",
+      "netProfit": null,
+      "eps": null,
+      "parseStatus": "link_only",
+      "source": "SECNet"
+    },
+    {
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "fiscalYear": 2026,
+      "filedAt": "2026-08-07",
+      "url": "https://seinet.com.mk/en/document/78408",
+      "netProfit": 28.19,
+      "eps": null,
+      "parseStatus": "partial",
+      "source": "SECNet"
+    },
     {
       "stockCode": "BGOR",
       "stockName": "Kristal 1923 AD Veles",
@@ -117,17 +161,6 @@
       "fiscalYear": 2026,
       "filedAt": "2026-07-31",
       "url": "https://seinet.com.mk/en/document/78301",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MAKP",
-      "stockName": "Makpromet AD Shtip",
-      "fiscalYear": 2026,
-      "filedAt": "2026-07-31",
-      "url": "https://seinet.com.mk/en/document/78308",
       "netProfit": null,
       "eps": null,
       "parseStatus": "link_only",
@@ -387,17 +420,6 @@
       "source": "SECNet"
     },
     {
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "fiscalYear": 2026,
-      "filedAt": "2026-07-31",
-      "url": "https://seinet.com.mk/en/document/78340",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
       "stockCode": "CEVI",
       "stockName": "FZC 11-ti OKTOMVRI AD Kumanovo",
       "fiscalYear": 2026,
@@ -447,17 +469,6 @@
       "fiscalYear": 2026,
       "filedAt": "2026-07-31",
       "url": "https://seinet.com.mk/en/document/78301",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "MAKP",
-      "stockName": "Makpromet AD Shtip",
-      "fiscalYear": 2026,
-      "filedAt": "2026-07-31",
-      "url": "https://seinet.com.mk/en/document/78308",
       "netProfit": null,
       "eps": null,
       "parseStatus": "link_only",
@@ -711,17 +722,6 @@
       "fiscalYear": 2026,
       "filedAt": "2026-07-31",
       "url": "https://seinet.com.mk/en/document/78250",
-      "netProfit": null,
-      "eps": null,
-      "parseStatus": "link_only",
-      "source": "SECNet"
-    },
-    {
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "fiscalYear": 2026,
-      "filedAt": "2026-07-31",
-      "url": "https://seinet.com.mk/en/document/78340",
       "netProfit": null,
       "eps": null,
       "parseStatus": "link_only",
@@ -5095,17 +5095,6 @@
       "source": "MSE"
     },
     {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "fiscalYear": 2024,
-      "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
-      "netProfit": null,
-      "eps": 11.97,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "fiscalYear": 2024,
@@ -5117,13 +5106,13 @@
       "source": "MSE"
     },
     {
-      "stockCode": "REPL",
-      "stockName": "Replek AD Skopje",
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
       "fiscalYear": 2024,
       "filedAt": "2024-12-31",
-      "url": "https://www.mse.mk/en/symbol/REPL#fy-2024",
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2024",
       "netProfit": null,
-      "eps": 864.95,
+      "eps": 11.97,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5135,6 +5124,17 @@
       "url": "https://www.mse.mk/en/symbol/MPT#fy-2024",
       "netProfit": null,
       "eps": 9829.83,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
+      "fiscalYear": 2024,
+      "filedAt": "2024-12-31",
+      "url": "https://www.mse.mk/en/symbol/REPL#fy-2024",
+      "netProfit": null,
+      "eps": 864.95,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5260,17 +5260,6 @@
       "source": "MSE"
     },
     {
-      "stockCode": "GRNT",
-      "stockName": "Granit AD Skopje",
-      "fiscalYear": 2023,
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
-      "netProfit": null,
-      "eps": 41.39,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
       "stockCode": "KMB",
       "stockName": "Komercijalna banka AD Skopje",
       "fiscalYear": 2023,
@@ -5282,13 +5271,13 @@
       "source": "MSE"
     },
     {
-      "stockCode": "REPL",
-      "stockName": "Replek AD Skopje",
+      "stockCode": "GRNT",
+      "stockName": "Granit AD Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/REPL#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/GRNT#fy-2023",
       "netProfit": null,
-      "eps": 1082.67,
+      "eps": 41.39,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5304,13 +5293,24 @@
       "source": "MSE"
     },
     {
-      "stockCode": "TEL",
-      "stockName": "Makedonski Telekom AD – Skopje",
+      "stockCode": "REPL",
+      "stockName": "Replek AD Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TEL#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/REPL#fy-2023",
       "netProfit": null,
-      "eps": 21.71,
+      "eps": 1082.67,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "TNB",
+      "stockName": "NLB Banka AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
+      "netProfit": null,
+      "eps": 3766.55,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -5326,17 +5326,6 @@
       "source": "MSE"
     },
     {
-      "stockCode": "STB",
-      "stockName": "Stopanska banka AD Skopje",
-      "fiscalYear": 2023,
-      "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/STB#fy-2023",
-      "netProfit": null,
-      "eps": 198.78,
-      "parseStatus": "partial",
-      "source": "MSE"
-    },
-    {
       "stockCode": "TTK",
       "stockName": "TTK Banka AD Skopje",
       "fiscalYear": 2023,
@@ -5348,13 +5337,24 @@
       "source": "MSE"
     },
     {
-      "stockCode": "TNB",
-      "stockName": "NLB Banka AD Skopje",
+      "stockCode": "TEL",
+      "stockName": "Makedonski Telekom AD – Skopje",
       "fiscalYear": 2023,
       "filedAt": "2023-12-31",
-      "url": "https://www.mse.mk/en/symbol/TNB#fy-2023",
+      "url": "https://www.mse.mk/en/symbol/TEL#fy-2023",
       "netProfit": null,
-      "eps": 3766.55,
+      "eps": 21.71,
+      "parseStatus": "partial",
+      "source": "MSE"
+    },
+    {
+      "stockCode": "STB",
+      "stockName": "Stopanska banka AD Skopje",
+      "fiscalYear": 2023,
+      "filedAt": "2023-12-31",
+      "url": "https://www.mse.mk/en/symbol/STB#fy-2023",
+      "netProfit": null,
+      "eps": 198.78,
       "parseStatus": "partial",
       "source": "MSE"
     },
@@ -7304,8 +7304,8 @@
         "stockCode": "MAKP",
         "stockName": "Makpromet AD Shtip",
         "fiscalYear": 2026,
-        "filedAt": "2026-07-31",
-        "url": "https://seinet.com.mk/en/document/78308",
+        "filedAt": "2026-08-07",
+        "url": "https://seinet.com.mk/en/document/78402",
         "netProfit": null,
         "eps": null,
         "parseStatus": "link_only",
@@ -7315,8 +7315,8 @@
         "stockCode": "MAKP",
         "stockName": "Makpromet AD Shtip",
         "fiscalYear": 2026,
-        "filedAt": "2026-07-31",
-        "url": "https://seinet.com.mk/en/document/78308",
+        "filedAt": "2026-08-07",
+        "url": "https://seinet.com.mk/en/document/78402",
         "netProfit": null,
         "eps": null,
         "parseStatus": "link_only",
@@ -10839,22 +10839,22 @@
         "stockCode": "ZPKO",
         "stockName": "ZK Pelagonija AD Bitola",
         "fiscalYear": 2026,
-        "filedAt": "2026-07-31",
-        "url": "https://seinet.com.mk/en/document/78340",
-        "netProfit": null,
+        "filedAt": "2026-08-07",
+        "url": "https://seinet.com.mk/en/document/78408",
+        "netProfit": 28.19,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {
         "stockCode": "ZPKO",
         "stockName": "ZK Pelagonija AD Bitola",
         "fiscalYear": 2026,
-        "filedAt": "2026-07-31",
-        "url": "https://seinet.com.mk/en/document/78340",
-        "netProfit": null,
+        "filedAt": "2026-08-07",
+        "url": "https://seinet.com.mk/en/document/78408",
+        "netProfit": 28.19,
         "eps": null,
-        "parseStatus": "link_only",
+        "parseStatus": "partial",
         "source": "SECNet"
       },
       {

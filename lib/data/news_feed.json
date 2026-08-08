@@ -1,10 +1,127 @@
 {
-  "generatedAt": "2026-08-07T04:30:37.964Z",
-  "lastIssuerScan": "2026-08-07",
-  "count": 1492,
-  "datedCount": 1492,
+  "generatedAt": "2026-08-08T03:38:57.074Z",
+  "lastIssuerScan": "2026-08-08",
+  "count": 1491,
+  "datedCount": 1491,
   "undatedCount": 0,
   "items": [
+    {
+      "id": "MAKP-https-seinet-com-mk-en-document-78402",
+      "rawTitle": "8/7/2026 - Makpromet AD Stip - Non-audited financial statements 01.01. - 30.06.",
+      "title": "MAKP files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "MAKP",
+      "stockName": "Makpromet AD Shtip",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78402"
+    },
+    {
+      "id": "MAKP-https-seinet-com-mk-en-document-78403",
+      "rawTitle": "8/7/2026 - Makpromet AD Stip - Other price sensitive information",
+      "title": "MAKP: Other price sensitive information",
+      "source": "SECNet",
+      "stockCode": "MAKP",
+      "stockName": "Makpromet AD Shtip",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78403"
+    },
+    {
+      "id": "VROS-https-seinet-com-mk-en-document-78401",
+      "rawTitle": "8/7/2026 - Triglav osiguruvane AD Skopje - Draft decisions for the shareholders meeting",
+      "title": "VROS: Draft decisions for the shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "VROS",
+      "stockName": "Triglav Osiguruvanje AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78401"
+    },
+    {
+      "id": "VROS-https-seinet-com-mk-en-document-78400",
+      "rawTitle": "8/7/2026 - Triglav osiguruvane AD Skopje - Public call for shareholders meeting",
+      "title": "VROS: Public call for shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "VROS",
+      "stockName": "Triglav Osiguruvanje AD Skopje",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78400"
+    },
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-78408",
+      "rawTitle": "8/7/2026 - ZK Pelagonija AD Bitola - Audited financial statements",
+      "title": "ZPKO files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78408"
+    },
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-78407",
+      "rawTitle": "8/7/2026 - ZK Pelagonija AD Bitola - Audited financial statements",
+      "title": "ZPKO files audited financial statements",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "financials",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78407"
+    },
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-78413",
+      "rawTitle": "8/7/2026 - ZK Pelagonija AD Bitola - Buy back/Sale of treasury shares",
+      "title": "ZPKO: Buy back/Sale of treasury shares",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78413"
+    },
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-78412",
+      "rawTitle": "8/7/2026 - ZK Pelagonija AD Bitola - Distribution of profit",
+      "title": "ZPKO files profit and loss report",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "dividend",
+      "filingTier": "dividend",
+      "publishedAt": "2026-08-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78412"
+    },
+    {
+      "id": "ZPKO-https-seinet-com-mk-en-document-78411",
+      "rawTitle": "8/7/2026 - ZK Pelagonija AD Bitola - Other decisions of the shareholders meeting",
+      "title": "ZPKO: Other decisions of the shareholders meeting",
+      "source": "SECNet",
+      "stockCode": "ZPKO",
+      "stockName": "ZK Pelagonija AD Bitola",
+      "category": "other",
+      "filingTier": "routine",
+      "publishedAt": "2026-08-07",
+      "dateKnown": true,
+      "url": "https://seinet.com.mk/en/document/78411"
+    },
     {
       "id": "MZPU-https-seinet-com-mk-en-document-78387",
       "rawTitle": "8/6/2026 - MZT Pumpi AD Skopje - Other price sensitive information",
@@ -2734,32 +2851,6 @@
       "publishedAt": "2026-07-08",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77905"
-    },
-    {
-      "id": "ZPKO-https-seinet-com-mk-en-document-77903",
-      "rawTitle": "7/7/2026 - ZK Pelagonija AD Bitola - Draft decisions for the shareholders meeting",
-      "title": "ZPKO: Draft decisions for the shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-07-07",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77903"
-    },
-    {
-      "id": "ZPKO-https-seinet-com-mk-en-document-77902",
-      "rawTitle": "7/7/2026 - ZK Pelagonija AD Bitola - Public call for shareholders meeting",
-      "title": "ZPKO: Public call for shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-07-07",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77902"
     },
     {
       "id": "KJUBI-https-seinet-com-mk-en-document-77898",
@@ -6948,19 +7039,6 @@
       "url": "https://seinet.com.mk/en/document/77163"
     },
     {
-      "id": "ZPKO-https-seinet-com-mk-en-document-77164",
-      "rawTitle": "5/14/2026 - ZK Pelagonija AD Bitola - Other price sensitive information",
-      "title": "ZPKO: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-05-14",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77164"
-    },
-    {
       "id": "ZPOG-https-seinet-com-mk-en-document-77136",
       "rawTitle": "5/14/2026 - Zito Polog AD Tetovo - Non-audited profit&loss account 01.01. - 31.03.",
       "title": "ZPOG reports profit and loss for 01.01.–31.03",
@@ -7492,19 +7570,6 @@
       "publishedAt": "2026-05-04",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/77021"
-    },
-    {
-      "id": "ZPKO-https-seinet-com-mk-en-document-77022",
-      "rawTitle": "5/4/2026 - ZK Pelagonija AD Bitola - Other price sensitive information",
-      "title": "ZPKO: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-05-04",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/77022"
     },
     {
       "id": "ALK-https-seinet-com-mk-en-document-76851",
@@ -9678,32 +9743,6 @@
       "url": "https://seinet.com.mk/en/document/76567"
     },
     {
-      "id": "MAKP-https-seinet-com-mk-en-document-76605",
-      "rawTitle": "4/27/2026 - Makpromet AD Stip - Draft decisions for the shareholders meeting",
-      "title": "MAKP: Draft decisions for the shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "MAKP",
-      "stockName": "Makpromet AD Shtip",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76605"
-    },
-    {
-      "id": "MAKP-https-seinet-com-mk-en-document-76604",
-      "rawTitle": "4/27/2026 - Makpromet AD Stip - Public call for shareholders meeting",
-      "title": "MAKP: Public call for shareholders meeting",
-      "source": "SECNet",
-      "stockCode": "MAKP",
-      "stockName": "Makpromet AD Shtip",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-27",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76604"
-    },
-    {
       "id": "MERM-https-seinet-com-mk-en-document-76489",
       "rawTitle": "4/27/2026 - Mermeren kombinat AD Prilep - Draft decisions for the shareholders meeting",
       "title": "MERM: Draft decisions for the shareholders meeting",
@@ -10118,19 +10157,6 @@
       "publishedAt": "2026-04-23",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/76395"
-    },
-    {
-      "id": "VROS-https-seinet-com-mk-en-document-76396",
-      "rawTitle": "4/23/2026 - Triglav osiguruvane AD Skopje - Other price sensitive information",
-      "title": "VROS: Other price sensitive information",
-      "source": "SECNet",
-      "stockCode": "VROS",
-      "stockName": "Triglav Osiguruvanje AD Skopje",
-      "category": "other",
-      "filingTier": "routine",
-      "publishedAt": "2026-04-23",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/76396"
     },
     {
       "id": "ZAS-https-seinet-com-mk-en-document-76397",
@@ -14410,32 +14436,6 @@
       "url": "https://seinet.com.mk/en/document/74121"
     },
     {
-      "id": "ZPKO-https-seinet-com-mk-en-document-74109",
-      "rawTitle": "8/11/2025 - ZK Pelagonija AD Bitola - Audited financial statements",
-      "title": "ZPKO files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-08-11",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/74109"
-    },
-    {
-      "id": "ZPKO-https-seinet-com-mk-en-document-74108",
-      "rawTitle": "8/11/2025 - ZK Pelagonija AD Bitola - Audited financial statements",
-      "title": "ZPKO files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "ZPKO",
-      "stockName": "ZK Pelagonija AD Bitola",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-08-11",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/74108"
-    },
-    {
       "id": "RZIT-https-seinet-com-mk-en-document-74100",
       "rawTitle": "8/8/2025 - RZ Inter-Transsped AD Skopje - Non-audited financial statements 01.01. - 30.06.",
       "title": "RZIT files audited financial statements",
@@ -14642,19 +14642,6 @@
       "publishedAt": "2025-07-31",
       "dateKnown": true,
       "url": "https://seinet.com.mk/en/document/74060"
-    },
-    {
-      "id": "MAKP-https-seinet-com-mk-en-document-73975",
-      "rawTitle": "7/31/2025 - Makpromet AD Stip - Non-audited financial statements 01.01. - 30.06.",
-      "title": "MAKP files audited financial statements",
-      "source": "SECNet",
-      "stockCode": "MAKP",
-      "stockName": "Makpromet AD Shtip",
-      "category": "financials",
-      "filingTier": "routine",
-      "publishedAt": "2025-07-31",
-      "dateKnown": true,
-      "url": "https://seinet.com.mk/en/document/73975"
     },
     {
       "id": "MAKS-https-seinet-com-mk-en-document-73881",
